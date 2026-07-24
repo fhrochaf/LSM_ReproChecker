@@ -1,0 +1,99 @@
+filter_landslide_mapping_paper:
+  description: >
+    Use your PDF search tool to determine whether this paper explores and
+    documents a landslide mapping method. Search for the paper's overall
+    approach, methodology, and results. A qualifying paper must include a
+    description of the methodology (or a reference to a prior publication if
+    the method was previously published), a description of the datasets
+    used, and a description of the results. Exclude papers that only
+    describe landslide inventories, landslide susceptibility mapping
+    methods, or that are review articles.
+  expected_output: >
+    Return only the structured fields, no explanatory prose beyond the required short text fields.
+    A decision of either INCLUDE or EXCLUDE, followed by justification:
+    - If INCLUDE: briefly state what mapping method is described, and confirm
+      the presence of (1) methodology or reference to prior methodology,
+      (2) dataset description, (3) results description.
+    - If EXCLUDE: state the reason, e.g. "landslide inventory only",
+      "susceptibility mapping, not mapping method", "review article",
+      or "missing methodology/dataset/results description".
+    The output should be short, around 100 words.
+  agent: paper_analyzer
+
+check_data_reproducibility:
+  description: >
+    Use your PDF search tool to identify all datasets used in the paper,
+    including satellite imagery and landslide inventories. Search for data
+    sources, dataset names, and any retrieval links or access statements.
+    For each dataset, determine its source and whether the paper provides a
+    direct link or clear indication of where to retrieve it.
+  expected_output: >
+    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields:
+    - Dataset name/type (e.g. satellite imagery, landslide inventory)
+    - Source/provider, if indicated
+    - Retrieval link or access statement, if provided in the paper
+    - A flag: AVAILABLE (link/source clearly given), PARTIALLY AVAILABLE
+      (source named but no retrieval link), or NOT AVAILABLE (no source or
+      link indicated)s
+    It must match this exact shape:
+      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_AVAILABLE"}]}
+
+  agent: paper_analyzer
+
+check_method_reproducibility:
+  description: >
+    Use your PDF search tool to identify every distinct landslide mapping
+    method in the paper (there may be more than one, e.g. manual for one
+    dataset, custom code for another). For each, check the methodology
+    section, footnotes, and appendices for algorithm/software details and
+    any code or repository references. Classify each as:
+    1. MANUAL — human interpretation, no code expected.
+    2. SOFTWARE — existing named software used as-is, no custom code expected.
+    3. CUSTOM_CODE — custom/algorithmic method; search for accompanying code
+       and report FOUND or NOT_FOUND.
+    4. REUSED — identical to a prior publication; report the citation
+       instead of re-describing it.
+  expected_output: >
+    Return a json object only, no extra prose. One entry per method found,
+    matching this exact shape:
+      {"methods": [{"name": "Manual photo-interpretation of orthophotos", "method_type": "MANUAL", "summary": "Landslides were manually digitized from post-event orthophotos by two expert interpreters.", "code_status": "N/A", "code_link": null, "reused_citation": null}, {"name": "Random forest classification on Sentinel-2", "method_type": "CUSTOM_CODE", "summary": "A random forest classifier was trained on spectral indices to detect landslide surfaces.", "code_status": "FOUND", "code_link": "https://github.com/example/repo", "reused_citation": null}]}
+    If only one method is described, return an array with a single entry.
+  agent: paper_analyzer
+
+check_artifact_availability:
+  description: >
+    Visit the following publication page and inspect it (and any linked
+    data/code availability sections) to determine whether data and code
+    artifacts are actually available, and capture any explicit author
+    statements on availability and reproducibility.
+    Data available upon request is considered NOT AVAILABLE.
+
+    Publication URL:
+    {doi_url}
+  expected_output: >
+    Return only the structured fields, no explanatory prose beyond the required short text fields.A summary including:
+    - The DOI/URL checked
+    - Access status of the publication page: OPEN ACCESS / PAYWALLED / NOT FOUND
+    - Data availability status: AVAILABLE / NOT AVAILABLE / NOT STATED,
+      with link(s) if available
+    - Code availability status: AVAILABLE / NOT AVAILABLE / NOT STATED,
+      with link(s) if available
+    - Any direct author statement on availability or reproducibility
+  agent: availability_web_scraper
+
+
+compile_final_report:
+  description: >
+    Using the outputs from the data reproducibility check, method
+    reproducibility check, and artifact availability check, form an
+    overall qualitative judgment of whether the paper's data and methods
+    are available to reproduce the study. Do not restate or summarize the datasets, methods,
+    or availability findings — those are already recorded elsewhere and
+    will be attached separately. Base your judgment only on what was
+    already reported by the other checks; do not introduce new findings.
+  expected_output: >
+    Return only a json object with a single field, no explanatory prose
+    beyond it:
+      {"reproducibility_assessment": "Partially reproducible: datasets are named with retrieval links, but the custom classification code is not available and no repository is provided."}
+    Maximum 150 words.
+  agent: report_elaborator

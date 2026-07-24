@@ -1,64 +1,105 @@
-#!/usr/bin/env python
 from pathlib import Path
 
 from pydantic import BaseModel
 
-from crewai.flow import Flow, listen, start
+from crewai.flow import Flow, listen, start, router
 
-from flow_reproassesslsm_st1.crews.content_crew.content_crew import ContentCrew
+from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew
+from flow_reproassesslsm_st1.models import ReproCheckState, ReproducibilityReport, FilterOutput
 
+INPUTS_PATH = Path("publications") / "inputs.json"
+OUTPUT_DIR = Path("output")
 
-class ContentState(BaseModel):
-    topic: str = ""
-    outline: str = ""
-    draft: str = ""
-    final_post: str = ""
-
-
-class ContentFlow(Flow[ContentState]):
+class ReproCheckFlow(Flow[ReproCheckState]):
 
     @start()
-    def plan_content(self, crewai_trigger_payload: dict = None):
-        print("Planning content")
+    def load_inputs(self, crewai_trigger_payload: dict = None):
+        print("Loading inputs")
 
         if crewai_trigger_payload:
-            self.state.topic = crewai_trigger_payload.get("topic", "AI Agents")
+            self.state.publication_id = crewai_trigger_payload.get("publication_id", 0)
+            self.state.pdf_path = crewai_trigger_payload.get("pdf_path", "")
+            self.state.doi = crewai_trigger_payload.get("doi", "")
             print(f"Using trigger payload: {crewai_trigger_payload}")
-        else:
-            self.state.topic = "AI Agents"
 
-        print(f"Topic: {self.state.topic}")
+        if not self.state.pdf_path or not self.state.doi:
+            raise ValueError("Both 'pdf_path' and 'doi' must be provided.")
 
-    @listen(plan_content)
-    def generate_content(self):
-        print(f"Generating content on: {self.state.topic}")
-        result = (
-            ContentCrew()
-            .crew()
-            .kickoff(inputs={"topic": self.state.topic})
+        print(f"PDF path: {self.state.pdf_path}")
+        print(f"DOI: {self.state.doi}")
+
+        self._crew = ReproCheckerCrew(pdf_path=self.state.pdf_path)
+
+    @listen(load_inputs)
+    def filter_paper(self):
+        print(f"Filtering paper: {self.state.pdf_path}")
+        filter_result = self._crew.filter_crew().kickoff()
+
+        self.state.filter_decision = filter_result.pydantic.decision
+        self.state.filter_reason = filter_result.pydantic.reason
+
+        return filter_result.pydantic.decision  # passed into the router
+
+    @router(filter_paper)
+    def route_on_filter(self, decision):
+        return "included" if decision == "INCLUDE" else "excluded"
+
+    @listen("excluded")
+    def write_exclusion(self):
+        print(f"Paper excluded: {self.state.filter_reason}")
+        self.state.final_report = FilterOutput(
+            decision=self.state.filter_decision,
+            reason=self.state.filter_reason,
         )
 
-        print("Content generated")
-        self.state.final_post = result.raw
+    @listen("included")
+    def run_repro_check(self):
+        print(f"Paper included, running reproducibility checks on: {self.state.pdf_path}")
+        inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
+        result = self._crew.repro_crew().kickoff(inputs=inputs)
 
-    @listen(generate_content)
-    def save_content(self):
-        print("Saving content")
-        output_dir = Path("output")
-        output_dir.mkdir(exist_ok=True)
-        with open(output_dir / "post.md", "w") as f:
-            f.write(self.state.final_post)
-        print("Post saved to output/post.md")
+        data_output = self._crew.check_data_reproducibility().output.pydantic
+        method_output = self._crew.check_method_reproducibility().output.pydantic
+        avail_output = self._crew.check_artifact_availability().output.pydantic
+        assessment_output = self._crew.compile_final_report().output.pydantic
 
+        self.state.final_report = ReproducibilityReport(
+            datasets=data_output.datasets,
+            methods=method_output.methods,
+            availability=avail_output,
+            reproducibility_assessment=assessment_output.reproducibility_assessment,
+        )
+
+
+    @listen(run_repro_check)
+    def save_report(self):
+        try:
+            print("Saving report")
+            OUTPUT_DIR.mkdir(exist_ok=True)
+            output_file = OUTPUT_DIR / f"{self.state.publication_id}_repro_report.json"
+            with open(output_file, "w") as f:
+                f.write(self.state.final_report.model_dump_json(indent=2))
+            print(f"Report saved to {output_file}")
+        except Exception as e:
+            print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
+
+
+import json
 
 def kickoff():
-    content_flow = ContentFlow()
-    content_flow.kickoff()
+    try:
+        with open(INPUTS_PATH) as f:
+            inputs = json.load(f)
+    except FileNotFoundError:
+        raise Exception(f"Input file {INPUTS_PATH} not found. Please provide inputs.json with 'pdf_path' and 'doi'.")
+
+    repro_check_flow = ReproCheckFlow()
+    repro_check_flow.kickoff(inputs=inputs)
 
 
 def plot():
-    content_flow = ContentFlow()
-    content_flow.plot()
+    repro_check_flow = ReproCheckFlow()
+    repro_check_flow.plot()
 
 
 def run_with_trigger():
@@ -76,10 +117,10 @@ def run_with_trigger():
     except json.JSONDecodeError:
         raise Exception("Invalid JSON payload provided as argument")
 
-    content_flow = ContentFlow()
+    repro_check_flow = ReproCheckFlow()
 
     try:
-        result = content_flow.kickoff({"crewai_trigger_payload": trigger_payload})
+        result = repro_check_flow.kickoff({"crewai_trigger_payload": trigger_payload})
         return result
     except Exception as e:
         raise Exception(f"An error occurred while running the flow with trigger: {e}")

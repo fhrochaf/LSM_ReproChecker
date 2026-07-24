@@ -5,7 +5,10 @@ description = "Flow_ReproAssessLSM_st1 using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.14"
 dependencies = [
-    "crewai[tools]>=1.15.4,<2.0.0"
+    "crewai[anthropic,google-genai,tools]>=1.15.4,<2.0.0",
+    "google-generativeai>=0.8.6",
+    "load-dotenv>=0.1.0",
+    "pypdf>=6.14.2",
 ]
 
 [project.scripts]
@@ -14,9 +17,20 @@ run_crew = "flow_reproassesslsm_st1.main:kickoff"
 plot = "flow_reproassesslsm_st1.main:plot"
 run_with_trigger = "flow_reproassesslsm_st1.main:run_with_trigger"
 
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/flow_reproassesslsm_st1"]
+
 [tool.crewai]
 type = "flow"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
