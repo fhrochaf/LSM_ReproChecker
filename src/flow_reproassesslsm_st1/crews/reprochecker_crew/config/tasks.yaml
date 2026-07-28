@@ -1,24 +1,25 @@
 filter_landslide_mapping_paper:
   description: >
-    Use your PDF search tool to determine whether this paper explores and
-    documents a landslide mapping method. Search for the paper's overall
-    approach, methodology, and results. A qualifying paper must include a
-    description of the methodology (or a reference to a prior publication if
-    the method was previously published), a description of the datasets
-    used, and a description of the results. Exclude papers that only
-    describe landslide inventories, landslide susceptibility mapping
-    methods, or that are review articles.
+    Based only on the abstract provided below, determine whether this paper
+    explores and documents a landslide detection/mapping method. A qualifying paper's
+    abstract must indicate a methodology (or a reference
+    to prior methodology) to detect/map landslides, a description of the datasets used, and a
+    description of the results. Exclude papers that only describe landslide
+    inventories, landslide susceptibility mapping methods, or that are
+    review articles. Do not assume details the abstract doesn't state; if
+    ambiguous, lean toward EXCLUDE and say why in the reason.
+
+    Abstract:
+    {abstract}
   expected_output: >
     Return only the structured fields, no explanatory prose beyond the required short text fields.
     A decision of either INCLUDE or EXCLUDE, followed by justification:
-    - If INCLUDE: briefly state what mapping method is described, and confirm
-      the presence of (1) methodology or reference to prior methodology,
-      (2) dataset description, (3) results description.
+    - If INCLUDE: briefly state what mapping method is being used and with which datasets.
     - If EXCLUDE: state the reason, e.g. "landslide inventory only",
       "susceptibility mapping, not mapping method", "review article",
       or "missing methodology/dataset/results description".
-    The output should be short, around 100 words.
-  agent: paper_analyzer
+    The output should be around 50 words.
+  agent: abstract_screener
 
 check_data_reproducibility:
   description: >
@@ -91,9 +92,11 @@ compile_final_report:
     or availability findings — those are already recorded elsewhere and
     will be attached separately. Base your judgment only on what was
     already reported by the other checks; do not introduce new findings.
+    - If the artifact availability access_status = NOT ACESSIBLE, the assessment should consider only the findings in
+    Data Reproducibility Check and Method Reproducibility Check.
   expected_output: >
-    Return only a json object with a single field, no explanatory prose
-    beyond it:
+    Return only a json object with a single field, no explanatory prose,
+    matching this exact shape:
       {"reproducibility_assessment": "Partially reproducible: datasets are named with retrieval links, but the custom classification code is not available and no repository is provided."}
     Maximum 150 words.
   agent: report_elaborator

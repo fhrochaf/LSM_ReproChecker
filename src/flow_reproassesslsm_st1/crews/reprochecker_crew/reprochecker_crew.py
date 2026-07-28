@@ -1,12 +1,10 @@
-from crewai import Agent, Crew, Process, Task
+from crewai import Agent, Crew, Process, Task, LLM
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
 from ...tools.custom_tool import publication_availability_tool
 from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
-from pathlib import Path
-
-LSM_DOMAIN_INSTRUCTIONS = str(Path(__file__).resolve().parent / "skills" / "lsm_domain_instructions")
+from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_2, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
 @CrewBase
 class ReproCheckerCrew:
@@ -18,15 +16,29 @@ class ReproCheckerCrew:
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    def __init__(self, pdf_path: str):
-        self.pdf_path = pdf_path
+    def __init__(self, pdf_file: str):
+        self.pdf_file = pdf_file
+
+    @agent
+    def abstract_screener(self) -> Agent:
+        return Agent(
+            config=self.agents_config["abstract_screener"],  # type: ignore[index]
+            llm=llm_local
+        )
 
     @agent
     def paper_analyzer(self) -> Agent:
+
+        pdf_tool = PDFSearchTool(
+            pdf=str(PDF_DIR / self.pdf_file),
+            config=EMBEDDING_CONFIG_OPENAI
+        )
+
         return Agent(
             config=self.agents_config["paper_analyzer"],
-            skills=[LSM_DOMAIN_INSTRUCTIONS],
-            tools=[PDFSearchTool(pdf=self.pdf_path)],
+            skills=[str(LSM_DOMAIN_INSTRUCTIONS)],
+            tools=[pdf_tool],
+            llm=llm_2
         )
 
     @agent
@@ -34,12 +46,14 @@ class ReproCheckerCrew:
         return Agent(
             config=self.agents_config["availability_web_scraper"],  # type: ignore[index]
             tools=[publication_availability_tool()],
+            llm=llm_2
         )
 
     @agent
     def report_elaborator(self) -> Agent:
         return Agent(
             config=self.agents_config["report_elaborator"],  # type: ignore[index]
+            llm=llm_local
         )
 
     @task
@@ -53,7 +67,6 @@ class ReproCheckerCrew:
     def check_data_reproducibility(self) -> Task:
         return Task(
             config=self.tasks_config["check_data_reproducibility"],
-            context=[self.filter_landslide_mapping_paper()],
             output_pydantic=DataReproOutput,
         )
 
@@ -61,7 +74,6 @@ class ReproCheckerCrew:
     def check_method_reproducibility(self) -> Task:
         return Task(
             config=self.tasks_config["check_method_reproducibility"],
-            context=[self.filter_landslide_mapping_paper()],
             output_pydantic=MethodReproOutput,
         )
 
@@ -70,7 +82,6 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["check_artifact_availability"],
             async_execution=True,
-            context=[self.filter_landslide_mapping_paper()],
             output_pydantic=AvailabilityOutput,
         )
 
@@ -88,9 +99,9 @@ class ReproCheckerCrew:
 
     @crew
     def filter_crew(self) -> Crew:
-        """Crew that only decides whether the paper qualifies for assessment."""
+        """Crew that only decides whether the paper qualifies, using the abstract only."""
         return Crew(
-            agents=[self.paper_analyzer()],
+            agents=[self.abstract_screener()],
             tasks=[self.filter_landslide_mapping_paper()],
             process=Process.sequential,
             verbose=True,
@@ -98,12 +109,12 @@ class ReproCheckerCrew:
 
     @crew
     def repro_crew(self) -> Crew:
-        """Crew that runs the three reproducibility checks in parallel, then compiles the report.
+        """Crew that runs the three reproducibility checks, then compiles the report.
 
         Only meant to be kicked off after filter_crew has run and returned INCLUDE.
         """
         return Crew(
-            agents=self.agents,
+            agents=[self.paper_analyzer(), self.availability_web_scraper(), self.report_elaborator()],
             tasks=[
                 self.check_data_reproducibility(),
                 self.check_method_reproducibility(),
@@ -113,8 +124,3 @@ class ReproCheckerCrew:
             process=Process.sequential,
             verbose=True,
         )
-
-
-if __name__ == "__main__":
-    crew = ReproCheckerCrew(pdf_path="")
-    crew.filter_crew().kickoff()

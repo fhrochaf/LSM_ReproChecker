@@ -220,9 +220,15 @@ __marimo__/
 .streamlit/secrets.toml
 
 # This project
-documentation_article/
-AGENTS.MD
+.gitignore
 .claude
+
+documentation_article/
 scripts/
+publications/
 tests/
+output/
 obsolete/
+
+AGENTS.md
+prototyping.ipynb

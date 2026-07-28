@@ -53,9 +53,10 @@ class ReproducibilityReport(BaseModel):
     reproducibility_assessment: str
 
 class ReproCheckState(BaseModel):
-    publication_id: int = 0
-    pdf_path: str = ""
+    publication_id: str = ""
+    pdf_file: str = ""
     doi: str = ""
+    abstract: str = ""          # <-- new
     filter_decision: str = ""
     filter_reason: str = ""
-    final_report: ReproducibilityReport | FilterOutput | None = None
+    final_report: object = None
