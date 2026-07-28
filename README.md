@@ -1,56 +1,50 @@
-# {{crew_name}} Crew
+# LSM ReproChecker
 
-Welcome to the {{crew_name}} Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+A [CrewAI](https://crewai.com) flow that automatically screens landslide susceptibility mapping (LSM) publications and assesses their reproducibility, as part of an MSc thesis at the University of Twente (Thesis_LAReprod).
 
-## Installation
+## What it does
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+`ReproCheckFlow` (`src/flow_reproassesslsm_st1/main.py`) processes one publication at a time from a Scopus export CSV:
 
-First, if you haven't already, install uv:
+1. **Filter** — an `abstract_screener` agent reads the abstract and decides whether the paper is actually about landslide mapping (`INCLUDE`/`EXCLUDE`).
+2. **Reproducibility checks** (only if included) — a `paper_analyzer` agent reads the full PDF to extract dataset and method information, while an `availability_web_scraper` agent checks the publication's webpage for data/code availability statements and links.
+3. **Report compilation** — a `report_elaborator` agent combines the above into a final `ReproducibilityAssessment`.
 
-```bash
-pip install uv
-```
+Results are written back into the input CSV and saved as a JSON report per publication in `output/`.
 
-Next, navigate to your project directory and install the dependencies:
+## Project layout
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
+- `src/flow_reproassesslsm_st1/` — the CrewAI flow, crew, agents, tasks, and Pydantic models
+  - `crews/reprochecker_crew/config/` — `agents.yaml` and `tasks.yaml` defining agent roles and task prompts
+  - `tools/` — custom tools (e.g. webpage availability scraper)
+- `publications/` — source PDFs and the Scopus CSV export used as input
+- `output/` — generated per-publication reproducibility reports (JSON)
+- `tests/` — pytest suite covering the flow, crew config, and filtering logic
+- `scripts/` — maintenance/utility scripts
+- `prototyping.ipynb`, `debug_flow.ipynb` — exploratory notebooks
 
-### Customizing
+## Setup
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/flow_reproassesslsm_st1/config/agents.yaml` to define your agents
-- Modify `src/flow_reproassesslsm_st1/config/tasks.yaml` to define your tasks
-- Modify `src/flow_reproassesslsm_st1/crew.py` to add your own logic, tools and specific args
-- Modify `src/flow_reproassesslsm_st1/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your flow and begin execution, run this from the root folder of your project:
+Requires Python >=3.10,<3.14 and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-crewai run
+uv sync
 ```
 
-This command initializes the Flow_ReproAssessLSM_st1 Flow as defined in your configuration.
+Add required API keys (e.g. `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) to a `.env` file. A local [Ollama](https://ollama.com) instance is used for some agents (`llama3.2`), so make sure it's running if you use those.
 
-This example, unmodified, will run a content creation flow on AI Agents and save the output to `output/post.md`.
+## Running
 
-## Understanding Your Crew
+```bash
+uv run kickoff          # run the flow against the configured publication(s)
+uv run plot              # generate a flow diagram
+uv run run_with_trigger '<json_payload>'   # run the flow with a single trigger payload
+```
 
-The Flow_ReproAssessLSM_st1 Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+Currently `kickoff()` is hardcoded to process a single EID for testing; see the commented-out loop in `main.py` for batch processing over the whole CSV.
 
-## Support
+## Testing
 
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
-
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+```bash
+uv run pytest
+```
