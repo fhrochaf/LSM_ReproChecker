@@ -1,10 +1,13 @@
+import re
+from pathlib import Path
+
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
 from ...tools.custom_tool import publication_availability_tool
 from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
-from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_2, PDF_DIR, EMBEDDING_CONFIG_OPENAI
+from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
 @CrewBase
 class ReproCheckerCrew:
@@ -19,6 +22,18 @@ class ReproCheckerCrew:
     def __init__(self, pdf_file: str):
         self.pdf_file = pdf_file
 
+    def _pdf_collection_name(self) -> str:
+        """Derive a Chroma-safe collection name unique to this PDF.
+
+        Each paper needs its own collection: PDFSearchTool otherwise
+        defaults to a single shared collection, so paper analyzed later
+        in a batch run would retrieve chunks from earlier papers too.
+        """
+        stem = Path(self.pdf_file).stem
+        safe = re.sub(r"[^a-zA-Z0-9_-]", "_", stem).strip("_-") or "pdf"
+        name = f"pdf_{safe}"
+        return name[:63].rstrip("_-") or "pdf_doc"
+
     @agent
     def abstract_screener(self) -> Agent:
         return Agent(
@@ -29,16 +44,17 @@ class ReproCheckerCrew:
     @agent
     def paper_analyzer(self) -> Agent:
 
-        pdf_tool = PDFSearchTool(
-            pdf=str(PDF_DIR / self.pdf_file),
-            config=EMBEDDING_CONFIG_OPENAI
-        )
+        # pdf_tool = PDFSearchTool(
+        #     pdf=str(PDF_DIR / self.pdf_file),
+        #     config=EMBEDDING_CONFIG_OPENAI,
+        #     collection_name=self._pdf_collection_name(),
+        # )
 
         return Agent(
             config=self.agents_config["paper_analyzer"],
             skills=[str(LSM_DOMAIN_INSTRUCTIONS)],
-            tools=[pdf_tool],
-            llm=llm_2
+            # tools=[pdf_tool],
+            llm=llm_large
         )
 
     @agent
@@ -46,7 +62,7 @@ class ReproCheckerCrew:
         return Agent(
             config=self.agents_config["availability_web_scraper"],  # type: ignore[index]
             tools=[publication_availability_tool()],
-            llm=llm_2
+            llm=llm_large
         )
 
     @agent

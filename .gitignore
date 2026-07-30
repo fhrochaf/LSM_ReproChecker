@@ -224,11 +224,7 @@ __marimo__/
 .claude
 
 scripts/
-publications/
 tests/
 output/
 obsolete/
 documentation_publication/
-
-AGENTS.md/
-prototyping.ipynb/

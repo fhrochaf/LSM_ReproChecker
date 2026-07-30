@@ -11,22 +11,44 @@ PDF_DIR.mkdir(exist_ok=True)
 
 INPUTS_PATH = PDF_DIR / "scopus_export_Jul_22_2026_query1.csv"
 
-OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output2"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
+#-------- LLM CONFIGS --------
+
+### Local/Smaller LLM's
+
+# llm_local = LLM(
+#     model="ollama/llama3.2",
+#     base_url="http://localhost:11434",
+#     temperature=0
+# )
 llm_local = LLM(
-    model="ollama/llama3.2",
-    base_url="http://localhost:11434"
+    model="ollama/qwen3",
+    base_url="http://localhost:11434",
+    temperature=0
 )
 
-llm_2 = LLM(
-    model="anthropic/claude-sonnet-5")
+### Remote/Larger LLM's
+
+## Anthropic Large LLM
+# llm_large = LLM(
+#     model="anthropic/claude-sonnet-5",
+#     temperature=0
+# )
+
+### DeepSeek Large LLM
+llm_large = LLM(
+    model="deepseek/deepseek-v4-pro",  # This specific model ID
+    base_url="https://api.deepseek.com/v1",
+    temperature=0
+)
 
 EMBEDDING_CONFIG_OPENAI = {
     "embedding_model": {
         "provider": "openai",
         "config": {
-            "model": "text-embedding-3-small",
+            "model_name": "text-embedding-3-small",
         },
     },
 }

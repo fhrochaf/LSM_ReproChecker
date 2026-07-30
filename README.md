@@ -33,6 +33,23 @@ uv sync
 
 Add required API keys (e.g. `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`) to a `.env` file. A local [Ollama](https://ollama.com) instance is used for some agents (`llama3.2`), so make sure it's running if you use those.
 
+## Serving local LLMs with Ollama
+
+```bash
+# Pull the desired model (only required once)
+ollama pull qwen3
+
+# Verify that the model is available locally
+ollama list
+
+# (Optional) Test the model interactively
+ollama run qwen3
+
+# Start the Ollama server only if it is not already running
+# (On Windows, Ollama is typically started automatically.)
+ollama serve
+```
+
 ## Running
 
 ```bash
