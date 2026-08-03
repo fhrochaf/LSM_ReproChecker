@@ -5,7 +5,6 @@ from crewai import LLM
 LSM_DOMAIN_INSTRUCTIONS = Path(__file__).resolve().parent / "crews" / "reprochecker_crew" / "skills" / "lsm_domain_instructions"
 LSM_DOMAIN_INSTRUCTIONS.mkdir(exist_ok=True)
 
-
 PDF_DIR = Path(__file__).resolve().parent.parent.parent / "publications"
 PDF_DIR.mkdir(exist_ok=True)
 
@@ -38,9 +37,15 @@ llm_local = LLM(
 # )
 
 ### DeepSeek Large LLM
+# llm_large = LLM(
+#     model="deepseek/deepseek-v4-pro",  # This specific model ID
+#     base_url="https://api.deepseek.com/v1",
+#     temperature=0
+# )
+
 llm_large = LLM(
-    model="deepseek/deepseek-v4-pro",  # This specific model ID
-    base_url="https://api.deepseek.com/v1",
+    model="ollama/qwen3",
+    base_url="http://localhost:11434",
     temperature=0
 )
 
