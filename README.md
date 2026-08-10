@@ -1,6 +1,6 @@
 # LSM ReproChecker
 
-A [CrewAI](https://crewai.com) flow that automatically screens landslide susceptibility mapping (LSM) publications and assesses their reproducibility, as part of an MSc thesis at the University of Twente (Thesis_LAReprod).
+A [CrewAI](https://crewai.com) flow that automatically screens publications on landslide mapping (LSM) to check their detection methods and assess their reproducibility.
 
 ## What it does
 
@@ -19,9 +19,7 @@ Results are written back into the input CSV and saved as a JSON report per publi
   - `tools/` — custom tools (e.g. webpage availability scraper)
 - `publications/` — source PDFs and the Scopus CSV export used as input
 - `output/` — generated per-publication reproducibility reports (JSON)
-- `tests/` — pytest suite covering the flow, crew config, and filtering logic
-- `scripts/` — maintenance/utility scripts
-- `prototyping.ipynb`, `debug_flow.ipynb` — exploratory notebooks
+- `scripts/` — utility scripts
 
 ## Prerequisites
 
@@ -72,9 +70,3 @@ uv run run_with_trigger '<json_payload>'   # run the flow with a single trigger 
 ```
 
 Currently `kickoff()` is hardcoded to process a single EID for testing (it must exist as a row in the input CSV, with a matching `<EID>.pdf` in `publications/`); see the commented-out loop in `main.py` for batch processing over the whole CSV.
-
-## Testing
-
-```bash
-uv run pytest
-```

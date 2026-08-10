@@ -33,11 +33,10 @@ check_data_reproducibility:
     - Dataset name/type (e.g. satellite imagery, landslide inventory)
     - Source/provider, if indicated
     - Retrieval link or access statement, if provided in the paper
-    - A flag: AVAILABLE (link/source clearly given), PARTIALLY AVAILABLE
-      (source named but no retrieval link), or NOT AVAILABLE (no source or
-      link indicated)s
+    - A flag: MENTIONED (link/source clearly given or source named but no retrieval link),
+    or NOT_MENTIONED (no source or link indicated)
     It must match this exact shape:
-      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_AVAILABLE"}]}
+      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED"}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_MENTIONED"}]}
 
   agent: paper_analyzer
 
@@ -48,7 +47,7 @@ check_method_reproducibility:
     dataset, custom code for another). For each, check the methodology
     section, footnotes, and appendices for algorithm/software details and
     any code or repository references. Classify each as:
-    1. MANUAL — human interpretation, no code expected.
+    1. MANUAL — human interpretation/visual inspection, no code expected.
     2. SOFTWARE — existing named software used as-is, no custom code expected.
     3. CUSTOM_CODE — custom/algorithmic method; search for accompanying code
        and report FOUND or NOT_FOUND.
@@ -67,19 +66,30 @@ check_artifact_availability:
     data/code availability sections) to determine whether data and code
     artifacts are actually available, and capture any explicit author
     statements on availability and reproducibility.
-    Data available upon request is considered NOT AVAILABLE.
+    Data available upon request is considered NOT_MENTIONED.
 
     Publication URL:
     {doi_url}
   expected_output: >
-    Return only the structured fields, no explanatory prose beyond the required short text fields.A summary including:
-    - The DOI/URL checked
-    - Access status of the publication page: OPEN ACCESS / PAYWALLED / NOT FOUND
-    - Data availability status: AVAILABLE / NOT AVAILABLE / NOT STATED,
-      with link(s) if available
-    - Code availability status: AVAILABLE / NOT AVAILABLE / NOT STATED,
-      with link(s) if available
+    Return only the structured fields, no explanatory prose beyond the required short text fields. A summary including:
+    - Access status of the publication page: ACCESSIBLE / NOT_ACCESSIBLE
+    - Data availability status: MENTIONED / NOT_MENTIONED
+    - data_links: one entry per dataset you can identify from the page (data
+      availability section, repository links, supplementary material), each
+      with its name/type, source/provider if named, the retrieval link, and
+      a per-entry status of MENTIONED (with a link when provieded), or NOT_MENTIONED. Leave empty if none found.
+    - Code availability status: MENTIONED / NOT_MENTIONED
+    - code_links: one entry per code/software artifact you can identify from
+      the page (code availability section, repository links), each with a
+      short name/label, method_type (use CUSTOM_CODE if it's a repository of
+      custom code, SOFTWARE if it's named existing software, otherwise your
+      best judgment from what the page states), a one-sentence summary of
+      what the link/statement says, code_status (FOUND, since it's listed),
+      the code_link, and reused_citation if the page states the code is from
+      a prior publication. Leave empty if none found.
     - Any direct author statement on availability or reproducibility
+    It must match this exact shape:
+      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "summary": "Code availability section links to a GitHub repository with the classification pipeline.", "code_status": "FOUND", "code_link": "https://github.com/example/repo", "reused_citation": null}], "author_statement": "Data and code are available upon reasonable request."}
   agent: availability_web_scraper
 
 
@@ -94,6 +104,31 @@ compile_final_report:
     already reported by the other checks; do not introduce new findings.
     - If the artifact availability access_status = NOT ACESSIBLE, the assessment should consider only the findings in
     Data Reproducibility Check and Method Reproducibility Check.
+  expected_output: >
+    Return only a json object with a single field, no explanatory prose,
+    matching this exact shape:
+      {"reproducibility_assessment": "Partially reproducible: datasets are named with retrieval links, but the custom classification code is not available and no repository is provided."}
+    Maximum 150 words.
+  agent: report_elaborator
+
+compile_final_report_from_availability:
+  description: >
+    Using the outputs from the data reproducibility check and method
+    reproducibility check, together with the artifact availability
+    information below (already determined from the publication webpage
+    beforehand — do not re-check it), form an overall qualitative
+    judgment of whether the paper's data and methods are available to
+    reproduce the study. Do not restate or summarize the datasets,
+    methods, or availability findings — those are already recorded
+    elsewhere and will be attached separately. Base your judgment only
+    on what was already reported by the other checks and the
+    availability information below; do not introduce new findings.
+    - If the artifact availability access_status = NOT_ACCESSIBLE, the
+    assessment should consider only the findings in Data Reproducibility
+    Check and Method Reproducibility Check.
+
+    Artifact availability (pre-recorded from the publication webpage):
+    {availability_summary}
   expected_output: >
     Return only a json object with a single field, no explanatory prose,
     matching this exact shape:

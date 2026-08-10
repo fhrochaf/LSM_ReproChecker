@@ -44,11 +44,11 @@ class ReproCheckerCrew:
     @agent
     def paper_analyzer(self) -> Agent:
 
-        # pdf_tool = PDFSearchTool(
-        #     pdf=str(PDF_DIR / self.pdf_file),
-        #     config=EMBEDDING_CONFIG_OPENAI,
-        #     collection_name=self._pdf_collection_name(),
-        # )
+        pdf_tool = PDFSearchTool(
+            pdf=str(PDF_DIR / self.pdf_file),
+            config=EMBEDDING_CONFIG_OPENAI,
+            collection_name=self._pdf_collection_name(),
+        )
 
         return Agent(
             config=self.agents_config["paper_analyzer"],
@@ -113,12 +113,45 @@ class ReproCheckerCrew:
             output_pydantic=ReproducibilityAssessment,
         )
 
+    @task
+    def compile_final_report_from_availability(self) -> Task:
+        """Same as compile_final_report, but sources artifact availability from
+        pre-filled CSV fields (via the `availability_summary` input) instead of
+        from a check_artifact_availability task run.
+        """
+        return Task(
+            config=self.tasks_config["compile_final_report_from_availability"],
+            context=[
+                self.check_data_reproducibility(),
+                self.check_method_reproducibility(),
+            ],
+            output_pydantic=ReproducibilityAssessment,
+        )
+
     @crew
     def filter_crew(self) -> Crew:
         """Crew that only decides whether the paper qualifies, using the abstract only."""
         return Crew(
             agents=[self.abstract_screener()],
             tasks=[self.filter_landslide_mapping_paper()],
+            process=Process.sequential,
+            verbose=True,
+        )
+
+    @crew
+    def repro_crew_from_csv(self) -> Crew:
+        """Crew that runs the data and method reproducibility checks, then
+        compiles the report using artifact availability info already
+        pre-filled in the inputs CSV (Webpage_* columns), skipping
+        check_artifact_availability entirely.
+        """
+        return Crew(
+            agents=[self.paper_analyzer(), self.report_elaborator()],
+            tasks=[
+                self.check_data_reproducibility(),
+                self.check_method_reproducibility(),
+                self.compile_final_report_from_availability(),
+            ],
             process=Process.sequential,
             verbose=True,
         )

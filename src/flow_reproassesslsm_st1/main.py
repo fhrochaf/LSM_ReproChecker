@@ -1,10 +1,71 @@
-from crewai.flow import Flow, listen, start, router
+from crewai.flow import Flow, listen, start, router, or_
 import pandas as pd
 import json
 
 from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew
-from flow_reproassesslsm_st1.models import ReproCheckState, ReproducibilityReport, FilterOutput
+from flow_reproassesslsm_st1.models import (
+    ReproCheckState,
+    ReproducibilityReport,
+    FilterOutput,
+    AvailabilityOutput,
+    DatasetEntry,
+    MethodEntry,
+)
 from flow_reproassesslsm_st1.config import INPUTS_PATH, OUTPUT_DIR
+
+# Webpage_* columns filled in by run_repro_check / already present in the
+# inputs CSV. If the required ones are present for a row, artifact
+# availability checking is skipped and those values are reused instead.
+REQUIRED_AVAILABILITY_FIELDS = [
+    "Webpage_Access_Status",
+    "Webpage_Data_Status",
+    "Webpage_Code_Status",
+]
+
+
+def _ensure_str_columns(df: pd.DataFrame, columns: list[str]) -> None:
+    """Force the given columns to object dtype (creating them if absent).
+
+    Columns that are all-blank in the CSV get inferred as float64 (NaN) on
+    read; assigning a string into them via .loc then raises LossySetitemError
+    instead of silently upcasting, so we normalize the dtype up front.
+    """
+    for col in columns:
+        if col not in df.columns:
+            df[col] = pd.Series([pd.NA] * len(df), index=df.index, dtype="object")
+        elif df[col].dtype != object:
+            df[col] = df[col].astype(object)
+
+
+def _get_row(df: pd.DataFrame, publication_id: str) -> pd.Series | None:
+    mask = df["EID"].astype(str).str.strip() == str(publication_id).strip()
+    if not mask.any():
+        return None
+    return df.loc[mask].iloc[0]
+
+
+def _row_has_prefilled_availability(df: pd.DataFrame, row: pd.Series) -> bool:
+    if not all(field in df.columns for field in REQUIRED_AVAILABILITY_FIELDS):
+        return False
+    return all(pd.notna(row.get(field)) and str(row.get(field)).strip() for field in REQUIRED_AVAILABILITY_FIELDS)
+
+
+def _parse_json_list(value) -> list[dict]:
+    if value is None or pd.isna(value) or not str(value).strip():
+        return []
+    return json.loads(value)
+
+
+def _availability_from_row(row: pd.Series) -> AvailabilityOutput:
+    author_statement = row.get("Webpage_Author_Statement")
+    return AvailabilityOutput(
+        access_status=str(row["Webpage_Access_Status"]).strip(),
+        data_status=str(row["Webpage_Data_Status"]).strip(),
+        data_links=[DatasetEntry(**d) for d in _parse_json_list(row.get("Webpage_Data_Links"))],
+        code_status=str(row["Webpage_Code_Status"]).strip(),
+        code_links=[MethodEntry(**c) for c in _parse_json_list(row.get("Webpage_Code_Links"))],
+        author_statement=str(author_statement).strip() if pd.notna(author_statement) and str(author_statement).strip() else None,
+    )
 
 
 class ReproCheckFlow(Flow[ReproCheckState]):
@@ -40,6 +101,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         df = pd.read_csv(INPUTS_PATH, sep=';')
         df.columns = df.columns.str.strip()
+        _ensure_str_columns(df, ["Filter_Decision", "Filter_Reason"])
 
         mask = df["EID"].astype(str).str.strip() == str(self.state.publication_id).strip()
         if not mask.any():
@@ -65,6 +127,24 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         )
 
     @listen("included")
+    def check_prefilled_availability(self):
+        df = pd.read_csv(INPUTS_PATH, sep=';')
+        df.columns = df.columns.str.strip()
+        row = _get_row(df, self.state.publication_id)
+
+        if row is not None and _row_has_prefilled_availability(df, row):
+            print(f"Prefilled availability found for EID={self.state.publication_id}, skipping artifact availability check.")
+            self.state.prefilled_availability = _availability_from_row(row)
+            return "prefilled"
+
+        print(f"No prefilled availability for EID={self.state.publication_id}, running full artifact availability check.")
+        return "not_prefilled"
+
+    @router(check_prefilled_availability)
+    def route_on_availability(self, decision):
+        return decision
+
+    @listen("not_prefilled")
     def run_repro_check(self):
         print(f"Paper included, running reproducibility checks on: {self.state.pdf_file}")
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
@@ -84,6 +164,17 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         df = pd.read_csv(INPUTS_PATH, sep=';')
         df.columns = df.columns.str.strip()
+        _ensure_str_columns(df, [
+            "Datasets",
+            "Methods",
+            "Webpage_Access_Status",
+            "Webpage_Data_Status",
+            "Webpage_Data_Links",
+            "Webpage_Code_Status",
+            "Webpage_Code_Links",
+            "Webpage_Author_Statement",
+            "Reproducibility_Assessment",
+        ])
 
         mask = df["EID"].astype(str).str.strip() == str(self.state.publication_id).strip()
         if not mask.any():
@@ -98,16 +189,51 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         df.loc[mask, "Webpage_Access_Status"] = avail.access_status
         df.loc[mask, "Webpage_Data_Status"] = avail.data_status
-        df.loc[mask, "Webpage_Data_Links"] = ", ".join(avail.data_links) if avail.data_links else ""
+        df.loc[mask, "Webpage_Data_Links"] = json.dumps([d.model_dump() for d in avail.data_links]) if avail.data_links else ""
         df.loc[mask, "Webpage_Code_Status"] = avail.code_status
-        df.loc[mask, "Webpage_Code_Links"] = ", ".join(avail.code_links) if avail.code_links else ""
+        df.loc[mask, "Webpage_Code_Links"] = json.dumps([c.model_dump() for c in avail.code_links]) if avail.code_links else ""
         df.loc[mask, "Webpage_Author_Statement"] = avail.author_statement or ""
 
         df.loc[mask, "Reproducibility_Assessment"] = report.reproducibility_assessment
 
         df.to_csv(INPUTS_PATH, sep=';', index=False)
-     
-    @listen(run_repro_check)
+
+    @listen("prefilled")
+    def run_repro_check_from_csv(self):
+        print(f"Paper included, running reproducibility checks (availability pre-filled from CSV) on: {self.state.pdf_file}")
+        avail_output = self.state.prefilled_availability
+        inputs = {"availability_summary": avail_output.model_dump_json(indent=2)}
+        self._crew.repro_crew_from_csv().kickoff(inputs=inputs)
+
+        data_output = self._crew.check_data_reproducibility().output.pydantic
+        method_output = self._crew.check_method_reproducibility().output.pydantic
+        assessment_output = self._crew.compile_final_report_from_availability().output.pydantic
+
+        self.state.final_report = ReproducibilityReport(
+            datasets=data_output.datasets,
+            methods=method_output.methods,
+            availability=avail_output,
+            reproducibility_assessment=assessment_output.reproducibility_assessment,
+        )
+
+        df = pd.read_csv(INPUTS_PATH, sep=';')
+        df.columns = df.columns.str.strip()
+        _ensure_str_columns(df, ["Datasets", "Methods", "Reproducibility_Assessment"])
+
+        mask = df["EID"].astype(str).str.strip() == str(self.state.publication_id).strip()
+        if not mask.any():
+            print(f"Warning: EID {self.state.publication_id} not found in {INPUTS_PATH}, findings not recorded.")
+            return
+
+        report = self.state.final_report
+
+        df.loc[mask, "Datasets"] = json.dumps([d.model_dump() for d in report.datasets])
+        df.loc[mask, "Methods"] = json.dumps([m.model_dump() for m in report.methods])
+        df.loc[mask, "Reproducibility_Assessment"] = report.reproducibility_assessment
+
+        df.to_csv(INPUTS_PATH, sep=';', index=False)
+
+    @listen(or_(run_repro_check, run_repro_check_from_csv))
     def save_report(self):
         try:
             print("Saving report")

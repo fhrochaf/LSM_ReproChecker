@@ -9,7 +9,7 @@ class DatasetEntry(BaseModel):
     name: str = Field(description="Short dataset name or type, around 20 words")
     source: str | None = Field(default=None, description="Provider or organization name")
     link: str | None = Field(default=None, description="A single URL")
-    status: Literal["AVAILABLE", "PARTIALLY_AVAILABLE", "NOT_AVAILABLE"]
+    status: Literal["MENTIONED", "NOT_MENTIONED"]
 
 class DataReproOutput(BaseModel):
     datasets: list[DatasetEntry] = Field(
@@ -23,7 +23,7 @@ class MethodEntry(BaseModel):
     name: str = Field(description="Short name/label for the method, around 10-20 words")
     method_type: Literal["MANUAL", "SOFTWARE", "CUSTOM_CODE", "REUSED"]
     summary: str  # one or two sentences, not a paragraph
-    code_status: Literal["FOUND", "NOT_FOUND", "N/A"]
+    code_status: Literal["MENTIONED", "NOT_MENTIONED"]
     code_link: str | None
     reused_citation: str | None
 
@@ -37,10 +37,10 @@ class MethodReproOutput(BaseModel):
 
 class AvailabilityOutput(BaseModel):
     access_status: Literal["ACCESSIBLE", "NOT_ACCESSIBLE"]
-    data_status: Literal["AVAILABLE", "NOT_AVAILABLE", "NOT_STATED"]
-    data_links: list[str]
-    code_status: Literal["AVAILABLE", "NOT_AVAILABLE", "NOT_STATED"]
-    code_links: list[str]
+    data_status: Literal["MENTIONED", "NOT_MENTIONED"]
+    data_links: list[DatasetEntry]
+    code_status: Literal["MENTIONED", "NOT_MENTIONED"]
+    code_links: list[MethodEntry]
     author_statement: str | None
 
 class ReproducibilityAssessment(BaseModel):
@@ -56,7 +56,8 @@ class ReproCheckState(BaseModel):
     publication_id: str = ""
     pdf_file: str = ""
     doi: str = ""
-    abstract: str = ""          # <-- new
+    abstract: str = ""
     filter_decision: str = ""
     filter_reason: str = ""
+    prefilled_availability: object = None
     final_report: object = None
