@@ -1,6 +1,9 @@
+from openai import max_retries
+from asyncio import timeouts
 from crewai.flow import Flow, listen, start, router, or_
 import pandas as pd
 import json
+import argparse
 
 from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew
 from flow_reproassesslsm_st1.models import (
@@ -22,6 +25,22 @@ REQUIRED_AVAILABILITY_FIELDS = [
     "Webpage_Code_Status",
 ]
 
+# Some rows were prefilled from an older/manual process whose JSON shape and
+# status vocabulary differ from what the current pipeline writes: entries may
+# come wrapped as {"datasets": [...]} / {"methods": [...]} instead of a bare
+# array, and use a richer status vocabulary instead of MENTIONED/NOT_MENTIONED.
+_DATASET_STATUS_ALIASES = {
+    "AVAILABLE": "MENTIONED",
+    "PARTIALLY_AVAILABLE": "MENTIONED",
+    "NOT_AVAILABLE": "NOT_MENTIONED",
+}
+_METHOD_CODE_STATUS_ALIASES = {
+    "FOUND": "MENTIONED",
+    "NOT_FOUND": "NOT_MENTIONED",
+    "N/A": "NOT_MENTIONED",
+}
+
+REPORT_TAIL_NAME = "_repro_report_llama4_scout"
 
 def _ensure_str_columns(df: pd.DataFrame, columns: list[str]) -> None:
     """Force the given columns to object dtype (creating them if absent).
@@ -47,13 +66,30 @@ def _get_row(df: pd.DataFrame, publication_id: str) -> pd.Series | None:
 def _row_has_prefilled_availability(df: pd.DataFrame, row: pd.Series) -> bool:
     if not all(field in df.columns for field in REQUIRED_AVAILABILITY_FIELDS):
         return False
-    return all(pd.notna(row.get(field)) and str(row.get(field)).strip() for field in REQUIRED_AVAILABILITY_FIELDS)
+
+    if row.get(REQUIRED_AVAILABILITY_FIELDS[0]).strip() != "ACCESSIBLE":
+        return False
+    else:
+        return any(pd.notna(row.get(field)) and str(row.get(field)).strip() for field in REQUIRED_AVAILABILITY_FIELDS[1:])
 
 
-def _parse_json_list(value) -> list[dict]:
+def _parse_json_list(value, wrapper_key: str) -> list[dict]:
     if value is None or pd.isna(value) or not str(value).strip():
         return []
-    return json.loads(value)
+    parsed = json.loads(value)
+    if isinstance(parsed, dict):
+        parsed = parsed.get(wrapper_key, [])
+    return parsed
+
+
+def _coerce_dataset_entry(d: dict) -> DatasetEntry:
+    status = d.get("status")
+    return DatasetEntry(**{**d, "status": _DATASET_STATUS_ALIASES.get(status, status)})
+
+
+def _coerce_method_entry(c: dict) -> MethodEntry:
+    code_status = c.get("code_status")
+    return MethodEntry(**{**c, "code_status": _METHOD_CODE_STATUS_ALIASES.get(code_status, code_status)})
 
 
 def _availability_from_row(row: pd.Series) -> AvailabilityOutput:
@@ -61,9 +97,9 @@ def _availability_from_row(row: pd.Series) -> AvailabilityOutput:
     return AvailabilityOutput(
         access_status=str(row["Webpage_Access_Status"]).strip(),
         data_status=str(row["Webpage_Data_Status"]).strip(),
-        data_links=[DatasetEntry(**d) for d in _parse_json_list(row.get("Webpage_Data_Links"))],
+        data_links=[_coerce_dataset_entry(d) for d in _parse_json_list(row.get("Webpage_Data_Links"), "datasets")],
         code_status=str(row["Webpage_Code_Status"]).strip(),
-        code_links=[MethodEntry(**c) for c in _parse_json_list(row.get("Webpage_Code_Links"))],
+        code_links=[_coerce_method_entry(c) for c in _parse_json_list(row.get("Webpage_Code_Links"), "methods")],
         author_statement=str(author_statement).strip() if pd.notna(author_statement) and str(author_statement).strip() else None,
     )
 
@@ -87,18 +123,13 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         print(f"PDF pdf_file: {self.state.pdf_file}")
         print(f"DOI: {self.state.doi}")
 
-        self._crew = ReproCheckerCrew(pdf_file=self.state.pdf_file)
+        try:
+            self._crew = ReproCheckerCrew(pdf_file=self.state.pdf_file)
+        except Exception as e:
+            print(f"Error loading inputs: {e}")
 
     @listen(load_inputs)
     def filter_paper(self):
-        print(f"Filtering paper (abstract-only): {self.state.pdf_file}")
-        filter_result = self._crew.filter_crew().kickoff(
-            inputs={"abstract": self.state.abstract}
-        )
-
-        self.state.filter_decision = filter_result.pydantic.decision
-        self.state.filter_reason = filter_result.pydantic.reason
-
         df = pd.read_csv(INPUTS_PATH, sep=';')
         df.columns = df.columns.str.strip()
         _ensure_str_columns(df, ["Filter_Decision", "Filter_Reason"])
@@ -108,23 +139,37 @@ class ReproCheckFlow(Flow[ReproCheckState]):
             print(f"Warning: EID {self.state.publication_id} not found in {INPUTS_PATH}, decision not recorded.")
             return
 
-        df.loc[mask, "Filter_Decision"] = self.state.filter_decision
-        df.loc[mask, "Filter_Reason"] = self.state.filter_reason
-        df.to_csv(INPUTS_PATH, sep=';', index=False)
+        value = df.loc[mask, "Filter_Decision"].iloc[0]
+        if pd.isna(value) or str(value).strip() not in ["INCLUDE", "EXCLUDE"]:
+            print(f"Filtering paper (abstract-only): {self.state.pdf_file}")
+            filter_result = self._crew.filter_crew().kickoff(
+                inputs={"abstract": self.state.abstract}
+            )
+            self.state.filter_decision = filter_result.pydantic.decision
+            self.state.filter_reason = filter_result.pydantic.reason
 
-        return filter_result.pydantic.decision  # passed into the router
+            df.loc[mask, "Filter_Decision"] = self.state.filter_decision
+            df.loc[mask, "Filter_Reason"] = self.state.filter_reason
+            df.to_csv(INPUTS_PATH, sep=';', index=False)
+
+            return filter_result.pydantic.decision  # passed into the router
+        else:
+            print(f"Filter decision already recorded for EID={self.state.publication_id}, skipping.")
+            self.state.filter_decision = df.loc[mask, "Filter_Decision"].iloc[0].strip()
+            self.state.filter_reason = df.loc[mask, "Filter_Reason"].iloc[0].strip()
+            return self.state.filter_decision
 
     @router(filter_paper)
     def route_on_filter(self, decision):
         return "included" if decision == "INCLUDE" else "excluded"
 
     @listen("excluded")
-    def write_exclusion(self):
-        print(f"Paper excluded: {self.state.filter_reason}")
-        self.state.final_report = FilterOutput(
-            decision=self.state.filter_decision,
-            reason=self.state.filter_reason,
-        )
+    def skip_paper(self):
+        print(f"Paper skipped: {self.state.filter_reason}")
+        # self.state.final_report = FilterOutput(
+        #     decision=self.state.filter_decision,
+        #     reason=self.state.filter_reason,
+        # )
 
     @listen("included")
     def check_prefilled_availability(self):
@@ -237,66 +282,64 @@ class ReproCheckFlow(Flow[ReproCheckState]):
     def save_report(self):
         try:
             print("Saving report")
-            output_file = OUTPUT_DIR / f"{self.state.publication_id}_repro_report.json"
+            output_file = OUTPUT_DIR / f"{self.state.publication_id}{REPORT_TAIL_NAME}.json"
             
             report = self.state.final_report.model_dump_json(indent=2)
             
-            with open(output_file, "w") as f:
+            with open(output_file, "w", encoding="utf-8") as f:
                 f.write(report)
             print(f"Report saved to {output_file}")
         except Exception as e:
             print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
 
-def kickoff():
-    
+def kickoff(wait_seconds=60, max_retries=2):
+    import os
+    import time
+
     try:
         df = pd.read_csv(INPUTS_PATH, sep=';')
     except Exception as e:
         print(f"Error reading CSV: {e}")
-        raise
-    
-    ### TEMP CODE #######
-    publication_id = "2-s2.0-85130393221"
-    row = df.loc[df["EID"].astype(str).str.strip() == publication_id].squeeze()
+        raise   
+        
+    for _, row in df.iterrows():
 
-    doi = str(row["DOI"]).strip()
-    abstract = str(row["Abstract"]).strip()
+        # Check if a reproducibility report isn't already available
+        if os.path.exists(OUTPUT_DIR / f"{row['EID']}{REPORT_TAIL_NAME}.json"):
+            print(f"Reproducibility report already available for EID={row['EID']}")
+            continue
 
-    inputs = {
-        "publication_id": publication_id,
-        "pdf_file": f"{publication_id}.pdf",
-        "doi": doi,
-        "abstract": abstract,
-    }
+        # Skip excluded papers entirely:
+        if row["Filter_Decision"] == "EXCLUDE" or row["Human_Filter_Decision"] == "EXCLUDE":
+            print(f"Skipping EID={row['EID']} (excluded)")
+            continue
 
-    print(f"--- Running ReproCheckFlow for EID={publication_id} ---")
-    repro_check_flow = ReproCheckFlow()
-    try:
-        repro_check_flow.kickoff(inputs=inputs)
-    except Exception as e:
-        print(f"Error processing EID={publication_id}: {e}")
-    ### TEMP CODE #######
+        publication_id = str(row["EID"]).strip()
+        doi = str(row["DOI"]).strip()
+        abstract = str(row["Abstract"]).strip()
 
+        inputs = {
+            "publication_id": publication_id,
+            "pdf_file": f"{publication_id}.pdf",
+            "doi": doi,
+            "abstract": abstract,
+        }
 
-    # for _, row in df.iterrows():
-    #     eid = str(row["EID"]).strip()
-    #     doi = str(row["DOI"]).strip()
-    #     abstract = str(row["Abstract"]).strip()
-
-    #     inputs = {
-    #         "publication_id": eid,
-    #         "pdf_file": f"{eid}.pdf",
-    #         "doi": doi,
-    #         "abstract": abstract,
-    #     }
-
-    #     print(f"--- Running ReproCheckFlow for EID={eid} ---")
-    #     repro_check_flow = ReproCheckFlow()
-    #     try:
-    #         repro_check_flow.kickoff(inputs=inputs)
-    #     except Exception as e:
-    #         print(f"Error processing EID={eid}: {e}")
-
+        print(f"--- Running ReproCheckFlow for EID={publication_id} ---")
+        
+        attempt = 0
+        while True:
+            try:
+                repro_check_flow = ReproCheckFlow()
+                repro_check_flow.kickoff(inputs=inputs)
+            except Exception as e:
+                attempt += 1
+                print(f"Error processing EID={publication_id}: {e}")
+                if attempt > max_retries:
+                    print(f"Giving up on EID={publication_id} after {attempt} attempt(s)")
+                    break
+                print(f"Retrying EID={publication_id} in {wait_seconds}s (attempt {attempt}/{max_retries})...")
+                time.sleep(wait_seconds)
 
 def plot():
     repro_check_flow = ReproCheckFlow()
@@ -326,4 +369,10 @@ def run_with_trigger():
 
 
 if __name__ == "__main__":
-    kickoff()
+
+    parser = argparse.ArgumentParser(description="Run reproducibility flow.")
+    parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
+    parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
+    args = parser.parse_args()
+
+    kickoff(wait_seconds=args.wait_seconds, max_retries=args.max_retries)

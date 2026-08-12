@@ -9,6 +9,8 @@ from ...tools.custom_tool import publication_availability_tool
 from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
 from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
+MAX_RPM = 5 # Maximum requests per minute
+
 @CrewBase
 class ReproCheckerCrew:
     """ReproChecker Crew"""
@@ -38,6 +40,7 @@ class ReproCheckerCrew:
     def abstract_screener(self) -> Agent:
         return Agent(
             config=self.agents_config["abstract_screener"],  # type: ignore[index]
+            max_rpm=MAX_RPM,
             llm=llm_local
         )
 
@@ -52,8 +55,9 @@ class ReproCheckerCrew:
 
         return Agent(
             config=self.agents_config["paper_analyzer"],
+            max_rpm=MAX_RPM,
             skills=[str(LSM_DOMAIN_INSTRUCTIONS)],
-            # tools=[pdf_tool],
+            tools=[pdf_tool],
             llm=llm_large
         )
 
@@ -61,6 +65,7 @@ class ReproCheckerCrew:
     def availability_web_scraper(self) -> Agent:
         return Agent(
             config=self.agents_config["availability_web_scraper"],  # type: ignore[index]
+            max_rpm=MAX_RPM,
             tools=[publication_availability_tool()],
             llm=llm_large
         )
@@ -69,7 +74,8 @@ class ReproCheckerCrew:
     def report_elaborator(self) -> Agent:
         return Agent(
             config=self.agents_config["report_elaborator"],  # type: ignore[index]
-            llm=llm_local
+            max_rpm=MAX_RPM,
+            llm=llm_large
         )
 
     @task
@@ -134,6 +140,7 @@ class ReproCheckerCrew:
         return Crew(
             agents=[self.abstract_screener()],
             tasks=[self.filter_landslide_mapping_paper()],
+            max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
         )
@@ -152,6 +159,7 @@ class ReproCheckerCrew:
                 self.check_method_reproducibility(),
                 self.compile_final_report_from_availability(),
             ],
+            max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
         )
@@ -170,6 +178,7 @@ class ReproCheckerCrew:
                 self.check_artifact_availability(),
                 self.compile_final_report(),
             ],
+            max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
         )

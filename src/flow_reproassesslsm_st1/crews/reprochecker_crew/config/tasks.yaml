@@ -42,22 +42,33 @@ check_data_reproducibility:
 
 check_method_reproducibility:
   description: >
-    Use your PDF search tool to identify every distinct landslide mapping
-    method in the paper (there may be more than one, e.g. manual for one
-    dataset, custom code for another). For each, check the methodology
-    section, footnotes, and appendices for algorithm/software details and
-    any code or repository references. Classify each as:
-    1. MANUAL — human interpretation/visual inspection, no code expected.
-    2. SOFTWARE — existing named software used as-is, no custom code expected.
-    3. CUSTOM_CODE — custom/algorithmic method; search for accompanying code
-       and report FOUND or NOT_FOUND.
-    4. REUSED — identical to a prior publication; report the citation
-       instead of re-describing it.
+    Find every distinct landslide mapping method in the paper using your
+    PDF search tool. Check methodology, footnotes, figures, tables, and
+    appendices.
+
+    ALWAYS use the exact name from the paper, never a generic category:
+    - "U-Net", "ResNet-50", "Mask R-CNN" — NOT "CNN" or "deep learning model"
+    - "Random Forest", "XGBoost", "SVM" — NOT "machine learning"
+    - "logistic regression", "frequency ratio" — NOT "statistical method"
+    Check figure captions and tables too — architecture names often only
+    appear there. Only use a generic name if the paper never states a
+    specific one anywhere.
+
+    Classify each method:
+    1. MANUAL — human interpretation, no code expected.
+    2. SOFTWARE — named existing software, no custom code expected.
+    3. CUSTOM_CODE — custom/algorithmic method; check for code, report
+       MENTIONED or NOT_MENTIONED.
+    4. REUSED — same as a prior publication; give the citation instead of
+       re-describing.
+
+    Each architecture/algorithm is its own entry, even if compared in the
+    same paper.
   expected_output: >
-    Return a json object only, no extra prose. One entry per method found,
-    matching this exact shape:
-      {"methods": [{"name": "Manual photo-interpretation of orthophotos", "method_type": "MANUAL", "summary": "Landslides were manually digitized from post-event orthophotos by two expert interpreters.", "code_status": "N/A", "code_link": null, "reused_citation": null}, {"name": "Random forest classification on Sentinel-2", "method_type": "CUSTOM_CODE", "summary": "A random forest classifier was trained on spectral indices to detect landslide surfaces.", "code_status": "FOUND", "code_link": "https://github.com/example/repo", "reused_citation": null}]}
-    If only one method is described, return an array with a single entry.
+    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields:
+      {"methods": [
+        {"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "summary": "One-sentence summary.", "code_status": "MENTIONED", "code_link": "https://github.com/example/repo", "reused_citation": null}
+      ]}
   agent: paper_analyzer
 
 check_artifact_availability:
@@ -84,54 +95,66 @@ check_artifact_availability:
       short name/label, method_type (use CUSTOM_CODE if it's a repository of
       custom code, SOFTWARE if it's named existing software, otherwise your
       best judgment from what the page states), a one-sentence summary of
-      what the link/statement says, code_status (FOUND, since it's listed),
+      what the link/statement says, code_status (MENTIONED, since it's listed),
       the code_link, and reused_citation if the page states the code is from
       a prior publication. Leave empty if none found.
     - Any direct author statement on availability or reproducibility
     It must match this exact shape:
-      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "summary": "Code availability section links to a GitHub repository with the classification pipeline.", "code_status": "FOUND", "code_link": "https://github.com/example/repo", "reused_citation": null}], "author_statement": "Data and code are available upon reasonable request."}
+      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "summary": "Code availability section links to a GitHub repository with the classification pipeline.", "code_status": "MENTIONED", "code_link": "https://github.com/example/repo", "reused_citation": null}], "author_statement": "Data and code are available upon reasonable request."}
   agent: availability_web_scraper
 
 
 compile_final_report:
   description: >
     Using the outputs from the data reproducibility check, method
-    reproducibility check, and artifact availability check, form an
-    overall qualitative judgment of whether the paper's data and methods
-    are available to reproduce the study. Do not restate or summarize the datasets, methods,
-    or availability findings — those are already recorded elsewhere and
-    will be attached separately. Base your judgment only on what was
-    already reported by the other checks; do not introduce new findings.
-    - If the artifact availability access_status = NOT ACESSIBLE, the assessment should consider only the findings in
-    Data Reproducibility Check and Method Reproducibility Check.
+    reproducibility check, and artifact availability check (given as
+    context above), determine objectively:
+    1. Whether the paper can be attempted to be reproduced overall.
+    2. Whether datasets are provided, referenced, or linked.
+    3. Whether any code used for the methods has a repository link,
+       persistent link, or reference.
+    Base your judgment only on what was already reported by the other
+    checks; do not introduce new findings.
+    - If the artifact availability access_status = NOT_ACCESSIBLE, base
+    the judgment only on the Data Reproducibility Check and Method
+    Reproducibility Check.
   expected_output: >
-    Return only a json object with a single field, no explanatory prose,
-    matching this exact shape:
-      {"reproducibility_assessment": "Partially reproducible: datasets are named with retrieval links, but the custom classification code is not available and no repository is provided."}
-    Maximum 150 words.
+    Return only a json object with a single field "reproducibility_assessment",
+    no explanatory prose. Its value is a concise, objective statement covering,
+    in order:
+    - Overall verdict: Reproducible / Partially reproducible / Not reproducible.
+    - Dataset status: provided, referenced, or linked — or not.
+    - Code status (only if custom code was used in a method): has a
+      repository link, persistent link, or reference — or none.
+    Shape only (placeholder, not real content, do not reuse it):
+      {"reproducibility_assessment": "<verdict>. <dataset status>. <code status if applicable>."}
   agent: report_elaborator
 
 compile_final_report_from_availability:
   description: >
     Using the outputs from the data reproducibility check and method
-    reproducibility check, together with the artifact availability
-    information below (already determined from the publication webpage
-    beforehand — do not re-check it), form an overall qualitative
-    judgment of whether the paper's data and methods are available to
-    reproduce the study. Do not restate or summarize the datasets,
-    methods, or availability findings — those are already recorded
-    elsewhere and will be attached separately. Base your judgment only
-    on what was already reported by the other checks and the
-    availability information below; do not introduce new findings.
-    - If the artifact availability access_status = NOT_ACCESSIBLE, the
-    assessment should consider only the findings in Data Reproducibility
-    Check and Method Reproducibility Check.
+    reproducibility check (given as context above), together with the
+    artifact availability information below (already determined from the
+    publication webpage beforehand — do not re-check it), determine
+    objectively:
+    1. Whether the paper can be attempted to be reproduced overall.
+    2. Whether datasets are provided, referenced, or linked.
+    3. Whether any code used for the methods has a repository link,
+       persistent link, or reference.
+    Base your judgment only on what was already reported by the other
+    checks and the availability information below; do not introduce new
+    findings.
 
     Artifact availability (pre-recorded from the publication webpage):
     {availability_summary}
   expected_output: >
-    Return only a json object with a single field, no explanatory prose,
-    matching this exact shape:
-      {"reproducibility_assessment": "Partially reproducible: datasets are named with retrieval links, but the custom classification code is not available and no repository is provided."}
-    Maximum 150 words.
+    Return only a json object with a single field "reproducibility_assessment",
+    no explanatory prose. Its value is a concise, objective statement covering,
+    in order:
+    - Overall verdict: Reproducible / Partially reproducible / Not reproducible.
+    - Dataset status: provided, referenced, or linked — or not.
+    - Code status (only if custom code was used in a method): has a
+      repository link, persistent link, or reference — or none.
+    Shape only (placeholder, not real content, do not reuse it):
+      {"reproducibility_assessment": "<verdict>. <dataset status>. <code status if applicable>."}
   agent: report_elaborator
