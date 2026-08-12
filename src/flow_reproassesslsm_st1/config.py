@@ -43,7 +43,7 @@ llm_large = LLM(
     model="ollama/llama4:scout",
     base_url="http://localhost:11434",
     temperature=0,
-    num_ctx=200000   # explicitly override Ollama's default context window
+    # num_ctx=200000   # explicitly override Ollama's default context window
 )
 
 # Anthropic Large LLM
