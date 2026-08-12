@@ -332,6 +332,7 @@ def kickoff(wait_seconds=60, max_retries=2):
             try:
                 repro_check_flow = ReproCheckFlow()
                 repro_check_flow.kickoff(inputs=inputs)
+                break
             except Exception as e:
                 attempt += 1
                 print(f"Error processing EID={publication_id}: {e}")
