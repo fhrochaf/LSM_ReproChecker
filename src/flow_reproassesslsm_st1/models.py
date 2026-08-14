@@ -44,19 +44,44 @@ class AvailabilityOutput(BaseModel):
     author_statement: str | None
 
 class ReproducibilityAssessment(BaseModel):
+    reproducibility_status: Literal["REPRODUCIBLE", "PARTIALLY_REPRODUCIBLE", "NOT_REPRODUCIBLE"]
     reproducibility_assessment: str  # one or two sentences, max ~100 words
 
+class ReviewedDatasetEntry(DatasetEntry):
+    relevance_status: Literal["CONFIRMED", "REJECTED"] = Field(
+        description="CONFIRMED if this dataset is genuinely landslide-mapping-related and its link (if any) actually belongs to it, REJECTED otherwise"
+    )
+    relevance_reason: str = Field(description="Short justification for relevance_status")
+    source_excerpt: str | None = Field(default=None, description="Short excerpt from the publication where this dataset and its reference/link appear")
+
+class ReviewedMethodEntry(MethodEntry):
+    relevance_status: Literal["CONFIRMED", "REJECTED"] = Field(
+        description="CONFIRMED if this method is genuinely landslide-mapping-related and its link (if any) actually belongs to it, REJECTED otherwise"
+    )
+    relevance_reason: str = Field(description="Short justification for relevance_status")
+    source_excerpt: str | None = Field(default=None, description="Short excerpt from the publication where this method and its reference/link appear")
+
+class ReportVerificationOutput(BaseModel):
+    datasets: list[ReviewedDatasetEntry] = Field(
+        description="The input dataset list, each entry annotated with relevance_status/relevance_reason/source_excerpt."
+    )
+    methods: list[ReviewedMethodEntry] = Field(
+        description="The input method list, each entry annotated with relevance_status/relevance_reason/source_excerpt."
+    )
+
 class ReproducibilityReport(BaseModel):
-    datasets: list[DatasetEntry]
-    methods: list[MethodEntry]
+    datasets: list[ReviewedDatasetEntry]
+    methods: list[ReviewedMethodEntry]
     availability: AvailabilityOutput
-    reproducibility_assessment: str
+    reproducibility_status: Literal["REPRODUCIBLE", "PARTIALLY_REPRODUCIBLE", "NOT_REPRODUCIBLE"]
+    reproducibility_assessment: str  # one or two sentences, max ~100 words
 
 class ReproCheckState(BaseModel):
     publication_id: str = ""
     pdf_file: str = ""
     doi: str = ""
     abstract: str = ""
+    use_full_text_tool: bool = False
     filter_decision: str = ""
     filter_reason: str = ""
     prefilled_availability: object = None

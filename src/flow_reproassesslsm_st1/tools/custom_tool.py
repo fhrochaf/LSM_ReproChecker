@@ -1,6 +1,7 @@
 import re
 from typing import Any
 
+import pdfplumber
 from bs4 import BeautifulSoup
 from crewai.tools import BaseTool
 from crewai_tools.security.safe_requests import safe_get
@@ -80,3 +81,39 @@ class PublicationAvailabilityTool(BaseTool):
 
 def publication_availability_tool() -> PublicationAvailabilityTool:
     return PublicationAvailabilityTool()
+
+
+class PDFFullTextToolSchema(BaseModel):
+    """Input for PDFFullTextTool (no arguments needed)."""
+
+
+class PDFFullTextTool(BaseTool):
+    """Returns the entire extracted text of a PDF in one call.
+
+    Unlike PDFSearchTool, which retrieves the top-k chunks matching a query
+    via RAG, this tool dumps the full document text into the agent's
+    context, so nothing is left out due to imperfect search queries or
+    chunking.
+    """
+
+    name: str = "Read full PDF content"
+    description: str = (
+        "Returns the complete extracted text of the paper's PDF. Takes no "
+        "arguments — call it once to get the entire document content "
+        "instead of searching for specific passages."
+    )
+    args_schema: type[BaseModel] = PDFFullTextToolSchema
+    pdf_path: str = Field(...)
+
+    def _run(self, **kwargs: Any) -> str:
+        with pdfplumber.open(self.pdf_path) as pdf:
+            pages = [page.extract_text() or "" for page in pdf.pages]
+
+        text = "\n\n".join(pages).strip()
+        if not text:
+            return f"NOT_ACCESSIBLE: no extractable text found in {self.pdf_path}."
+        return text
+
+
+def pdf_full_text_tool(pdf_path: str) -> PDFFullTextTool:
+    return PDFFullTextTool(pdf_path=pdf_path)

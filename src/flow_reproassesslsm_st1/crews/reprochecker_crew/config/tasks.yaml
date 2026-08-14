@@ -104,20 +104,49 @@ check_artifact_availability:
   agent: availability_web_scraper
 
 
+verify_reproducibility_entries:
+  description: >
+    Using your PDF tool, re-check the datasets and methods identified by
+    the data reproducibility check and method reproducibility check (given
+    as context above) against the original publication.
+
+    For each dataset and method entry given to you:
+    1. Confirm it is genuinely related to landslide mapping — not a
+       generic or unrelated dataset/method mistakenly included.
+    2. If a link/reference is given, confirm that link/reference is
+       actually the one associated with that dataset/method in the paper
+       (not a mismatched or unrelated link).
+    3. Set relevance_status to CONFIRMED only if both checks above pass;
+       otherwise REJECTED. Explain your finding in relevance_reason.
+    4. Quote a short excerpt (a sentence or fragment) from the publication
+       where the dataset/method and its reference/link appear, as
+       source_excerpt.
+
+    Do not drop, add, or otherwise alter any of the original entries
+    beyond adding the three verification fields.
+  expected_output: >
+    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields:
+    - datasets: the input dataset list, each entry with relevance_status,
+      relevance_reason, and source_excerpt added.
+    - methods: the input method list, each entry with relevance_status,
+      relevance_reason, and source_excerpt added.
+    It must match this exact shape:
+      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED", "relevance_status": "CONFIRMED", "relevance_reason": "Used as the primary imagery source for landslide detection.", "source_excerpt": "We used Sentinel-2 Level-2A imagery from ESA Copernicus (scihub.copernicus.eu/dhus/) as input to the classifier."}], "methods": [{"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "summary": "One-sentence summary.", "code_status": "MENTIONED", "code_link": "https://github.com/example/repo", "reused_citation": null, "relevance_status": "CONFIRMED", "relevance_reason": "Custom U-Net trained specifically for landslide segmentation; code link matches the repo mentioned in the paper.", "source_excerpt": "Our implementation, based on U-Net with a ResNet-34 encoder, is available at https://github.com/example/repo."}]}
+  agent: paper_reviewer
+
 compile_final_report:
   description: >
-    Using the outputs from the data reproducibility check, method
-    reproducibility check, and artifact availability check (given as
-    context above), determine objectively:
+    Using the outputs from the report verification check and artifact
+    availability check (given as context above), determine objectively:
     1. Whether the paper can be attempted to be reproduced overall.
     2. Whether datasets are provided, referenced, or linked.
     3. Whether any code used for the methods has a repository link,
        persistent link, or reference.
     Base your judgment only on what was already reported by the other
-    checks; do not introduce new findings.
+    checks; do not introduce new findings. Disregard any dataset or method
+    entry whose relevance_status is REJECTED.
     - If the artifact availability access_status = NOT_ACCESSIBLE, base
-    the judgment only on the Data Reproducibility Check and Method
-    Reproducibility Check.
+    the judgment only on the report verification check.
   expected_output: >
     Return only a json object with a single field "reproducibility_assessment",
     no explanatory prose. Its value is a concise, objective statement covering,
@@ -132,29 +161,32 @@ compile_final_report:
 
 compile_final_report_from_availability:
   description: >
-    Using the outputs from the data reproducibility check and method
-    reproducibility check (given as context above), together with the
-    artifact availability information below (already determined from the
-    publication webpage beforehand — do not re-check it), determine
-    objectively:
+    Using the output from the report verification check (given as context
+    above), together with the artifact availability information below
+    (already determined from the publication webpage beforehand — do not
+    re-check it), determine objectively:
     1. Whether the paper can be attempted to be reproduced overall.
     2. Whether datasets are provided, referenced, or linked.
     3. Whether any code used for the methods has a repository link,
        persistent link, or reference.
-    Base your judgment only on what was already reported by the other
-    checks and the availability information below; do not introduce new
-    findings.
+    Base your judgment only on what was already reported by the report
+    verification check and the availability information below; do not
+    introduce new findings. Disregard any dataset or method entry whose
+    relevance_status is REJECTED.
 
     Artifact availability (pre-recorded from the publication webpage):
     {availability_summary}
   expected_output: >
-    Return only a json object with a single field "reproducibility_assessment",
-    no explanatory prose. Its value is a concise, objective statement covering,
-    in order:
-    - Overall verdict: Reproducible / Partially reproducible / Not reproducible.
-    - Dataset status: provided, referenced, or linked — or not.
-    - Code status (only if custom code was used in a method): has a
-      repository link, persistent link, or reference — or none.
+    Return only a json object with two fields, "reproducibility_status" and
+    "reproducibility_assessment", no explanatory prose.
+    - "reproducibility_status": one of REPRODUCIBLE, PARTIALLY_REPRODUCIBLE,
+      NOT_REPRODUCIBLE.
+    - "reproducibility_assessment": a concise, objective one-or-two sentence
+      statement (max ~50 words) covering, in order:
+        - Dataset status: provided, referenced, or linked — or not.
+        - Code status (only if custom code was used in a method): has a
+          repository link, persistent link, or reference — or none.
+      Do not repeat the verdict word here; state the supporting facts only.
     Shape only (placeholder, not real content, do not reuse it):
-      {"reproducibility_assessment": "<verdict>. <dataset status>. <code status if applicable>."}
+      {"reproducibility_status": "PARTIALLY_REPRODUCIBLE", "reproducibility_assessment": "<dataset status>. <code status if applicable>."}
   agent: report_elaborator

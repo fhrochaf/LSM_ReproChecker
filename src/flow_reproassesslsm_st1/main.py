@@ -40,7 +40,7 @@ _METHOD_CODE_STATUS_ALIASES = {
     "N/A": "NOT_MENTIONED",
 }
 
-REPORT_TAIL_NAME = "_repro_report_llama4_scout"
+REPORT_TAIL_NAME = "_report_gemini3_1_flash_lite"
 
 def _ensure_str_columns(df: pd.DataFrame, columns: list[str]) -> None:
     """Force the given columns to object dtype (creating them if absent).
@@ -115,6 +115,9 @@ class ReproCheckFlow(Flow[ReproCheckState]):
             self.state.pdf_file = crewai_trigger_payload.get("pdf_file", "")
             self.state.doi = crewai_trigger_payload.get("doi", "")
             self.state.abstract = crewai_trigger_payload.get("abstract", "")
+            self.state.use_full_text_tool = crewai_trigger_payload.get(
+                "use_full_text_tool", False
+            )
             print(f"Using trigger payload: {crewai_trigger_payload}")
 
         if not self.state.pdf_file or not self.state.doi or not self.state.abstract:
@@ -122,11 +125,16 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         print(f"PDF pdf_file: {self.state.pdf_file}")
         print(f"DOI: {self.state.doi}")
+        print(f"Use full-text PDF tool: {self.state.use_full_text_tool}")
 
         try:
-            self._crew = ReproCheckerCrew(pdf_file=self.state.pdf_file)
+            self._crew = ReproCheckerCrew(
+                pdf_file=self.state.pdf_file,
+                use_full_text_tool=self.state.use_full_text_tool,
+            )
         except Exception as e:
             print(f"Error loading inputs: {e}")
+            raise e
 
     @listen(load_inputs)
     def filter_paper(self):
@@ -166,10 +174,6 @@ class ReproCheckFlow(Flow[ReproCheckState]):
     @listen("excluded")
     def skip_paper(self):
         print(f"Paper skipped: {self.state.filter_reason}")
-        # self.state.final_report = FilterOutput(
-        #     decision=self.state.filter_decision,
-        #     reason=self.state.filter_reason,
-        # )
 
     @listen("included")
     def check_prefilled_availability(self):
@@ -195,14 +199,13 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
         self._crew.repro_crew().kickoff(inputs=inputs)
 
-        data_output = self._crew.check_data_reproducibility().output.pydantic
-        method_output = self._crew.check_method_reproducibility().output.pydantic
+        verification_output = self._crew.verify_reproducibility_entries().output.pydantic
         avail_output = self._crew.check_artifact_availability().output.pydantic
         assessment_output = self._crew.compile_final_report().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=data_output.datasets,
-            methods=method_output.methods,
+            datasets=verification_output.datasets,
+            methods=verification_output.methods,
             availability=avail_output,
             reproducibility_assessment=assessment_output.reproducibility_assessment,
         )
@@ -250,15 +253,15 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         inputs = {"availability_summary": avail_output.model_dump_json(indent=2)}
         self._crew.repro_crew_from_csv().kickoff(inputs=inputs)
 
-        data_output = self._crew.check_data_reproducibility().output.pydantic
-        method_output = self._crew.check_method_reproducibility().output.pydantic
+        verification_output = self._crew.verify_reproducibility_entries().output.pydantic
         assessment_output = self._crew.compile_final_report_from_availability().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=data_output.datasets,
-            methods=method_output.methods,
+            datasets=verification_output.datasets,
+            methods=verification_output.methods,
             availability=avail_output,
-            reproducibility_assessment=assessment_output.reproducibility_assessment,
+            reproducibility_status=assessment_output.reproducibility_status,
+            reproducibility_assessment=assessment_output.reproducibility_assessment
         )
 
         df = pd.read_csv(INPUTS_PATH, sep=';')
@@ -274,6 +277,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         df.loc[mask, "Datasets"] = json.dumps([d.model_dump() for d in report.datasets])
         df.loc[mask, "Methods"] = json.dumps([m.model_dump() for m in report.methods])
+        df.loc[mask, "Reproducibility_Status"] = report.reproducibility_status
         df.loc[mask, "Reproducibility_Assessment"] = report.reproducibility_assessment
 
         df.to_csv(INPUTS_PATH, sep=';', index=False)
@@ -292,9 +296,30 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         except Exception as e:
             print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
 
-def kickoff(wait_seconds=60, max_retries=2):
+def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
     import os
+    import sys
     import time
+
+    # `uv run kickoff` invokes this function directly
+    # CLI flags are parsed here from sys.argv. Explicit function args (e.g. when
+    # kickoff() is called programmatically) still take precedence over them.
+    parser = argparse.ArgumentParser(description="Run reproducibility flow.")
+    parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
+    parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
+    parser.add_argument(
+        "--use-full-text-tool",
+        action="store_true",
+        help="Give paper_analyzer the full extracted PDF text instead of PDFSearchTool (RAG retrieval).",
+    )
+    args, _ = parser.parse_known_args(sys.argv[1:])
+
+    if wait_seconds is None:
+        wait_seconds = args.wait_seconds
+    if max_retries is None:
+        max_retries = args.max_retries
+    if use_full_text_tool is None:
+        use_full_text_tool = args.use_full_text_tool
 
     try:
         df = pd.read_csv(INPUTS_PATH, sep=';')
@@ -310,7 +335,7 @@ def kickoff(wait_seconds=60, max_retries=2):
             continue
 
         # Skip excluded papers entirely:
-        if row["Filter_Decision"] == "EXCLUDE" or row["Human_Filter_Decision"] == "EXCLUDE":
+        if row["Filter_Decision"] == "EXCLUDE" or row["Human_Filter_Decision"] == "EXCLUDE" or row["Webpage_Access_Status"] == "NOT_ACCESSIBLE":
             print(f"Skipping EID={row['EID']} (excluded)")
             continue
 
@@ -323,6 +348,7 @@ def kickoff(wait_seconds=60, max_retries=2):
             "pdf_file": f"{publication_id}.pdf",
             "doi": doi,
             "abstract": abstract,
+            "use_full_text_tool": use_full_text_tool,
         }
 
         print(f"--- Running ReproCheckFlow for EID={publication_id} ---")
@@ -370,10 +396,4 @@ def run_with_trigger():
 
 
 if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser(description="Run reproducibility flow.")
-    parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
-    parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
-    args = parser.parse_args()
-
-    kickoff(wait_seconds=args.wait_seconds, max_retries=args.max_retries)
+    kickoff()

@@ -5,8 +5,8 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
-from ...tools.custom_tool import publication_availability_tool
-from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
+from ...tools.custom_tool import publication_availability_tool, pdf_full_text_tool
+from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment, ReportVerificationOutput
 from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
 MAX_RPM = 5 # Maximum requests per minute
@@ -21,8 +21,16 @@ class ReproCheckerCrew:
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    def __init__(self, pdf_file: str):
+    def __init__(self, pdf_file: str, use_full_text_tool: bool = False):
         self.pdf_file = pdf_file
+        # Switch for paper_analyzer's PDF tool: False = PDFSearchTool (RAG
+        # retrieval over chunks), True = PDFFullTextTool (whole document
+        # text handed to the agent). Read as instance state rather than a
+        # paper_analyzer() argument because crewai's @crew decorator
+        # auto-instantiates every @agent method with no arguments before
+        # running the crew body, so a non-default argument there would
+        # cause paper_analyzer to be built twice (once per tool).
+        self.use_full_text_tool = use_full_text_tool
 
     def _pdf_collection_name(self) -> str:
         """Derive a Chroma-safe collection name unique to this PDF.
@@ -47,14 +55,37 @@ class ReproCheckerCrew:
     @agent
     def paper_analyzer(self) -> Agent:
 
-        pdf_tool = PDFSearchTool(
-            pdf=str(PDF_DIR / self.pdf_file),
-            config=EMBEDDING_CONFIG_OPENAI,
-            collection_name=self._pdf_collection_name(),
-        )
+        if self.use_full_text_tool:
+            pdf_tool = pdf_full_text_tool(pdf_path=str(PDF_DIR / self.pdf_file))
+        else:
+            pdf_tool = PDFSearchTool(
+                pdf=str(PDF_DIR / self.pdf_file),
+                config=EMBEDDING_CONFIG_OPENAI,
+                collection_name=self._pdf_collection_name(),
+            )
 
         return Agent(
             config=self.agents_config["paper_analyzer"],
+            max_rpm=MAX_RPM,
+            skills=[str(LSM_DOMAIN_INSTRUCTIONS)],
+            tools=[pdf_tool],
+            llm=llm_large
+        )
+
+    @agent
+    def paper_reviewer(self) -> Agent:
+
+        if self.use_full_text_tool:
+            pdf_tool = pdf_full_text_tool(pdf_path=str(PDF_DIR / self.pdf_file))
+        else:
+            pdf_tool = PDFSearchTool(
+                pdf=str(PDF_DIR / self.pdf_file),
+                config=EMBEDDING_CONFIG_OPENAI,
+                collection_name=self._pdf_collection_name(),
+            )
+
+        return Agent(
+            config=self.agents_config["paper_reviewer"],
             max_rpm=MAX_RPM,
             skills=[str(LSM_DOMAIN_INSTRUCTIONS)],
             tools=[pdf_tool],
@@ -100,6 +131,17 @@ class ReproCheckerCrew:
         )
 
     @task
+    def verify_reproducibility_entries(self) -> Task:
+        return Task(
+            config=self.tasks_config["verify_reproducibility_entries"],  # type: ignore[index]
+            context=[
+                self.check_data_reproducibility(),
+                self.check_method_reproducibility(),
+            ],
+            output_pydantic=ReportVerificationOutput,
+        )
+
+    @task
     def check_artifact_availability(self) -> Task:
         return Task(
             config=self.tasks_config["check_artifact_availability"],
@@ -112,8 +154,7 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["compile_final_report"],  # type: ignore[index]
             context=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
+                self.verify_reproducibility_entries(),
                 self.check_artifact_availability(),
             ],
             output_pydantic=ReproducibilityAssessment,
@@ -128,8 +169,7 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["compile_final_report_from_availability"],
             context=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
+                self.verify_reproducibility_entries(),
             ],
             output_pydantic=ReproducibilityAssessment,
         )
@@ -147,16 +187,17 @@ class ReproCheckerCrew:
 
     @crew
     def repro_crew_from_csv(self) -> Crew:
-        """Crew that runs the data and method reproducibility checks, then
-        compiles the report using artifact availability info already
+        """Crew that runs the data, method, and reviewing
+        checks, then compiles the report using artifact availability info already
         pre-filled in the inputs CSV (Webpage_* columns), skipping
         check_artifact_availability entirely.
         """
         return Crew(
-            agents=[self.paper_analyzer(), self.report_elaborator()],
+            agents=[self.paper_analyzer(), self.paper_reviewer(), self.report_elaborator()],
             tasks=[
                 self.check_data_reproducibility(),
                 self.check_method_reproducibility(),
+                self.verify_reproducibility_entries(),
                 self.compile_final_report_from_availability(),
             ],
             max_rpm=MAX_RPM,
@@ -166,15 +207,17 @@ class ReproCheckerCrew:
 
     @crew
     def repro_crew(self) -> Crew:
-        """Crew that runs the three reproducibility checks, then compiles the report.
+        """Crew that runs the data, method, reviewing, and availability
+        checks, then compiles the report.
 
         Only meant to be kicked off after filter_crew has run and returned INCLUDE.
         """
         return Crew(
-            agents=[self.paper_analyzer(), self.availability_web_scraper(), self.report_elaborator()],
+            agents=[self.paper_analyzer(), self.paper_reviewer(), self.availability_web_scraper(), self.report_elaborator()],
             tasks=[
                 self.check_data_reproducibility(),
                 self.check_method_reproducibility(),
+                self.verify_reproducibility_entries(),
                 self.check_artifact_availability(),
                 self.compile_final_report(),
             ],
