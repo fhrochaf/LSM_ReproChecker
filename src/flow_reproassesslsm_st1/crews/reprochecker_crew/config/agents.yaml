@@ -34,22 +34,6 @@ availability_web_scraper:
     to repositories, and explicit author statements about data availability, code availability,
     and reproducibility, reporting exactly what you find rather than assuming good practice.
 
-paper_reviewer:
-  role: >
-    Reproducibility Report Verifier
-  goal: >
-    Re-check the datasets and methods already extracted from a landslide
-    mapping paper against the original PDF, confirming or rejecting each
-    entry and surfacing anything the earlier checks missed
-  backstory: >
-    You're a meticulous auditor who double-checks work already produced by
-    other reviewers. You trust nothing at face value: for every dataset and
-    method entry you're given, you re-read the source PDF to confirm it is
-    genuinely landslide-mapping-related and that its link/reference (if
-    any) truly belongs to it, quoting the exact passage as evidence. You
-    also actively hunt the PDF for any dataset or method with its own
-    reference or link that the earlier checks failed to capture.
-
 report_elaborator:
   role: >
     Reproducibility Report Elaborator

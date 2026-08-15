@@ -199,13 +199,14 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
         self._crew.repro_crew().kickoff(inputs=inputs)
 
-        verification_output = self._crew.verify_reproducibility_entries().output.pydantic
+        data_output = self._crew.check_data_reproducibility().output.pydantic
+        method_output = self._crew.check_method_reproducibility().output.pydantic
         avail_output = self._crew.check_artifact_availability().output.pydantic
         assessment_output = self._crew.compile_final_report().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=verification_output.datasets,
-            methods=verification_output.methods,
+            datasets=data_output.datasets,
+            methods=method_output.methods,
             availability=avail_output,
             reproducibility_assessment=assessment_output.reproducibility_assessment,
         )
@@ -253,12 +254,13 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         inputs = {"availability_summary": avail_output.model_dump_json(indent=2)}
         self._crew.repro_crew_from_csv().kickoff(inputs=inputs)
 
-        verification_output = self._crew.verify_reproducibility_entries().output.pydantic
+        data_output = self._crew.check_data_reproducibility().output.pydantic
+        method_output = self._crew.check_method_reproducibility().output.pydantic
         assessment_output = self._crew.compile_final_report_from_availability().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=verification_output.datasets,
-            methods=verification_output.methods,
+            datasets=data_output.datasets,
+            methods=method_output.methods,
             availability=avail_output,
             reproducibility_status=assessment_output.reproducibility_status,
             reproducibility_assessment=assessment_output.reproducibility_assessment
@@ -296,7 +298,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         except Exception as e:
             print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
 
-def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
+def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_tool=None):
     import os
     import sys
     import time
@@ -305,6 +307,7 @@ def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
     # CLI flags are parsed here from sys.argv. Explicit function args (e.g. when
     # kickoff() is called programmatically) still take precedence over them.
     parser = argparse.ArgumentParser(description="Run reproducibility flow.")
+    parser.add_argument("--max-papers", type=int, default=None, help="Max number of papers to process")
     parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
     parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
     parser.add_argument(
@@ -314,6 +317,8 @@ def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
     )
     args, _ = parser.parse_known_args(sys.argv[1:])
 
+    if max_papers is None:
+        max_papers = args.max_papers
     if wait_seconds is None:
         wait_seconds = args.wait_seconds
     if max_retries is None:
@@ -326,7 +331,7 @@ def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
     except Exception as e:
         print(f"Error reading CSV: {e}")
         raise   
-        
+
     for _, row in df.iterrows():
 
         # Check if a reproducibility report isn't already available
@@ -354,11 +359,15 @@ def kickoff(wait_seconds=None, max_retries=None, use_full_text_tool=None):
         print(f"--- Running ReproCheckFlow for EID={publication_id} ---")
         
         attempt = 0
+        papers_processed = 0
         while True:
             try:
                 repro_check_flow = ReproCheckFlow()
                 repro_check_flow.kickoff(inputs=inputs)
-                break
+                papers_processed += 1
+                if papers_processed >= max_papers:
+                    print(f"Processed {papers_processed} papers. Stopping.")
+                    return
             except Exception as e:
                 attempt += 1
                 print(f"Error processing EID={publication_id}: {e}")
