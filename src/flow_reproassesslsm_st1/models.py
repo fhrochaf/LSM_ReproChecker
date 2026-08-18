@@ -10,6 +10,7 @@ class DatasetEntry(BaseModel):
     source: str | None = Field(default=None, description="Provider or organization name")
     link: str | None = Field(default=None, description="A single URL")
     status: Literal["MENTIONED", "NOT_MENTIONED"]
+    verbatim: str | None = Field(default=None, description="Exact excerpt from the text where the source/link was found")
 
 class DataReproOutput(BaseModel):
     datasets: list[DatasetEntry] = Field(
@@ -22,10 +23,10 @@ class DataReproOutput(BaseModel):
 class MethodEntry(BaseModel):
     name: str = Field(description="Short name/label for the method, around 10-20 words")
     method_type: Literal["MANUAL", "SOFTWARE", "CUSTOM_CODE", "REUSED"]
-    summary: str  # one or two sentences, not a paragraph
-    code_status: Literal["MENTIONED", "NOT_MENTIONED"]
-    code_link: str | None
-    reused_citation: str | None
+    source: str | None = Field(default=None, description="Origin named for the method: citation if REUSED, provider/vendor if SOFTWARE or CUSTOM_CODE")
+    link: str | None = Field(default=None, description="A single retrieval URL for the method's implementation, preferred over source when available")
+    status: Literal["MENTIONED", "NOT_MENTIONED"]
+    verbatim: str | None = Field(default=None, description="Exact excerpt from the text where the source/link was found")
 
 class MethodReproOutput(BaseModel):
     methods: list[MethodEntry] = Field(

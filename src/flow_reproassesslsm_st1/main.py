@@ -10,98 +10,16 @@ from flow_reproassesslsm_st1.models import (
     ReproCheckState,
     ReproducibilityReport,
     FilterOutput,
-    AvailabilityOutput,
-    DatasetEntry,
-    MethodEntry,
 )
 from flow_reproassesslsm_st1.config import INPUTS_PATH, OUTPUT_DIR
-
-# Webpage_* columns filled in by run_repro_check / already present in the
-# inputs CSV. If the required ones are present for a row, artifact
-# availability checking is skipped and those values are reused instead.
-REQUIRED_AVAILABILITY_FIELDS = [
-    "Webpage_Access_Status",
-    "Webpage_Data_Status",
-    "Webpage_Code_Status",
-]
-
-# Some rows were prefilled from an older/manual process whose JSON shape and
-# status vocabulary differ from what the current pipeline writes: entries may
-# come wrapped as {"datasets": [...]} / {"methods": [...]} instead of a bare
-# array, and use a richer status vocabulary instead of MENTIONED/NOT_MENTIONED.
-_DATASET_STATUS_ALIASES = {
-    "AVAILABLE": "MENTIONED",
-    "PARTIALLY_AVAILABLE": "MENTIONED",
-    "NOT_AVAILABLE": "NOT_MENTIONED",
-}
-_METHOD_CODE_STATUS_ALIASES = {
-    "FOUND": "MENTIONED",
-    "NOT_FOUND": "NOT_MENTIONED",
-    "N/A": "NOT_MENTIONED",
-}
+from flow_reproassesslsm_st1.utils import (
+    _ensure_str_columns,
+    _get_row,
+    _row_has_prefilled_availability,
+    _availability_from_row,
+)
 
 REPORT_TAIL_NAME = "_report_gemini3_1_flash_lite"
-
-def _ensure_str_columns(df: pd.DataFrame, columns: list[str]) -> None:
-    """Force the given columns to object dtype (creating them if absent).
-
-    Columns that are all-blank in the CSV get inferred as float64 (NaN) on
-    read; assigning a string into them via .loc then raises LossySetitemError
-    instead of silently upcasting, so we normalize the dtype up front.
-    """
-    for col in columns:
-        if col not in df.columns:
-            df[col] = pd.Series([pd.NA] * len(df), index=df.index, dtype="object")
-        elif df[col].dtype != object:
-            df[col] = df[col].astype(object)
-
-
-def _get_row(df: pd.DataFrame, publication_id: str) -> pd.Series | None:
-    mask = df["EID"].astype(str).str.strip() == str(publication_id).strip()
-    if not mask.any():
-        return None
-    return df.loc[mask].iloc[0]
-
-
-def _row_has_prefilled_availability(df: pd.DataFrame, row: pd.Series) -> bool:
-    if not all(field in df.columns for field in REQUIRED_AVAILABILITY_FIELDS):
-        return False
-
-    if row.get(REQUIRED_AVAILABILITY_FIELDS[0]).strip() != "ACCESSIBLE":
-        return False
-    else:
-        return any(pd.notna(row.get(field)) and str(row.get(field)).strip() for field in REQUIRED_AVAILABILITY_FIELDS[1:])
-
-
-def _parse_json_list(value, wrapper_key: str) -> list[dict]:
-    if value is None or pd.isna(value) or not str(value).strip():
-        return []
-    parsed = json.loads(value)
-    if isinstance(parsed, dict):
-        parsed = parsed.get(wrapper_key, [])
-    return parsed
-
-
-def _coerce_dataset_entry(d: dict) -> DatasetEntry:
-    status = d.get("status")
-    return DatasetEntry(**{**d, "status": _DATASET_STATUS_ALIASES.get(status, status)})
-
-
-def _coerce_method_entry(c: dict) -> MethodEntry:
-    code_status = c.get("code_status")
-    return MethodEntry(**{**c, "code_status": _METHOD_CODE_STATUS_ALIASES.get(code_status, code_status)})
-
-
-def _availability_from_row(row: pd.Series) -> AvailabilityOutput:
-    author_statement = row.get("Webpage_Author_Statement")
-    return AvailabilityOutput(
-        access_status=str(row["Webpage_Access_Status"]).strip(),
-        data_status=str(row["Webpage_Data_Status"]).strip(),
-        data_links=[_coerce_dataset_entry(d) for d in _parse_json_list(row.get("Webpage_Data_Links"), "datasets")],
-        code_status=str(row["Webpage_Code_Status"]).strip(),
-        code_links=[_coerce_method_entry(c) for c in _parse_json_list(row.get("Webpage_Code_Links"), "methods")],
-        author_statement=str(author_statement).strip() if pd.notna(author_statement) and str(author_statement).strip() else None,
-    )
 
 
 class ReproCheckFlow(Flow[ReproCheckState]):
@@ -298,7 +216,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         except Exception as e:
             print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
 
-def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_tool=None):
+def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retries=None, use_full_text_tool=None):
     import os
     import sys
     import time
@@ -308,6 +226,7 @@ def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_
     # kickoff() is called programmatically) still take precedence over them.
     parser = argparse.ArgumentParser(description="Run reproducibility flow.")
     parser.add_argument("--max-papers", type=int, default=None, help="Max number of papers to process")
+    parser.add_argument("--check-paper-only", type=str, default=None, help="Check only a specific paper (EID)")
     parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
     parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
     parser.add_argument(
@@ -319,6 +238,8 @@ def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_
 
     if max_papers is None:
         max_papers = args.max_papers
+    if check_paper_only is None:
+        check_paper_only = args.check_paper_only
     if wait_seconds is None:
         wait_seconds = args.wait_seconds
     if max_retries is None:
@@ -331,6 +252,9 @@ def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_
     except Exception as e:
         print(f"Error reading CSV: {e}")
         raise   
+
+    if check_paper_only:
+        df = df[df["EID"] == check_paper_only]
 
     for _, row in df.iterrows():
 
@@ -365,13 +289,14 @@ def kickoff(max_papers=None, wait_seconds=None, max_retries=None, use_full_text_
                 repro_check_flow = ReproCheckFlow()
                 repro_check_flow.kickoff(inputs=inputs)
                 papers_processed += 1
-                if papers_processed >= max_papers:
+                if max_papers is not None and papers_processed >= max_papers:
                     print(f"Processed {papers_processed} papers. Stopping.")
                     return
+                break
             except Exception as e:
                 attempt += 1
                 print(f"Error processing EID={publication_id}: {e}")
-                if attempt > max_retries:
+                if max_retries is not None and attempt > max_retries:
                     print(f"Giving up on EID={publication_id} after {attempt} attempt(s)")
                     break
                 print(f"Retrying EID={publication_id} in {wait_seconds}s (attempt {attempt}/{max_retries})...")

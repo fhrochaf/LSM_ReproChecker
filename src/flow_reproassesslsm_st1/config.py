@@ -18,7 +18,7 @@ PDF_DIR.mkdir(exist_ok=True)
 
 INPUTS_PATH = PDF_DIR / "scopus_export_Jul_22_2026_query1.csv"
 
-OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output_fullPDF_with_review"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output_fullPDF_with_guardrails"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 #------------ LLM CONFIGS ------------
@@ -57,7 +57,7 @@ llm_local = LLM(
 #     temperature=0
 # )
 
-## Gemini Large LLM
+# Gemini Large LLM - lite
 llm_large = LLM(
     model="gemini/gemini-3.1-flash-lite",
     temperature=0

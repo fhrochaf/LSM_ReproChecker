@@ -107,7 +107,16 @@ class PDFFullTextTool(BaseTool):
 
     def _run(self, **kwargs: Any) -> str:
         with pdfplumber.open(self.pdf_path) as pdf:
-            pages = [page.extract_text() or "" for page in pdf.pages]
+            # use_text_flow=True follows the PDF content stream's original
+            # text-drawing order instead of resorting by y/x position, which
+            # otherwise interleaves left/right columns line-by-line on
+            # two-column academic layouts. x_tolerance=1 (default 3) avoids
+            # merging adjacent words on PDFs with tight kerning, which
+            # otherwise glues most of the text together with no spaces.
+            pages = [
+                page.extract_text(use_text_flow=True, x_tolerance=1) or ""
+                for page in pdf.pages
+            ]
 
         text = "\n\n".join(pages).strip()
         if not text:

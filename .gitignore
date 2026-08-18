@@ -226,6 +226,7 @@ __marimo__/
 tests/
 output/
 output_fullPDF/
+output_fullPDF_with_guardrails/
 output_fullPDF_with_review/
 obsolete/
 documentation_publication/

@@ -23,21 +23,29 @@ filter_landslide_mapping_paper:
 
 check_data_reproducibility:
   description: >
-    Use your PDF search tool to identify all datasets used in the paper,
-    including satellite imagery and landslide inventories. Search for data
+    Use your PDF search tool to identify the datasets used in the paper to perform
+    landslide mapping, including satellite imagery and landslide inventories. Search for data
     sources, dataset names, and any retrieval links or access statements.
     For each dataset, determine its source and whether the paper provides a
     direct link or clear indication of where to retrieve it.
+    Always prioritize retrieving the dataset's link, when available.
     Do not come up with references, names or links if the paper does not provide them.
+    Do not come with generic names (e.g. 'landslide inventory', 'satellite imagery'), 
+    but with the actual name of the dataset (e.g. 'Landslide Inventory of Region X', 'Sentinel-2 imagery').
+
+    For each dataset found, fill in:
+    - name: the dataset's name.
+    - source: the provider or organization named for it, or null if none is given.
+    - link: the exact retrieval URL as printed in the paper, or null if none is given.
+    - status: MENTIONED if a link is given, or if a source is named without a
+      retrieval link; NOT_MENTIONED if neither a source nor a link is indicated.
+    - verbatim: the exact excerpt (verbatim sentence or clause from the paper,
+      not paraphrased) where the link to the dataset was found. If no link available, the excerpt with the source/reference.
+      If NOT_MENTIONED, return null.
   expected_output: >
-    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields:
-    - Dataset name/type (e.g. satellite imagery, landslide inventory)
-    - Source/provider, if indicated
-    - Retrieval link or access statement, if provided in the paper
-    - A flag: MENTIONED (link/source clearly given or source named but no retrieval link),
-    or NOT_MENTIONED (no source or link indicated)
+    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields.
     It must match this exact shape:
-      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED"}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_MENTIONED"}]}
+      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED", "verbatim": "Sentinel-2 imagery was downloaded from the ESA Copernicus Open Access Hub (https://scihub.copernicus.eu/dhus/)."}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_MENTIONED", "verbatim": null}]}
 
   agent: paper_analyzer
 
@@ -46,14 +54,10 @@ check_method_reproducibility:
     Find every distinct landslide mapping method in the paper using your
     PDF search tool. Check methodology, footnotes, figures, tables, and
     appendices.
-
-    ALWAYS use the exact name from the paper, never a generic category:
-    - "U-Net", "ResNet-50", "Mask R-CNN" — NOT "CNN" or "deep learning model"
-    - "Random Forest", "XGBoost", "SVM" — NOT "machine learning"
-    - "logistic regression", "frequency ratio" — NOT "statistical method"
-    Check figure captions and tables too — architecture names often only
-    appear there.
     Do not come up with references, names or links if the paper does not provide them.
+    Do not come with generic names (e.g. 'deep learning', 'machine learning'), 
+    but with the actual name of the method (e.g. 'Random Forest', 'U-Net').
+    Always prioritize retrieving the method's code link, when available.
 
     Classify each method:
     1. MANUAL — human interpretation, no code expected.
@@ -65,10 +69,30 @@ check_method_reproducibility:
 
     Each architecture/algorithm is its own entry, even if compared in the
     same paper.
+
+    For each method found, fill in:
+      - name: the method's exact name as given in the paper (never a generic category).
+      - method_type: one of MANUAL, SOFTWARE, CUSTOM_CODE, REUSED, per the
+        classification rules above.
+      - source: the origin named for it — the citation to the prior
+        publication if REUSED, the software provider/vendor if SOFTWARE, the
+        provider of the code/algorithm if CUSTOM_CODE — or null if none is
+        given.
+      - link: the exact retrieval URL for the method's implementation (code
+        repository, software homepage) as printed in the paper, or null if
+        none is given. Prefer link over source whenever a URL is present.
+      - status: MENTIONED if a link is given, or if a source is named without
+        a retrieval link; NOT_MENTIONED if neither a source nor a link is
+        indicated.
+      - verbatim: the exact excerpt (verbatim sentence or clause from the
+        paper, not paraphrased) where the source/link to the method was
+        found. If NOT_MENTIONED, return null.
+
   expected_output: >
-    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields:
+    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields.
+    It must match this exact shape:
       {"methods": [
-        {"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "summary": "One-sentence summary.", "code_status": "MENTIONED", "code_link": "https://github.com/example/repo", "reused_citation": null}
+        {"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Our implementation of U-Net with a ResNet-34 encoder is available at https://github.com/example/repo."}
       ]}
   agent: paper_analyzer
 
@@ -94,14 +118,16 @@ check_artifact_availability:
     - code_links: one entry per code/software artifact you can identify from
       the page (code availability section, repository links), each with a
       short name/label, method_type (use CUSTOM_CODE if it's a repository of
-      custom code, SOFTWARE if it's named existing software, otherwise your
-      best judgment from what the page states), a one-sentence summary of
-      what the link/statement says, code_status (MENTIONED, since it's listed),
-      the code_link, and reused_citation if the page states the code is from
-      a prior publication. Leave empty if none found.
+      custom code, SOFTWARE if it's named existing software, REUSED if the
+      page states the code is from a prior publication, otherwise your best
+      judgment from what the page states), source (the citation/provider
+      named, if any, or null), link (the exact retrieval URL, preferred over
+      source whenever a URL is present, or null), status (MENTIONED, since
+      it's listed), and verbatim (the excerpt where the link/statement was
+      found). Leave empty if none found.
     - Any direct author statement on availability or reproducibility
     It must match this exact shape:
-      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "summary": "Code availability section links to a GitHub repository with the classification pipeline.", "code_status": "MENTIONED", "code_link": "https://github.com/example/repo", "reused_citation": null}], "author_statement": "Data and code are available upon reasonable request."}
+      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Code availability: the classification pipeline is available at https://github.com/example/repo."}], "author_statement": "Data and code are available upon reasonable request."}
   agent: availability_web_scraper
 
 

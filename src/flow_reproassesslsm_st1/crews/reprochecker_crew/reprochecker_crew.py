@@ -6,6 +6,7 @@ from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
 from ...tools.custom_tool import publication_availability_tool, pdf_full_text_tool
+from ...tools.guardrails import make_verbatim_guardrail
 from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
 from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
@@ -101,6 +102,7 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["check_data_reproducibility"],
             output_pydantic=DataReproOutput,
+            guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), DataReproOutput),
         )
 
     @task
@@ -108,6 +110,7 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["check_method_reproducibility"],
             output_pydantic=MethodReproOutput,
+            guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), MethodReproOutput),
         )
 
     @task
@@ -193,3 +196,6 @@ class ReproCheckerCrew:
             process=Process.sequential,
             verbose=True,
         )
+
+
+
