@@ -227,6 +227,8 @@ tests/
 output/
 output_fullPDF/
 output_fullPDF_with_guardrails/
+output_fullPDF_with_guardrails_3passes/
+output_fullPDF_with_guardrails_3passes_simplified/
 output_fullPDF_with_review/
 obsolete/
 documentation_publication/

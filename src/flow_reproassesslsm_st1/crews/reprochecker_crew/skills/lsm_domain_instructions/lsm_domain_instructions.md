@@ -16,24 +16,7 @@ substitute for any task's own instructions or expected output format.
 - Novellino et al. (2024), *Mapping landslides from space: A review*, Landslides 21,
   1041–1052. https://doi.org/10.1007/s10346-024-02215-x
 
-## 1. What counts as a "landslide mapping method" paper
-Relevant for `lsm_filtering_reviewer` only — use these distinctions, but follow that
-task's own INCLUDE/EXCLUDE instructions for how to report the decision.
-
-- **Mapping method paper (qualifies):** proposes or applies a technique to detect,
-  delineate, or classify landslides from data (remote-sensing or otherwise), and
-  reports methodology (or cites a prior method), datasets, and results.
-- **Landslide inventory paper (does not qualify):** presents a catalog/map of
-  landslides as an output/product, without describing or proposing a detection
-  technique in enough depth to reproduce it.
-- **Susceptibility mapping paper (does not qualify):** predicts *where landslides
-  could occur* from conditioning factors (slope, lithology, land cover, etc.) — this
-  is a hazard-likelihood model, not a technique for mapping landslides that have
-  occurred.
-- **Review article (does not qualify):** surveys/compares existing methods rather
-  than applying or proposing one with its own dataset and results.
-
-## 2. Remote-sensing platforms and datasets
+## 1. Remote-sensing platforms and datasets
 Relevant for `data_reproducibility_checker`. Landslide-mapping datasets typically fall
 into one or more of these categories — useful for recognizing what's being described,
 regardless of whether the paper names it explicitly as a "dataset":
@@ -52,7 +35,7 @@ For each, the source/provider and any retrieval link or access statement are wha
 determine availability — this reference only helps identify *what kind* of dataset is
 being described.
 
-## 3. Method categories
+## 2. Method categories
 Relevant for `method_reproducibility_checker`. These map directly onto that task's four
 output types — use them to recognize which bucket a described method falls into:
 
@@ -61,8 +44,8 @@ output types — use them to recognize which bucket a described method falls int
 - **Workflow executed through existing, named GIS/remote-sensing software** with no
   custom coding → typically a **software-based method**.
 - **Pixel-based indexing/thresholding, change detection, OBIA/segmentation, DEM
-  morphometric analysis, InSAR/displacement measurement, or machine learning (incl.
-  CNNs)** implemented as a custom pipeline → typically a **custom/code-based method**
+  morphometric analysis, InSAR/displacement measurement, or machine learning (including
+  deep learning, AI methods, etc.)** implemented as a custom pipeline → typically a **custom/code-based method**
   (check for accompanying code/repository).
 - **A method explicitly adopted unchanged from a prior publication** → a **reused
   method** (locate the original citation rather than re-describing it).

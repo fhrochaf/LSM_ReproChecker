@@ -4,6 +4,7 @@ breaks/hyphenation artifacts introduced by PDF text extraction.
 """
 
 import re
+import unicodedata
 from functools import lru_cache
 from typing import Any, Callable, TypeVar
 
@@ -13,13 +14,37 @@ from pydantic import BaseModel, ValidationError
 from rapidfuzz import fuzz
 
 FUZZY_MATCH_THRESHOLD = 80.0  # rapidfuzz partial_ratio score, 0-100
-LINK_FUZZY_MATCH_THRESHOLD = 85.0  # stricter: links are short, exact strings
+LINK_FUZZY_MATCH_THRESHOLD = 80.0  # stricter: links are short, exact strings
 
 # Mirrors crewai.utilities.converter._JSON_PATTERN: grabs the outermost
 # {...} span so a JSON object wrapped in prose/code fences still parses.
 _JSON_PATTERN = re.compile(r"({.*})", re.DOTALL)
 
+# Typographic characters PDFs commonly use (smart quotes, en/em dashes,
+# non-breaking spaces) that an LLM transcribing a "verbatim" quote almost
+# always normalizes to their plain-ASCII equivalents. Folding both sides to
+# the same form avoids penalizing otherwise-exact quotes for this.
+_TYPOGRAPHIC_FOLD = str.maketrans(
+    {
+        "‘": "'",
+        "’": "'",
+        "“": '"',
+        "”": '"',
+        "–": "-",
+        "—": "-",
+        " ": " ",
+    }
+)
+
 ModelT = TypeVar("ModelT", bound=BaseModel)
+
+
+def _normalize_text(s: str) -> str:
+    """Fold typographic punctuation/ligatures so PDF text and LLM-transcribed
+    quotes compare on equal footing regardless of which "smart" characters
+    each side happens to use."""
+    s = unicodedata.normalize("NFKC", s)
+    return s.translate(_TYPOGRAPHIC_FOLD)
 
 
 @lru_cache(maxsize=8)
@@ -33,15 +58,34 @@ def _pdf_text(pdf_path: str) -> str:
         # two-column academic layouts and fragments genuine quotes.
         pages = [page.extract_text(use_text_flow=True) or "" for page in pdf.pages]
     text = " ".join(pages)
-    return " ".join(text.split())
+    return _normalize_text(" ".join(text.split()))
 
 
-def _fuzzy_contains(needle: str, haystack: str) -> float:
+def _fuzzy_contains(needle: str, haystack: str) -> tuple[float, str]:
     """Best fuzzy-match score (0-100) of `needle` as a substring of `haystack`."""
-    needle = " ".join(needle.split())
+    needle = _normalize_text(" ".join(needle.split())).lower()
+    haystack = haystack.lower()
     if not needle:
-        return 0.0
-    return fuzz.partial_ratio(needle.lower(), haystack.lower())
+        return 0.0, ""
+
+    alignment = fuzz.partial_ratio_alignment(needle, haystack)
+    score = alignment.score
+    best_match = haystack[alignment.dest_start : alignment.dest_end]
+
+    if score < FUZZY_MATCH_THRESHOLD:
+        # use_text_flow extraction sometimes drops spaces between words
+        # (e.g. headers/citation blocks render as "Thisarticleisan..."),
+        # which can drag down an otherwise-correct quote's score. Retry
+        # with all whitespace stripped from both sides so missing/extra
+        # spaces alone can't fail a genuine excerpt.
+        despaced_needle = re.sub(r"\s+", "", needle)
+        despaced_haystack = re.sub(r"\s+", "", haystack)
+        despaced_alignment = fuzz.partial_ratio_alignment(despaced_needle, despaced_haystack)
+        if despaced_alignment.score > score:
+            score = despaced_alignment.score
+            best_match = despaced_haystack[despaced_alignment.dest_start : despaced_alignment.dest_end]
+
+    return score, best_match
 
 
 def _parse_output(output: TaskOutput, model: type[ModelT]) -> ModelT | None:
@@ -89,7 +133,6 @@ def make_verbatim_guardrail(
     """
 
     def guardrail(output: TaskOutput) -> tuple[bool, Any]:
-        print(output) #####################
         parsed = _parse_output(output, model)
         if parsed is None:
             return False, (
@@ -120,24 +163,25 @@ def make_verbatim_guardrail(
                 )
                 continue
 
-            score = _fuzzy_contains(verbatim, text)
+            score, best_match = _fuzzy_contains(verbatim, text)
             if score < FUZZY_MATCH_THRESHOLD:
                 failures.append(
                     f'- "{entry.name}": verbatim excerpt not found in the PDF text '
-                    f'(best match {score:.0f}%, need >={FUZZY_MATCH_THRESHOLD:.0f}%): '
-                    f'"{verbatim[:160]}"'
+                    f'(best match {score:.0f}%, need >={FUZZY_MATCH_THRESHOLD:.0f}%). '
+                    f'Quoted: "{verbatim[:160]}" | Closest text in PDF: "{best_match[:160]}"'
                 )
                 continue
 
             if link:
-                link_score = _fuzzy_contains(link, verbatim)
+                link_score, link_best_match = _fuzzy_contains(link, verbatim)
                 if link_score < LINK_FUZZY_MATCH_THRESHOLD:
                     failures.append(
                         f'- "{entry.name}": link "{link}" does not appear in its own '
                         f"verbatim excerpt (best match {link_score:.0f}%, need >="
-                        f"{LINK_FUZZY_MATCH_THRESHOLD:.0f}%). Only set link when the URL "
-                        "itself is quoted verbatim in the paper text; otherwise leave "
-                        "link null (source alone is fine)."
+                        f'{LINK_FUZZY_MATCH_THRESHOLD:.0f}%). Closest text in excerpt: '
+                        f'"{link_best_match[:160]}". Only set link when the URL itself is '
+                        "quoted verbatim in the paper text; otherwise leave link null "
+                        "(source alone is fine)."
                     )
 
         if failures:

@@ -1,15 +1,12 @@
-from openai import max_retries
-from asyncio import timeouts
 from crewai.flow import Flow, listen, start, router, or_
 import pandas as pd
 import json
 import argparse
 
-from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew
+from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew, MULTI_RUN_COUNT
 from flow_reproassesslsm_st1.models import (
     ReproCheckState,
     ReproducibilityReport,
-    FilterOutput,
 )
 from flow_reproassesslsm_st1.config import INPUTS_PATH, OUTPUT_DIR
 from flow_reproassesslsm_st1.utils import (
@@ -17,6 +14,7 @@ from flow_reproassesslsm_st1.utils import (
     _get_row,
     _row_has_prefilled_availability,
     _availability_from_row,
+    merge_entries,
 )
 
 REPORT_TAIL_NAME = "_report_gemini3_1_flash_lite"
@@ -113,19 +111,29 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
     @listen("not_prefilled")
     def run_repro_check(self):
-        print(f"Paper included, running reproducibility checks on: {self.state.pdf_file}")
+        print(f"Paper included, running reproducibility checks (x{MULTI_RUN_COUNT} runs, reconciled) on: {self.state.pdf_file}")
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
-        self._crew.repro_crew().kickoff(inputs=inputs)
+        self._crew.repro_crew_multi_check().kickoff(inputs=inputs)
 
-        data_output = self._crew.check_data_reproducibility().output.pydantic
-        method_output = self._crew.check_method_reproducibility().output.pydantic
+        data_runs = [t.output.pydantic.datasets for t in self._crew._data_runs]
+        method_runs = [t.output.pydantic.methods for t in self._crew._method_runs]
+        consolidated_datasets = merge_entries(data_runs)
+        consolidated_methods = merge_entries(method_runs)
         avail_output = self._crew.check_artifact_availability().output.pydantic
-        assessment_output = self._crew.compile_final_report().output.pydantic
+
+        self._crew.consolidated_report_crew().kickoff(inputs={
+            "consolidated_datasets": json.dumps([d.model_dump() for d in consolidated_datasets]),
+            "consolidated_methods": json.dumps([m.model_dump() for m in consolidated_methods]),
+            "availability_summary": avail_output.model_dump_json(indent=2),
+        })
+
+        assessment_output = self._crew.compile_final_report_from_consolidated().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=data_output.datasets,
-            methods=method_output.methods,
+            datasets=consolidated_datasets,
+            methods=consolidated_methods,
             availability=avail_output,
+            reproducibility_status=assessment_output.reproducibility_status,
             reproducibility_assessment=assessment_output.reproducibility_assessment,
         )
 
@@ -140,6 +148,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
             "Webpage_Code_Status",
             "Webpage_Code_Links",
             "Webpage_Author_Statement",
+            "Reproducibility_Status",
             "Reproducibility_Assessment",
         ])
 
@@ -161,24 +170,34 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         df.loc[mask, "Webpage_Code_Links"] = json.dumps([c.model_dump() for c in avail.code_links]) if avail.code_links else ""
         df.loc[mask, "Webpage_Author_Statement"] = avail.author_statement or ""
 
+        df.loc[mask, "Reproducibility_Status"] = report.reproducibility_status
         df.loc[mask, "Reproducibility_Assessment"] = report.reproducibility_assessment
 
         df.to_csv(INPUTS_PATH, sep=';', index=False)
 
     @listen("prefilled")
     def run_repro_check_from_csv(self):
-        print(f"Paper included, running reproducibility checks (availability pre-filled from CSV) on: {self.state.pdf_file}")
+        print(f"Paper included, running reproducibility checks (x{MULTI_RUN_COUNT} runs, reconciled; availability pre-filled from CSV) on: {self.state.pdf_file}")
         avail_output = self.state.prefilled_availability
-        inputs = {"availability_summary": avail_output.model_dump_json(indent=2)}
-        self._crew.repro_crew_from_csv().kickoff(inputs=inputs)
 
-        data_output = self._crew.check_data_reproducibility().output.pydantic
-        method_output = self._crew.check_method_reproducibility().output.pydantic
-        assessment_output = self._crew.compile_final_report_from_availability().output.pydantic
+        self._crew.repro_crew_multi_check_from_csv().kickoff(inputs={})
+
+        data_runs = [t.output.pydantic.datasets for t in self._crew._data_runs]
+        method_runs = [t.output.pydantic.methods for t in self._crew._method_runs]
+        consolidated_datasets = merge_entries(data_runs)
+        consolidated_methods = merge_entries(method_runs)
+
+        self._crew.consolidated_report_crew().kickoff(inputs={
+            "consolidated_datasets": json.dumps([d.model_dump() for d in consolidated_datasets]),
+            "consolidated_methods": json.dumps([m.model_dump() for m in consolidated_methods]),
+            "availability_summary": avail_output.model_dump_json(indent=2),
+        })
+
+        assessment_output = self._crew.compile_final_report_from_consolidated().output.pydantic
 
         self.state.final_report = ReproducibilityReport(
-            datasets=data_output.datasets,
-            methods=method_output.methods,
+            datasets=consolidated_datasets,
+            methods=consolidated_methods,
             availability=avail_output,
             reproducibility_status=assessment_output.reproducibility_status,
             reproducibility_assessment=assessment_output.reproducibility_assessment
@@ -186,7 +205,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         df = pd.read_csv(INPUTS_PATH, sep=';')
         df.columns = df.columns.str.strip()
-        _ensure_str_columns(df, ["Datasets", "Methods", "Reproducibility_Assessment"])
+        _ensure_str_columns(df, ["Datasets", "Methods", "Reproducibility_Status", "Reproducibility_Assessment"])
 
         mask = df["EID"].astype(str).str.strip() == str(self.state.publication_id).strip()
         if not mask.any():

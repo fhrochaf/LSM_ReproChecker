@@ -23,9 +23,10 @@ filter_landslide_mapping_paper:
 
 check_data_reproducibility:
   description: >
-    Use your PDF search tool to identify the datasets used in the paper to perform
-    landslide mapping, including satellite imagery and landslide inventories. Search for data
-    sources, dataset names, and any retrieval links or access statements.
+    Use your PDF search tool to identify both:
+      - The datasets used in the paper to perform landslide mapping (including satellite imagery and landslide inventories)
+      - Where to access these datasets.
+    Search for data sources, dataset names, and any retrieval links or access statements.
     For each dataset, determine its source and whether the paper provides a
     direct link or clear indication of where to retrieve it.
     Always prioritize retrieving the dataset's link, when available.
@@ -51,13 +52,14 @@ check_data_reproducibility:
 
 check_method_reproducibility:
   description: >
-    Find every distinct landslide mapping method in the paper using your
-    PDF search tool. Check methodology, footnotes, figures, tables, and
-    appendices.
+    Use your PDF search tool to identify both:
+      - Every distinct landslide mapping method used in the paper
+      - Where to access these methods (e.g. code repositories, software homepages, etc.).
+    Check every section, including references, statements, footnotes, figures, tables, appendices.
     Do not come up with references, names or links if the paper does not provide them.
     Do not come with generic names (e.g. 'deep learning', 'machine learning'), 
-    but with the actual name of the method (e.g. 'Random Forest', 'U-Net').
-    Always prioritize retrieving the method's code link, when available.
+    but with the actual name of the method as stated in the paper (or combination of methods).
+    Always prioritize retrieving the method's or publication's code link, when available.
 
     Classify each method:
     1. MANUAL — human interpretation, no code expected.
@@ -80,7 +82,7 @@ check_method_reproducibility:
         given.
       - link: the exact retrieval URL for the method's implementation (code
         repository, software homepage) as printed in the paper, or null if
-        none is given. Prefer link over source whenever a URL is present.
+        none is given. Prefer link over source whenever a URL is present. 
       - status: MENTIONED if a link is given, or if a source is named without
         a retrieval link; NOT_MENTIONED if neither a source nor a link is
         indicated.
@@ -131,46 +133,24 @@ check_artifact_availability:
   agent: availability_web_scraper
 
 
-compile_final_report:
+compile_final_report_from_consolidated:
   description: >
-    Using the outputs from the data reproducibility check, method
-    reproducibility check, and artifact availability check (given as
-    context above), determine objectively:
-    1. Whether the paper can be attempted to be reproduced overall.
-    2. Whether datasets are provided, referenced, or linked.
-    3. Whether any code used for the methods has a repository link,
-       persistent link, or reference.
-    Base your judgment only on what was already reported by the other
-    checks; do not introduce new findings.
-    - If the artifact availability access_status = NOT_ACCESSIBLE, base
-    the judgment only on the Data Reproducibility Check and Method
-    Reproducibility Check.
-  expected_output: >
-    Return only a json object with a single field "reproducibility_assessment",
-    no explanatory prose. Its value is a concise, objective statement covering,
-    in order:
-    - Overall verdict: Reproducible / Partially reproducible / Not reproducible.
-    - Dataset status: provided, referenced, or linked — or not.
-    - Code status (only if custom code was used in a method): has a
-      repository link, persistent link, or reference — or none.
-    Shape only (placeholder, not real content, do not reuse it):
-      {"reproducibility_assessment": "<verdict>. <dataset status>. <code status if applicable>."}
-  agent: report_elaborator
-
-compile_final_report_from_availability:
-  description: >
-    Using the outputs from the data reproducibility check and method
-    reproducibility check (given as context above), together with the
-    artifact availability information below (already determined from the
-    publication webpage beforehand — do not re-check it), determine
+    Using the CONSOLIDATED dataset and method findings below,
+    together with the artifact availability information
+    below (already determined beforehand — do not re-check it), determine
     objectively:
     1. Whether the paper can be attempted to be reproduced overall.
     2. Whether datasets are provided, referenced, or linked.
     3. Whether any code used for the methods has a repository link,
        persistent link, or reference.
-    Base your judgment only on what was already reported by the other
-    checks and the availability information below; do not introduce new
+    Base your judgment only on what is given below; do not introduce new
     findings.
+
+    Consolidated datasets:
+    {consolidated_datasets}
+
+    Consolidated methods:
+    {consolidated_methods}
 
     Artifact availability (pre-recorded from the publication webpage):
     {availability_summary}

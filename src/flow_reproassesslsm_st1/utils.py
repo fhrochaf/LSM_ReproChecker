@@ -1,8 +1,28 @@
 import json
+import re
+from typing import TypeVar
 
 import pandas as pd
+from rapidfuzz import fuzz
 
 from flow_reproassesslsm_st1.models import AvailabilityOutput, DatasetEntry, MethodEntry
+
+EntryT = TypeVar("EntryT", bound=DatasetEntry | MethodEntry)
+
+# rapidfuzz token_set_ratio threshold for treating two entries' names as the
+# same real-world dataset/method across independent runs, after _normalize_name.
+NAME_CLUSTER_THRESHOLD = 75.0
+
+
+def _normalize_name(name: str) -> str:
+    """Strip citation suffixes and normalize punctuation so runs that render
+    the same method/dataset name differently still cluster together, e.g.
+    "Faster-RCNN" vs "Faster R-CNN (Ren et al. 2016)" (token_set_ratio ~49
+    unnormalized, ~87 normalized).
+    """
+    name = re.sub(r"\([^)]*\)", "", name)  # drop parenthetical citations
+    name = re.sub(r"[-_/]", " ", name)  # hyphens/underscores/slashes -> space
+    return re.sub(r"\s+", " ", name).strip().lower()
 
 # Webpage_* columns filled in by run_repro_check / already present in the
 # inputs CSV. If the required ones are present for a row, artifact
@@ -89,6 +109,44 @@ def _coerce_method_entry(c: dict) -> MethodEntry:
         status=_METHOD_CODE_STATUS_ALIASES.get(status, status),
         verbatim=c.get("verbatim"),
     )
+
+
+def merge_entries(runs: list[list[EntryT]], min_votes: int = 2) -> list[EntryT]:
+    """Consolidate entries from N independent extraction runs of the same
+    check task into one list, via fuzzy-name clustering + majority vote.
+
+    An entry survives only if a fuzzy-matching name shows up in at least
+    `min_votes` of the `len(runs)` runs. Within a surviving cluster, the
+    entry with a non-null link is preferred as the representative (falling
+    back to whichever has the most non-null fields), so a run that actually
+    found the link wins over runs that only found the bare mention.
+    """
+    clusters: list[list[EntryT]] = []
+    for run in runs:
+        for entry in run:
+            cluster = next(
+                (
+                    c
+                    for c in clusters
+                    if fuzz.token_set_ratio(_normalize_name(entry.name), _normalize_name(c[0].name))
+                    >= NAME_CLUSTER_THRESHOLD
+                ),
+                None,
+            )
+            if cluster is not None:
+                cluster.append(entry)
+            else:
+                clusters.append([entry])
+
+    def representative(cluster: list[EntryT]) -> EntryT:
+        with_link = [e for e in cluster if e.link]
+        pool = with_link or cluster
+        return max(
+            pool,
+            key=lambda e: sum(bool(getattr(e, f, None)) for f in ("source", "link", "verbatim")),
+        )
+
+    return [representative(c) for c in clusters if len(c) >= min_votes]
 
 
 def _availability_from_row(row: pd.Series) -> AvailabilityOutput:

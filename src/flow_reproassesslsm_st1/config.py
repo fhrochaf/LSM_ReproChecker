@@ -18,7 +18,7 @@ PDF_DIR.mkdir(exist_ok=True)
 
 INPUTS_PATH = PDF_DIR / "scopus_export_Jul_22_2026_query1.csv"
 
-OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output_fullPDF_with_guardrails"
+OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "output_fullPDF_with_guardrails_3passes_simplified"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 #------------ LLM CONFIGS ------------

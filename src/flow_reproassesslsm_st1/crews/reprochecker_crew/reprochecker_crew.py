@@ -5,12 +5,14 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import PDFSearchTool
+from pydantic import BaseModel
 from ...tools.custom_tool import publication_availability_tool, pdf_full_text_tool
 from ...tools.guardrails import make_verbatim_guardrail
 from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
 from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
 MAX_RPM = 5 # Maximum requests per minute
+MULTI_RUN_COUNT = 3 # independent runs to reconcile via majority vote, see utils.merge_entries
 
 @CrewBase
 class ReproCheckerCrew:
@@ -32,6 +34,11 @@ class ReproCheckerCrew:
         # running the crew body, so a non-default argument there would
         # cause paper_analyzer to be built twice (once per tool).
         self.use_full_text_tool = use_full_text_tool
+        # Populated by repro_crew_multi_check()/repro_crew_multi_check_from_csv();
+        # read by the Flow afterwards to pull all MULTI_RUN_COUNT outputs for
+        # merge_entries().
+        self._data_runs: list[Task] = []
+        self._method_runs: list[Task] = []
 
     def _pdf_collection_name(self) -> str:
         """Derive a Chroma-safe collection name unique to this PDF.
@@ -98,22 +105,6 @@ class ReproCheckerCrew:
         )
 
     @task
-    def check_data_reproducibility(self) -> Task:
-        return Task(
-            config=self.tasks_config["check_data_reproducibility"],
-            output_pydantic=DataReproOutput,
-            guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), DataReproOutput),
-        )
-
-    @task
-    def check_method_reproducibility(self) -> Task:
-        return Task(
-            config=self.tasks_config["check_method_reproducibility"],
-            output_pydantic=MethodReproOutput,
-            guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), MethodReproOutput),
-        )
-
-    @task
     def check_artifact_availability(self) -> Task:
         return Task(
             config=self.tasks_config["check_artifact_availability"],
@@ -121,30 +112,36 @@ class ReproCheckerCrew:
             output_pydantic=AvailabilityOutput,
         )
 
-    @task
-    def compile_final_report(self) -> Task:
-        return Task(
-            config=self.tasks_config["compile_final_report"],  # type: ignore[index]
-            context=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
-                self.check_artifact_availability(),
-            ],
-            output_pydantic=ReproducibilityAssessment,
-        )
+    def _repeat_task(self, task_name: str, output_model: type[BaseModel], n: int) -> list[Task]:
+        """Build n independent Task instances from the same tasks.yaml config.
+
+        @task-decorated methods are memoized (crewai.project.memoize), so
+        calling a decorated task method repeatedly returns the same cached
+        Task. Multi-run consolidation needs n distinct executions, so these
+        are built directly from the tasks.yaml config instead of going
+        through a decorated method.
+
+        """
+        return [
+            Task(
+                config=self.tasks_config[task_name],
+                output_pydantic=output_model,
+                guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), output_model),
+            )
+            for _ in range(n)
+        ]
 
     @task
-    def compile_final_report_from_availability(self) -> Task:
-        """Same as compile_final_report, but sources artifact availability from
-        pre-filled CSV fields (via the `availability_summary` input) instead of
-        from a check_artifact_availability task run.
+    def compile_final_report_from_consolidated(self) -> Task:
+        """Compiles the final report from Python-merged (multi-run) dataset/
+        method findings (see utils.merge_entries) plus an availability_summary
+        input. The Flow always has an AvailabilityOutput by this point —
+        either from a live check_artifact_availability run or from the CSV
+        prefill — and serializes whichever one to availability_summary, so
+        this single task covers both paths.
         """
         return Task(
-            config=self.tasks_config["compile_final_report_from_availability"],
-            context=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
-            ],
+            config=self.tasks_config["compile_final_report_from_consolidated"],
             output_pydantic=ReproducibilityAssessment,
         )
 
@@ -160,42 +157,52 @@ class ReproCheckerCrew:
         )
 
     @crew
-    def repro_crew_from_csv(self) -> Crew:
-        """Crew that runs the data and method reproducibility checks, then
-        compiles the report using artifact availability info already
-        pre-filled in the inputs CSV (Webpage_* columns), skipping
-        check_artifact_availability entirely.
+    def repro_crew_multi_check_from_csv(self) -> Crew:
+        """Runs check_data_reproducibility and check_method_reproducibility
+        MULTI_RUN_COUNT times each, skipping the artifact-availability
+        agent/task entirely — availability is already known from the CSV
+        prefill (see availability_summary).
         """
+        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, MULTI_RUN_COUNT)
+        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, MULTI_RUN_COUNT)
         return Crew(
-            agents=[self.paper_analyzer(), self.report_elaborator()],
-            tasks=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
-                self.compile_final_report_from_availability(),
-            ],
+            agents=[self.paper_analyzer()],
+            tasks=[*self._data_runs, *self._method_runs],
             max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
         )
 
     @crew
-    def repro_crew(self) -> Crew:
-        """Crew that runs the three reproducibility checks, then compiles the report.
-
-        Only meant to be kicked off after filter_crew has run and returned INCLUDE.
+    def repro_crew_multi_check(self) -> Crew:
+        """Runs check_data_reproducibility and check_method_reproducibility
+        MULTI_RUN_COUNT times each (plus a single artifact availability
+        check), storing the per-run tasks on self._data_runs/
+        self._method_runs. The Flow pulls all N outputs from those and
+        reconciles them via utils.merge_entries, then kicks off
+        consolidated_report_crew separately — this crew does not compile a
+        final report itself.
         """
+        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, MULTI_RUN_COUNT)
+        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, MULTI_RUN_COUNT)
         return Crew(
-            agents=[self.paper_analyzer(), self.availability_web_scraper(), self.report_elaborator()],
-            tasks=[
-                self.check_data_reproducibility(),
-                self.check_method_reproducibility(),
-                self.check_artifact_availability(),
-                self.compile_final_report(),
-            ],
+            agents=[self.paper_analyzer(), self.availability_web_scraper()],
+            tasks=[*self._data_runs, *self._method_runs, self.check_artifact_availability()],
             max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
         )
 
-
-
+    @crew
+    def consolidated_report_crew(self) -> Crew:
+        """Second-stage crew, shared by both the live-scrape and
+        prefilled-availability paths: compiles the final report from the
+        Flow's merged dataset/method findings plus an availability_summary
+        input (see compile_final_report_from_consolidated)."""
+        return Crew(
+            agents=[self.report_elaborator()],
+            tasks=[self.compile_final_report_from_consolidated()],
+            max_rpm=MAX_RPM,
+            process=Process.sequential,
+            verbose=True,
+        )
