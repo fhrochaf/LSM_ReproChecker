@@ -24,7 +24,14 @@ class ReproCheckerCrew:
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
 
-    def __init__(self, pdf_file: str, use_full_text_tool: bool = False):
+    def __init__(
+        self,
+        pdf_file: str,
+        use_full_text_tool: bool = False,
+        with_human_intervention: bool = False,
+        guardrail_max_retries: int = 3,
+        multi_run_count: int = MULTI_RUN_COUNT,
+    ):
         self.pdf_file = pdf_file
         # Switch for paper_analyzer's PDF tool: False = PDFSearchTool (RAG
         # retrieval over chunks), True = PDFFullTextTool (whole document
@@ -34,9 +41,20 @@ class ReproCheckerCrew:
         # running the crew body, so a non-default argument there would
         # cause paper_analyzer to be built twice (once per tool).
         self.use_full_text_tool = use_full_text_tool
+        # When True, every Task pauses in the terminal after the agent
+        # produces its answer (crewai's native Task(human_input=True) loop),
+        # so a reviewer can send it back for another pass before the crew
+        # moves on.
+        self.with_human_intervention = with_human_intervention
         # Populated by repro_crew_multi_check()/repro_crew_multi_check_from_csv();
         # read by the Flow afterwards to pull all MULTI_RUN_COUNT outputs for
         # merge_entries().
+        self.guardrail_max_retries = guardrail_max_retries
+        # Overrides the module-level MULTI_RUN_COUNT default for this crew's
+        # _repeat_task() calls. Note utils.merge_entries defaults to
+        # min_votes=2, so a multi_run_count of 1 means no cluster can ever
+        # reach quorum and every dataset/method gets dropped.
+        self.multi_run_count = multi_run_count
         self._data_runs: list[Task] = []
         self._method_runs: list[Task] = []
 
@@ -102,14 +120,20 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["filter_landslide_mapping_paper"],  # type: ignore[index]
             output_pydantic=FilterOutput,
+            human_input=self.with_human_intervention,
         )
 
     @task
     def check_artifact_availability(self) -> Task:
         return Task(
             config=self.tasks_config["check_artifact_availability"],
-            async_execution=True,
+            # human_input blocks on terminal input, which can't safely
+            # overlap with an async task running concurrently with the
+            # rest of the crew — run it synchronously while a reviewer is
+            # attached.
+            async_execution=not self.with_human_intervention,
             output_pydantic=AvailabilityOutput,
+            human_input=self.with_human_intervention,
         )
 
     def _repeat_task(self, task_name: str, output_model: type[BaseModel], n: int) -> list[Task]:
@@ -127,6 +151,8 @@ class ReproCheckerCrew:
                 config=self.tasks_config[task_name],
                 output_pydantic=output_model,
                 guardrail=make_verbatim_guardrail(str(PDF_DIR / self.pdf_file), output_model),
+                guardrail_max_retries=self.guardrail_max_retries,
+                human_input=self.with_human_intervention,
             )
             for _ in range(n)
         ]
@@ -143,6 +169,7 @@ class ReproCheckerCrew:
         return Task(
             config=self.tasks_config["compile_final_report_from_consolidated"],
             output_pydantic=ReproducibilityAssessment,
+            human_input=self.with_human_intervention,
         )
 
     @crew
@@ -159,12 +186,12 @@ class ReproCheckerCrew:
     @crew
     def repro_crew_multi_check_from_csv(self) -> Crew:
         """Runs check_data_reproducibility and check_method_reproducibility
-        MULTI_RUN_COUNT times each, skipping the artifact-availability
+        self.multi_run_count times each, skipping the artifact-availability
         agent/task entirely — availability is already known from the CSV
         prefill (see availability_summary).
         """
-        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, MULTI_RUN_COUNT)
-        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, MULTI_RUN_COUNT)
+        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, self.multi_run_count)
+        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, self.multi_run_count)
         return Crew(
             agents=[self.paper_analyzer()],
             tasks=[*self._data_runs, *self._method_runs],
@@ -176,15 +203,15 @@ class ReproCheckerCrew:
     @crew
     def repro_crew_multi_check(self) -> Crew:
         """Runs check_data_reproducibility and check_method_reproducibility
-        MULTI_RUN_COUNT times each (plus a single artifact availability
+        self.multi_run_count times each (plus a single artifact availability
         check), storing the per-run tasks on self._data_runs/
         self._method_runs. The Flow pulls all N outputs from those and
         reconciles them via utils.merge_entries, then kicks off
         consolidated_report_crew separately — this crew does not compile a
         final report itself.
         """
-        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, MULTI_RUN_COUNT)
-        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, MULTI_RUN_COUNT)
+        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, self.multi_run_count)
+        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, self.multi_run_count)
         return Crew(
             agents=[self.paper_analyzer(), self.availability_web_scraper()],
             tasks=[*self._data_runs, *self._method_runs, self.check_artifact_availability()],

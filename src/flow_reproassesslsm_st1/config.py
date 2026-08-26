@@ -25,11 +25,6 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 
 #-------- Local/Smaller LLM's --------
 
-# llm_local = LLM(
-#     model="ollama/llama3.2",
-#     base_url="http://localhost:11434",
-#     temperature=0
-# )
 llm_local = LLM(
     model="ollama/qwen3",
     base_url="http://localhost:11434",
@@ -38,36 +33,11 @@ llm_local = LLM(
 
 #-------- Remote/Larger LLM's --------
 
-
-# llm_large = LLM(
-#     model="ollama/llama4:scout",
-#     base_url="http://localhost:11434",
-#     temperature=0
-# )
-
-## Anthropic Large LLM
-# llm_large = LLM(
-#     model="anthropic/claude-sonnet-5"
-# )
-
-## DeepSeek Large LLM
-# llm_large = LLM(
-#     model="deepseek/deepseek-v4-flash",  # This specific model ID
-#     base_url="https://api.deepseek.com",
-#     temperature=0
-# )
-
 # Gemini Large LLM - lite
 llm_large = LLM(
     model="gemini/gemini-3.1-flash-lite",
     temperature=0
 )
-
-# llm_large = LLM(
-#     model="ollama/qwen3",
-#     base_url="http://localhost:11434",
-#     temperature=0
-# )
 
 EMBEDDING_CONFIG_OPENAI = {
     "embedding_model": {
@@ -77,18 +47,3 @@ EMBEDDING_CONFIG_OPENAI = {
         },
     },
 }
-
-# EMBEDDING_CONFIG_OLLAMA_NOMIC = {
-#                 "embedding_model": {
-#                     "provider": "ollama",
-#                     "config": {
-#                         "model": "nomic-embed-text",
-#                     },
-#                 },
-#                 "vectordb": {
-#                     "provider": "chromadb",
-#                     "config": {
-#                         "dir": Path(__file__).resolve().parent.parent / "knowledge_ollama_nomic",
-#                     },
-#                 }
-# }

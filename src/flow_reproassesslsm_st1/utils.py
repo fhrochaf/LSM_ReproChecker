@@ -3,11 +3,76 @@ import re
 from typing import TypeVar
 
 import pandas as pd
+from crewai.core.providers.human_input import (
+    SyncHumanInputProvider,
+    _async_readline,
+    set_provider,
+)
 from rapidfuzz import fuzz
 
 from flow_reproassesslsm_st1.models import AvailabilityOutput, DatasetEntry, MethodEntry
 
 EntryT = TypeVar("EntryT", bound=DatasetEntry | MethodEntry)
+
+
+class LSMFeedbackProvider(SyncHumanInputProvider):
+    """Human-input provider that labels the review panel with the publication EID.
+
+    crewAI resolves the active provider via a ContextVar (see
+    crewai.core.providers.human_input.get_provider), so a single instance
+    is registered once at import time and `current_eid` is updated by the
+    Flow before each crew run.
+    """
+
+    def __init__(self):
+        self.current_eid: str = ""
+
+    def _build_panel(self):
+        from rich.panel import Panel
+        from rich.text import Text
+
+        content = Text()
+        content.append(
+            f"Publication EID: {self.current_eid}\n\n"
+            "Provide feedback on the Final Result above.\n\n"
+            "• If you are happy with the result, simply hit Enter without typing anything.\n"
+            "• Otherwise, provide specific improvement requests.\n"
+            "• You can provide multiple rounds of feedback until satisfied.",
+            style="yellow",
+        )
+        return Panel(content, title="💬 Human Feedback Required", border_style="yellow", padding=(1, 2))
+
+    def _prompt_input(self, crew):
+        from crewai.events.event_listener import event_listener
+
+        formatter = event_listener.formatter
+        formatter.pause_live_updates()
+        try:
+            formatter.console.print(self._build_panel())
+            response = input()
+            if response.strip() != "":
+                formatter.console.print("\n[cyan]Processing your feedback...[/cyan]")
+            return response
+        finally:
+            formatter.resume_live_updates()
+
+    async def _prompt_input_async(self, crew):
+        from crewai.events.event_listener import event_listener
+
+        formatter = event_listener.formatter
+        formatter.pause_live_updates()
+        try:
+            formatter.console.print(self._build_panel())
+            response = await _async_readline()
+            if response.strip() != "":
+                formatter.console.print("\n[cyan]Processing your feedback...[/cyan]")
+            return response
+        finally:
+            formatter.resume_live_updates()
+
+
+feedback_provider = LSMFeedbackProvider()
+set_provider(feedback_provider)
 
 # rapidfuzz token_set_ratio threshold for treating two entries' names as the
 # same real-world dataset/method across independent runs, after _normalize_name.
@@ -111,7 +176,7 @@ def _coerce_method_entry(c: dict) -> MethodEntry:
     )
 
 
-def merge_entries(runs: list[list[EntryT]], min_votes: int = 2) -> list[EntryT]:
+def merge_entries(runs: list[list[EntryT]], min_votes: int | None = None) -> list[EntryT]:
     """Consolidate entries from N independent extraction runs of the same
     check task into one list, via fuzzy-name clustering + majority vote.
 
@@ -121,6 +186,8 @@ def merge_entries(runs: list[list[EntryT]], min_votes: int = 2) -> list[EntryT]:
     back to whichever has the most non-null fields), so a run that actually
     found the link wins over runs that only found the bare mention.
     """
+    if min_votes is None:
+        min_votes = min(2, len(runs))
     clusters: list[list[EntryT]] = []
     for run in runs:
         for entry in run:

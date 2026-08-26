@@ -1,67 +1,59 @@
 ---
 name: landslide-mapping-domain-reference
-description: Shared background reference on remote-sensing platforms, datasets, and method categories used in landslide mapping papers. Consult this to classify what a paper describes (filtering) or what kind of data/method it uses (reproducibility checks). This is reference material only — it does not define task steps or output formats; always follow the specific task's own description and expected_output.
+description: Domain reference for the paper_analyzer agent when cataloging datasets and methods in a landslide mapping paper (used by check_data_reproducibility and check_method_reproducibility). Consult this to recognize what role a dataset or method plays in the paper. This is reference material only — it does not define task steps or output formats; always follow the specific task's own description and expected_output.
 ---
 
 # Landslide Mapping — Domain Reference
 
 ## Purpose
-Background knowledge to keep classification consistent across the filtering and
-reproducibility-check agents. Use it to recognize and label what's in a paper — not as a
-substitute for any task's own instructions or expected output format.
+Background knowledge for `paper_analyzer` to consistently recognize and classify the
+datasets and methods a landslide mapping paper actually uses, as opposed to what it
+merely cites in passing. Use it alongside — never in place of — the calling task's own
+instructions and output format.
 
-**Sources:**
-- Guzzetti et al. (2012), *Landslide inventory maps: New tools for an old problem*,
-  Earth-Science Reviews 112, 42–66. https://doi.org/10.1016/j.earscirev.2012.02.001
-- Novellino et al. (2024), *Mapping landslides from space: A review*, Landslides 21,
-  1041–1052. https://doi.org/10.1007/s10346-024-02215-x
+## 1. Datasets: what to expect
 
-## 1. Remote-sensing platforms and datasets
-Relevant for `data_reproducibility_checker`. Landslide-mapping datasets typically fall
-into one or more of these categories — useful for recognizing what's being described,
-regardless of whether the paper names it explicitly as a "dataset":
+A landslide mapping paper typically draws on two kinds of data:
 
-- Aerial photography (stereo pairs, scale, acquisition dates)
-- Airborne LiDAR (point density/GSD, DEM/DTM derivatives)
-- Terrestrial sensing (laser rangefinder + GPS, terrestrial laser scanning)
-- Optical satellite imagery — panchromatic or multispectral (mission, GSD, bands,
-  revisit time)
-- SAR satellite imagery (mission, wavelength, polarization)
-- UAV/drone imagery (resolution, altitude)
-- Crowd-sourced/web-mapping imagery (Google Earth, Bing Maps, social media)
-- Pre-existing landslide inventories used as reference/validation data
+**a) Landslide inventory (the reference/label data)**
+Almost every paper has one. It is either:
+- reused from a prior publication or public agency (cite the source), or
+- developed by the authors themselves (e.g. field survey, manual photo-interpretation,
+  a new inventory built specifically for this study).
+Always catalog the inventory as a dataset in its own right, and note which of the two it is.
 
-For each, the source/provider and any retrieval link or access statement are what
-determine availability — this reference only helps identify *what kind* of dataset is
-being described.
+**b) Input datasets (what feeds the mapping/detection method)**
+These are the actual inputs to the classifier or model. Common categories, useful for
+recognizing what's being described even when the paper doesn't label it as a "dataset":
+- Satellite imagery — optical (panchromatic/multispectral; note the sensor/mission,
+  e.g. Sentinel-2, Landsat, PlanetScope) or SAR (note the sensor/mission, e.g.
+  Sentinel-1, ALOS PALSAR)
+- Elevation data — DEM/DTM, airborne or spaceborne LiDAR, photogrammetric DSMs
+- Physical/terrain properties — rainfall/precipitation records, geological maps, soil
+  characteristics, land cover, slope/aspect derivatives
+- Any other custom input specific to that publication (e.g. InSAR displacement time
+  series, UAV imagery, crowd-sourced imagery)
 
-## 2. Method categories
-Relevant for `method_reproducibility_checker`. These map directly onto that task's four
-output types — use them to recognize which bucket a described method falls into:
+Catalog each input dataset separately, using its actual name/sensor as given in the paper.
 
-- **Manual / heuristic visual interpretation** (shape, tone, texture, pattern
-  recognition by a human analyst) → typically a **manual method**.
-- **Workflow executed through existing, named GIS/remote-sensing software** with no
-  custom coding → typically a **software-based method**.
-- **Pixel-based indexing/thresholding, change detection, OBIA/segmentation, DEM
-  morphometric analysis, InSAR/displacement measurement, or machine learning (including
-  deep learning, AI methods, etc.)** implemented as a custom pipeline → typically a **custom/code-based method**
-  (check for accompanying code/repository).
-- **A method explicitly adopted unchanged from a prior publication** → a **reused
-  method** (locate the original citation rather than re-describing it).
+## 2. Methods: what to expect
 
-Note: a single paper may combine categories (e.g., manual delineation on top of an
-automated pre-processing pipeline) — identify each component rather than forcing the
-whole paper into one bucket.
+**a) The novel method (main target)**
+This is the paper's own contribution — the mapping/detection method the paper is about.
+Always catalog it, even if only briefly described. If the authors present variations of
+it (different input combinations, channel sizes, preprocessing steps), treat
+these as different entries and note the variations.
 
-## Pitfalls
-- Don't conflate the sensor/dataset with the technique — the same imagery can support
-  very different methods (manual, software-based, custom, or reused).
-- Don't classify a paper as a mapping-method paper just because it mentions remote
-  sensing data — check it actually proposes/applies a detection technique (see §1).
-- Susceptibility mapping and mapping methods are easy to conflate when both use similar
-  input layers; the distinguishing question is "does this map landslides that occurred,
-  or predict where they might occur?"
-- UAV-based methods are only lightly covered by the two reference sources above —
-  classify using the same categories, but don't assume the taxonomy is exhaustive for
-  this platform.
+**b) Comparison methods**
+Methods already published by other authors, run alongside the novel method for
+benchmarking. Catalog these too, classified as reused from their original publication —
+report the citation rather than re-describing the method.
+
+## 3. Introduction-only mentions carry less weight
+
+Datasets or methods that appear *only* in the introduction (e.g. background/related-work
+citations, motivating examples) are literature review context, not necessarily something
+the paper uses. Do not catalog them as used datasets/methods on that basis alone —
+only include them if they are also referenced or used elsewhere in the paper (methods,
+results, figures, tables, discussion). If a dataset or method appears solely in the
+introduction, treat it as out of scope for cataloging.

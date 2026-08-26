@@ -229,6 +229,6 @@ output_fullPDF/
 output_fullPDF_with_guardrails/
 output_fullPDF_with_guardrails_3passes/
 output_fullPDF_with_guardrails_3passes_simplified/
-output_fullPDF_with_review/
+output_fullPDF_with_human_review/
 obsolete/
 documentation_publication/

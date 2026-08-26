@@ -163,7 +163,12 @@ def make_verbatim_guardrail(
                 )
                 continue
 
-            score, best_match = _fuzzy_contains(verbatim, text)
+            # An excerpt reported as "text text ... text text" splices two
+            # non-adjacent spans of the source together
+            segments = [seg.strip() for seg in verbatim.split("...") if seg.strip()] or [verbatim]
+            results = [_fuzzy_contains(seg, text) for seg in segments]
+            score = min(s for s, _ in results)
+            best_match = " ... ".join(m for _, m in results)
             if score < FUZZY_MATCH_THRESHOLD:
                 failures.append(
                     f'- "{entry.name}": verbatim excerpt not found in the PDF text '
@@ -187,10 +192,10 @@ def make_verbatim_guardrail(
         if failures:
             return False, (
                 "The following verbatim excerpts could not be verified against the "
-                "PDF's extracted text. Re-check each one and either quote the exact "
-                "wording from the paper (copy it, do not paraphrase) or, if you "
-                "cannot actually locate it in the text, change status to "
-                "NOT_MENTIONED and set verbatim to null:\n" + "\n".join(failures)
+                "PDF's extracted text. Use only a fraction of the verbatim if the match is close. "
+                "If a link was mentioned, use the text where the link is instead. "
+                "Only change status to NOT_MENTIONED and set verbatim to null if the dataset/method source or link "
+                "is not mentioned in the paper at all:\n" + "\n".join(failures)
             )
 
         return True, output

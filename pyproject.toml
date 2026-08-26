@@ -38,5 +38,11 @@ packages = ["src/flow_reproassesslsm_st1"]
 [tool.crewai]
 type = "flow"
 
+[tool.uv]
+# Project lives inside OneDrive; hardlinks from the uv cache get
+# corrupted/dropped by OneDrive sync, silently breaking installed
+# packages (e.g. missing __init__.py files). Copy instead.
+link-mode = "copy"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

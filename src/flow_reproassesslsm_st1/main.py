@@ -14,6 +14,7 @@ from flow_reproassesslsm_st1.utils import (
     _get_row,
     _row_has_prefilled_availability,
     _availability_from_row,
+    feedback_provider,
     merge_entries,
 )
 
@@ -34,10 +35,21 @@ class ReproCheckFlow(Flow[ReproCheckState]):
             self.state.use_full_text_tool = crewai_trigger_payload.get(
                 "use_full_text_tool", False
             )
+            self.state.with_human_intervention = crewai_trigger_payload.get(
+                "with_human_intervention", False
+            )
+            self.state.guardrail_max_retries = crewai_trigger_payload.get(
+                "guardrail_max_retries", 3
+            )
+            self.state.multi_run_count = crewai_trigger_payload.get(
+                "multi_run_count", MULTI_RUN_COUNT
+            )
             print(f"Using trigger payload: {crewai_trigger_payload}")
 
         if not self.state.pdf_file or not self.state.doi or not self.state.abstract:
             raise ValueError("'pdf_file', 'doi', and 'abstract' must all be provided.")
+
+        feedback_provider.current_eid = self.state.publication_id
 
         print(f"PDF pdf_file: {self.state.pdf_file}")
         print(f"DOI: {self.state.doi}")
@@ -47,6 +59,9 @@ class ReproCheckFlow(Flow[ReproCheckState]):
             self._crew = ReproCheckerCrew(
                 pdf_file=self.state.pdf_file,
                 use_full_text_tool=self.state.use_full_text_tool,
+                with_human_intervention=self.state.with_human_intervention,
+                guardrail_max_retries=self.state.guardrail_max_retries,
+                multi_run_count=self.state.multi_run_count,
             )
         except Exception as e:
             print(f"Error loading inputs: {e}")
@@ -111,7 +126,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
     @listen("not_prefilled")
     def run_repro_check(self):
-        print(f"Paper included, running reproducibility checks (x{MULTI_RUN_COUNT} runs, reconciled) on: {self.state.pdf_file}")
+        print(f"Paper included, running reproducibility checks (x{self.state.multi_run_count} runs, reconciled) on: {self.state.pdf_file}")
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
         self._crew.repro_crew_multi_check().kickoff(inputs=inputs)
 
@@ -177,10 +192,10 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
     @listen("prefilled")
     def run_repro_check_from_csv(self):
-        print(f"Paper included, running reproducibility checks (x{MULTI_RUN_COUNT} runs, reconciled; availability pre-filled from CSV) on: {self.state.pdf_file}")
+        print(f"Paper included, running reproducibility checks (x{self.state.multi_run_count} runs, reconciled; availability pre-filled from CSV) on: {self.state.pdf_file}")
         avail_output = self.state.prefilled_availability
 
-        self._crew.repro_crew_multi_check_from_csv().kickoff(inputs={})
+        self._crew.repro_crew_multi_check_from_csv().kickoff()
 
         data_runs = [t.output.pydantic.datasets for t in self._crew._data_runs]
         method_runs = [t.output.pydantic.methods for t in self._crew._method_runs]
@@ -235,7 +250,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         except Exception as e:
             print(f"Error saving report: {e}.\nFinal report:\n{self.state.final_report}")
 
-def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retries=None, use_full_text_tool=None):
+def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retries=None, use_full_text_tool=None, with_human_intervention=None, guardrail_max_retries=None, multi_run_count=None):
     import os
     import sys
     import time
@@ -246,6 +261,8 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
     parser = argparse.ArgumentParser(description="Run reproducibility flow.")
     parser.add_argument("--max-papers", type=int, default=None, help="Max number of papers to process")
     parser.add_argument("--check-paper-only", type=str, default=None, help="Check only a specific paper (EID)")
+    parser.add_argument("--guardrail-max-retries", type=int, default=3, help="Max retry attempts per EID on guardrails")
+    parser.add_argument("--multi-run-count", type=int, default=MULTI_RUN_COUNT, help="Independent runs per dataset/method check, reconciled by majority vote")
     parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
     parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
     parser.add_argument(
@@ -253,18 +270,29 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
         action="store_true",
         help="Give paper_analyzer the full extracted PDF text instead of PDFSearchTool (RAG retrieval).",
     )
+    parser.add_argument(
+        "--with-human-intervention",
+        action="store_true",
+        help="Pause after every task for human review (crewai's Task human_input).",
+    )
     args, _ = parser.parse_known_args(sys.argv[1:])
 
     if max_papers is None:
         max_papers = args.max_papers
     if check_paper_only is None:
         check_paper_only = args.check_paper_only
+    if guardrail_max_retries is None:
+        guardrail_max_retries = args.guardrail_max_retries
+    if multi_run_count is None:
+        multi_run_count = args.multi_run_count
     if wait_seconds is None:
         wait_seconds = args.wait_seconds
     if max_retries is None:
         max_retries = args.max_retries
     if use_full_text_tool is None:
         use_full_text_tool = args.use_full_text_tool
+    if with_human_intervention is None:
+        with_human_intervention = args.with_human_intervention
 
     try:
         df = pd.read_csv(INPUTS_PATH, sep=';')
@@ -275,6 +303,7 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
     if check_paper_only:
         df = df[df["EID"] == check_paper_only]
 
+    papers_processed = 0
     for _, row in df.iterrows():
 
         # Check if a reproducibility report isn't already available
@@ -297,20 +326,19 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
             "doi": doi,
             "abstract": abstract,
             "use_full_text_tool": use_full_text_tool,
+            "with_human_intervention": with_human_intervention,
+            "guardrail_max_retries": guardrail_max_retries,
+            "multi_run_count": multi_run_count,
         }
 
         print(f"--- Running ReproCheckFlow for EID={publication_id} ---")
-        
+
         attempt = 0
-        papers_processed = 0
         while True:
             try:
                 repro_check_flow = ReproCheckFlow()
                 repro_check_flow.kickoff(inputs=inputs)
                 papers_processed += 1
-                if max_papers is not None and papers_processed >= max_papers:
-                    print(f"Processed {papers_processed} papers. Stopping.")
-                    return
                 break
             except Exception as e:
                 attempt += 1
@@ -320,6 +348,10 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
                     break
                 print(f"Retrying EID={publication_id} in {wait_seconds}s (attempt {attempt}/{max_retries})...")
                 time.sleep(wait_seconds)
+
+        if max_papers is not None and papers_processed >= max_papers:
+            print(f"Processed {papers_processed} papers. Stopping.")
+            return
 
 def plot():
     repro_check_flow = ReproCheckFlow()

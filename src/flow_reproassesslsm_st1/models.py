@@ -61,6 +61,9 @@ class ReproCheckState(BaseModel):
     doi: str = ""
     abstract: str = ""
     use_full_text_tool: bool = False
+    with_human_intervention: bool = False
+    guardrail_max_retries: int = 3
+    multi_run_count: int = 3
     filter_decision: str = ""
     filter_reason: str = ""
     prefilled_availability: object = None
