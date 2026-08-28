@@ -118,7 +118,8 @@ def make_verbatim_guardrail(
     pdf_path: str, model: type[ModelT]
 ) -> Callable[[TaskOutput], tuple[bool, Any]]:
     """Build a Task guardrail that checks every non-null `verbatim` field on a
-    DataReproOutput or MethodReproOutput against the PDF's actual text.
+    PaperAnalysisOutput (its `datasets` and `methods` lists together) against
+    the PDF's actual text.
 
     Both DatasetEntry.verbatim and MethodEntry.verbatim are gated by
     `status`: entries whose status is NOT_MENTIONED are skipped entirely
@@ -141,9 +142,7 @@ def make_verbatim_guardrail(
             )
         output.pydantic = parsed
 
-        entries = getattr(parsed, "datasets", None)
-        if entries is None:
-            entries = getattr(parsed, "methods", None)
+        entries = list(getattr(parsed, "datasets", None) or []) + list(getattr(parsed, "methods", None) or [])
         if not entries:
             return True, output
 
@@ -192,9 +191,11 @@ def make_verbatim_guardrail(
         if failures:
             return False, (
                 "The following verbatim excerpts could not be verified against the "
-                "PDF's extracted text. Use only a fraction of the verbatim if the match is close. "
-                "If a link was mentioned, use the text where the link is instead. "
-                "Only change status to NOT_MENTIONED and set verbatim to null if the dataset/method source or link "
+                "PDF's extracted text. "
+                " - Use only a fraction of the verbatim if the match is close. "
+                " - If a link was mentioned, use the text where the link is instead. "
+                " - If multiple excerpts are found, and they link to each other but are not sequential, separate them with '...'. "
+                " - Only change status to NOT_MENTIONED and set verbatim to null if the dataset/method source or link "
                 "is not mentioned in the paper at all:\n" + "\n".join(failures)
             )
 

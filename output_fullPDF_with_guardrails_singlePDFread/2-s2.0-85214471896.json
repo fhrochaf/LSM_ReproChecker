@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. [25]",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "the download link for the Bijie landslide dataset is http://gpcv.whu.edu.cn/data/Bijie_pages.html, accessed on 2 January 2025"
+    }
+  ],
+  "methods": [
+    {
+      "name": "hybrid perturbation mean match (HPM-Match)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised learning framework that integrates input-level, feature-level, and model-level perturbations. It uses a dual-branch input perturbation (DIP) generation approach and an independent triple-stream perturbation (ITP) structure to enhance model accuracy with limited labels by maximizing the utilization of perturbation spaces and minimizing erroneous information during consistency learning.",
+      "source": "Shuhao Ran et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a novel and generic DL framework called hybrid perturbation mean match (HPM-Match)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "Wuhan University (GPCV)",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Nepal Landslide Dataset",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/3675410#.XygLJChKiUk",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Sichuan Landslide and Debris Flow Disaster Dataset",
+        "source": "Science Data Bank (ScienceDB)",
+        "link": "https://www.scidb.cn/en/detail?dataSetId=803952485596135424#p2",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via public repositories, but the custom HPM-Match method code is not available."
+}

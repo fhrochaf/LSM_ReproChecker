@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "SEN1-2 dataset",
+      "source": "Schmitt, M.; Hughes, L.H.; Zhu, X.X.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In accordance with the reference paper [19], the required data for experiments are obtained from the SEN1-2 dataset [19]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Modified pix2pixHD with spatial attention and edge enhancement mechanisms",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified pix2pixHD architecture that incorporates a spatial attention mechanism and a Canny edge detector-based edge enhancement loss function to improve spatial resolution during the conversion of SAR images to optical images for landslide detection.",
+      "source": "Kohei Arai",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, a new method of modifying pix2pixHD with a spatial attention mechanism and an edge enhancement mechanism with a Canny filter in the loss function is proposed... The proposed new modified pix2puxHD method is defined as the method with the additional loss function of the spatial attention mechanism and the Canny edge detector-based edge enhancement of the loss function."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Data is contained within the article.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the modified pix2pixHD method lacks a repository or persistent link."
+}

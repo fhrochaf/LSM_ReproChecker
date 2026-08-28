@@ -1,0 +1,73 @@
+{
+  "datasets": [
+    {
+      "name": "Lidar-DTM data (1 m x 1 m resolution)",
+      "source": "Thuringian State Office for Soil Management and Geoinformation (TLUBN)",
+      "link": "https://tlubn.thueringen.de/",
+      "status": "MENTIONED",
+      "verbatim": "Landslide mapping is based on lidar–DTM data with a 1 m × 1 m resolution provided by the Thuringian State Office for Soil Management and Geoinformation (TLUBN, 2019; Zangana et al., 2023a). ... The resulting data used in this research can be obtained from the first author upon reasonable request and are also publicly available at https://doi.org/10.22000/798 (Zangana et al., 2023a) and https://tlubn.thueringen.de/ (last access: 29 November 2025)."
+    },
+    {
+      "name": "Landslide inventory map (reference map)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A landslide inventory map (reference map) was created using manual on-screen mapping in ArcMap 10.7."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GEOBIA-based landslide inventory mapping",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A structured workflow using eCognition software that implements multi-resolution segmentation (MRS) and support vector machine (SVM) classification on lidar-derived land surface variables (LSVs). The method compares two models: one using default moving-window sizes and one using optimized window sizes for different landslide components (scarps and bodies), followed by a rule-based refinement stage.",
+      "source": "Ikram Zangana",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used the software eCognition 10.3 and developed a structured workflow to design a rule set for semi-automatic landslide mapping. ... The code used in this research is available from the first author upon reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Resulting data used in this research",
+        "source": "Zangana et al. (2023a)",
+        "link": "https://doi.org/10.22000/798",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Additional data source (Thuringia state portal)",
+        "source": "Thüringer Landesamt für Bodenmanagement und Geoinformation (TLBG)",
+        "link": "https://tlubn.thueringen.de/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Code used in this research",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code used in the research analysis, available only from the first author upon request.",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Optimal moving-window size method",
+        "method_type": "REUSED",
+        "summary": "An established method for determining optimal moving-window sizes, originally published by Sîrbu et al. (2019) and reused in this study.",
+        "source": "Sîrbu et al. (2019)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links for data."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The lidar-DTM data is publicly available via the provided link, but the landslide inventory map is not linked or made available. The custom code used for the GEOBIA-based mapping is not provided in a repository or persistent link, being available only upon request."
+}

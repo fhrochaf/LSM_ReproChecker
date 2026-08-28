@@ -1,0 +1,99 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 7 imagery",
+      "source": "Google Earth Engine Data Catalog",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "HazMapper only accesses datasets publicly hosted within the Google Earth Engine Data Catalog."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Google Earth Engine Data Catalog",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "HazMapper only accesses datasets publicly hosted within the Google Earth Engine Data Catalog."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) 30 m resolution hillshade layer",
+      "source": "Google Earth Engine Data Catalog",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The three resulting data layers (greenest-pixel composite from pre- and post-event and rdNDVI) and a Shuttle Radar Topography Mission (SRTM)-derived 30 m resolution hillshade layer (for areas between 60° N and 60° S latitude) are added to the standard Google Earth Engine layer pane."
+    }
+  ],
+  "methods": [
+    {
+      "name": "HazMapper",
+      "method_type": "CUSTOM_CODE",
+      "summary": "HazMapper is an open-access application developed in Google Earth Engine that uses a vegetation-based metric, the relative difference in the normalized difference vegetation index (rdNDVI), to identify areas where vegetation was removed following a natural disaster. It generates greenest-pixel composites from multi-spectral satellite imagery (Landsat or Sentinel-2) to perform change detection.",
+      "source": "Corey M. Scheip and Karl W. Wegmann",
+      "link": "https://doi.org/10.5281/zenodo.4103348",
+      "status": "MENTIONED",
+      "verbatim": "Supporting JavaScript source code for HazMapper is available at https://doi.org/10.5281/zenodo.4103348."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "West Pokot County, Kenya rainfall-triggered mass wasting example (23 Nov 2019)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-kenya",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Southern Highlands, Papua New Guinea seismically triggered mass wasting example (Mw 7.5, 25 Feb 2018)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-png",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Chimney Tops 2 wildfire example, Tennessee, USA (Nov 2016)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-chimneytops",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Pyroclastic flows example, Volcán de Fuego, Guatemala (3 June 2018)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-fuego",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Lower East Rift Zone eruption example, Kīlauea Volcano, Hawaii, USA (May–Sept 2018)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-lerz",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Tsunami inundation example, Indonesia (26 December 2004)",
+        "source": "NC State Hazmapper",
+        "link": "https://go.ncsu.edu/hazmapper-indonesia-tsunami",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Hazmapper rapid image classification (RIC) toolset for hazard mapping",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Source code for the Hazmapper tool used to classify and map hazards such as mass wasting, wildfire, volcanic activity, and tsunami inundation from remote sensing imagery. Released under a research-only license.",
+        "source": "Scheip and Wegmann, 2020",
+        "link": "https://doi.org/10.5281/zenodo.4103348",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are publicly accessible via the Google Earth Engine Data Catalog. The custom HazMapper code is available via a persistent Zenodo link."
+}

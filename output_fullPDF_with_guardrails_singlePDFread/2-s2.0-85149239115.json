@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Norwegian Mass Movements Database",
+      "source": "Norwegian Water Resources and Energy Directorate (NVE)",
+      "link": "https://nedlasting.nve.no/gis/",
+      "status": "MENTIONED",
+      "verbatim": "The Norwegian Mass Movements Database (available from: https://nedlasting.nve.no/gis/, accessed on 20 December 2022) contained 84,768 reports at the time of writing, from the year 900 to 2022."
+    },
+    {
+      "name": "Jølster landslide inventory (120 manually mapped landslides)",
+      "source": "Authors (Lindsay et al., 2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For verification of the results, we used a set of 120 manually mapped landslides [30]."
+    },
+    {
+      "name": "Sentinel-1 imagery",
+      "source": "Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Images used included Sentinel-1, Sentinel-2, as well as digital elevation model (DEM) and slope."
+    },
+    {
+      "name": "10 m resolution Norwegian DEM",
+      "source": "Norwegian Mapping Authority",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Further, the 10 m resolution Norwegian DEM was used instead of the global 30 m resolution ALOS DEM, because the ALOS DEM does not cover Norway."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net CNN deep learning model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net convolutional neural network architecture implemented in Python (ArcPy, Keras, TensorFlow 2) for semantic segmentation of landslide pixels. It uses a sliding window approach on input image tiles (128x128 pixels) to classify pixels based on the surrounding patch context.",
+      "source": "Authors (Ganerød et al.)",
+      "link": "https://code.earthengine.google.com/91d0606e7797198754ec2a16d7333fb9",
+      "status": "MENTIONED",
+      "verbatim": "The locally trained GEE model is available: https://code.earthengine.google.com/91d0606e7797198754ec2a16d7333fb9 (accessed on 22 December 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Locally trained Google Earth Engine (GEE) model",
+        "source": null,
+        "link": "https://code.earthengine.google.com/91d0606e7797198754ec2a16d7333fb9",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Locally trained Google Earth Engine (GEE) model",
+        "method_type": "CUSTOM_CODE",
+        "summary": "A custom-trained model implemented and shared as a Google Earth Engine script/code repository.",
+        "source": null,
+        "link": "https://code.earthengine.google.com/91d0606e7797198754ec2a16d7333fb9",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Code availability statement present, with shared links. Data potentially retrivable from GEE script."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via the Norwegian Mass Movements Database, and other input datasets are accessible through public providers. The custom U-Net model code is provided via a persistent Google Earth Engine repository link."
+}

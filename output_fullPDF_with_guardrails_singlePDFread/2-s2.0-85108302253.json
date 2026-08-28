@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset from Bijie city, Guizhou province, China",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset used in our experiments was taken from an open-access dataset provided by Ji et al. [8]. It has 770 RGB TripleSat-satellite images that contain landslide areas. The study site is in Bijie city, which is located in the northwest of Guizhou province, China."
+    },
+    {
+      "name": "ImageNet database",
+      "source": "Stanford Vision Lab, Stanford University, and Princeton University",
+      "link": "https://image-net.org",
+      "status": "MENTIONED",
+      "verbatim": "The convolutional neural network used in this project is a pre-trained ResNet-50 [11], which is trained from the ImageNet database [12]... [12] Stanford Vision Lab, Stanford University, and Princeton University, “ImageNet,” https://image-net.org [accessed February 1, 2021]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Combining two Faster R-CNN models with a classification decision tree",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method combines two Faster R-CNN models, one trained on RGB images and one on DEM images, to detect landslides. The outputs of these models are used to construct a four-component feature vector, which is then fed into a classification decision tree to select the final landslide bounding box from four candidates: the RGB model box, the DEM model box, their intersection, or their union.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the ImageNet database is linked. The custom code used for the method is not available, as no repository or persistent link is provided."
+}

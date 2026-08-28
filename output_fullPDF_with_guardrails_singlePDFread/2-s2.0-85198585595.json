@@ -1,0 +1,42 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense (L4S) dataset",
+      "source": "Ghorbanzadeh et al.",
+      "link": "https://zenodo.org/records/10463239",
+      "status": "MENTIONED",
+      "verbatim": "This study uses the Landslide4Sense (L4S) dataset (https://zenodo.org/records/10463239) for model training and validation."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CResU-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified Residual U-Net architecture that integrates the Convolutional Block Attention Module (CBAM) into the encoder and decoder paths, and uses an Atrous Spatial Pyramid Pooling (ASPP) module as a bridge between the encoder and decoder to improve multi-scale feature extraction and segmentation performance.",
+      "source": "Thang M Pham et al.",
+      "link": "https://github.com/manhhv87/LandSlideMapping.git",
+      "status": "MENTIONED",
+      "verbatim": "The source code is available at https://github.com/manhhv87/LandSlideMapping.git."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Source code for landslide mapping",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom source code for landslide mapping, made available in a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/manhhv87/LandSlideMapping",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Stated as 'No new data were created or analysed in this study.' Code shared on abstract."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense dataset is referenced and linked via a public repository. The custom CResU-Net source code is provided through a public GitHub repository link."
+}

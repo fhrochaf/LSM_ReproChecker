@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Iburi earthquake landslide inventory",
+      "source": "Zhang et al. [2]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For Iburi area, this study employed a landslide inventory obtained by Zhang et al. [2]."
+    },
+    {
+      "name": "Haiti and Luding earthquake landslide labels",
+      "source": "Authors' own visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For Haiti and Luding regions, visual interpretation was performed on pre-earthquake and postearthquake images of coseismic landslides, and 2322 and 1869 coseismic landslides were manually extracted, respectively."
+    },
+    {
+      "name": "Planet imagery",
+      "source": "Planet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The same resolution Planet imagery is selected for all three study areas, and these images undergo radiometric and atmospheric correction."
+    },
+    {
+      "name": "Digital elevation model (DEM) data",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "digital elevation model (DEM) data can generate elevation, slope angle, and aspect"
+    },
+    {
+      "name": "Road network and water system vectors",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "road network and water system vectors can extract distance to roads and distance to rivers."
+    },
+    {
+      "name": "Geological maps",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Geological maps can generate lithological data."
+    },
+    {
+      "name": "Seismic data",
+      "source": "United States Geological Survey (USGS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Seismic data can extract Modified Mercalli Intensity (MMI) and peak ground acceleration (PGA)...the seismic intensity reported by the United States Geological Survey (USGS) ranges between 7.2 and 8.2."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Unsupervised deep clustering method coupling remote sensing and implicit knowledge (UC-RSIK)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "UC-RSIK is an end-to-end unsupervised deep learning algorithm that integrates a remote sensing feature extraction branch (using autoencoders with skip connections) and an implicit knowledge feature extraction branch (using graph neural networks on multisource data). These features are fused and processed by a self-training adaptive clustering optimization module that uses hierarchical clustering to autonomously determine the number of clusters.",
+      "source": "Xuewen Wang, Xianmin Wang, Haixiang Guo, and Aomei Zhang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this study proposes an unsupervised deep clustering method coupling remote sensing and implicit knowledge (UC-RSIK) for the recognition of coseismic landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory data is mentioned but not linked or made available, and the custom UC-RSIK method code is not provided or linked."
+}

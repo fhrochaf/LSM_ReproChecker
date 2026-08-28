@@ -1,0 +1,81 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the 2016 Kumamoto events",
+      "source": "National Research Institute for Earth Science and Disaster Resilience (NIED)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The National Research Institute for Earth Science and Disaster Resilience (NIED) of Japan has released a few versions of landslide inventory for the 2016 Kumamoto events (NIED 2016a, b)."
+    },
+    {
+      "name": "Post-event aerial color imagery",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": "https://maps.gsi.go.jp/development/ichiran.html#fukkyukizu",
+      "status": "MENTIONED",
+      "verbatim": "Aerial images of the study area, taken on April 20, 2016, were collected from GSI repository (GSI 2016b)... GSI (2016b) – in Japanese: https://maps.gsi.go.jp/development/ichiran.html#fukkyukizu"
+    },
+    {
+      "name": "Pre-event multi-spectral optical images (GeoEye-1)",
+      "source": "DigitalGlobe (MAXAR)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The pre-event multi-spectral optical images used in this study, taken on March 17, 2016, were collected via GeoEye-1 satellite from DigitalGlobe (MAXAR)"
+    },
+    {
+      "name": "ALOS-2 PALSAR-2 SAR imagery",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": "https://satpf.jp/spf_atl/article/view/273?lang=en",
+      "status": "MENTIONED",
+      "verbatim": "In this research, L-band imagery from the PALSAR-2 sensor of the Advanced Land Observing Satellite 2 (ALOS-2) was acquired from the Japan Aerospace Exploitation Agency (JAXA 2016)... The datasets used in this study are made publicly available by JAXA (JAXA 2016)... JAXA, 2016, Japanese Aerospace Exploration Agency: https://satpf.jp/spf_atl/article/view/273?lang=en"
+    },
+    {
+      "name": "ASTER Global Digital Elevation Model Version 3 (GDEM-003)",
+      "source": "NASA/METI/AIST/Japan Space systems",
+      "link": "https://doi.org/10.5067/ASTER/ASTGTM.003",
+      "status": "MENTIONED",
+      "verbatim": "The topographic inputs are derived from the Digital Elevation Model (DEM) for the globe, provided by The Ministry of Economy, Trade, and Industry (METI) of Japan and the United States National Aeronautics and Space Administration (NASA), released as the Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) Global Digital Elevation Model Version 3 (GDEM-003, 2018)... GDEM-003, 2018, NASA/METI/AIST/Japan Space systems, and U.S./Japan ASTER Science Team. ASTER Global Digital Elevation Model V003. 2018, distributed by NASA EOSDIS Land Processes DAAC, https://doi.org/10.5067/ASTER/ASTGTM.003."
+    },
+    {
+      "name": "USGS preferred landslide model",
+      "source": "USGS Ground Failure products",
+      "link": "https://earthquake.usgs.gov/data/ground-failure/",
+      "status": "MENTIONED",
+      "verbatim": "Instead, the USGS preferred landslide model with output resolution of ~ 250 m is used which is published through USGS Ground Failure products to be used after earthquakes (Nowicki Jessee et al. 2018; Allstadt et al. 2022)... USGS for the Ground Failure products (https://earthquake.usgs.gov/data/ground-failure/)"
+    },
+    {
+      "name": "Mean annual precipitation data",
+      "source": "WorldClim database version 2",
+      "link": "https://www.worldclim.org/data/index.html",
+      "status": "MENTIONED",
+      "verbatim": "The mean annual precipitation data were downloaded from the WorldClim database version 2... WorldClim database (https://www.worldclim.org/data/index.html)"
+    },
+    {
+      "name": "Seamless Digital Geological Map of Japan (1:200,000)",
+      "source": "Geological Survey of Japan and National Institute of Advanced Industrial Science and Technology",
+      "link": "https://gbank.gsj.jp/seamless/",
+      "status": "MENTIONED",
+      "verbatim": "The Seamless Digital Geological Map of Japan (1:200,000) provided by the Geological Survey of Japan and National Institute of Advanced Industrial Science and Technology, was used to generate the geology layer in this study (Geological Survey of Japan 2015)... Geological Survey of Japan (2015); Seamless digital geological map of Japan by the Geological Survey of Japan (2015): https://gbank.gsj.jp/seamless/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Pixel-based machine learning classification method using logistic regression",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A pixel-based binary classification method that uses a logistic regression algorithm to predict landslide vs. non-landslide pixels. It integrates optical imagery, SAR-derived change indices, and geospatial environmental variables, utilizing ROC-based feature ranking and selection to optimize the input feature set.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "In this study, landslide mapping is considered as a binary classification problem... a pixel-based machine learning classification method is proposed by utilizing logistic regression algorithm as the binary classifier."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked, and the custom machine learning code is not provided or referenced."
+}

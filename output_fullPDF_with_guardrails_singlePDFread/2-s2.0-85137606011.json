@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Planet satellite imagery",
+      "source": "Planet",
+      "link": "https://www.planet.com/explorer/",
+      "status": "MENTIONED",
+      "verbatim": "The satellite remote sensing images in this paper were downloaded from Planet satellite (https://www.planet.com/explorer/ (accessed on 18 September 2018))"
+    },
+    {
+      "name": "Landslide sample dataset with 4000 tags",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A landslide sample dataset with 4000 tags was produced."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv3 convolutional neural network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A convolutional neural network based on the YOLOv3 architecture, implemented using the TensorFlow framework, designed to automatically identify co-seismic landslides in satellite remote sensing images by treating detection as a regression problem.",
+      "source": "Authors' own implementation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "With YOLOv3 algorithm as the core, a convolutional neural network model with landslide characteristics was established to automatically recognize co-seismic landslides in satellite remote sensing images. ... TensorFlow [27] platform was used to construct the convolutional neural network, and YOLOv3 convolutional neural network to train the sample set."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with no links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom YOLOv3 implementation code is not available."
+}

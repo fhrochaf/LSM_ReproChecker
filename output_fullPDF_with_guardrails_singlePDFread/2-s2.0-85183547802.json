@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Gaofen-3 full polarimetric SAR image",
+      "source": "Gaofen-3 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "for this study, we collected a gaofen-3 image with full polarization"
+    },
+    {
+      "name": "UAV images",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Post-earthquake high-resolution UAV images are used for comparison"
+    },
+    {
+      "name": "Digital Elevation Model (DEM)",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we incorporate a high-precision 1 m Digital Elevation Model (DEM) to eliminate areas affected by geometric distortion"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Automated method for coseismic landslide identification using a single-temporal full PolSAR image",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method utilizes amplitude features and polarimetric decomposition from a single-temporal full PolSAR image. It involves pre-processing with Lee filtering, masking water and vegetation using threshold methods, removing geometric distortion using a DEM, and applying a Support Vector Machine (SVM) model for binary classification of landslides versus impervious surfaces. Post-processing includes K-means clustering, morphological operations, and Canny edge detection to delineate landslide boundaries.",
+      "source": "Rubing Liang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we analyzed the amplitude feature and polarimetric decomposition of multiple ground categories in a full PolSAR image, and proposed an automated method to accurately identify coseismic landslides using a single-temporal full PolSAR image."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available, and the custom code repository is not provided."
+}

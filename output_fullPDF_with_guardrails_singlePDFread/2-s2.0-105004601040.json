@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Hong Kong dataset",
+      "source": "Zhang et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two high-resolution datasets, Hong Kong and Turkey, are used to evaluate the proposed method [2]. ... [2] X. Zhang, W. Yu, M.-O. Pun, and W. Shi, “Cross-domain landslide mapping from large-scale remote sensing images using prototype-guided domain-aware progressive representation learning,” ISPRS J. Photogramm. Remote Sens., vol. 197, pp. 1–17, Mar. 2023."
+    },
+    {
+      "name": "TurKey dataset",
+      "source": "Zhang et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two high-resolution datasets, Hong Kong and Turkey, are used to evaluate the proposed method [2]. ... [2] X. Zhang, W. Yu, M.-O. Pun, and W. Shi, “Cross-domain landslide mapping from large-scale remote sensing images using prototype-guided domain-aware progressive representation learning,” ISPRS J. Photogramm. Remote Sens., vol. 197, pp. 1–17, Mar. 2023."
+    }
+  ],
+  "methods": [
+    {
+      "name": "APSAM (Auto-Prompting SAM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "APSAM is a weakly supervised landslide extraction method that auto-prompts the Segment Anything Model (SAM). It uses an object localization network to generate Class Activation Maps (CAMs), then applies an Adaptive Prompt Generation (APG) algorithm to create hybrid point and box prompts from these CAMs, which are then used to guide SAM in producing fine-grained landslide segmentation masks.",
+      "source": "Jian Wang, Xiaokang Zhang, et al.",
+      "link": "https://github.com/zxk688",
+      "status": "MENTIONED",
+      "verbatim": "The source codes and datasets will be available at https://github.com/zxk688"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available. The custom code for APSAM is provided via a repository link."
+}

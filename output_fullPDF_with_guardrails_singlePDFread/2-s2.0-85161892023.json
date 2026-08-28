@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Pre-disaster remote sensing image of Chagou Formation",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Rainfall data of Shuicheng County",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide dynamic visualization method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A method that establishes dynamic equations of the landslide evolution process (incorporating time-varying driving force and slidability eigenvalue) and calibrates model parameters using pre- and post-disaster remote sensing data to reconstruct and visualize the landslide event.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"Not applicable.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not mentioned or linked. The custom code for the landslide dynamic visualization method is not available."
+}

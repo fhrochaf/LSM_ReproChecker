@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Digital Elevation Model (DEM) of Chongyi County",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory of Chongyi County",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory of Wanzhou District",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-scale segmentation (MSS) method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The MSS method is a bottom-up, region-merging technique that merges adjacent grid units based on spectral and shape features (terrain aspect and shaded relief) to form slope units. It uses an improved trial-and-error method to determine scale, shape, and compactness parameters based on landslide morphological features, followed by vector analysis in GIS for optimization.",
+      "source": "Faming Huang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To overcome this problem, the innovative multi-scale segmentation (MSS) method is proposed for extracting slope units. ... All tests are run in the eCognition Developer 8.7 software package (Flanders et al. 2003)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not referenced or linked. The custom multi-scale segmentation method code is not provided via a repository or persistent link."
+}

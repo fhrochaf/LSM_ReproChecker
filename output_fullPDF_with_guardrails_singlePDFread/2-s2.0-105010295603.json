@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "LEVIR-CD",
+      "source": "Ji, S.; Wei, S.; Lu, M. Fully convolutional networks for multisource building extraction from an open aerial and satellite imagery data set. IEEE Trans. Geosci. Remote Sens. 2018, 57, 574–586.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The LEVIR-CD consists of 637 high-resolution (0.5 m/pixel) Google Earth image patch pairs measuring 1024 × 1024 pixels... Ji, S.; Wei, S.; Lu, M. Fully convolutional networks for multisource building extraction from an open aerial and satellite imagery data set. IEEE Trans. Geosci. Remote Sens. 2018, 57, 574–586."
+    },
+    {
+      "name": "GVLM",
+      "source": "Zhang, X.; Yu, W.; Pun, M.O.; Shi, W. Cross-domain landslide mapping from large-scale remote sensing images using prototype-guided domain-aware progressive representation learning. ISPRS J. Photogramm. Remote Sens. 2023, 197, 1–17.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The GVLM dataset, as shown in Figure 6, is the first large-scale open-source dataset for high-resolution landslide mapping... Zhang, X.; Yu, W.; Pun, M.O.; Shi, W. Cross-domain landslide mapping from large-scale remote sensing images using prototype-guided domain-aware progressive representation learning. ISPRS J. Photogramm. Remote Sens. 2023, 197, 1–17."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-level Intertemporal Attention-guided Network (MIANet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MIANet is an encoder-decoder network that uses MobileNetV2 as an encoder. It incorporates an Intertemporal Fusion Attention Unit (IFAU) for early feature interaction, a Change Location and Recognition Module (CLRM) with dilated convolutions and Coordinate Attention Mechanism (CAM) for multi-scale change detection, and a Supervised Attention Module (SAM) for feature aggregation.",
+      "source": "Shuo Liu, Qinyu Zhang, Yuhang Zhang, Xiaochen Niu, Wuxia Zhang, and Fei Xie",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"No new data were created in this manuscript.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the MIANet method is not available."
+}

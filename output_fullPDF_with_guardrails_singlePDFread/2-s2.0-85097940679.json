@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "VHR false-color images (Data set-A)",
+      "source": "Zeiss RMK TOP-15 aerial survey camera",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The two data sets refereed in the following experiments are acquired using Zeiss RMK TOP-15 aerial survey camera from the flying height of approximately 2400 m in April 2007 and July 2014."
+    },
+    {
+      "name": "Ground reference map",
+      "source": "Manual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Moreover, the ground reference map was obtained by manual interpretation with the confirmation of practitioner who has local knowledge."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Automatic adaptive region extension",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses k-means clustering on change magnitude images to generate training samples. It then applies an adaptive region extension algorithm to each pixel of the post-event image, where the label is determined by the nearest distance between the central pixel and the changed or unchanged samples. Finally, a maximum likelihood estimation is used to assign the final label to each pixel based on the counts of labels assigned during the extension process.",
+      "source": "Lv Zhiyong, Tongfei Liu, Robert Yu Wang, Jón Atli Benediktsson, and Sudipan Saha",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this letter, an algorithm based on automatic adaptive region extension using very-high-resolution remote sensing images is developed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input imagery are not linked or publicly available. The custom code used for the automatic adaptive region extension method is not provided or referenced."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we conducted comparative experiments using the publicly available Bijie Landslide Dataset [23]."
+    },
+    {
+      "name": "WHU building dataset",
+      "source": "Ji et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "all models were trained on the WHU building dataset [73] and fine-tuned on the Bijie landslide dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CNN-based landslide extraction method that integrates both local and nonlocal features",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A CNN-based landslide extraction model that fuses local features (via LFEM) and nonlocal features (via NFEM) to capture both global contextual semantic information and landslide boundary structures, combined with a post-training quantization technique to convert the model from FP32 to INT8 for embedded deployment.",
+      "source": "Lin Chen et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom CNN-based method code is not available via any repository or persistent link."
+}

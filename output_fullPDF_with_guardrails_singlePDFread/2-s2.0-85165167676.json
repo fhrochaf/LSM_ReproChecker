@@ -1,0 +1,59 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "This work uses the open-source Bijie landslide dataset to detect landslides using the DL method (Ji et al. 2020)... Figure 2 shows an image from the Bijou landslide dataset, which can be downloaded at http://study. rsgis. whu. edu. cn/ pages/ downl oad/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CAM-K-SEG",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A segmentation framework that combines Grad-CAM visualization with K-Means clustering. It uses a pre-trained CNN (Resnet-50) to generate a heatmap via Grad-CAM, which is then processed by K-Means clustering to segment landslide areas.",
+      "source": "Kemal Hacıefendioğlu, Süleyman Adanur, Gökhan Demir",
+      "link": "https://www.kaggle.com/code/databeru/fish-classifier-grad-cam-viz-acc-99-89",
+      "status": "MENTIONED",
+      "verbatim": "The source codes for developed code are available for downloading at the link: https://www. kaggle. com/ code/ datab eru/ fish- class ifier- grad- cam- viz- acc- 99- 89"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset used in this study (hosted via WHU RSGIS)",
+        "source": "Wuhan University RSGIS",
+        "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Fish classifier with Grad-CAM visualization code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Developed code (~300 lines, Python) shared as a downloadable notebook implementing a classifier with Grad-CAM visualization.",
+        "source": null,
+        "link": "https://www.kaggle.com/code/databeru/fish-classifier-grad-cam-viz-acc-99-89",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "UWMGI segmentation code (PSPNet, U-Net, DeepLabV3, Swin-UNet)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Developed code (~300 lines, Python) shared as a downloadable notebook implementing segmentation models including PSPNet, U-Net, DeepLabV3, and Swin-UNet.",
+        "source": null,
+        "link": "https://www.kaggle.com/code/masatomurakawamm/uwmgi-pspnet-u-net-deeplabv3-swin-unet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and linked via a public repository. The custom code for the CAM-K-SEG method is provided via a persistent Kaggle link."
+}

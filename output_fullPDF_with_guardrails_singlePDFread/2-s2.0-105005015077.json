@@ -1,0 +1,61 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of 28 landslide events",
+      "source": "Authors' own compilation",
+      "link": "https://doi.org/10.5281/zenodo.15284357",
+      "status": "MENTIONED",
+      "verbatim": "To promote further advancements in automated landslide mapping using deep learning, the landslide reference dataset generated in this study is freely available at (https://doi.org/10.5281/zenodo.15284357)."
+    },
+    {
+      "name": "Sentinel-1 Interferometric Wide Swath Single-Look-Complex (SLC) scenes",
+      "source": "European Space Agency (ESA) Copernicus Programme",
+      "link": "https://dataspace.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "In total, 252 SLC scenes were downloaded from Copernicus Data Space Ecosystem.2 ... 2. https://dataspace.copernicus.eu/."
+    },
+    {
+      "name": "Copernicus DEM",
+      "source": "European Space Agency, Airbus",
+      "link": "https://doi.org/10.5281/zenodo.6211553",
+      "status": "MENTIONED",
+      "verbatim": "For terrain correction, we used the digital elevation model (DEM) from Copernicus DEM (European Space Agency, Airbus 2022). ... European Space Agency and Airbus Defence and Space GmbH. “Copernicus Digital Elevation Model (DEM) for Europe at 30 arc seconds (ca. 1000 meter) resolution derived from Copernicus Global 30 meter DEM dataset.” 2022. Available: https://doi.org/10.5281/zenodo.6211553 ."
+    },
+    {
+      "name": "Sentinel-2 optical imagery",
+      "source": "Microsoft's Planetary Computer platform",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To access Sentinel-2 data, we used Microsoft’s Planetary Computer platform (Microsoft Open Source et al. 2022)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A convolutional neural network for semantic image segmentation consisting of an encoder-decoder architecture with skip connections, trained to produce a binary landslide probability map from stacked optical and SAR features.",
+      "source": "Ronneberger, Fischer, and Brox 2015",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For a supervised automated classification task, we selected a convolutional neural network (CNN) model designed for semantic image segmentation tasks – U-Net (Ronneberger, Fischer, and Brox 2015)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide remote sensing dataset (28 landslides; Sentinel-1, Sentinel-2, slope, elevation layers)",
+        "source": "Zenodo",
+        "link": "https://doi.org/10.5281/zenodo.15284357",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are linked or publicly accessible, but the custom U-Net code is not available via any repository or persistent link."
+}

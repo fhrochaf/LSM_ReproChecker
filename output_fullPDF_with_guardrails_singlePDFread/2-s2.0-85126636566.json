@@ -1,0 +1,106 @@
+{
+  "datasets": [
+    {
+      "name": "Copernicus Sentinel-1 (S1) SAR backscatter intensity coefficient (σ ◦) images",
+      "source": "ESA Copernicus",
+      "link": "https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario",
+      "status": "MENTIONED",
+      "verbatim": "We analyzed changes in the SAR backscatter from the S1 satellite constellation... Depending on the location of the AOI, both ascending (asc) and descending (desc) S1 data may be available (see worldwide acquisition coverage, https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario last access: 4 March 2022)."
+    },
+    {
+      "name": "NASADEM digital elevation model (DEM)",
+      "source": "NASA JPL",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We refer to this mask throughout this paper as the “DEM mask”. Since landslides typically initiate on steep hillslopes, slopes of less than a few degrees can be masked, as these are the areas that generally correspond to non-landslide locations. However, slope thresholds will vary in different regions. Additionally, it is common for landslides to run out into lower-slope areas; therefore it is important to initially consider a wide range of slope values when searching for landslide deposits. We also mask out larger water bodies, including oceans and some lakes and river shorelines, using the water body data stored in the NASADEM layer."
+    },
+    {
+      "name": "GSI–AJG landslide inventory (Hiroshima)",
+      "source": "Geospatial Information Authority of Japan (GSI) and Association of Japanese Geographers (AJG)",
+      "link": "https://ajg-disaster.blogspot.com/2018/07/3077.html",
+      "status": "MENTIONED",
+      "verbatim": "The Geospatial Information Authority of Japan (GSI) and Association of Japanese Geographers (AJG) 2018 Hiroshima landslide inventory is available at https://ajg-disaster.blogspot.com/2018/07/3077.html (last access: 4 March 2022)."
+    },
+    {
+      "name": "Copernicus Sentinel-2 (S2) optical imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "However, we do make quantitative comparisons of our findings with optical-data-based landslide inventories and qualitative comparisons with optical data from the Copernicus Sentinel-2 (S2) satellites for validation of our SAR-based landslide detection."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SAR backscatter change approach in Google Earth Engine (GEE)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A cloud-based approach in Google Earth Engine that calculates the log ratio of multi-temporal pre-event and post-event SAR backscatter intensity stacks to detect landslides. It incorporates topographic masking (slope and curvature) using NASADEM to reduce false positives and generates landslide density heatmaps using kernel density estimation.",
+      "source": "Alexander L. Handwerger",
+      "link": "https://github.com/alhandwerger/GEE_scripts_for_Handwerger_et_al_2022_NHESS",
+      "status": "MENTIONED",
+      "verbatim": "Google Earth Engine code for landslide detection in Google Earth Engine is available at https://github.com/alhandwerger/GEE_scripts_for_Handwerger_et_al_2022_NHESS (Handwerger, 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "NASA and ESA Copernicus satellite imagery",
+        "source": "Google Earth Engine",
+        "link": "https://earthengine.google.com/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "2018 Hiroshima landslide inventory",
+        "source": "Geospatial Information Authority of Japan (GSI) / Association of Japanese Geographers (AJG)",
+        "link": "https://ajg-disaster.blogspot.com/2018/07/3077.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "2018 Hokkaidō landslide inventory (Zhang et al., 2018)",
+        "source": "Zenodo",
+        "link": "https://doi.org/10.5281/zenodo.2577300",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "2021 Haiti landslide inventory",
+        "source": "USGS",
+        "link": "https://doi.org/10.5066/P99MYPXK",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Haiti earthquake landslide and remote sensing data",
+        "source": "NASA",
+        "link": "https://maps.disasters.nasa.gov/arcgis/apps/MinimalGallery/index.html?appid=3b785d8e1ff943e59a9810f67181b8d3",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Haiti earthquake event data",
+        "source": "USGS",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000f65h/executive",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Google Earth Engine code for landslide detection",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Google Earth Engine scripts used to detect landslides, developed as part of the study.",
+        "source": "Handwerger, 2022",
+        "link": "https://github.com/alhandwerger/GEE_scripts_for_Handwerger_et_al_2022_NHESS",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and other input datasets are accessible via public platforms like Google Earth Engine. The custom Google Earth Engine code is provided via a persistent GitHub repository link."
+}

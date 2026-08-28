@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "These images comprised Sentinel-2A images (10 m resolution)..."
+    },
+    {
+      "name": "GF-1 imagery",
+      "source": "China Centre for Resources Satellite Data and Application",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "GF-1 images (2 m resolution)..."
+    },
+    {
+      "name": "Google Earth data",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Google Earth data (0.5 m resolution)..."
+    },
+    {
+      "name": "ALOS DEM",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The digital elevation model (DEM) utilized in this study was acquired from the Advanced Land Observing Satellite (ALOS) with a spatial resolution of 12.5 m."
+    },
+    {
+      "name": "Lithology data",
+      "source": "China Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Lithology data used in the analysis were obtained from the China Geological Survey"
+    },
+    {
+      "name": "Seismic metadata (PGA, PGV, Ia, SED)",
+      "source": "China Earthquake Administration",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ground motion parameters, including PGA, PGV, Ia, and SED, were derived from the high-quality metadata from 28 strong motion seismic stations provided by the China Earthquake Administration."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Random forest model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A random forest model was developed to assess co-seismic landslide susceptibility by combining topographic, geological, and seismic factors. The model uses a bagging technique to construct multiple classification and regression trees, with optimal parameters determined via grid search to predict landslide susceptibility values ranging from 0 to 1.",
+      "source": "Python Studio",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, we used the random forest function in Python Studio to develop a model with the training dataset."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data are available upon request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not referenced or linked, and the custom code used for the random forest model lacks a repository or persistent link."
+}

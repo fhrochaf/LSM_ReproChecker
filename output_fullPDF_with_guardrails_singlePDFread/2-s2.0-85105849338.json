@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide label (historical landslide record, interpretations of satellite images and field survey data)",
+      "source": "Headquarters for the prevention and control of geo-hazards in the Three Gorges Reservoir area",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide label was constructed by using historical landslide record, interpretations of satellite images and field survey data which provided by the Headquarters for the prevention and control of geo-hazards in the Three Gorges Reservoir area."
+    },
+    {
+      "name": "ZY-3 satellite imagery",
+      "source": "ZY-3 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The high-resolution image comes from the ZY-3 satellite, 4 bands, with a resolution of 5.8 m, acquired in April 2013."
+    },
+    {
+      "name": "Environmental conditions (geological, topographic, hydrological and land cover factors)",
+      "source": "Geological maps, geographic information databases and remote sensing images",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "These factors used in the experiments can be divided into four categories, and their sources are given in Table II."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DenseNet-BC",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified DenseNet architecture (DenseNet-BC) with 158 layers, incorporating bottleneck layers, transition layers, and dilation convolution to improve feature extraction and receptive field for landslide detection. The model is trained using a combination of optical imagery and 12 environmental factors, with data augmentation and fine-tuning optimization.",
+      "source": "Haojie Cai, Tao Chen, Ruiqing Niu, and Antonio Plaza",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "All source code is programmed using the Python language under the deep learning framework TensorFlow."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned without links or persistent references, and the custom code for the DenseNet-BC model is not provided."
+}

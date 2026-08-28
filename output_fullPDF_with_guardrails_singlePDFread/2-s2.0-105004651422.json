@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This passage introduces two datasets, one of which is the open landslide dataset compiled by Wuhan University, namely, the Bijie landslide dataset,19 used for landslide detection and recognition."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CLBP-DeepLabv3+",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model that improves DeepLabv3+ by using a modified lightweight MobileNetV2 as the backbone, replacing the original ASPP module with a DenseASPP module fused with strip pooling, incorporating a coordinate attention mechanism, and integrating a completed local binary pattern (CLBP) texture descriptor via a feature aggregation module.",
+      "source": "Wei Wang, Zhihua Zhang, Xinyu Zhu, and Shuwen Yang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We propose a fusion DeepLabv3+ and completed local binary pattern (CLBP) landslide image semantic segmentation method (CLBP-DeepLabv3+)..."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author, Zhihua Zhang, upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is mentioned but not linked, and the custom code for the CLBP-DeepLabv3+ method is not provided or linked, with the authors stating data is available only upon request."
+}

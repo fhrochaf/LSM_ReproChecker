@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 imagery",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu/dhus/#/home",
+      "status": "MENTIONED",
+      "verbatim": "We downloaded Sentinel-1 imagery from Copernicus Open Access Hub [45]. ... 45. ESA Copernicus Open Access Hub. Available online: https://scihub.copernicus.eu/dhus/#/home"
+    },
+    {
+      "name": "30 m resolution 1 Arc-Second Global DEM",
+      "source": "USGS Earth Explorer",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "downloaded from usgs earthexplorer [4 ... 47. usgsearthexplorer.availableonline:https://earthexplorer.usgs.gov/"
+    },
+    {
+      "name": "Landslide inventory of 7837 co-seismic landslides",
+      "source": "Wang et al. [6]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We utilized a detailed inventory of 7837 co-seismic landslides based on visual interpretation of PlanetScope images by Wang et al. [6] as the basis for our ground truth."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attn-U-Net (Attention U-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified U-Net architecture incorporating soft attention gates in the skip connections to suppress irrelevant regions and focus on relevant spatial information, used for pixel-based binary classification of landslides.",
+      "source": "Abraham et al. [38]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For the study, we use a modified version of the well-known U-Net, called Attn-U-Net from Abraham et al. [38]."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Sentinel-1 and DEM datasets are publicly accessible via USGS and Copernicus, but the landslide inventory is only referenced to a publication without a link. The custom Attn-U-Net code is mentioned but lacks a repository or persistent link."
+}

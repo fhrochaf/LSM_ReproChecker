@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV orthophotomosaics and digital surface models (DSMs)",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Data acquisition has been conducted with a commercial mini-UAV quadrotor platform (Phantom 4 Pro V2.0, DJI, Technology Co., Ltd., Shenzhen, China)... The produced dense point cloud was constructed from 68 million points (2500 points/m2), and the area extent of the scene was approximately 38 ha. From the DSM, different derivatives have been calculated and exploited."
+    },
+    {
+      "name": "Reference landslide inventory map",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, a reference map was manually created (Figure 1) based on UAV data, Google Earth imagery, previous research in the area [41], and multiple in situ field investigations."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Integrated object-based image analysis (OBIA) workflow",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An object-based image analysis (OBIA) workflow that uses multi-resolution segmentation (MRS) to create image objects from UAV-derived orthophotos and DSMs, followed by supervised machine learning classification (Random Forest, Decision Tree, or K-Nearest Neighbor) to map landslide zones (scarp, depletion, and non-affected).",
+      "source": "Authors' own development using eCognition Developer 10 software",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An integrated object-based image analysis (OBIA) workflow is presented incorporating orthophotomosaics and digital surface models (DSMs) with expert-based and machine learning (ML) algorithms... using Cognition Network programming language (CNL) within the eCognition Developer 10 software [45] (Trimble eCognition, 2020)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and UAV datasets are not linked or made available. The custom OBIA workflow code is not provided via a repository or persistent link."
+}

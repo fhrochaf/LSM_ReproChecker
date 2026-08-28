@@ -1,0 +1,72 @@
+{
+  "datasets": [
+    {
+      "name": "ISPRS Vaihingen dataset",
+      "source": "ISPRS",
+      "link": "http://www2.isprs.org/commissions/comm3/wg4/2d-sem-label-vaihingen.html",
+      "status": "MENTIONED",
+      "verbatim": "The Vaihingen dataset Vaihingen (http:// www2. isprs. org/ commi ssions/ comm3/ wg4/ 2d- sem- label- vaihi ngen. html) is a relatively small village with many detached buildings and small multi-story buildings."
+    },
+    {
+      "name": "Landslide database of landslide-prone areas in southwestern China",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A landslide database of landslide-prone areas in southwestern China was established by a set of optical images from Google Earth and UAV images (Ouyang et al. 2017, 2018), among other data sources."
+    },
+    {
+      "name": "Google Earth imagery (Jiuzhaigou)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The pre- and post-earthquake remote sensing images were selected from 1.5-m resolution satellite images (Google Earth, December 2016) and 1.5-m resolution UAV images, respectively."
+    },
+    {
+      "name": "Planet Scope imagery (Hokkaido)",
+      "source": "Planet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The pre- and post-earthquake remote sensing images were downloaded from the Planet respectively on August 3 and September 11 of 2018 with the resolution of 3 m."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MFFENet and ADANet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MFFENet is a Multi-scale Feature Fusion with Encoder-decoder Network for supervised semantic segmentation. ADANet is an Adversarial Domain Adaptation Network that uses MFFENet as a generator to perform unsupervised domain adaptation for landslide recognition across different seismic scenarios.",
+      "source": "Xu et al.",
+      "link": "https://github.com/xupine/LandslideNet",
+      "status": "MENTIONED",
+      "verbatim": "Algorithms, MFFENet model, and ADANet, as well as recognition models of earthquake-induced landslides (including the MFFENet model trained with landslide database and the ADANet model transferred to the earthquake-induced Hokkaido Landslides), are available to the public on Github under a GNU General Public License (https:// github. com/ xupine/ Lands lideN et)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "MFFENet model for landslide recognition",
+        "method_type": "CUSTOM_CODE",
+        "summary": "A multi-feature fusion and ensemble network (MFFENet) trained on a landslide database for recognizing earthquake-induced landslides. Code released publicly under a GNU General Public License.",
+        "source": null,
+        "link": "https://github.com/xupine/LandslideNet",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "ADANet domain-adaptation model transferred to Hokkaido earthquake-induced landslides",
+        "method_type": "CUSTOM_CODE",
+        "summary": "An adversarial domain adaptation network (ADANet) transferred to recognize earthquake-induced landslides in the Hokkaido dataset. Code released publicly under a GNU General Public License.",
+        "source": null,
+        "link": "https://github.com/xupine/LandslideNet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Algorithms for the methods shared under the 'Funding' section"
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The ISPRS Vaihingen dataset is publicly accessible, but the landslide inventory used for training and validation is not linked or provided. The custom code for MFFENet and ADANet is available via a public GitHub repository."
+}

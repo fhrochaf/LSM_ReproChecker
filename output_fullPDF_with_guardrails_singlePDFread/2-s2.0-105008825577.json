@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide detection database",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie dataset, introduced by Ji et al. (2020), encompasses the entire Bijie city, situated in the northwest region of Guizhou province, China, covering an expansive area of 26,853 km2."
+    },
+    {
+      "name": "Ludian and Beichuan regions landslide dataset",
+      "source": "Han et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Second, open-source data from the Ludian and Beichuan regions (Han et al., 2023) is utilized."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention-integrated YOLOv8 network (YOLOv8 + CBAM, ECA, SA, and ResCBAM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An enhanced YOLOv8 object detection network that incorporates attention modules (CBAM, ECA, and SA) and a residual block (ResCBAM) into the neck of the architecture to improve feature extraction and landslide detection accuracy.",
+      "source": "Naveen Chandra et al.",
+      "link": "https://github.com/ultralytics/ultralytics",
+      "status": "MENTIONED",
+      "verbatim": "The source code of the original YOLOv8 model is acquired from https://github.com/ultralytics/ultralytics."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available. The custom code repository is not provided, as the paper only references the original YOLOv8 source code."
+}

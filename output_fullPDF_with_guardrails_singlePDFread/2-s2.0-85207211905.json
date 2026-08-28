@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV tilt photography imagery",
+      "source": "Authors' own data acquisition",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, the approach to close waypoint planning is to first use a larger altitude to carry out a larger range of orthophoto aerial photography and establish a coarse model. On the rough model, the disaster areas that need to be finely modeled are selected for low altitude tilt photography route planning."
+    },
+    {
+      "name": "Ground penetrating radar (GPR) scanning data",
+      "source": "Authors' own data acquisition",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To verify the above inference, ground penetrating radar (GPR) scanning was conducted on the filled area on July 16th."
+    }
+  ],
+  "methods": [
+    {
+      "name": "UAV-based tilt photography, 3D reconstruction, and spatial analysis",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves planning UAV flight paths for tilt photography, performing multi-view geometry-based 3D reconstruction (photo alignment, depth map construction, mesh reconstruction, and texture reconstruction), and conducting grid-based spatial analysis to compare multi-temporal 3D models for landslide evolution and volume estimation.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available upon request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not referenced or linked, and the custom code used for 3D reconstruction and spatial analysis is not provided."
+}

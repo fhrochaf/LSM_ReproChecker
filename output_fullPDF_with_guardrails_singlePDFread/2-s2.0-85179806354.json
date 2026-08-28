@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat-8 imagery",
+      "source": "U.S. Geological Survey",
+      "link": "https://www.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "Landsat-8 images were provided by U.S. Geological Survey (https://www.usgs.gov/)."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "European Space Agency",
+      "link": "https://www.esa.int/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 images were provided by European Space Agency (https://www.esa.int/)."
+    },
+    {
+      "name": "SRTM DEM",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory map of Jiuzhaigou earthquake",
+      "source": "National Institute of Natural Hazards, Ministry of Emergency Management of China",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory map offered from the National Institute of Natural Hazards, Ministry of Emergency Management of China."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MICUNet3+",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide mapping method that combines Independent Component Analysis (ICA) for feature processing of optical-derived NDVI, GLCM, and topographic factors, with a UNet3+ deep learning architecture for semantic segmentation, utilizing full-scale skip connections and deep supervision.",
+      "source": "Chang’an University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, the multifeatured independent component analysis and UNet3+ (MICUNet3+) method is proposed for landslide inventory mapping... This work was supported in part by... Chang’an University High Performance Computing Platform."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and other input datasets lack direct links. The custom MICUNet3+ code is mentioned but no repository or persistent link is provided."
+}

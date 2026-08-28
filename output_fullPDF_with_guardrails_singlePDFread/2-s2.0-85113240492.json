@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 optical data",
+      "source": "European Space Agency",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "These Sentinel-2 data were downloaded from the European Space Agency Sentinel-2 Preoperations Hub1 for free. ... 1[Online]. Available: https://scihub.copernicus.eu/"
+    },
+    {
+      "name": "Landslide ground truth map",
+      "source": "Authors' own manual digitization",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Change detection-based Markov random field (MRF)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method generates change detection images (CDIs) using CVA, PCA, or ICA, produces training samples via a multithreshold method, and uses a Markov random field (MRF) algorithm to refine the classification by incorporating contextual information and minimizing an energy function.",
+      "source": "Wenyang Shi and Ping Lu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we utilized change vector analysis, principal component analysis, and independent component analysis (ICA) for change detection images generation, and then adopted the multithreshold method to produce the training sample templates for landslides and nonlandslides, respectively. The Markov random field (MRF) algorithm was further used to extract the optimal landslide objects."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Sentinel-2 data is publicly accessible, but the landslide ground truth map is not referenced or linked. The custom MRF code is mentioned but lacks a repository or persistent link."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A multispectral imagery",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2A images from October 11, 2021, with less than 0.1% cloud cover, were downloaded from the ESA website (https:// scihub. coper nicus. eu)"
+    },
+    {
+      "name": "Landslide inventory map of the study area",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The polygon of the landslides was georeferenced in QGIS software to produce a landslide inventory map of the study area and roughly validate this on the geohazard map."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-automatic classification plugin (SCP)",
+      "method_type": "SOFTWARE",
+      "summary": "The SCP is a QGIS plugin that provides a semi-automatic workflow for remote sensing image classification. It includes tools for downloading imagery, pre-processing (clipping, reflectance conversion), and performing both unsupervised (ISODATA/K-means) and supervised (Random Forest) classification based on user-defined training samples (ROIs).",
+      "source": "Congedo, L. (2021). Semi-automatic classification plugin: a python tool for the download and processing of remote sensing images in QGIS. J Open Sour Softw Mag 6:3172.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The open-source, semi-automatic classification plugin (SCP) developed by Congedo [31], primarily provides a means to perform an unsupervised and supervised classification through an image processing technique... The SCP is a Python tool for downloading and processing remote sensing images [31], which was developed in the QGIS environment [32]."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "All data generated or analyzed during this study are included in this published article."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "Sentinel-2A imagery is publicly accessible via the provided link, but the landslide inventory created by the authors is not referenced or linked. The Semi-automatic classification plugin is a well-known open-source tool, but no specific repository or link to the authors' custom implementation or workflow configuration is provided."
+}

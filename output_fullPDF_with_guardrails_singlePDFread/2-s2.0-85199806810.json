@@ -1,0 +1,49 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of Tanchang County and Min County",
+      "source": "Authors' own manual labeling",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Worldview-3 satellite imagery of Tanchang County",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The datasets utilized for training and testing the network were acquired from Google Earth images of Tanchang County, Longnan City, Gansu Province, China on Jul. 28th, 2022... Images taken by Worldview-3 satellite."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LandslideNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "LandslideNet is a semantic segmentation model based on the YOLOv8 framework, specifically designed for single-temporal high-resolution optical remote sensing images. It incorporates four main improvements: Lightweight Spatial Adaptive Weight Convolution (LSAWC) for local feature extraction, Compound Weight Attention (CWA) for focusing on landslide features, Adaptive-DCN for handling complex shapes, and Dynamic Snake Convolution (DSConv) and Diverse Branch Block (DBB) for feature extraction and fusion.",
+      "source": "Xinyu Zhu et al.",
+      "link": "https://github.com/AlchemyRookie/LandslideNet",
+      "status": "MENTIONED",
+      "verbatim": "Codes can be obtained from https://github.com/AlchemyRookie/ LandslideNet"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "LandslideNet code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing LandslideNet, made available in a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/AlchemyRookie/LandslideNet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Code shared on Acknowledgement statements. Data available upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the Worldview-3 imagery is not publicly accessible. The custom code for LandslideNet have been provided through GitHub repository link but the repository is empty."
+}

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "UAV-captured landslide images from Nam Khanh, Bac Ha District, Lao Cai Province, Vietnam",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset consists of UAV-captured landslide images from Nam Khanh, Bac Ha District, Lao Cai Province, Vietnam, as illustrated in Fig. 7."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Generative AI-enhanced pixel segmentation approach",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework that classifies low-quality UAV images (low-light, overexposed, cloud-covered) using Laplacian variance and brightness thresholds, enhances them using a Generative Adversarial Network (GAN), and performs landslide detection using U-Net-based pixel segmentation models.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes a novel approach that integrates pixel segmentation algorithms with generative artificial intelligence (AI) to enhance UAV image-based landslide detection in challenging lighting and atmospheric conditions."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'No datasets were generated or analysed during the current study.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is not linked or referenced, and the custom code for the generative AI-enhanced pixel segmentation approach lacks a repository or persistent link."
+}

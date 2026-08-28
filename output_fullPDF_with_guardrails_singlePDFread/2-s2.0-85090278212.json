@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 8 imagery",
+      "source": "USGS-NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landsat is a USGS-NASA [3] program that provides us the opportunity to collect valuable resource data. ... Therefore, this paper uses Landsat data to build a landslide dataset in deep learning training and classification."
+    },
+    {
+      "name": "Global Landslide Catalog (GLC)",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Global Landslide Catalog (GLC) [12], [13] contains more than 11500 reports on landslides, debris flows, rock avalanches around the world."
+    }
+  ],
+  "methods": [
+    {
+      "name": "H-BEMD (Hue – Bi-dimensional empirical mode decomposition)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A transformation algorithm that decomposes the hue channel of satellite images into intrinsic mode functions (IMFs) using a 2D sifting process, modified with a new morphological reconstruction for extrema detection and a normalization function to handle brightness variations, used to identify landslide regions.",
+      "source": "Trong-An Bui et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This paper proposes a transformation algorithm Hue – Bi-dimensional empirical mode decomposition (H-BEMD) to determine the landslide region and size. ... This paper proposes an algorithm Hue – Bi-dimensional empirical mode decomposition (H-BEMD) to detect landslide objects in satellite images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the input datasets are not linked. The custom H-BEMD code is mentioned but lacks a repository or persistent link."
+}

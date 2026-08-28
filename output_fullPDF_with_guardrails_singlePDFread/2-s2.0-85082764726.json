@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Worldview-1 satellite imagery of Wenchuan, Sichuan Province",
+      "source": "Worldview-1 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The image was taken by Worldview-1 satellite, its spatial resolution is 0.5 m, includes three bands of red, green and blue."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SG-BiTLSTM (Semantic Gate and Bi-Temporal Long-Short Term Memory network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep neural network architecture for landslide and hazard-affected body recognition. It uses a U-Net as an encoder for semantic segmentation and a bi-temporal LSTM decoder with a semantic gate to describe spatial relationships between landslides and surrounding objects, trained with an integrated loss function.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, we proposed a novel image captioning network called semantic gate and a bi-temporal long-short term memory network (SG-BiTLSTM) to remedy the shortcomings."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the SG-BiTLSTM method lacks a repository or persistent link."
+}

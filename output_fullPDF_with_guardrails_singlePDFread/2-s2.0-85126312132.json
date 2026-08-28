@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 imagery",
+      "source": "NASA's Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "S1 imagery was downloaded from NASA's Alaska Satellite Facility server [84] as input data."
+    },
+    {
+      "name": "ECMWF ERA-Interim 'Snow depth' data",
+      "source": "ECMWF data dissemination service",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The selection of the images to be removed was based on ECMWF ERA-Interim ‘Snow depth’ data downloaded from the ECMWF data dissemination service [85]"
+    },
+    {
+      "name": "5 m resolution DEM",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A 5 m resolution DEM provided by the GSI [87] was used for interferometric data processing and later for image classification."
+    },
+    {
+      "name": "Land use/land cover map of Japan (HRLULC ver. 16.09)",
+      "source": "ALOS Research and Application Project",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, a land use/land cover map of Japan with a resolution of 10 m (HRLULC ver. 16.09 [82,88]) was integrated into the image classification."
+    },
+    {
+      "name": "Landslide inventory",
+      "source": "Zhang et al. [76,89]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As ground truth, landslide inventory published by Zhang et al. [76,89] was used."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-temporal features (MTF) of coherence",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-mechanical approach using multi-temporal features (MTF) calculated on pre-, co-, and post-event coherence image stacks. These features are thresholded and summarized within a decision tree to classify landslide-affected areas, with post-classification aggregation using a 3x3 matrix.",
+      "source": "Authors' own development using SARscape",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The MTF were calculated on pre-, co-, post-, and full-event coherences. The applied MTF were thresholded using the distribution of the pixel value of successfully identified pixels to improve the quality of the classification. Technically, this was a semi-mechanical approach where the MTF thresholding results were continuously compared to the reference data provided by GSI to fine-tune the final thresholds."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, and the custom code used for the multi-temporal feature approach is not available."
+}

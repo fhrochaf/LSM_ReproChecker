@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji, S.; Yu, D.; Shen, C.; Li, W.; Xu, Q. Landslide Detection from an Open Satellite Imagery and Digital Elevation Model Dataset Using Attention Boosted Convolutional Neural Networks. Landslides 2020, 17, 1337–1352.",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing landslide image dataset we used was from the Bijie landslide dataset [12]... The experimental datasets are accessed from open source data: Bijie Landslide Dataset (http://gpcv.whu.edu.cn/data/Bijie_pages.html, accessed on 26 June 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Weakly supervised remote sensing landslide semantic segmentation method combining CAM and cycleGAN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses image-level annotations to train a landslide segmentation model. It first uses Class Activation Mapping (CAM) to locate approximate landslide areas, then uses a cycleGAN to generate synthetic non-landslide images from landslide images, and finally performs pixel-level segmentation by calculating the difference between the original and synthetic images, followed by an intersection of the CAM and cycleGAN results.",
+      "source": "Yongxiu Zhou, Honghui Wang, et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this method, we used the image level annotation data to replace pixel level annotation data as the training data. Firstly, the CAM method was used to determine the approximate position of the landslide area. Then, the cycleGAN method was used to generate the fake image without a landslide, and to make the difference with the real image to obtain the accurate segmentation of the landslide area. Finally, the pixel-level segmentation of the landslide area on remote sensing image was realized."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement has shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and publicly available. The custom code for the proposed method is not mentioned or linked."
+}

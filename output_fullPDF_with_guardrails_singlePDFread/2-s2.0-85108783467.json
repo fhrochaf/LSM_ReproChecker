@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory from multi-temporal digital aerial-photo interpretation (2005–2006)",
+      "source": "Tilch, N. (2014)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on a previous work [26], a landslide inventory from multi-temporal digital aerial-photo interpretation (2005–2006) is being used for the delimitation of the area in exam and for the validation of the classification method."
+    },
+    {
+      "name": "Terra-ASTER L2 products",
+      "source": "NASA/METI",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data used for this work were Terra-ASTER L2 products."
+    },
+    {
+      "name": "Nationwide 10 m resolution ALS DTM",
+      "source": "Geological Survey of Austria",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two available DTMs (Digital Terrain Models) based on Airborne Laser Scanning (ALS) were used for the flat terrain correction: a nationwide 10 m resolution ALS DTM"
+    },
+    {
+      "name": "Local ALS DTM Vorarlberg",
+      "source": "VoGIS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two available DTMs (Digital Terrain Models) based on Airborne Laser Scanning (ALS) were used for the flat terrain correction: ... a local ALS DTM Vorarlberg (for the core study area only) with 1-m resolution."
+    },
+    {
+      "name": "Building shape file for the Open Street Map Project",
+      "source": "OpenStreetMap",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "by using the publicly available building shape file for the Open Street Map Project [35] a correction of the artefacts present into the derived DTM slope model was performed."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Double classification workflow (supervised followed by unsupervised)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-automatic image classification workflow consisting of two steps: 1) a supervised classification using a maximum likelihood classifier with three spectral change indices, and 2) an unsupervised classification using another set of three spectral change indices, combined to identify landslide-induced vegetation change.",
+      "source": "Filippo Vecchiotti",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the landslide detection method, which adopted an innovative double classification workflow (a first supervised followed by an unsupervised algorithm)... The entire procedure, illustrated in Figure 7 and computed in ArcGIS, can be subdivided in the following sub-steps: 1. Image pre-processing; 2. Image processing; 3. Image post-processing."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author. The data are not publicly available because not yet being included completely in our landslide geo-database."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked or made available, and the custom classification code is not provided."
+}

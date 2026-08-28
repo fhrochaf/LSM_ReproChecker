@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide classification dataset of a loess area in Gansu, China",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We construct a landslide classification dataset to validate the effectiveness of MILL. ... The study area is a loess area of Gansu, China. We use remote sensing images to identify the landslides of the study area. The images are obtained from Google Earth [Gorelick et al. 2017]"
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The images are obtained from Google Earth [Gorelick et al. 2017]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multiple Instance Learning–based Landslide classification (MILL)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MILL is an end-to-end deep convolutional neural network that treats remote sensing images as bags of instances. It consists of a backbone network for feature extraction, a stack of convolutions for instance extraction and classification, and a novel MIL pooling function based on channel attention to map instance-level labels to bag-level labels.",
+      "source": "Xiaochuan Tang et al.",
+      "link": "https://github.com/xiaochuan-tang/",
+      "status": "MENTIONED",
+      "verbatim": "The proposed MILL method is implemented in PyTorch.1 ... 1https://github.com/xiaochuan-tang/."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not provided, and the Google Earth imagery is accessible via the Google Earth Engine platform. The custom MILL method code is provided via a persistent GitHub repository link."
+}

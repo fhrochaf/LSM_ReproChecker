@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Professor Ji’s research team at Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset was developed and released by Professor Ji’s research team at Wuhan University."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MED-DeepLabv3+",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight semantic segmentation model for landslide identification that replaces the Xception encoder with MobileNetV3, incorporates an Efficient Multi-scale Attention (EMA) module for feature refinement, and introduces a DS-ASPP module using depthwise separable convolutions, Squeeze-and-Excitation, and Strip Pooling.",
+      "source": "Xuhui Li et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The code and data that support the findings of this study are available from the corresponding author, Zhihua Zhang, upon reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The code and data that support the findings of this study are available from the corresponding author, Zhihua Zhang, upon reasonable request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned without a link or reference, and the custom code is not available via a repository or persistent link, being offered only upon request."
+}

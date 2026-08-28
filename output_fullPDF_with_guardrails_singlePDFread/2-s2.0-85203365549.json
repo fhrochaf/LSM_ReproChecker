@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 level 1C data",
+      "source": "ESA",
+      "link": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+      "status": "MENTIONED",
+      "verbatim": "The level 2A data is the bottom-of-atmosphere (BOA) reflectance values developed by correcting for atmospheric disturbances from Sentinel-1C data using sen2cor processor (“Harmonized Sentinel-2 MSI, n.d.”). ... Harmonized Sentinel-2 MSI: MultiSpectral Instrument, Level-2A | Earth Engine Data Catalog | Google for Developers (n.d.) Retrieved December 3, 2023, from https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED"
+    },
+    {
+      "name": "NASA DEM",
+      "source": "NASA JPL",
+      "link": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "status": "MENTIONED",
+      "verbatim": "We use NASA DEM, a global DEM at a spatial resolution of one arc second developed by reprocessing and void filling of Shuttle Radar Topography Mission (SRTM) data (Crippen et al. 2016; NASA JPL 2020). ... Jpl NASA (2020) NASADEM Merged DEM Global 1 arc second V001. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001"
+    },
+    {
+      "name": "Kodagu landslide inventory",
+      "source": "National Remote Sensing Centre (NRSC)",
+      "link": "https://bhuvan-app1.nrsc.gov.in/disaster/disaster.php#",
+      "status": "MENTIONED",
+      "verbatim": "Following the landslides, the National Remote Sensing Centre (NRSC) used multiple high and medium-resolution optical satellite datasets for rapid mapping of these landslides using semi-automatic object-based methods, this data has been acquired from Bhuvan (https://bhuvan-app1.nrsc.gov.in/disaster/disaster.php#)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ML-CASCADE",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-automated, web-based open-source tool hosted on Google Earth Engine that uses a Random Forest classifier to map landslide extent. It allows users to create landslide and non-landslide samples using pre- and post-event Sentinel-2 imagery, terrain data, and vegetation/soil indices, supporting both pixel-based and object-based (SNIC) classification.",
+      "source": "Nirdesh Sharma and Manabendra Saharia",
+      "link": "https://hydrosense.users.earth-engine.app/view/ml-cascade",
+      "status": "MENTIONED",
+      "verbatim": "ML-CASCADE is hosted on GEE and can be accessed from https://hydrosense.users.earth-engine.app/view/ml-cascade."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Availability statement has link for the proposed system, which maps landslides."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via the Bhuvan portal, and input datasets (Sentinel-2, NASA DEM) are accessible via public repositories. The custom ML-CASCADE code is provided via a persistent Google Earth Engine link."
+}

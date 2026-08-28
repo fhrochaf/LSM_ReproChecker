@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "High-resolution remote sensing image data of debris flow and landslides around Wenchuan, Sichuan Province",
+      "source": "Zeng, C.; Cao, Z.; Su, F.; Zeng, Z.; Yu, C. High-precision aerial imagery and interpretation dataset of landslide mudslide disasters in and around Sichuan (2008–2020). China Sci. Data 2022, 7, 191–201.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data used in this article come from high-resolution remote sensing image data, capturing 0.2–0.9 m debris flow and landslides around Wenchuan, Sichuan Province, since 2018 [41]. ... Zeng, C.; Cao, Z.; Su, F.; Zeng, Z.; Yu, C. High-precision aerial imagery and interpretation dataset of landslide mudslide disasters in and around Sichuan (2008–2020). China Sci. Data 2022, 7, 191–201."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Van–UPerAttnSeg",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An encoder–decoder framework for landslide segmentation. The encoder uses a Visual Attention Network (Van) to extract multi-scale features. The decoder integrates a Pyramid Pooling Module (PPM), Feature Pyramid Network (FPN), and Convolutional Block Attention Module (CBAM) to fuse and enhance features. It also employs a sliding window algorithm based on Gaussian fusion for post-processing.",
+      "source": "Chang Li, Quan Zou, Guoqing Li, Wenyang Yu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, a new segmentation model based on Van–UPerAttnSeg is proposed for the landslide segmentation problem."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The original contributions presented in this study are included in the article. Further inquiries can be directed to the corresponding author.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom code for the Van-UPerAttnSeg model is not provided or linked."
+}

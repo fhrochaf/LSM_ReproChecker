@@ -1,0 +1,143 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery (L2A)",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2 images were downloaded from the Copernicus Open Access Hub (under decommission from September 2023) https://scihub.copernicus.eu/ (Copernicus Open Access Hub, 2023)."
+    },
+    {
+      "name": "Google Earth satellite imagery",
+      "source": "Google Earth",
+      "link": "https://opensourceoptions.com/blog/how-to-add-google-satellite-imagery-and-google-maps-to-qgis/",
+      "status": "MENTIONED",
+      "verbatim": "The Google Earth satellite layer XYZ tiles are available on QGIS using the following address string: https://opensourceoptions.com/blog/how-to-add-google-satellite-imagery-and-google-maps-to-qgis/ as described by Hafen (2022)."
+    },
+    {
+      "name": "2012 orthophotos",
+      "source": "National Cartographic Service (PCN)",
+      "link": "http://www.pcn.minambiente.it/mattm/servizio-wms/",
+      "status": "MENTIONED",
+      "verbatim": "The 2012 orthophotos that cover both study areas are available on the national cartographic service (PCN) WMS, http://www.pcn.minambiente.it/mattm/servizio-wms/ (MASE, 2012)."
+    },
+    {
+      "name": "Piemonte region 2018 orthophoto",
+      "source": "Regione Piemonte",
+      "link": "https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:98fe6c87-2721-4193-a35a-5af883badce7",
+      "status": "MENTIONED",
+      "verbatim": "The Piemonte region 2018 orthophoto is available on the following WMS, https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:98fe6c87-2721-4193-a35a-5af883badce7 (Regione Piemonte, 2020)."
+    },
+    {
+      "name": "5 m DTM (Piemonte)",
+      "source": "Regione Piemonte",
+      "link": "https://www.geoportale.piemonte.it/geonetwork/srv/eng/catalog.search#/metadata/r_piemon:224de2ac-023e-441c-9ae0-ea493b217a8e",
+      "status": "MENTIONED",
+      "verbatim": "DTM data can be downloaded from the Piemonte and Liguria region geo-portal: – https://www.geoportale.piemonte.it/geonetwork/srv/eng/catalog.search#/metadata/r_piemon:224de2ac-023e-441c-9ae0-ea493b217a8e (Regione Piemonte, 2011)"
+    },
+    {
+      "name": "Semi-automatic and manual shallow landslide inventories",
+      "source": "Notti et al. (2022)",
+      "link": "https://doi.org/10.5281/zenodo.8164752",
+      "status": "MENTIONED",
+      "verbatim": "ML and PL datasets used in this study are available in KML format on the Zenodo platform: https://doi.org/10.5281/zenodo.8164752 (Notti et al., 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Two-phase semi-automatic methodology for shallow landslide mapping",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-phase procedure using Sentinel-2 imagery and Google Earth Engine. The first phase uses pre- and post-event NDVI variation and geomorphological filtering (slope) to extract potential shallow landslides (PLs). The second phase involves comparing the semi-automatic inventory with a benchmark manual inventory to refine parameters and validate the results.",
+      "source": "Notti et al. (2023)",
+      "link": "https://doi.org/10.5281/zenodo.8164752",
+      "status": "MENTIONED",
+      "verbatim": "Also all the Google Earth Engine scripts are stored in the same dataset (PDF File) on Zenodo. ... ML and PL datasets used in this study are available in KML format on the Zenodo platform: https://doi.org/10.5281/zenodo.8164752 (Notti et al., 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "ML and PL landslide inventory datasets in KML format",
+        "source": "Notti et al., 2022",
+        "link": "https://doi.org/10.5281/zenodo.8164752",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Sentinel-2 satellite images",
+        "source": "Copernicus Open Access Hub",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Google Earth satellite imagery layer (XYZ tiles) for QGIS",
+        "source": "Google Earth (via Hafen, 2022)",
+        "link": "https://opensourceoptions.com/blog/how-to-add-google-satellite-imagery-and-google-maps-to-qgis/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "2012 orthophotos covering both study areas",
+        "source": "MASE (national cartographic service, PCN)",
+        "link": "http://www.pcn.minambiente.it/mattm/servizio-wms/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Piemonte region 2018 orthophoto",
+        "source": "Regione Piemonte, 2020",
+        "link": "https://www.geoportale.piemonte.it/geonetwork/srv/ita/catalog.search#/metadata/r_piemon:98fe6c87-2721-4193-a35a-5af883badce7",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Piemonte region DTM (digital terrain model)",
+        "source": "Regione Piemonte, 2011",
+        "link": "https://www.geoportale.piemonte.it/geonetwork/srv/eng/catalog.search#/metadata/r_piemon:224de2ac-023e-441c-9ae0-ea493b217a8e",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Liguria region DTM (digital terrain model)",
+        "source": "Regione Liguria, 2022",
+        "link": "https://srvcarto.regione.liguria.it/geoservices/apps/viewer/pages/apps/download/index.html?id=2056",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Land use, NDVI elaborations, and meteorological data",
+        "source": null,
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Google Earth Engine (GEE) scripts for landslide dataset processing",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom GEE scripts used in the study, stored as a PDF file within the same Zenodo dataset repository as the ML/PL landslide inventories.",
+        "source": null,
+        "link": "https://doi.org/10.5281/zenodo.8164752",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Google Earth Pro software for high-resolution inventory mapping and checking",
+        "method_type": "SOFTWARE",
+        "summary": "Commercial/free software (Google Earth Pro) used to visually map and verify landslide inventories at high resolution.",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Partial data and code availability statement, with shared links. Some data is presented as 'available upon request'."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and all input datasets are referenced and linked via public repositories or WMS services. The custom Google Earth Engine scripts are provided via a persistent Zenodo link."
+}

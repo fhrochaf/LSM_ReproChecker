@@ -1,0 +1,92 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope imagery",
+      "source": "Planet Labs Inc.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For preparing training and testing samples, cloud-free PlanetScope imagery for the period 2018–2025 was acquired from Planet Labs Inc."
+    },
+    {
+      "name": "High Resolution Global Landslide Detector Database (HR-GLDD)",
+      "source": "Meena et al. (2022)",
+      "link": "https://zenodo.org/records/7189381#.Y0a2UHZBxD9",
+      "status": "MENTIONED",
+      "verbatim": "This dataset, created by Meena et al. (2022)21, is publically available for research in numpy array format (.npy) and can be accessed53. ... Source for HR-GLDD (High Resolution Global Landslide Detector Database) is “Sansar Raj Meena, Lorenzo nava, Kushanav Bhuyan, Silvia Puliero, Lucas Pedrosa Soares, Helen Cristina Dias, Mario Floris, & Filippo Catani. (2022). HR-GLDD: A globally distributed high resolution landslide dataset”. Link: https://zenodo.org/records/7189381#.Y0a2UHZBxD9"
+    },
+    {
+      "name": "Landslide inventory of Kerala",
+      "source": "Geological Survey of India (GSI)",
+      "link": "https://bhukosh.gsi.gov.in/",
+      "status": "MENTIONED",
+      "verbatim": "Geomorphological data was obtained from Bhukosh, GSI52, while information on past landslide events was acquired from Bhukosh, Geological Survey of India (GSI)46 and van Westen (2020)47. ... BHUKOSH. Landslide inventory of Kerala, Geological Survey of India, Govt. of India, Kolkata, India. (2025). https://bhukosh.gsi.gov.in/."
+    },
+    {
+      "name": "Shuttle Radar Topographic Mission (SRTM) DEM",
+      "source": "SRTM",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Maximum elevation within this area reaches 2,553 m as derived from the Shuttle Radar Topographic Mission (SRTM) DEM."
+    },
+    {
+      "name": "Kerala Soil Map",
+      "source": "National Bureau of Soil Survey and Land Use Planning (ICAR)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "National Bureau of Soil Survey and Land Use Planning (ICAR). Kerala Soil Map (Regional Center, 1996)."
+    },
+    {
+      "name": "Geology of Kerala",
+      "source": "Geological Survey of India (GSI)",
+      "link": "https://bhukosh.gsi.gov.in/",
+      "status": "MENTIONED",
+      "verbatim": "BHUKOSH. Geology of Kerala, Geological Survey of India, Govt. of India, Kolkata, India. (2025). https://bhukosh.gsi.gov.in/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention multiscale U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net based semantic segmentation architecture that integrates attention gates to suppress irrelevant features and highlight important ones, trained using transfer learning from the HR-GLDD dataset and fine-tuned on temporal difference imagery.",
+      "source": "Abhilash Sreekumar, Hemalatha Thirugnanam, Sansar Raj Meena, Maneesha Vinodini Ramesh",
+      "link": "https://drive.google.com/drive/folders/10Af7fvUl2lnD-7imm04WAlZhtNtXvHI1?usp=sharing",
+      "status": "MENTIONED",
+      "verbatim": "Code for the implementation performed in this paper is available at: https://drive.google.com/drive/folders/10Af7fvUl2lnD-7imm04WAlZhtNtXvHI1?usp=sharing."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset used in the study",
+        "source": "Google Drive",
+        "link": "https://drive.google.com/drive/folders/1nLNEj359p8GwagwibpBMrkElLl8ZhdPS?usp=drive_link",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "HR-GLDD (High Resolution Global Landslide Detector Database)",
+        "source": "Meena, Nava, Bhuyan, Puliero, Soares, Dias, Floris & Catani (2022)",
+        "link": "https://zenodo.org/records/7189381",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Implementation code for this study",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing the methodology used in this paper, shared via a specific Google Drive folder.",
+        "source": null,
+        "link": "https://drive.google.com/drive/folders/10Af7fvUl2lnD-7imm04WAlZhtNtXvHI1?usp=sharing",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and linked, with public access provided for the HR-GLDD and GSI data. The custom code is available via a persistent Google Drive link."
+}

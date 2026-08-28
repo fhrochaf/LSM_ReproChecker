@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "SPOT-6 satellite imagery",
+      "source": "Authors' acquisition",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "2 SPOT-6 images, acquired on April 30, 2022... In Table 1, the main features of each dataset used are reported."
+    },
+    {
+      "name": "10 m-resolution DEM (TIN-Italy)",
+      "source": "Tarquini and Nannipieri (2017)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The slope map was generated starting from a 10 m-resolution DEM, developed in the framework of the TIN-Italy project (Tarquini and Nannipieri, 2017)."
+    },
+    {
+      "name": "Geological Map of Italy 1:500,000",
+      "source": "ISPRA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Geolithological map of the Misa basin (derived from Geological Map of Italy 1:500,000 by ISPRA)."
+    },
+    {
+      "name": "Corine Land Cover (CLC 2018)",
+      "source": "Copernicus",
+      "link": "https://land.copernicus.eu/en/products/corine-land-cover/clc2018",
+      "status": "MENTIONED",
+      "verbatim": "CLC (2018) https://land.copernicus.eu/en/products/corine-land-cover/clc2018"
+    },
+    {
+      "name": "Italian national landslide inventory (IFFI)",
+      "source": "ISPRA",
+      "link": "https://idrogeo.isprambiente.it/app/",
+      "status": "MENTIONED",
+      "verbatim": "the Italian national landslide inventory (IFFI, Inventario dei Fenomeni Franosi in Italia, in Italian; Trigila et al. 2007) redacted by ISPRA (Istituto Superiore per la Protezione e Ricerca Ambientale, Superior Institute for Environmental Protection and Research in Italian), available on the Idrogeo portal (https://idrogeo.isprambiente.it/app/)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Mixed approach of segmentation, supervised classification, and visual interpretation",
+      "method_type": "MANUAL",
+      "summary": "The method integrates Mean Shift image segmentation and Maximum Likelihood supervised classification with NDVI change detection to identify landslide candidates, followed by manual visual photointerpretation and field survey validation to produce the final inventory.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via the Idrogeo portal, and other input datasets are either linked or practically accessible through public providers. The method's code is not available."
+}

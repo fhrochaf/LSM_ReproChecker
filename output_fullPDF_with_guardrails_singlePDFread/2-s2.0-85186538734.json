@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat surface reflectance data",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We obtained all available Landsat surface reflectance data from atmospherically corrected Collection 2, Tier 1... (USGS, 2020)."
+    },
+    {
+      "name": "Consistent And Corrected Nighttime Light Dataset (DMSP)",
+      "source": "Zhao et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We utilized processed DMSP data from the Consistent And Corrected Nighttime Light Dataset (Zhao et al., 2022)."
+    },
+    {
+      "name": "VIIRS monthly average radiance composites",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The VIIRS data were monthly average radiance composites and we transformed them into annual median values."
+    },
+    {
+      "name": "NASADEM Merged DEM Global 1 arc second V001",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used NASA's digital elevation model (DEM), which is the 2000 reprocessing of the Shuttle Radar Topography Mission data (Jpl, 2020)."
+    },
+    {
+      "name": "HydroSHEDS",
+      "source": "Lehner et al., 2008",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used HydroSHEDS to represent hydrological networks, which is also based on NASA's digital elevation model (Lehner et al., 2008)."
+    },
+    {
+      "name": "Manually mapped landslide data (Central and Western Nepal)",
+      "source": "Kincey et al., 2021",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used manually mapped landslide data based on an area of 25,575 km2 from Central and Western Nepal reported in Kincey et al. (2021) as training and testing data for the machine learning model."
+    },
+    {
+      "name": "Global Landslide Catalog (GLC)",
+      "source": "Kirschbaum et al., 2010",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we utilized two landslide impact and occurrence catalogs: the Global Landslide Catalog (GLC) and the Global Fatal Landslide Database (GFLD) (Kirschbaum et al., 2010; Froude and Petley, 2018)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net architecture with ResNet-18 backbone",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net semantic segmentation model using a ResNet-18 encoder to estimate the probability of a pixel being a landslide scar, trained on stacked Landsat, nighttime light, and DEM data.",
+      "source": "Tzu-Hsin Karen Chen",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We utilized the U-Net architecture as our CNN segmentation model to estimate the probability of a pixel being a landslide scar (Ronneberger et al., 2015)... For the encoder, we employed the ResNet-18 backbone (He et al., 2016)... The satellite images, training data, and multi-temporal landslide inventory, and recurrence, persistence, and first occurrence maps are available on GitHub (https://github.com/karenthchen/Persistent-recurrent-landslide-Himalaya)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Satellite images, training data, and multi-temporal landslide inventory with recurrence, persistence, and first occurrence maps",
+        "source": "GitHub (karenthchen)",
+        "link": "https://github.com/karenthchen/Persistent-recurrent-landslide-Himalaya",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and accessible via the provided GitHub repository. But no custom code is available or shared."
+}

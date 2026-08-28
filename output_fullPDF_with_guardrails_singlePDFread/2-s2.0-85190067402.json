@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "HR-GLDD dataset",
+      "source": "Meena et al. [47]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The HR-GLDD dataset [47] contains five rainfall-triggered and five earthquake-triggered multiple landslide events that occurred in varying geomorphological and topographical regions."
+    },
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "Ghorbanzadeh et al. [48]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense dataset is the multi-source landslide benchmark data with a diversity of landslide triggers, topography, and land cover [48]."
+    },
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "photogrammetry and computer vision group of Wuhan University [49]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset was released by the photogrammetry and computer vision group of Wuhan University [49]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GMNet (Global information extraction and multi-scale feature fusion segmentation network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "GMNet is a semantic segmentation network that uses a multi-branch encoder (transformer and CNN) for global information extraction, a Semantic Information Enhancement (SIE) module to bridge the semantic gap between low-level and high-level features, and a Multi-scale Feature Fusion (MFF) module to handle varying landslide scales.",
+      "source": "Kai Wang et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the GMNet method is not provided or linked."
+}

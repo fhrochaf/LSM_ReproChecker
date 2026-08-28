@@ -1,0 +1,78 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset of Iburi district, Japan",
+      "source": "Authors' own visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide dataset was generated from visual interpretation based on the 3 m resolution Planet images... Finally, 9295 landslides have been visually interpreted based on ArcMap10.6, with a total area of 30.96 km2 [58]"
+    },
+    {
+      "name": "Planet images (3 m resolution)",
+      "source": "Planet Company",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide dataset was generated from visual interpretation based on the 3 m resolution Planet images... We are grateful to Planet Company for providing us with the images."
+    },
+    {
+      "name": "Landslide drone images",
+      "source": "Geospatial Information Agency of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To avoid misidentification of landslides, we referred to landslide drone images released by the Geospatial Information Agency of Japan regarding this earthquake."
+    },
+    {
+      "name": "ResNet50 pre-trained weights",
+      "source": "ImageNet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, the robust pre−trained weights of ResNet50 on ImageNet were introduced to accelerate convergence and avert dying ReLu [64]."
+    },
+    {
+      "name": "Training samples (partial)",
+      "source": "Authors",
+      "link": "https://drive.google.com/drive/folders/1x7umIkEnKqZlXS7KSmzDqQRPUWsfQPqB?usp=sharing",
+      "status": "MENTIONED",
+      "verbatim": "The complete structure of ResNet50 and part of training samples are available. This data can be found here: [https://drive.google.com/drive/folders/1x7umIkEnKqZlXS7KSmzDqQRPUWsfQPqB?usp=sharing] (accessed on 12 March 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net++ with ResNet50 backbone",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net++ semantic segmentation network using ResNet50 as the feature extraction backbone, trained with transfer learning from ImageNet weights, and implemented using the PyTorch framework.",
+      "source": "Authors (Yang and Xu)",
+      "link": "https://github.com/qubvel/segmentation_models.pytorch",
+      "status": "MENTIONED",
+      "verbatim": "The implement of U−Net++ structure construction referred to the source codes compiled in Pytorch On open source project in GitHub [71]... [71] Yakubovskiy, P.; Segmentation Models Pytorch. GitHub Repository. 2020. Available online: https://github.com/qubvel/segmentation_models.pytorch (accessed on 11 March 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Part of training samples used for the model",
+        "source": null,
+        "link": "https://drive.google.com/drive/folders/1x7umIkEnKqZlXS7KSmzDqQRPUWsfQPqB?usp=sharing",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "ResNet50 model structure",
+        "method_type": "REUSED",
+        "summary": "The complete structure of the ResNet50 network, an established architecture, shared for this study's implementation.",
+        "source": null,
+        "link": "https://drive.google.com/drive/folders/1x7umIkEnKqZlXS7KSmzDqQRPUWsfQPqB?usp=sharing",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is partially  provided, and other input datasets are either commercial or lack clear access paths. The custom code is available via a referenced GitHub repository."
+}

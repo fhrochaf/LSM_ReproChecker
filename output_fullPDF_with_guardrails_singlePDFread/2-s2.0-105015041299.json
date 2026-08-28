@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "CAS landslide dataset",
+      "source": "Chinese Academy of Sciences",
+      "link": "https://doi.org/10.5281/zenodo.10294997",
+      "status": "MENTIONED",
+      "verbatim": "This study employs the CAS landslide dataset [38]. Developed specifically for deep learning applications, the dataset is publicly available on Zenodo (https://doi.org/10.5281/zenodo.10294997)."
+    },
+    {
+      "name": "GF-1 satellite data (Longxi River Dataset)",
+      "source": "China Center for Resources Satellite Data and Application",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset comprises 1769 images, acquired from the GF-1 satellite data (0.5 m resolution) provided by the China Center for Resources Satellite Data and Application"
+    },
+    {
+      "name": "UAV images (Moxi Town Dataset)",
+      "source": "Sichuan Geographic Information Center",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset comprises 1635 UAV images acquired by the Sichuan Geographic Information Center between September and October 2022"
+    },
+    {
+      "name": "Hokkaido Iburi-Tobu Dataset imagery",
+      "source": "Geospatial Information Authority of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This subset includes 1484 images acquired by the Geospatial Information Authority of Japan between September and October 2018"
+    }
+  ],
+  "methods": [
+    {
+      "name": "E-MSLDNet (edge-aware and multiscale feature fusion dual-enhanced landslide detection network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "E-MSLDNet is a semantic segmentation network based on an improved ResNet50 backbone. It incorporates a Multiscale Feature Aggregation Attention (MSFAA) module for multiscale feature representation, an Edge-Aware Attention Module (EAAM) for direction-sensitive boundary capture, and an Edge-Enhanced Fusion Module (EEFM) for refining boundary delineation through spatial attention-guided calibration.",
+      "source": "Xingwang Zhao et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we draw upon the classical DeepLabV3+ model architecture [43] to propose an enhanced landslide segmentation network (E-MSLDNet), as illustrated in figure 3."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"No new data were created or analysed in this study.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via the CAS landslide dataset, but the custom code for E-MSLDNet is not provided or linked, and the artifact availability statement confirms no code was shared."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide images in Bijie City",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this experiment, more than 200 high-quality landslide images containing large, medium and small landslides were selected from the landslide images and labeled using the Labelimg tool to form a training dataset in PASCAL VOC format...In this experiment, we use landslide image in Bijie City[6]."
+    },
+    {
+      "name": "TripleSat satellite imagery",
+      "source": "TripleSat",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the landslide images used in the experiments in this paper are taken by TripleSat satellites."
+    },
+    {
+      "name": "18-layer satellite image slices of Yingxiu town",
+      "source": "Bigemap",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The 18-layer satellite image slices of Yingxiu town were downloaded by bigemap software"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Efficient Residual Channel Attention Mechanism Network (ERCA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "ERCA is a channel attention mechanism that uses 1D convolution to capture cross-channel interactions, a soft thresholding layer to eliminate unimportant features, and a residual connection to sum the re-assigned features with the original input. It is integrated into the backbone of the Faster R-CNN model to improve feature extraction and reduce background noise.",
+      "source": "Yabing Jin et al.",
+      "link": "https://github.com/fluoritess/Efficient-residual-channel-attention-mechanism-network-and-Faster-R-CNN",
+      "status": "MENTIONED",
+      "verbatim": "We released our code at: https://github.com/fluoritess/Efficient-residual-channel-attention-mechanism-network-and-Faster-R-CNN."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked or made available. The custom code for the ERCA method is provided via a GitHub repository link."
+}

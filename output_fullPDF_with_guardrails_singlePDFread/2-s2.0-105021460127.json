@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Sen12Landslides (refined version)",
+      "source": "Höhn, P. et al.",
+      "link": "https://huggingface.co/datasets/paulhoehn/Sen12Landslides",
+      "status": "MENTIONED",
+      "verbatim": "The Sen12Landslides dataset (refined version) is available at HuggingFace41 and consists of a collection of NetCDF files... The Sen12Landslides dataset, which is the focus of this study, is publicly available on Hugging Face at: https://huggingface.co/datasets/paulhoehn/Sen12Landslides."
+    },
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1A and Sentinel-1B are satellites that provide C-band dual-polarization (VV and VH) SAR imagery... All Sentinel-1 and Copernicus DEM data were accessed via terrabyte, a high-performance data analytics (HPDA) platform developed by the German Aerospace Center (DLR) and the Leibniz Supercomputing Centre (LRZ)."
+    },
+    {
+      "name": "Copernicus Digital Surface Model (DSM) GLO-30",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, the GLO-30 instance was utilized, providing global coverage at 30-meter resolution32. ... All Sentinel-1 and Copernicus DEM data were accessed via terrabyte, a high-performance data analytics (HPDA) platform developed by the German Aerospace Center (DLR) and the Leibniz Supercomputing Centre (LRZ)."
+    },
+    {
+      "name": "Original Landslide Inventories (15 global regions)",
+      "source": "Various (see Table 1)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A complete list of these dataset sources, together with accession links and references, is provided in Table 1, ensuring transparency and accessibility of all resources incorporated in this work."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Sen12Landslides processing pipeline (including NDVI-based dating algorithm)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multi-temporal, multi-modal processing pipeline that integrates landslide inventories with Sentinel-1, Sentinel-2, and Copernicus DEM data. It includes a custom NDVI-based dating algorithm to identify landslide event dates and a self-training refinement process using deep learning models to improve label quality.",
+      "source": "Höhn, P. et al.",
+      "link": "https://github.com/PaulH97/Sen12Landslides",
+      "status": "MENTIONED",
+      "verbatim": "The code used in this study, especially for accessing, processing, and modifying the dataset, will be made publicly available via a dedicated GitHub repository: https://github.com/PaulH97/Sen12Landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sen12Landslides dataset",
+        "source": "Hugging Face (paulhoehn)",
+        "link": "https://huggingface.co/datasets/paulhoehn/Sen12Landslides",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Sen12Landslides data access, processing, and modification code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code for accessing, processing, and modifying the Sen12Landslides dataset, to be shared via a dedicated GitHub repository.",
+        "source": null,
+        "link": "https://github.com/PaulH97/Sen12Landslides",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Sen12Landslides dataset is publicly available via a persistent Hugging Face link, and other input datasets are accessible through standard public platforms. The custom processing code is provided via a persistent GitHub repository link."
+}

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense (L4S) 2022 benchmark dataset",
+      "source": "L4S 2022 competition",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide4sense (L4S) 2022 competition has provided the first globally distributed landslide benchmark data set... Landslide4Sense (L4S) developed a medium-resolution, multi-spectral, multi-source landslide benchmark dataset for machine learning algorithms, with high-accuracy landslide image requirements."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SwAV integrated with an auto-encoder",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A self-supervised learning framework that integrates the SwAV (Swapping Assignments between multiple Views) algorithm within an auto-encoder architecture. It uses a pre-trained ResNet-18 encoder (trained via SwAV on unlabeled data) and a U-Net decoder fine-tuned on a small subset (1% or 10%) of labeled landslide data to produce pixel-wise landslide probability maps.",
+      "source": "O. Ghorbanzadeh et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this study introduces a novel approach by integrating SwAV within an auto-encoder framework for landslide detection... This study implements supervised and unsupervised processes using Python and PyTorch on an Ubuntu server with 4 NVIDIA Tesla T4 GPUs."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense benchmark dataset is mentioned but not linked, and the custom code for the SwAV auto-encoder framework lacks a repository or persistent link."
+}

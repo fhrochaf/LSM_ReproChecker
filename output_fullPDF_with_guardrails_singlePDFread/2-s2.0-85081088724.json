@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "ALOS-2 PALSAR-2 imagery",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Original ALOS-2 data and products are copyright JAXA and provided under JAXA ALOS Research Announcement RA6."
+    },
+    {
+      "name": "Landslide inventory (polygons)",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank the GSI for providing aerial photos and detailed landslide extent polygons."
+    },
+    {
+      "name": "SRTM digital elevation model (DEM)",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We estimated the topographic phase and flat-earth phase, ϕmn using from satellite orbits and Shuttle Radar Topography Mission (SRTM) digital elevation model (DEM) [39]."
+    },
+    {
+      "name": "Land use map",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": "https://www.eorc.jaxa.jp/ALOS/lulc/lulc_jindex.htm",
+      "status": "MENTIONED",
+      "verbatim": "According to the land use map (Figure 5a) provided by Japan Aerospace Exploration Agency (JAXA) (https://www.eorc.jaxa.jp/ALOS/lulc/lulc_jindex.htm)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-temporal intensity correlation method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multi-temporal landslide detection method that compares the intensity correlation of a co-event pair against a reference group of pre-event pairs. It uses Kernel Density Estimation (KDE) to estimate the probability density function of the reference group and calculates the probability of landslides pixel-by-pixel based on the cumulative density function.",
+      "source": "Jungkyo Jung and Sang-Ho Yun",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we designed the landslide detection algorithms utilizing coherent and incoherent sources from the SLC stack... we also developed multi-temporal algorithms using the coherence, intensity, and intensity correlation."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the custom code used for the multi-temporal intensity correlation method is not provided via any repository or persistent link."
+}

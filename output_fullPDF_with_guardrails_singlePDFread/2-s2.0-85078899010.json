@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "State Key Laboratory of Geohazard Prevention and Geoenvironment Protection of China",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "We created an open, accurate, and large landslide dataset consisting of landslide/non-landslide images, shapefiles of landslide boundaries, and corresponding DEM data, which is available at http://study.rsgis.whu.edu.cn/pages/download/."
+    },
+    {
+      "name": "TripleSat satellite images",
+      "source": "TripleSat",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Seven hundred seventy landslide samples, including rock falls, rock slides, and a few debris slides, and 2003 negative samples covering various backgrounds were cropped from the TripleSat satellite images captured from May to August 2018."
+    },
+    {
+      "name": "Digital elevation models (DEM)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "3D spatial and channel attention module (3D SCAM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A 3D attention module that integrates spatial and channel information to refine feature maps in a CNN. It uses global average and max pooling to create descriptors, processes them through convolution blocks with multi-scale kernels (1x1, 3x3, 7x7), and applies a sigmoid activation to produce an attention map.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this work, we developed our 3D attention module which simultaneously extracts the integrated spatial and channel information in the stage of inferring the attention map... All the codes were implemented in the PyTorch deep learning environment."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",	
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is linked and available. The custom code for the 3D spatial and channel attention module lacks a repository or persistent link."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "High-Resolution Digital Elevation Model (HRDEM) product",
+      "source": "Quebec Ministry of Natural Resources and Forests",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "I would like to acknowledge that the dataset used in this study comes from the High-Resolution Digital Elevation Model (HRDEM) product based on LiDAR data by Quebec Ministry of Natural Resources and Forests."
+    },
+    {
+      "name": "Landslide inventory of Retrogressive and Rotational landslides",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention ResU-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning semantic segmentation model based on the U-Net architecture, utilizing a ResNet-50 encoder and attention gates in the skip connections to focus on relevant features for landslide detection from HRDEM derivatives.",
+      "source": "Hejar Shahabi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To develop and implement the Attention ResU-Net model specifically for our study, we employed the GeoPatch Python package (Shahabi, 2022) to preprocess the dataset."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not mentioned or linked, and the custom code for the Attention ResU-Net model lacks a repository or persistent link."
+}

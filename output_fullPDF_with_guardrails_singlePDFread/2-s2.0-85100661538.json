@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Datasets A, B, C, and D (pre- and post-event aerial orthophotos of Lantau Island, Hong Kong)",
+      "source": "Wenzhong Shi and Zhiyong Lv",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank Wenzhong Shi and Zhiyong Lv for providing the wonderful datasets"
+    },
+    {
+      "name": "Ground-truth maps",
+      "source": "Authors' own manual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Ground-truth maps were produced via manual interpretation using the editor tool of ESRI ArcGIS 10.7 [53]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SMDRF-Net (Semi-supervised Multi-temporal Deep Representation Fusion Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised deep learning framework for landslide mapping that integrates multi-level deep representation learning (DRL) and multi-temporal deep representations fusion (DRF). It uses WGAN-GP for unsupervised feature extraction via transfer learning and an attention-based mechanism to capture spatio-temporal dependencies, optimized using pseudo-labels generated via unsupervised object-level change detection and uncertainty analysis.",
+      "source": "Xiaokang Zhang, Man-On Pun, and Ming Liu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To this end, a deep learning model based on semi-supervised multi-temporal deep representation fusion network, namely SMDRF-Net, is proposed for reliable and efficient LM."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Data sharing not applicable.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available, and the custom SMDRF-Net code lacks a repository or persistent link."
+}

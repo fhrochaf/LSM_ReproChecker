@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "ship4landslide",
+      "source": "Authors",
+      "link": "https://doi.org/10.6084/m9.figshare.21626339.v1",
+      "status": "MENTIONED",
+      "verbatim": "The sample dataset in this paper, ship4landslide, is publicly available at figshare. https:// doi. org/ 10. 6084/ m9. figsh are. 21626 339. v1."
+    },
+    {
+      "name": "Chinese GF-2 remote sensing images",
+      "source": "Not specified",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To compare with shipborne images, we also obtained spaceborne Chinese GF-2 remote sensing images of the study area."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Decision-level fusion of deep learning models",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates the classification results of five pre-trained deep learning models (VGG19, DenseNet121, EfficientNetB0, SEResNet50, and ViT) using a weighted averaging decision-level fusion strategy to improve landslide detection performance from shipborne images.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we use decision-level fusion for model fusion to further improve the performance of landslide detection. ... In addition, in this article, we compare the prediction results of the three fusion methods and prove that weighted averaging performs better."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "ship4landslide sample dataset",
+        "source": "figshare",
+        "link": "https://doi.org/10.6084/m9.figshare.21626339.v1",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is linked and publicly available, but the custom code used for the decision-level fusion of deep learning models is not mentioned or provided."
+}

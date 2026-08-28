@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "GVLM dataset",
+      "source": "Zhang, X.",
+      "link": "https://github.com/zxk688/GVLM",
+      "status": "MENTIONED",
+      "verbatim": "The GVLM dataset contains 17 pairs of very high-resolution images taken before and after landslide events from diverse regions across six continents [20]. ... [20] X. Zhang, “GVLM Dataset”, GitHub. [Online]. Available: https://github.com/zxk688/GVLM"
+    },
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "Barman, N. R.",
+      "link": "https://www.kaggle.com/datasets/niyarrbarman/landslide-divided",
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense dataset consists of multi-spectral satellite images captured from four different locations: Japan, India, Nepal, and Taiwan [21]. ... [21] N. R. Barman, “Landslide Segmentation Dataset”, Kaggle. [Online]. Available: https://www.kaggle.com/datasets/niyarrbarman/landslide-divided"
+    },
+    {
+      "name": "Bijie Landslide dataset",
+      "source": "ksncik",
+      "link": "https://www.kaggle.com/datasets/ksncik/bijie-landslide-dataset",
+      "status": "MENTIONED",
+      "verbatim": "To assess generalization, the model is tested on the Bijie Landslide dataset. ... [28] ksncik, “Bijie Landslide Dataset”, Kaggle. [Online]. Available: https://www.kaggle.com/datasets/ksncik/bijie-landslide-dataset"
+    },
+    {
+      "name": "ImageNet dataset",
+      "source": "ImageNet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "MobileNetV2 is available as a pre-trained model trained on the ImageNet dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MAAU-Net (MobileNetV2, ASPP, Attention Gate, U-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MAAU-Net is a hybrid U-Net architecture that integrates a pre-trained MobileNetV2 encoder for feature extraction, an Atrous Spatial Pyramid Pooling (ASPP) module at the bottleneck to capture multi-scale contextual features, and attention gates at skip connections to filter irrelevant information. It performs binary segmentation of landslide and background areas.",
+      "source": "Affandi, A. K., Khakim, M. Y. N., Erni, Desiani, A., Sari, P., & Pratiwi, Y.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes a new architecture for landslide segmentation that produces more accurate results to help detect landslides early. It combines MobilNetV2, ASPP, and Attention Gate architectures with U-Net for landslide image segmentation, creating MAAU-Net (MobileNetV2, ASPP, Attention Gate, U-Net)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked, but the custom MAAU-Net code is not available via any repository or persistent link."
+}

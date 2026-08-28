@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 level-1C products",
+      "source": "Google Earth Engine (GEE)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Images used in this study for landslide mapping are from Sentinel-2 level-1C products accessed on the Google Earth Engine (GEE) website."
+    },
+    {
+      "name": "Landslide inventory map",
+      "source": "Authors' own manual digitization",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "There was no reliable landslide inventory map for our study area. Therefore, we manually digitized landslides within the study area based on Sentinel-2 imagery acquired before July 21, 2016, and corrections were made using Google Earth's archive imagery after the Morakot typhoon."
+    },
+    {
+      "name": "ALOS digital elevation model (DEM) (12.5 m)",
+      "source": "Japanese aerospace exploration agency (JAXA)",
+      "link": "https://search.asf.alaska.edu/#/",
+      "status": "MENTIONED",
+      "verbatim": "The slope layer was generated from the ALOS digital elevation model (DEM) (12.5 m) produced by the ALOS sensor of the Japanese aerospace exploration agency (JAXA), available from https://search.asf.alaska.edu/#/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Integration framework of a ResU-Net model with rule-based OBIA",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates a ResU-Net deep learning model with a rule-based Object-Based Image Analysis (OBIA) framework. The ResU-Net generates a landslide probability heatmap, which is then used alongside original image bands and topographic data within a rule-based OBIA workflow (implemented in eCognition) to refine the final landslide detection map by filtering out false positives like riverbeds using spectral and geometric rules.",
+      "source": "Python 3.6 environment using the TensorFlow2 library with the Keras API; eCognition",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The experimental setup of the DL model (implementation, training, and evaluation) was carried out in a Python 3.6 environment using the TensorFlow2 library with the Keras API. ... With the multi-resolution segmentation method implemented in eCognition™ (www.ecognition.com)"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked or provided. The custom code used for the ResU-Net and OBIA framework lacks a repository or persistent link."
+}

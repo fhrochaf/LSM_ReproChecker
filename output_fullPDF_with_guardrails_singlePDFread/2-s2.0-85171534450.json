@@ -1,0 +1,56 @@
+{
+  "datasets": [
+    {
+      "name": "Dataset with seasonal differences (summer to autumn and spring to winter)",
+      "source": "Zhao et al. [56]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset [56] has three bands with a spatial resolution of 0.3 m, which describes two different seasonal variations; the size of the images is 2700 × 4275 pixels."
+    },
+    {
+      "name": "SZTAKI Air Change Benchmark",
+      "source": "SZTAKI Air Change Benchmark [57]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An image pair with a size of 952 × 640 is from SZTAKI Air Change Benchmark [57]."
+    },
+    {
+      "name": "Earthquake-induced landslide detection dataset (Jiuzhaigou Valley)",
+      "source": "Google Earth (pre-earthquake) and UAV images (post-earthquake)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The preearthquake and postearthquake remote sensing images with a size of 4658 × 10 282 are selected from 1.5-m resolution satellite images (Google Earth, December 2016) and 1.5-m resolution UAV images (December 2017), respectively."
+    }
+  ],
+  "methods": [
+    {
+      "name": "UCDFormer",
+      "method_type": "CUSTOM_CODE",
+      "summary": "UCDFormer is an unsupervised change detection method that uses a transformer-driven image translation module to mitigate domain shift between bitemporal images. It then uses a reliable pixel extraction module, which fuses fuzzy c-means clustering and adaptive thresholding, to select changed/unchanged pixels for training a binary classifier (Random Forest) to produce the final change map.",
+      "source": "Qingsong Xu, Yilei Shi, Jianhua Guo, Chaojun Ouyang, and Xiao Xiang Zhu",
+      "link": "https://github.com/zhu-xlab/UCDFormer",
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, we present a novel unsupervised CD method using a lightweight transformer, called UCDFormer... The code is available at https://github.com/zhu-xlab/UCDFormer."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Source code for landslide mapping",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom source code for landslide mapping, made available in a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/zhu-xlab/UCDFormer",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Code shared on abstract."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, though other input datasets are accessible via public repositories or standard providers. The custom code is available via a provided GitHub repository link, which contains datasets."
+}

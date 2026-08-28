@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset (remote sensing images)",
+      "source": "Google Earth platform",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we developed a high-resolution dataset for landslide-prone regions in China by extracting historical landslide remote sensing images from the Google Earth platform."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LP-YOLO",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight landslide detection framework based on YOLOv5, featuring a PartitionNet backbone, a VH block for long-range information, a NewPAN feature fusion structure, CSPCrossStage modules, and the SIoU loss function.",
+      "source": "Peijun Mo, Dongfen Li, Mingzhe Liu, Jiaru Jia and Xin Chen",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The datasets generated and/or analyzed during the current study are available from the corresponding author on reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets generated and/or analyzed during the current study are available from the corresponding author on reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the LP-YOLO method lacks a repository or persistent link."
+}

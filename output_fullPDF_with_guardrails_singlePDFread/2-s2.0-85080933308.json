@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Statewide Landslide Information Database for Oregon (SLIDO)",
+      "source": "Oregon Department of Geology and Mineral Industries (DOGAMI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Oregon Department of Geology and Mineral Industries (DOGAMI) maintains a periodically updated Statewide Landslide Information Database for Oregon (SLIDO) [79]."
+    },
+    {
+      "name": "DOGAMI Lidar Data Quadrangles (LDQ-43123-G5 through -G8, LDQ-43123-F5 through -F8, and LDQ-43123-E5 through -E8)",
+      "source": "DOGAMI",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Lidar DEM used in this has been made by merging publicly available DOGAMI Lidar Data Quadrangles LDQ-43123-G5 through -G8, LDQ-43123-F5 through -F8, and LDQ-43123-E5 through -E8."
+    },
+    {
+      "name": "Level-1C Sentinel-2 optical image",
+      "source": "Copernicus Open Access Hub",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Level-1C Sentinel-2 optical image was downloaded from Copernicus Open Access Hub"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Modified U-Net with ResNet34 blocks",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network using a U-Net architecture with ResNet34 blocks in the down-sampling path and skip connections for the up-sampling path. It takes a stack of hillshade and optical images (plus conditioning features) as input and is trained using a combination of focal Tversky loss and binary cross-entropy loss.",
+      "source": "Python (GDAL, SAGA GIS, Scikit-learn, TensorFlow, Keras)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The entire process is implemented here in Python programming language... Functions of GDAL [61] and SAGA GIS [62] were used for GIS processing and the machine learning implementation was done using Scikit-learn [63], TensorFlow [64] and Keras [65] libraries."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced as the Statewide Landslide Information Database for Oregon (SLIDO), but no direct link is provided. The custom code used for the method is mentioned but lacks a repository or persistent link."
+}

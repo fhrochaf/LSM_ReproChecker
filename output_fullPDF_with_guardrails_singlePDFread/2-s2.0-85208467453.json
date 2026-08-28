@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Optical image data (Google Earth)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing data used in this study include the optical image data (downloaded from Google Earth) and the global Digital Elevation Model (DEM)."
+    },
+    {
+      "name": "Global Digital Elevation Model (DEM)",
+      "source": "USGS",
+      "link": "http://earthexplorer.usgs.gov",
+      "status": "MENTIONED",
+      "verbatim": "DEM http://earthexplorer.usgs.gov"
+    },
+    {
+      "name": "Landslide inventory (manually interpreted)",
+      "source": "Authors' own manual interpretation and field investigation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In our study, the existing landslide was manually interpreted in remote sensing images downloaded from Google Earth and validated by field investigation from October to December 2022 (Fig. 6)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Trans-VGG (Transformer-improved VGG network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A hybrid deep learning model that integrates a VGG-based convolutional neural network for local feature extraction with a multi-head attention module for global feature dependency modeling. It takes stacked spectral (RGB) and non-spectral (elevation, slope, PCA) data as 1D inputs to perform pixel-based landslide classification.",
+      "source": "Bangjie Fu et al.",
+      "link": "https://github.com/JJJay11/Trans-VGG-for-Landslide-Detection",
+      "status": "MENTIONED",
+      "verbatim": "The code and data used in this study can be found at https://github.com/JJJay11/Trans-VGG-for-Landslide-Detection and https://zenodo.org/records/12577262."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Experiment dataset for landslide detection study",
+        "source": "GitHub / Zenodo",
+        "link": "https://zenodo.org/records/12577262",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Trans-VGG code for landslide detection",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing a Trans-VGG model for landslide detection, run in a Python 3.6.5 environment and shared alongside the data.",
+        "source": null,
+        "link": "https://github.com/JJJay11/Trans-VGG-for-Landslide-Detection",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement (through supplementary material), with description and referencing of artifacts (no shared links)."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and experiment dataset are linked via Zenodo, and input datasets are accessible through public providers like USGS EarthExplorer. The custom Trans-VGG code is available via a persistent GitHub repository link."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "CN dataset (1200 landslide samples and 1200 negative samples)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We thoroughly considered the diversity of landslide types and distribution based on thirty-eight study areas and extracted these areas’ optical remote sensing images using Google Earth software. We selected 1200 images containing landslides as landslide samples and 1200 images not containing landslides as negative samples."
+    },
+    {
+      "name": "Mibei Village landslide area optical remote sensing images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We obtained Google Earth optical remote sensing images of the area in 2020 with a spatial resolution of 0.60 m, including 267 landslides (Figure 2), for additional testing of the model’s performance."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOX-Pro",
+      "method_type": "CUSTOM_CODE",
+      "summary": "YOLOX-Pro is an improved YOLOX object detection model. It replaces the binary cross entropy in the original classification loss function with VariFocal loss to handle uneven sample distribution and adds a Coordinate Attention (CA) mechanism to enhance detection accuracy for small and complex landslides.",
+      "source": "Heyi Hou, Mingxia Chen, Yongbo Tie, and Weile Li",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This paper constructs a set of landslide detection models YOLOX-Pro, based on the improved YOLOX (You Only Look Once) target detection model to address the poor detection of complex mixed landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets generated and/or analyzed during the current study are available from the corresponding author on reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available. The custom YOLOX-Pro code lacks a repository or persistent link."
+}

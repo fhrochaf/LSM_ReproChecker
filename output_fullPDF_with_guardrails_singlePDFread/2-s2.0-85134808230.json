@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "SPOT-5 optical images",
+      "source": "SPOT-5",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The optical image in this case study was captured by SPOT-5 on 20 May 2009 with a spatial resolution of 2.5 m."
+    },
+    {
+      "name": "ALOS PALSAR SAR images",
+      "source": "European Space Agency (ESA) Online Dissemination",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "four scenes of ALOS PALSAR are acquired from the European Space Agency (ESA) Online Dissemination"
+    },
+    {
+      "name": "Pixel-level landslide inventories",
+      "source": "Authors' own interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "First, pixel-level landslide inventories of the two catchments are prepared for learning and testing."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Integrated machine learning (ML) powered method for co-seismic landslide detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates multi-source data (optical, SAR, DEM) with both pixel-based and object-based treatments. It uses machine learning algorithms (LR, SVM, RF, CNN) to train models for landslide detection, with image segmentation (eCognition) used for the object-based treatment.",
+      "source": "Haojie Wang, Limin Zhang, et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This paper presents an integrated machine learning (ML) powered method for co-seismic landslide detection, which combines multi-source data, pixel-based and object-based treatments, and ML techniques."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom method code is not available via any repository or persistent link."
+}

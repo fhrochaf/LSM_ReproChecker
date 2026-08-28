@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Authors' compilation (referenced as public benchmark)",
+      "link": "https://doi.org/10.5281/zenodo.17599856",
+      "status": "MENTIONED",
+      "verbatim": "All relevant data for this study are publicly available from the Zenodo repository (https://doi.org/10.5281/zenodo.17599856)."
+    },
+    {
+      "name": "Landslide4Sense 2022 benchmark",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": "https://doi.org/10.5281/zenodo.10463239",
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense 2022 benchmark aggregates multi-sensor scenes... (CC BY 4.0, https://doi.org/10.5281/zenodo.10463239)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "D2FLS-Net (Dual-Stage DEM-guided Fusion Transformer for landslide segmentation)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A Swin-Transformer-based semantic segmentation network that incorporates two novel modules: the Dual-Stage DEM-Guided Fusion (DSDF) module for multi-level topographic guidance and the Terrain-aware Pixel-wise Adaptive Context Enhancement (T-PACE) module for adaptive receptive field selection.",
+      "source": "Zhao et al. (2025)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Datasets for D2FLS-Net (Dual-Stage DEM-guided Fusion Transformer for landslide segmentation)",
+        "source": "Zenodo",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked via Zenodo. However, the custom code for the D2FLS-Net method is not mentioned or linked in the provided artifact availability information."
+}

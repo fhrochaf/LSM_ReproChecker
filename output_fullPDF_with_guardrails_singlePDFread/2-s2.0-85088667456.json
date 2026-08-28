@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "LiDAR data (point clouds, DEM, slope angle)",
+      "source": "Mineral and Geoscience Department of Malaysia",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data was collected from archive data of the Mineral and Geoscience Department of Malaysia [42]–[44]."
+    },
+    {
+      "name": "Landslide inventories (Kinta Valley and Cameron Highlands)",
+      "source": "Mineral and Geoscience Department of Malaysia",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, the landslide inventories which are needed for validation purposes were obtained and implemented through remote sensing techniques and technical researches according to previous studies for Kinta Valley and entire Malaysia. The data was collected from archive data of the Mineral and Geoscience Department of Malaysia [42]–[44]."
+    },
+    {
+      "name": "Orthophotos",
+      "source": "Mineral and Geoscience Department of Malaysia",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data was collected from archive data of the Mineral and Geoscience Department of Malaysia [42]–[44]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Saliency feature enhancement technique",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-automated landslide detection framework that enhances potential landslide pixels using symmetric surround saliency, removes background using slope thresholds, applies morphological operations to refine objects, and classifies landslide scars using the Fuzzy C-means (FCM) clustering algorithm.",
+      "source": "Biswajeet Pradhan et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes a new landslide detection technique that is semi-automated and based on a saliency enhancement approach."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked or made available. The custom code used for the saliency feature enhancement technique is not provided or linked."
+}

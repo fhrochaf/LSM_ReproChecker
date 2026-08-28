@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "European Space Agency (ESA)",
+      "link": "https://dataspace.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-1 SAR data used in this study are copyrighted by the European Space (https://dataspace.copernicus.eu, accessed on 1 March 2022)."
+    },
+    {
+      "name": "SRTM DEM",
+      "source": "SRTM",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "a 30m resolution SRTM DEM is used to remove topographic phases"
+    },
+    {
+      "name": "Geological hazard hidden points",
+      "source": "Hunan Institute of Geological Disaster Investigation and Monitoring",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The identified landslides were validated against existing geohazard points and medium-to-high-risk slope and gully unit data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide identification method that integrates C-index, slope, and ascending/descending orbit deformation information",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses DeforNet (a U-shaped encoder-decoder CNN) to identify suspected deformation areas from InSAR data, then filters these areas using the C-index (a projection coefficient relating landslide slope deformation to LOS deformation) and slope thresholds to confirm landslides.",
+      "source": "Xiong, Z.; Zhang, M.; Ma, J.; Xing, G.; Feng, G.; An, Q. InSAR-based landslide detection method with the assistance of C-index. Landslides 2023, 20, 2709–2723.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For a more detailed identification process, refer to [39]. ... Xiong, Z.; Zhang, M.; Ma, J.; Xing, G.; Feng, G.; An, Q. InSAR-based landslide detection method with the assistance of C-index. Landslides 2023, 20, 2709–2723."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-1 SAR data",
+        "source": "European Space Agency (ESA)",
+        "link": "https://dataspace.copernicus.eu",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "GAMMA SAR processing software",
+        "method_type": "SOFTWARE",
+        "summary": "Commercial GAMMA software was used for SAR data processing, obtained from the vendor's website.",
+        "source": null,
+        "link": "https://www.gamma-rs.ch/gamma-software",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Data availability statement present with indication of datasets, no shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom landslide identification method lacks a repository or persistent link, only providing a citation to a previous publication."
+}

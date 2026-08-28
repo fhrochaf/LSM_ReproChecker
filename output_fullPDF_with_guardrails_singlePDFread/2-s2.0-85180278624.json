@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV imagery of Wan Dong Village, De Tou Town, Sichuan Luding, China",
+      "source": "Sichuan Geographic Information Bureau",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the aftermath of the Luding earthquake, the Sichuan Geographic Information Bureau employed a UAV to capture aerial photographs of the earthquake-affected region on September 6, 2022."
+    },
+    {
+      "name": "Landslide inventory of Wan Dong Village (434 ETLs)",
+      "source": "Institute of Mountain Hazards and Environment, Chinese Academy of Sciences (CAS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Institute of Mountain Hazards and Environment, Chinese Academy of Sciences (CAS), utilized these images for ETL investigation using the visual extraction method. Concurrent field inspections were carried out to validate the findings. Ultimately, a total of 434 ETLs were identified in the study area, covering an area of 1.49 km2 (Fig. 1). This catalog of ETLs serves as the reference data for automated identification in this study."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MAST (Morphological Analysis and Swin-Transformer)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MAST is an ETLs extraction method that combines a Swin-Transformer (SWT) deep learning model for feature extraction with a morphological analysis edge recognition algorithm. The SWT model, modified with a hybrid loss function (cross-entropy and region contrast loss), acts as a feature extractor, while the morphological analysis (using operations like expansion and erosion) is applied to the output to refine landslide boundaries, remove debris polygons, and fill hollow areas.",
+      "source": "Yu Huang, Jianqiang Zhang, et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and UAV imagery are mentioned but not linked or made publicly available. The custom MAST method code is not mentioned and lacks a repository or persistent link."
+}

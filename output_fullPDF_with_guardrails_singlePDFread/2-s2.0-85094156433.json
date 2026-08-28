@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "LiDAR point cloud",
+      "source": "ISOK project",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The classified LiDAR point cloud was acquired within the IT System of the Country Protection (ISOK) project [78,83]."
+    },
+    {
+      "name": "Landslide inventory database (SOPO)",
+      "source": "Polish National Geological Institute",
+      "link": "http://geoportal.pgi.gov.pl/portal/page/portal/SOPO",
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory database (SOPO) from the Polish National Geological Institute was utilized to capture the training and testing datasets. ... Landslide inventory map Raster http://geoportal.pgi.gov.pl/portal/page/portal/SOPO"
+    },
+    {
+      "name": "Geology map",
+      "source": "Polish National Geological Institute",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition to LiDAR and landslide inventory maps, geological maps over the study area were acquired in raster format from the Polish National Geological Institute."
+    },
+    {
+      "name": "Sentinel-2A imagery",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, Sentinel-2A images acquired on 25/03/2020 and road network maps from Open Street Map were utilized. ... Sentinel-2A Raster https://scihub.copernicus.eu/"
+    },
+    {
+      "name": "Road network maps",
+      "source": "Open Street Map",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, Sentinel-2A images acquired on 25/03/2020 and road network maps from Open Street Map were utilized."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Intersection of OBIA and PBA results with refinement",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves performing both pixel-based (PBA) and object-based (OBIA) classification using the Random Forest algorithm, then intersecting the results to identify the most probable landslide extent. This is followed by post-processing refinement: removing small elongated objects (< 500 m2) and applying a median filter (6x6 window) to fill small holes.",
+      "source": "Kamila Pawluszek-Filipiak and Andrzej Borkowski",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, taking advantage of various processing approaches (pixels vs. object), the final detection map was generated for overlapped results from PBA and OBIA. Then, additional refinement was carried out (see Section 4.6)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked and accessible, and other input datasets are either linked or practically accessible via public providers. The custom code used for the intersection and refinement method is not provided or linked."
+}

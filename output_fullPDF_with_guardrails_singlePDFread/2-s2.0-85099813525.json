@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "High-resolution remote sensing images of Jinsha River",
+      "source": "Remote sensing satellites",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The experimental data are high-resolution remote sensing images within 60 km of the landslide area of Jinsha River. Among them, 300 landslides images obtained by remote sensing satellites are used as the training set of the model, and 100 hybrid satellite images (20 non-landslide images) are used as the test set for target detection."
+    }
+  ],
+  "methods": [
+    {
+      "name": "convolutional neural-deep belief network (CDN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A dual depth detection model that combines features extracted from DBN and CNN, which are then fused and input into a classifier for landslide detection, using landslide influence factors as constraints.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the CDN model lacks a repository or persistent link."
+}

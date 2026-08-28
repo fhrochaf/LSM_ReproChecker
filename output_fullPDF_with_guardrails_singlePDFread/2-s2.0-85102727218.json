@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Raw Global Navigation Satellite System (GNSS) data",
+      "source": "Shipborne mobile photogrammetry system",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this simplest configuration, the BBA was conducted using the tie points and the raw GNSS data acquired directly by the low-cost standalone navigation unit of the shipborne mobile photogrammetry system"
+    },
+    {
+      "name": "Historical aerial photogrammetric products (DEMs, DOMs, and oblique aerial photographic 3D models)",
+      "source": "China Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank China Geological Survey for providing us with the remote sensing data. ... The feature points in these historical aerial photogrammetric products can be used as GCPs in the BBA procedure."
+    },
+    {
+      "name": "Survey-grade mobile LiDAR point cloud",
+      "source": "Leica Geosystems AG",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "During the acquisition of the shipborne images, we used a survey-grade mobile laser scanning system (Leica Pegasus: Two, Leica Geosystems AG, Heerbrugg, Switzerland) to synchronously acquire the LiDAR point cloud"
+    },
+    {
+      "name": "GF-2 satellite images",
+      "source": "China Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank China Geological Survey for providing us with the remote sensing data. ... The GF-2 satellite images acquired in August 2016 were used."
+    },
+    {
+      "name": "Aerial orthophotographs",
+      "source": "China Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank China Geological Survey for providing us with the remote sensing data. ... Aerial photographs were acquired by a UltraCamXp Wide Angle (Vexcel Imaging GmbH, Graz, Austria) large format digital aerial camera."
+    },
+    {
+      "name": "Oblique aerial photographic 3D models",
+      "source": "China Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank China Geological Survey for providing us with the remote sensing data. ... Oblique aerial photographs were acquired using a PC-6 fixed-wing aircraft equipped with an AMC5100 oblique aerial camera in 2017."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Shipborne mobile photogrammetry approach",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A shipborne mobile photogrammetry approach using a self-designed hardware platform (ship, digital cameras, and control system) and a data processing workflow based on Structure from Motion (SfM) and Multi-View Stereo (MVS) techniques, incorporating four bundle block adjustment (BBA) control configurations to produce 3D models for landslide detection.",
+      "source": "Dingjian Jin, Jing Li, et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We proposed a novel shipborne mobile photogrammetry approach for 3D mapping and landslide detection of the WLFZ in the TGRA. In this approach, in-house self-designed hardware and a data acquisition and processing workflow were developed"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are not publicly available due to legal restrictions."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or publicly available, and the authors explicitly state that data is not publicly available. The custom code used for the shipborne mobile photogrammetry approach lacks a repository or persistent link."
+}

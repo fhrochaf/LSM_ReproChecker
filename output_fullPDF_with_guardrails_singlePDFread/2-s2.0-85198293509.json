@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Japan_hokkaido landslide dataset",
+      "source": "Authors' own collection and manual digitization",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we collect and process the high-resolution remote sensing data of Japan_Hokkaido... Finally, we manually digitize landslides based on Planet Scope imagery to validate the model’s effectiveness."
+    },
+    {
+      "name": "Planet Scope surface reflectance imagery",
+      "source": "Planet Scope",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Images used in multitemporal landslide inventory mapping are from Planet Scope surface reflectance with a spatial resolution of 3 m."
+    },
+    {
+      "name": "Jiuzhaigou, Sichuan Province, China landslide dataset",
+      "source": "Authors' own collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To further demonstrate the scalability of the proposed PluTsa method, experiments are conducted on another multitemporal high-resolution remote sensing image dataset in Jiuzhaigou, Sichuan Province, China"
+    }
+  ],
+  "methods": [
+    {
+      "name": "progressive label upgradation and cross-temporal style adaption (PluTsa)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "PluTsa is an unsupervised multitemporal landslide detection framework. It uses a U-Net segmentation network and incorporates three core components: a transformer-based cross-temporal style adaptation strategy to reduce interdomain visual differences, a temporal-aware pairing constraint (tpc) to align feature distributions, and a progressive label upgradation (PLU) scheme to generate high-quality pseudolabels for intradomain adaptation.",
+      "source": "Penglei Li, Yi Wang, Guanting Liu, Zhice Fang, and Kashif Ullah",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a novel method called progressive label upgradation and cross-temporal style adaption (PluTsa) for unsupervised multitemporal landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are not linked or referenced, and the custom code for the PluTsa method is not provided via any repository or persistent link."
+}

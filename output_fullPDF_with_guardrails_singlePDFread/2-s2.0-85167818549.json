@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "LiDAR point cloud data",
+      "source": "Leica ALS80-HP system",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The LiDAR system is Leica ALS80-HP."
+    },
+    {
+      "name": "Optical images",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide database of the study area",
+      "source": "Authors (revised from Tang et al. [58])",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on these newly collected data, the landslide database of the study area is updated by geological specialists. ... Due to the issue of vegetation cover, the extant landslide mapping results from Tang et al. [58] are revised based on the new data."
+    },
+    {
+      "name": "DEM",
+      "source": "Global Mapper software (derived from LiDAR)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM is derived using the Global Mapper software from LiDAR data."
+    },
+    {
+      "name": "Hillshade maps",
+      "source": "Global Mapper software (derived from DEM)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, the LiDAR-derived DEM is used to generate hillshade maps obtained by computer-simulated sunlight shining on mountains. ... The configurations for generating hillshade in the Global Mapper software are as follows"
+    }
+  ],
+  "methods": [
+    {
+      "name": "DemDet (DEM and hillshade-based landslide detection)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multimodal deep learning model that uses hillshade maps, optical images, and DEM to identify forested landslides. It features a geometric feature extraction module for DEM, a transformer-based encoder (SegFormer) for hillshade and optical image feature extraction, and an attention-based decoder for multimodal feature fusion.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes DEM and hillshade-based landslide detection (DemDet), a new deep neural network for detecting forested landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom DemDet code is not provided. Other input datasets are not linked or accessible."
+}

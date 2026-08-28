@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 L2A images",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Taitung, Jiuzhaigou and Haiti, Sentinel-2 L2A images were acquired from Google Earth Engine, with a resolution of 10 m per pixel."
+    },
+    {
+      "name": "TripleSat imagery of Bijie",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The satellite imagery of Bijie was acquired from TripleSat (Ji et al. 2020), with a spatial resolution of 0.8 m per pixel"
+    },
+    {
+      "name": "Hokkaido Iburi-Tobu imagery",
+      "source": "Geospatial Information Authority of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Hokkaido Iburi-Tobu was sourced from the Geospatial Information Authority of Japan, with a spatial resolution of 3 m per pixel."
+    },
+    {
+      "name": "Landslide ground truth data for Hokkaido and Haiti",
+      "source": "Xu et al. (2024)",
+      "link": "https://github.com/Bynus5/Landslide-dataset",
+      "status": "MENTIONED",
+      "verbatim": "The landslide ground truth data for these areas were downloaded from GitHub (Xu et al. 2024)...The data used in this study is available at https://github.com/Bynus5/Landslide-dataset"
+    }
+  ],
+  "methods": [
+    {
+      "name": "LSL-SS-Net (level set loss-guided semantic segmentation network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation framework that integrates a novel level set loss (LSL) function. The LSL function uses a fast region-scalable fitting energy function, Laplacian of Gaussian energy, and a tanh-based Heaviside approximation to guide the network in optimizing spatial details and boundary delineation during training.",
+      "source": "Yueheng Yang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study presents a level set loss-guided semantic segmentation network...the code in this study is available from the corresponding author upon reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide ground truth data is linked and accessible, and other input datasets are practically accessible via public providers. The custom code for the LSL-SS-Net method is not provided via a repository or persistent link."
+}

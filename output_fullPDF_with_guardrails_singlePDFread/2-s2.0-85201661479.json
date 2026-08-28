@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 Single Look Complex (SLC) images",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "The authors are grateful to the European Space Agency (ESA) for providing the Sentinel-1 and Sentinel-2 data through Sentinels Scientific Data Hub (https://scihub.copernicus.eu)"
+    },
+    {
+      "name": "Landsat-8 imagery",
+      "source": "United States Geological Survey (USGS)",
+      "link": "https://glovis.usgs.gov",
+      "status": "MENTIONED",
+      "verbatim": "to the United States Geological Survey (USGS) for providing the Landsat images through USGS Global Visualization Viewer (https://glovis.usgs.gov)."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "The authors are grateful to the European Space Agency (ESA) for providing the Sentinel-1 and Sentinel-2 data through Sentinels Scientific Data Hub (https://scihub.copernicus.eu)"
+    },
+    {
+      "name": "Landslide inventory of Mainling earthquake",
+      "source": "Kaiheng Hu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventories used in this study are provided by Kaiheng Hu (Hu et al. 2019)... for Mainling"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-level Features Effective Weighting and Fusion (MFEWF) network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning network for landslide detection that integrates a Deep Residual Network (DRN) backbone, an Attention Modulation Module (AMM) for low-level features, a Coordinate Attention Atrous Spatial Pyramid (CAASP) module for high-level features, and a Multi-scale Feature Fusion Resampling Module (MFFRM) to fuse multi-level features for precise landslide boundary identification.",
+      "source": "Lifu Chen et al.",
+      "link": "https://github.com/ChenLifu2022",
+      "status": "MENTIONED",
+      "verbatim": "The training and independent testing SAR data of ETLs, the ground truth and the code of the deep learning network are available at https://github.com/ChenLifu2022."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "SAR training and independent testing data with ground truth for earthquake-triggered landslides (ETLs)",
+        "source": "ChenLifu2022 (GitHub)",
+        "link": "https://github.com/ChenLifu2022",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Deep learning network code for earthquake-triggered landslide (ETL) detection using SAR data",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom deep learning network code for detecting earthquake-triggered landslides from SAR data, developed for this study.",
+        "source": null,
+        "link": "https://github.com/ChenLifu2022",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The provided GitHub repository appears to map to another publications."
+}

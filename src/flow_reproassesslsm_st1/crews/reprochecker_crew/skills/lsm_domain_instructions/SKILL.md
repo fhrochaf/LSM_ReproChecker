@@ -1,6 +1,6 @@
 ---
 name: landslide-mapping-domain-reference
-description: Domain reference for the paper_analyzer agent when cataloging datasets and methods in a landslide mapping paper (used by check_data_reproducibility and check_method_reproducibility). Consult this to recognize what role a dataset or method plays in the paper. This is reference material only — it does not define task steps or output formats; always follow the specific task's own description and expected_output.
+description: Domain reference for the paper_analyzer agent when cataloging datasets and the paper's own novel method in a landslide mapping paper (used by analyze_paper). Consult this to recognize what role a dataset or method plays in the paper. This is reference material only — it does not define task steps or output formats; always follow the specific task's own description and expected_output.
 ---
 
 # Landslide Mapping — Domain Reference

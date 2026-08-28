@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "International Institute of Artificial Intelligence",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense dataset [34]: The Landslide4Sense dataset is a dedicated resource curated by the International Institute of Artificial Intelligence, specifically designed to support research in landslide detection."
+    },
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. [35]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Bijie dataset [35]: The Bijie dataset is composed of 770 carefully selected samples originating from Bijie County in Guizhou Province, China."
+    },
+    {
+      "name": "EORSSD dataset",
+      "source": "Zhang et al. [36]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "EORSSD dataset [36]: The EORSSD dataset proposed by Zhang et al. is an enhanced and more comprehensive extension of the ORSSD dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MCFI-Net (Multi-Scale Cross-Layer Feature Interaction Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MCFI-Net is an encoder-decoder architecture that integrates multi-level contextual and spatial information. It features a receptive field block (RFB) in skip connections to aggregate multi-scale information and a multi-branch dynamic convolution block (MDCB) for dynamic perception and multi-scale feature representation.",
+      "source": "Jianping Liao and Lihua Ye",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a novel multi-scale cross-layer feature interaction network, specifically designed for landslide segmentation in high-resolution remote sensing images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The Landslide4Sense, Bijie and EORSSD are public datasets, and their links are mentioned in the paper.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense, Bijie, and EORSSD datasets are referenced as public datasets, but no direct links are provided in the paper. The custom MCFI-Net code is mentioned but no repository or persistent link is provided."
+}

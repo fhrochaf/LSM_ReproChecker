@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "SEN12-Flood dataset",
+      "source": "Mihai Datcu (DLR, Germany)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Mihai Datcu (DLR, Germany) for providing access to the SEN12-FLOOD dataset"
+    },
+    {
+      "name": "Sentinel-1 and Sentinel-2 images for landslide detection",
+      "source": "Copernicus Open-Access Hub",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "these multimodal and multitemporal images have been downloaded from the Copernicus Open-Access Hub [25]... Copernicus Open Access Hub. Available online: https://scihub.copernicus.eu/ (accessed on 1 September 2020)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GAN-MP",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-stage unsupervised SITS analysis method. First, a GAN-based U-Net architecture performs inter-modality translation (SAR to optical). Second, a modified matrix profile algorithm is used on the translated SITS to identify anomalies, with an EM-based thresholding framework to delimit affected regions.",
+      "source": "Anamaria Radoi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we propose a new method, denoted as GAN-MP, for unsupervised SITS analysis in a multimodal setting."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the GAN-MP method lacks a repository or persistent link."
+}

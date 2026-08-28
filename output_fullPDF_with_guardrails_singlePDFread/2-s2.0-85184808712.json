@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Southwest landslide dataset",
+      "source": "https://github.com/YhQIAO/LandSlide_Detection_Faster-RCNN",
+      "link": "https://github.com/YhQIAO/LandSlide_Detection_Faster-RCNN",
+      "status": "MENTIONED",
+      "verbatim": "Therefore, we gathered another available landslide dataset to enrich the diversity and robustness of landslide data (https://github.com/YhQIAO/LandSlide_Detection_Faster-RCNN), which is named Southwest landslide dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LS-YOLO",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide detection model based on YOLOv5s, incorporating a multiscale feature extraction (MSFE) module in the neck and an improved decoupled head with a context enhancement module (CEM) using dilated convolutions for the regression branch.",
+      "source": "Wenjie Zhang et al.",
+      "link": "https://github.com/wenjieo/LS-YOLO",
+      "status": "MENTIONED",
+      "verbatim": "The code and MSLD will be available at https://github.com/wenjieo/LS-YOLO."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Southwest landslide dataset is linked and publicly available via GitHub. The custom LS-YOLO code is provided via a persistent repository link."
+}

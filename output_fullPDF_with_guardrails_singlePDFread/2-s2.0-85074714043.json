@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat-8 imagery",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "five Landsat-8 data (Table 1) ... covering the study area before and after the occurrence of the landslide were obtained and processed."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "four Sentinel-2 data (Table 2) covering the study area before and after the occurrence of the landslide were obtained and processed."
+    },
+    {
+      "name": "Sentinel-1 radar data",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "15 Sentinel-1 data (Table 3) in ascending and descending pass covering the wider area of the mine were acquired and processed interferometrically."
+    },
+    {
+      "name": "Geological map of the study area",
+      "source": "Institute of Geology & Mineral Exploration, Ptolemais sheet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Source: Geological map produced by the Institute of Geology & Mineral Exploration, Ptolemais sheet."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Digital processing techniques (PCA, ICA) and automated change detection",
+      "method_type": "SOFTWARE",
+      "summary": "The authors used Principal Component Analysis (PCA), Independent Component Analysis (ICA), and the DeltaCue Site monitoring tool within Erdas Imagine software to process optical imagery for landslide mapping, alongside interferometric processing of Sentinel-1 radar data.",
+      "source": "Erdas Imagine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "their processing took place through the use of digital processing techniques (PCA, ICA) and also automated change detection procedure in Erdas Imagine software."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the method's code is not available."
+}

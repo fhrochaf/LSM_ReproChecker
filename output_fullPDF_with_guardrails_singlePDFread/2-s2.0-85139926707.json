@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "UAV imagery of Zhangmu Port area",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We collected the image data of the Zhangmu Port area with the UAV platform."
+    },
+    {
+      "name": "Places365 dataset",
+      "source": "MIT",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Places365 dataset is a scene image dataset published by MIT."
+    },
+    {
+      "name": "UC Merced land use dataset",
+      "source": "United States Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The UC Merced dataset includes 21 types of land use images. The data were selected from the aerial remote sensing images of different cities from the United States Geological Survey."
+    },
+    {
+      "name": "RSSCN7 dataset",
+      "source": "Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The RSSCN7 dataset is a remote sensing image dataset released by Wuhan University in 2015."
+    }
+  ],
+  "methods": [
+    {
+      "name": "feature-based transfer learning algorithm",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A transfer learning approach that uses pre-trained CNN models (fine-tuned on source domain datasets like Places365, UC Merced, and RSSCN7) to extract features from UAV imagery, which are then fed into an SVM classifier for landslide detection.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, we proposed a feature-based transfer learning algorithm."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and UAV imagery are not linked or provided, and the custom feature-based transfer learning algorithm code is not available."
+}

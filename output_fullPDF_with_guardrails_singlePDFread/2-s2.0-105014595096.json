@@ -1,0 +1,42 @@
+{
+  "datasets": [
+    {
+      "name": "Historical landslide dataset of western Sichuan region",
+      "source": "Authors' own construction using Google Earth imagery",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study focuses on the western Sichuan region and constructs a historical landslide dataset using Google Earth imagery, which includes 4280 landslide samples (3424 for training and 856 for validation)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLO-EfficientNetV2",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An object detection model based on YOLOv10-n, modified by replacing the backbone with EfficientNetV2 (incorporating FusedMBConv and MBConv), integrating the Convolutional Block Attention Module (CBAM), and retaining the v10Detect head for NMS-free inference.",
+      "source": "Yuyang Song, Lina Hao, Weile Li",
+      "link": "https://github.com/syy621/YOLOv10-efficientv2",
+      "status": "MENTIONED",
+      "verbatim": "The source codes are available for downloading at the link: https://github.com/syy621/YOLOv10-efficientv2."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "YOLO-EfficientNetV2",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code combining YOLO-based detection with an EfficientNetV2 backbone, implemented in Python and shared via GitHub.",
+        "source": null,
+        "link": "https://github.com/syy621/YOLOv10-efficientv2",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "\"Data will be made available on request.\""
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory was constructed by the authors but is not referenced or linked. The custom code is available via a provided GitHub repository link."
+}

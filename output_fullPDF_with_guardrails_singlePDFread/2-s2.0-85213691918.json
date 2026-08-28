@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Global Very-High-Resolution Landslide Mapping (GVLM) dataset",
+      "source": "Zhang, Yu, et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Zhang, Yu, et al. (2023) created the global very-high-resolution landslide mapping (GVLM) landslide change detection dataset, covering 17 countries and regions across six continents to augment landslide datasets."
+    },
+    {
+      "name": "Wenchuan earthquake landslide dataset",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, datasets of two earthquake-triggered landslide events of Nepal and Wenchuan, collected from Google Earth, are constructed to evaluate the practical transferability of our proposed model."
+    },
+    {
+      "name": "Landslide4Scene dataset",
+      "source": "Ghorbanzadeh, Xu, Ghamisi, et al. (2022)",
+      "link": "https://zenodo.org/records/10463239",
+      "status": "MENTIONED",
+      "verbatim": "Additionally, Ghorbanzadeh, Xu, Ghamisi, et al. (2022) developed the Landslide4Scene dataset (https://zenodo.org/records/10463239), which includes landslide images from four distinct regions."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-Scale Difference Enhancement Network (MSDENet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MSDENet is an end-to-end Siamese network architecture for landslide extraction from dual-temporal images. It features a Difference Guided Attention Module (DGAM) for focusing on landslide-specific changes, a Multi-Scale Feature Fusion Module (MSFFM) for boundary delineation, and a Multi-Scale Sensory Module (MSSM) for multi-scale feature integration and generalization.",
+      "source": "Bo Yu, Meijiang Zhu, Fang Chen, Ning Wang, Huichen Zhao & Lei Wang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address these challenges, we introduce the Multi-Scale Difference Enhancement Network (MSDENet), a framework for landslide extraction through time-based change detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the MSDENet method is not provided or linked."
+}

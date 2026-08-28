@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "VhrAILM (very-high-resolution aerial-images-based landslide mapping)",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We construct a dataset of landslide mapping from very-high-resolution aerial images, designated VhrAILM."
+    },
+    {
+      "name": "CAS Landslide Dataset",
+      "source": "Xu et al., 2024b",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Experimental evaluations on our collated dataset, VhrAILM, and the publicly available CAS Landslide Dataset exhibit a strong robustness and excellent semantic segmentation performance."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CSLMamba-LM (Mamba-based Causal Self-contrastive Learning Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A Mamba-based U-Net network for landslide mapping that integrates causal inference. It features a Cross-level Space and Channel Interaction Module (CSCIM) for feature interaction, Multi-scale Local Spatial Saliency Computation (MLSSC) for local landslide saliency, and an Attentional Causal Self-contrastive Learning (ACSL) paradigm for content-style decoupling to improve robustness and generalizability.",
+      "source": "Chengqiang Zhao, Shijie Chen, Jiashu Zhang",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "we propose a Mamba-based Causal Self-contrastive Learning Network (CSLMamba-LM) for the fine-grained landslide mapping from very-high-resolution aerial images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available, and the custom method code lacks a repository or persistent link."
+}

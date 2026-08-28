@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV imagery of Tas¸kent landslide",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "GNSS/RTK ground truth data",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Radial basis function (RBF) interpolation for DEM generation",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors implemented various radial basis function (RBF) interpolation methods (multiquadric, inverse multiquadric, thin plate spline, and natural cubic spline) to convert UAV-derived point clouds into raster digital elevation models (DEMs) for landslide detection and displacement analysis.",
+      "source": "Authors' own implementation in R and Surfer software",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The methods and analysis were implemented in R (R Core Team 2017) and Surfer software (Golden Software, Inc.)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not referenced or linked, and the custom code used for DEM generation lacks a repository or persistent link."
+}

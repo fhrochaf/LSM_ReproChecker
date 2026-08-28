@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "LiDAR bare earth digital elevation models (DEMs) of Williamsport quadrangle",
+      "source": "Pennsylvania Department of Conservation and Natural Resources (PADCNR)",
+      "link": "https://www.pasda.psu.edu/uci/DataSummary.aspx?dataset=1248",
+      "status": "MENTIONED",
+      "verbatim": "In this study, a 1-m2 pixel resolution DEM for the study area was obtained from PADCNR’s map repository (PADCNR 2019)... PADCNR (2019) pennsylvania spatial data access| PAMAP program—DEM Mosaics by Lidar delivery zones. https ://www.pasda .psu.edu/uci/DataS ummar y.aspx?datas et=1248."
+    },
+    {
+      "name": "Landslide inventory of the Williamsport quadrangle",
+      "source": "Pennsylvania Department of Conservation and Natural Resources (PADCNR)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An inventory map of landslides within the study area was created by PADCNR."
+    },
+    {
+      "name": "USGS landslide dataset for Oso, Washington",
+      "source": "US Geological Survey (USGS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide identified by the ALDM closely matches with the area identified by USGS where the 2014 Oso landslide has occurred... Haugerud RA (2014) Preliminary interpretation of pre-2014 landslide deposits in the vicinity of Oso, Washington. U.S. Geological Survey, Reston, VA"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Automated landslide detection model (ALDM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The ALDM is an unsupervised method that uses LiDAR-derived DEMs to identify landslide-prone terrain based on surface roughness. It involves calculating slope, performing focal statistics (variety function) to quantify roughness, and applying image processing techniques (binarization, noise removal via bwareaopen, and morphological closing) in MATLAB to delineate landslide extents.",
+      "source": "Alimohammadlou et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The purpose of this study is to present a simple, new methodology that can be implemented with readily available tools and datasets without the need to supervise the analysis after the parameters regarding landslide morphology are defined for that region. This methodology is referred to as automated landslide detection model (ALDM)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but lack direct links, and the custom ALDM code is not provided via any repository or persistent link."
+}

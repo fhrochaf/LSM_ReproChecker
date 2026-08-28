@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Google Earth images of Huizhou District, Huangshan City, Anhui Province",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data used in the experiments were obtained from Google Earth images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "L-Unet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "L-Unet is an improved U-Net model for landslide extraction. It incorporates a multi-scale feature-fusion (MFF) module based on dilated convolution at the end of the encoding network, a residual attention network (combining residual blocks and CoordAttention) to deepen the network and focus on landslide features, and replaces bilinear interpolation with data-dependent upsampling (DUpsampling) in the decoding network.",
+      "source": "Zhangyu Dong, Sen An, Jin Zhang, Jinqiu Yu, Jinhui Li, and Daoli Xu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to solve the problems noted above, we improved the U-Net model and thus propose an automatic landslide extraction model named L-Unet."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom L-Unet code is not provided or linked."
+}

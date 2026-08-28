@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide images in the Linzhi area",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "3070 landslide images in the Linzhi area from 2010 to 2019 were obtained through Google Earth to train and test the model. ... 612 photos of landslides in the Linzhi area were extracted from Google Earth between 2010 and 1019."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv4-lite",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight object detection model based on YOLOv4, replacing the CSPdarknet53 backbone with MobileNetv3, utilizing depth separable convolutions in the PANet structure, and incorporating a coordinate attention mechanism to improve accuracy and efficiency.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the YOLOv4-lite model is not available."
+}

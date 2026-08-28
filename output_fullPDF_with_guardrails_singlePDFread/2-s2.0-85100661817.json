@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Global Landslide Catalog database",
+      "source": "NASA (Kirschbaum et al., 2010; Kirschbaum et al., 2015)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The location of the landslide scars was based on the coordinates of past landslide events, which were made available in the Global Landslide Catalog database (Kirschbaum et al., 2015)."
+    },
+    {
+      "name": "Landsat-8 satellite imagery",
+      "source": "NASA/USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For the stages involving the training and assessment of the neural network, scenes from the Landsat-8 satellite were used, encompassing the region of Nepal (Bragagnolo et al., 2020b)."
+    },
+    {
+      "name": "Nepal landslide dataset for semantic segmentation",
+      "source": "Authors (Bragagnolo et al., 2020b)",
+      "link": "https://doi.org/10.5281/zenodo.3675410",
+      "status": "MENTIONED",
+      "verbatim": "The database is available on the Zenodo platform (Bragagnolo et al., 2020b) and can be accessed for free. ... Bragagnolo, L., Rezende, L.R., da Silva, R.V., Grzybowski, J.M.V., Feb. 2020b. Nepal landslide dataset for semantic segmentation. URL https://doi.org/10.5281/zenodo.3675410."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Inc.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "After downloading the images, the composition of the landslide scar image database for Nepal was based on visual assessment of images from Google Earth (Google Inc., 2019)"
+    },
+    {
+      "name": "Roback et al. (2017) landslide inventory",
+      "source": "Roback et al. (2017)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Thus, the mapping performed by Roback et al. (2017) using high-resolution images was used as a comparison to the segmentation performed by the methodology proposed in this article. ... Roback, K., Clark, M.K., West, A.J., Zekkos, D., Li, G., Gallen, S.F., Champlain, D., Godt, J., 2017. Map data of landslides triggered by the 25 April 2015 Mw 7.8 Gorkha. doi: 10.5066/F7DZ06F9."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net architecture implemented in Keras/TensorFlow, trained on Landsat-8 imagery to perform semantic segmentation of landslide scars. The model uses a contraction path for feature extraction and an expansion path for spatial reconstruction, trained with a weighted binary crossentropy and dice loss function to handle class imbalance.",
+      "source": "L. Bragagnolo, L.R. Rezende, R.V. da Silva, J.M.V. Grzybowski",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "e manner, this work was dedicated to test the applicability and effectiveness of a u-net for semantic segmentation of satellite imagery"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Nepal landslide dataset for semantic segmentation (training, validation, and test GeoTIFF images with masks)",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/record/3675410#.XygLJChKiUk",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Dataset informed on supplementary material"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and other input datasets are accessible, but the custom U-Net code is not provided or linked."
+}

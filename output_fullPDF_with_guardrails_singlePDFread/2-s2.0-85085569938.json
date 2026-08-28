@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of Cyprus",
+      "source": "Geological Survey Department (GSD) of Cyprus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An inventory of all landslide events that occurred in Cyprus was developed by the GSD based on these studies, as presented in Figure 2, and is continuously updated based on new ground deformation events that take place."
+    },
+    {
+      "name": "Geological suitability map of Cyprus",
+      "source": "Geological Survey Department (GSD) of Cyprus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To date, the geological suitability map (Figure 3) covers only approximately 9.65% of Cyprus... Digitized map based on data provided by the Cyprus Geological Survey Department."
+    },
+    {
+      "name": "Sentinel-1 SAR acquisitions",
+      "source": "European Space Agency (ESA) Copernicus Open Access Hub",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 SAR acquisitions were downloaded from the European Space Agency (ESA) Copernicus Open Access Hub [68]"
+    },
+    {
+      "name": "SRTM (Shuttle Radar Topography Mission) 1 sec HGT Digital Elevation Model (DEM)",
+      "source": "SNAP",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Then, the SRTM (Shuttle Radar Topography Mission) 1 sec HGT Digital Elevation Model (DEM) with a spatial resolution of 30 m, downloaded automatically from SNAP"
+    },
+    {
+      "name": "Sentinel-2 satellite imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the Normalized Difference Vegetation Index (NDVI) was calculated from Equation (3) within SNAP, based on Sentinel-2 satellite imagery, dated 3 February 2019."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Coherent Change Detection (CCD) methodology",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The CCD methodology uses multi-pass Sentinel-1 SAR interferometric pairs to calculate coherence difference and normalized coherence difference indicators. These indicators are used to identify phase decorrelation caused by landslides, with vegetation effects masked using NDVI thresholds and statistical classification (mean and standard deviation) to define landslide probability classes.",
+      "source": "Marios Tzouvaras",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Coherent Change Detection (CCD) methodology was applied successfully by detecting the phenomenon under study accurately, using two indicators (the coherence difference and the normalized coherence difference)... The workflow was created in the Graph Builder tool in Sentinel’s Application Platform (SNAP) software."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, and the custom CCD methodology code is not provided or linked."
+}

@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Shunping Ji from Wuhan University",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "Shunping Ji from Wuhan University in China, created an open, accurate, and large landslide dataset consisting of landslide/non-landslide images, shapefiles of landslide boundaries, and corresponding DEM data, which is available at http:// study. rsgis. whu. edu. cn/ pages/ downl oad/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Faster R-CNN algorithm",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An object detection algorithm for remote sensing images that replaces the VGG16 and ResNet50 feature extraction networks in the standard Faster R-CNN with DarkNet53. It incorporates skip connections to mitigate gradient vanishing and adds batch normalization and Leaky ReLU layers before the Region Proposal Network (RPN) to improve feature distribution and network nonlinearity.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide/non-landslide image dataset with boundary shapefiles and DEM data",
+        "source": "Shunping Ji, Wuhan University",
+        "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Shunping Ji from Wuhan University in China, created an open, accurate, and large landslide dataset consisting of landslide/non-landslide images, shapefiles of landslide boundaries, and corresponding DEM data, which is available at http://study.rsgis.whu.edu.cn/pages/download/."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is referenced and linked via a public URL, but the custom code for the improved Faster R-CNN algorithm is not provided or linked."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Multi-temporal Sentinel-2 images",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The multi-temporal Sentinel-2 images were chosen as input data for training all models."
+    },
+    {
+      "name": "Landslide inventory (ground truth points)",
+      "source": "Authors' own fieldwork and records",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "There were more than 8554 landslide spots local officers recorded in the mountainous area of this region... The boundary of landslide traces was digitized based on the indications described in Section 2.1.1 to make a mask dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net, U2-Net, and U-Net3+ deep learning models",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors developed and compared three U-shaped deep learning architectures (U-Net, U2-Net, and U-Net3+) to automatically detect landslide traces from multi-temporal Sentinel-2 imagery. The models were trained using different input image sizes (32x32, 64x64, 128x128) and optimized using the Adam optimizer to classify pixels as landslide or non-landslide.",
+      "source": "Kinh Bac Dang et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom code for the deep learning models is not provided or linked."
+}

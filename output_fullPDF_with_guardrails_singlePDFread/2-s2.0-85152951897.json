@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat-8 (OLI) satellite imagery",
+      "source": "USGS Earth Explorer",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "The Landsat-(OLI) satellite imageries are downloaded from the earth explorer (https://earthexplorer.usgs.gov/) for the region of Row51 and path 145."
+    },
+    {
+      "name": "Landslide inventory dataset",
+      "source": "Authors' own creation using MATLAB Image Labeler",
+      "link": "https://in.mathworks.com/help/vision/ug/get-started-with-the-image-labeler.html",
+      "status": "MENTIONED",
+      "verbatim": "The labeled image for the inventory dataset is created using the image labeler app in MATLAB (https://in.mathworks.com/help/vision/ug/get-started-with-the-image-labe ler.html)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Separable Factorized Convolution Network (SFCNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight deep learning model for pixel-based landslide detection that incorporates separable and factorized convolution to minimize the number of learnable parameters and computational complexity. It uses a parallel arrangement of multiscale factorized kernel sizes in the SFC module to extract local and global features.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and the Landsat-8 imagery is accessible via USGS Earth Explorer. However, the custom code for the SFCNet method is not available."
+}

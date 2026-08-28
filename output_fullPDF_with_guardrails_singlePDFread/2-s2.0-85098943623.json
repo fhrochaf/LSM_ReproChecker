@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope imagery",
+      "source": "Planet Labs Inc.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The satellite images were taken from the Planet Labs Inc. PlanetScope, which includes more than 130 Dove satellites that provide 3 m spatial resolution multispectral images in four bands"
+    },
+    {
+      "name": "ALOS PALSAR digital elevation model",
+      "source": "ALOS PALSAR",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We extracted the slope data from the 12.5-m resolution digital elevation model (DEM) that was created from the ALOS PALSAR data."
+    },
+    {
+      "name": "Landslide inventory of Kodagu district",
+      "source": "Authors' own manual delineation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a training dataset of polygons of the landslides for the Kodagu district was prepared from a manual delineation of landslides based on high-resolution PlanetScope imagery."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Convolutional neural network (CNN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A CNN architecture with five and six input layers (optical bands and slope data) using max pooling layers, trained in eCognition software to produce landslide probability maps.",
+      "source": "Trimble's eCognition software",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Our structured CNN model was prepared and trained in Trimble’s eCognition software (eCognition Developer 2020)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned but not linked or made available, and the custom CNN code lacks a repository or persistent link."
+}

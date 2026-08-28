@@ -1,0 +1,61 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 8 satellite images",
+      "source": "United States Geological Survey",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "Twelve Landsat 8 satellite images were downloaded from the United States Geological Survey website... Landsat 8 and DEM/SRTM images are freely available on https://earthexplorer.usgs.gov//."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) image",
+      "source": "United States Geological Survey",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "The other entry is the Shuttle Radar Topography Mission (SRTM) image of the area with a spatial resolution of 30 m. It was also downloaded from the USGS website... Landsat 8 and DEM/SRTM images are freely available on https://earthexplorer.usgs.gov//."
+    },
+    {
+      "name": "Precipitation data (TRMM, TAMSAT, and local meteorology services)",
+      "source": "Tropical Rainfall Measuring Mission (TRMM), Tropical Applications of Meteorology using Satellite data (TAMSAT), and local agro-meteorology offices",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Another entry concerns the precipitation data. These data were combined from three main sources. The Tropical Rainfall Measuring Mission (TRMM) (Braun, 2011), Tropical Applications of Meteorology using Satellite data (TAMSAT) (Maidment et al., 2014) and some local meteorology services."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Derivative SLIP/DRIP procedure",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An adaptation of the NASA SLIP/DRIP algorithms for data-scarce regions. It uses inverse NDVI, MNMDI, and slope inclination for landslide mapping (SLIP), and logistic regression on rainfall frequency and duration data for triggering threshold identification (DRIP), complemented by a Cox proportional hazards model for site survival analysis.",
+      "source": "StatsN’Maps",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this paper proposes a derivative SLIP/DRIP procedure, adapted to countries and world’s areas facing the same difficulties above-listed. ... The licenses of Erdas Imagine 2020 version 16.6.0.1366, ArcGisPro version 2.5 and XLStats 2020.1.64570 software used in this research are properties of StatsN’Maps and available upon request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landsat 8 satellite imagery",
+        "source": "USGS EarthExplorer",
+        "link": "https://earthexplorer.usgs.gov/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "DEM/SRTM elevation data",
+        "source": "USGS EarthExplorer",
+        "link": "https://earthexplorer.usgs.gov/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data available upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code is not available, as the authors state it is available only upon request."
+}

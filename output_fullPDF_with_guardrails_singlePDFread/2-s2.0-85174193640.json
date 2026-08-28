@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "UAV-based LiDAR point cloud data",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The UAV-based LiDAR point cloud data for this study was collected in June 2022 on a clear and windless day."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide trace recognition based on the fusion of multi-feature information from UAV-based LiDAR DEM",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves generating four multi-feature images (hillshading, slope, positive openness, and sky-view factor) from a high-precision DEM derived from UAV-based LiDAR. These images are fused using the Visualization for Archaeological Topography (VAT) method to create a DEM Multi-Feature Fusion Image (DEM-MFFI). Finally, landslide traces are extracted from the DEM-MFFI using the Concentration-Area (C-A) fractal model and the Mean-Shift algorithm for denoising.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A method of landslide tracing recognition based on the fusion of multi-feature information from the Unmanned Aerial Vehicle-based Light Detection and Ranging (UAV-based LiDAR) Digital Elevation Model (DEM) is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The raw and processed data required for the current study could not be shared as they are also part of the ongoing research.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and UAV-based LiDAR data are not linked or publicly available, and the authors explicitly state that the data cannot be shared. The custom code used for the landslide trace recognition method is not provided or linked."
+}

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "UAV remote-sensing data of Jiuzhaigou earthquake-triggered landslides",
+      "source": "Sichuan Earthquake Administration",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank the Sichuan Earthquake Administration for offering the unmanned aerial vehicle remote sensing data"
+    }
+  ],
+  "methods": [
+    {
+      "name": "improved U-Net model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved U-Net architecture that incorporates six-channel input (RGB + DSM + slope + aspect) and adds residual learning units to both the up-sampling and down-sampling paths to enhance feature extraction and prevent gradient issues.",
+      "source": "Peng Liu, Yongming Wei, Qinjun Wang, Yu Chen, and Jingjing Xie",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to solve the abovementioned problems and improve the efficiency of landslide identification, this paper proposes an automatic landslide identification method named improved U-Net model."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom improved U-Net model code is not provided via a repository or persistent link."
+}

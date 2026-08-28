@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Historical satellite images (Google Earth platform)",
+      "source": "Google Earth (DigitalGlobe, GeoEye, SPOT, Landsat, Sentinel-2)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The study was supplemented with a historical manual review through the Google Earth platform, which has a combination of satellite images, in real colour, ranging from the use of Landsat images, in conjunction with high resolution images, which are shown in Table 1, such as DigitalGlobeTM (www.digitalglobe.com), GeoEyeTM (www.geoeye.com) and SPOTTM (www.spot.com) (Fisher et al. 2012)."
+    },
+    {
+      "name": "Digital Elevation Model (DEM) from aerial LiDAR survey",
+      "source": "INEGI (National Institute of Statistics and Geography)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM used for this study, has a resolution of 5 x 5 m and it was obtained by the processing of an aerial LiDAR survey, provided by INEGI (National Institute of Statistics and Geography) as part of the CEM"
+    },
+    {
+      "name": "Hydrological regions maps",
+      "source": "National Commission for Knowledge and Use of Biodiversity (CONABIO)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For this study, the boundaries of the ‘El Pinito’ sub-basin proposed by the National Commission for Knowledge and Use of Biodiversity, CONABIO were taken as a basis. This organization digitized the information from the maps of hydrological regions captured by the Hydrological Bulletin (1970)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Topographic Connection Method (TPCM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The TPCM combines scarp detection (using slope and curvature indices) with micro-basin catchment area analysis. It uses the DEM to calculate flow direction and accumulation, then interpolates between the resulting catchment polygons and the identified scarp zones to map landslide areas.",
+      "source": "Nelly L. Ramírez Serrato, Fabiola D. Yépez-Rincón & Adrián L. Ferriño Fierro",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The innovative aspect of this study is the creation of the Topographic Connection Method (TPCM) to automatically map landslides using two types of landslides 1) falls and 2) flows."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or referenced with persistent identifiers, and the custom code for the Topographic Connection Method is not available."
+}

@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie open-source dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Part of the data consists of the Bijie open-source dataset (Ji et al., 2020), which was created for landslide segmentation."
+    },
+    {
+      "name": "Remote sensing images from 91 wemap software",
+      "source": "91 wemap software",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we obtain remote sensing images of landslides from 91 wemap software and Bijie open-source database (Ji et al., 2020)."
+    },
+    {
+      "name": "Landslide dataset (combined and pre-processed)",
+      "source": "Authors",
+      "link": "https://github.com/Abbott-max/dataset",
+      "status": "MENTIONED",
+      "verbatim": "The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found below: https://github.com/Abbott-max/dataset; doi:10.4121/20401740."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dynahead-Yolo",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An object detection model based on YOLOv3 that incorporates a dynamic head module. The dynamic head module integrates scale-aware, space-aware, and task-aware attention mechanisms to improve feature extraction and detection of landslides with variable proportions and complex backgrounds.",
+      "source": "Han et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset repository hosted on GitHub (Abbott-max/dataset)",
+        "source": null,
+        "link": "https://github.com/Abbott-max/dataset",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement has shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via a GitHub repository, but the custom code for the Dynahead-Yolo method is not mentioned or provided in the artifact availability information."
+}

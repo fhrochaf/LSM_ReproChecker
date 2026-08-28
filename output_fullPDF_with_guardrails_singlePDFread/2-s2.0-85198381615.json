@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope satellite images (Mainling)",
+      "source": "Planet Labs",
+      "link": "https://www.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "Three PlanetScope satellite images with four bands (blue, green, red, and NIR) and a spatial resolution of 3.125 m were collected (Planet Labs: https://www.planet.com)."
+    },
+    {
+      "name": "Reference labels for co-seismic landslides (Mainling, Luding, Hokkaido)",
+      "source": "Authors' own visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, visual interpretation was conducted to establish reference labels. ... In addition, visual interpretation of co-seismic landslides was conducted in conjunction with Google Earth and other datasets. ... Visual interpretation was also conducted to generate reference images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CD-TLI (Change detection-based method for co-seismic landslide mapping using tri-temporal logical information)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CD-TLI is a change detection-based method that uses tri-temporal remote sensing images. It involves feature extraction using vegetation indices, change vector analysis (CVA) to generate preliminary change results, logical pattern classification to identify landslide-related changes, automatic sample selection, and an ensemble learning strategy (SVM, RF, MLP) followed by logical fusion to generate the final landslide map.",
+      "source": "Chenghan Yang, Xin Wang, Shanchuan Guo, Hong Fang, and Peijun Du",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To solve these problems, inspired by TLCVA, we developed a change detection-based method for co-seismic landslide mapping using tri-temporal logical information (CD-TLI)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the CD-TLI method lacks a repository or persistent link."
+}

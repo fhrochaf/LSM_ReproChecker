@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "GDCLD landslide dataset",
+      "source": "Fang et al. (2024)",
+      "link": "https://doi.org/10.5281/zenodo.13612636",
+      "status": "MENTIONED",
+      "verbatim": "The GDCLD landslide dataset is freely available at https://doi.org/10.5281/zenodo.13612636 accessed on 24 October 2024."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Lights-Transformer",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A Transformer-based landslide detection model featuring an encoder-decoder architecture with an Overlap Patch Embedding, Efficient Self-Attention, Mix-FNN, Overlap Patch Merging, a Fusion Block for multi-scale feature integration, and a Light Segmentation Head for efficient inference.",
+      "source": "Xu Wu, Xuqing Ren, Donghao Zhai, Xiangpeng Wang, Mehreen Tarif",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "GDCLD landslide dataset",
+        "source": "Zenodo",
+        "link": "https://doi.org/10.5281/zenodo.13612636",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The GDCLD landslide dataset is referenced and linked via a public Zenodo repository, but the custom Lights-Transformer model code is not available or linked."
+}

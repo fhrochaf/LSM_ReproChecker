@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "To develop the landslide identification system, this work uses an authenticated remote sensing dataset called the Bijie landslide dataset, available at http://gpcv .whu .edu .cn /data /Bijie _pages .html."
+    },
+    {
+      "name": "TripleSat satellite imagery",
+      "source": "TripleSat Constellation",
+      "link": "https://www.satimagingcorp.com/satellite-sensors/triplesat-satellite/",
+      "status": "MENTIONED",
+      "verbatim": "All of the imagery in this set were cropped from TripleSat satellite (https://www .satimagingcorp .com /satellite -sensors /triplesat -satellite/) images taken between May and August 2018."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Visual saliency-based landslide identification framework",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning framework that uses visual saliency-based feature extraction to enhance landslide segmentation. It applies super-resolution techniques to input images, computes saliency maps using band-pass filters based on the difference of bilateral (DoB) filters, and uses these saliency maps as input to a fine-tuned U-Net architecture for semantic segmentation.",
+      "source": "S. Sreelakshmi and S.S. Vinod Chandra",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This paper proposes a deep-learning-based method for precisely and reliably identifying landslides from satellite optical images... In this paper, we have developed a U-Net architecture using Python from scratch to extend it for remote sensing image segmentation tasks."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input imagery are referenced and publicly accessible, but the custom code for the proposed framework is not provided or linked."
+}

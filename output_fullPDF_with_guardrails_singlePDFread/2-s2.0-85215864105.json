@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie City landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing dataset used for model training is sourced from the Bijie City landslide dataset in Guizhou Province, as reported by Ji et al. [6]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MultiResUNet-BFDC",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model based on the MultiResUNet framework, incorporating dilation convolutions to replace standard convolutions, a lightweight boundary-focused attention (BFA) mechanism for edge feature enhancement, and an adaptive focal and Dice loss (AFD loss) function to handle sample imbalance.",
+      "source": "Zhenyu Zhao, Shucheng Tan, Qinghua Zhang, and Hui Chen",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address this problem, a novel automatic landslide hazard remote sensing image identification model, MultiResUNet-BFDC, is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie City landslide dataset is referenced but not linked, and the custom MultiResUNet-BFDC code is not provided via any repository or persistent link."
+}

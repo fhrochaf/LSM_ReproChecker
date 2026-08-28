@@ -1,0 +1,73 @@
+{
+  "datasets": [
+    {
+      "name": "Open-Landslide Project (OLP) dataset",
+      "source": "Licata et al., 2023",
+      "link": "https://github.com/MicheleLicata/open_landslide_project",
+      "status": "MENTIONED",
+      "verbatim": "In this study, we used the Open Landslide Project (OLP) dataset available at the link https://github.com/MicheleLicata/open_landslide_project."
+    },
+    {
+      "name": "Sentinel-2 L2A products",
+      "source": "Copernicus Data Space",
+      "link": "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products",
+      "status": "MENTIONED",
+      "verbatim": "In this research, satellite images of Sentinel-2 L2A products were utilized (https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-2/data-products) due to their global availability and temporal resolution of 5 days, which are freely accessible for download since 2016 to the present."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ExMAD (Expert-based Multi-temporal AI Detector)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "ExMAD is an open-source methodological framework that integrates human expertise with a U-Net neural network to detect the occurrence timing and map shallow landslides using multitemporal Sentinel-2 imagery. The framework uses a modular structure where human experts validate landslide presence/absence, while the AI model processes raster data to identify landslide patterns.",
+      "source": "Michele Licata, Stefano Faga, Giandomenico Fubelli",
+      "link": "https://github.com/NewGeoProjects/ExMAD",
+      "status": "MENTIONED",
+      "verbatim": "We developed ExMAD (Expert-based Multi-temporal AI Detector), an open-source methodological framework (https://github.com/NewGeoProjects/ExMAD) to integrate artificial intelligence with human expertise to detect occurrence timing of a targeted landslide."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Data and trained model (ExMAD project)",
+        "source": "GitHub (NewGeoProjects)",
+        "link": "https://github.com/NewGeoProjects/ExMAD",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Data and trained model (open landslide project)",
+        "source": "GitHub (MicheleLicata)",
+        "link": "https://github.com/MicheleLicata/open_landslide_project",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "ExMAD software and trained model",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom software and trained model for the ExMAD project, shared alongside data in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/NewGeoProjects/ExMAD",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Open landslide project software and trained model",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom software and trained model for the open landslide project, shared alongside data in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/MicheleLicata/open_landslide_project",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via the Open Landslide Project repository, and other input datasets like Sentinel-2 are publicly accessible. The custom ExMAD code is available via a persistent GitHub repository link."
+}

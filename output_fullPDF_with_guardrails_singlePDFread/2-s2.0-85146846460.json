@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide data set",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The freely available Bijie landslide data set (Ji et al. 2020) is used for experimentation."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net with backbone models (ResNet-50, ResNet-101, VGG-19, and DenseNet-121)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors propose an enhanced U-Net model for landslide detection, utilizing four different pre-trained backbone models (ResNet-50, ResNet-101, VGG-19, and DenseNet-121) for feature extraction to improve detection accuracy.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced but not linked, and the custom U-Net model code is not provided or linked."
+}

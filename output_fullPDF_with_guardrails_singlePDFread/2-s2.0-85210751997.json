@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Kaggle repository",
+      "link": "https://www.kaggle.com/datasets/hanstankman/bijie-landslidedataset",
+      "status": "MENTIONED",
+      "verbatim": "The experimental validation of the BASPP-SSCM technique is validated on a bijie landslide dataset [38]. The dataset covers 2773 samples under two classes... The data supporting this study’s findings are openly available in the Kaggle repository at https://www.kaggle.com/datasets/hanstankman/bijie-landslidedataset, reference number [38]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Bidirectional Atrous Spatial Pyramid Pooling-Based Semantic Segmentation and Classification Model (BASPP-SSCM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The BASPP-SSCM model is a multi-stage framework for landslide detection. It uses adaptive Wiener filtering for noise reduction, DeepLabV3 with a ConvNeXtLarge backbone for semantic segmentation, a CapsNet model for feature extraction, and a Ridgelet neural network (RNN) for classification, with parameters fine-tuned by the pelican optimization algorithm (POA).",
+      "source": "G. Nalinipriya et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study develops a Bidirectional Atrous Spatial Pyramid Pooling-Based Semantic Segmentation and Classification Model (BASPP-SSCM) technique for landslide Remote Sensing Images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "Kaggle",
+        "link": "https://www.kaggle.com/datasets/hanstankman/bijie-landslidedataset",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and linked in a public repository. However, the custom BASPP-SSCM model code is not mentioned or provided."
+}

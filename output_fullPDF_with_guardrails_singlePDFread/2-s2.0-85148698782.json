@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Geohazard image set of Fujian Province",
+      "source": "Participating projects",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset used in this study contains 600 landslide images, one is the existing geohazard image set of Fujian Province in the participating projects, which covers the useful landslide images screened from some geohazard images, such as avalanches, landslides, and mudslides in Fujian Province since 2015."
+    },
+    {
+      "name": "Public remote sensing satellite landslide image set",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The second is the public remote sensing satellite landslide image set collected, which has images with clear and obvious landslide boundaries."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Faster R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Faster R-CNN target detection method for remote sensing landslide images. It incorporates image enhancement (gamma transform and Gaussian filtering), group normalization (GN) to replace batch normalization, a feature pyramid network (FPN) for multiscale feature fusion, and a deep residual shrinkage network (DRSN50) as the backbone to enhance feature extraction and suppress background noise.",
+      "source": "Yang Dianqing and Mao Yanping",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this paper proposes an improved Faster R-CNN target detection method for remote sensing landslide images and compares it with YOLOv4 and SSD single-stage target detection models."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned without links or references to public repositories, and the custom code for the improved Faster R-CNN method is not provided or linked."
+}

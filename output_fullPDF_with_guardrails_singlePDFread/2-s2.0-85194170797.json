@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie's landslide dataset",
+      "source": "Prof. Shunping Ji's team at Wuhan University",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The training dataset of landslides in Bijie City, Guizhou Province, China, used in this experiment is an open-source dataset consisting of 770 landslide samples and 2003 non-landslide samples obtained by Prof. Shunping Ji’s team at Wuhan University (http://gpcv.whu.edu.cn/data/Bijie_pages.html accessed on 6 March 2024)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MsASNet (Multiscale Attention Segment Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MsASNet is a semantic segmentation model based on the U-Net architecture. It incorporates a Pyramid Visual Field Receptor to mitigate information loss from downsampling and a Channel-Attention and Spatial-Attention Module (CBAM) in the decoder to enhance feature extraction and boundary restoration.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author. The data are not publicly available due to privacy reason."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked to a public source, but the custom code for the MsASNet model is not available, and the authors explicitly state that the study data is not publicly available."
+}

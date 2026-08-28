@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2B optical data",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "The optical data are cloud-free 10-m resolution Sentinel-2B images using RGB bands 2, 3, and 4... Sentinel image were obtained from https://scihub.copernicus.eu/."
+    },
+    {
+      "name": "TanDEM-X topographic data",
+      "source": "Deutsches Zentrum für Luft- und Raumfahrt (DLR)",
+      "link": "https://tandemx-science.dlr.de/cgi-bin/wcm.pl?page=Tdm-Science-Service-System",
+      "status": "MENTIONED",
+      "verbatim": "the topographic data are 12.5-m resolution TanDEM-X... The TanDEM-X data were released by Deutsches Zentrum für Luft- und Raumfahrt (DLR) and can be obtained by submitting a scientific proposal to https://tandemx-science.dlr.de/cgi-bin/wcm.pl?page=Tdm-Science-Service-System."
+    },
+    {
+      "name": "Geological provinces data",
+      "source": "SEGEMAR-IGRM",
+      "link": "https://sigam.segemar.gov.ar/geoserver217/wfs?request=GetFeature&request=GetFeature&service=WFS&typename=sigam:e2.5M.UnidadesGeologicas&outputFormat=KML&version=1.0.0",
+      "status": "MENTIONED",
+      "verbatim": "We investigated the spatial relationship between landslides and eight major lithologies... (SEGEMAR-IGRM, 2021)... https://sigam.segemar.gov.ar/geoserver217/wfs?request=GetFeature&request=GetFeature&service=WFS&typename=sigam:e2.5M.UnidadesGeologicas&outputFormat=KML&version=1.0.0"
+    },
+    {
+      "name": "Global surface water data",
+      "source": "Pekel et al. (2016)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we removed all false positive predictions located in water bodies or cities, based on digital data of water bodies >15 km2 (Pekel et al., 2016)"
+    },
+    {
+      "name": "Settlement data",
+      "source": "Instituto Geográfico Nacional (IGN)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "and settlements from the Instituto Geográfico Nacional (IGN)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "AlexNet and U-Net convolutional neural networks",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors trained two existing CNN architectures, AlexNet and U-Net, using optical (Sentinel-2) and topographic (TanDEM-X) data to detect giant landslides. The networks were trained on five landform classes (plateaus, plateau edges, landslide deposits, talus, and plains) using a multi-class approach, with results interpolated using 'mode' or 'fill' methods.",
+      "source": "Elisabeth Schönfeldt",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "TanDEM-X elevation data",
+        "source": "Deutsches Zentrum für Luft- und Raumfahrt (DLR)",
+        "link": "https://tandemx-science.dlr.de/cgi-bin/wcm.pl?page=Tdm-Science-Service-System",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Sentinel satellite images",
+        "source": "Copernicus Open Access Hub",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Predicted landslides dataset",
+        "source": "PANGAEA",
+        "link": "https://doi.pangaea.de/10.1594/PANGAEA.935704",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present on 'Acknowledgements', with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are referenced and accessible via public portals. The custom code used for the CNN architectures is not available."
+}

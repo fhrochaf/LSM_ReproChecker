@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "DMLD dataset",
+      "source": "Authors (Chen et al., 2024)",
+      "link": "https://github.com/RS-CSU/DMLD-Dataset",
+      "status": "MENTIONED",
+      "verbatim": "The DMLD dataset is available for download at https://github.com/RS-CSU/DMLD-Dataset, accessed on 18 July 2024."
+    }
+  ],
+  "methods": [
+    {
+      "name": "IMMDA (Unsupervised cross-domain landslide extraction framework)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An unsupervised cross-domain landslide extraction framework that integrates an image mask module and a morphological information extraction and optimization module. It uses a dual-model (teacher-student) architecture where the student model is trained on masked target domain images to learn contextual information, while morphological pseudo-labels guide the learning of landslide shapes.",
+      "source": "Chen et al. (Authors)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes an unsupervised cross-domain landslide extraction framework that integrates image mask and morphological information enhancement... The proposed framework comprises two core modules: (1) an image mask module and (2) a morphological information extraction and optimization module."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "DMLD dataset",
+        "source": "GitHub (RS-CSU)",
+        "link": "https://github.com/RS-CSU/DMLD-Dataset",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The DMLD landslide inventory dataset is referenced and publicly available via a provided link. However, the custom IMMDA framework code is not mentioned or linked in the publication or artifact availability information."
+}

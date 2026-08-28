@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope and RapidEye remote sensing images",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Multi-temporal HR remote sensing images from Planet Labs86 were downloaded which comprised of four bands: Blue, Green, Red, and Near-Infrared or NIR. ... The spatial resolution of the PlanetScope and RapidEye images were 3-m and 5-m, respectively."
+    },
+    {
+      "name": "Co-seismic landslide inventories (Gorkha, Wenchuan, Porgera, Kaikōura)",
+      "source": "Literature (various authors)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For all the cases under consideration, the co-seismic landslide inventories are already available in the literature for the entire areas affected by landslides. ... Table 6. Accessible datasets through the literature on the MT-inventory sources and triggering mechanism."
+    },
+    {
+      "name": "Manually mapped landslide polygons (subset areas)",
+      "source": "Authors' own manual mapping",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, to fill those gaps in the gathered collection of MT inventories and also to address some minor edits/re-digitization in the existing inventories to cater for efficient training of the model, we manually mapped landslides for a subset of examined area in each case."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention Deep Supervision Multi-Scale U-Net (ADSMS U-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning semantic segmentation model based on U-Net architecture, enhanced with multi-scale inputs and soft attention gates. It uses Focal Tversky Loss for training and is designed for transfer learning to map landslides across different regions and temporal windows.",
+      "source": "Kushanav Bhuyan et al.",
+      "link": "https://github.com/kushanavbhuyan/Large-scale-multi-spatiotemporal-landslide-mapping",
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a novel automated deep transfer learning strategy that enables the mapping of landslides both over space and time. ... The link to the GitHub repository: https:// github. com/ kusha navbh uyan/ Large-scale- multi- spati otemp oral- lands lide- mappi ng."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Satellite images and predicted multi-temporal landslide inventories (polygon shapefiles)",
+        "source": "GitHub (kushanavbhuyan)",
+        "link": "https://github.com/kushanavbhuyan/Large-scale-multi-spatiotemporal-landslide-mapping",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Large-scale multi-spatiotemporal landslide mapping models",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Models developed for large-scale, multi-spatiotemporal landslide mapping, with code shared for reproducibility and further experimentation by other researchers.",
+        "source": null,
+        "link": "https://github.com/kushanavbhuyan/Large-scale-multi-spatiotemporal-landslide-mapping",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventories and satellite imagery are partially available. The custom ADSMS U-Net model code is accessible through a persistent GitHub repository link."
+}

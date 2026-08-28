@@ -1,5 +1,6 @@
 import json
 import re
+from pathlib import Path
 from typing import TypeVar
 
 import pandas as pd
@@ -10,7 +11,12 @@ from crewai.core.providers.human_input import (
 )
 from rapidfuzz import fuzz
 
-from flow_reproassesslsm_st1.models import AvailabilityOutput, DatasetEntry, MethodEntry
+from flow_reproassesslsm_st1.models import (
+    AvailabilityOutput,
+    DatasetAvailabilityEntry,
+    DatasetEntry,
+    MethodEntry,
+)
 
 EntryT = TypeVar("EntryT", bound=DatasetEntry | MethodEntry)
 
@@ -169,6 +175,7 @@ def _coerce_method_entry(c: dict) -> MethodEntry:
     return MethodEntry(
         name=c.get("name"),
         method_type=c.get("method_type"),
+        summary=c.get("summary"),
         source=c.get("source", c.get("reused_citation")),
         link=c.get("link", c.get("code_link")),
         status=_METHOD_CODE_STATUS_ALIASES.get(status, status),
@@ -210,10 +217,76 @@ def merge_entries(runs: list[list[EntryT]], min_votes: int | None = None) -> lis
         pool = with_link or cluster
         return max(
             pool,
-            key=lambda e: sum(bool(getattr(e, f, None)) for f in ("source", "link", "verbatim")),
+            key=lambda e: sum(bool(getattr(e, f, None)) for f in ("source", "link", "verbatim", "summary")),
         )
 
     return [representative(c) for c in clusters if len(c) >= min_votes]
+
+
+def covered_dataset_names(reference: dict) -> list[str]:
+    """Every dataset name already catalogued in the reference (its keys)."""
+    return list(reference.keys())
+
+
+def missing_dataset_names(datasets: list[DatasetEntry], reference: dict) -> list[str]:
+    """Names from `datasets` that don't fuzzy-match any name already in the
+    reference, deduplicated and in first-seen order.
+
+    Reuses the same name-normalization/threshold as merge_entries so
+    "Sentinel-2" and "Sentinel-2 imagery" cluster as the same dataset here
+    too. Matching is against dataset names only, never against the
+    summary/availability text.
+    """
+    covered = [_normalize_name(name) for name in covered_dataset_names(reference)]
+    missing: list[str] = []
+    seen: list[str] = []
+    for entry in datasets:
+        normalized = _normalize_name(entry.name)
+        if any(fuzz.token_set_ratio(normalized, c) >= NAME_CLUSTER_THRESHOLD for c in covered):
+            continue
+        if any(fuzz.token_set_ratio(normalized, s) >= NAME_CLUSTER_THRESHOLD for s in seen):
+            continue
+        missing.append(entry.name)
+        seen.append(normalized)
+    return missing
+
+
+def append_dataset_reference_entries(reference_path: Path, entries: list[DatasetAvailabilityEntry]) -> None:
+    """Append newly-researched entries to the JSON reference file, keyed by
+    name, matching the shape of its existing hand-curated entries."""
+    if not entries:
+        return
+    reference = json.loads(reference_path.read_text(encoding="utf-8"))
+    for entry in entries:
+        reference[entry.name] = {
+            "summary": entry.summary,
+            "availability": f"{entry.availability} — {entry.availability_notes}",
+            "verified_via": entry.source_url or "",
+        }
+    reference_path.write_text(json.dumps(reference, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def dataset_reference_context(datasets: list[DatasetEntry], reference: dict) -> str:
+    """Build the slim availability-only context report_elaborator sees: for
+    each paper dataset, every reference entry whose name contains it as a
+    substring or fuzzy-matches it by name, reduced to just its name and
+    "availability" field (dropping summary/verified_via).
+
+    Matching is against dataset names only, never against the whole
+    summary/availability text.
+    """
+    matches: dict[str, str] = {}
+    for entry in datasets:
+        name = entry.name
+        normalized = _normalize_name(name)
+        for ref_name, ref_data in reference.items():
+            if ref_name in matches:
+                continue
+            name_contained = name.lower() in ref_name.lower()
+            fuzzy_match = fuzz.token_set_ratio(normalized, _normalize_name(ref_name)) >= NAME_CLUSTER_THRESHOLD
+            if name_contained or fuzzy_match:
+                matches[ref_name] = ref_data.get("availability", "")
+    return json.dumps(matches, indent=2, ensure_ascii=False)
 
 
 def _availability_from_row(row: pd.Series) -> AvailabilityOutput:

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We adopt Landslide4Sense [15] as the dataset... [15] Ghorbanzadeh O, Xu Y, Ghamisi P, et al. Landslide4sense: reference benchmark data and deep learning models for landslide detection; 2022.Available from: arXiv preprint arXiv:2206.00515."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Synergistic Fusion Network (SFNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "SFNet is an encoder-decoder network designed for landslide segmentation that integrates multispectral, slope, and DEM data. It features a multi-branch feature extraction module, a channel attention module, multi-source fusion modules (MSFM) for integrating diverse data, and reverse feature refinement modules (RFRM) to enhance feature representations.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom code for the Synergistic Fusion Network (SFNet) is not available."
+}

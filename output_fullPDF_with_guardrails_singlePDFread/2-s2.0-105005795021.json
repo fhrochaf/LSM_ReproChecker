@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Southeast Tibet landslide detection dataset",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the first stage, the Cascade R-CNN model trained with a transfer learning strategy achieves the initial detection of landslide areas, with a model average precision (mAP) of 82% on the Southeast Tibet landslide detection dataset."
+    },
+    {
+      "name": "Landslide segmentation datasets (9,000 samples)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the second phase, we constructed 9,000 landslide segmentation datasets containing augmented samples in Southeast Tibet"
+    },
+    {
+      "name": "Google Earth Pro satellite imagery",
+      "source": "Google Earth Pro",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, high-resolution satellite images of Southeast Tibet were acquired by Google Earth Pro (the composition of the image data source is shown in Table 1)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Two-stage landslide detection and segmentation framework (Cascade R-CNN and SAM2)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-stage framework where Cascade R-CNN is used for initial landslide detection and bounding box generation, followed by a fine-tuned SAM2 model for pixel-level segmentation using an adaptive bounding box expansion strategy.",
+      "source": "Jian Zhang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a two-stage landslide detection and segmentation framework based on Cascade R-CNN and Segment Anything Model 2 (SAM2) is proposed based on landslide features in Southeast Tibet."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"No datasets were generated or analysed during the current study.\r\n\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or made available, and the custom code for the two-stage framework lacks a repository or persistent link."
+}

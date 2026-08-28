@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "The data was freely downloaded from the given website (http://www.gscloud.cn/sources), (https://geocloud.cgs.gov.cn/#/home) and (https://scihub.copernicus.eu/), all accessed on 24 November 2021."
+    },
+    {
+      "name": "GF-1 imagery",
+      "source": "China Centre for Resources Satellite Data and Application (implied by gscloud.cn)",
+      "link": "http://www.gscloud.cn/sources",
+      "status": "MENTIONED",
+      "verbatim": "The data was freely downloaded from the given website (http://www.gscloud.cn/sources), (https://geocloud.cgs.gov.cn/#/home) and (https://scihub.copernicus.eu/), all accessed on 24 November 2021."
+    },
+    {
+      "name": "ASTER GDEM",
+      "source": "Terra",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ASTER GDEM Made by Terra"
+    },
+    {
+      "name": "Geological and ecological environment map of Karst rock area",
+      "source": "China Geological Survey (implied by geocloud.cgs.gov.cn)",
+      "link": "https://geocloud.cgs.gov.cn/#/home",
+      "status": "MENTIONED",
+      "verbatim": "The data was freely downloaded from the given website (http://www.gscloud.cn/sources), (https://geocloud.cgs.gov.cn/#/home) and (https://scihub.copernicus.eu/), all accessed on 24 November 2021."
+    },
+    {
+      "name": "Shuicheng county vector data",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-oriented landslide extraction",
+      "method_type": "SOFTWARE",
+      "summary": "The method uses eCognition software to perform multi-scale segmentation and object-oriented classification. It utilizes spectral, texture, shape, and terrain features to classify land cover and extract landslide masses, followed by accuracy assessment using a confusion matrix.",
+      "source": "Definiens Imaging",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Object-oriented landslide extraction is mainly realized in eCognition. It is an intelligent image analysis software developed by Germany Definiens Imaging."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Remote sensing/geospatial data from Geospatial Data Cloud",
+        "source": "Geospatial Data Cloud (gscloud.cn)",
+        "link": "http://www.gscloud.cn/sources",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Geological/geospatial data from China Geological Survey Cloud",
+        "source": "China Geological Survey (geocloud.cgs.gov.cn)",
+        "link": "https://geocloud.cgs.gov.cn/#/home",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite imagery from Copernicus Open Access Hub",
+        "source": "Copernicus Open Access Hub",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Partial dataset mention in the Data Availability statement."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the method's code is not available."
+}

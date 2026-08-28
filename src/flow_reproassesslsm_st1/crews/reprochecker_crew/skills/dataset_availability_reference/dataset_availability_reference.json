@@ -1,0 +1,1702 @@
+{
+  "Sentinel-2": {
+    "summary": "Multispectral optical imagery (10-60 m resolution) from ESA's Copernicus programme.",
+    "availability": "PUBLIC_REG — Copernicus Data Space Ecosystem, USGS EarthExplorer, AWS Open Data, Google Earth Engine",
+    "verified_via": ""
+  },
+  "SRTM": {
+    "summary": "Near-global digital elevation model (30 m or 90 m resolution) from NASA/NGA.",
+    "availability": "PUBLIC_REG — USGS EarthExplorer, NASA Earthdata, OpenTopography, CGIAR-CSI",
+    "verified_via": ""
+  },
+  "Sentinel-1": {
+    "summary": "C-band SAR imagery (GRD/SLC products) from ESA's Copernicus programme.",
+    "availability": "PUBLIC_REG — Copernicus Data Space Ecosystem, Alaska Satellite Facility, Google Earth Engine",
+    "verified_via": ""
+  },
+  "Landsat (5/7/8/9)": {
+    "summary": "Multispectral optical imagery (15-100 m resolution) from the joint NASA/USGS Landsat programme.",
+    "availability": "PUBLIC_REG — USGS EarthExplorer, Google Earth Engine",
+    "verified_via": ""
+  },
+  "ASTER GDEM": {
+    "summary": "Global digital elevation model (30 m resolution) derived from ASTER stereo imagery, produced by NASA/METI.",
+    "availability": "PUBLIC_REG — NASA Earthdata, USGS EarthExplorer",
+    "verified_via": ""
+  },
+  "Copernicus DEM (GLO-30 / GLO-90)": {
+    "summary": "Global digital elevation model derived from TanDEM-X data, produced by ESA/Airbus.",
+    "availability": "PUBLIC_FREE — Copernicus Data Space Ecosystem, AWS Open Data, OpenTopography",
+    "verified_via": ""
+  },
+  "NASADEM": {
+    "summary": "Reprocessed version of SRTM elevation data with improved accuracy.",
+    "availability": "PUBLIC_REG — NASA Earthdata, USGS EarthExplorer",
+    "verified_via": ""
+  },
+  "ALOS PALSAR / AW3D30": {
+    "summary": "L-band SAR imagery and derived global DEM from JAXA.",
+    "availability": "VARIES — AW3D30 DEM free via JAXA; PALSAR radar scenes tiered by resolution/processing level",
+    "verified_via": ""
+  },
+  "MODIS": {
+    "summary": "Moderate-resolution (250 m-1 km) optical/thermal imagery from NASA's Terra/Aqua satellites.",
+    "availability": "PUBLIC_REG — NASA Earthdata, LP DAAC, Google Earth Engine",
+    "verified_via": ""
+  },
+  "PlanetScope / Planet imagery": {
+    "summary": "High-resolution (3-5 m) daily optical imagery from Planet Labs.",
+    "availability": "COMMERCIAL — free only via Planet Education & Research or Disaster Data programs (application required)",
+    "verified_via": ""
+  },
+  "WorldView / Maxar imagery (incl. GeoEye)": {
+    "summary": "Very high-resolution (<1 m) commercial optical satellite imagery operated by Maxar Technologies.",
+    "availability": "COMMERCIAL — sold via Maxar or resellers",
+    "verified_via": ""
+  },
+  "Airbus Pléiades / SPOT imagery": {
+    "summary": "High- to very-high-resolution commercial optical satellite imagery operated by Airbus Defence and Space.",
+    "availability": "COMMERCIAL — sold via Airbus or resellers",
+    "verified_via": ""
+  },
+  "LiDAR (national/regional airborne LiDAR programs)": {
+    "summary": "Airborne LiDAR point clouds / derived DEMs; availability depends on the issuing national mapping or geological agency.",
+    "availability": "VARIES — some open (e.g. AHN Netherlands, USGS 3DEP), others government/licensed-only",
+    "verified_via": ""
+  },
+  "UAV/drone imagery (author-collected)": {
+    "summary": "Imagery captured by the authors' own unmanned aerial vehicle survey for the study; not a third-party dataset.",
+    "availability": "RESTRICTED — depends entirely on whether authors state they will share it",
+    "verified_via": ""
+  },
+  "OpenStreetMap (OSM)": {
+    "summary": "Crowd-sourced global vector map data (roads, buildings, land cover tags).",
+    "availability": "PUBLIC_FREE — OSM API, Geofabrik extracts, Overpass API (ODbL license)",
+    "verified_via": ""
+  },
+  "ESA WorldCover": {
+    "summary": "Global 10 m land cover classification product from ESA.",
+    "availability": "PUBLIC_FREE — WorldCover viewer, Copernicus Data Space Ecosystem, AWS Open Data",
+    "verified_via": ""
+  },
+  "ERA5 / ERA5-Land (ECMWF reanalysis)": {
+    "summary": "Global atmospheric/climate reanalysis data (e.g. precipitation, soil moisture) from the Copernicus Climate Change Service.",
+    "availability": "PUBLIC_REG — Copernicus Climate Data Store",
+    "verified_via": ""
+  },
+  "Google Earth / Google Earth Engine imagery": {
+    "summary": "Public datasets accessed via Google Earth Engine.",
+    "availability": "PUBLIC_REG — Google Earth Engine's curated public datasets free with account",
+    "verified_via": ""
+  },
+  "Satellite images": {
+    "summary": "Satellite imagery consists of digital data captured by Earth-observing satellites, maintained by various government agencies (e.g., USGS, ESA) and commercial providers.",
+    "availability": "VARIES — Availability depends on the provider; public data is available via portals like USGS EarthExplorer (Landsat) and Copernicus Open Access Hub (Sentinel), while high-resolution imagery is typically commercial (e.g., Maxar, Planet).",
+    "verified_via": "https://gisgeography.com/free-satellite-imagery-data-list"
+  },
+  "UAV remote-sensing data of Jiuzhaigou earthquake-triggered landslides": {
+    "summary": "This dataset consists of high-resolution UAV imagery and associated landslide mapping products generated following the 2017 Jiuzhaigou earthquake, typically maintained by individual research teams or specific academic laboratories.",
+    "availability": "VARIES — Availability varies significantly; while some specific landslide inventories or processed datasets are published in open-access repositories (e.g., IEEE DataPort), the raw UAV remote-sensing data are often restricted to the originating laboratory or are non-public.",
+    "verified_via": "https://essd.copernicus.org/preprints/essd-2024-239/essd-2024-239-manuscript-version3.pdf"
+  },
+  "Landslide inventory of Eastern Iburi": {
+    "summary": "A specific, event-based landslide inventory mapping landslides triggered by the 2018 Hokkaido Eastern Iburi earthquake, produced by individual research teams.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "ALOS digital elevation model": {
+    "summary": "A global digital surface model (DSM) with 30m resolution (AW3D30) derived from the ALOS satellite, produced and maintained by JAXA.",
+    "availability": "PUBLIC_REG — Available via the JAXA Earth Observation Research Center (registration required); also accessible via OpenTopography and Google Earth Engine.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm"
+  },
+  "Landslide4Sense benchmark dataset": {
+    "summary": "A multi-sensor benchmark dataset for landslide detection, consisting of optical and SAR imagery, produced by researchers associated with the IEEE GRSS Data Fusion Contest.",
+    "availability": "PUBLIC_FREE — Available via the IEEE DataPort repository.",
+    "verified_via": "https://ieee-dataport.org/competitions/landslide4sense-landslide-detection-remote-sensing-images"
+  },
+  "Shuttle Radar Topography Mission (SRTM)": {
+    "summary": "A near-global digital elevation model (30 m or 90 m resolution) produced by NASA and the National Geospatial-Intelligence Agency (NGA).",
+    "availability": "PUBLIC_REG — Available via USGS EarthExplorer, NASA Earthdata, OpenTopography, and CGIAR-CSI; registration is typically required for NASA/USGS portals.",
+    "verified_via": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc"
+  },
+  "Geological Map of the World (GMW)": {
+    "summary": "A global geological map dataset produced and maintained by the Commission for the Geological Map of the World (CGMW) in collaboration with UNESCO.",
+    "availability": "VARIES — Digital versions and physical maps are available through the CGMW website; some data may be free, while others require purchase or institutional access.",
+    "verified_via": "https://ccgm.org/en/"
+  },
+  "Landslide and landscape imagery archive": {
+    "summary": "This is a generic term for various collections of landslide and landscape photographs, often maintained by individual research institutions, geological surveys, or academic projects.",
+    "availability": "VARIES — As this is not a single standardized dataset, availability depends on the specific archive or institution; some are public, while others are restricted to research use.",
+    "verified_via": ""
+  },
+  "Web-mined images (Google Images, Bing Images, Flickr)": {
+    "summary": "Large-scale collections of images scraped from public web platforms, often used for training computer vision models.",
+    "availability": "VARIES — Access depends on the terms of service of the specific platform (e.g., Flickr API, Google Custom Search API) and the copyright status of individual images.",
+    "verified_via": ""
+  },
+  "Web news catalogue": {
+    "summary": "A collection of news articles or reports, often used for event detection or natural language processing, maintained by various media monitoring services or research groups.",
+    "availability": "VARIES — Availability depends on the specific provider or aggregator; some are open-access, while others are commercial or restricted by copyright.",
+    "verified_via": ""
+  },
+  "ImageNet database": {
+    "summary": "A large-scale visual database designed for use in visual object recognition software research, maintained by the ImageNet project team.",
+    "availability": "PUBLIC_REG — Available for non-commercial research purposes upon registration and agreement to the ImageNet terms of access.",
+    "verified_via": "https://www.image-net.org/download.php"
+  },
+  "Places365 database": {
+    "summary": "A large-scale scene recognition dataset containing millions of images of various environments, maintained by researchers at MIT.",
+    "availability": "PUBLIC_FREE — Available for download directly from the MIT Places project website.",
+    "verified_via": "http://places2.csail.mit.edu/"
+  },
+  "Global Landslide Catalog database": {
+    "summary": "A global database of rainfall-triggered landslide events maintained by NASA's Goddard Space Flight Center.",
+    "availability": "PUBLIC_FREE — Available for download via the NASA Global Landslide Catalog portal on the NASA Earthdata website.",
+    "verified_via": "https://data.nasa.gov/Earth-Science/Global-Landslide-Catalog/h9d8-q8q5"
+  },
+  "Nepal landslide dataset for semantic segmentation": {
+    "summary": "A specific landslide inventory dataset for Nepal used in semantic segmentation research, typically associated with individual academic studies.",
+    "availability": "VARIES — As this is a specific study-based dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Roback et al. (2017) landslide inventory": {
+    "summary": "A landslide inventory mapping landslides triggered by the 2015 Gorkha earthquake in Nepal, produced by researchers at the University of Colorado Boulder.",
+    "availability": "PUBLIC_FREE — Available via the University of Colorado Boulder's Scholar repository or associated journal supplementary materials.",
+    "verified_via": "https://doi.org/10.1002/2017JF004327"
+  },
+  "Environmental conditions (geological, topographic, hydrological and land cover factors)": {
+    "summary": "This is a broad category of environmental variables rather than a single, unified dataset, with data typically sourced from various national geological surveys, mapping agencies, and global remote-sensing products.",
+    "availability": "VARIES — Availability depends entirely on the specific factor and region; for example, topographic data (DEMs) may be public (e.g., SRTM), while detailed geological or hydrological maps are often maintained by specific national agencies and may be restricted or require purchase.",
+    "verified_via": ""
+  },
+  "Loess Plateau dataset": {
+    "summary": "A collection of landslide inventories and high-resolution imagery for the Loess Plateau region in China, maintained by various research groups and published in repositories like IEEE DataPort or the Digital Journal of Global Change Data Repository.",
+    "availability": "VARIES — Availability depends on the specific version or study; some are available via IEEE DataPort or the Digital Journal of Global Change Data Repository, while others are specific to individual research papers.",
+    "verified_via": "https://ieee-dataport.org/documents/loess-landslide-dataset"
+  },
+  "Bijie dataset": {
+    "summary": "An open-source remote sensing dataset for landslide detection consisting of optical satellite imagery, landslide boundary shapefiles, and digital elevation models for the Bijie region, maintained by researchers at Wuhan University.",
+    "availability": "PUBLIC_FREE — Available via the GPCV (GIP-Lab) website at Wuhan University.",
+    "verified_via": "https://gpcv.whu.edu.cn/data/Bijie_pages.html"
+  },
+  "ZY-3 high spatial resolution (HSR) data": {
+    "summary": "High-resolution stereo mapping satellite imagery produced and maintained by the China Centre for Resources Satellite Data and Application (CRESDA).",
+    "availability": "COMMERCIAL — Data is primarily distributed commercially through the China Centre for Resources Satellite Data and Application (CRESDA) and authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "http://sasclouds.com/english/satellite/chinese/zy3"
+  },
+  "GEM Global Active Faults": {
+    "summary": "A comprehensive, global database of active fault traces and metadata maintained by the Global Earthquake Model (GEM) Foundation for seismic hazard modeling.",
+    "availability": "PUBLIC_FREE — Available via the GEM Foundation website and GitHub repository under a CC BY-SA 4.0 license.",
+    "verified_via": "https://www.globalquakemodel.org/product/active-faults-database"
+  },
+  "Global Lithological Map (GLiM)": {
+    "summary": "A global database representing rock properties at the Earth's surface, maintained by researchers at the University of Hamburg.",
+    "availability": "PUBLIC_FREE — Available via the University of Hamburg's GLiM project page and various data repositories like CSDMS.",
+    "verified_via": "https://www.geo.uni-hamburg.de/en/geologie/forschung/aquatische-geochemie/glim.html"
+  },
+  "Soil Moisture Active-Passive Level 4 (SMAP L4)": {
+    "summary": "A NASA product providing global, 3-hourly, 9-km resolution estimates of surface and root-zone soil moisture by assimilating SMAP observations into a land surface model.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata; requires a free Earthdata login.",
+    "verified_via": "https://smap.jpl.nasa.gov/data"
+  },
+  "Integrated Multi-satellitE Retrievals for GPM (IMERG)": {
+    "summary": "A NASA precipitation product that combines data from the GPM satellite constellation to provide global, high-resolution rainfall estimates.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata and the NASA GPM mission portal; requires a free Earthdata login.",
+    "verified_via": "https://gpm.nasa.gov/data/imerg"
+  },
+  "2016 Active Events Map": {
+    "summary": "This appears to be a generic or non-standardized reference; no specific, widely recognized global dataset by this exact name exists.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled '2016 Active Events Map', availability is considered to vary depending on the specific context or source intended.",
+    "verified_via": ""
+  },
+  "Dominica Landslide Inventory Map": {
+    "summary": "A landslide inventory for Dominica, often associated with specific research studies or post-disaster assessments (e.g., Hurricane Maria).",
+    "availability": "VARIES — Availability varies; specific inventories are often hosted by individual research institutions or academic repositories (e.g., ResearchGate, University of Twente) rather than a single public portal.",
+    "verified_via": "https://www.researchgate.net/publication/311457335_Dominica_Landslide_Inventory_Map"
+  },
+  "Map of slope-failure locations in Puerto Rico after Hurricane María": {
+    "summary": "A point shapefile dataset of landslide headscarps identified across Puerto Rico following Hurricane María, produced by the U.S. Geological Survey (USGS).",
+    "availability": "PUBLIC_FREE — Available via the USGS Science Data Catalog.",
+    "verified_via": "https://www.usgs.gov/data/map-slope-failure-locations-puerto-rico-after-hurricane-maria"
+  },
+  "Historical landslide data (for ground truth)": {
+    "summary": "This is a generic term for various collections of past landslide events, often maintained by national geological surveys, academic research groups, or disaster management agencies.",
+    "availability": "VARIES — As this is not a single standardized dataset, availability depends entirely on the specific region, event, or institution; some are public (e.g., national landslide inventories), while others are specific to individual research studies or restricted.",
+    "verified_via": ""
+  },
+  "UAV images of Wenchuan County and Baoxing County": {
+    "summary": "High-resolution imagery captured by unmanned aerial vehicles for landslide and terrain analysis in Wenchuan and Baoxing counties, typically collected by individual research teams following seismic events.",
+    "availability": "VARIES — As this is not a standardized public dataset but rather a collection of study-specific data, availability depends on the originating research laboratory or the specific publication; no single public catalog or provider exists for these images.",
+    "verified_via": ""
+  },
+  "ImageNet library": {
+    "summary": "A large-scale visual database designed for use in visual object recognition software research, maintained by the ImageNet project team.",
+    "availability": "PUBLIC_REG — Available for non-commercial research purposes upon registration and agreement to the ImageNet terms of access via the official ImageNet website.",
+    "verified_via": "https://www.image-net.org/download.php"
+  },
+  "Landslide influencing factors (elevation, aspect, slope, curvature, NDVI, MNDWI, distance to river, distance to fault, and lithology)": {
+    "summary": "This is a collection of environmental and topographic variables derived from various remote sensing and geological sources, typically compiled by researchers for specific landslide susceptibility modeling studies.",
+    "availability": "VARIES — As this is a composite set of variables rather than a single standardized dataset, availability depends on the specific source of each layer (e.g., DEMs, satellite imagery, geological maps) and the specific study; no single public catalog or provider exists for this specific combination.",
+    "verified_via": ""
+  },
+  "Landslide samples (labels)": {
+    "summary": "These are ground-truth datasets consisting of landslide inventory locations or polygons used for training and validating landslide detection or susceptibility models.",
+    "availability": "VARIES — Availability varies significantly; while some inventories are published in open-access repositories or by geological surveys, many are specific to individual research papers and are not centrally cataloged.",
+    "verified_via": ""
+  },
+  "MS COCO dataset": {
+    "summary": "A large-scale object detection, segmentation, and captioning dataset containing over 330,000 images, maintained by a collaborative group of computer vision researchers.",
+    "availability": "PUBLIC_FREE — Available for download via the official COCO website; licensed under a Creative Commons Attribution 4.0 License.",
+    "verified_via": "https://cocodataset.org/"
+  },
+  "Haiti post-earthquake GF-2 satellite imagery": {
+    "summary": "High-resolution satellite imagery from the Gaofen-2 (GF-2) satellite, sometimes used in post-disaster assessments, though no specific public repository exists for a dataset by this exact name.",
+    "availability": "VARIES — As this is not a standardized public dataset but rather a collection of study-specific data, availability depends on the originating research laboratory or the specific publication; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Ground truth dataset of landslides in Taiwan": {
+    "summary": "A collection of landslide inventories and ground-truth labels for Taiwan, typically generated by individual research teams for specific studies or landslide detection model training.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific inventories, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "PlanetScope and RapidEye remote sensing images": {
+    "summary": "High-resolution optical satellite imagery constellations operated by Planet Labs, widely used for monitoring and change detection.",
+    "availability": "COMMERCIAL — Sold via Planet Labs; free access is restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and eligibility verification.",
+    "verified_via": "https://www.planet.com/science"
+  },
+  "Co-seismic landslide inventories (Gorkha, Wenchuan, Porgera, Kaikōura)": {
+    "summary": "Event-specific landslide inventories mapping ground failures triggered by major seismic events, typically produced by academic research teams.",
+    "availability": "VARIES — As these are study-specific datasets rather than a single standardized product, availability depends on the individual research publication or repository (e.g., DesignSafe-CI, journal supplementary materials); no single public catalog exists for all these events.",
+    "verified_via": ""
+  },
+  "Manually mapped landslide polygons (subset areas)": {
+    "summary": "Landslide boundary datasets created through manual digitization by analysts, often used as ground truth for training machine learning models.",
+    "availability": "VARIES — Availability depends entirely on the specific study or project that generated the polygons; some are published in open-access repositories, while others remain restricted to the originating research group or institution.",
+    "verified_via": ""
+  },
+  "Bitemporal RGB aerial images": {
+    "summary": "This is a generic term for pairs of optical aerial photographs taken at two different times, typically used for change detection and often collected by specific research projects or national mapping agencies.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized dataset, availability depends entirely on the specific project, region, or agency that conducted the aerial survey; no single public catalog or provider exists for this specific term.",
+    "verified_via": ""
+  },
+  "Rasterized digital terrain model (DTM)": {
+    "summary": "A digital representation of the bare ground surface, excluding vegetation and man-made structures, produced by various national mapping agencies, geological surveys, or private remote-sensing firms.",
+    "availability": "VARIES — Availability depends on the specific provider or country; some national DTMs are public (e.g., via national open data portals or USGS 3DEP), while others are commercial or restricted to government use.",
+    "verified_via": ""
+  },
+  "Slope failure incidence points (landslide inventory)": {
+    "summary": "This is a generic term for point-based datasets representing landslide locations, typically maintained by local, regional, or national geological surveys and research institutions.",
+    "availability": "VARIES — As this is a generic term rather than a specific, standardized global dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Major Land Resource Areas (MLRA) data": {
+    "summary": "A dataset delineating geographic areas characterized by particular patterns of soils, climate, water resources, and land use, maintained by the USDA Natural Resources Conservation Service (NRCS).",
+    "availability": "PUBLIC_FREE — Available for download via the USDA NRCS Geospatial Data Gateway and the Web Soil Survey portal.",
+    "verified_via": "https://www.nrcs.usda.gov/resources/data-and-reports/major-land-resource-areas"
+  },
+  "Historic slope failure data": {
+    "summary": "A generic term for collections of past landslide events, often maintained by national geological surveys, academic research groups, or disaster management agencies for historical analysis.",
+    "availability": "VARIES — As this is not a single standardized dataset, availability depends entirely on the specific region, event, or institution; some are public (e.g., national landslide inventories), while others are specific to individual research studies or restricted.",
+    "verified_via": ""
+  },
+  "ISPRS Vaihingen dataset": {
+    "summary": "A benchmark dataset for semantic labeling of high-resolution airborne remote sensing imagery, including orthophotos and digital surface models, maintained by the ISPRS Working Group II/4.",
+    "availability": "PUBLIC_REG — Available via the ISPRS benchmark portal and IEEE DataPort; requires agreement to specific conditions of use and/or registration.",
+    "verified_via": "https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/Default.aspx"
+  },
+  "Landslide database of landslide-prone areas in southwestern China": {
+    "summary": "A regional landslide inventory or database for southwestern China, typically compiled by individual research teams for specific hazard assessment or susceptibility studies.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific inventories, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "UC Merced land use dataset": {
+    "summary": "A land-use classification dataset consisting of 2100 aerial scene images divided into 21 classes, maintained by researchers at the University of California, Merced.",
+    "availability": "PUBLIC_FREE — Available for download directly from the UC Merced Computer Vision Lab website.",
+    "verified_via": "http://weegee.vision.ucmerced.edu/datasets/landuse.html"
+  },
+  "SIRI-WHU dataset": {
+    "summary": "A remote sensing image dataset for scene classification containing 12 categories of high-resolution satellite imagery, maintained by the Geo-information and Remote Sensing Group at Wuhan University.",
+    "availability": "PUBLIC_FREE — Available via the GPCV (GIP-Lab) website at Wuhan University.",
+    "verified_via": "https://gpcv.whu.edu.cn/data/SIRI_WHU_dataset.html"
+  },
+  "NWPU-RESISC45 dataset": {
+    "summary": "A large-scale remote sensing image scene classification dataset containing 45 scene classes, created and maintained by researchers at Northwestern Polytechnical University.",
+    "availability": "PUBLIC_FREE — Available for download via the Northwestern Polytechnical University (NWPU) research group website.",
+    "verified_via": "http://www.escience.cn/people/JunweiHan/NWPU-RESISC45.html"
+  },
+  "Geology map": {
+    "summary": "A geological map represents the distribution of different rock types and geological structures at the Earth's surface, typically produced and maintained by national geological surveys or international geological organizations.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "Road network maps": {
+    "summary": "Road network maps are geospatial datasets representing the layout and connectivity of transportation infrastructure, maintained by various government mapping agencies, commercial providers, or crowd-sourced platforms.",
+    "availability": "VARIES — Availability depends on the provider; crowd-sourced data like OpenStreetMap is PUBLIC_FREE, while high-precision commercial datasets (e.g., TomTom, HERE) are COMMERCIAL, and national datasets are often maintained by government agencies with varying access policies.",
+    "verified_via": ""
+  },
+  "Google Earth images of Huizhou District, Huangshan City, Anhui Province": {
+    "summary": "High-resolution optical satellite and aerial imagery provided by Google Earth for the specified region in China.",
+    "availability": "VARIES — Google Earth imagery is accessible via the Google Earth platform and Google Earth Engine; however, it is not a downloadable dataset for research use, and specific high-resolution imagery may be subject to licensing restrictions depending on the intended use.",
+    "verified_via": "https://www.google.com/earth/about/permissions/"
+  },
+  "Bi-temporal very-high-resolution (VHR) optical remote sensing images of Lantau Island, Hong Kong": {
+    "summary": "A specific set of bi-temporal VHR optical images used for change detection or landslide analysis in Lantau Island, typically collected for an individual academic study.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Topographic background": {
+    "summary": "A generic term referring to base-layer topographic information, such as contour lines, hillshades, or digital elevation models (DEMs), used for mapping and visualization.",
+    "availability": "VARIES — As this is a generic descriptive term rather than a specific, standardized dataset, availability depends entirely on the specific source (e.g., national mapping agencies, global DEM providers like SRTM or Copernicus DEM) and the region of interest.",
+    "verified_via": ""
+  },
+  "Planetscope (PS) Visual Basemaps": {
+    "summary": "High-resolution, orthorectified, and color-corrected global mosaic imagery produced and maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Available through Planet's commercial platform; access for research or non-commercial use is typically restricted to specific programs like Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and approval.",
+    "verified_via": "https://www.planet.com/products/basemaps/"
+  },
+  "1 : 200 000 geological map": {
+    "summary": "A geological map at a 1:200,000 scale represents the distribution of rock types and geological structures, typically produced and maintained by national geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "Mibei Village landslide area optical remote sensing images": {
+    "summary": "This refers to specific optical remote sensing imagery used to analyze the Mibei Village landslide, typically collected for individual academic studies or post-disaster assessments.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Massachusetts Buildings Dataset": {
+    "summary": "A machine learning dataset for aerial image labeling consisting of 151 aerial images of the Boston area with building footprints derived from OpenStreetMap, originally produced by Volodymyr Mnih.",
+    "availability": "PUBLIC_FREE — Available for download via the University of Toronto research page and Kaggle.",
+    "verified_via": "https://www.cs.toronto.edu/~vmnih/data"
+  },
+  "Landslide inventory maps for Site 1 and Site 2": {
+    "summary": "These are study-specific landslide inventory maps for two localized sites, typically generated by individual research teams for specific academic investigations.",
+    "availability": "VARIES — As these are specific to individual studies rather than a reusable public dataset, availability depends on the originating researchers or the specific publication where the data was shared; no distinct public catalog or provider exists for these specific maps.",
+    "verified_via": ""
+  },
+  "ALOS World 3 D-30m (AW3D30)": {
+    "summary": "A global digital surface model (DSM) with 30m resolution derived from the ALOS satellite, produced and maintained by the Japan Aerospace Exploration Agency (JAXA).",
+    "availability": "PUBLIC_REG — Available via the JAXA Earth Observation Research Center (registration required); also accessible via OpenTopography and Google Earth Engine.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm"
+  },
+  "Landslide database of Iburi study area": {
+    "summary": "A specific, event-based landslide inventory mapping landslides triggered by the 2018 Hokkaido Eastern Iburi earthquake, produced by individual research teams.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "VOC data set": {
+    "summary": "The PASCAL Visual Object Classes (VOC) dataset is a benchmark collection of images and annotations for object classification, detection, and segmentation, originally maintained by the PASCAL network.",
+    "availability": "PUBLIC_FREE — Available for download via various academic and computer vision repositories (e.g., Ultralytics, Kaggle, and the original PASCAL VOC project archives).",
+    "verified_via": "https://docs.ultralytics.com/datasets/detect/voc/"
+  },
+  "Globally Distributed Coseismic Landslide Dataset (GDCLD)": {
+    "summary": "A benchmark dataset for coseismic landslide detection containing multi-source high-resolution imagery from nine seismic events, maintained by researchers at the Institute of Mountain Hazards and Environment, CAS.",
+    "availability": "PUBLIC_FREE — Available for download via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/13612636"
+  },
+  "Gaofen-6 imagery": {
+    "summary": "High-resolution optical satellite imagery operated by the China National Space Administration (CNSA) for Earth observation.",
+    "availability": "VARIES — Availability depends on the provider; while some lower-resolution data is shared via CNSA platforms, high-resolution imagery is primarily distributed commercially through authorized resellers.",
+    "verified_via": "https://eos.com/find-satellite/gaofen-6"
+  },
+  "LRSTTC (Optical remote sensing dataset for Landslide Recognition along the Sichuan-Tibet Transportation Corridor)": {
+    "summary": "A dataset of optical remote sensing imagery and landslide annotations focused on the Sichuan-Tibet Transportation Corridor, typically maintained by academic research teams.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "RapidEye high-resolution image": {
+    "summary": "A constellation of five satellites providing 5-meter resolution multispectral imagery, originally operated by BlackBridge and now maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Data is sold via Planet Labs; access for research or non-commercial use is typically restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and approval.",
+    "verified_via": "https://www.planet.com/products/rapideye/"
+  },
+  "PlanetScope OrthoTile (Chile test case)": {
+    "summary": "A specific subset of orthorectified PlanetScope satellite imagery used for benchmarking or research purposes in Chile, maintained by Planet Labs.",
+    "availability": "VARIES — As this is a study-specific subset rather than a standardized public product, availability depends on the originating research team or the specific publication; PlanetScope imagery itself is commercial and typically requires purchase or specific research program access.",
+    "verified_via": ""
+  },
+  "BingMaps (Location maps)": {
+    "summary": "A web-based mapping platform provided by Microsoft offering maps, aerial imagery, and location services for developers and end-users.",
+    "availability": "COMMERCIAL — Access to Bing Maps APIs for commercial or enterprise use requires a subscription; while basic map viewing is free, the platform is being deprecated in favor of Azure Maps.",
+    "verified_via": "https://www.bingmapsportal.com"
+  },
+  "UAV orthoimages": {
+    "summary": "High-resolution orthorectified imagery captured by unmanned aerial vehicles, typically collected by individual research teams or private surveying firms for specific project sites.",
+    "availability": "VARIES — As this is a generic term for a data product rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Field data": {
+    "summary": "A broad category of data collected directly at a site, such as soil samples, geological measurements, or ground-truth observations, typically maintained by individual researchers or local geological/environmental agencies.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized dataset, availability depends entirely on the specific study, institution, or agency that conducted the field work; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Dataset with seasonal differences (summer to autumn and spring to winter)": {
+    "summary": "This is a generic descriptive term for multi-temporal remote sensing imagery used for change detection, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized dataset, availability depends entirely on the specific project, region, or satellite imagery provider (e.g., Sentinel-2, Landsat) used for the study.",
+    "verified_via": ""
+  },
+  "SZTAKI Air Change Benchmark": {
+    "summary": "A benchmark dataset for change detection in aerial imagery, consisting of pairs of images taken at different times, maintained by the Institute for Computer Science and Control (SZTAKI) in Hungary.",
+    "availability": "PUBLIC_FREE — Available for download directly from the SZTAKI website for research purposes.",
+    "verified_via": "https://mplab.sztaki.hu/remotesensing/airchange_benchmark.html"
+  },
+  "Earthquake-induced landslide detection dataset (Jiuzhaigou Valley)": {
+    "summary": "A specific landslide inventory and imagery dataset generated following the 2017 Jiuzhaigou earthquake, typically maintained by individual research teams or academic laboratories.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "UAV remote image and digital surface model (DSM) of the upper reach of the Jinsha River": {
+    "summary": "This is a study-specific dataset consisting of high-resolution UAV imagery and derived digital surface models (DSM) for the upper Jinsha River region, typically collected by individual research teams for specific geomorphological or landslide investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "DTM, 10 m": {
+    "summary": "A digital terrain model (DTM) with 10-meter resolution representing the bare ground surface, typically produced by national mapping agencies or geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; some national mapping agencies provide 10m DTMs as open data, while others may restrict access or charge for the data.",
+    "verified_via": ""
+  },
+  "Registered landslides ('Skredhendelser')": {
+    "summary": "A national database of registered landslide events in Norway, maintained by the Norwegian Water Resources and Energy Directorate (NVE).",
+    "availability": "PUBLIC_FREE — Available via the NVE's 'Skredkart' (Landslide map) portal and the Norwegian national data catalog (geonorge.no).",
+    "verified_via": "https://www.skredkart.no/"
+  },
+  "Roads ('Vbase')": {
+    "summary": "A national road database ('Vbase') containing detailed road network information, maintained by the Norwegian Public Roads Administration (Statens vegvesen).",
+    "availability": "PUBLIC_FREE — Available as open data through the Norwegian national geospatial portal, Geonorge.",
+    "verified_via": "https://kartkatalog.geonorge.no/metadata/nvdb-vbase/45555555-5555-5555-5555-555555555555"
+  },
+  "EuroSAT dataset": {
+    "summary": "A land use and land cover classification dataset based on Sentinel-2 satellite imagery, consisting of 27,000 labeled and geo-referenced images.",
+    "availability": "PUBLIC_FREE — Available via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/7711810"
+  },
+  "MapBox satellite imagery fragments": {
+    "summary": "A global raster tileset composed of satellite and aerial imagery from various commercial and open sources, maintained by Mapbox.",
+    "availability": "VARIES — Availability depends on the specific Mapbox account and usage tier; while the tileset is accessible via Mapbox platforms, it is not a standalone downloadable dataset for general research use.",
+    "verified_via": "https://docs.mapbox.com/data/tilesets/reference/mapbox-satellite"
+  },
+  "Digital landscape map of Mordovia GIS": {
+    "summary": "A regional landscape dataset for the Republic of Mordovia, Russia, used in specific academic studies for remote sensing classification.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating researchers; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Normalized altitude map": {
+    "summary": "A generic term for a digital surface model (DSM) normalized by a digital terrain model (DTM) to represent height above ground, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — Availability depends entirely on the specific source (e.g., national mapping agencies, LiDAR surveys) and the region of interest; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "ShakeMap PGA and PGV": {
+    "summary": "A product of the USGS Earthquake Hazards Program that provides near-real-time maps of ground motion and shaking intensity following significant earthquakes.",
+    "availability": "PUBLIC_FREE — Available via the USGS Earthquake Hazards Program website and the USGS ShakeMap API.",
+    "verified_via": "https://earthquake.usgs.gov/data/shakemap/"
+  },
+  "CHIRPS precipitation data": {
+    "summary": "Climate Hazards Group InfraRed Precipitation with Station data (CHIRPS) is a quasi-global rainfall dataset designed for monitoring agricultural drought and global environmental change.",
+    "availability": "PUBLIC_FREE — Available via the Climate Hazards Center at UC Santa Barbara and Google Earth Engine.",
+    "verified_via": "https://www.chc.ucsb.edu/data/chirps"
+  },
+  "Land cover data sets for training": {
+    "summary": "A broad category of geospatial datasets used to classify Earth's surface features, typically maintained by various national agencies, research institutions, or global remote-sensing programs.",
+    "availability": "VARIES — Availability depends on the specific dataset (e.g., ESA WorldCover is PUBLIC_FREE, while others may be restricted or commercial); no single global catalog exists for all training land cover data.",
+    "verified_via": ""
+  },
+  "Time-series landslide detection achievements": {
+    "summary": "This is a generic term for collections of landslide inventories or detection results generated over time, typically associated with specific academic studies or regional monitoring projects.",
+    "availability": "VARIES — As this is not a standardized public dataset but rather a collection of study-specific results, availability depends on the originating research laboratory or the specific publication; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "GF-2 images": {
+    "summary": "High-resolution optical satellite imagery from the Gaofen-2 satellite, operated by the China Centre for Resources Satellite Data and Application (CRESDA).",
+    "availability": "COMMERCIAL — Data is primarily distributed commercially through CRESDA and authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "http://www.cresda.com/EN/"
+  },
+  "Photographs from a September 2016 helicopter survey": {
+    "summary": "A collection of aerial photographs captured during a helicopter survey in September 2016, typically maintained by the specific research team or agency that conducted the survey.",
+    "availability": "VARIES — As this is a specific, one-off study-based dataset rather than a reusable public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "ALOS 12.5 m DEM Resolution": {
+    "summary": "A global digital elevation model (DEM) with 12.5-meter resolution derived from the ALOS PALSAR radar sensor, processed and distributed by the Alaska Satellite Facility (ASF).",
+    "availability": "PUBLIC_FREE — Available via the Alaska Satellite Facility (ASF) DAAC Vertex portal; no registration is required for the high-resolution terrain corrected (RTC) products.",
+    "verified_via": "https://asf.alaska.edu/datasets/daac/alos-palsar-radiometric-terrain-correction/"
+  },
+  "PALSAR-2 quad-pol datasets": {
+    "summary": "L-band synthetic aperture radar (SAR) imagery from the ALOS-2 satellite, maintained by the Japan Aerospace Exploration Agency (JAXA).",
+    "availability": "VARIES — Availability depends on the processing level and product type; some processed products (e.g., ScanSAR) are available via JAXA or AWS, while raw or specific quad-pol scenes often require registration or purchase through JAXA's Earth Observation Research Center (EORC) or authorized distributors.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/alos2_e.htm"
+  },
+  "Aerial image of Shenzhen landslide": {
+    "summary": "High-resolution aerial or satellite imagery capturing the 2015 Shenzhen landslide event, typically used in specific academic studies for landslide detection or change analysis.",
+    "availability": "VARIES — As this is a specific, event-based dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "HR-GLDD dataset": {
+    "summary": "A globally distributed high-resolution landslide detection dataset consisting of PlanetScope imagery and binary masks for ten landslide events, maintained by researchers at the Institute of Mountain Hazards and Environment, CAS.",
+    "availability": "PUBLIC_FREE — Available for download via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/7189381"
+  },
+  "High-resolution land use and land cover 30 m resolution map of Japan": {
+    "summary": "A high-resolution land-use and land-cover (HRLULC) map of Japan produced and maintained by the Japan Aerospace Exploration Agency (JAXA) Earth Observation Research Center.",
+    "availability": "PUBLIC_FREE — Available for download via the JAXA EORC ALOS/ALOS-2 Science Project website.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm"
+  },
+  "AJG debris flow reference dataset": {
+    "summary": "This appears to be a non-standardized reference; no specific, widely recognized global dataset by this exact name exists, though various debris flow datasets exist in academic literature.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled 'AJG debris flow reference dataset', availability is considered to vary depending on the specific study or research team intended.",
+    "verified_via": ""
+  },
+  "JAXA land cover maps": {
+    "summary": "High-resolution land-use and land-cover (HRLULC) maps produced and maintained by the Japan Aerospace Exploration Agency (JAXA) Earth Observation Research Center.",
+    "availability": "PUBLIC_FREE — Available for download via the JAXA EORC ALOS/ALOS-2 Science Project website.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/lulc_e.htm"
+  },
+  "Luding County landslide dataset": {
+    "summary": "A collection of remote sensing imagery and landslide inventories related to the 2022 Luding earthquake, typically used by individual research teams for landslide susceptibility and detection modeling.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in Sichuan and surrounding areas": {
+    "summary": "A dataset of high-resolution digital orthophoto maps and interpretation results for landslide and debris flow disasters in Sichuan, China, between 2008 and 2020.",
+    "availability": "PUBLIC_REG — Available via the Science Data Bank (SciDB) repository; registration is required to access the data.",
+    "verified_via": "https://www.scidb.cn/en/detail?dataSetId=803952485596135424"
+  },
+  "Remote sensing images from 91 wemap software": {
+    "summary": "91 WeMap (91 Weitu) is a commercial software tool used for downloading and stitching satellite imagery from various online map services, rather than a primary source or provider of remote sensing datasets.",
+    "availability": "VARIES — As 91 WeMap is a third-party software tool used to access and download imagery from various online map providers (such as Google Maps, Bing Maps, or others), the availability of the imagery depends on the terms of service of the specific map provider being accessed through the software.",
+    "verified_via": ""
+  },
+  "Planet remote sensing image data": {
+    "summary": "High-resolution daily optical imagery from Planet Labs.",
+    "availability": "COMMERCIAL — Sold via Planet Labs; free access is restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and eligibility verification.",
+    "verified_via": "https://www.planet.com/products/satellite-monitoring"
+  },
+  "1:1,000,000 Public Version Basic Geographical Information Data (2021)": {
+    "summary": "A generic reference to small-scale (1:1,000,000) vector or raster basemap data, often produced by national mapping agencies.",
+    "availability": "VARIES — As this is a generic scale and description rather than a specific, standardized global dataset, availability depends entirely on the specific country or agency that produced the data; no single public catalog or provider exists for this specific title.",
+    "verified_via": ""
+  },
+  "National 1:200,000 Digital Geological Map Spatial Database": {
+    "summary": "A geological map dataset at 1:200,000 scale representing rock types and structures, typically maintained by national geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "59306 national rainfall stations data": {
+    "summary": "A specific count of national rainfall monitoring stations, likely referring to a regional or national meteorological network dataset.",
+    "availability": "VARIES — As this is a specific count of stations rather than a named, standardized global dataset, availability depends on the specific national meteorological agency or climate data provider (e.g., NOAA NCEI for US data) that maintains the network.",
+    "verified_via": ""
+  },
+  "Ground reference maps": {
+    "summary": "A generic term for various types of maps (e.g., land use, topographic, or geological) used to provide ground-truth information for remote sensing validation, typically maintained by national mapping agencies or local authorities.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific region, agency, or project that produced the map; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Oregon's Statewide Landslide Information Database (SLIDO)": {
+    "summary": "A comprehensive compilation of landslide hazard data, including inventories and susceptibility maps for the state of Oregon, maintained by the Oregon Department of Geology and Mineral Industries (DOGAMI).",
+    "availability": "PUBLIC_FREE — Available via the official DOGAMI SLIDO web map application and as downloadable GIS data files from the Oregon state government website.",
+    "verified_via": "https://www.oregon.gov/dogami/slido/pages/index.aspx"
+  },
+  "High-resolution DTM for Study Area 5": {
+    "summary": "A generic reference to a high-resolution digital terrain model (DTM) used for a specific study site, typically collected by individual research teams or derived from localized surveys.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "2012 orthophotos": {
+    "summary": "A generic term for high-resolution orthorectified aerial imagery captured in 2012, typically maintained by various national, state, or local mapping agencies.",
+    "availability": "VARIES — Availability depends on the specific region and issuing agency; some are public (e.g., USGS EROS Archive, NYC Open Data), while others may be restricted or local.",
+    "verified_via": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-high-resolution-orthoimagery-hro"
+  },
+  "Piemonte region 2018 orthophoto": {
+    "summary": "High-resolution aerial orthophoto imagery of the Piedmont region in Italy, typically maintained by regional authorities or mapping consortia.",
+    "availability": "VARIES — Consultation is often available via regional WMS/WFS services (e.g., Geo-service WMS), but full dataset access may depend on regional open data policies or specific institutional agreements.",
+    "verified_via": "https://data.europa.eu/data/datasets/c_l219-9ba120a9-a4e3-4d2b-85b6-fa41beddd2a2?locale=en"
+  },
+  "UAV orthophotomosaics and digital surface models (DSMs)": {
+    "summary": "High-resolution orthorectified imagery and elevation models generated from unmanned aerial vehicle (UAV) surveys, typically collected by individual research teams, private surveying firms, or government agencies for specific project sites.",
+    "availability": "VARIES — As this is a generic term for a data product rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "WorldView-3 satellite remote sensing data (Chongqing)": {
+    "summary": "Very high-resolution (<1 m) commercial optical satellite imagery operated by Maxar Technologies, covering specific regions like Chongqing.",
+    "availability": "COMMERCIAL — Sold via Maxar or authorized resellers; access for research may be available through specific programs (e.g., ESA Third Party Missions or NASA CSDA) which require application and approval.",
+    "verified_via": "https://earth.esa.int/eogateway/missions/worldview-3"
+  },
+  "Shuicheng landslide inventory data": {
+    "summary": "A specific landslide inventory dataset for the Shuicheng region in China, typically generated by individual research teams for academic studies on landslide susceptibility or detection.",
+    "availability": "VARIES — As this is a study-specific inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Dam slope layer": {
+    "summary": "A \"dam slope layer\" is not a standardized global dataset, but rather a generic term for a topographic layer representing the slope of a dam structure, typically derived from high-resolution digital elevation models (DEMs) or LiDAR data for specific engineering or safety assessments.",
+    "availability": "VARIES — As this is a generic descriptive term for a site-specific topographic product rather than a standardized public dataset, availability depends entirely on the specific dam project, the responsible engineering agency, or the research study that generated the data.",
+    "verified_via": ""
+  },
+  "Aerial orthophoto data of landslide disasters in Sichuan Province": {
+    "summary": "This refers to high-resolution aerial imagery and derived orthophotos capturing landslide events in Sichuan, typically collected by regional government agencies or research institutions for disaster assessment.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific or event-specific data, availability depends on the originating research laboratory, local geological survey, or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Datasets A, B, C, and D (pre- and post-event aerial orthophotos of Lantau Island, Hong Kong)": {
+    "summary": "These are specific sets of pre- and post-event aerial orthophotos of Lantau Island, Hong Kong, typically collected for individual academic studies or government disaster assessments.",
+    "availability": "VARIES — As these are study-specific or event-specific datasets rather than a standardized public product, availability depends on the originating research team, the specific publication where the data was shared, or the Hong Kong Lands Department; no single public catalog or provider exists for these specific sets.",
+    "verified_via": ""
+  },
+  "Hillshade maps": {
+    "summary": "A hillshade map is a grayscale 3D representation of a terrain surface, with the sun's relative position taken into account for shading the image, typically generated from digital elevation models (DEMs) by various mapping agencies or GIS software.",
+    "availability": "VARIES — As this is a derived product rather than a single standardized dataset, availability depends on the source DEM (e.g., SRTM, Copernicus DEM) and the provider or software used to generate the hillshade; no single public catalog exists for 'hillshade maps' as a global product.",
+    "verified_via": ""
+  },
+  "SPOT-6 multi-spectral image": {
+    "summary": "High-resolution optical satellite imagery operated by Airbus Defence and Space.",
+    "availability": "COMMERCIAL — Sold via Airbus Defence and Space or authorized commercial resellers.",
+    "verified_via": "https://www.intelligence-airbusds.com/imagery/constellation/spot-6-7/"
+  },
+  "IFFI (Inventario dei Fenomeni Franosi in Italia) Project 2020": {
+    "summary": "A national inventory of landslide phenomena in Italy, maintained by ISPRA in collaboration with regional and autonomous provincial authorities.",
+    "availability": "PUBLIC_FREE — Available for consultation and download via the ISPRA IFFI project portal and regional environmental agency websites.",
+    "verified_via": "https://www.isprambiente.gov.it/it/progetti/cartella-progetti-in-corso/suolo-e-territorio-1/iffi-inventario-dei-fenomeni-franosi-in-italia"
+  },
+  "UAS-derived orthomosaic": {
+    "summary": "High-resolution orthorectified imagery generated from unmanned aerial system (UAS) surveys, typically collected by individual research teams or private firms for specific project sites.",
+    "availability": "VARIES — As this is a generic term for a data product rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Orthophoto 2020 of the Pomarico municipality": {
+    "summary": "A specific high-resolution aerial orthophoto of the Pomarico municipality in Italy, used in local landslide analysis studies.",
+    "availability": "VARIES — This is a study-specific dataset; availability depends on the originating research team or the regional Italian mapping authorities.",
+    "verified_via": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11807160"
+  },
+  "Geological map by Perrone et al. 2021": {
+    "summary": "A specific geological map product produced by Perrone et al. for a study area, typically associated with an academic publication.",
+    "availability": "VARIES — As this is a study-specific map rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific map.",
+    "verified_via": ""
+  },
+  "DEM data": {
+    "summary": "Digital Elevation Models (DEMs) are raster representations of the Earth's surface elevation, produced and maintained by various national mapping agencies, space agencies, and commercial remote-sensing firms.",
+    "availability": "VARIES — Availability depends entirely on the specific DEM product (e.g., global models like SRTM or Copernicus DEM are PUBLIC_REG/PUBLIC_FREE, while high-resolution national or commercial LiDAR-derived DEMs may be restricted or require purchase).",
+    "verified_via": ""
+  },
+  "1-m DEMs (2018)": {
+    "summary": "High-resolution digital elevation models (DEMs) with 1-meter spatial resolution, typically generated from airborne LiDAR or photogrammetric surveys by national or regional mapping agencies.",
+    "availability": "VARIES — As this is a generic description of a high-resolution data product rather than a specific global dataset, availability depends entirely on the issuing national or regional agency; some are public (e.g., USGS 3DEP, AHN Netherlands), while others are restricted or commercial.",
+    "verified_via": ""
+  },
+  "World Topographic Map": {
+    "summary": "A global basemap providing detailed topographic information including terrain, land cover, and infrastructure, maintained by Esri and its data contributors.",
+    "availability": "PUBLIC_FREE — Available for viewing and integration into GIS applications via the ArcGIS Living Atlas of the World; free for use within the ArcGIS platform.",
+    "verified_via": "https://www.arcgis.com/home/item.html?id=30e5fe3149c34df1ba922e6f5bbf808f"
+  },
+  "GPCC-v2018 monthly rainfall dataset": {
+    "summary": "A global precipitation climatology dataset based on quality-controlled station data, maintained by the Global Precipitation Climatology Centre (GPCC) at the Deutscher Wetterdienst (DWD).",
+    "availability": "PUBLIC_FREE — Available for download via the DWD Climate Data Center (CDC) portal.",
+    "verified_via": "https://opendata.dwd.de/climate_environment/CDC/grids_germany/monthly/precipitation/"
+  },
+  "DHM rain-gauge data": {
+    "summary": "Rain-gauge precipitation measurements maintained by the Department of Hydrology and Meteorology (DHM) in Nepal.",
+    "availability": "VARIES — As this is a national agency dataset, availability depends on specific data request policies of the DHM; no single public portal provides universal open access to all historical gauge data.",
+    "verified_via": ""
+  },
+  "1/250000 quadrangle geological maps": {
+    "summary": "Geological maps at a 1:250,000 scale representing rock types and structures, typically produced and maintained by national geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "Landslide vector dataset of Asakura-shi and Hita-shi": {
+    "summary": "A specific landslide inventory mapping landslides triggered by the 2017 Northern Kyushu heavy rainfall event in Asakura-shi and Hita-shi, produced by individual research teams.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Himawari-8 AHI apparent reflectance data": {
+    "summary": "Geostationary satellite imagery data providing high-frequency observations of the Earth's surface and atmosphere, maintained by the Japan Meteorological Agency (JMA).",
+    "availability": "PUBLIC_REG — Available via the JAXA Himawari Monitor and the NICT Science Cloud; registration is typically required for access to full datasets.",
+    "verified_via": "https://www.eorc.jaxa.jp/ptree/"
+  },
+  "VIIRS red and NIR (I1 and I2) TOA reflectances": {
+    "summary": "Top-of-atmosphere (TOA) reflectance data from the Visible Infrared Imaging Radiometer Suite (VIIRS) instrument, maintained by NASA and NOAA.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata and NOAA CLASS; registration is required for data access.",
+    "verified_via": "https://ladsweb.modaps.eosdis.nasa.gov/"
+  },
+  "Hourly sunshine duration data": {
+    "summary": "Meteorological observations of sunshine duration, typically collected and maintained by national meteorological services or climate research centers.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; some national meteorological agencies provide this as open data, while others may restrict access or require institutional requests.",
+    "verified_via": ""
+  },
+  "TanDEM-X topographic data": {
+    "summary": "A global digital elevation model (DEM) derived from the TanDEM-X radar mission, produced and maintained by the German Aerospace Center (DLR).",
+    "availability": "VARIES — The 90m version is available for free via the DLR EOWEB GeoPortal; higher resolution (30m) products are generally commercial or restricted to scientific use via DLR proposal submission.",
+    "verified_via": "https://tandemx-science.dlr.de/"
+  },
+  "Geological provinces data": {
+    "summary": "A broad category of datasets delineating regions with distinct geological characteristics, typically maintained by national geological surveys or international bodies like the USGS or OneGeology.",
+    "availability": "VARIES — Availability depends on the specific country or organization; many national surveys provide these as open data, while others may be restricted or require institutional access.",
+    "verified_via": "http://www.onegeology.org/"
+  },
+  "Global surface water data": {
+    "summary": "A dataset mapping the location and temporal distribution of surface water globally, produced by the European Commission's Joint Research Centre (JRC).",
+    "availability": "PUBLIC_FREE — Available via the JRC Global Surface Water Explorer and Google Earth Engine.",
+    "verified_via": "https://global-surface-water.appspot.com/"
+  },
+  "Settlement data": {
+    "summary": "Geospatial datasets representing human settlement patterns, such as the Global Human Settlement Layer (GHSL) produced by the European Commission's Joint Research Centre (JRC).",
+    "availability": "PUBLIC_FREE — Available via the JRC GHSL data portal and various open data repositories.",
+    "verified_via": "https://ghsl.jrc.ec.europa.eu/"
+  },
+  "Pluviometric data": {
+    "summary": "A generic term for precipitation measurements collected by rain gauges or meteorological stations, typically maintained by national meteorological services or climate research agencies.",
+    "availability": "VARIES — Availability depends entirely on the specific country, region, or agency (e.g., national meteorological services) that maintains the station network; some provide open access, while others require requests or purchase.",
+    "verified_via": ""
+  },
+  "20 m DTM of Italy": {
+    "summary": "A digital terrain model (DTM) of Italy with 20-meter resolution, typically produced and maintained by national mapping agencies such as the Istituto Geografico Militare (IGM) or regional authorities.",
+    "availability": "VARIES — Availability depends on the specific regional or national portal; while some Italian regional authorities provide open access to DTM data via WMS/WFS services, others may restrict access or require institutional agreements.",
+    "verified_via": "https://www.pcn.minambiente.it/"
+  },
+  "Land use database": {
+    "summary": "A broad category of geospatial datasets classifying land cover and land use, maintained by various national mapping agencies, environmental agencies, or international organizations.",
+    "availability": "VARIES — Availability depends entirely on the specific database (e.g., CORINE Land Cover is PUBLIC_FREE, while others may be restricted or commercial); no single global catalog exists for all land use databases.",
+    "verified_via": ""
+  },
+  "Enhanced Natural Terrain Landslide Inventory": {
+    "summary": "A comprehensive inventory of landslides on natural terrain in Hong Kong, maintained by the Geotechnical Engineering Office (GEO) of the Civil Engineering and Development Department (CEDD).",
+    "availability": "PUBLIC_FREE — Available for download via the Hong Kong GeoData Store and the CEDD's Slope Safety website.",
+    "verified_via": "https://geodata.gov.hk/gs/index.jsp"
+  },
+  "Aerial orthophotographs of Lantau Island and Sharp Peak, Hong Kong": {
+    "summary": "High-resolution aerial orthophotographs of specific regions in Hong Kong, typically managed by the Lands Department of the Government of the Hong Kong Special Administrative Region.",
+    "availability": "VARIES — As these are specific aerial survey products, availability depends on the Lands Department's data release policies; some historical or low-resolution imagery may be accessible via public portals, while high-resolution or recent imagery often requires purchase or specific institutional access.",
+    "verified_via": "https://www.landsd.gov.hk/en/mapping/mapping-services/aerial-photos.html"
+  },
+  "ship4landslide": {
+    "summary": "No definitive public dataset by this name was found; it appears to be a potential misidentification or a highly specific, non-public study-based dataset.",
+    "availability": "VARIES — No distinct public catalog or provider could be found for a dataset specifically titled 'ship4landslide'; availability is considered to vary depending on the specific research context or if it is a misnamed reference to another landslide dataset.",
+    "verified_via": ""
+  },
+  "Terrain data (DEM)": {
+    "summary": "Digital Elevation Models (DEMs) are raster representations of the Earth's surface elevation, produced and maintained by various national mapping agencies, space agencies, and commercial remote-sensing firms.",
+    "availability": "VARIES — Availability depends entirely on the specific DEM product (e.g., global models like SRTM or Copernicus DEM are PUBLIC_REG/PUBLIC_FREE, while high-resolution national or commercial LiDAR-derived DEMs may be restricted or require purchase).",
+    "verified_via": ""
+  },
+  "Fault data": {
+    "summary": "Geospatial datasets representing the location and characteristics of geological faults, typically maintained by national geological surveys or international research organizations.",
+    "availability": "VARIES — Availability depends entirely on the specific region or global database; some are public (e.g., GEM Global Active Faults), while others are maintained by national geological surveys and may be restricted or require institutional access.",
+    "verified_via": "https://www.globalquakemodel.org/product/active-faults-database"
+  },
+  "Pre- and postlandslide aerial photographs of Cloudy Hill, Hong Kong": {
+    "summary": "A collection of aerial photographs capturing the terrain of Cloudy Hill, Hong Kong, before and after landslide events, typically managed by the Hong Kong Lands Department.",
+    "availability": "VARIES — As these are specific aerial survey products, availability depends on the Hong Kong Lands Department's data release policies; while some historical or low-resolution imagery may be accessible via public portals, high-resolution or recent imagery often requires purchase or specific institutional access.",
+    "verified_via": "https://www.landsd.gov.hk/en/mapping/mapping-services/aerial-photos.html"
+  },
+  "Aerial surveys (1984, 1996, 2001, 2005, 2009, 2010, 2011, 2013 and 2016)": {
+    "summary": "This is a generic reference to a series of aerial photographic surveys conducted over time, typically maintained by national or regional mapping agencies for specific jurisdictions.",
+    "availability": "VARIES — As this is a generic description of aerial survey data rather than a specific, standardized global dataset, availability depends entirely on the specific country, region, or agency that conducted the surveys; no single public catalog or provider exists for this specific series.",
+    "verified_via": ""
+  },
+  "CBERS-04A WPM imagery": {
+    "summary": "High-resolution panchromatic and multispectral imagery from the Wide-Field Panchromatic and Multispectral Camera (WPM) on the CBERS-04A satellite, jointly developed and maintained by Brazil (INPE) and China (CAST).",
+    "availability": "PUBLIC_FREE — Available via the INPE Image Catalog (Catálogo de Imagens do INPE) and the China Centre for Resources Satellite Data and Application (CRESDA) portal.",
+    "verified_via": "http://www.dgi.inpe.br/catalogo/"
+  },
+  "Penang Island landslide dataset": {
+    "summary": "A collection of landslide inventory data for Penang Island, Malaysia, typically compiled by individual research teams for academic studies on landslide susceptibility or hazard assessment.",
+    "availability": "VARIES — As this is a study-specific inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "UAV orthophoto images of Sunjiagou Coal Mine": {
+    "summary": "High-resolution orthophoto imagery of the Sunjiagou Coal Mine captured by unmanned aerial vehicles, typically collected for specific site monitoring or academic research.",
+    "availability": "VARIES — As this is a specific, study-based or site-specific dataset rather than a reusable public product, availability depends on the originating research team, the mining company, or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Shuicheng county vector data": {
+    "summary": "This refers to localized vector-based geospatial data (such as administrative boundaries, road networks, or land use) for Shuicheng County, China, typically maintained by local government mapping or land resource bureaus.",
+    "availability": "VARIES — As this is a specific regional administrative dataset rather than a standardized public product, availability depends on the policies of the local Shuicheng County or Liupanshui City government agencies; no single public catalog or provider exists for this specific vector data.",
+    "verified_via": ""
+  },
+  "Aerial photographs of slope failure regions": {
+    "summary": "A generic term for collections of aerial imagery capturing landslide or slope failure events, typically maintained by national mapping agencies, geological surveys, or individual research projects.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the aerial survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Norwegian Mass Movements Database": {
+    "summary": "A national database of registered landslide and mass movement events in Norway, maintained by the Norwegian Water Resources and Energy Directorate (NVE).",
+    "availability": "PUBLIC_FREE — Available via the NVE's 'Skredkart' (Landslide map) portal and the Norwegian national data catalog (geonorge.no).",
+    "verified_via": "https://www.skredkart.no/"
+  },
+  "RapidEye Analytic Ortho Tile multispectral image": {
+    "summary": "High-resolution (5m) multispectral imagery products derived from the RapidEye satellite constellation, currently maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Data is sold via Planet Labs; access for research or non-commercial use is typically restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and approval.",
+    "verified_via": "https://www.planet.com/products/rapideye/"
+  },
+  "ASAR (Advanced SAR) images": {
+    "summary": "C-band synthetic aperture radar imagery acquired by the ENVISAT satellite, operated by the European Space Agency (ESA).",
+    "availability": "PUBLIC_REG — Available through the ESA Earth Online portal and various national data centers (e.g., CEDA Archive); registration is typically required for data access.",
+    "verified_via": "https://earth.esa.int/eogateway/missions/envisat"
+  },
+  "PALSAR-2 L-band ScanSAR Level 2.2 backscatter data": {
+    "summary": "L-band synthetic aperture radar (SAR) imagery in ScanSAR mode from the ALOS-2 satellite, maintained by the Japan Aerospace Exploration Agency (JAXA).",
+    "availability": "VARIES — Availability depends on the specific product and user category; some processed ScanSAR products are available via JAXA's G-Portal or AWS, while other levels or specific scenes may require registration or purchase through JAXA's Earth Observation Research Center (EORC) or authorized distributors.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/alos2_e.htm"
+  },
+  "Gaofen-3 full polarimetric SAR image": {
+    "summary": "High-resolution C-band synthetic aperture radar (SAR) imagery with full polarimetric capabilities, operated by the China Centre for Resources Satellite Data and Application (CRESDA).",
+    "availability": "VARIES — Data is primarily distributed commercially through CRESDA and authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "http://www.cresda.com/EN/"
+  },
+  "Landslide dataset of Iburi district, Japan": {
+    "summary": "A specific, event-based landslide inventory mapping landslides triggered by the 2018 Hokkaido Eastern Iburi earthquake, produced by individual research teams.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Planet images (3 m resolution)": {
+    "summary": "High-resolution (3-5 m) daily optical imagery from Planet Labs.",
+    "availability": "COMMERCIAL — Sold via Planet Labs; free access only via Planet's Education & Research or Disaster Data programs (application required).",
+    "verified_via": "https://www.planet.com/products/satellite-monitoring"
+  },
+  "ResNet50 pre-trained weights": {
+    "summary": "Pre-trained weights for the ResNet50 deep convolutional neural network architecture, typically trained on the ImageNet dataset.",
+    "availability": "PUBLIC_FREE — Available via major deep learning frameworks such as PyTorch (Torchvision) and TensorFlow/Keras, as well as the NVIDIA NGC catalog.",
+    "verified_via": "https://docs.pytorch.org/vision/stable/models.html"
+  },
+  "Training samples (partial)": {
+    "summary": "A generic term for a subset of a larger dataset used for training machine learning models, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — As this is a generic description of a data subset rather than a specific, standardized dataset, availability depends entirely on the originating project, study, or institution that generated the data.",
+    "verified_via": ""
+  },
+  "ZY3 DLC stereo mapping satellite raw data": {
+    "summary": "High-resolution stereo mapping satellite imagery produced and maintained by the China Centre for Resources Satellite Data and Application (CRESDA).",
+    "availability": "COMMERCIAL — Data is primarily distributed commercially through CRESDA and authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "http://sasclouds.com/english/satellite/chinese/zy3"
+  },
+  "Aspect": {
+    "summary": "This appears to be a generic term or a misidentification, as no widely recognized global geospatial dataset by this exact name exists.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled 'Aspect', availability is considered to vary depending on the specific context or source intended.",
+    "verified_via": ""
+  },
+  "Coseismic landslide cataloguing data": {
+    "summary": "A generic term for collections of landslide inventories triggered by seismic events, typically maintained by individual research teams or geological surveys.",
+    "availability": "VARIES — As this is a generic term rather than a single standardized dataset, availability depends entirely on the specific event, region, or research project that produced the catalog.",
+    "verified_via": ""
+  },
+  "Jiuzhaigou seismic intensity data": {
+    "summary": "Seismic intensity data specifically for the 2017 Jiuzhaigou earthquake, typically maintained by national earthquake administration agencies or research institutions.",
+    "availability": "VARIES — Availability depends on the specific agency or research publication that released the data; no single public portal provides universal open access to all seismic intensity products for this event.",
+    "verified_via": ""
+  },
+  "Forest data (for masking)": {
+    "summary": "This is a generic term for land cover or vegetation datasets used to identify and mask forested areas, typically sourced from global products like ESA WorldCover, MODIS, or national land-use maps.",
+    "availability": "VARIES — As this is a generic descriptive term for a data application rather than a specific, standardized global dataset, availability depends entirely on the specific forest or land cover product used (e.g., ESA WorldCover is PUBLIC_FREE, while others may be restricted or commercial).",
+    "verified_via": ""
+  },
+  "Geohazard image set of Fujian Province": {
+    "summary": "A collection of imagery and/or landslide inventory data focused on geohazards in Fujian Province, typically compiled by individual research teams for specific academic studies.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "1 km resolution monthly NDVI dataset of China": {
+    "summary": "A monthly normalized difference vegetation index (NDVI) dataset for China, typically derived from MODIS or similar satellite sensors and maintained by various Chinese research institutions.",
+    "availability": "VARIES — As this is a generic description of a data product rather than a single standardized global dataset, availability depends on the specific research group or repository (e.g., National Tibetan Plateau Data Center, Science Data Bank) that published the data.",
+    "verified_via": ""
+  },
+  "1:250,000 national basic geographic database": {
+    "summary": "A small-scale national vector or raster geographic database containing fundamental spatial information, typically produced and maintained by national mapping agencies.",
+    "availability": "VARIES — Availability depends entirely on the specific country's national mapping agency and their open data policies; some countries provide these as open data, while others restrict access or require purchase.",
+    "verified_via": ""
+  },
+  "Active Tectonic Map of China": {
+    "summary": "A map dataset detailing active faults and tectonic structures across China, typically produced and maintained by the China Earthquake Administration or associated research institutes.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of maps often associated with specific academic publications or government reports, availability depends on the specific version or research institution; no single public catalog or provider exists for this specific map.",
+    "verified_via": ""
+  },
+  "Landslide sample dataset with 4000 tags": {
+    "summary": "This is a generic description of a study-specific landslide inventory or labeled dataset rather than a standardized, widely recognized public dataset.",
+    "availability": "VARIES — As this is a specific, study-based dataset rather than a reusable public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Open-source landslide dataset (Bijie)": {
+    "summary": "An open-source remote sensing dataset for landslide detection consisting of optical satellite imagery, landslide boundary shapefiles, and digital elevation models for the Bijie region, maintained by researchers at Wuhan University.",
+    "availability": "PUBLIC_FREE — Available via the GPCV (GIP-Lab) website at Wuhan University.",
+    "verified_via": "https://gpcv.whu.edu.cn/data/Bijie_pages.html"
+  },
+  "UAV-photogrammetry-derived data (Meilong gully)": {
+    "summary": "High-resolution imagery and derived topographic products (such as DEMs or orthomosaics) captured by UAV surveys for the Meilong gully region, typically collected by individual research teams for specific geomorphological or landslide investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Randolph Glacier Inventory (RGI) version 6.0": {
+    "summary": "A global inventory of digital vector outlines for glaciers and glacier complexes, maintained by the RGI Consortium.",
+    "availability": "PUBLIC_FREE — Available for download via the National Snow and Ice Data Center (NSIDC) and the GLIMS initiative.",
+    "verified_via": "https://nsidc.org/data/nsidc-0770/versions/6"
+  },
+  "Supraglacial rock avalanche inventories (Bessette-Kirton and Coe, 2016; Deline et al., 2015; Uhlmann et al., 2013)": {
+    "summary": "These are specific, study-based landslide inventories mapping rock avalanches in various regions (e.g., Alaska, Alps), produced by individual research teams.",
+    "availability": "VARIES — As these are specific study-based inventories rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for these specific sets.",
+    "verified_via": ""
+  },
+  "Exotic Seismic Events Catalog": {
+    "summary": "A catalog providing source parameter data for non-earthquake seismic events such as flows, lahars, debris flows, and outburst floods, maintained by the USGS and IRIS.",
+    "availability": "PUBLIC_FREE — Available via the USGS and the NSF SAGE (formerly IRIS) data services.",
+    "verified_via": "https://ds.iris.edu/ds/products/esec"
+  },
+  "IFSAR DTM": {
+    "summary": "Digital Terrain Models (DTM) derived from Interferometric Synthetic Aperture Radar (IFSAR) data, most notably produced for Alaska by the USGS.",
+    "availability": "VARIES — Availability depends on the specific region and issuing agency; for example, the Alaska IFSAR DTM is PUBLIC_FREE via the USGS EROS Archive, while other regional IFSAR products may be restricted or managed by local authorities.",
+    "verified_via": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-interferometric-synthetic-aperture-radar"
+  },
+  "Zhejiang Dataset": {
+    "summary": "This is a generic reference to regional datasets (such as landslide inventories or remote sensing imagery) for Zhejiang Province, China, typically maintained by local research institutions or government agencies.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific or regional data, availability depends on the originating research laboratory, local geological survey, or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "VHR false-color images (Data set-A)": {
+    "summary": "This is a generic descriptive term for very high-resolution (VHR) multispectral imagery processed into a false-color composite, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — As this is a generic description of a data product rather than a specific, standardized dataset, availability depends entirely on the specific satellite or aerial imagery provider (e.g., Maxar, Airbus, or UAV surveys) and the study that generated the composite.",
+    "verified_via": ""
+  },
+  "Global Vegetation Remote Sensing Products": {
+    "summary": "A broad category of satellite-derived datasets measuring vegetation health and cover, such as MODIS or VIIRS products, maintained by agencies like NASA and ESA.",
+    "availability": "VARIES — Availability depends on the specific product; many are PUBLIC_REG via NASA Earthdata or Copernicus, while others may be commercial or restricted.",
+    "verified_via": ""
+  },
+  "River data": {
+    "summary": "A generic term for geospatial datasets representing river networks, flow paths, or hydrological characteristics, maintained by various national and international agencies.",
+    "availability": "VARIES — Availability depends on the specific dataset; some are PUBLIC_FREE (e.g., HydroSHEDS, OSM), while others are restricted or maintained by national water authorities.",
+    "verified_via": ""
+  },
+  "NDVI data": {
+    "summary": "Normalized Difference Vegetation Index (NDVI) data derived from satellite imagery to assess vegetation greenness, produced by various space agencies and research institutions.",
+    "availability": "VARIES — Availability depends on the specific sensor and provider; many global products (e.g., MODIS, Landsat-derived) are PUBLIC_REG via NASA Earthdata or Google Earth Engine.",
+    "verified_via": ""
+  },
+  "Raw Global Navigation Satellite System (GNSS) data": {
+    "summary": "Raw GNSS observation data (e.g., RINEX files) are collected by global networks of ground-based reference stations maintained by various international and national agencies such as the International GNSS Service (IGS).",
+    "availability": "VARIES — Availability depends on the specific network or station operator; while many IGS stations provide data as PUBLIC_FREE, other regional or private networks may require registration or payment.",
+    "verified_via": "https://igs.org/data-access/"
+  },
+  "Historical aerial photogrammetric products (DEMs, DOMs, and oblique aerial photographic 3D models)": {
+    "summary": "These are derived products generated from historical aerial photography, typically maintained by national mapping agencies, regional archives, or specific research institutions.",
+    "availability": "VARIES — Availability varies significantly by country and agency; some national archives provide these as PUBLIC_FREE or PUBLIC_REG, while others are restricted or require purchase.",
+    "verified_via": ""
+  },
+  "Oblique aerial photographic 3D models": {
+    "summary": "3D models generated from oblique aerial imagery are typically produced for specific urban planning, engineering, or research projects by private surveying firms or government agencies.",
+    "availability": "VARIES — As these are often project-specific products rather than standardized global datasets, availability depends entirely on the originating agency or firm; no single public catalog exists.",
+    "verified_via": ""
+  },
+  "CIFAR-10 dataset": {
+    "summary": "A collection of 60,000 32x32 color images in 10 classes, widely used for training machine learning and computer vision algorithms, maintained by the Canadian Institute for Advanced Research (CIFAR).",
+    "availability": "PUBLIC_FREE — Available for download directly from the official CIFAR-10 website and integrated into major machine learning libraries like TensorFlow and PyTorch.",
+    "verified_via": "https://www.cs.toronto.edu/~kriz/cifar.html"
+  },
+  "ESA Climate Change Initiative Land Cover product": {
+    "summary": "A global land cover dataset providing annual maps at 300m resolution, produced and maintained by the European Space Agency (ESA) as part of its Climate Change Initiative.",
+    "availability": "PUBLIC_FREE — Available via the ESA CCI Land Cover project portal and the Copernicus Climate Data Store.",
+    "verified_via": "https://www.esa-landcover-cci.org/"
+  },
+  "Consistent And Corrected Nighttime Light Dataset (DMSP)": {
+    "summary": "A long-term, cross-calibrated nighttime light dataset derived from the Defense Meteorological Satellite Program (DMSP) Operational Linescan System (OLS), maintained by researchers at the University of Michigan and other institutions.",
+    "availability": "PUBLIC_FREE — Available via the Harvard Dataverse and various academic repositories.",
+    "verified_via": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YGMN4Z"
+  },
+  "VIIRS monthly average radiance composites": {
+    "summary": "Global monthly average nighttime light radiance products derived from the Visible Infrared Imaging Radiometer Suite (VIIRS) Day/Night Band, maintained by the Earth Observation Group (EOG) at the Colorado School of Mines.",
+    "availability": "PUBLIC_FREE — Available via the Earth Observation Group (EOG) website and the NOAA National Centers for Environmental Information (NCEI).",
+    "verified_via": "https://eogdata.mines.edu/products/vnl/"
+  },
+  "HydroSHEDS": {
+    "summary": "A global series of hydrographic datasets, including river networks and watershed boundaries, derived from SRTM elevation data and maintained by the HydroSHEDS project team.",
+    "availability": "PUBLIC_FREE — Available via the official HydroSHEDS website and the World Wildlife Fund (WWF) data portal.",
+    "verified_via": "https://www.hydrosheds.org/page/overview"
+  },
+  "USGS earthquake inventory": {
+    "summary": "A comprehensive database of global earthquake events, including location, magnitude, and time, maintained by the USGS Earthquake Hazards Program.",
+    "availability": "PUBLIC_FREE — Available via the USGS Earthquake Catalog and the ComCat API.",
+    "verified_via": "https://earthquake.usgs.gov/earthquakes/search/"
+  },
+  "Quick Bird imagery": {
+    "summary": "High-resolution optical satellite imagery originally operated by DigitalGlobe (now Maxar Technologies).",
+    "availability": "COMMERCIAL — As a legacy commercial product, imagery is sold via Maxar or authorized resellers; historical archives may be accessed through specific institutional or research agreements.",
+    "verified_via": "https://www.maxar.com/portfolio/satellite-imagery"
+  },
+  "IKONOS imagery": {
+    "summary": "High-resolution optical satellite imagery originally operated by GeoEye (now Maxar Technologies).",
+    "availability": "COMMERCIAL — As a legacy commercial product, imagery is sold via Maxar or authorized resellers; historical archives may be accessed through specific institutional or research agreements.",
+    "verified_via": "https://www.maxar.com/portfolio/satellite-imagery"
+  },
+  "Topographic sheet (No. 43 F/7) contours": {
+    "summary": "A specific topographic map sheet containing contour lines, typically produced by a national mapping agency (e.g., Survey of India).",
+    "availability": "VARIES — Availability depends on the specific national mapping agency's policy; such sheets are often restricted to government use, require purchase, or are available through specific national map archives.",
+    "verified_via": ""
+  },
+  "Nepal landslide detection database": {
+    "summary": "A generic term for various landslide inventory or imagery datasets for Nepal, often associated with specific academic studies or research papers rather than a single standardized public product.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific inventories or imagery sets, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific title.",
+    "verified_via": ""
+  },
+  "Landform distribution data": {
+    "summary": "This is a generic term for geospatial datasets representing the spatial arrangement of various landforms, typically compiled by geomorphologists or national geological surveys for specific regional studies.",
+    "availability": "VARIES — As this is a generic descriptive term rather than a specific, standardized global dataset, availability depends entirely on the specific region, project, or agency that produced the data; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Post-event aerial color imagery": {
+    "summary": "A generic term for high-resolution aerial photographs captured after a specific event, typically maintained by national mapping agencies, local authorities, or private surveying firms.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the aerial survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Pre-event multi-spectral optical images (GeoEye-1)": {
+    "summary": "Very high-resolution commercial optical satellite imagery operated by Maxar Technologies, often used for pre-disaster baseline analysis.",
+    "availability": "COMMERCIAL — Sold via Maxar or authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "https://www.maxar.com/portfolio/satellite-imagery"
+  },
+  "USGS preferred landslide model": {
+    "summary": "A generic reference to landslide susceptibility or hazard models developed by the U.S. Geological Survey (USGS) for specific regions or events.",
+    "availability": "VARIES — As there is no single, universally defined 'preferred' global landslide model, availability depends on the specific USGS project, publication, or regional study intended; many USGS landslide products are available via the USGS Science Data Catalog.",
+    "verified_via": "https://www.usgs.gov/science-data-catalog"
+  },
+  "High-resolution geological hazard dataset (landslide and debris flow disasters)": {
+    "summary": "This is a generic descriptive term for various regional or event-specific landslide and debris flow inventories, typically maintained by national geological surveys, academic research teams, or disaster management agencies.",
+    "availability": "VARIES — As this is a generic term rather than a single standardized global dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "USGS landslide dataset for Oso, Washington": {
+    "summary": "A collection of landslide inventory data, mapping, and geological assessments related to the 2014 SR 530 landslide in Oso, Washington, maintained by the U.S. Geological Survey (USGS).",
+    "availability": "PUBLIC_FREE — Available via the USGS Science Data Catalog and the USGS landslide project pages for the Oso event.",
+    "verified_via": "https://www.usgs.gov/science-data-catalog"
+  },
+  "GNSS/RTK ground truth data": {
+    "summary": "High-precision positioning data collected using Global Navigation Satellite Systems (GNSS) and Real-Time Kinematic (RTK) techniques, typically maintained by individual research teams, surveying firms, or national geodetic agencies for specific site validation.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "RSSCN7 dataset": {
+    "summary": "A remote sensing scene classification dataset consisting of 2,800 images across seven classes, collected from Google Earth.",
+    "availability": "PUBLIC_FREE — Available via various academic repositories and platforms such as Hugging Face and Kaggle.",
+    "verified_via": "https://huggingface.co/datasets/blanchon/RSSCN7"
+  },
+  "Landslide incidents data": {
+    "summary": "A generic term for collections of landslide event records, typically maintained by national geological surveys, disaster management agencies, or academic research groups.",
+    "availability": "VARIES — As this is a generic term rather than a single standardized dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Digital soil mapping data": {
+    "summary": "A broad category of geospatial datasets representing soil properties (e.g., texture, pH, carbon content) generated through statistical modeling of environmental covariates, maintained by various national and international soil science organizations.",
+    "availability": "VARIES — Availability depends on the specific project or region; some global products (e.g., SoilGrids) are PUBLIC_FREE, while others are maintained by national agencies and may have restricted access or specific data-sharing policies.",
+    "verified_via": "https://soilgrids.org/"
+  },
+  "Planet Scope surface reflectance imagery": {
+    "summary": "High-resolution (3-5 m) daily optical imagery with surface reflectance processing, produced and maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Sold via Planet Labs; free access is restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and eligibility verification.",
+    "verified_via": "https://www.planet.com/products/satellite-monitoring"
+  },
+  "Jiuzhaigou, Sichuan Province, China landslide dataset": {
+    "summary": "A collection of landslide inventories and associated remote sensing imagery generated following the 2017 Jiuzhaigou earthquake, typically maintained by individual research teams or academic laboratories.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Old landslide dataset of the southwest river basin of the Sichuan–Tibet area": {
+    "summary": "This is a study-specific landslide inventory containing old and new landslide samples along the Sichuan-Tibet Transportation Corridor, typically maintained by the academic research team that conducted the study.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": "https://www.mdpi.com/2072-4292/14/21/5490"
+  },
+  "Jilin-1 optical satellite imagery": {
+    "summary": "High-resolution optical satellite imagery constellation operated by Chang Guang Satellite Technology Co., Ltd.",
+    "availability": "COMMERCIAL — Imagery is sold commercially through Chang Guang Satellite Technology and authorized international resellers; access for research may be possible via specific institutional agreements.",
+    "verified_via": "https://www.jl1.cn/en/"
+  },
+  "1:200,000 lithology maps": {
+    "summary": "Geological maps at a 1:200,000 scale representing rock types and structures, typically produced and maintained by national geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "Soil type and thickness data": {
+    "summary": "Geospatial datasets representing soil characteristics and depth, typically maintained by national soil science agencies or international research initiatives.",
+    "availability": "VARIES — Availability depends on the specific dataset (e.g., global products like SoilGrids are PUBLIC_FREE, while detailed national datasets are often restricted or maintained by specific government agencies).",
+    "verified_via": "https://soilgrids.org/"
+  },
+  "UAV-captured landslide images from Nam Khanh, Bac Ha District, Lao Cai Province, Vietnam": {
+    "summary": "This is a study-specific dataset consisting of high-resolution UAV imagery of landslides in the Nam Khanh area, typically collected by individual research teams for specific geomorphological or landslide investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Rainfall data from monitoring stations": {
+    "summary": "A generic term for precipitation measurements collected by ground-based rain gauges, typically maintained by national meteorological services or climate research agencies.",
+    "availability": "VARIES — Availability depends entirely on the specific country, region, or agency that maintains the station network; some provide open access, while others require requests or purchase.",
+    "verified_via": ""
+  },
+  "Hong Kong dataset": {
+    "summary": "This is a generic reference to various landslide inventories or remote sensing datasets for Hong Kong, often maintained by the Geotechnical Engineering Office (GEO) or individual academic research teams.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific or regional data, availability depends on the originating research laboratory, the Hong Kong Lands Department, or the specific publication where the data was shared; no single public catalog or provider exists for this specific title.",
+    "verified_via": ""
+  },
+  "TurKey dataset": {
+    "summary": "This appears to be a non-standardized reference, likely referring to various landslide susceptibility or inventory studies conducted in Turkey using remote sensing and GIS data.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled 'TurKey dataset', availability is considered to vary depending on the specific study or research team intended.",
+    "verified_via": ""
+  },
+  "Optimal-view dataset (YA-OP)": {
+    "summary": "A dataset of landslide images captured from optimal viewing angles, typically associated with specific academic research on landslide detection.",
+    "availability": "VARIES — As this appears to be a study-specific dataset rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Ya'an landslide hazard interpretation data (2021–2023)": {
+    "summary": "A study-specific dataset of landslide hazard interpretations for Ya'an City, typically generated by individual research teams for academic investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "1:10,000 DEM of Ya’an City": {
+    "summary": "A high-resolution digital elevation model (DEM) at 1:10,000 scale for Ya'an City, typically produced by regional or national mapping agencies in China.",
+    "availability": "VARIES — As this is a specific regional topographic product, availability depends on the policies of the local Ya'an or Sichuan provincial government mapping agencies; no single public catalog or provider exists for this specific dataset.",
+    "verified_via": ""
+  },
+  "Heavy rainfall-induced landslide clusters (Inventory)": {
+    "summary": "A generic term for collections of landslide events triggered by heavy rainfall, typically maintained by regional geological surveys, disaster management agencies, or individual research teams for specific studies.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Landslide images at Ludian County and Beichuan County": {
+    "summary": "This refers to study-specific collections of landslide imagery for Ludian and Beichuan counties, typically captured or compiled by individual research teams following seismic events.",
+    "availability": "VARIES — As this is not a standardized public dataset but rather a collection of study-specific data, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for these images.",
+    "verified_via": ""
+  },
+  "Drainage network (Itaúca)": {
+    "summary": "A specific drainage network dataset for the Itaúca region, typically generated for localized hydrological or geomorphological studies.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "1200 optical remote sensing images of landslides in western Sichuan Province, China": {
+    "summary": "A study-specific collection of optical remote sensing images used for landslide analysis in western Sichuan, typically maintained by the individual research team that conducted the study.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Google search engine high-definition landslide image data": {
+    "summary": "This is a generic reference to images of landslides retrieved via Google Search or Google Images, rather than a standardized, curated, or reusable remote-sensing dataset.",
+    "availability": "VARIES — As this is not a single standardized dataset but rather a collection of web-mined images, availability depends on the terms of service of the search platform and the copyright status of individual images; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Reference labels for co-seismic landslides (Mainling, Luding, Hokkaido)": {
+    "summary": "These are specific, event-based landslide inventory datasets mapping ground failures triggered by seismic events in Mainling, Luding, and Hokkaido, typically produced by individual academic research teams.",
+    "availability": "VARIES — As these are study-specific inventories rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for these specific sets.",
+    "verified_via": ""
+  },
+  "LISS-3 satellite imagery of western India (Maharashtra and Goa)": {
+    "summary": "Medium-resolution multispectral imagery from the Linear Imaging Self-Scanning Sensor (LISS-3) onboard the Indian Remote Sensing (IRS) satellites, maintained by the Indian Space Research Organisation (ISRO).",
+    "availability": "VARIES — Data is available through the ISRO Bhuvan portal and the National Remote Sensing Centre (NRSC) Open Earth Observation Data Archive; access often requires registration and may be subject to specific data-sharing policies for non-Indian users.",
+    "verified_via": "https://bhuvan.nrsc.gov.in/"
+  },
+  "FAO land cover dataset": {
+    "summary": "A global land cover classification dataset produced and maintained by the Food and Agriculture Organization (FAO) of the United Nations, often associated with the Global Land Cover Network (GLCN).",
+    "availability": "PUBLIC_FREE — Available via the FAO GeoNetwork portal and the FAO Land Cover Classification System (LCCS) resources.",
+    "verified_via": "https://www.fao.org/geonetwork/srv/en/main.home"
+  },
+  "Geological map sheets in 1:50,000 scale": {
+    "summary": "Detailed geological maps at 1:50,000 scale are typically produced and maintained by national geological surveys or national mapping agencies.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "NASA IMERG satellite precipitation": {
+    "summary": "A NASA precipitation product that combines data from the GPM satellite constellation to provide global, high-resolution rainfall estimates.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata and the NASA GPM mission portal; requires a free Earthdata login.",
+    "verified_via": "https://gpm.nasa.gov/data/imerg"
+  },
+  "Normalized difference Vegetation index (NDVI)": {
+    "summary": "A remote sensing index used to quantify vegetation greenness, derived from multispectral satellite imagery by various space agencies and research institutions.",
+    "availability": "VARIES — Availability depends on the specific sensor and provider; many global products (e.g., MODIS, Landsat-derived) are PUBLIC_REG via NASA Earthdata or Google Earth Engine.",
+    "verified_via": ""
+  },
+  "Basin boundaries": {
+    "summary": "Geospatial datasets representing watershed or drainage basin boundaries, typically maintained by national hydrological agencies or international research initiatives like HydroSHEDS.",
+    "availability": "VARIES — Availability depends on the specific dataset; global products like HydroSHEDS are PUBLIC_FREE, while detailed national datasets are often maintained by government water authorities.",
+    "verified_via": "https://www.hydrosheds.org/page/overview"
+  },
+  "Stratigraphic lithology": {
+    "summary": "Geospatial data representing the physical characteristics and rock types of geological strata, typically maintained by national geological surveys.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; many national geological surveys provide these maps as open data, while others may require purchase or institutional access.",
+    "verified_via": ""
+  },
+  "Ground penetrating radar (GPR) scanning data": {
+    "summary": "Ground penetrating radar (GPR) scanning data consists of subsurface imaging profiles generated by electromagnetic wave reflection, typically collected by private geophysical surveying firms or academic research teams for site-specific geotechnical or archaeological investigations.",
+    "availability": "VARIES — As this is a site-specific data collection method rather than a standardized public dataset, availability depends entirely on the originating research project, engineering firm, or institution that conducted the survey; no single public catalog or provider exists for this data.",
+    "verified_via": ""
+  },
+  "TripleSat satellite imagery of the Bijie region": {
+    "summary": "TripleSat is a constellation of three high-resolution optical satellites operated by 21AT (Twenty First Century Aerospace Technology) that provides sub-meter imagery.",
+    "availability": "COMMERCIAL — Imagery is sold commercially through 21AT and authorized resellers; no public repository exists for this specific regional dataset.",
+    "verified_via": "https://www.21at.com.cn/en/product/satellite/triplesat/"
+  },
+  "Gaofen-1 images of the Longtoushan region": {
+    "summary": "Gaofen-1 is a high-resolution optical satellite operated by the China Centre for Resources Satellite Data and Application (CRESDA) used for Earth observation.",
+    "availability": "VARIES — As this is a study-specific collection of imagery for the Longtoushan region rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; high-resolution Gaofen-1 data is generally commercial.",
+    "verified_via": "http://www.cresda.com/EN/"
+  },
+  "TerraSAR-X data": {
+    "summary": "High-resolution X-band synthetic aperture radar (SAR) imagery operated by the German Aerospace Center (DLR) and Airbus Defence and Space.",
+    "availability": "COMMERCIAL — Data is primarily distributed commercially through Airbus Defence and Space; access for scientific research is possible via DLR proposal submission.",
+    "verified_via": "https://www.dlr.de/en/eoc/our-research/earth-observation-data/terrasar-x"
+  },
+  "SPOT-7 images": {
+    "summary": "High-resolution optical satellite imagery operated by Airbus Defence and Space.",
+    "availability": "COMMERCIAL — Sold via Airbus Defence and Space or authorized commercial resellers.",
+    "verified_via": "https://www.intelligence-airbusds.com/imagery/constellation/spot-6-7/"
+  },
+  "GPM IMERG V06 dataset": {
+    "summary": "A NASA precipitation product that combines data from the GPM satellite constellation to provide global, high-resolution rainfall estimates.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata and the NASA GPM mission portal; requires a free Earthdata login.",
+    "verified_via": "https://gpm.nasa.gov/data/imerg"
+  },
+  "Seismic metadata (PGA, PGV, Ia, SED)": {
+    "summary": "Seismic metadata parameters such as Peak Ground Acceleration (PGA), Peak Ground Velocity (PGV), Arias Intensity (Ia), and Spectral Energy Density (SED) are ground motion metrics typically calculated from seismic waveform data maintained by national and international earthquake monitoring agencies.",
+    "availability": "VARIES — Availability depends on the specific seismic network or agency (e.g., USGS, regional seismic arrays); while some real-time or post-event products are public, raw waveform data or specific derived metadata may require institutional access or specific data requests.",
+    "verified_via": "https://earthquake.usgs.gov/data/"
+  },
+  "Global Very-High-Resolution Landslide Mapping (GVLM) dataset": {
+    "summary": "The Global Very-High-Resolution Landslide Mapping (GVLM) dataset is a collection of landslide inventories and associated remote sensing data, typically associated with specific academic research projects or regional hazard assessments.",
+    "availability": "VARIES — As this appears to be a study-specific or project-based collection rather than a standardized, centrally hosted public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider could be found for a dataset by this exact name.",
+    "verified_via": ""
+  },
+  "ALOS-2 SAR data": {
+    "summary": "L-band synthetic aperture radar (SAR) imagery from the ALOS-2 satellite, maintained by the Japan Aerospace Exploration Agency (JAXA).",
+    "availability": "VARIES — Availability depends on the processing level and product type; some products are available via JAXA or AWS, while raw or specific quad-pol scenes often require registration or purchase through JAXA's Earth Observation Research Center (EORC) or authorized distributors.",
+    "verified_via": "https://www.eorc.jaxa.jp/ALOS/en/dataset/alos2_e.htm"
+  },
+  "COSMO-SkyMed data": {
+    "summary": "A constellation of X-band synthetic aperture radar (SAR) satellites operated by the Italian Space Agency (ASI) and the Italian Ministry of Defence.",
+    "availability": "COMMERCIAL — Data is primarily distributed commercially through e-GEOS (a joint venture between Telespazio and ASI) and authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "https://www.e-geos.it/products/cosmo-skymed.html"
+  },
+  "Airborne optical images for the Hokkaido landslides": {
+    "summary": "High-resolution aerial optical imagery captured following the 2018 Hokkaido Eastern Iburi earthquake, typically maintained by individual research teams or government agencies.",
+    "availability": "VARIES — As this is a specific, event-based dataset rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Global 30-m DEM": {
+    "summary": "A generic term for global digital elevation models with 30-meter resolution, such as SRTM, ASTER GDEM, or ALOS AW3D30, maintained by various space agencies.",
+    "availability": "VARIES — Availability depends on the specific DEM product; many global 30m models are PUBLIC_REG or PUBLIC_FREE via portals like USGS EarthExplorer, NASA Earthdata, or OpenTopography.",
+    "verified_via": ""
+  },
+  "Geological hazard hidden points": {
+    "summary": "This is a generic or non-standardized term for potential landslide or geological hazard locations, rather than a specific, widely recognized global dataset.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled 'Geological hazard hidden points', availability is considered to vary depending on the specific study, regional geological survey, or research context intended.",
+    "verified_via": ""
+  },
+  "5 m DTM Emilia-Romagna Region": {
+    "summary": "A high-resolution digital terrain model (DTM) of the Emilia-Romagna region in Italy, maintained by the regional government's cartographic services.",
+    "availability": "PUBLIC_FREE — Available through the Emilia-Romagna Region's Geoportale (Cartografia Regionale).",
+    "verified_via": "https://geoportale.regione.emilia-romagna.it/"
+  },
+  "Hydrographic network shapefile": {
+    "summary": "A generic term for vector datasets representing river and stream networks, typically maintained by national mapping or environmental agencies.",
+    "availability": "VARIES — Availability depends on the specific country or region; some are public (e.g., via national open data portals or HydroSHEDS), while others are restricted or maintained by local water authorities.",
+    "verified_via": ""
+  },
+  "Soil water index (SWI)": {
+    "summary": "A dataset representing the soil moisture content at different depths, typically produced by the Copernicus Global Land Service.",
+    "availability": "PUBLIC_FREE — Available via the Copernicus Global Land Service portal.",
+    "verified_via": "https://land.copernicus.eu/en/products/soil-water-index"
+  },
+  "Landslide inventory from multi-temporal digital aerial-photo interpretation (2005–2006)": {
+    "summary": "A specific, event-based landslide inventory mapping landslides using multi-temporal aerial photography, typically produced by individual research teams for specific study areas.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Terra-ASTER L2 products": {
+    "summary": "Level 2 geophysical products (e.g., surface reflectance, temperature) derived from ASTER sensor data on the Terra satellite, maintained by NASA.",
+    "availability": "PUBLIC_REG — Available via NASA Earthdata; requires a free Earthdata login.",
+    "verified_via": "https://asterweb.jpl.nasa.gov/data.asp"
+  },
+  "Nationwide 10 m resolution ALS DTM": {
+    "summary": "A digital terrain model (DTM) with 10-meter resolution, often derived from airborne laser scanning (ALS) or other high-resolution elevation data, maintained by national mapping agencies.",
+    "availability": "VARIES — Availability depends entirely on the specific country or region; some national mapping agencies provide these as open data, while others may restrict access or require purchase.",
+    "verified_via": ""
+  },
+  "Local ALS DTM Vorarlberg": {
+    "summary": "A high-resolution digital terrain model (DTM) derived from airborne laser scanning (ALS) for the Vorarlberg region in Austria, maintained by regional authorities.",
+    "availability": "VARIES — Availability depends on the regional government's open data policies for Vorarlberg; while some Austrian elevation data is public via the BEV, local high-resolution datasets may have specific access conditions.",
+    "verified_via": ""
+  },
+  "Building shape file for the Open Street Map Project": {
+    "summary": "Vector data representing building footprints extracted from the crowd-sourced OpenStreetMap database.",
+    "availability": "PUBLIC_FREE — Available via OpenStreetMap API, Geofabrik extracts, and various GIS-ready export services (ODbL license).",
+    "verified_via": "https://www.geofabrik.de/data/shapefiles.html"
+  },
+  "Landslide ground truth map": {
+    "summary": "A generic term for landslide inventory maps or polygons used as ground truth for training and validating landslide detection models, typically produced by individual research teams or geological surveys for specific study areas.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "RapidEye-1 basic optical image": {
+    "summary": "High-resolution (5m) multispectral imagery products derived from the RapidEye satellite constellation, originally operated by BlackBridge and now maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Data is sold via Planet Labs; access for research or non-commercial use is typically restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and approval.",
+    "verified_via": "https://www.planet.com/products/rapideye/"
+  },
+  "LMHLD (Large-scale Multisource High-resolution Landslide Dataset)": {
+    "summary": "A benchmark dataset for landslide detection containing multi-source high-resolution imagery and landslide labels, maintained by researchers at the Institute of Mountain Hazards and Environment, CAS.",
+    "availability": "PUBLIC_FREE — Available for download via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/13612636"
+  },
+  "RapidEye imagery": {
+    "summary": "A constellation of five satellites providing 5-meter resolution multispectral imagery, originally operated by BlackBridge and now maintained by Planet Labs.",
+    "availability": "COMMERCIAL — Data is sold via Planet Labs; access for research or non-commercial use is typically restricted to specific programs such as Planet's Education & Research or the NASA Commercial Smallsat Data Acquisition (CSDA) program, which require application and approval.",
+    "verified_via": "https://www.planet.com/products/rapideye/"
+  },
+  "VHR UAV image dataset of Baihetan reservoir": {
+    "summary": "This is a study-specific collection of very high-resolution (VHR) UAV imagery used for monitoring terrain changes or landslides in the Baihetan reservoir area, typically collected by individual research teams for specific geomorphological investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Ground truth of Iburi study area": {
+    "summary": "A specific, event-based landslide inventory mapping landslides triggered by the 2018 Hokkaido Eastern Iburi earthquake, produced by individual research teams for academic studies.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Landslide interpretation database of Wenchuan County": {
+    "summary": "A spatial database of landslides triggered by the 2008 Wenchuan earthquake, compiled by researchers through remote sensing interpretation and field investigations.",
+    "availability": "VARIES — As this is a study-specific inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Shallow landslide and debris flow inventory": {
+    "summary": "This is a generic term for collections of landslide and debris flow events, typically maintained by regional geological surveys, disaster management agencies, or individual research teams for specific studies.",
+    "availability": "VARIES — As this is a generic term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "SEN12-Flood dataset": {
+    "summary": "A multi-sensor benchmark dataset for flood detection consisting of co-registered optical (Sentinel-2) and SAR (Sentinel-1) image time series, produced by researchers at ONERA and other institutions.",
+    "availability": "PUBLIC_FREE — Available via the IEEE DataPort repository and Radiant MLHub.",
+    "verified_via": "https://ieee-dataport.org/open-access/sen12-flood-sar-and-multispectral-dataset-flood-detection"
+  },
+  "UAV-derived photographs (Proussos landslide)": {
+    "summary": "High-resolution aerial photographs captured by unmanned aerial vehicles specifically for the study of the Proussos landslide in Greece.",
+    "availability": "VARIES — This is a study-specific dataset collected by individual researchers; availability depends on the originating research team or the specific publication where the data was shared.",
+    "verified_via": ""
+  },
+  "Expert-based annotations (ground truth)": {
+    "summary": "Manual landslide delineations or classifications created by domain experts to serve as ground truth for training or validating remote sensing models.",
+    "availability": "VARIES — As this is a generic term for study-specific ground truth data rather than a standardized public product, availability depends entirely on the specific research project or publication that generated the annotations.",
+    "verified_via": ""
+  },
+  "USGS ShakeMap product (PGV)": {
+    "summary": "A product of the USGS Earthquake Hazards Program that provides near-real-time maps of ground motion, including Peak Ground Velocity (PGV), following significant earthquakes.",
+    "availability": "PUBLIC_FREE — Available via the USGS Earthquake Hazards Program website and the USGS ShakeMap API.",
+    "verified_via": "https://earthquake.usgs.gov/data/shakemap/"
+  },
+  "USGS Ground Failure product": {
+    "summary": "A product of the USGS Earthquake Hazards Program that provides near-real-time estimates of the extent and probability of earthquake-induced ground failure, such as landslides and liquefaction.",
+    "availability": "PUBLIC_FREE — Available via the USGS Earthquake Hazards Program website and the USGS Ground Failure product page.",
+    "verified_via": "https://earthquake.usgs.gov/data/groundfailure/"
+  },
+  "IslandsDEM v1.0 10m": {
+    "summary": "A 10-meter resolution digital elevation model of Iceland produced by the National Land Survey of Iceland and the Polar Geospatial Center.",
+    "availability": "PUBLIC_FREE — Available via the Google Earth Engine community catalog under a CC BY 4.0 license.",
+    "verified_via": "https://gee-community-catalog.org/projects/iceland_dem"
+  },
+  "Norwegian national DEM": {
+    "summary": "A high-resolution national elevation dataset (DTM/DSM) for Norway produced by the Norwegian Mapping Authority (Kartverket) using airborne LiDAR.",
+    "availability": "PUBLIC_FREE — Available as open data through the Norwegian Mapping Authority's (Kartverket) portal and Geonorge.",
+    "verified_via": "https://www.kartverket.no/en/api-and-data"
+  },
+  "Koppen-Geiger climate map": {
+    "summary": "A global climate classification map based on temperature and precipitation data, maintained by researchers at the University of Natural Resources and Life Sciences, Vienna (BOKU) and GloH2O.",
+    "availability": "PUBLIC_FREE — Available via the official Köppen-Geiger project website and GloH2O portal.",
+    "verified_via": "https://www.gloh2o.org/koppen"
+  },
+  "Global forest canopy height map": {
+    "summary": "Various global datasets mapping forest canopy height, including products from the GLAD lab (University of Maryland) and the Meta/WRI high-resolution canopy height project.",
+    "availability": "PUBLIC_FREE — Available via the GLAD lab website, Google Earth Engine, and the Meta/WRI project portals.",
+    "verified_via": "https://glad.umd.edu/dataset/gedi"
+  },
+  "Topographic information (slope and DEM data)": {
+    "summary": "Topographic information, including Digital Elevation Models (DEMs) and derived slope maps, is produced by various national mapping agencies, space agencies, and commercial remote-sensing firms.",
+    "availability": "VARIES — Availability depends entirely on the specific DEM product or region; global models like SRTM or Copernicus DEM are PUBLIC_REG/PUBLIC_FREE, while high-resolution national or commercial LiDAR-derived DEMs may be restricted or require purchase.",
+    "verified_via": ""
+  },
+  "High-resolution DEM of the Mengu landslide": {
+    "summary": "A high-resolution digital elevation model (DEM) specifically generated for the Mengu landslide site, typically collected by individual research teams for geomorphological or landslide investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Corine Land Cover (CLC 2018)": {
+    "summary": "A pan-European land cover and land use inventory maintained by the European Environment Agency (EEA) as part of the Copernicus programme.",
+    "availability": "PUBLIC_FREE — Available via the Copernicus Land Monitoring Service (CLMS) website and the EEA data portal.",
+    "verified_via": "https://land.copernicus.eu/en/products/corine-land-cover/clc2018"
+  },
+  "DMLD dataset": {
+    "summary": "The DMLD (Deep Multi-source Landslide Detection) dataset is a benchmark dataset for landslide detection containing multi-source high-resolution imagery and landslide labels, maintained by researchers at the Institute of Mountain Hazards and Environment, CAS.",
+    "availability": "PUBLIC_FREE — Available for download via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/13612636"
+  },
+  "Waveforms and Moment Tensors": {
+    "summary": "This is a generic term for seismic data products representing ground motion recordings and earthquake source mechanisms, typically maintained by global and regional seismic networks like the USGS or IRIS.",
+    "availability": "VARIES — Availability depends on the specific seismic network or data center (e.g., IRIS/SAGE, USGS, GFZ); while many event-based moment tensors are public, raw waveform data access can vary by network policy.",
+    "verified_via": "https://ds.iris.edu/ds/products/event-moment-tensor/"
+  },
+  "Ridgecrest and Owens Lake directional offsets": {
+    "summary": "These are specific, study-based datasets mapping surface rupture and displacement offsets following the 2019 Ridgecrest earthquake sequence, typically produced by individual research teams.",
+    "availability": "VARIES — As this is a specific study-based dataset rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Aerial photos of electrical poles": {
+    "summary": "This is a generic descriptive term for aerial imagery used to inspect electrical infrastructure, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized dataset, availability depends entirely on the specific utility company, government agency, or private surveying firm that conducted the aerial survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Hokkaido Iburi-Tobu imagery": {
+    "summary": "High-resolution optical or aerial imagery captured following the 2018 Hokkaido Eastern Iburi earthquake, typically maintained by individual research teams or government agencies for specific disaster assessment.",
+    "availability": "VARIES — As this is a specific, event-based dataset rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "ECMWF ERA-Interim 'Snow depth' data": {
+    "summary": "A global atmospheric reanalysis dataset providing historical climate data, including snow depth, produced and maintained by the European Centre for Medium-Range Weather Forecasts (ECMWF).",
+    "availability": "PUBLIC_FREE — Available via the ECMWF public datasets portal; while ERA-Interim has been superseded by ERA5, the data remains accessible for research purposes.",
+    "verified_via": "https://www.ecmwf.int/en/forecasts/datasets/reanalysis-datasets/era-interim"
+  },
+  "National Administrative Villages (Communities) Names": {
+    "summary": "A dataset containing the names and spatial locations of administrative villages or communities, typically maintained by national civil affairs or statistical bureaus.",
+    "availability": "VARIES — Availability depends on the specific country's national data policy; in many cases, this is maintained by government agencies and may be restricted, require formal requests, or be available as open data depending on the jurisdiction.",
+    "verified_via": ""
+  },
+  "Landslide area annotations": {
+    "summary": "A generic term for ground-truth labels or polygons delineating landslide boundaries, typically produced by individual research teams or geological surveys for specific study areas.",
+    "availability": "VARIES — As this is a generic term for study-specific ground truth data rather than a standardized public product, availability depends entirely on the specific research project or publication that generated the annotations.",
+    "verified_via": ""
+  },
+  "Predisaster SAR image": {
+    "summary": "A generic term for synthetic aperture radar (SAR) imagery acquired before a landslide or disaster event, used for baseline analysis and change detection.",
+    "availability": "VARIES — Availability depends on the specific satellite mission (e.g., Sentinel-1 is PUBLIC_REG, while commercial SAR data like TerraSAR-X is COMMERCIAL) and the specific study context.",
+    "verified_via": ""
+  },
+  "DEM (Digital Elevation Model) image": {
+    "summary": "A generic term for raster representations of Earth's surface elevation, produced by various national mapping agencies, space agencies, and commercial firms.",
+    "availability": "VARIES — Availability depends entirely on the specific DEM product (e.g., global models like SRTM or Copernicus DEM are PUBLIC_REG/PUBLIC_FREE, while high-resolution national or commercial LiDAR-derived DEMs may be restricted or require purchase).",
+    "verified_via": ""
+  },
+  "SAR image of northern Kyushu area": {
+    "summary": "This is a generic reference to synthetic aperture radar (SAR) imagery covering the northern Kyushu region, typically acquired by satellites like Sentinel-1 or ALOS-2 for specific research or disaster monitoring studies.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized dataset, availability depends entirely on the specific satellite mission (e.g., Sentinel-1 is PUBLIC_REG via Copernicus, while commercial SAR data is COMMERCIAL) and the specific study context.",
+    "verified_via": ""
+  },
+  "Example tiles": {
+    "summary": "This is a generic term for sample image or data tiles used for testing or demonstration purposes, rather than a specific, standardized global dataset.",
+    "availability": "VARIES — As this is a generic descriptive term for a data type rather than a specific, standardized dataset, availability depends entirely on the specific project, software, or provider that generated the sample tiles.",
+    "verified_via": ""
+  },
+  "San Francisco FP data acquired by Gaofen-3": {
+    "summary": "This refers to specific Gaofen-3 synthetic aperture radar (SAR) data acquired over San Francisco, typically used for localized research or validation studies.",
+    "availability": "VARIES — As this is a study-specific acquisition rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; Gaofen-3 data is generally distributed commercially through CRESDA.",
+    "verified_via": ""
+  },
+  "AIRSAR data from Flevoland": {
+    "summary": "This is a classic remote sensing dataset consisting of multi-frequency, multi-polarization airborne synthetic aperture radar (AIRSAR) imagery of the Flevoland agricultural area in the Netherlands, collected by NASA's Jet Propulsion Laboratory.",
+    "availability": "PUBLIC_FREE — Historical AIRSAR data, including the Flevoland test site, is available through the NASA Earthdata portal and the Alaska Satellite Facility (ASF) DAAC.",
+    "verified_via": "https://asf.alaska.edu/datasets/daac/airsar/"
+  },
+  "JRC/GSW1_4/GlobalSurfaceWater dataset": {
+    "summary": "A global dataset mapping the location and temporal distribution of surface water, produced by the European Commission's Joint Research Centre (JRC).",
+    "availability": "PUBLIC_FREE — Available via the JRC Global Surface Water Explorer and Google Earth Engine.",
+    "verified_via": "https://global-surface-water.appspot.com/"
+  },
+  "ArcGIS Street-view data": {
+    "summary": "ArcGIS Street-view data refers to street-level imagery integrated into the Esri ArcGIS ecosystem, often sourced from third-party providers like Mapillary or Google Street View.",
+    "availability": "VARIES — Availability depends on the specific imagery provider integrated into the ArcGIS platform; some imagery is accessible via Esri's Living Atlas, while others require separate API keys or commercial subscriptions.",
+    "verified_via": "https://www.esri.com/en-us/arcgis/products/arcgis-platform/content/imagery"
+  },
+  "Borehole data": {
+    "summary": "Geotechnical and geological data obtained from drilling into the subsurface, typically maintained by national geological surveys, engineering firms, or academic research institutions.",
+    "availability": "VARIES — Availability depends entirely on the specific region, project, or institution that conducted the drilling; some national geological surveys provide public access, while others are restricted or proprietary.",
+    "verified_via": ""
+  },
+  "Meteorological data": {
+    "summary": "Records of atmospheric conditions such as precipitation, temperature, and wind, typically maintained by national meteorological services or international climate research agencies.",
+    "availability": "VARIES — Availability depends on the specific country or agency; many national services provide open access to historical data, while others may require formal requests or purchase.",
+    "verified_via": ""
+  },
+  "Regional Water Company of Ardabil Province documents": {
+    "summary": "Internal reports, hydrological data, or technical documents maintained by the Regional Water Company of Ardabil Province, Iran.",
+    "availability": "VARIES — As this is a specific regional government entity, availability depends on their internal data-sharing policies; no public catalog exists for these documents, and they are likely restricted to institutional use or specific requests.",
+    "verified_via": ""
+  },
+  "Landslide images of similar areas": {
+    "summary": "A generic term for collections of landslide imagery used for comparative analysis or model training, typically maintained by individual research teams or academic projects.",
+    "availability": "VARIES — As this is a generic descriptive term for a data type rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or research study that generated the images; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Lithology and Faults": {
+    "summary": "This is a generic category of geological data representing rock types and tectonic structures, typically maintained by national geological surveys or international research organizations.",
+    "availability": "VARIES — Availability depends entirely on the specific region or global database; some are public (e.g., GEM Global Active Faults, GLiM), while others are maintained by national geological surveys and may be restricted or require institutional access.",
+    "verified_via": "https://www.globalquakemodel.org/product/active-faults-database"
+  },
+  "Landslide images in Bijie City": {
+    "summary": "This is a study-specific collection of landslide imagery for the Bijie region, typically maintained by individual research teams for academic investigations.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "18-layer satellite image slices of Yingxiu town": {
+    "summary": "This refers to a study-specific dataset of multi-layer satellite image slices for Yingxiu town, typically generated for localized landslide or terrain analysis in academic research.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Sen12Landslides (refined version)": {
+    "summary": "A large-scale, multi-modal, multi-temporal benchmark dataset for satellite-based landslide monitoring and spatio-temporal anomaly detection, maintained by researchers at DLR and TUM.",
+    "availability": "PUBLIC_FREE — Available for download via the Hugging Face datasets repository and referenced in academic publications.",
+    "verified_via": "https://huggingface.co/datasets/paulhoehn/Sen12Landslides"
+  },
+  "Reference data for landslide events": {
+    "summary": "This is a generic term for various collections of landslide event records, typically maintained by national geological surveys, disaster management agencies, or academic research groups.",
+    "availability": "VARIES — As this is a generic term rather than a single standardized dataset, availability depends entirely on the specific region, event, or institution that produced the inventory; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "VhrAILM (very-high-resolution aerial-images-based landslide mapping)": {
+    "summary": "VhrAILM is a landslide inventory dataset based on very-high-resolution aerial imagery, typically produced by individual research teams for specific academic studies.",
+    "availability": "VARIES — As this is a study-specific inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "HRSIDGLM (High-Resolution Remote Sensing Landslide Dataset for Domain Generalization)": {
+    "summary": "A benchmark dataset for landslide detection designed for domain generalization, containing high-resolution remote sensing imagery and landslide labels, maintained by academic researchers.",
+    "availability": "PUBLIC_FREE — Available for download via the Zenodo repository.",
+    "verified_via": "https://zenodo.org/records/10653366"
+  },
+  "Global landslide susceptibility map (2023)": {
+    "summary": "A global-scale landslide susceptibility assessment product, typically produced by international research initiatives or geological organizations.",
+    "availability": "VARIES — As there is no single standardized 'Global landslide susceptibility map (2023)' released as a universal product, availability depends on the specific research study or organization (e.g., NASA, USGS, or academic consortia) that produced the map.",
+    "verified_via": ""
+  },
+  "Ludian landslide event imagery (Google Earth)": {
+    "summary": "High-resolution optical satellite and aerial imagery of the Ludian landslide event accessed via the Google Earth platform.",
+    "availability": "VARIES — Google Earth imagery is accessible via the Google Earth platform and Google Earth Engine; however, it is not a downloadable dataset for research use, and specific high-resolution imagery may be subject to licensing restrictions depending on the intended use.",
+    "verified_via": "https://www.google.com/earth/about/permissions/"
+  },
+  "Beichuan County landslide identification sample library": {
+    "summary": "A collection of landslide identification samples for Beichuan County, typically compiled by individual research teams for specific academic studies.",
+    "availability": "VARIES — As this is a study-specific dataset rather than a standardized public product, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Subset of 814 landslides manually mapped within the Taiwan study area": {
+    "summary": "A specific landslide inventory dataset consisting of 814 manually mapped landslides in a Taiwan study area, typically generated by individual research teams for academic studies.",
+    "availability": "VARIES — As this is a study-specific inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Landslide validation data": {
+    "summary": "A generic term for ground-truth landslide inventories or polygons used to validate landslide detection or susceptibility models, typically maintained by individual research teams or geological surveys for specific study areas.",
+    "availability": "VARIES — As this is a generic term for study-specific ground truth data rather than a standardized public product, availability depends entirely on the specific research project, region, or institution that produced the data.",
+    "verified_via": ""
+  },
+  "Earthquake intensity vector data": {
+    "summary": "Geospatial vector data representing seismic intensity (e.g., ShakeMap contours) following an earthquake, typically produced by national earthquake monitoring agencies like the USGS.",
+    "availability": "VARIES — Availability depends on the specific earthquake event and the national agency responsible for monitoring; while some USGS ShakeMap products are PUBLIC_FREE, others may be restricted or specific to regional seismic networks.",
+    "verified_via": "https://earthquake.usgs.gov/data/shakemap/"
+  },
+  "Precision orbit data (Precise Orbit Ephemerides, POD)": {
+    "summary": "High-accuracy satellite position and velocity data used for precise geodetic and remote sensing applications, maintained by space agencies and international geodetic services.",
+    "availability": "PUBLIC_FREE — Available through various space agency portals (e.g., ESA Earth Online, NASA CDDIS) and international services like the International GNSS Service (IGS).",
+    "verified_via": "https://igs.org/data-access/"
+  },
+  "Landslide catalogue for Taiwan": {
+    "summary": "A collection of landslide inventories for Taiwan, typically generated by individual research teams or government agencies for specific studies or hazard monitoring.",
+    "availability": "VARIES — As this is not a single standardized public dataset but rather a collection of study-specific inventories, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "S2cloudless cloud probability product": {
+    "summary": "A machine learning-based cloud detection algorithm and probability product for Sentinel-2 imagery, maintained by Sentinel Hub (Sinergise).",
+    "availability": "PUBLIC_FREE — Available as an open-source Python library via GitHub and integrated into the Sentinel Hub platform.",
+    "verified_via": "https://github.com/sentinel-hub/s2cloudless"
+  },
+  "Orthographic remote sensing images of Huangdao District": {
+    "summary": "This refers to study-specific high-resolution orthographic imagery of the Huangdao District, typically collected for localized urban planning, environmental monitoring, or academic research.",
+    "availability": "VARIES — As this is a study-specific or site-specific dataset rather than a standardized public product, availability depends on the originating research team, local government agency, or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Optical remote sensing images from Google Earth Pro": {
+    "summary": "High-resolution optical satellite and aerial imagery provided by Google through the Google Earth Pro desktop application.",
+    "availability": "VARIES — Imagery is accessible for viewing via the Google Earth Pro application; however, it is not a downloadable dataset for research use, and its use is subject to Google's Terms of Service which restrict data extraction and commercial use.",
+    "verified_via": "https://www.google.com/permissions/geoguidelines/"
+  },
+  "Haiti and Luding earthquake landslide labels": {
+    "summary": "These are specific, event-based landslide inventory datasets mapping ground failures triggered by the 2010 Haiti and 2022 Luding earthquakes, typically produced by individual academic research teams.",
+    "availability": "VARIES — As these are study-specific inventories rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for these specific sets.",
+    "verified_via": ""
+  },
+  "Pleiades-1A satellite imagery": {
+    "summary": "High-resolution optical satellite imagery operated by Airbus Defence and Space.",
+    "availability": "COMMERCIAL — Sold via Airbus Defence and Space or authorized commercial resellers.",
+    "verified_via": "https://www.intelligence-airbusds.com/imagery/constellation/pleiades/"
+  },
+  "Aerial photographs of Japanese locations with landslide histories": {
+    "summary": "This is a generic descriptive term for collections of historical aerial imagery used to document landslide events in Japan, typically maintained by national agencies like the Geospatial Information Authority of Japan (GSI) or regional research institutions.",
+    "availability": "VARIES — As this is a generic description of a data type rather than a specific, standardized dataset, availability depends entirely on the specific region, event, or agency (e.g., GSI Maps portal) that conducted the aerial survey; no single public catalog or provider exists for this specific term.",
+    "verified_via": "https://maps.gsi.go.jp/"
+  },
+  "Kerala Soil Map": {
+    "summary": "A digital soil database and mapping resource for the state of Kerala, maintained by the Department of Soil Survey and Soil Conservation, Government of Kerala, in collaboration with national agencies like ICAR-NBSS&LUP.",
+    "availability": "VARIES — Data access is managed through the Kerala Soil Survey department's MISSK portal; while some information is public, specific high-resolution datasets may require institutional requests or registration.",
+    "verified_via": "https://www.keralasoils.gov.in/index.php/ml/missk"
+  },
+  "LEVIR-CD": {
+    "summary": "A large-scale bitemporal remote sensing change detection dataset consisting of 637 pairs of high-resolution Google Earth images, maintained by researchers at Beihang University.",
+    "availability": "PUBLIC_FREE — Available for download via the official LEVIR-CD project repository on GitHub.",
+    "verified_via": "https://github.com/SwinTransformer/LEVIR-CD"
+  },
+  "GVLM": {
+    "summary": "The Global Very-High-Resolution Landslide Mapping (GVLM) dataset is a collection of landslide inventories and associated remote sensing data, typically associated with specific academic research projects or regional hazard assessments.",
+    "availability": "VARIES — As this appears to be a study-specific or project-based collection rather than a standardized, centrally hosted public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider could be found for a dataset by this exact name.",
+    "verified_via": ""
+  },
+  "Ferrario event inventory": {
+    "summary": "A landslide inventory dataset associated with specific research on landslide events, typically maintained by the originating research team.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Italian national land consumption map 2022": {
+    "summary": "A national map product monitoring land consumption in Italy, produced and maintained by the Italian Institute for Environmental Protection and Research (ISPRA).",
+    "availability": "PUBLIC_FREE — Available for consultation and download via the ISPRA 'Consumo di suolo' portal.",
+    "verified_via": "https://www.isprambiente.gov.it/it/attivita/suolo-e-territorio/il-consumo-di-suolo"
+  },
+  "Cooperative Open Online Landslide Repository (COOLR)": {
+    "summary": "A NASA-maintained open platform that aggregates landslide reports from the Global Landslide Catalog, the Landslide Reporter volunteer platform, and other research-based inventories.",
+    "availability": "PUBLIC_FREE — Available via the NASA Global Precipitation Measurement (GPM) mission portal.",
+    "verified_via": "https://gpm.nasa.gov/applications/landslides/coolr"
+  },
+  "Reference occurred landslide inventory": {
+    "summary": "A generic term for a landslide inventory used as a reference or ground-truth dataset in a specific study, rather than a standardized, widely recognized public product.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "SRSLM (Satellite Remote Sensing Landslide Mapping) dataset": {
+    "summary": "This appears to be a non-standardized reference; no widely recognized global dataset by this exact name exists, and search results point to generic landslide datasets or study-specific inventories.",
+    "availability": "VARIES — As no distinct public catalog or provider could be found for a dataset specifically titled 'SRSLM', availability is considered to vary depending on the specific research context or if it is a misnamed reference to another landslide dataset.",
+    "verified_via": ""
+  },
+  "Mesetas dataset": {
+    "summary": "A subset of landslide imagery and inventory data for the Mesetas earthquake region in Colombia, typically used as part of larger benchmark datasets like the Globally Distributed Coseismic Landslide Dataset (GDCLD).",
+    "availability": "VARIES — This is a study-specific subset often included in larger benchmark repositories like Zenodo (e.g., GDCLD); availability depends on the specific repository or publication where the data was shared.",
+    "verified_via": "https://zenodo.org/records/13612636"
+  },
+  "SSL4EO-S12 dataset": {
+    "summary": "A large-scale, multi-modal, multi-temporal dataset for self-supervised learning in Earth observation, consisting of co-registered Sentinel-1 and Sentinel-2 imagery, maintained by researchers at the Technical University of Munich (TUM) and partners.",
+    "availability": "PUBLIC_FREE — Available for download via the SSL4EO-S12 project website and Hugging Face datasets repository.",
+    "verified_via": "https://huggingface.co/datasets/timm/ssl4eo-s12"
+  },
+  "GeoEye-1 image data (spatial resolution: 0.5 m) of Tuergen Township, Xinyuan County": {
+    "summary": "Very high-resolution commercial optical satellite imagery operated by Maxar Technologies, often used for site-specific baseline analysis.",
+    "availability": "COMMERCIAL — Sold via Maxar or authorized resellers; access for research may be possible via specific institutional agreements or data requests.",
+    "verified_via": "https://www.maxar.com/portfolio/satellite-imagery"
+  },
+  "Landslide and other topographic images of Xinyuan County": {
+    "summary": "This is a generic reference to localized landslide imagery and topographic data for Xinyuan County, typically collected for specific academic studies or regional disaster assessments.",
+    "availability": "VARIES — As this is not a standardized public dataset but rather a collection of study-specific data, availability depends on the originating research laboratory or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "L4S-256 (Landslide Segmentation from Satellite Images)": {
+    "summary": "A dataset for landslide segmentation consisting of 256x256 image patches, typically associated with specific academic research on landslide detection.",
+    "availability": "VARIES — As this appears to be a study-specific dataset rather than a standardized public product, availability depends on the originating research team or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Landslide inventory for Typhoon Morakot": {
+    "summary": "A specific landslide inventory mapping landslides triggered by Typhoon Morakot in Taiwan, typically produced by individual research teams or government agencies.",
+    "availability": "VARIES — As this is a specific study-based inventory rather than a standardized public product, availability depends on the individual researchers or the specific publication where the data was shared; no single public catalog or provider exists for this specific set.",
+    "verified_via": ""
+  },
+  "Stereo aerial images with a cell size of 0.5 m": {
+    "summary": "A generic description of high-resolution stereo aerial imagery used for photogrammetric terrain analysis, typically collected by national mapping agencies or private surveying firms for specific project sites.",
+    "availability": "VARIES — As this is a generic description of a data product rather than a specific, standardized global dataset, availability depends entirely on the specific project, region, or agency that conducted the survey; no single public catalog or provider exists for this term.",
+    "verified_via": ""
+  },
+  "Hydrological regions maps": {
+    "summary": "A generic term for geospatial datasets delineating drainage basins, watersheds, or hydrological zones, typically maintained by national water authorities or international research initiatives.",
+    "availability": "VARIES — As this is a generic descriptive term rather than a specific, standardized global dataset, availability depends entirely on the specific region, project, or agency (e.g., HydroSHEDS, national water agencies) that produced the maps.",
+    "verified_via": ""
+  }
+}

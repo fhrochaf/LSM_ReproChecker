@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Level-1 C scenes",
+      "source": "Sentinel Scientific Data Hub",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "From the Sentinel Scientific Data Hub (https://scihub.copernicus.eu/), we downloaded two Sentinel-2 Level-1 C scenes"
+    },
+    {
+      "name": "IFFI (Inventario dei Fenomeni Franosi in Italia) Project 2020",
+      "source": "ISPRA, Dipartimento Difesa del Suolo, Servizio Geologico d’Italia",
+      "link": "http://www.progettoiffi.isprambiente.it/cartanetiffi/",
+      "status": "MENTIONED",
+      "verbatim": "IFFI (Inventario dei Fenomeni Franosi in Italia) Project 2020 overimposed (http://www.progettoiffi.isprambiente.it/cartanetiffi/; accessed on September 2023)"
+    },
+    {
+      "name": "UAS-derived orthomosaic",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Google Map Satellite imagery",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "(source: Google Map Satelllite imagery available in QGIS software)"
+    },
+    {
+      "name": "Orthophoto 2020 of the Pomarico municipality",
+      "source": "Regione Basilicata",
+      "link": "https://rsdi.regione.basilicata.it/",
+      "status": "MENTIONED",
+      "verbatim": "(c) orthophoto 2020 of the Pomarico municipality (https://rsdi.regione.basilicata.it/)"
+    },
+    {
+      "name": "Geological map by Perrone et al. 2021",
+      "source": "Perrone et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "(e) the corresponding geological map by Perrone et al. 2021."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Tasseled Cap Transformation (TCT) change detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses the Tasseled Cap Transformation (TCT) to process pre- and post-event Sentinel-2 images. It calculates the difference in Brightness, Greenness, and Wetness indices, which are then combined into an RGB composite to identify landslide-driven spectral changes.",
+      "source": "Index Data Base for Sentinel-2 sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The TCT Brightness, Wetness and Greenness indices were produced for the pre-event and post-event satellite images by using the following equation... where B2, B3, B4, B8, B10, B11, and B12 are the Sentinel-2 bands (see Table 2) while the letters from A to G are the TCT coefficients suggested by the Index Data Base for Sentinel-2 sensor (https://www.indexdatabase.de)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets used and/or analysed during the current study available from the corresponding author on reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and accessible, and input datasets are available, but the custom code used for the Tasseled Cap Transformation is not provided or linked. The author statement indicates data is available only upon request, which does not meet the criteria for availability."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie dataset",
+      "source": "Su et al. [38]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The proposed ShapeFormer model was tested on two public datasets—the Bijie dataset and the Nepal dataset... The study area of the first dataset is the city of Bijie... The images in the Bijie dataset were acquired by the TripleSat satellite from May to August 2018... There are 770 labeled images in this dataset... The study area of the first dataset is the city of Bijie... The images in the Bijie dataset were acquired by the TripleSat satellite from May to August 2018... The Bijie dataset [38]"
+    },
+    {
+      "name": "Nepal dataset",
+      "source": "Bragagnolo et al. [58]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The proposed ShapeFormer model was tested on two public datasets—the Bijie dataset and the Nepal dataset... The study area of the second dataset is Nepal... The dataset consists of 275 landslide images, all from the Landsat 8 satellite... The Nepal dataset [58]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "ShapeFormer",
+      "method_type": "CUSTOM_CODE",
+      "summary": "ShapeFormer is an encoder-decoder model for landslide detection. The encoder consists of a scale feature extraction branch using a Pyramid Vision Transformer (PVT) and a shape feature extraction branch that uses boundary attention to enhance landslide shape information. The decoder uses deconvolutional layers and skip connections to recover the original resolution and produce a pixel-wise landslide probability map.",
+      "source": "Pengyuan Lv, Lusha Ma, Qiaomin Li, and Fang Du",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, to better extract and keep the multiscale shape information of landslides, a shape-enhanced vision transformer (ShapeFormer) model is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced but not linked, and the custom ShapeFormer code is mentioned without a repository or persistent link."
+}

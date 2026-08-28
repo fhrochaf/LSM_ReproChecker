@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Beichuan County landslide identification sample library",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A library of landslide identification samples was created using high-resolution remote sensing imagery and landslide boundary data obtained through field validation."
+    },
+    {
+      "name": "Google Earth images (0.5 m resolution)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Using high-resolution Google Earth images with a spatial resolution of 0.5 m, combined with the spectral characteristics of landslides in the study area, we applied visual interpretation to construct landslide identification sample data."
+    },
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. [50]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to verify the practical effectiveness of the DSNet proposed in this study, the publicly available landslide dataset [50] in Bijie, Guizhou, is used to carry out the adaptability analysis."
+    },
+    {
+      "name": "GVLM dataset",
+      "source": "Zhang et al. [51]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to verify the generalizability of the DSNet, the publicly available GVLM dataset [51] is selected as the research subject in this study."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual-Coded Segmentation Network (DS Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A dual-encoder single-decoder architecture that integrates prior knowledge features. It uses a Swin Transformer encoder for hierarchical feature extraction and a CLIP-based image encoder for visual-semantic understanding, fused via Prior Knowledge Integration (PKI) and Cross-Feature Aggregation (CFA) modules.",
+      "source": "Authors (Wang et al.)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a Dual-coded Segmentation Network (DSNet) that integrates prior knowledge features through a dual-encoder single-decoder architecture."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The original contributions presented in the study are included in the article, further inquiries can be directed to the corresponding author.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available, and the custom DSNet code is not provided or linked."
+}

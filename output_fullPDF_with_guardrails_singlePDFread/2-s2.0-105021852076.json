@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Luding multi-modal landslide dataset",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the case of the lack of a large, high-quality multi-modal landslide dataset, we construct the Luding multi-modal landslide dataset by combining optical image data and PolSAR image data sourced from the Luding region."
+    },
+    {
+      "name": "GF-3 PolSAR images",
+      "source": "GF-3",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Table 1 shows the data set sensor type and acquisition time information... SAR 224 × 224 GF-3 8 m 2022/09/06"
+    },
+    {
+      "name": "ZY-1 optical images",
+      "source": "ZY-1",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Table 1 shows the data set sensor type and acquisition time information... OPT 224 × 224 ZY-1 2 m 2022/09/10"
+    },
+    {
+      "name": "12.5 m digital elevation model (DEM)",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A 12.5 m digital elevation model (DEM) ensure precise image alignment."
+    },
+    {
+      "name": "Sentinel-1 SAR data",
+      "source": "Sentinel-1",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 offers freely accessible C-band SAR data... The Sentinel-1 images used in this study has a spatial resolution of 14.5 m and is acquired on 19 April 2025."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-modal cross Swin Transformer network (MCSTNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multi-modal network for landslide detection based on multi-label classification. It consists of two stages: feature extraction using two independent Swin Transformer branches for optical and PolSAR images, and feature fusion using a multi-modal cross multi-head self-attention (MCMSA) mechanism.",
+      "source": "Yongxin Li, Yukun Xue, Zhihui Xin, Guisheng Liao, Penghui Huang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also propose a multi-modal network for landslide detection based on multi-label classification, called multi-modal cross Swin Transformer network (MCSTNet)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"Data will be made available on request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or provided, and the custom MCSTNet code lacks a repository or persistent link."
+}

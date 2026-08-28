@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the Three Gorges Reservoir Area (TGRA)",
+      "source": "Authors' own compilation via onsite inspections and visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "According to onsite inspections and analysis of remote sensing images, a total of 486 historical landslides were recorded through visual interpretation (see Figure 1(a) for landslide site locations)."
+    },
+    {
+      "name": "Sentinel-2A multispectral images",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 multispectral images, with a scanning bandwidth of 290 km and a data policy that allows free and open access, have been extensively used for detecting landslides. The available cloud-free imagery that was obtained on 7 December 2019, was downloaded."
+    },
+    {
+      "name": "ASTER GDEM V3 data",
+      "source": "NASA/METI",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "These topographical features were derived from ASTER GDEM V3 data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ENVINet5-based classification model with multisource data fusion",
+      "method_type": "SOFTWARE",
+      "summary": "A deep learning classifier based on the ENVINet5 architecture that integrates spectral, textural (GLCM-based), and topographical features to detect old landslides. It uses Grad-CAM for visual explanation of the model's decision-making process.",
+      "source": "ENVI (version 5.6) DL module (version 1.1.3)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ENVINet5 was implemented in ENVI (version 5.6) using the DL module (version 1.1.3)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data supporting this study’s findings are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or provided, and the custom classification model code is not available."
+}

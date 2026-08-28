@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV remote sensing data of Jiuzhaigou County",
+      "source": "Sichuan Earthquake Administration",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank the Sichuan Earthquake Administration for offering the unmanned aerial vehicle remote sensing data"
+    },
+    {
+      "name": "COCO2014 data set",
+      "source": "Microsoft",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The transfer learning method is used to train the weights obtained by Mask R-CNN on the official COCO2014 [48] data set as the pre-training weights of the landslides detection algorithm in this paper."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Mask R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An end-to-end improved Mask R-CNN model that replaces the feature extraction layer with a ResNeXt module, adds a bottom-up channel to the feature pyramid network (FPN), and incorporates an edge loss function to improve landslide boundary detection accuracy.",
+      "source": "Peng Liu et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To solve the above problem, an end-to-end improved Mask R-CNN model was proposed. The main innovations of this paper were (1) replacing the feature extraction layer with an effective ResNeXt module to extract the landslides. (2) Increasing the bottom-up channel in the feature pyramid network to make full use of low-level positioning and high-level semantic information. (3) Adding edge losses to the loss function to improve the accuracy of the landslide boundary detection accuracy."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available, and the custom code for the improved Mask R-CNN model lacks a repository or persistent link."
+}

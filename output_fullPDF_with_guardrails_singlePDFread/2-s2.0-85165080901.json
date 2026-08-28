@@ -1,0 +1,124 @@
+{
+  "datasets": [
+    {
+      "name": "Loess Plateau landslide database",
+      "source": "Sheng Hu's team",
+      "link": "https://doi.org/10.3974/geodb.2020.04.08.V1",
+      "status": "MENTIONED",
+      "verbatim": "The landslide data used in this paper were derived from the Loess Plateau landslide database constructed by Sheng Hu’s team [36]... The Loess Plateau Landslide Database is available at https://doi.org/10.3974/geodb.2020.04.08.V1"
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The image data of landslide data and non-landslide data were obtained separately through Google Earth"
+    },
+    {
+      "name": "Aster satellite 30 m resolution DEM",
+      "source": "Aster",
+      "link": "http://www.gscloud.cn",
+      "status": "MENTIONED",
+      "verbatim": "the digital elevation model (DEM) was downloaded from Aster satellite 30 m resolution data... The DEM dataset is available at http://www.gscloud.cn"
+    },
+    {
+      "name": "1 km resolution monthly NDVI dataset of China",
+      "source": "National Earth System Science Data Center",
+      "link": "http://www.geodata.cn",
+      "status": "MENTIONED",
+      "verbatim": "the normalized difference vegetation index (NDVI) data were extracted from the 1 km resolution monthly NDVI dataset in China... The precipitation dataset, geomorphology dataset, NDVI dataset are available at http://www.geodata.cn"
+    },
+    {
+      "name": "1 km resolution annual precipitation data in China in 2018",
+      "source": "National Earth System Science Data Center",
+      "link": "http://www.geodata.cn",
+      "status": "MENTIONED",
+      "verbatim": "the precipitation data were extracted from the 1 km resolution annual precipitation data in China in 2018... The precipitation dataset, geomorphology dataset, NDVI dataset are available at http://www.geodata.cn"
+    },
+    {
+      "name": "1:200,000 digital geological map of China",
+      "source": "National Geological Archives of China",
+      "link": "http://dcc.ngac.org.cn",
+      "status": "MENTIONED",
+      "verbatim": "stratigraphic lithology data were extracted from the 1:200,000 digital geological map of China... The digital geological map of China is available at http://dcc.ngac.org.cn"
+    },
+    {
+      "name": "1:250,000 national basic geographic database",
+      "source": "National Basic Geographic Information Center",
+      "link": "https://www.webmap.cn",
+      "status": "MENTIONED",
+      "verbatim": "the water system network and road network were extracted from the 1:250,000 national basic geographic database... The National Basic Geographic Database is available at https://www.webmap.cn"
+    }
+  ],
+  "methods": [
+    {
+      "name": "FKGRNet (Fused Knowledge Graph and ResNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide identification method that fuses a landslide knowledge graph with a ResNet model. It uses the TransE model to generate feature vectors from the knowledge graph and fuses these with image features extracted by ResNet using either a feature classifier or feature splicing.",
+      "source": "Bing Xu et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we combine knowledge and models, introduce the use of landslide knowledge graphs in landslide identification, and propose a landslide identification method for remote sensing images that fuses knowledge graphs and ResNet (FKGRNet)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Loess Plateau Landslide Database",
+        "source": "Global Change Research Data Publishing & Repository",
+        "link": "https://doi.org/10.3974/geodb.2020.04.08.V1",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "DEM (Digital Elevation Model) dataset",
+        "source": "Geospatial Data Cloud (gscloud.cn)",
+        "link": "http://www.gscloud.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Precipitation dataset",
+        "source": "geodata.cn",
+        "link": "http://www.geodata.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Geomorphology dataset",
+        "source": "geodata.cn",
+        "link": "http://www.geodata.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "NDVI dataset",
+        "source": "geodata.cn",
+        "link": "http://www.geodata.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "National Basic Geographic Database",
+        "source": "webmap.cn",
+        "link": "https://www.webmap.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Digital geological map of China",
+        "source": "National Geological Archives of China (NGAC)",
+        "link": "http://dcc.ngac.org.cn",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and publicly accessible via the provided links. However, the custom code for the FKGRNet method is not available, as no repository or persistent link was provided."
+}

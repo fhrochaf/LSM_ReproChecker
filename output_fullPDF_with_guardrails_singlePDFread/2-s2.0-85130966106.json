@@ -1,0 +1,89 @@
+{
+  "datasets": [
+    {
+      "name": "ALOS-2 SAR data",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ALOS-2 data between 2016 and 2018 used in this study are provided by JAXA via the EO-RA2 research program (PI number: ER2A2N006)."
+    },
+    {
+      "name": "Copernicus Sentinel data",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Copernicus Sentinel data between 2016 and 2018 used in this study are processed by ESA and retrieved from ASF DAAC."
+    },
+    {
+      "name": "COSMO-SkyMed data",
+      "source": "e-GEOS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The COSMO-SkyMed data are purchased from e-GEOS."
+    },
+    {
+      "name": "Airborne optical images for the Hokkaido landslides",
+      "source": "Geospatial Information Authority of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The airborne optical images for the Hokkaido landslides are available through the Geospatial Information Authority of Japan."
+    },
+    {
+      "name": "Global 30-m DEM",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Growing Split-Based Approach (GSBA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A bottom-up change detection algorithm that splits an image into tiles, identifies tiles with changes, and grows patches within tile clusters until a consistent bimodal histogram is reached. It calculates Bayesian probability maps of changes based on Gaussian parameters derived from the histograms, and selects the final change map using Ripley's K index.",
+      "source": "Lin, Y.N.; Chen, Y.-C.; Kuo, Y.-T.; Chao, W.-A.",
+      "link": "https://github.com/Narayana-Rao/PolSAR-tools",
+      "status": "MENTIONED",
+      "verbatim": "The calculation of 2D degree of polarization and scattering powers is carried out in PolSAR-tools available at https://github.com/Narayana-Rao/PolSAR-tools (accessed on 10 March 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "ALOS-2 SAR data (2016–2018)",
+        "source": "JAXA (via EO-RA2 research program)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Copernicus Sentinel SAR data (2016–2018)",
+        "source": "ESA, retrieved from ASF DAAC",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "COSMO-SkyMed SAR data",
+        "source": "e-GEOS",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Airborne optical images of Hokkaido landslides",
+        "source": "Geospatial Information Authority of Japan",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with indication of datasets, no shared links."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is available through the Geospatial Information Authority of Japan, the input datasets are mentioned without direct links, though some are practically accessible via public providers. The custom code is available via a provided GitHub repository link."
+}

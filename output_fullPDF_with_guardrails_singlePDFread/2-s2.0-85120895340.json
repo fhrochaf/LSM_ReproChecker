@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "RS-LL dataset (Potential Loess Landslide Dataset)",
+      "source": "State Key Laboratory of Geohazard Prevention and Geo-environment Protection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we employed a remote sensing dataset of potential loess landslides [see Fig. 5(d)] with ambiguous boundaries, which is sourced from the optical images of Google Earth and created by the geological experts of State Key Laboratory of Geohazard Prevention and Geo-environment Protection."
+    },
+    {
+      "name": "CIFAR-10 dataset",
+      "source": "Krizhevsky et al. (2009)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "CIFAR-10 showed in Fig. 9 is an established computer-vision dataset used for image classification, which consists of 60,000 images with 10 object categories and 6000 images per category."
+    },
+    {
+      "name": "MS-COCO dataset",
+      "source": "Lin et al. (2014)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "MS-COCO shown in Fig. 1(a) is a popular dataset for object detection, containing 91 common object categories with 82 of them having more than 5000 labeled samples."
+    },
+    {
+      "name": "ImageNet dataset",
+      "source": "Deng et al. (2009)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the pretrain models learned on the ImageNet dataset [32] are used to initialize the backbones of the evaluated object detectors."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Mask R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Mask R-CNN detector for objects with ambiguous boundaries, created by removing the segmentation branch from the original Mask R-CNN and embedding a channel-wise attention module into the ResNet-101 backbone.",
+      "source": "Guangle Yao et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To improve Mask R-CNN for detecting objects with ambiguous boundaries, we first removed the segmentation branch to eliminate the unfavorable effect of local level learning and then embedded the channel-wise attention module in the ResBlock of the ResNet-101 backbone to exploit more discriminative information in the channel domain."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked or made available, and the custom code for the improved Mask R-CNN is not provided via any repository or persistent link."
+}

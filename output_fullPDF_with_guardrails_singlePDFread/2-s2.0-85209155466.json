@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 multi-spectral images",
+      "source": "ESA Copernicus",
+      "link": "https://earthengine.google.com",
+      "status": "MENTIONED",
+      "verbatim": "Multi-spectral images are sourced from Sentinel-2... The Google Earth Engine (GEE) cloud system (https://earthengine.google.com) is employed to obtain the Sentinel-2 images and slope data."
+    },
+    {
+      "name": "SRTM slope data",
+      "source": "Shuttle Radar Topography Mission (SRTM)",
+      "link": "https://earthengine.google.com",
+      "status": "MENTIONED",
+      "verbatim": "The slope data is derived from the Shuttle Radar Topography Mission (SRTM)... The Google Earth Engine (GEE) cloud system (https://earthengine.google.com) is employed to obtain the Sentinel-2 images and slope data."
+    },
+    {
+      "name": "Himalayas landslide dataset",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "According to the interpretation and field investigation of landslides, a total of 3,144 samples were prepared for pre-training the model on the Himalayas dataset"
+    },
+    {
+      "name": "USGS earthquake inventory",
+      "source": "USGS",
+      "link": "https://earthquake.usgs.gov/earthquakes/map",
+      "status": "MENTIONED",
+      "verbatim": "The earthquake inventory is from the USGS (https://earthquake.usgs.gov/earthquakes/map)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Universal adapter module",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A parameter-efficient transfer learning module consisting of layer normalization, a down-projection layer, a nonlinear activation function, and an up-projection layer with an integrated attention mechanism. It is designed to be embedded into existing segmentation models (CNNs, Transformers, or hybrid) while keeping the baseline model parameters frozen.",
+      "source": "Ruilong Wei et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we proposed an innovative adapter module designed for parameter-efficient transfer learning in landslide mapping."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom code for the universal adapter module lacks a repository or persistent link."
+}

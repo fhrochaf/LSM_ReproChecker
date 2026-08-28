@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "HR-GLDD landslide dataset",
+      "source": "Meena et al. [10]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Meena et al. [10] developed HR-GLDD, the first high-resolution global landslide dataset... HR-GLDD consists of 1119 training and 355 testing image tiles"
+    }
+  ],
+  "methods": [
+    {
+      "name": "SegMamba2D",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight semantic segmentation network with an encoder-decoder structure. The encoder uses Mamba modules (based on structured state-space models) for multiscale feature extraction with linear computational complexity, while the decoder uses a multilayer perceptron for lightweight feature fusion.",
+      "source": "Xiaochuan Tang et al.",
+      "link": "https://github.com/xiaochuan-tang/SegMamba2D",
+      "status": "MENTIONED",
+      "verbatim": "Specifically, a landslide detection model named SegMamba2D with an encoder–decoder structure is proposed... The source code is available at https://github.com/xiaochuan-tang/SegMamba2D"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The HR-GLDD landslide is publicly available, and the custom SegMamba2D code is available via a provided GitHub repository link."
+}

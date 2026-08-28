@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 (SAR) imagery",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "These images were downloaded for free from the website of Open Access Hub – Copernicus.2 ... https://scihub.copernicus.eu"
+    },
+    {
+      "name": "Landslide inventory (ground truth points/mask dataset)",
+      "source": "Authors' own fieldwork and digitization",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": " In the second step, the landslide features were identified on both fields and Sentinel-2 images before being digitalized manually to build a mask dataset."
+    },
+    {
+      "name": "Google Earth Pro 3D models",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors utilized Google Earth Pro three-dimensional models to examine the spatial organization of landslide landforms"
+    },
+    {
+      "name": "UAV data",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The outcomes were compared with ground control points obtained from the field trip in August 2023 with the use of UAV data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Consolidated strategy based on four U-shaped models (UNet and UNet3+)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A consolidated strategy using four deep learning models: (1) UNet using four S2-bands, (2) UNet3+ using four S2-bands, (3) UNet using four S2-bands and VV S1-band, and (4) UNet using four S2-bands and VH S1-band. The models are based on U-shaped architectures (U-Net and U-Net3+) with ResNet34, trained using the Adam optimizer to perform binary semantic segmentation of landslide traces from fused Sentinel-1 and Sentinel-2 imagery.",
+      "source": "Kinh Bac Dang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, the authors proposed a consolidated strategy based on four models: (1) UNet using four S2-bands, (2) UNet3+ using four S2-bands, (3) UNet using four S2-bands and VV S1-band, and (4) UNet using four S2-bands and VH S1-band for fully detect landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code lacks a repository or persistent link."
+}

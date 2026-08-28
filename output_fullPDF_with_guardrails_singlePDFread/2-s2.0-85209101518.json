@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Penang Island landslide dataset",
+      "source": "Authors' compilation based on Penang DEM map and previous research",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This analysis identified 137 570 cases, of which 68786 samples indicate landslides and 68786 samples do not reflect landslides... This study analyzed the parameters collected from the Penang DEM map using techniques ranging from (7) to (26)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Machine learning approach for landslide detection",
+      "method_type": "SOFTWARE",
+      "summary": "The authors evaluate eleven machine learning algorithms (Tree, Random Forest, Gradient Boosting, Logistic Regression, Naïve Bayes, AdaBoost, Neural Network, SGD, kNN, and SVM) to identify the most significant factors contributing to landslide susceptibility using remote sensing and topographical features.",
+      "source": "ArcView, IDRISI, and MapInfo",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Various tools, including ArcView, IDRISI, and MapInfo, were used to compare the extracted maps to confirm the accuracy of the topographic factor maps."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom machine learning code is not available via any repository or persistent link."
+}

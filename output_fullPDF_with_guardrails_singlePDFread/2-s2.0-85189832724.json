@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide and debris flow dataset",
+      "source": "Z. Chao, C. Zhenyu, S. Fenghuan, Z. Zhen, and Y. Changxi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "All experiments are conducted on the landslide and debris flow dataset [53]. The dataset has high-resolution remote-sensing images of landslide and debris flow disasters in Sichuan Province, China, and surrounding areas since 2008."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Channel transformer encoder module (CTEM) and multiscale global attention module (MSGAM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The proposed method is an end-to-end abnormal region segmentation model consisting of a backbone, a Channel Transformer Encoder Module (CTEM), and a Multiscale Global Attention Module (MSGAM). The CTEM models long-range dependencies using a transformer encoder, while the MSGAM integrates low- and high-level features using dilated convolutions and the CTEM to extract multiscale global context.",
+      "source": "Weichao Cai, Weiliang Huang, Lin Tian, Chao Huang, and Jingwen Yan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, we propose a novel method for abnormal geological region segmentation in high-resolution RSIs. Specifically, the proposed method consists of two modules: a channel transformer encoder module (CTEM) and a multiscale global attention module (MSGAM)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced only by a citation number without a link or public availability, and the custom code for the proposed method is not provided or linked."
+}

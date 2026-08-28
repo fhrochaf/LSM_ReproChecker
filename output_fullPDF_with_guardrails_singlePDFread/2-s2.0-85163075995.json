@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "High-resolution geological hazard dataset (landslide and debris flow disasters)",
+      "source": "Chao et al. (2021)",
+      "link": "http://dx.doi.org/10.11922/sciencedb.j00001.00222",
+      "status": "MENTIONED",
+      "verbatim": "The geological hazard dataset on which we carried out experiments was introduced in [41]. ... [41] Z. Chao, C. Zhenyu, S. Fenghuan, Z. Zhen, Y. Changxi, High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in sichuan and surrounding areas, 2021, http://dx.doi.org/10.11922/sciencedb.j00001.00222."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Correlation weighted network (CoWNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CoWNet is an end-to-end semantic segmentation network consisting of an encoder (ResNet101), a Correlation Weighted Module (CoW) to adaptively adjust the receptive field based on object size, and a Feature Fusion Module (FFM) to combine semantic context and local boundary cues for precise segmentation.",
+      "source": "Dongbin Yin, Baizhong Zhang, Jingwen Yan, Yu Luo, Teng Zhou, Jing Qin",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, we propose a correlation weighted network (CoWNet) to precisely segment the hazard by concentrating on the negative impact of irregular contour and arbitrary scope."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked to a public repository. The custom code for the CoWNet method is not provided or linked."
+}

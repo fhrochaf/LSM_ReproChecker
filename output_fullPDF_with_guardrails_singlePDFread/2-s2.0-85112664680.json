@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat-8 OLI images (2013/09/15, 2018/04/09)",
+      "source": "USGS (implied by Landsat-8)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The optical remote sensing data used in this study mainly include Landsat-8 OLI images (2013/09/15, 2018/04/09) and the Global Digital Elevation Model."
+    },
+    {
+      "name": "Global Digital Elevation Model",
+      "source": "GSCloud",
+      "link": "http://www.gscloud.cn/",
+      "status": "MENTIONED",
+      "verbatim": "The optical remote sensing data used in this study mainly include Landsat-8 OLI images (2013/09/15, 2018/04/09) and the Global Digital Elevation Model.1 ... 1[Online]. Available: http://www.gscloud.cn/"
+    },
+    {
+      "name": "Landslide influencing factors (elevation, aspect, slope, curvature, NDVI, MNDWI, distance to river, distance to fault, and lithology)",
+      "source": "Geological maps, topographic maps, and multisource remote sensing images",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide influencing factors were extracted from geological maps, topographic maps, and multisource remote sensing images of the study area"
+    },
+    {
+      "name": "Landslide samples (labels)",
+      "source": "Authors' own annotation (remote sensing images combined with field surveys)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "landslide samples were annotated from remote sensing images combined with field surveys, which can be used as actual labels for later verification of landslide recognition results."
+    }
+  ],
+  "methods": [
+    {
+      "name": "fully convolutional DenseNet (FC-DenseNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network based on DenseNet architecture, utilizing dense blocks, transition down, and transition up modules. It incorporates feature reuse, bottleneck structures, and landslide influencing factors as input to perform pixel-level landslide recognition.",
+      "source": "Xiao Gao, Tao Chen, Ruiqing Niu, and Antonio Plaza",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This research proposes a new RML framework based on a new semantic segmentation network termed the fully convolutional DenseNet (FC-DenseNet)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or referenced with sufficient detail for access, and the custom code for the FC-DenseNet method is not provided."
+}

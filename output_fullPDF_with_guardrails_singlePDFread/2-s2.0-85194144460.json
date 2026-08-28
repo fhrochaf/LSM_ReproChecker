@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Old landslide dataset of the southwest river basin of the Sichuan–Tibet area",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "By focusing on the southwest river basin of the Sichuan–Tibet area, we collect 558 optical remote sensing images of old landslides in three channels from Google Earth and establish a dataset specifically for old landslide detection."
+    },
+    {
+      "name": "Google Earth images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset used in this study comprised Google Earth images with a spatial resolution of 2 m and covered a time span from 2012 to 2022."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv8-CW",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide detection model built upon the YOLOv8 architecture. It integrates a CBAM (Convolutional Block Attention Module) into the backbone network and replaces the Complete-IoU loss function with the Wise-IoU loss function to improve detection accuracy and recall for old landslides.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we introduce a novel landslide detection model known as YOLOv8-CW, built upon the YOLOv8 (You Only Look Once) architecture, to tackle the formidable challenge of identifying old landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets generated and/or analyzed during the current study are available from the corresponding author on reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or made available, and the custom YOLOv8-CW code repository is not provided."
+}

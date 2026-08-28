@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide detection dataset",
+      "source": "Ji et al. (2020)",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie landslide detection dataset, introduced by Ji et al. (2020), covers Bijie City in Guizhou Province, China... The data set is available at http:// gpcv. whu. edu. cn/ data/ Bijie_ pages. html."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv5 based on attention mechanism",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors propose an optimized YOLOv5 network by embedding four attention mechanisms (CBAM, ECA, GAM, and CA) at multiple locations within the backbone and neck modules to enhance landslide feature extraction and detection accuracy.",
+      "source": "Ultralytics",
+      "link": "https://github.com/ultralytics/yolov5",
+      "status": "MENTIONED",
+      "verbatim": "YOLOv5 is a prominent object detection algorithm amongst the YOLO family announced by Ultralytics (https:// github. com/ ultra lytics/ yolov5)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide detection dataset is referenced and publicly available via a provided link. The custom YOLOv5-based method lacks a repository or persistent link for the specific implementation code."
+}

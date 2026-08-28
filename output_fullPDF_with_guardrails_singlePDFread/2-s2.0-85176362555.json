@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide interpretation database of Wenchuan County",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Finally, the location distribution and boundary information for 1367 landslides within Wenchuan County were obtained (Figure 4)."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also downloaded all Google Earth imagery of the area from 2010 to the present and combined it with the spatial distribution of landslide points to manually map the landslide boundaries one by one"
+    },
+    {
+      "name": "Digital elevation model",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual Path Attention Network (DPANet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning network for landslide identification that uses a dual-path architecture: a sub-path for texture feature extraction using convolutional layers and a main path using a ResNet backbone for high-level semantic information, integrated with a Spatial-Efficient Channel Attention Module (SECAM) for feature fusion.",
+      "source": "Xiao Wang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address the errors arising from the inaccurate extraction of texture and location information in landslide intelligent recognition, we developed a new network, the dual path attention network (DPANet)..."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or made available, and the custom DPANet code lacks a repository or persistent link."
+}

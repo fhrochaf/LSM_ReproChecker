@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslides dataset of the Bijie area",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The proposed RIPF-Unet model is trained and validated using the open-source landslides dataset of the Bijie area, Guizhou Province, China... To train the proposed RIPF-Unet model, an open-source dataset from the previous study (Ji et al. 2020) is used in this paper."
+    },
+    {
+      "name": "TripleSat satellite imagery of the Bijie region",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The image data were obtained from TripleSat satellite imagery of the Bijie region, Guizhou Province, China (as shown in Fig. 3a), from May to August 2018."
+    },
+    {
+      "name": "Gaofen-1 images of the Longtoushan region",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "RIPF-Unet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A UNet-based semantic segmentation model that incorporates reversed image pyramid features (RIPFs) into the expansive path via a novel concatenation module to mitigate texture information loss caused by convolution and pooling.",
+      "source": "Bangjie Fu, Yange Li, Zheng Han, Zhenxiong Fang, Ningsheng Chen, Guisheng Hu, Weidong Wang",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input imagery are mentioned but not linked or made available, and the custom RIPF-Unet code is not provided."
+}

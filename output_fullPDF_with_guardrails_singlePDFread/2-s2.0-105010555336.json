@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset (TripleSat imagery for Bijie City)",
+      "source": "TripleSat",
+      "link": "https://github.com/Abbott-max/dataset",
+      "status": "MENTIONED",
+      "verbatim": "For this study, a landslide dataset comprising three-channel (RGB) images was acquired from TripleSat (spatial resolution = 0.8 m) for Bijie City [47]), covering an area of 26,853 km2, captured from May to August 2018... The dataset can be downloaded from https://github.com/Abbott-max/dataset (accessed on 01 January 2025)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention-enhanced YOLOv5 network (with CBAM and ECA modules)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv5 object detection architecture that integrates CBAM (Convolutional Block Attention Module) and ECA (Efficient Channel Attention) modules into the backbone and neck to refine spatial and channel-wise feature representation for landslide detection.",
+      "source": "Ultralytics (YOLOv5 base)",
+      "link": "https://github.com/ultralytics/yolov5",
+      "status": "MENTIONED",
+      "verbatim": "YOLOv5, presented by Ultralytics (https://github.com/ultralytics/yolov5 (accessed on 01 January 2025)), is a prominent addition to the YOLO family... The novel contributions of our work are threefold: 1. The development and optimization of improved YOLOv5 tailored for automated landslide event detection... 2. The integration of cognitive capabilities through attention mechanisms, specifically CBAM and ECA, into the YOLOv5 architecture to improve hazard scenarios."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is linked and publicly available. The custom code for the attention-enhanced YOLOv5 network is not provided, as the paper only references the base YOLOv5 repository."
+}

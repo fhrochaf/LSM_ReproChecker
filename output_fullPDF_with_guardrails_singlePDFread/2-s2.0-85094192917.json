@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Bitemporal RGB aerial images",
+      "source": "GEO of Hong Kong",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As shown in Figs. 2a–c, the input datasets comprised two bitemporal RGB aerial images and a rasterized DTM. All the inputs were provided by the GEO of Hong Kong."
+    },
+    {
+      "name": "Rasterized digital terrain model (DTM)",
+      "source": "GEO of Hong Kong",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As shown in Figs. 2a–c, the input datasets comprised two bitemporal RGB aerial images and a rasterized DTM. All the inputs were provided by the GEO of Hong Kong."
+    },
+    {
+      "name": "Landslide inventory map (annotated labels)",
+      "source": "GEO of Hong Kong",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As shown in Fig. 2d, the identified landslides were annotated using polygon mapping, based on the visual interpretation by experts in the GEO of Hong Kong, to serve as the ground truths to facilitate the supervised learning."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LanDCNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep convolutional neural network (DCNN) for semantic segmentation of landslides, using an encoder-decoder architecture. The encoder is based on ResNet-50 to fuse bitemporal aerial images and DTM, while the decoder uses skip connections and 1x1 convolutions to produce pixel-wise landslide probability maps.",
+      "source": "Zhaoyu Su, Jun Kang Chow, Pin Siang Tan, Jimmy Wu, Ying Kit Ho, Yu-Hsing Wang",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked or made available. The custom code for the LanDCNN method is not provided or referenced."
+}

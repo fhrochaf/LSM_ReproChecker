@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide detection data set",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "First, satellite images (DB-1) (open-source): The Bijie (Guizhou province, China) landslide detection data set (Ji et al. 2020) is acquired by TripleSat with a spatial resolution of 0.8 meters (m)."
+    },
+    {
+      "name": "UAV images (DB-2)",
+      "source": "Ullo et al. (2021)",
+      "link": "https://github.com/amritamohan61/Landslide-data-and-code˙Mask-R-CNN",
+      "status": "MENTIONED",
+      "verbatim": "Secondly, UAV images (DB-2) (Ullo et al. 2021): The data set consists of 281 images divided into set A (160) and set B (121). The images were downloaded from multiple search engines like Google and Bing. The UAV data set is available at https://github.com/amritamohan61/Landslide-data-and-code˙Mask-R-CNN."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv5, YOLOv6, YOLOv7, and YOLOv8",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors applied and evaluated the performance of different variants of YOLOv5, YOLOv6, YOLOv7, and YOLOv8 for extracting landslide information from satellite and UAV-based data. These single-staged object detection models combine classification and localization to detect landslides represented by bounding boxes.",
+      "source": "Naveen Chandra and Himadri Vaidya",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, in this study, we applied and evaluated the performance of different variants of YOLOv5, YOLOv6, YOLOv7, and YOLOv8 for extracting landslide information from distinct data sources."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but lack direct links, and the custom code used for the YOLO variants is not provided or linked in the publication."
+}

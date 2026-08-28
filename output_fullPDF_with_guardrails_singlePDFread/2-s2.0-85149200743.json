@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "1200 optical remote sensing images of landslides in western Sichuan Province, China",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Figure 15 is based on 1200 optical remote sensing images of landslides in western Sichuan Province, China as the data source."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Light-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight landslide detection network based on the CenterNet framework. It uses a GhostModule-based backbone (CBAM-Mini-bone) with channel and spatial attention mechanisms, incorporates a lightweight multiscale feature fusion module, and employs feature-based knowledge distillation using Yolov5x as a teacher network to improve detection accuracy.",
+      "source": "Ge, X.; Zhao, Q.; Wang, B.; Chen, M.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We designed a lightweight landslide detection network for emergency scenarios. The network is based on the CenterNet object detection framework... We propose a lightweight multiscale fusion method... We then used the knowledge distillation method to transfer the knowledge of the large model to the small model to improve the detection accuracy of the latter."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is not linked or publicly available. The custom code for the Light-Net method is not provided or referenced."
+}

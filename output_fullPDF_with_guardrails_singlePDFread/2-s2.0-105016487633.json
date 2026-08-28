@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Geospatial Pattern and Comparison Vision Group, Wuhan University",
+      "link": "https://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The imagery component originates from the TripleSat constellation... the dataset uses orthorectified RGB pansharpened products acquired between May and August 2018... Geospatial Pattern and Comparison Vision Group, Wuhan University, 2018... (Accessed 10 January 2025) https://gpcv.whu.edu.cn/data/Bijie_pages.html."
+    },
+    {
+      "name": "L4S-256 (Landslide Segmentation from Satellite Images)",
+      "source": "Niyarr Barman",
+      "link": "https://www.kaggle.com/datasets/niyarrbarman/landslide-divided",
+      "status": "MENTIONED",
+      "verbatim": "We refer to the corpus Landslide Segmentation from Satellite Images (originally released as Landslide4Sense 2022) simply as L4S-256 throughout this paper... Barman, 2023. Landslide segmentation (landslide segmentation from satellite images). Version (Accessed: 1 June 2025) https://www.kaggle.com/datasets/niyarrbarman/landslide-divided."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual-Stream Attention Network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight encoder-decoder architecture that processes RGB imagery and DEMs through modality-disentangled encoders, merges them via an isometric late-fusion operator, and uses a (≤ 1)-Lipschitz spatial-channel attention gate to modulate skip connections for landslide segmentation.",
+      "source": "Pooja Dhayal et al.",
+      "link": "https://github.com/deepdyn/dualstream-attention",
+      "status": "MENTIONED",
+      "verbatim": "All code, configuration files and trained weights will be released under MIT licence at https://github.com/deepdyn/dualstream-attention, together with a Dockerfile (CUDA 12.1 base image) to guarantee environment replication."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"All data sources used in this research have been cited in manuscript.\""
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked via public repositories. The custom code is available through a provided GitHub repository link."
+}

@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Multispectral Instrument Level-1C, TOA",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Imagery collections from public missions of ESA (e.g., Sentinel-2) and NASA (e.g., Landsat 8) programs are among primary sources of medium-resolution spatial datasets for monitoring global land changes and provide continuous records of satellite-based observations. ... For this research, we use Level-1C products (Sentinel-2 Multispectral Instrument Level-1C, TOA)."
+    },
+    {
+      "name": "ALOS World 3 D-30m (AW3D30)",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ALOS World 3 D-30m (AW3D30) is selected as the Digital Elevation Model (DEM) input, given its time span coverage (2006 to 2011 before the occurrence of the studied landslides in this research), global spatial coverage (between 60 S and 60 N latitudes) and availability."
+    },
+    {
+      "name": "Global Landslide Catalog (GLC)",
+      "source": "NASA Goddard Space Flight Center",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To identify landslide events, we reviewed online resources, social media, and the Global Landslide Catalog (GLC) of NASA Goddard Space Flight Center (Kirschbaum et al. 2010)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-Based Image Analysis (OBIA) using K-means clustering and Random Forest classification",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses K-means clustering for image segmentation based on Red-over-Green difference (RGD) values, followed by Random Forest classification to identify landslide segments using spectral, contextual, and topographic features.",
+      "source": "Faraz S. Tehrani, Giorgio Santinelli & Meylin Herrera Herrera",
+      "link": "https://github.com/gio-sans/multiregional-landslide-detection-article",
+      "status": "MENTIONED",
+      "verbatim": "All codes and data are available at the following repository: https://github.com/gio-sans/multiregional-landslide-detection-article"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Data supporting multi-regional landslide detection study",
+        "source": "GitHub (giosans)",
+        "link": "https://github.com/giosans/multiregional-landslide-detection-article",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Multi-regional landslide detection methodology",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code implementing the multi-regional landslide detection approach used in the study, shared alongside the associated data.",
+        "source": null,
+        "link": "https://github.com/giosans/multiregional-landslide-detection-article",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced via the NASA Global Landslide Catalog, and other input datasets (Sentinel-2, AW3D30) are publicly accessible through established providers. The custom code is available via a provided GitHub repository link."
+}

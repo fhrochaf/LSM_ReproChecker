@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "LISS-3 satellite imagery of western India (Maharashtra and Goa)",
+      "source": "Bhuvan web portal",
+      "link": "https://bhuvan.nrsc.gov.in/home/index.php",
+      "status": "MENTIONED",
+      "verbatim": "We collected the scalable real-time pre-landslide and post-landslide RS images of western India landslide regions (Maharashtra and Goa) directly from the Linear Imaging Self Scanning (LISS-3) satellite in the Bhuvan web portal “https://bhuvan.nrsc.gov.in/home/index.php”."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CNN-LSTM",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework that uses a lightweight CNN (based on ResNet50 with modified layers) for automatic feature extraction from pre-processed RS images, followed by an LSTM classifier for landslide prediction. Post-processing uses morphological operations and dynamic segmentation for landslide localization.",
+      "source": "Payal Varangaonkar & S. V. Rode",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Data sharing not applicable to this article as no datasets were generated or analyzed during the current study.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom CNN-LSTM code is not available via any repository or persistent link."
+}

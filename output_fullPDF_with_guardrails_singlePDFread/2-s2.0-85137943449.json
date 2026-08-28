@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Airborne LiDAR point cloud",
+      "source": "Sichuan Bureau of Surveying and Mapping (SBSM)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The airborne LiDAR data was initially used to obtain the point cloud (provided by Sichuan Bureau of Surveying and Mapping (SBSM), and the point cloud density is 30 pints/m2) from Wuhuahai to Rizegou"
+    },
+    {
+      "name": "UAV optical images",
+      "source": "Sichuan Bureau of Surveying and Mapping (SBSM)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "At the same time, we also obtained the same range of UAV optical images (0.2 m × 0.2 m) from SBSM"
+    },
+    {
+      "name": "Historical landslide inventory",
+      "source": "Authors' own interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Visually inspecting the RRIM layer, we interpreted a total of 1949 historical landslides within the study site"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Lightweight Attention U-Net (LAU-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning architecture for semantic segmentation of landslides, combining a U-Net encoder-decoder structure with Attention Gates to emphasize landslide features and Tversky loss for optimization, designed to handle sparse landslide data in vegetated areas.",
+      "source": "Chengyong Fang, Xuanmei Fan, Hao Zhong, Luigi Lombardo, Hakan Tanyas, and Xin Wang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We design a Lightweight Attention U-Net (LAU-Net) for historical landslides identification based on a combined U-Net and Attention Gate architecture."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The raw/processed data required to reproduce these findings cannot be shared at this time as the data also forms part of an ongoing study."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available, and the custom LAU-Net code lacks a repository or persistent link."
+}

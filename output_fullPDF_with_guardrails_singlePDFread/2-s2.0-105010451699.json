@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "WorldView-2 satellite imagery",
+      "source": "Google Earth Pro (GEP)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The WorldView-2 satellite imagery served as the main dataset... 0.7 m resolution in this study were acquired from GEP software."
+    },
+    {
+      "name": "Landslide inventory (ground truth points)",
+      "source": "Authors' own fieldwork and local authorities",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Local authorities in mountainous areas have meticulously recorded more than 8,500 landslide sites... the authors conducted three field excursions in six northeastern Vietnamese provinces between 2021 and 2023 to discover landslide traces based on the aforesaid indications."
+    },
+    {
+      "name": "ArcGIS Street-view data",
+      "source": "ArcGIS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This research fixed geometrical characteristics using ArcGIS Street-view data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DeepLab-v3 with DenseNet backbone",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model using atrous convolutions and an Atrous Spatial Pyramid Pooling (ASPP) module, with a DenseNet backbone, trained to identify landslide traces from WorldView-2 imagery.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or made available, and the custom code for the DeepLab-v3 model is not provided."
+}

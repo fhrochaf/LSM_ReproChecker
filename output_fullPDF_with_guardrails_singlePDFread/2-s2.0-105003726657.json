@@ -1,0 +1,98 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Level-1C optical imagery",
+      "source": "ESA Copernicus",
+      "link": "https://code.earthengine.google.com/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 Level-1C data were acquired and processed within the Google Earth Engine (GEE)... The datasets used for analysis can be accessed from the Google Earth Engine (GEE) code editor https://code.earthengine.google.com/."
+    },
+    {
+      "name": "Integrated Multi-satellite Retrievals for Global Precipitation Measurements (GPM-IMERG)",
+      "source": "NASA",
+      "link": "https://code.earthengine.google.com/",
+      "status": "MENTIONED",
+      "verbatim": "The Integrated Multi-satellite Retrievals for Global Precipitation Measurement GPM (IMERG) data were obtained from GEE... The datasets used for analysis can be accessed from the Google Earth Engine (GEE) code editor https://code.earthengine.google.com/."
+    },
+    {
+      "name": "Copernicus 30 m Global Digital Elevation Model",
+      "source": "Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The slope statistics are derived from the Copernicus 30 m Global Digital Elevation Model"
+    },
+    {
+      "name": "Landslide Inventory of Hiroshima, Japan",
+      "source": "The Association of Japanese Geographers (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Association of Japanese Geographers (2019) [16]"
+    },
+    {
+      "name": "Landslide Inventory of Thrissur, India",
+      "source": "Emberson et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Emberson et al., 2022 [16]"
+    },
+    {
+      "name": "Landslide Inventory of Itogon, Philippines",
+      "source": "Emberson et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Emberson et al., 2022 [16]"
+    },
+    {
+      "name": "Landslide Inventory of Mutare, Zimbabwe",
+      "source": "Emberson et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Emberson et al., 2022 [16]"
+    },
+    {
+      "name": "Landslide Inventory of Huong Viet, Vietnam",
+      "source": "Amatya et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Amatya et al., 2022 [27]"
+    },
+    {
+      "name": "Landslide Inventory of Sao Paulo, Brazil",
+      "source": "Authors' own study",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-automated time series algorithm",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-automated algorithm that integrates Sentinel-2 NDVI time series data with GPM-IMERG rainfall data. It detects abrupt NDVI drops (landslide candidates) and correlates them with extreme 7-day antecedent rainfall events to identify rainfall-induced landslides.",
+      "source": "Mohammad Adil Aman, Hone-Jay Chu, Sumriti Ranjan Patra and Vaibhav Kumar",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The datasets used for analysis can be accessed from the Google Earth Engine (GEE) code editor https://code.earthengine.google.com/. The datasets generated in this study are available from the corresponding author on request. The GEE python code algorithm defined in this study is available from the corresponding author on request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [
+      {
+        "name": "GEE Python code algorithm",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom Python code algorithm implemented within Google Earth Engine, developed for this study.",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement but without shared links. Data and scripts available upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are accessible via Google Earth Engine or public repositories, but the landslide inventories are only referenced by citation without direct links."
+}

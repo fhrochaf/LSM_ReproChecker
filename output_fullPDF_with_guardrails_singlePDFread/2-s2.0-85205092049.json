@@ -1,0 +1,63 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 5, 7, and 8 Tier-1 surface reflectance (SR) data",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used Landsat 5, 7, and 8 Tier-1 surface reflectance (SR) data from 1 January 2000 to 1 January 2020, with a spatial resolution of 30 m × 30 m."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM)",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used data from the Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM) and the Joint Research Centre (JRC) Global Surface Water dataset [32] to derive slope and water body filters, respectively."
+    },
+    {
+      "name": "Joint Research Centre (JRC) Global Surface Water dataset",
+      "source": "Joint Research Centre (JRC)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used data from the Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM) and the Joint Research Centre (JRC) Global Surface Water dataset [32] to derive slope and water body filters, respectively."
+    },
+    {
+      "name": "Landslide inventory of Pasang Lhamu (Nepal)",
+      "source": "Amatya and Kirschbaum [45]",
+      "link": "https://nsidc.org/data/hma_mtli/versions/1",
+      "status": "MENTIONED",
+      "verbatim": "Semi-automatic detection from RapidEye imagery [45]...High Mountain Asia Multitemultitemporal Landslide Inventories, Version 1. Available online: https://nsidc.org/data/hma_mtli/versions/1 (accessed on 18 November 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Global Landslide Finder",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The Global Landslide Finder uses the Continuous Change Detection and Classification (CCDC) algorithm implemented in Google Earth Engine to analyze multi-temporal Landsat time series data. It detects surface disturbances at the pixel level by identifying breakpoints in NDVI time series, filtering for slope and water bodies, and mapping the location and timing of landslide occurrences.",
+      "source": "Muhammad Aufaristama",
+      "link": "https://github.com/aufaristama/CCDC-Landslide",
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we introduce the Global Landslide Finder, an approach designed to exploit dense time series satellite data for the automated and rapid detection of landslides globally...The underlying JavaScript code is available in Github (https://github.com/aufaristama/CCDC-Landslide, accessed on 19 August 2021)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "CCDC-Landslide JavaScript code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom JavaScript code implementing a CCDC-based landslide analysis, shared via a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/aufaristama/CCDC-Landslide",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links for code (data mentioned as open data)."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via a persistent repository, and input datasets (Landsat, SRTM, JRC) are publicly accessible. The custom code is available via a public GitHub repository."
+}

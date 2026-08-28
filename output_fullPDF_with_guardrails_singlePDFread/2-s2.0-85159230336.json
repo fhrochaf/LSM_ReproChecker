@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV imagery of Sanming City",
+      "source": "Authors' own data acquisition",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "COCO2017 dataset",
+      "source": "Official COCO2017 dataset",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, the pretraining weights obtained by Mask R-CNN on the official COCO2017 [48] dataset are used as the migration learning method."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Mask R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Mask R-CNN model for landslide detection in UAV images. Improvements include adding the CBAM attention mechanism to the ResNet backbone, adding a bottom-up channel to the FPN module, and replacing the RPN with GA-RPN.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the improved Mask R-CNN model lacks a repository or persistent link."
+}

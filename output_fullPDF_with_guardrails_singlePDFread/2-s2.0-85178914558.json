@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1A SAR imagery (IW GRD)",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "This study utilized Interferometric Wide (IW) Ground Range Detected (GRD) images from Sentinel-1. These data can be downloaded from the European Space Agency’s Science Data Center at https://scihub.copernicus.eu/ (accessed on 1 October 2023)."
+    },
+    {
+      "name": "SRTM 30 m Digital Elevation Model (DEM)",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Lastly, we employ the SRTM 30 m Digital Elevation Model (DEM) for terrain correction, transforming the backscatter coefficient data from the Ground Range Geometry to terrain-corrected coordinates."
+    },
+    {
+      "name": "Landslide inventory of Hokkaido (2018)",
+      "source": "Wang et al. [59]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the Hokkaido event experiment, we utilized landslide data created by Wang et al. [59]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual-Polarized Pixel Attention UNet (DPPA-UNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model based on UNet that incorporates a pixel-wise attention module at each upsampling stage. It takes fused ascending and descending time-series SAR backscatter coefficients (VV and VH) as input to produce landslide probability maps.",
+      "source": "Bin Pan and Xianjian Shi",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "This study proposes an innovative dual-polarization SAR image landslide recognition method... we constructed a dual-polarized pixel attention UNet model considering multi-temporal image features."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data supporting the findings of this study can be requested from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom DPPA-UNet code is not available via any repository or persistent link. Input datasets are accessible, with Sentinel-1 imagery linked and SRTM DEM data considered practically accessible via public providers."
+}

@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye Analytic Ortho Tile multispectral images",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The satellite images used in this study were RapidEye Analytic Ortho Tile multispectral images (5 m spatial resolution), a radiometric resolution of 16 bit, and five spectral bands (blue, red, green, red edge, and near-infrared (NIR)) [54]."
+    },
+    {
+      "name": "Drainage network (Itaóca)",
+      "source": "Geographic and Cartographic Institute of the State of São Paulo (IGC-SP)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Itaóca (SP), the 1:10,000 scale drainage network provided by the Geographic and Cartographic Institute of the State of São Paulo (IGC-SP) was utilized"
+    },
+    {
+      "name": "ALOS PALSAR DEM",
+      "source": "Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additional data, such as slope, curvature, and flow accumulation, were derived from the ALOS PALSAR DEM with a resolution of 12.5 m [57]."
+    },
+    {
+      "name": "Shallow landslide inventory (reference)",
+      "source": "Dias et al. [14]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The accuracy of the results was assessed by comparison to a shallow landslide inventory created through expert interpretation [14]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-Based Image Analysis (OBIA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses multiresolution segmentation to group pixels into objects based on spectral and shape criteria. These objects are then classified as shallow landslides using thresholds for NDVI, slope, and proximity to the drainage network, followed by merging of adjacent objects.",
+      "source": "eCognition 10.0 (Trimble)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For semi-automated shallow landslide mapping, an OBIA method was employed, utilizing the eCognition 10.0 (Trimble) software."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available upon request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or made available, and the custom OBIA method code is not provided."
+}

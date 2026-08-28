@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat Archive (TM, ETM+, and OLI sensors)",
+      "source": "USGS/NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used multispectral surface reflectance (SR) products from the Landsat Archive (1985–2017), including the Thematic Mapper (TM), Enhanced Thematic Mapper (ETM+) and Onboard Land Imager (OLI) sensors."
+    },
+    {
+      "name": "2013 lidar bare earth hillshade image",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "2017 Sentinel-2 MSI imagery",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We refined our polygons wherever possible using a 2013 lidar bare earth hillshade image, 2017 Sentinel-2 MSI imagery, and photographs from a September 2016 helicopter survey."
+    },
+    {
+      "name": "Photographs from a September 2016 helicopter survey",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Cumulative difference (CD) between the normalized difference vegetation index (NDVI) and a fitted harmonic sinusoidal curve (CDNDVI)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method fits a harmonic function to the mean NDVI time series of a landslide to account for seasonal changes. It then calculates the cumulative difference (CDNDVI) between the raw NDVI data and the fitted harmonic. The timing of the landslide is constrained by identifying the peak or inflection point in the CDNDVI curve.",
+      "source": "Deijns et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We semi-automatically determined landslide timing using the cumulative difference (CD) between the normalized difference vegetation index (NDVI) and a fitted harmonic sinusoidal curve (CDNDVI)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the CDNDVI method lacks a repository or persistent link."
+}

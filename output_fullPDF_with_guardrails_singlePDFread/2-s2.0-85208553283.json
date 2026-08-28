@@ -1,0 +1,56 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide catalogue for Taiwan",
+      "source": "Agency of Rural Development & Soil and Water Conservation, MOA",
+      "link": "https://data.gov.tw/dataset/152083",
+      "status": "MENTIONED",
+      "verbatim": "https://data.gov.tw/dataset/152083...https://data.gov.tw/dataset/152084...https://data.gov.tw/dataset/152085...https://data.gov.tw/dataset/159096...https://data.gov.tw/dataset/160497...https://gis.ardswc.gov.tw/map/"
+    },
+    {
+      "name": "Sentinel-2 satellite imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to express their gratitude to the European Space Agency (ESA) Copernicus program for providing Sentinel imagery"
+    },
+    {
+      "name": "S2cloudless cloud probability product",
+      "source": "Zupanc (2017)",
+      "link": "https://medium.com/sentinel-hub/improving-cloud-detection-with-machine-learning-c09dc5d7cf13",
+      "status": "MENTIONED",
+      "verbatim": "Using S2cloudless cloud probability product (Zupanc 2017) to enabled pixel-based cloud filtering...https://medium.com/sentinel-hub/improving-cloud-detection-with-machine-learning-c09dc5d7cf13"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-bitemporal images (MBTIs)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework implemented in Google Earth Engine that collects all possible bi-temporal image pairs before and after a triggering event, calculates the difference in Normalized Difference Vegetation Index (DNDVI), and applies a reproducibility threshold to filter false positives and identify accumulated landslide impact areas.",
+      "source": "Yu-En Yang",
+      "link": "https://drive.google.com/open?id=1xOn1uG8pcsnv5m_YeMy_jaJIdft8bvzk&usp=drive_fs",
+      "status": "MENTIONED",
+      "verbatim": "The corresponding author, Yu-En Yang, can provide the data supporting the findings of this study upon reasonable request. https://drive.google.com/open?id=1xOn1uG8pcsnv5m_YeMy_jaJIdft8bvzk&usp=drive_fs."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Multi bi-temporal analysis method",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing a multi bi-temporal analysis method, shared via a specific Google Drive file link.",
+        "source": null,
+        "link": "https://drive.google.com/open?id=1xOn1uG8pcsnv5m_YeMy_jaJIdft8bvzk&usp=drive_fs",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "\"The corresponding author, Yu-En Yang, can provide the data supporting the findings of this study upon reasonable request. https://drive.google.com/open?id=1xOn1uG8pcsnv5m_YeMy_jaJIdft8bvzk&usp=drive_fs.\""
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked to public government datasets, and other input datasets are accessible via public platforms. The custom code is provided via a persistent Google Drive link."
+}

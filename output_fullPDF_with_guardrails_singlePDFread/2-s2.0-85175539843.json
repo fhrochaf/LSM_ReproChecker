@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Point cloud data of the upper reach of the Jinsha River",
+      "source": "UAV tilt photography",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The point cloud was generated through space triangulation encryption processing based on the UAV tilt photography products."
+    },
+    {
+      "name": "Landslide vector boundary",
+      "source": "Authors' own interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we labeled the point clouds by using the interpreted landslide vector boundary (Fig. 5c)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dynamic graph attention network (DGA-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning network for point cloud landslide segmentation that combines dynamic graph convolution and an attention readout function. It uses k-NN to build graph structures, shared MLPs to extract edge features, and an attention mechanism to assign adaptive weights to edge features, which are then aggregated into new point features.",
+      "source": "Ruilong Wei",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this research, we proposed a dynamic graph attention network (DGA-Net) for point cloud landslide segmentation."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'No data was used for the research described in the article.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available. The custom code for the DGA-Net method is not provided via a repository or persistent link."
+}

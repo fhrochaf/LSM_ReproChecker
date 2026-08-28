@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie landslide dataset is a publicly available dataset from Wuhan University in 2020 and contains a total of 770 landslide images and 2003 images without landslides (Ji et al. 2020)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LD-YOLO",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv7-based model for landslide detection that incorporates the Efficient Channel Attention (ECA) mechanism into the backbone and head networks and replaces the original CIoU loss function with the Focal-EIoU loss function to improve detection accuracy for both old and new landslides.",
+      "source": "LIU Qing, WU Ting-ting, DENG Ya-hong, LIU Zhi-heng",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose an improved deep learning model, landslide detection-you only look once (LD-YOLO), based on the existing you only look once (YOLO) model for the intelligent identification of old and new landslides in loess areas."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Location, topography, and remote sensing imagery data from Google Earth Engine",
+        "source": "Google Earth Engine",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Location, topography, and remote sensing imagery data from RESDC",
+        "source": "Data Center for Resources and Environmental Sciences, Chinese Academy of Sciences (RESDC)",
+        "link": "http://www.resdc.cn/DataList.aspx",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with no links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and publicly available, and other input datasets are accessible via public providers. However, the custom LD-YOLO code is not available, as no repository or persistent link is provided."
+}

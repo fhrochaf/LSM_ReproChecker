@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "LiDAR data for Pennsylvania (2006-2008)",
+      "source": "Pennsylvania Spatial Data Access (PASDA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As the data source for Study Area 1, we used LiDAR data for Pennsylvania from 2006 to 2008 that are publicly available through Pennsylvania Spatial Data Access (PASDA)."
+    },
+    {
+      "name": "Landslide inventory for Study Area 3",
+      "source": "Colorado Geological Survey (CGS)",
+      "link": "http://coloradogeologicalsurvey.org/geologic-hazards/landslides/colorado-landslide-inventory/",
+      "status": "MENTIONED",
+      "verbatim": "We obtained data on existing landslides with scarps and deposits from the CGS web portal (Colorado Geological Survey, 2017)... Colorado Geological Survey, 2017. Colorado landslide inventory [WWW document]. Database. URL. http://coloradogeologicalsurvey.org/geologic-hazards/landslides/colorado-landslide-inventory/."
+    },
+    {
+      "name": "LiDAR data for Study Areas 2 and 4 (2007)",
+      "source": "State of Oregon Department of Geology and Mineral Industries",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We obtained LiDAR data for Study Areas 2 and 4 for 2007 from the State of Oregon Department of Geology and Mineral Industries public file transfer protocol (FTP) site."
+    },
+    {
+      "name": "Oregon's Statewide Landslide Information Database (SLIDO)",
+      "source": "Burns et al., 2008",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We obtained data on existing landslides from Oregon's Statewide Landslide Information Database (Burns et al., 2008)."
+    },
+    {
+      "name": "High-resolution DTM for Study Area 5",
+      "source": "Puget Sound LiDAR Consortium",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For Study Area 5, we obtained high-resolution DTM with 1.8 m point spacing from Puget Sound LiDAR Consortium (Haugerud et al., 2003)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Persistent homology (PH) method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method applies persistent homology to LiDAR-derived DTMs to detect landslides. It involves identifying ridge and scarp lines, converting them into point clouds, constructing simplicial complexes (specifically alpha complexes), and analyzing the birth and death of topological features (holes) to identify landslide boundaries.",
+      "source": "Meirman Syzdykbayeva, Bobak Karimi, Hassan A. Karimi",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventories are referenced and the input datasets are accessible via public portals, but the custom code for the persistent homology method is not provided or linked."
+}

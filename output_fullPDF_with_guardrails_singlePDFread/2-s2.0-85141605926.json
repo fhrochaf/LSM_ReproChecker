@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide remote sensing image dataset (Sichuan and surrounding areas)",
+      "source": "Zeng et al. [20]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the high-precision remote sensing images and interpretation datasets developed based on the landslide disasters that occurred in Sichuan and its surrounding areas published by Zeng et al. [20], we identified several areas where landslides frequently occur, and 1215 remote sensing images of landslides were collected to construct the dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Reg-SA–UNet++ (RS–UNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight semantic segmentation network based on UNet++ that uses RegNet as the encoder, incorporates Shuffle Attention modules at each layer's connection, and removes deep supervision-pruning. It is designed for landslide detection using single-temporal post-landslide optical images.",
+      "source": "Chaoyang Niu, Ouyang Gao, Wanjie Lu, Wei Liu, and Tao Lai",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced to Zeng et al. [20] but lacks a direct link, and the custom code for the Reg-SA–UNet++ method is not provided or linked."
+}

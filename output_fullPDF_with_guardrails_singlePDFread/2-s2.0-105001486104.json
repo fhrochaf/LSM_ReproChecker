@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to extend our hearty thanks to the European Space Agency (ESA) for providing access to Sentinel-2 data"
+    },
+    {
+      "name": "Copernicus GLO30 DEM",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to extend our hearty thanks to the European Space Agency (ESA) for providing access to ... Copernicus GLO30."
+    },
+    {
+      "name": "Landslide inventory database",
+      "source": "National Remote Sensing Centre (NRSC)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory database available with NRSC is used as the reference layer in the deep learning model."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net and ResU-Net DL models",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors implemented U-Net and ResU-Net deep learning models using Google Earth Engine modules and Python scripts on Google Colaboratory. The models use change detection-based input layers (NDVI difference, spectral angle, PC-4 band) and slope to produce per-pixel landslide probability maps.",
+      "source": "Punit R. Jalan et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We have used them as input layers to the U-Net and ResU-Net DL models in Python script on Google Colaboratory."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned without links, and the custom code used for the U-Net and ResU-Net models lacks a repository or persistent link."
+}

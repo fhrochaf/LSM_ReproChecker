@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat TM/ETM+ satellite data (1991, 1996, 2001, 2006, 2011, 2016, 2021)",
+      "source": "United States Geological Survey (USGS)",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "The Landsat satellite data was obtained from the United States Geological Survey (USGS)... For this study, Landsat images from the required years for the study area were downloaded from the United States Geological Survey (USGS) website (https://earthexplorer.usgs.gov/)"
+    },
+    {
+      "name": "Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM)",
+      "source": "Worldwide digital sources",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ArcGIS platform extracted topographic factors such as elevation, slope, aspect, and curvature from the Shuttle Radar Topography Mission Digital Elevation Model (SRTM) DEM (Marco et al. 2017). Figure 3 depicts the study area’s DEM constructed from worldwide digital sources at 20 m resolutions."
+    },
+    {
+      "name": "FAO land cover dataset",
+      "source": "FAO",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the existing land cover dataset, training data was sampled from 221 of the 541 land cover polygons produced by FAO (FAO 2015)."
+    },
+    {
+      "name": "Commercial high-resolution satellite images (2006, 2016)",
+      "source": "Commercial sources",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also utilized high-resolution satellite images from commercial sources in 2006 and 2016."
+    },
+    {
+      "name": "GPS points (420 points)",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Depth-integrated particle method (DIPM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A numerical simulation model based on a simplified version of smooth particle hydrodynamics (SPH) that treats soil columns as individual particles. It calculates motion based on bottom shear friction (modified Manning's formula) and particle-to-particle interaction (hydraulic gradient), governed by Manning's coefficient and critical slope angle.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "All the data supporting this study’s findings are available within the manuscript.\r\n'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom DIPM code is not provided. While some input datasets are publicly accessible, the lack of code and ground-truth data prevents reproducibility."
+}

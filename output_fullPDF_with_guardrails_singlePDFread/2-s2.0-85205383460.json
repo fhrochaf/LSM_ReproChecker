@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory for Typhoon Morakot",
+      "source": "Mondini and Chang (2014)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide features were interpreted and verified by Mondini and Chang (2014) based on shapes, slopes, and textures."
+    },
+    {
+      "name": "10-m digital elevation model (DEM)",
+      "source": "Chiang et al. (2012)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The used 10-m DEM was edited and verified by Chiang et al. (2012) based on a national airborne LiDAR project in Taiwan."
+    },
+    {
+      "name": "Formosat-2 optical images",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "1:5000 orthophotos",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Stereo aerial images with a cell size of 0.5 m",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Unsupervised machine learning framework (k-means++, EM, and DBSCAN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework using clustering algorithms (k-means++, EM, and DBSCAN) combined with 12 topographic and hydrological factors derived from a 10-m DEM to distinguish between landslide source and runout areas.",
+      "source": "Jhe-Syuan Lai, Jun-Yi Huang, Hong-Mao Huang & Yung-Chung Chuang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this paper presents a framework involving the use of clustering analyses (i.e. k-means, expectation maximization, and DBSCAN) and landslide-related topographic factors to distinguish landslide sources from landslide-affected areas."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The authors will supply the relevant data in response to reasonable requests."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and DEM are referenced but not linked, and the code is not available in any repository or persistent link."
+}

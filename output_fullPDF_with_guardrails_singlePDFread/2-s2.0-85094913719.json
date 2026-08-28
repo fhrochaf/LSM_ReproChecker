@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye satellite images (Lushan)",
+      "source": "Planet Explorer",
+      "link": "https://api.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "Optical RapidEye satellite images with spatial resolution of 5 m acquired on May 12, 2013 for the Lushan earthquake... are available from the Planet Explorer [54]. ... [54] Planet Team, Planet application program interface: In space for life on earth, San Francisco, CA, USA, 2017. [Online]. Available: https://api.planet.com"
+    },
+    {
+      "name": "Reference landslide inventories (Lushan and Jiuzhaigou)",
+      "source": "Authors' own interpretation based on [53], [50], [55]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the reference landslide inventories for Lushan and Jiuzhaigou, were all obtained based on change detection and visual interpretation of pre-event RapidEye optical images acquired on April 17, 2013 and August 5, 2017, respectively, [53]. To minimize interpretation errors, high spatial resolution remote sensing images, e.g., Google Earth images, and landslide maps interpreted by [50] and [55] were adopted for reference in the process of visual interpretation."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LandsNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A cascaded end-to-end convolutional neural network for landslide detection from single-temporal optical images. It incorporates residual blocks (ResBlock), an attention module to focus on relevant features, and multiscale fusion via sequential dilated convolutions to capture hierarchical dependencies.",
+      "source": "Yaning Yi and Wanchang Zhang",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom LandsNet code is not provided or linked."
+}

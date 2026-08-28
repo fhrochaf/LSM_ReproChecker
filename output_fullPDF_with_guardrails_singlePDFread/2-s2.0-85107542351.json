@@ -1,0 +1,102 @@
+{
+  "datasets": [
+    {
+      "name": "Viewfinder Panoramas digital elevation model",
+      "source": "de Ferranti (2014)",
+      "link": "http://www.viewfinderpanoramas.org/dem3.html",
+      "status": "MENTIONED",
+      "verbatim": "This variable was calculated by first deriving the slope for each 90 m grid cell in the Viewfinder Panoramas digital elevation model (de Ferranti, 2014)... http://www.viewfinderpanoramas.org/dem3.html"
+    },
+    {
+      "name": "GEM Global Active Faults",
+      "source": "GEM Hazard Team (2019)",
+      "link": "https://github.com/GEMScienceTools/gem-global-active-faults/tree/master/geopackage",
+      "status": "MENTIONED",
+      "verbatim": "This variable was derived from a global database of active faults that is not complete but covers most of the world’s land surface (GEM Hazard Team, 2019)... https://github.com/GEMScienceTools/gem-global-active-faults/tree/master/geopackage"
+    },
+    {
+      "name": "Global Lithological Map (GLiM)",
+      "source": "Hartmann and Moosdorf (2012)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The release of open data sets such as the global lithologic map used in this work (Hartmann and Moosdorf, 2012) should enhance landslide research at the global scale."
+    },
+    {
+      "name": "Soil Moisture Active-Passive Level 4 (SMAP L4)",
+      "source": "Reichle et al. (2018)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Soil Moisture Active Passive Level 4 (SMAP L4) product (Reichle et al., 2018) combines a hydrologic model with satellite observations to produce a high-quality product with continuous coverage."
+    },
+    {
+      "name": "Integrated Multi-satellitE Retrievals for GPM (IMERG)",
+      "source": "Huffman (2016)",
+      "link": "https://gpm.nasa.gov/data/imerg",
+      "status": "MENTIONED",
+      "verbatim": "In this model, we use the IMERG Early Product, which is available at a 0.1 degree, 30 min spatiotemporal resolution at https://gpm.nasa.gov/data/imerg."
+    },
+    {
+      "name": "Global Landslide Catalog (GLC)",
+      "source": "Kirschbaum et al. (2015a)",
+      "link": "https://landslides.nasa.gov/viewer",
+      "status": "MENTIONED",
+      "verbatim": "Both catalogs can be viewed and downloaded at https://landslides.nasa.gov/viewer."
+    },
+    {
+      "name": "United States Landslide Inventory",
+      "source": "Kelkar et al. (2017)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As part of the National Climate Assessment, landslide inventories from across the United States of America were compiled into a single database of rainfall-triggered landslides with known dates (Kelkar et al., 2017)."
+    },
+    {
+      "name": "National Landslide Inventory of Australia",
+      "source": "Geoscience Australia (2018)",
+      "link": "http://pid.geoscience.gov.au/dataset/ga/74273",
+      "status": "MENTIONED",
+      "verbatim": "The Australian government has published a long-term national record of landslides (Geoscience Australia, 2018)... http://pid.geoscience.gov.au/dataset/ga/74273"
+    },
+    {
+      "name": "2016 Active Events Map",
+      "source": "Secretaría de Gestión de Riesgos - Escenarios (2016)",
+      "link": "https://sgr-ecuador.carto.com/datasets",
+      "status": "MENTIONED",
+      "verbatim": "Ecuador has published many landslides that occurred during the year 2016 (Secretaría de Gestión de Riesgos - Escenarios, 2016)... https://sgr-ecuador.carto.com/datasets"
+    },
+    {
+      "name": "Dominica Landslide Inventory Map",
+      "source": "van Westen and Sijmons (2016)",
+      "link": "http://charim-geonode.net/layers/geonode:landslides_1#more",
+      "status": "MENTIONED",
+      "verbatim": "8),dominica(vanwestenandsijmons,2016;table2|landslideinve ... http://charim-geonode.net/layers/geonode:landslides_1#more"
+    },
+    {
+      "name": "Map of slope-failure locations in Puerto Rico after Hurricane María",
+      "source": "Hughes et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Puerto Rico (Hughes et al., 2019) enriched the coverage of the Americas."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LHASA version 2",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A data-driven landslide nowcasting model using the XGBoost machine learning framework. It integrates static variables (topography, lithology, faults) and dynamic variables (rainfall, soil moisture, snow mass) to predict the probability of landslide occurrence.",
+      "source": "Stanley et al. (2021)",
+      "link": "https://github.com/nasa/LHASA",
+      "status": "MENTIONED",
+      "verbatim": "To enable other institutions to run the model, the source code will be published at https://github.com/nasa/LHASA."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The raw data supporting the conclusions of this article will be made available by the authors, without undue reservation."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventories and input datasets are referenced and accessible via public repositories or established data portals. The custom model code is provided via a persistent GitHub repository link."
+}

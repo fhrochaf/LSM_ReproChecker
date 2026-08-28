@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye images",
+      "source": "Planet Team",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We generated annual landslide inventories of an area of 33 km2 by manually digitizing landslide polygons (Table 1) on seven scenes of RapidEye images (WGS 1984 UTM Zone 45N) (Planet Team 2017) acquired over the years between 2013 and 2019."
+    },
+    {
+      "name": "Landslide Inventory of Rasuwa district",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We generated annual landslide inventories of an area of 33 km2 by manually digitizing landslide polygons (Table 1) on seven scenes of RapidEye images... Two geomorphological experts manually digitized the landslides using the satellite imageries."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net deep learning model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net semantic segmentation network with 5 convolutional blocks and 10 convolutional layers, using transfer learning to detect landslides over time. It takes 128x128 pixel patches as input and produces a binary landslide/non-landslide mask, trained using the Adam optimizer and Tversky loss function.",
+      "source": "Kushanav Bhuyan",
+      "link": "https://github.com/kushanavbhuyan/Multi-Temporal-Landslide-Mapping-Nepal",
+      "status": "MENTIONED",
+      "verbatim": "We present the data and codes openly available at https://github.com/kushanavbhuyan/Multi-Temporal-Landslide-Mapping-Nepal to encourage reproducibility of the study."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Multi-temporal landslide mapping data for Nepal, including trained model weights",
+        "source": "GitHub (Bhuyan et al.)",
+        "link": "https://github.com/kushanavbhuyan/Multi-Temporal-Landslide-Mapping-Nepal",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Jupyter Notebook script for multi-temporal landslide mapping and inventory generation",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom Jupyter Notebook code and trained model weights enabling reproduction of multi-temporal landslide inventories in new regions of interest.",
+        "source": null,
+        "link": "https://github.com/kushanavbhuyan/Multi-Temporal-Landslide-Mapping-Nepal",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory may be retrieved from the github link, but and the RapidEye imagery is a commercial dataset. The custom U-Net model code is available via a persistent GitHub repository link."
+}

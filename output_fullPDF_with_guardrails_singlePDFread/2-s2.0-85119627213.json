@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory",
+      "source": "Visual interpretation of 1:10 000-scale color aerial photographs and field surveys",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory was obtained by visual interpretation of 1:10 000-scale color aerial photographs. A series of field surveys were carried out to further correct the landslide positions and boundaries."
+    },
+    {
+      "name": "ZY-3 high spatial resolution (HSR) data",
+      "source": "Not specified",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, we constructed an accurate LDM model based on convolutional neural networks, residual neural networks, and dense convolutional neural networks (DenseNets) that considers “ZY-3” high spatial resolution (HSR) data and conditioning factors (CFs)."
+    },
+    {
+      "name": "Digital elevation model (DEM)",
+      "source": "Geological Disaster Prevention Headquarters of the TGR Area",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM used in this article was provided by the Geological Disaster Prevention Headquarters of the TGR Area, which has a resolution of 1:10 000."
+    },
+    {
+      "name": "Geological map",
+      "source": "Hubei geological survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, geological influencing factors were extracted based on the geological map with a resolution of 1:50 000 provided by Hubei geological survey."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CNN, ResNet, and DenseNet landslide detection mapping models",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors constructed landslide detection models using three deep learning architectures: a custom 10-layer CNN, ResNet50, and a 41-layer DenseNet. These models take 19 conditioning factors (morphological, hydrological, geological, and spectral) as input to perform pixel-based landslide classification.",
+      "source": "Tong Liu, Tao Chen, Ruiqing Niu, and Antonio Plaza",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The LDM model based on a CNN in this article adopts the classic 2-D convolutional network framework and constructs the network based on the TensorFlow-Keras framework in Python... In this article, we adopted ResNet50 to construct a LDM model... The DenseNet structure in this article is shown in Fig. 5, and it contains 41 layers, and its DenseBlock structure and other parameters are adjusted according to the specific application problems of landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned without links or public access, and the custom deep learning code is not provided."
+}

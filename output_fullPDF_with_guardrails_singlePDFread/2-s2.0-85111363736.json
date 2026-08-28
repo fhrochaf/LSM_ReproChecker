@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the Wenchuan earthquake area",
+      "source": "Xu, C. (2015) / ScienceBase",
+      "link": "https://www.sciencebase.gov/catalog/item/583f4114e4b04fc80e3c4a1a",
+      "status": "MENTIONED",
+      "verbatim": "The data presented in this study are openly available in the landslide inventories: https://www.sciencebase.gov/catalog/item/583f4114e4b04fc80e3c4a1a (accessed on 17 January 2021)"
+    },
+    {
+      "name": "Worldview-2 images",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Remote sensing images (general)",
+      "source": "Not specified",
+      "link": "http://www.gscloud.cn/sources/index?pid=2&rootid=2",
+      "status": "MENTIONED",
+      "verbatim": "the image website: http://www.gscloud.cn/sources/index?pid=2&rootid=2 (accessed on 17 January 2021), https://www.arcgis.com/index.html (accessed on 17 January 2021)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Comparative assessment of DCNN models (VGG, ResNet, DenseNet, U-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors conducted a comparative performance assessment of several existing deep learning architectures (VGG16, VGG19, ResNet50, ResNet101, DenseNet120, DenseNet201, UNet-, UNet+, and ResUNet) for landslide detection, testing them with different sample sizes (100, 1000, and 10,000) to provide clues for model selection.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide inventories dataset",
+        "source": "ScienceBase (USGS)",
+        "link": "https://www.sciencebase.gov/catalog/item/583f4114e4b04fc80e3c4a1a",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite/remote sensing imagery from Geospatial Data Cloud",
+        "source": "Geospatial Data Cloud (gscloud.cn)",
+        "link": "http://www.gscloud.cn/sources/index?pid=2&rootid=2",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite/remote sensing imagery from ArcGIS",
+        "source": "ArcGIS (Esri)",
+        "link": "https://www.arcgis.com/index.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and remote sensing imagery are referenced and linked, but the custom code used for the comparative assessment of DCNN models is not provided or linked."
+}

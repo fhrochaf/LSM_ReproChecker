@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Jilin-1 optical satellite imagery",
+      "source": "Jilin-1 satellite constellation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "As shown in Fig. 5a, the imagery came from the Jilin-1 (0.5 m resolution, 62 scenes on August 5, 2024, UTC + 8) and Planet satellites (3 m resolution, 32 scenes from August 4–5, 2024, UTC + 8)."
+    },
+    {
+      "name": "GSMaP_Gauge rainfall data",
+      "source": "Global Satellite Mapping of Precipitation (GSMaP)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Rainfall data were from the GSMaP_Gauge product, which provides a 30-min average rainfall intensity from 00:00 June 15 to 24:00 June 17, 2024 (UTC + 8), at a 0.1° × 0.1° spatial resolution."
+    },
+    {
+      "name": "ALOS PALSAR DEM",
+      "source": "ALOS PALSAR",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additional data included a 12.5-m-resolution DEM from ALOS PALSAR"
+    },
+    {
+      "name": "1:200,000 lithology maps",
+      "source": "China Geological Survey's GeoCloud platform",
+      "link": "https://geocloud.cgs.gov.cn/",
+      "status": "MENTIONED",
+      "verbatim": "1:200,000 lithology maps from the China Geological Survey’s GeoCloud platform (https:// geocl oud. cgs. gov. cn/)"
+    },
+    {
+      "name": "Soil type and thickness data",
+      "source": "National Earth System Science Data Center",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "soil type and thickness data from the National Earth System Science Data Center."
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv8s-CatBoost-SHAP triplet framework",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An integrated framework coupling YOLOv8s for automated landslide detection from optical imagery with a CatBoost machine learning model combined with SHAP (SHapley Additive exPlanations) to quantify the nonlinear driving effects of environmental factors on landslide occurrence.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or provided, and the custom YOLOv8s-CatBoost-SHAP framework code is not available."
+}

@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Loess landslide dataset",
+      "source": "Authors' own creation",
+      "link": "https://doi.org/10.5281/zenodo.10053430",
+      "status": "MENTIONED",
+      "verbatim": "This led to the expansion of the dataset to a remote sensing image dataset consisting of 11,010 images at a resolution of 640 × 640 pixels, which can be found at https://doi.org/10.5281/zenodo.10053430 (30 October 2023)."
+    },
+    {
+      "name": "Google Earth optical remote sensing images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The optical remote sensing images utilized in this study were gathered from Google Earth."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved YOLOv5 landslide detection model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv5-based object detection model that integrates Coordinate Attention (CA) into the backbone, a C3 module combined with the Convolutional Block Attention Module (CBAM) in the neck, a lightweight Decoupled Head Mini, and the SIoU loss function to enhance multi-scale landslide detection.",
+      "source": "Authors' own development",
+      "link": "https://zenodo.org/records/10054497",
+      "status": "MENTIONED",
+      "verbatim": "All models are Python-based and publicly available, and the output is available at https://zenodo.org/records/10054497 (30 October 2023)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Input image dataset (11,010 images)",
+        "source": "Zenodo",
+        "link": "https://doi.org/10.5281/zenodo.10053430",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Model output data",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/10054497",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Relevant replacement files for the YOLOv5 pipeline",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/10054593",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "YOLOv5 object detection model",
+        "method_type": "REUSED",
+        "summary": "The study's code builds on Ultralytics' YOLOv5 implementation, used as the base object detection model.",
+        "source": "Ultralytics",
+        "link": "https://github.com/ultralytics/yolov5",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is provided via a persistent Zenodo link, and other input imagery is accessible through Google Earth. The custom YOLOv5-based model code is publicly available via a persistent Zenodo repository link."
+}

@@ -1,0 +1,96 @@
+{
+  "datasets": [
+    {
+      "name": "Pléiades optical satellite images",
+      "source": "AIRBUS DS",
+      "link": "https://www.intelligence-airbusds.com/geostore/",
+      "status": "MENTIONED",
+      "verbatim": "Pléiades images are available upon request to AIRBUS DS https://www.intelligence-airbusds.com/geostore/."
+    },
+    {
+      "name": "Sentinel-1 SAR images",
+      "source": "CNES",
+      "link": "https://peps.cnes.fr/rocket/",
+      "status": "MENTIONED",
+      "verbatim": "SLC data from Sentinel-1 is publicly available on the PEPS website (https://peps.cnes.fr/rocket/)."
+    },
+    {
+      "name": "GPCC-v2018 monthly rainfall dataset",
+      "source": "GPCC",
+      "link": "https://doi.org/10.5676/DWD_GPCC/FD_M_V2018_025",
+      "status": "MENTIONED",
+      "verbatim": "Monthly rainfall GPCC-v2018 dataset31... https://doi.org/10.5676/DWD_GPCC/FD_M_V2018_025"
+    },
+    {
+      "name": "DHM rain-gauge data",
+      "source": "Department of Hydrology and Meteorology of Nepal",
+      "link": "http://dhm.gov.np/requestfordata/",
+      "status": "MENTIONED",
+      "verbatim": "The rainfall data from rain gauges is available upon request to the Department of Hydrology and Meteorology of Nepal (http://dhm.gov.np/requestfordata/)."
+    },
+    {
+      "name": "Co-seismic landslide inventory",
+      "source": "Roback et al. (2018)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "On panel (A) the co-seismic landslide inventory is based on21."
+    },
+    {
+      "name": "1/250000 quadrangle geological maps",
+      "source": "Department of Mines and Geology",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The geological map is based on 1/250000 quadrangle maps of the Department of Mines and Geology."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Image correlation techniques",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a combination of optical (Pléiades) and SAR (Sentinel-1) image correlation to detect and monitor slow-moving landslides. It involves DEM construction, orthorectification, image correlation using Mic-Mac and a custom SAR correlation tool, and time-inversion of displacement fields using the TIO software.",
+      "source": "Authors' own development (using Mic-Mac, TIO, and custom SAR correlation tool)",
+      "link": "https://effidir.poleterresolide.fr/index.php/effidir-tools",
+      "status": "MENTIONED",
+      "verbatim": "The tool also provides a chain of workflows that co-register and compute the displacements from time series of images (https://effidir.poleterresolide.fr/index.php/effidir-tools)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-1 SLC (Single Look Complex) data",
+        "source": "PEPS (CNES)",
+        "link": "https://peps.cnes.fr/rocket/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Pléiades satellite images",
+        "source": "AIRBUS DS",
+        "link": "https://www.intelligence-airbusds.com/geostore/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Processed image derivatives (displacement fields, DEM)",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Rain gauge rainfall data",
+        "source": "Department of Hydrology and Meteorology of Nepal",
+        "link": "http://dhm.gov.np/requestfordata/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, while other input datasets are accessible via public repositories or official requests. The link to the tool used for the image correlation technique is not available."
+}

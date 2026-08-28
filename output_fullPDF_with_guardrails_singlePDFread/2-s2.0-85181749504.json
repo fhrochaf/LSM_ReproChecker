@@ -1,0 +1,80 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "Ghorbanzadeh et al. (2022b)",
+      "link": "https://www.iarai.ac.at/landslide4sense/",
+      "status": "MENTIONED",
+      "verbatim": "Landslide4Sense dataset was acquired at the website https://www.iarai.ac.at/landslide4sense/ (assessed on August 1st 2023)."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the GEE data catalogue, the Sentinel-2 dataset is ‘COPERNICUS/S2_HARMONIZED’"
+    },
+    {
+      "name": "NASA Digital Elevation Model (NASADEM) data",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "NASADEM data is ‘NASA/NASADEM_HGT/001’."
+    },
+    {
+      "name": "GF-2 images",
+      "source": "China Centre for Resources Satellite Data and Application",
+      "link": "https://data.cresda.cn/",
+      "status": "MENTIONED",
+      "verbatim": "we collected GF-2 images photographed before and after earthquakes via the China Centre for Resources Satellite Data and Application website (https://data.cresda.cn/)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MS2LandsNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight CNN for landslide detection consisting of three down-sampling stages with multi-scale feature fusion (MFF) and multi-scale channel attention (MSCA) to aggregate contextual features while reducing parameters.",
+      "source": "Wei Lu, Yunfeng Hu, Wei Shao, Hao Wang, Zuopei Zhang & Mingyan Wang",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide4Sense dataset for landslide detection/mapping",
+        "source": "IARAI (Institute of Advanced Research in Artificial Intelligence)",
+        "link": "https://www.iarai.ac.at/landslide4sense/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Custom code for data acquisition",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code used to acquire the dataset, shared as a downloadable file via Google Drive.",
+        "source": null,
+        "link": "https://drive.google.com/file/d/1u7TF08iXF5RqPAjxZMGfn55IVGwGJ6Wr/view?usp=drive_link",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Custom code for data pre-processing",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code used to pre-process the acquired data, shared as a downloadable file via Google Drive.",
+        "source": null,
+        "link": "https://drive.google.com/file/d/1SBAN6n1dQvY8Wf8AHenQ1PuZNCGWfj5Z/view?usp=sharing",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Data and code availability statement, with shared links. Algorithm and weights for the CNN model not found."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense dataset is linked and publicly available, while Sentinel-2 and NASADEM are accessible via Google Earth Engine; however, the GF-2 imagery is commercial and lacks a clear path to access. Custom code for data acquisition and pre-processing is provided via persistent Google Drive links, but the model algorithm and weights are not available."
+}

@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "1-m DEMs (2018)",
+      "source": "3D Elevation Program (3DEP) of The National Map (TNM), managed by the U.S. Geological Survey (USGS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM data were acquired from the 3D Elevation Program (3DEP) of The National Map (TNM), managed by the U.S. Geological Survey (USGS) [46]... This study utilized the two highest resolution DEMs available in this program: 1-m DEMs acquired in 2018 and 1/9 arc-second DEMs acquired between April 2010 and March 2011."
+    },
+    {
+      "name": "U.S. Landslide Inventory",
+      "source": "USGS",
+      "link": "https://www.usgs.gov/programs/landslide-hazards/data",
+      "status": "MENTIONED",
+      "verbatim": "USGS. Landslide Hazards. Available online: https://www.usgs.gov/programs/landslide-hazards/data#:~{}:text=U.S.%2 0Landslide%20Inventory,inventory%20files%20for%20further%20information (accessed on 19 August 2021)."
+    },
+    {
+      "name": "Global Landslide Catalog (GLC)",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the Global Landslide Catalog (GLC) by NASA."
+    },
+    {
+      "name": "Google Earth images",
+      "source": "Google Earth Pro",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "High-resolution Google Earth images were used to verify the detection accuracy of the new method."
+    },
+    {
+      "name": "World Topographic Map",
+      "source": "ArcGIS Living Atlas of the World",
+      "link": "https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2/VectorTileServer",
+      "status": "MENTIONED",
+      "verbatim": "Service, V.T. World Topographic Map. Available online: https://basemaps.arcgis.com/arcgis/rest/services/World_Basemap_v2 /VectorTileServer (accessed on 12 June 2021)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-automatic DEM of Difference (DoD) analysis",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves preprocessing multi-temporal DEMs to ensure spatial alignment, calculating a DEM of Difference (DoD) via map algebra to estimate vertical displacement, filtering the DoD using a Level of Detection (LoD) threshold to identify landslide candidates, and using auxiliary vector basemaps and multidirectional Hillshade maps to distinguish landslides from other landscape changes.",
+      "source": "Behnam Azmoon, Aynaz Biniyaz, and Zhen Liu",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be available upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and accessible, and input datasets are publicly available or accessible via standard providers. However, the custom code used for the semi-automatic DEM of Difference analysis is not provided or linked."
+}

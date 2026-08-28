@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Global landslide datasets (30 case studies)",
+      "source": "Lindsay et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study uses the global landslide datasets created by Lindsay et al. (2023), where landslides have been manually mapped mainly through dNDVI images derived from Sentinel-2."
+    },
+    {
+      "name": "Sentinel-1 SAR images",
+      "source": "Google Earth Engine (GEE)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset is consisting of the Sentinel-1 images, available on Google Earth Engine (GEE) (calibrated and ortho-corrected) at 10 m resolution."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM)",
+      "source": "Google Earth Engine (GEE)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The 30 m resolution Shuttle Radar Topography Mission (SRTM) Digital Elevation Model (DEM), available within GEE, was used for this."
+    },
+    {
+      "name": "IslandsDEM v1.0 10m",
+      "source": "awesome-gee-community-catalog",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "However, local 10 m DEMs were utilised for the Icelandic case (link: IslandsDEM v1.0 10m - awesome-gee-community-catalog, accessed: 11 December 2022)"
+    },
+    {
+      "name": "Norwegian national DEM",
+      "source": "hoydedata.no",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "and for Norwegian patients (https://hoydedata.no/LaserInnsyn2/, accessed: 11 December 2022)."
+    },
+    {
+      "name": "Koppen-Geiger climate map",
+      "source": "Koppen-Geiger",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Koppen-Geiger climate map with a spatial resolution of 5 arc minutes for 1986–2010. http://koeppen-geiger.vu-wien.ac.at/"
+    },
+    {
+      "name": "Global forest canopy height map",
+      "source": "Potapov et al. (2021)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A 30-m spatial resolution global forest canopy height map - through the integration of the Global Ecosystem Dynamics Investigation (GEDI) LIDAR forest structure measurements and Landsat analysis-ready data time series (Landsat ARD) (Potapov et al., 2021)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Heterogeneous ensemble deep-learning classification",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An ensemble model that averages the pixel-wise classification outputs of multiple (10-40) best-performing segmentation models (Unet, Linknet, PSPNet, PAN, DeepLab, etc.) trained on different combinations of Sentinel-1, Sentinel-2, and DEM-derived bands.",
+      "source": "Ganerød et al.",
+      "link": "https://github.com/franchg/global-landslide-mapping/tree/main",
+      "status": "MENTIONED",
+      "verbatim": "The source code is available for download here: https://github.com/franchg/global-landslide-mapping/tree/main."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced to Lindsay et al. (2023), and other input datasets are accessible via Google Earth Engine or the provided links. The custom source code is available via a persistent GitHub repository link."
+}

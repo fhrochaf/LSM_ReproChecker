@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV aerial images",
+      "source": "Authors' own data collection using DJI M3D UAV",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide image dataset comes from two main sources: aerial UAV images and landslide images of similar areas. For UAV data collection, we utilized the DJI M3D UAV (DJI, Shenzhen, China)..."
+    },
+    {
+      "name": "Landslide images of similar areas",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, landslide image data from other areas with similar geological conditions were collected, screened and organized, and added to the dataset to increase the diversity and richness of the data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "UAV Cruise Geological Hazard AI Identification System",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An automated processing chain and software that integrates UAV-specific preprocessing and a U-Net deep learning model with an adaptive edge enhancement loss function to identify rainfall-induced shallow landslides from high-resolution UAV imagery.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the development of the “UAV Cruise Geological Hazard AI Identification System” software with an automated processing chain."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author. The data are not publicly available due to confidentiality and site security considerations."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not publicly available, and the custom code for the identification system lacks a repository or persistent link."
+}

@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye Analytic Ortho Tile multispectral image",
+      "source": "Planet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A RapidEye Analytic Ortho Tile multispectral image collected by the RapidEye-5 satellite on August 22nd, 2014 was used... The authors also thank the Editor-in-Chief, the Associate Editor, and the anonymous reviewers for their criticism and suggestions, which helped to improve this paper."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) digital elevation model (DEM)",
+      "source": "Alaska Satellite Facility (ASF DAAC)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Morphological information (slope angle) was derived from a digital elevation model (DEM) from the SRTM mission (Farr et al. 2007), processed to remove outlier data, re-sampled to a 12.5 m spatial resolution, and distributed by the Alaska Satellite Facility (ASF DAAC 2020)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Pixel-based supervised multispectral image classification (Maximum Likelihood, Random Forest, and Support Vector Machines)",
+      "method_type": "SOFTWARE",
+      "summary": "The authors compared three pixel-based supervised classifiers (Maximum Likelihood, Random Forest, and Support Vector Machines) to identify shallow landslide scars using RapidEye multispectral imagery and SRTM-derived slope data. The classification was performed in QGIS using the SCP and Dzetsaka plugins.",
+      "source": "QGIS, SCP plugin, and Dzetsaka plugin",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Three pixel-based supervised multispectral image classifiers were applied in QGIS 3.14 (QGIS 2020): Maximum Likelihood, using the SCP plugin (Luca 2016), and Random Forest and SVM using the Dzetsaka plugin (Karasiak 2016)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Datasets associated with this publication (SPAMLab contribution)",
+        "source": "SPAMLab",
+        "link": "https://codeberg.org/SPAMLab_USP/spamlab_website_src",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Code associated with this publication (SPAMLab contribution)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code related to this study, attributed as a SPAMLab contribution, hosted in the lab's Codeberg repository.",
+        "source": null,
+        "link": "https://codeberg.org/SPAMLab_USP/spamlab_website_src",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Repository for the publication mention in acknowledgments."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The input datasets (RapidEye imagery and SRTM DEM) are mentioned but not linked, though they are practically accessible via public providers. Custom code is available via a persistent repository link, which routes to datasets."
+}

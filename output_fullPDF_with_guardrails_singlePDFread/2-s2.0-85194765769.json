@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie City landslide dataset",
+      "source": "Ji S et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset, constructed by Ji S et al. (2020), consists of 770 samples of Bijie City landslides, identified using TripleSat satellite images taken from May to August 2018 (Fig. 2)."
+    },
+    {
+      "name": "TripleSat satellite images",
+      "source": "Ji S et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset, constructed by Ji S et al. (2020), consists of 770 samples of Bijie City landslides, identified using TripleSat satellite images taken from May to August 2018 (Fig. 2)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Skip Connection DeepLab neural network (SCDnn)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model based on the DeepLab v3+ framework, optimized for landslide boundary detection. It replaces the ASPP module with an enhanced Atrous Spatial Pyramid Convolutional Block (ASPC) and incorporates parallel structures like Mixed Residual and Maximum Pooling Downsampling Blocks to reduce model complexity and improve feature extraction.",
+      "source": "Chang-dong Li et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, the Skip Connection DeepLab neural network (SCDnn), a deep learning model based on 770 optical remote sensing images of landslide, is proposed to improve the accuracy of landslide boundary detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced to Ji S et al. (2020) but no link is provided, and the custom code for the SCDnn model lacks a repository or persistent link."
+}

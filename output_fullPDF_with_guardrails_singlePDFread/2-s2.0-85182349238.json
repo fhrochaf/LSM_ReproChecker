@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory maps for Site 1 and Site 2",
+      "source": "Authors' own fieldwork and Google Earth interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory maps for Site 1 and Site 2 were created after conducting field surveys and interpreting images using Google Earth."
+    },
+    {
+      "name": "Landsat 8 OLI data",
+      "source": "USGS (implied by Landsat 8 OLI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The NDVI and MNDWI maps were prepared based on Landsat 8 OLI data, with acquisition dates of 2013/09/15 for Site 1 and 2018/04/09 for Site 2."
+    },
+    {
+      "name": "Digital Elevation Model (DEM)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Lithology map",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "BisDeNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight deep learning framework for landslide detection that replaces the context path in the original BiSeNet with DenseNet to improve feature extraction efficiency and reduce model complexity.",
+      "source": "Tao Chen et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address these problems, we propose a new lightweight deep-learning-based framework, BisDeNet, for efficient LD. To improve the efficiency of the proposed BisDeNet, we replaced the context path in the original BiSeNet with DenseNet"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom BisDeNet code is not provided. Other input datasets are not linked or made available."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Database A (General Knowledge)",
+      "source": "Cheng et al. [11]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Here, Database A was established based on the UAV images of ground surface cracks and non-ground surface cracks collected at a landslide site in Guizhou, China. The readers are referred to Cheng et al. [11] for more detailed information on the establishment of Database A."
+    },
+    {
+      "name": "UAV-acquired imagery (DOM)",
+      "source": "Feima Robotics, Ltd.",
+      "link": "http://www.feimarobotics.com/en/productDetailD200",
+      "status": "MENTIONED",
+      "verbatim": "the aircraft adopted in this survey was the Feima Intelligent Aerial Survey System D200, manufactured by Feima Robotics, Ltd. (http://www.feimarobotics.com/en/productDetailD200 (accessed on 1 January 2024))."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Image-analysis-based landslide identification framework",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework that integrates object-oriented image analysis for landslide boundary recognition and a RetinaNet-based deep transfer learning model for ground surface crack detection. The results from these two components are fused using Boolean operations to identify landslides with different levels of confidence.",
+      "source": "Zhan Cheng, Wenping Gong, et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The original contributions presented in this study are included in the article. Further inquiries can be directed to the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory (Database A) is referenced to a previous publication but not linked, and the custom code for the image-analysis framework is not available."
+}

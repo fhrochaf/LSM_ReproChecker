@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Loess Plateau landslide dataset",
+      "source": "Authors' own collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The experiment zones are located in the northwest of China, which is in the transition zone between the western Qinling Mountains and the Longxi Loess Plateau... There are 304 landslide samples in this study area."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Iterative Classification and Semantic Segmentation Network (ICSSN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multitask learning framework that iteratively optimizes a shared encoder between an object classification branch (using Siamese ResNet101 with Object-level Contrastive Learning) and a semantic segmentation branch (using Subobject-level Contrastive Learning to focus on landslide boundaries).",
+      "source": "Zili Lu, Yuexing Peng, Wei Li, Junchuan Yu, Daqing Ge, Lingyi Han, and Wei Xiang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a novel iterative classification and semantic segmentation network (ICSSN) is proposed to detect visually blurred old landslides from a small-sized HRSI dataset."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom ICSSN code is not provided via any repository or persistent link."
+}

@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Bijie Landslide Dataset (whu.edu.cn)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie dataset used in this study can be obtained from the Bijie Landslide Dataset (whu.edu.cn), accessed on 30 March 2024."
+    },
+    {
+      "name": "Luding dataset (GF-2 satellite data)",
+      "source": "China Center for Resources Satellite Data and Application",
+      "link": "https://www.cresda.com/zgzywxyyzx/index.html",
+      "status": "MENTIONED",
+      "verbatim": "The satellite imagery data involved in the study can be acquired from the China Center for Resources Satellite Data and Application at https://www.cresda.com/zgzywxyyzx/index.html, accessed on 1 November 2024."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DBSANet (Dual-Branch Semantic Aggregation Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "DBSANet is a U-shaped encoder-decoder semantic segmentation network. Its encoder uses a dual-branch parallel structure integrating ResNet-18 (for local features) and Swin Transformer (for global context). It features a Feature Fusion Module (FFM) to aggregate branch outputs and a Spatial Gate Attention Module (SGAM) in the skip connections to bridge the semantic gap between encoder and decoder.",
+      "source": "Yankui Li, Wu Zhu, et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a new semantic segmentation model named DBSANet for landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "Wuhan University (WHU)",
+        "link": "http://whu.edu.cn/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite imagery data",
+        "source": "China Center for Resources Satellite Data and Application",
+        "link": "https://www.cresda.com/zgzywxyyzx/index.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and accessible via public providers, but the custom DBSANet model code is not mentioned or linked."
+}

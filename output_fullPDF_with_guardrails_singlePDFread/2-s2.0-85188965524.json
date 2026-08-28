@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Aerial orthoimages of Lantau Island, Hong Kong",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "GVLM landslide dataset",
+      "source": "Publicly accessible landslide dataset",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Dataset #4 depicts the landslide events occurring in the Kupang area in Indonesia, and it was derived from a publicly accessible landslide dataset named GVLM [70]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Spatial–Spectral Similarity based on Adaptive Region (S3AR)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A change detection method for landslide inventory mapping that uses an adaptive region extension to capture spatial-contextual information, a shape description vector to quantify the shape of these regions, and a spatial-spectral similarity metric combining shape and brightness to measure change magnitude between bitemporal images.",
+      "source": "Zhiyong Lv, Tianyv Yang, Tao Lei, Wenming Zhou, Zhou Zhang, and Zhenzhen You",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a pioneering change magnitude measured distance named Spectral–Spatial Similarity based on Adaptive Region (S3AR) is proposed for achieving LIMs with bitemporal RSIs."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the custom S3AR method code is not provided or linked. No repository or persistent link for the code or data is available."
+}

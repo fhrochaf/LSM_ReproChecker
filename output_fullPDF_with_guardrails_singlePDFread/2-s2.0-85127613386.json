@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery (Jiuzhaigou)",
+      "source": "European Space Agency’s Sentinel Scientific Data Hub",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "Two Sentinel-2 images of pre- and post-event were acquired on July 29 and September 7, 2017 from the European Space Agency’s Sentinel Scientific Data Hub1, respectively. ... 1 Sentinel Scientific Data Hub: https://scihub.copernicus.eu."
+    },
+    {
+      "name": "PlanetScope imagery (Mainling)",
+      "source": "Planet Labs",
+      "link": "https://www.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "Two PlanetScope images were acquired on November 14 and December 19, 2017 from Planet Labs2. ... 2 Planet Labs: https://www.planet.com."
+    },
+    {
+      "name": "Landslide inventory (Jiuzhaigou)",
+      "source": "Fan et al. 2018",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To make a quantitative evaluation, the co-seismic landslides interpreted in our former work are used as references, in which a polygon-based interpretation was carried out through pre-earthquake SPOT-5 images (2.5 m) and post-earthquake Gaofen-1/2 images (1 m) as well as UAV photographs (0.2 m) (Fan et al. 2018)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CD-EMPES (Change detection-based co-seismic landslide mapping through extended morphological profiles and ensemble strategy)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An automated co-seismic landslide mapping approach that uses multi-threshold change vector analysis (CVA) for unsupervised sample generation, multi-scale extended morphological profiles (EMPs) for spatial feature extraction, and an ensemble of four machine learning classifiers (KNN, SVM, RF, and RoF) for landslide identification.",
+      "source": "Wang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to address the aforementioned problems, a novel automated co-seismic landslide mapping approach (Simplified as CD-EMPES hereafter) is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the input imagery is accessible via public providers. The custom code for the CD-EMPES method is not provided or linked."
+}

@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Global Very-High-Resolution Landslide Mapping (GVLM) dataset",
+      "source": "Zhang et al., 2023",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Ex1, the Global Very-High-Resolution Landslide Mapping (GVLM) dataset (Zhang et al., 2023) and Cooperative Open Online Landslide Repository (COOLR) (Juang et al., 2019) were used to test the performance of the proposed model."
+    },
+    {
+      "name": "Cooperative Open Online Landslide Repository (COOLR)",
+      "source": "Juang et al., 2019",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Ex1, the Global Very-High-Resolution Landslide Mapping (GVLM) dataset (Zhang et al., 2023) and Cooperative Open Online Landslide Repository (COOLR) (Juang et al., 2019) were used to test the performance of the proposed model."
+    },
+    {
+      "name": "Google Earth Pro imagery",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "COOLR does not provide satellite images, and this study collects pre-event images and post-event images from Google Earth Pro."
+    },
+    {
+      "name": "Enhanced Natural Terrain Landslide Inventory (HK dataset)",
+      "source": "Gao et al., 2018",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide samples from Hong Kong’s Enhanced Natural Terrain Landslide Inventory (Gao et al., 2018), not covered in the GVLM dataset, were manually interpreted to evaluate the model’s performance without prior training. This dataset in the manuscript is then referred to as the HK dataset."
+    },
+    {
+      "name": "PlanetScope imagery (Planet-GVLM dataset)",
+      "source": "Planet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Ex. 3, simulated LR pre-event images were replaced with PlanetScope images to assess the model’s performance with a different data source. We test the model’s performance with a different data source on GVLM dataset, the pre-event images replaced by PlanetScope images are referred to as the Planet-GVLM dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Cross-resolution Multi-scale Auto-prompt Segment Anything Model (CMA-SAM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CMA-SAM is an end-to-end deep learning model that adapts the Segment Anything Model (SAM) for landslide mapping using cross-resolution bitemporal images. It incorporates a cross-scale feature fusion module for alignment, a multi-scale feature extraction module for capturing landslides of varying sizes, and an auto-prompt module to autonomously generate mask prompts for the SAM decoder.",
+      "source": "Ng, Pan, and Ma",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventories and input datasets are referenced but not linked, and the custom CMA-SAM model code is not available."
+}

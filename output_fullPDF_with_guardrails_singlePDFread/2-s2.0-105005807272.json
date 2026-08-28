@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Relic landslide dataset",
+      "source": "Institute of Remote Sensing and Digital Earth, Chinese Academy of Sciences",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The employed dataset is constructed by a professional institution,1 and the landslide samples are labeled by experts following the procedure outlined below... 1Institute of Remote Sensing and Digital Earth, Chinese Academy of Sciences."
+    },
+    {
+      "name": "High-resolution remote sensing images (HRSIs)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Digital elevation models (DEMs)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "mask-recovering and interactive-feature-enhancing (MRIFE)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A dual-branch semantic segmentation network designed for relic landslide detection. It uses a feature enhancement branch with masked feature modeling (MFM) and semantic feature contrast enhancement (SFCE) to address visual blur, and a self-distillation learning framework to mitigate overfitting on small datasets.",
+      "source": "Juefei He, Yuexing Peng, Wei Li, Junchuan Yu, Daqing Ge, and Wei Xiang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, we propose a mask-recovering and interactive-feature-enhancing (MRIFE) semantic segmentation network to detect visually blurred relic landslides in a small-sized HRSI dataset."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom MRIFE method code is not provided in any repository or persistent link."
+}

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "High-resolution DEM of the Mengu landslide",
+      "source": "Authors' own airborne LiDAR data processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The study area utilized a high-resolution DEM of 0.2 m. ... This completes the acquisition and processing of airborne LiDAR data for the study area."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LiDAR image highlighting algorithm (LIHA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "LIHA enhances micro-topographical features in DEMs by treating terrain profiles as non-stationary spectral signals. It segments the DEM into profiles, applies LOESS smoothing to extract trends, uses discrete wavelet transform (DWT) to decompose the differential signal into low-frequency and high-frequency components, amplifies the high-frequency components, and reconstructs the enhanced DEM.",
+      "source": "Qiulin He, Xiujun Dong, Haoliang Li, Bo Deng and Jingsong Sima",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the above research methodology and data preprocessing, this study utilized the programming platform Matlab 2020a to construct the LIHA."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The raw data supporting the conclusions of this article will be made available by the authors on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not referenced or linked, and the custom LIHA code is not provided in a repository or persistent link."
+}

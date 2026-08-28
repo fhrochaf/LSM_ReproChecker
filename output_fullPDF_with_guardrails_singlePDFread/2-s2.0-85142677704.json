@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "http://gpcv.whu.edu.cn/data/",
+      "link": "http://gpcv.whu.edu.cn/data/",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie dataset was derived from the following resources available in the public domain: [http://gpcv.whu.edu.cn/data/] (accessed on 17 March 2021)."
+    },
+    {
+      "name": "SRTM DEM",
+      "source": "Shuttle Radar Topography Mission",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM (digital elevation model) of the corresponding study area was also collected from the Shuttle Radar Topography Mission (SRTM) to supplement landslide detection by providing topographical information after it had been resized to the same spatial resolution as that of the Geoeye-1 images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DeenNet (decoder–encoder network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "DeenNet is a semantic segmentation network that transposes the standard encoder-decoder structure into a decoder-encoder structure. It decodes input feature maps to a larger scale before encoding them, which helps maintain multi-scale features and prevents small landslide features from being filtered out during the encoding phase.",
+      "source": "Bo Yu, Ning Wang, Chong Xu, Fang Chen, and Lei Wang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a deep neural network called the decoder–encoder network (DeenNet) to detect landslides from multiple images at a high spatial resolution."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Jiuzhaigou Landslide Dataset",
+        "source": "Baidu Disk (shared link)",
+        "link": "https://pan.baidu.com/s/1iGynve6YAbkcDJh-lqG6kw",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Lushan Landslide Dataset",
+        "source": "Baidu Disk (shared link)",
+        "link": "https://pan.baidu.com/s/12XCG9T4r2gj1Ld5vA60-lQ",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Iburi Landslide Dataset",
+        "source": "Baidu Disk (shared link)",
+        "link": "https://pan.baidu.com/s/1gFX5l3esyGhuyxKE4--csw",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and linked, and the SRTM DEM is a publicly accessible dataset. The custom DeenNet code is mentioned but no repository or persistent link is provided."
+}

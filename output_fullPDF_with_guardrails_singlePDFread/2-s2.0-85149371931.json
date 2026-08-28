@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A remote sensing image data",
+      "source": "USGS (United States Geological Survey)",
+      "link": "http://www.usgs.gov",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2A satellite remote sensing data obtained from the official website of the USGS (United States Geological Survey, http://www.usgs.gov) were used for landslide extraction."
+    },
+    {
+      "name": "Historical landslide data (for ground truth)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For the dataset, first, according to the historical landslide data, the landslides in the study area were vectorized and labeled on Google Earth through visual interpretation."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention U-Net landside extraction model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved U-Net semantic segmentation model that incorporates the Squeeze-and-Excitation Network (SENet) channel attention mechanism after each skip connection to adjust feature channel weights, enhancing landslide feature learning and reducing false/missed detections.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the Attention U-Net model is not provided. While Sentinel-2A data is accessible via USGS, the lack of code and ground-truth data prevents reproduction."
+}

@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A remote sensing data",
+      "source": "United States Geological Survey (USGS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2A remote sensing data used in this study were obtained from the United States Geological Survey (USGS)."
+    },
+    {
+      "name": "SRTM DEM",
+      "source": "United States Geological Survey",
+      "link": "http://earthexplorer.usgs.gov",
+      "status": "MENTIONED",
+      "verbatim": "SRTM DEM ... United States Geological Survey ... http://earthexplorer.usgs.gov (26 June 2023)"
+    },
+    {
+      "name": "Land Use",
+      "source": "Tsinghua University",
+      "link": "http://data.ess.tsinghua.edu.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Land Use ... Tsinghua University ... http://data.ess.tsinghua.edu.cn/ (11 September 2023)"
+    },
+    {
+      "name": "Rainfall",
+      "source": "Geospatial Remote Sensing Ecology Network",
+      "link": "http://www.gisrs.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Rainfall ... Geospatial Remote Sensing Ecology Network ... http://www.gisrs.cn/ (6 March 2024)"
+    },
+    {
+      "name": "Normalized Difference Vegetation Index (NDVI)",
+      "source": "National Ecological Data Center Resource Sharing Platform",
+      "link": "http://www.nesdc.org.cn",
+      "status": "MENTIONED",
+      "verbatim": "Normalized Difference Vegetation Index ... National Ecological Data Center Resource Sharing Platform ... http://www.nesdc.org.cn (18 January 2024)"
+    },
+    {
+      "name": "Lithology and Faults",
+      "source": "United States Geological Survey",
+      "link": "https://www.cgs.gov.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Lithology and Faults ... United States Geological Survey ... https://www.cgs.gov.cn/ (20 December 2023)"
+    },
+    {
+      "name": "Rivers and Roads",
+      "source": "Lanzhou Natural Resources Bureau",
+      "link": "http://zrzyj.lanzhou.gov.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Rivers and Roads ... Lanzhou Natural Resources Bureau ... http://zrzyj.lanzhou.gov.cn/ (24 October 2023)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "semi-supervised generated countermeasure network (SSGAN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised generative adversarial network (SSGAN) that extends the traditional GAN framework by expanding the discriminator to perform N+1 class classification (N landslide categories plus one for generated pseudo-images). It uses both labeled and unlabeled samples to improve classification accuracy with limited labeled data.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this paper proposes to construct a semi-supervised generated countermeasure network (SSGAN) model... The experiments were conducted in Python using the TensorFlow framework"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author. The data are not publicly available due to privacy."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or provided, and the custom SSGAN code is not available via a repository or persistent link."
+}

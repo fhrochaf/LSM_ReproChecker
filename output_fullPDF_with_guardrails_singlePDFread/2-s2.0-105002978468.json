@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1A SLC data",
+      "source": "Alaska Satellite Facility (ASF)",
+      "link": "https://asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "Data covering the research area is obtained from the Alaska Satellite Facility (ASF) (https://asf.alaska.edu/)"
+    },
+    {
+      "name": "Landslide validation data",
+      "source": "Institute of Mountain Hazards and Environment, Chinese Academy of Sciences",
+      "link": "https://imde.cas.cn/",
+      "status": "MENTIONED",
+      "verbatim": "The landslide validation data are obtained from the Institute of Mountain Hazards and Environment, Chinese Academy of Sciences (https://imde.cas.cn/) (Zhang et al. 2023)."
+    },
+    {
+      "name": "Earthquake intensity vector data",
+      "source": "Institute of Mountain Hazards and Environment, Chinese Academy of Sciences",
+      "link": "https://imde.cas.cn/",
+      "status": "MENTIONED",
+      "verbatim": "The earthquake intensity vector data comes from the Institute of Mountain Hazards and Environment, Chinese Academy of Sciences (https://imde.cas.cn/)."
+    },
+    {
+      "name": "Main shock point and aftershock data and epicenter active fault data",
+      "source": "China National Earthquake Science Data Center",
+      "link": "https://data.earthquake.cn/",
+      "status": "MENTIONED",
+      "verbatim": "The main shock point and aftershock data and epicenter active fault data come from the China National Earthquake Science Data Center (https://data.earthquake.cn/)"
+    },
+    {
+      "name": "Digital elevation model",
+      "source": "Alaska Satellite Communications Service",
+      "link": "https://asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "digital elevation model from Alaska Satellite Communications Service (https://asf.alaska.edu/)"
+    },
+    {
+      "name": "Precision orbit data (Precise Orbit Ephemerides, POD)",
+      "source": "European Space Agency",
+      "link": "http://step.esa.int",
+      "status": "MENTIONED",
+      "verbatim": "precision orbit data (Precise Orbit Ephemerides, POD) from the European Space Agency (http://step.esa.int)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Combining Coherence Increase and Polarized Vegetation Damage (CCI-PVD)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method optimizes SAR coherence data, introduces the dual-polarization radar vegetation index (DpRVI) to quantify post-earthquake vegetation damage, and uses wavelet transform (WT) to fuse coherence increase and vegetation damage information for landslide detection.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "Therefore, a landslide detection method based on Combining Coherence Increase and Polarized Vegetation Damage (CCI-PVD) is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author Ping Duan upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide validation data and other input datasets are mentioned with sources but lack direct links, and the custom CCI-PVD method code is not available."
+}

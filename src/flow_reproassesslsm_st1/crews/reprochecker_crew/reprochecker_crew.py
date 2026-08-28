@@ -4,15 +4,20 @@ from pathlib import Path
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import PDFSearchTool
+from crewai_tools import PDFSearchTool, TavilySearchTool
 from pydantic import BaseModel
 from ...tools.custom_tool import publication_availability_tool, pdf_full_text_tool
 from ...tools.guardrails import make_verbatim_guardrail
-from ...models import FilterOutput, DataReproOutput, MethodReproOutput, AvailabilityOutput, ReproducibilityAssessment
+from ...models import (
+    FilterOutput,
+    PaperAnalysisOutput,
+    AvailabilityOutput,
+    DatasetAvailabilityResearchOutput,
+    ReproducibilityAssessment,
+)
 from ...config import LSM_DOMAIN_INSTRUCTIONS, llm_local, llm_large, PDF_DIR, EMBEDDING_CONFIG_OPENAI
 
 MAX_RPM = 5 # Maximum requests per minute
-MULTI_RUN_COUNT = 3 # independent runs to reconcile via majority vote, see utils.merge_entries
 
 @CrewBase
 class ReproCheckerCrew:
@@ -30,7 +35,7 @@ class ReproCheckerCrew:
         use_full_text_tool: bool = False,
         with_human_intervention: bool = False,
         guardrail_max_retries: int = 3,
-        multi_run_count: int = MULTI_RUN_COUNT,
+        multi_run_count: int = 1,
     ):
         self.pdf_file = pdf_file
         # Switch for paper_analyzer's PDF tool: False = PDFSearchTool (RAG
@@ -55,8 +60,7 @@ class ReproCheckerCrew:
         # min_votes=2, so a multi_run_count of 1 means no cluster can ever
         # reach quorum and every dataset/method gets dropped.
         self.multi_run_count = multi_run_count
-        self._data_runs: list[Task] = []
-        self._method_runs: list[Task] = []
+        self._analysis_runs: list[Task] = []
 
     def _pdf_collection_name(self) -> str:
         """Derive a Chroma-safe collection name unique to this PDF.
@@ -108,6 +112,15 @@ class ReproCheckerCrew:
         )
 
     @agent
+    def dataset_availability_researcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config["dataset_availability_researcher"],  # type: ignore[index]
+            max_rpm=MAX_RPM,
+            tools=[TavilySearchTool()],
+            llm=llm_large
+        )
+
+    @agent
     def report_elaborator(self) -> Agent:
         return Agent(
             config=self.agents_config["report_elaborator"],  # type: ignore[index]
@@ -134,6 +147,13 @@ class ReproCheckerCrew:
             async_execution=not self.with_human_intervention,
             output_pydantic=AvailabilityOutput,
             human_input=self.with_human_intervention,
+        )
+
+    @task
+    def research_dataset_availability(self) -> Task:
+        return Task(
+            config=self.tasks_config["research_dataset_availability"],
+            output_pydantic=DatasetAvailabilityResearchOutput,
         )
 
     def _repeat_task(self, task_name: str, output_model: type[BaseModel], n: int) -> list[Task]:
@@ -185,16 +205,14 @@ class ReproCheckerCrew:
 
     @crew
     def repro_crew_multi_check_from_csv(self) -> Crew:
-        """Runs check_data_reproducibility and check_method_reproducibility
-        self.multi_run_count times each, skipping the artifact-availability
-        agent/task entirely — availability is already known from the CSV
-        prefill (see availability_summary).
+        """Runs analyze_paper self.multi_run_count times, skipping the
+        artifact-availability agent/task entirely — availability is already
+        known from the CSV prefill (see availability_summary).
         """
-        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, self.multi_run_count)
-        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, self.multi_run_count)
+        self._analysis_runs = self._repeat_task("analyze_paper", PaperAnalysisOutput, self.multi_run_count)
         return Crew(
             agents=[self.paper_analyzer()],
-            tasks=[*self._data_runs, *self._method_runs],
+            tasks=[*self._analysis_runs],
             max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,
@@ -202,19 +220,32 @@ class ReproCheckerCrew:
 
     @crew
     def repro_crew_multi_check(self) -> Crew:
-        """Runs check_data_reproducibility and check_method_reproducibility
-        self.multi_run_count times each (plus a single artifact availability
-        check), storing the per-run tasks on self._data_runs/
-        self._method_runs. The Flow pulls all N outputs from those and
+        """Runs analyze_paper self.multi_run_count times (plus a single
+        artifact availability check), storing the per-run tasks on
+        self._analysis_runs. The Flow pulls all N outputs from those and
         reconciles them via utils.merge_entries, then kicks off
         consolidated_report_crew separately — this crew does not compile a
         final report itself.
         """
-        self._data_runs = self._repeat_task("check_data_reproducibility", DataReproOutput, self.multi_run_count)
-        self._method_runs = self._repeat_task("check_method_reproducibility", MethodReproOutput, self.multi_run_count)
+        self._analysis_runs = self._repeat_task("analyze_paper", PaperAnalysisOutput, self.multi_run_count)
         return Crew(
             agents=[self.paper_analyzer(), self.availability_web_scraper()],
-            tasks=[*self._data_runs, *self._method_runs, self.check_artifact_availability()],
+            tasks=[*self._analysis_runs, self.check_artifact_availability()],
+            max_rpm=MAX_RPM,
+            process=Process.sequential,
+            verbose=True,
+        )
+
+    @crew
+    def dataset_research_crew(self) -> Crew:
+        """Runs only when the Flow finds datasets not yet covered by
+        skills/dataset_availability_reference.json (see
+        utils.missing_dataset_names). Takes a `missing_datasets` input and
+        produces DatasetAvailabilityResearchOutput entries, which the Flow
+        appends to that file before (re-)running consolidated_report_crew."""
+        return Crew(
+            agents=[self.dataset_availability_researcher()],
+            tasks=[self.research_dataset_availability()],
             max_rpm=MAX_RPM,
             process=Process.sequential,
             verbose=True,

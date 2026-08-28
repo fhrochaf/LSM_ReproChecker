@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "CAS Landslide Dataset (CLD)",
+      "source": "Xu et al. [11]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study comprehensively evaluated SCGC-Net on three representative datasets: the CAS Landslide Dataset (CLD) [11], HR-GLDD [8], and Bijie dataset [4]."
+    },
+    {
+      "name": "HR-GLDD",
+      "source": "Meena et al. [8]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study comprehensively evaluated SCGC-Net on three representative datasets: the CAS Landslide Dataset (CLD) [11], HR-GLDD [8], and Bijie dataset [4]."
+    },
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. [4]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study comprehensively evaluated SCGC-Net on three representative datasets: the CAS Landslide Dataset (CLD) [11], HR-GLDD [8], and Bijie dataset [4]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "spatial context-guided calibration Network (SCGC-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "SCGC-Net is a deep learning network for landslide detection that integrates a Hybrid Multiscale Information Extraction (HMIE) module (combining Mamba and CNN), a Context-Aware Modulator (CAM) for adaptive semantic refinement, and a Progressive Spatial-Context Calibration Strategy (PSCCS) for precise multiscale feature fusion.",
+      "source": "Yukun Fan et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address these key challenges, this study introduces the spatial context-guided calibration Network (SCGC-Net)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for SCGC-Net is not available via any repository or persistent link."
+}

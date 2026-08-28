@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Slope failure incidence points (landslide inventory)",
+      "source": "Trained analysts supervised by a professional geomorphologist",
+      "link": "https://www.mapwv.gov/landslide",
+      "status": "MENTIONED",
+      "verbatim": "To date, a total of 64,864 slope failure points has been identified by trained analysts supervised by a professional geomorphologist... Slope failure incidence points are viewable at the WV Landslide Tool web application (https://www.mapwv.gov/landslide, accessed on 7 December 2021)."
+    },
+    {
+      "name": "Major Land Resource Areas (MLRA) data",
+      "source": "United States Department of Agriculture (USDA)",
+      "link": "https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053624",
+      "status": "MENTIONED",
+      "verbatim": "MLRA data are provided by the United States Department of Agriculture (USDA) [62]... Available online: https://www.nrcs.usda.gov/wps/portal/nrcs/detail/soils/survey/geo/?cid=nrcs142p2_053624 (accessed on 28 February 2021)."
+    },
+    {
+      "name": "Historic slope failure data",
+      "source": "West Virginia Department of Transportation (WVDOT) and the West Virginia Geological and Economic Survey (WVGES)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "historic slope failure data provided by the West Virginia Department of Transportation (WVDOT) and the West Virginia Geological and Economic Survey (WVGES)."
+    },
+    {
+      "name": "LiDAR-derived digital terrain model (DTM)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Explainable boosting machine (EBM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "EBM is a fast implementation of the generalized additive models plus interactions (GA2M) method. It uses gradient boosting to iteratively learn shallow decision trees for each predictor variable in a round-robin fashion, allowing for the visualization of one-dimensional feature functions and two-dimensional interaction heat maps for model interpretability.",
+      "source": "InterpretML library",
+      "link": "https://github.com/interpretml/interpret",
+      "status": "MENTIONED",
+      "verbatim": "EBM was implemented using Python [90] and the InterpretML library [91]... InterpretML—Alpha Release. InterpretML. 2021. Available online: https://github.com/interpretml/interpret (accessed on 6 December 2021)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Example data associated with the study",
+        "source": "West Virginia View",
+        "link": "http://www.wvview.org/research.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Study methodology code shared via West Virginia View",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Example code associated with the study's methodology is made available for reproducibility.",
+        "source": null,
+        "link": "http://www.wvview.org/research.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Example data and code associated with this study are made available on the West Virginia View website (http://www.wvview.org/research.html) (accessed on 7 December 2021)."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and MLRA data are linked and publicly accessible, while the historic slope failure data is referenced. The custom methodology code is provided via a persistent link on the West Virginia View website."
+}

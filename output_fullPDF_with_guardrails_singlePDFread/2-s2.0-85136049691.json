@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope satellite imagery",
+      "source": "Planet Team",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Both PlanetScope and RapidEye were downloaded as analysis-ready data from the Planet Explorer portal (Planet Team 2017)."
+    },
+    {
+      "name": "30-m ASTER Global Digital Elevation Model (GDEM)",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Topographic variables were derived from the 30-m Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER) global digital elevation model (GDEM), as no higher-resolution data is publicly available for the study area."
+    },
+    {
+      "name": "NASA Global Precipitation Measurement (GPM) rainfall data",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Data source: NASA Global Precipitation Measurement, Huffman et al. (2019)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Supervised machine learning algorithms (ANN, RF, and SVM) for landslide mapping",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors developed three supervised machine learning algorithms (artificial neural network, random forest, and support vector machine) using nine predictor variables derived from bitemporal satellite imagery and DEM derivatives to classify the study area into landslide, flooding, and unaffected zones.",
+      "source": "Das and Wegmann (2021)",
+      "link": "https://doi.org/10.5281/zenodo.5544698",
+      "status": "MENTIONED",
+      "verbatim": "The processing and preparation of the sample points and polygons were done in ArcGIS software, and the modeling was done in R statistical software (Das and Wegmann 2021). ... Das R, Wegmann K (2021) Landslide mapping using satellite imagery and machine learning algorithms. https:// doi. org/ 10. 5281/ zenodo. 55446 98"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for training and validation is not referenced or linked. The custom code is available via a persistent Zenodo link, and the input datasets are practically accessible as they match entries in the Dataset Availability Reference."
+}

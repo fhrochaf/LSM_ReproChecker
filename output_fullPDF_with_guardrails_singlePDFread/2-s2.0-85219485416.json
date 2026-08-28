@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie dataset is available at http://gpcv.whu.edu.cn/data/Bijie_pages.html."
+    }
+  ],
+  "methods": [
+    {
+      "name": "TLSTMF-YOLO",
+      "method_type": "CUSTOM_CODE",
+      "summary": "TLSTMF-YOLO is an optimized YOLOv5-large network that integrates a C3-Swin-Transformer backbone for feature extraction, CBAM modules in the neck for attention, and a BiFPN structure for multiscale feature fusion. It is trained using an AdamW optimizer and a cosine learning rate strategy, and utilizes transfer learning to improve performance on small landslide datasets.",
+      "source": "Shaoqiang Meng et al.",
+      "link": "https://github.com/mengshaoqiang/A-Transfer-Learning-Network-for-Earthquake-induced-Landslide-Remote-Sensing-Image-Detection",
+      "status": "MENTIONED",
+      "verbatim": "The code of this research is now published in https://github.com/mengshaoqiang/A-Transfer-Learning-Network-for-Earthquake-induced-Landslide-Remote-Sensing-Image-Detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "PASCAL VOC dataset",
+        "source": "University of Oxford (Visual Geometry Group)",
+        "link": "http://host.robots.ox.ac.U.K./pascal/VOC/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Bijie landslide dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Transfer learning network for earthquake-induced landslide detection in remote sensing images",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing a transfer learning network for detecting earthquake-induced landslides in remote sensing imagery, published as an open GitHub repository.",
+        "source": null,
+        "link": "https://github.com/mengshaoqiang/A-Transfer-Learning-Network-for-Earthquake-induced-Landslide-Remote-Sensing-Image-Detection",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is linked and publicly available, and the custom TLSTMF-YOLO code is provided via a persistent GitHub repository link."
+}

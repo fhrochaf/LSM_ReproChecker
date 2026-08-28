@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "Publicly available dataset",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we use the publicly available Landslide4Sense dataset (see Section 4.1.1 for details) to train both our proposed model and the comparison models."
+    },
+    {
+      "name": "Sentinel-2 images",
+      "source": "Google Earth Engine (GEE)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel- 2 images are acquired and processed using Google Earth Engine (GEE)."
+    },
+    {
+      "name": "Topographic information (slope and DEM data)",
+      "source": "L-band synthetic aperture radar (PALSAR) launched by the Japan Aerospace Exploration Agency",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The topographic information is acquired by the L- band synthetic aperture radar (PALSAR) launched by the Japan Aerospace Exploration Agency with a spatial resolution of 12.5 m."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MFDF-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An end-to-end landslide detection model based on differential fusion of multi-level features from optical remote sensing images and topographical data. It uses two ResNet-18 backbones to extract features, which are then fused using a spatial feature fusion module (SP-FFM) for low-level features and a semantic feature fusion module (SE-FFM) for high-level features, followed by a decoder with skip connections.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "In response to these issues, we introduce topographic data based on optical remote sensing images and propose an innovative solution—an end- to- end new landslide detection model, MFDF- Net, which incorporates innovative feature fusion techniques."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author, upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, and the custom code for the MFDF-Net model is not provided or linked."
+}

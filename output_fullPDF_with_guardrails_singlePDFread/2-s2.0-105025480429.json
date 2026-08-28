@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "LandSlide4Sense",
+      "source": "Ghorbanzadeh et al. [19]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We evaluated our proposed model on three different benchmark datasets of LandSlide4Sense, Bijie, and Nepal. ... Landslide4Sense dataset [19] illustrates landslide appearances worldwide from 2015 to 2021."
+    },
+    {
+      "name": "Bijie",
+      "source": "Ji et al. [20]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We evaluated our proposed model on three different benchmark datasets of LandSlide4Sense, Bijie, and Nepal. ... Bijie dataset [20]: This dataset was collected from TripleSat Satellite for Bijie City, northwest of Guizhou Province"
+    },
+    {
+      "name": "Nepal",
+      "source": "Bragagnolo et al. [21]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We evaluated our proposed model on three different benchmark datasets of LandSlide4Sense, Bijie, and Nepal. ... Nepal [21]: To collect the data, geologists first extract locations and time of landslide events."
+    }
+  ],
+  "methods": [
+    {
+      "name": "RMAU-NET",
+      "method_type": "CUSTOM_CODE",
+      "summary": "RMAU-NET is a deep-learning-based architecture for landslide detection and segmentation. It utilizes a U-Net backbone enhanced with residual-convolutional layers, multi-head attention mechanisms, and multiple resolution heads, trained using a combined Focal and IoU loss function on multi-spectral and derived input features.",
+      "source": "Lam Pham, Cam Le, Hieu Tang, Khang Truong, Truong Nguyen, Jasmin Lampert, Alexander Schindler, Son Phan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For access to the code and further information about these proposed systems, please contact email ‘lam.pham@ait.ac.at’ or ‘phanleson@tdtu.edu.vn’."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"For access to the code and further information about these proposed systems, please contact email ‘lam.pham@ait.ac.at’ or ‘phanleson@tdtu.edu.vn’.\" / \"No datasets were generated or analysed during the current study.\r\n\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available, and the custom code for the RMAU-NET method is not provided via a repository or persistent link."
+}

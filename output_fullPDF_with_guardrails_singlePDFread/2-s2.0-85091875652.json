@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR images",
+      "source": "ESA Sentinel Data Hub",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "Copernicus Sentinel-1 data have been downloaded from the Copernicus Open Access Hub (https://scihub.copernicus.eu, Copernicus, 2020)."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) 1 s DEM",
+      "source": "SNAP (auto-downloaded)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Consecutive SAR images, selected to detect amplitude changes of the radar signal (i.e., change detection), are co-registered with a digital elevation model (DEM)-assisted procedure that uses the Shuttle Radar Topography Mission (SRTM) 1 s DEM, auto-downloaded by SNAP."
+    },
+    {
+      "name": "Optical images (Planet explorer)",
+      "source": "Planet Team",
+      "link": "https://api.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "Optical images have been downloaded from the Planet explorer application (Planet Team, 2017)...Planet Team: Planet Application Program Interface: In Space for Life on Earth, San Francisco, CA, available at: https://api.planet.com (last access: 24 January 2020), 2017."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Automatic processing chain for SAR amplitude change detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An automatic processing chain implemented in Python and GNU/Bash scripts that performs Sentinel-1 SAR image ingestion, preprocessing (thermal noise removal, calibration, de-bursting, multi-looking, co-registration, speckle filtering), log-ratio change detection, Mean Shift segmentation using GRASS GIS, and statistical identification of landslide-affected areas.",
+      "source": "Giuseppe Esposito and Ivan Marchesini",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present, no shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom processing code is not provided via any repository or persistent link."
+}

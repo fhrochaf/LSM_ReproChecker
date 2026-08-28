@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Remote sensing image data of aerial photography in the mountains of northern China",
+      "source": "UAV (DJI Phantom 4 RTK)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The experimental data set used in this paper is the remote sensing image data of aerial photography in the mountains of northern China. The data come from the landslide images obtained by the UAV. The UAV platform is DJI Phantom 4 RTK"
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLOv5(ISODATA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv5 network architecture that incorporates an adaptive Gabor filter for feature extraction, an edge control factor in the loss function, and an optimized anchor box generation mechanism using the ISODATA clustering algorithm.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Please contact the first author Dr. Kun Wang if someone wants to request the data from this study."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not referenced or linked, and the custom code for the YOLOv5(ISODATA) method is not available."
+}

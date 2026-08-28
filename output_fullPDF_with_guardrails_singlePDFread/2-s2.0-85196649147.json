@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Optical remote sensing image (RGB bands)",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This work obtained the ordinary optical remote sensing image (only including RGB bands) data of different time phases from Google Earth."
+    },
+    {
+      "name": "Precipitation data",
+      "source": "Resource and Environment Science and Data Centre of the Chinese Academy of Sciences",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Precipitation Resource and Environment Science and Data Centre of the Chinese Academy of Sciences"
+    },
+    {
+      "name": "Heavy rainfall-induced landslide clusters (Inventory)",
+      "source": "Field investigation, UAV, Manual vectorizing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Heavy rainfall-induced landslide clusters Field investigation, UAV, Manual vectorizing"
+    },
+    {
+      "name": "Landslides labeled dataset",
+      "source": "Manual tagging",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslides labeled dataset Manual tagging"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Threshold-based Image Difference and Principal Component Analysis-based K-means",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves band ratio preprocessing to highlight landslide features, followed by either a threshold-based Image Difference (ID) method using Otsu thresholding or a PCA-based K-means unsupervised learning classification to detect landslide clusters from multi-temporal optical images.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data are contained within the article. The corresponding author can provide the necessary model upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or provided, and the custom code is not available via any repository or persistent link."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope Ortho Scene (Dove-R) imagery",
+      "source": "Planet Labs PBC",
+      "link": "https://api.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "PlanetScope Ortho Scene (Dove-R) images were obtained from Planet (Planet Labs PBC 2018). ... https://api.planet.com."
+    },
+    {
+      "name": "30 m Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM)",
+      "source": "USGS Earth Explorer",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "For the two terrain covariates, the 30 m Shuttle Radar Topography Mission Digital Elevation Model (SRTM DEM) was obtained from the USGS Earth Explorer website (U.S. Geological Survey 2014). ... https://earthexplorer.usgs.gov/."
+    },
+    {
+      "name": "Landslide inventory of Pinetown (U60F catchment)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This process led to the identification of 315 landslides scars in the U60F catchment (Fig. 4)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Pixel-based change detection with fuzzy membership functions",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A pixel-based change detection method that uses NDVI, slope, and VDCN as covariates. Fuzzy membership functions (S-shaped and Z-shaped curves) are applied to these covariates to identify landslide scars, with NDVI weighted more heavily. The resulting fuzzy maps are aggregated, and binary landslide maps are produced based on optimality thresholds.",
+      "source": "Jaco Kotzé, Jay Le Roux, Johan van Tol",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a pixel-based change detection approach with fuzzy membership functions was employed to map landslide scars in both the Pinetown and Port St. Johns areas of South Africa."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The input datasets are accessible via public portals, but the landslide inventory is not linked or made available. The custom code used for the method is not provided or linked."
+}

@@ -1,0 +1,40 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 MSI-Level 1C",
+      "source": "Copernicus",
+      "link": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 data, and in particular the collection MSI-Level 1C, were used in this work. The collection represents the reflectance at the Top of the Atmosphere (TOA) and is available within the Google Earth Engine (GEE) Platform [34]. ... This data can be found here: https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2 (accessed on 15 September 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "RST-cover",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multitemporal change detection technique based on the Robust Satellite Technique (RST) that uses the ALICE index to identify statistically significant NDVI anomalies at the pixel level, comparing current observations against a historical baseline of clear-sky Sentinel-2 data.",
+      "source": "Satriano, V.; Ciancia, E.; Filizzola, C.; Genzano, N.; Lacava, T.; Tramutoli, V.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The technique proposed in this paper, christened RST-cover, is based on the more general Robust Satellite Technique (RST, [35])."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-2 (COPERNICUS/S2) imagery dataset",
+        "source": "Google Earth Engine Data Catalog (Copernicus)",
+        "link": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for validation is not referenced or linked, and the custom code for the RST-cover method lacks a repository or persistent link."
+}

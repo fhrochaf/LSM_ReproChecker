@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Post-earthquake optical remote sensing image",
+      "source": "Ministry of Land and Resources, China",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Post-earthquake optical remote sensing image... Ministry of Land and Resources, China"
+    },
+    {
+      "name": "ZY3 DLC stereo mapping satellite raw data",
+      "source": "Land Satellite Remote Sensing Application Center, Ministry of Natural Resources, China",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ZY3 DLC stereo mapping satellite raw data... Land Satellite Remote Sensing Application Center, Ministry of Natural Resources, China"
+    },
+    {
+      "name": "DEM extracted from ZY3 DLC data",
+      "source": "Data processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "DEM extracted from ZY3 DLC data... Data processing"
+    },
+    {
+      "name": "Slope",
+      "source": "Data processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Slope... Data processing"
+    },
+    {
+      "name": "Aspect",
+      "source": "Data processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Aspect... Data processing"
+    },
+    {
+      "name": "Coseismic landslide cataloguing data",
+      "source": "Human–computer interaction interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Coseismic landslide cataloguing data based on pre-earthquake and post-earthquake multi temporal optical images... Human–computer interaction interpretation"
+    },
+    {
+      "name": "Jiuzhaigou seismic intensity data",
+      "source": "China Seismological Bureau",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Jiuzhaigou seismic intensity data... China Seismological Bureau"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Embedded multichannel spectral–topographic feature fusion model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An optimized DeepLab V3+ model that integrates optical imagery with topographic features (DEM, slope, aspect). It uses an embedded pre-convolution operation to fuse multichannel inputs into a 3-channel format, followed by a ResNet backbone and an atrous spatial pyramid pooling (ASPP) encoder-decoder structure for semantic segmentation.",
+      "source": "Xiangxiang Zheng, Lingyi Han, Guojin He, Ning Wang, Guizhou Wang, and Lei Feng",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this study proposes an embedded multichannel spectral–topographic feature fusion coseismic landslide extraction model based on DeepLab V3+."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or made available, and the custom code for the proposed model lacks a repository or persistent link."
+}

@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": "https://github.com/caicaiw/Multi-label-Bijie-landslidedataset.git",
+      "status": "MENTIONED",
+      "verbatim": "In this study, we performed multilabel annotation on the Bijie landslide dataset, which is available online.1 ... 1[Online]. Available: https://github.com/caicaiw/Multi-label-Bijie-landslidedataset.git"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Swin-BiLSTM-FS (Swin transformer and BiLSTM-based feature sequence)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multilabel classification network for landslide detection consisting of a feature representation (FR) module based on Swin transformer to extract feature maps and convert them into feature sequences, and a category relation parsing (CRP) module based on BiLSTM to model interlabel dependencies.",
+      "source": "Yongxin Li, Zhihui Xin, Guisheng Liao, Penghui Huang, and Mengting Yuan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a method combining Swin transformer and BiLSTM is proposed, called Swin-BiLSTM-FS (Swin transformer and BiLSTM-based feature sequence)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via a public repository, but the custom code for the Swin-BiLSTM-FS method is not available."
+}

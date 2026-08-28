@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide detection database",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For this research work, we employed the Bijie landslide detection database (Ji et al. 2020), a popular dataset developed to support the research on landslide detection using remote sensing images."
+    },
+    {
+      "name": "HR-GLDD (High-Resolution PlanetScope images)",
+      "source": "Meena et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "First, the prevalent benchmark dataset used for evaluation, HR-GLDD, comprises high- resolution PlanetScope images (Meena et al. 2023)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-Layer Attention Boosted YOLOv10 Network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv10 network that integrates attention modules (CBAM, ECA, GAM, and SA) discretely within the neck of the architecture to enhance feature representation and landslide detection accuracy.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced but not linked, and the custom code for the Multi-Layer Attention Boosted YOLOv10 Network is not provided or linked."
+}

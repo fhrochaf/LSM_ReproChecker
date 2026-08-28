@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Bijie Dataset [17]: The dataset consists of 770 samples from Bijie County, Guizhou Province, China; each sample ... includes a satellite optical image, a label image, and a digital elevation model (DEM) from TripleSat, covering rock falls, rock slides, and debris slides. ... [17] S. Ji, D. Yu, C. Shen, W. Li, and Q. Xu, “Landslide detection from an open satellite imagery and digital elevation model dataset using attention boosted convolutional neural networks,” Landslides, vol. 17, no. 6, pp. 1337–1352, Jun. 2020"
+    },
+    {
+      "name": "Landslide4Sense Dataset",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide4Sense Dataset [4]: This dataset contains 3799 image patches (128 × 128 pixels, 10-m resolution) integrating Sentinel-2’s 12 spectral bands and topographical layers (DEM and slope) generated from ALOS PALSAR... [4] O. Ghorbanzadeh, Y. Xu, P. Ghamisi, M. Kopp, and D. Kreil, “Landslide4Sense: Reference benchmark data and deep learning models for landslide detection,” IEEE Trans. Geosci. Remote Sens., vol. 60, 2022, Art. no. 5633017, doi: 10.1109/TGRS.2022.3215209."
+    },
+    {
+      "name": "GF-1 satellite imagery",
+      "source": "GF-1 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We applied our model to a subimage from the GF-1 satellite, captured on February 3, 2023, featuring a resolution of 2 m and dimensions of 2053 × 3045 pixels."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Optimized landslide semantic segmentation network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning network for landslide segmentation that utilizes a MobileNetV2 backbone, a multiresolution fusion module (MRFM) to extract and integrate features from coarse to fine details, and a selective kernel attention module (SKAM) to optimize fused information using varied receptive fields.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the segmentation network is not available."
+}

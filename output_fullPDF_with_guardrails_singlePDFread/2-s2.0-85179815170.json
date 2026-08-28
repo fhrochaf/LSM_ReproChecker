@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide vector data",
+      "source": "Authors' own fieldwork and visual interpretation on Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the historical landslide data and combined with fieldwork verification, landslides in the study area were vectorized and labeled by visual interpretation on Google Earth to obtain landslide boundary information, and a total of 732 landslide vectors were obtained."
+    },
+    {
+      "name": "Sentinel-1A SAR data",
+      "source": "Alaska Satellite Facility (ASF)",
+      "link": "https://asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "SAR data are adopted from Sentinel-1A data obtained from the Alaska Satellite Facility (ASF, https://asf.alaska.edu/) website."
+    },
+    {
+      "name": "ALOS 12.5 m DEM Resolution",
+      "source": "Advanced Land Observing Satellite (ALOS) phased array L-band synthetic aperture radar (PALSAR)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Slope and aspect were calculated based on DEM data with ALOS 12.5 m DEM Resolution. ALOS 12.5 m DEM data were elevation data produced by using advanced land observing satellite (ALOS) phased array L-band synthetic aperture radar (PALSAR)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-input channel U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net based semantic segmentation network modified with multiple input channels to ingest multisource data (SAR, optical, and terrain) and an attention mechanism module integrated into the skip connections to adjust spatial weights and focus on landslide features.",
+      "source": "Authors (Hesheng Chen et al.)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a multi-input channel U-Net landslide detection method fusing SAR, optical, and topographic multisource remote sensing data is proposed. ... The multi-input channel U-Net network model was constructed by combining Python language with TensorFlow as the base framework."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom code for the multi-input channel U-Net lacks a repository or persistent link."
+}

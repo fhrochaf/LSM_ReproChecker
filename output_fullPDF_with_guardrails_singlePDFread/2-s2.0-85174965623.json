@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye satellite imagery (Experimental Area 1)",
+      "source": "RapidEye",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The optical image of Experimental Area 1 was acquired by the RapidEye satellite on August 28, 2011 with a spatial resolution of 5 m."
+    },
+    {
+      "name": "HR ALOS-PALSAR RTC DEM",
+      "source": "Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The HR ALOS-PALSAR RTC DEM derived from the Alaska Satellite Facility is employed to detect landslides."
+    },
+    {
+      "name": "Landslide inventory (Rio de Janeiro, Brazil)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-scale feature fusion scene parsing (MFFSP) network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning framework for landslide detection that combines CNN and Transformer architectures. It uses a Visual Geometry Module (VGM), Residual Learning Module (RLM), and Transformer Module (TRM) in the encoder to extract multi-scale local and global features, and a decoder that integrates these features to produce a landslide probability map.",
+      "source": "Penglei Li et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a novel multi-scale feature fusion scene parsing (MFFSP) framework to explore information at different scales by coupling CNN with Transformer to learn local and global clues for landslide detection based on satellite data."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not mentioned or linked, and the custom MFFSP network code is not provided. Input datasets are mentioned without links, and the authors state that data is available only upon request."
+}

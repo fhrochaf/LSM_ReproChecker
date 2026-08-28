@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide vector dataset of Asakura-shi and Hita-shi",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A vector dataset of the study area delineating landslide areas along with damaged roads and flooded areas, was obtained from the Geospatial Information Authority of Japan (GSI) [24]"
+    },
+    {
+      "name": "Himawari-8 AHI apparent reflectance data",
+      "source": "Center for Environmental Remote Sensing (CERES) at Chiba University, Japan",
+      "link": "http://www.cr.chiba-u.jp/databases/GEO/H8_9/FD/index.html",
+      "status": "MENTIONED",
+      "verbatim": "Himawari-8 AHI precisely geolocated apparent reflectance data covering Japan (N 50◦–N 20◦ and E 120◦–E 150◦) were obtained for a period of 1 January 2016 to 31 December 2017 from the Center for Environmental Remote Sensing (CERES) at Chiba University, Japan (http://www.cr.chiba-u.jp/databases/GEO/H8_9/FD/index.html)."
+    },
+    {
+      "name": "VIIRS red and NIR (I1 and I2) TOA reflectances",
+      "source": "NOAA Comprehensive Large Array-data Stewardship System (CLASS)",
+      "link": "https://www.class.noaa.gov/",
+      "status": "MENTIONED",
+      "verbatim": "we obtained VIIRS data from the NOAA Comprehensive Large Array-data Stewardship System (CLASS, https://www.class.noaa.gov/)"
+    },
+    {
+      "name": "Landsat-8 Operational Land Imager (OLI) data",
+      "source": "USGS EarthExplorer",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "Landsat-8 Operational Land Imager (OLI) data from the USGS EarthExplorer (https://earthexplorer.usgs.gov/)"
+    },
+    {
+      "name": "Sentinel-2A/B MultiSpectral Instrument (MSI) data",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu/dhus/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2A/B MultiSpectral Instrument (MSI) data from the Copernicus Open Access Hub (https://scihub.copernicus.eu/dhus/)"
+    },
+    {
+      "name": "Hourly sunshine duration data",
+      "source": "Asakura weather station (AMeDAS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also obtained hourly sunshine duration data (decimal hour units) for a period of 1 July 2017 to 31 August 2017 for the Asakura weather station"
+    },
+    {
+      "name": "Landslide and debris-mud flow polygon dataset (Hiroshima)",
+      "source": "Hiroshima University Disaster Investigation Group",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A vector dataset of landslides and debris-mud flows delineated based on visual interpretations of aerial photos acquired by GSI after the rain event [46] was obtained and used as a reference"
+    }
+  ],
+  "methods": [
+    {
+      "name": "NDVI-based landslide detection using Himawari-8 AHI",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses Himawari-8 AHI NDVI time series data to detect landslides by identifying abrupt decreases in NDVI values following a rain event. It involves filtering and smoothing the AHI 10-minute resolution data, calculating the NDVI difference (∆NDVI) between pre- and post-event periods, and correlating this difference with the percentage of landslide area.",
+      "source": "Tomoaki Miura and Shin Nagai",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we investigated the utility of Himawari-8 AHI data for mapping the spatial extent of landslide-affected areas caused by a torrential rain event... To quantify the NDVI change due to landslides, NDVI difference (∆NDVI) was computed by subtracting post-event smoothed NDVI values from pre-event smoothed NDVI values on a per pixel basis."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced but lack direct links or are not publicly accessible, and the custom code used for the NDVI-based landslide detection method is not provided."
+}

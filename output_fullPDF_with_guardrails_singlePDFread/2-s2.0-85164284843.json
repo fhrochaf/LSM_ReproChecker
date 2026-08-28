@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide disaster dataset",
+      "source": "Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Wuhan University provided the public with the Bijie landslide disaster dataset, in which there are 770 landslide images and 2,003 non-landslide images (Ji et al., 2020)."
+    },
+    {
+      "name": "Google Earth images",
+      "source": "Google Earth",
+      "link": "https://earth.google.com/",
+      "status": "MENTIONED",
+      "verbatim": "The process of constructing a self-made loess landslide dataset consists of historical landslide events investigation data and Google Earth images with a spatial resolution of 0.8 m (https://earth.google.com/)."
+    },
+    {
+      "name": "Landsat 8 images",
+      "source": "USGS (implied)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "However, as the Google Earth images are sourced from multiple sensors and exhibit spectral and temporal inconsistencies, Landsat 8 images from the same area were also utilized."
+    },
+    {
+      "name": "Historical or potential landslides events investigation data",
+      "source": "Resource and Environmental Science and Data Centre of the Chinese Academy of Sciences",
+      "link": "https://www.resdc.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Based on the investigation of historical or potential landslides events in the sampling areas of the landslide dataset, as provided by the Resource and Environmental Science and Data Centre of the Chinese Academy of Sciences in 2019 (https://www.resdc.cn/)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Mask-Rcnn + Weight Transfer Function + Mask IOU",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Mask R-CNN model for loess landslide detection using partially supervised learning. It incorporates a weight transfer function to enable learning from both bounding box and segmentation mask labels, and a mask IoU head network block to calibrate mask scores and improve segmentation accuracy.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but lack direct links, and the custom code used for the Mask-RCNN model is not provided or linked."
+}

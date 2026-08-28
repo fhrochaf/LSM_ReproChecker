@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Since there are few publicly available landslide datasets and their quality is uneven, to have a good experimental basis, we selected the Bijie dataset published by Ji et al. (2020) [24]."
+    },
+    {
+      "name": "VOC data set",
+      "source": "VOC",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the experiment, we set and adjusted the training parameters uniformly for all the models, as shown in Table 4... datasets used for pre-training VOC data set"
+    }
+  ],
+  "methods": [
+    {
+      "name": "PSPNet with ResNet50 backbone",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model that uses a pyramid pooling module to capture multiscale context information, with ResNet50 as the backbone network for feature extraction, trained to perform pixel-level landslide identification.",
+      "source": "Yang et al. (authors)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "According to the experimental results, the best recognition accuracy of PSPNet is with the classification network ResNet50 as the backbone network."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced but not linked, and the VOC dataset is mentioned without a link. The custom PSPNet code is mentioned but lacks a repository or persistent link."
+}

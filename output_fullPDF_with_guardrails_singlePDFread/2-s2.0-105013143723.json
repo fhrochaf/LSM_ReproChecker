@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "UAV aerial imagery of the 2023 Gansu Jishishan Ms 6.2 earthquake",
+      "source": "Authors' own emergency scientific survey mission",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Using a JOUAV CW-15 VTOL (Vertical Take-Off and Landing) fixed-wing UAV (Chengdu Crossbow Automation Technology Co., Ltd., Chengdu, China), we conducted aerial photography covering approximately 20 km2 of severely affected landslide zones post-earthquake"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Enhanced YOLOv8 with P2 detection head and large-tile segmentation–tile mosaicking workflow",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method enhances the YOLOv8 architecture by adding a high-resolution P2 detection head to improve small-target detection (4-16 pixels). It integrates this with a large-tile processing workflow that handles geocoded imagery, performs instance segmentation, and mosaics the results back into a seamless map.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this study proposes and validates an innovative methodology integrating enhanced deep learning architectures with large-tile processing strategies, featuring two core advances: (1) a critical enhancement of YOLOv8’s shallow layers via a higher-resolution P2 detection head... and (2) the development of a large-tile segmentation–tile mosaicking workflow"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The datasets generated and analyzed during the current study are available from the corresponding author on reasonable request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the enhanced YOLOv8 methodology is not available."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Gaofen-2 images",
+      "source": "Chinese Earth Observation Satellite Data Service",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "are obtained from the chinese earth observation satellite data service."
+    },
+    {
+      "name": "Sentinel-2 images",
+      "source": "European Space Agency (Copernicus program)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2, part of the Copernicus program of the European Space Agency, comprises two satellites: Sentinel-2A and Sentinel-2B."
+    },
+    {
+      "name": "Luding Landslide Dataset",
+      "source": "Authors' own creation",
+      "link": "https://drive.google.com/file/d/1p24cpyjcfpvmqeg2goe8ofutcfl4lp_b/view",
+      "status": "MENTIONED",
+      "verbatim": "[online].available:https://drive.google.com/file/d/1p24cpyjcfpvmqeg2goe8ofutcfl4lp_b/view?"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Trans-UNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A hybrid CNN-Transformer model for landslide mapping. It uses a hierarchical Transformer encoder for global context, a U-shaped full-scale feature extraction (U-FFE) module for local details, and a convolutional decoder (C-Decoder) for feature fusion and resolution restoration.",
+      "source": "Tianhe Ren, Wenping Gong, et al.",
+      "link": "https://github.com/geohazard-research/trans-unet-pytorch",
+      "status": "MENTIONED",
+      "verbatim": "[online].available:https://github.com/geohazard-research/trans-unet-pytorch"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked and provided by the authors, while other input datasets are publicly accessible through established providers. The custom code is available via a persistent GitHub repository link."
+}

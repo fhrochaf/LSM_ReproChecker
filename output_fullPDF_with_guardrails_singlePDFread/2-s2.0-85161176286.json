@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Google Earth Engine",
+      "link": "https://developers.google.com/earth-engine/datasets/catalog/",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2 imagery and NASADEM data are freely downloaded from Google Earth Engine platform at the website of https://developers.google.com/earth-engine/datasets/catalog/ (accessed on October 27, 2022)."
+    },
+    {
+      "name": "NASADEM data",
+      "source": "Google Earth Engine",
+      "link": "https://developers.google.com/earth-engine/datasets/catalog/",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2 imagery and NASADEM data are freely downloaded from Google Earth Engine platform at the website of https://developers.google.com/earth-engine/datasets/catalog/ (accessed on October 27, 2022)."
+    },
+    {
+      "name": "Landslide database of Iburi study area",
+      "source": "Zhang et al. (2019)",
+      "link": "https://zenodo.org/record/2577300#.YzKiSXZByUl",
+      "status": "MENTIONED",
+      "verbatim": "The ground truth of Iburi study area can be downloaded at the website of https://zenodo.org/record/2577300#.YzKiSXZByUl (accessed on October 27, 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual-encoder U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network with a dual-encoder architecture that processes optical Sentinel-2 bands and DEM-derived data (slope, elevation, aspect) separately before feature fusion. It incorporates a self-attention module in the decoder to improve feature representation and is trained using a joint loss function of weighted cross-entropy and Dice loss.",
+      "source": "Wei Lu, Yunfeng Hu, Zuopei Zhang, Wei Cao",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The code used during the current study is available from the corresponding author on reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-2 imagery",
+        "source": "Google Earth Engine",
+        "link": "https://developers.google.com/earth-engine/datasets/catalog/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "NASADEM elevation data",
+        "source": "Google Earth Engine",
+        "link": "https://developers.google.com/earth-engine/datasets/catalog/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Ground truth landslide data for Iburi study area",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/record/2577300#.YzKiSXZByUl",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Datasets mentioned with some referencing. The code used during the current study is available from the corresponding author on reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are referenced and linked via public repositories. However, the custom code for the dual-encoder U-Net is not provided via a repository or persistent link, as it is only available upon request."
+}

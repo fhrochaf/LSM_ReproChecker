@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "2019 Bijie landslide dataset",
+      "source": "Prof. Shunping Ji’s group at Wuhan University",
+      "link": "http://gpcv.whu.edu.cn/data/",
+      "status": "MENTIONED",
+      "verbatim": "the positive samples also included the 2019 Bijie landslide dataset produced by Prof. Shunping Ji’s group at Wuhan University (http://gpcv.whu.edu.cn/data/, accessed on 3 May 2023) [33]."
+    },
+    {
+      "name": "Remote sensing images from Google Earth Engine",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing images used in this study were obtained from the Google Earth Engine platform"
+    }
+  ],
+  "methods": [
+    {
+      "name": "SE-YOLOv7",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv7 model that incorporates the Squeeze-and-Excitation (SE) attention mechanism into the backbone and replaces the original loss function with the VariFocal loss function to enhance landslide detection accuracy in complex backgrounds.",
+      "source": "Qing Liu, Tingting Wu, Yahong Deng, and Zhiheng Liu",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "This study innovates based on the YOLOv7 algorithm model and proposes a new SE-YOLOv7 model by adding the SE squeezed attention mechanism and VariFocal loss function"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author, upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and the remote sensing imagery is accessible via Google Earth Engine. However, the custom SE-YOLOv7 code is not provided or linked."
+}

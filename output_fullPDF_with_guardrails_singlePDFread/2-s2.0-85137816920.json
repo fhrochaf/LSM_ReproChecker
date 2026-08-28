@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Wenchuan County post-earthquake UAV imagery",
+      "source": "Authors' own data collection (SF-300 UAV)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study used data from an SF-300 UAV equipped with a Canon EOS 5D Mark II camera that was flown over Wenchuan County in Sichuan Province, China, on 15 August 2010"
+    },
+    {
+      "name": "MS COCO dataset",
+      "source": "Microsoft",
+      "link": "https://github.com/facebookresearch/detectron2/blob/main/MODEL_ZOO.md",
+      "status": "MENTIONED",
+      "verbatim": "The model files for this experiment were pre-trained with the MSCOCO dataset and can be downloaded at this URL https://github.com/facebookresearch/detectron2/blob/main/MODEL_ZOO.md"
+    },
+    {
+      "name": "Haiti post-earthquake GF-2 satellite imagery",
+      "source": "GF-2 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Haiti post-earthquake GF-2 satellite image from 2021."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Mask R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An instance segmentation model based on Mask R-CNN that utilizes ResNet-50, ResNet-101, or Swin Transformer as backbone networks. It incorporates transfer learning from MS COCO pre-trained weights and data augmentation (rotation and flipping) to improve landslide detection accuracy and generalization.",
+      "source": "Authors",
+      "link": "https://github.com/open-mmlab/mmdetection",
+      "status": "MENTIONED",
+      "verbatim": "The network structure code used in the article can be downloaded at these two URLs: https://github.com/open-mmlab/mmdetection (accessed on 4 July 2022) and https://github.com/SwinTransformer/Swin-Transformer-Object-Detection (accessed on 4 July 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Not applicable"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for training or validation is not referenced or linked. Only the base structure code is available via the provided repository links."
+}

@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset, an early open-source benchmark from Wuhan University, includes 2773 images (770 landslide-positive) at 0.8 m resolution from TripleSat over 26,853 km2 of karst terrain in Guizhou, China Ji et al. (2020)"
+    },
+    {
+      "name": "Landslide4Sense",
+      "source": "Ghorbanzadeh et al., 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide4Sense establishes a global multisource benchmark for competitions, with 3799 training, 245 validation, and 800 test patches (128 × 128 pixels) at 10 m resolution from Sentinel-2 (12 optical bands) fused with ALOS PALSAR DEM/slope data across four continents (Ghorbanzadeh et al., 2022)."
+    },
+    {
+      "name": "GVLM Dataset",
+      "source": "Zhang et al., 2023",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The GVLM Dataset establishes the first large-scale landslide mapping benchmark, comprising 17 bitemporal image pairs (pre- and post-event) at 0.59 m resolution from Google Earth, covering 163.77 km2 across six continents including diverse sites in Asia, Africa, North America, South America, Europe, and Oceania (Zhang et al., 2023)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GeoNeXt",
+      "method_type": "CUSTOM_CODE",
+      "summary": "GeoNeXt is a U-Net-style semantic segmentation architecture that combines a pre-trained ConvNeXt V2 encoder with a decoder utilizing Pyramid Squeeze Attention (PSA) and Atrous Spatial Pyramid Pooling (ASPP) to capture multi-scale features for landslide recognition.",
+      "source": "Rodrigo Uribe-Ventura et al.",
+      "link": "https://github.com/ruribev/GeoNeXt/tree/main",
+      "status": "MENTIONED",
+      "verbatim": "The codebase, model weights, and datasets are available at: https://github.com/ruribev/GeoNeXt/tree/main."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Datasets used in this study",
+        "source": "GitHub (ruribev)",
+        "link": "https://github.com/ruribev/GeoNeXt/tree/main",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "GeoNeXt codebase and model weights",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom codebase and trained model weights for the GeoNeXt method, shared alongside the datasets in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/ruribev/GeoNeXt/tree/main",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links for data."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are publicly available. The custom code for the GeoNeXt method is available via a provided GitHub repository link."
+}

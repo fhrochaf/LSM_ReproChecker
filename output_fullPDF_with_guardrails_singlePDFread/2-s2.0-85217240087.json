@@ -1,0 +1,78 @@
+{
+  "datasets": [
+    {
+      "name": "Medium Resolution Global Sentinel Landslide Dataset (MRGSLD)",
+      "source": "Authors' own creation",
+      "link": "https://zenodo.org/records/14031708?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhjhjNWJmLTU4ZWYtNDdkNS1iM2Y5L NnFmNmQ1ODczNyIsImRhdGUiOjI0ZWEwMjhZTBmYjY3NThhODNmMWQzMWVjJ9.LW6vz xNvWq6Wi7X-KnWIwXZ4VTGvr4RAucbny2OaDY7ctSthkhJWhKK0roPO9FSAEBFYRxkmIkTVs7FNe8i4",
+      "status": "MENTIONED",
+      "verbatim": "The MRGSLD dataset repository and MSFAM-ResAttUNet can be found at this link: https://zenodo.org/records/14031708?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhjhjNWJmLTU4ZWYtNDdkNS1iM2Y5L NnFmNmQ1ODczNyIsImRhdGUiOjI0ZWEwMjhZTBmYjY3NThhODNmMWQzMWVjJ9.LW6vz xNvWq6Wi7X-KnWIwXZ4VTGvr4RAucbny2OaDY7ctSthkhJWhKK0roPO9FSAEBFYRxkmIkTVs7FNe8i4."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, Sentinel 2 imagery and JAXA-ALOS World (AW3D30) (Tadono et al. 2014) were obtained and handled using GEE."
+    },
+    {
+      "name": "JAXA-ALOS World (AW3D30)",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, Sentinel 2 imagery and JAXA-ALOS World (AW3D30) (Tadono et al. 2014) were obtained and handled using GEE."
+    },
+    {
+      "name": "JRC/GSW1_4/GlobalSurfaceWater dataset",
+      "source": "JRC",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the max-extent band from the JRC/GSW1_4/GlobalSurfaceWater dataset (Pekel et al., 2016) were used to mask pixels representing water and hill shadows, respectively."
+    },
+    {
+      "name": "HR-GLDD dataset",
+      "source": "Meena et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This evaluation was performed on the advertised HR-GLDD (collection 1) dataset (Meena et al. 2023)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MSFAM-ResAttUnet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multispectral landslide segmentation network that integrates a Feature Attention Module (FAM) into a ResAttUnet backbone. It uses a dual-branch architecture to process nine spectral bands and topographic inputs, with the FAM prioritizing landslide features to minimize information loss during downsampling.",
+      "source": "Authors' own contribution",
+      "link": "https://zenodo.org/records/14031708?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhjhjNWJmLTU4ZWYtNDdkNS1iM2Y5L NnFmNmQ1ODczNyIsImRhdGUiOjI0ZWEwMjhZTBmYjY3NThhODNmMWQzMWVjJ9.LW6vz xNvWq6Wi7X-KnWIwXZ4VTGvr4RAucbny2OaDY7ctSthkhJWhKK0roPO9FSAEBFYRxkmIkTVs7FNe8i4",
+      "status": "MENTIONED",
+      "verbatim": "The MRGSLD dataset repository and MSFAM-ResAttUNet can be found at this link: https://zenodo.org/records/14031708?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVhjhjNWJmLTU4ZWYtNDdkNS1iM2Y5L NnFmNmQ1ODczNyIsImRhdGUiOjI0ZWEwMjhZTBmYjY3NThhODNmMWQzMWVjJ9.LW6vz xNvWq6Wi7X-KnWIwXZ4VTGvr4RAucbny2OaDY7ctSthkhJWhKK0roPO9FSAEBFYRxkmIkTVs7FNe8i4."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Study dataset (detailed in supplementary material)",
+        "source": null,
+        "link": "https://doi.org/10.1007/s41748-025-00577-3",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Neural network model architecture (detailed in supplementary material)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Details of the neural network model architecture used in the study are provided in the paper's supplementary material.",
+        "source": null,
+        "link": "https://doi.org/10.1007/s41748-025-00577-3",
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement (through supplementary material), with description and referencing of artifacts (no shared links)."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory (MRGSLD) and custom code (MSFAM-ResAttUnet) are linked via a persistent Zenodo repository. Other input datasets are accessible through public platforms like Google Earth Engine or are referenced as established public datasets."
+}

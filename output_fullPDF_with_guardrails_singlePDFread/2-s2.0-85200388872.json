@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4sense dataset",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4sense dataset is used for identifying landslides, which contains 3799 training samples and 245 testing samples. ... Omid Ghorbanzadeh et al., utilized benchmark data and DL approaches for landslide detection. In particular, the data in the landslide4sense dataset is collected from four regions namely Kodagu, Gorkha, Iburi, and Taiwan is considered for their study [1]."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "These image patches are taken from the Sentinel-2 sensor... Sentinel-2 is the largest globally available and best special resolution for searching and downloading satellite imagery."
+    },
+    {
+      "name": "ALOS PALSAR (DEM and slope)",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the slope and Digital Elevation Model (DEM) are from the ALOS PALSAR sensor. ... The topological information such as DEM and slope were derived from ALOS PALSAR."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ResNet18",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A residual neural network architecture with 18 layers, adapted for landslide identification by training on the Landslide4sense dataset using 14-band input patches (Sentinel-2 multispectral bands plus slope and DEM).",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, and the custom code for the ResNet18 method is not available."
+}

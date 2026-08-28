@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Diverse Landslide Dataset (DLD)",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this study constructs a comprehensive landslide dataset, referred to as the Diverse Landslide Dataset (DLD), composed of three sub-datasets: the Southwest landslide dataset, the CAS landslide dataset, and the Taiwan landslide dataset."
+    },
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Ji, S., Yu, D., Shen, C., Li, W., Xu, Q.: Landslide detection from an open satellite imagery and digital elevation model dataset using attention boosted convolutional neural networks. Landslides. 17, 1337–1352 (2020)"
+    },
+    {
+      "name": "Luding dataset",
+      "source": "Wang et al. (2024)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Wang, H., Liu, J., Zeng, S., Xiao, K., Yang, D., Yao, G., Yang, R.: A novel landslide identification method for multi-scale and complex background region based on multi-model fusion: YOLO + U-Net. Landslides. 21, 901–917 (2024)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Complex Terrain Landslide DEtection TRansformer (CTL-DETR)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CTL-DETR is a Transformer-based landslide detection model that integrates Synergistic Multi-Attention Feature Extraction (C2f-SMAG), Mixed Aggregation and Faster Fusion (MA-Fusion), and Context-Guided Downsampling (CG-Down) modules to enhance the accuracy and robustness of multi-morphological landslide feature recognition and complex terrain landslide detection.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes a Transformer-based landslide detection model, named Complex Terrain Landslide DEtection TRansformer (CTL-DETR)"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The data used to support the findings of this study is available from the corresponding author upon request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or made available, and the custom code for the CTL-DETR model lacks a repository or persistent link."
+}

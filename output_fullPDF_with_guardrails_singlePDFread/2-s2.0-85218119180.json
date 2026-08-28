@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory map",
+      "source": "Authors' own creation (based on Google Earth imagery)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study created the landslide inventory map considering both rainfall-induced events and anthropogenic activities within the research area. The inventory map was created manually by digitally mapping the locations of landslide scars visible on historical satellite images from Google Earth captured between January 2016 and December 2022."
+    },
+    {
+      "name": "Sentinel-2 MSI: MultiSpectral Instrument, Level-2A surface reflectance images",
+      "source": "European Space Agency (ESA) / Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 images from the Copernicus Programme, facilitated by the ESA, offer valuable insights into vegetation health through their multi-spectral capabilities."
+    },
+    {
+      "name": "NASADEM Digital Elevation Model (30 m resolution)",
+      "source": "NASA LP DAAC",
+      "link": "https://cmr.earthdata.nasa.gov/search/concepts/C1546314043-LPDAAC_ECS.html",
+      "status": "MENTIONED",
+      "verbatim": "We utilized NASADEM, an enhanced version of the Digital Elevation Model (DEM) due to Shuttle Radar Topography Mission (SRTM) data... https://cmr.earthdata.nasa.gov/search/concepts/C1546314043-LPDAAC_ECS.html"
+    }
+  ],
+  "methods": [
+    {
+      "name": "GEOBIA (Geographic Object-Based Image Analysis) on Google Earth Engine",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A workflow implemented in Google Earth Engine that integrates SNIC segmentation for spatial clustering, GLCM for textural feature extraction, PCA for dimensionality reduction, and machine learning classifiers (SVM, RF, CART) for landslide identification.",
+      "source": "Diwakar Khadka",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study proposes a new approach combining Geographic Object-Based Image Analysis (GEOBIA) and machine learning on the Google Earth Engine (GEE) platform... This study applied RS data on the GEE platform and ML algorithms for landslides identification."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that supports the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom GEOBIA workflow code is not provided or linked. While input datasets like NASADEM and Sentinel-2 are accessible via public repositories, the lack of code and ground-truth data prevents reproduction."
+}

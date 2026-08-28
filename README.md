@@ -8,8 +8,9 @@ A [CrewAI](https://crewai.com) flow that automatically screens publications on l
 
 1. **Filter** — an `abstract_screener` agent reads the abstract and decides whether the paper is actually about a landslide mapping *method* (`INCLUDE`/`EXCLUDE`), as opposed to an inventory, susceptibility mapping, or review paper. The decision is written back to the CSV so it's never re-run for that row.
 2. **Availability check** — skipped if the CSV row already has prefilled `Webpage_*` availability columns (see [Prefilled availability](#prefilled-availability)); otherwise an `availability_web_scraper` agent visits the publication's DOI page to check for data/code availability statements and links.
-3. **Reproducibility checks** — a `paper_analyzer` agent reads the paper's PDF (via RAG search or full-text, see [PDF reading modes](#pdf-reading-modes)) to extract every dataset and every method used, each run **three times independently** and reconciled by fuzzy consensus (see [Multi-run consensus](#multi-run-consensus)). Every extracted excerpt is also checked by a guardrail against the actual PDF text before it's accepted (see [Guardrails](#guardrails-verbatim-fuzzy-matching)).
-4. **Report compilation** — a `report_elaborator` agent combines the consolidated dataset/method findings and the availability summary into a final `reproducibility_status` (`REPRODUCIBLE` / `PARTIALLY_REPRODUCIBLE` / `NOT_REPRODUCIBLE`) plus a short assessment.
+3. **Paper analysis** — a `paper_analyzer` agent reads the paper's PDF once (via RAG search or full-text, see [PDF reading modes](#pdf-reading-modes)) in a single `analyze_paper` task to extract every dataset used and the authors' own novel landslide mapping method. This task is run once by default, configurable to run multiple independent passes reconciled by fuzzy consensus (see [Multi-run consensus](#multi-run-consensus)). Every extracted excerpt is also checked by a guardrail against the actual PDF text before it's accepted (see [Guardrails](#guardrails-verbatim-fuzzy-matching)).
+4. **Dataset availability research** — for any consolidated dataset not yet catalogued in the project's dataset availability reference, a `dataset_availability_researcher` agent searches the web for its real-world access status and the reference is updated for future runs (see [Dataset availability reference](#dataset-availability-reference)).
+5. **Report compilation** — a `report_elaborator` agent combines the consolidated dataset/method findings, the availability summary, and the dataset availability reference into a final `reproducibility_status` (`REPRODUCIBLE` / `PARTIALLY_REPRODUCIBLE` / `NOT_REPRODUCIBLE`) plus a short assessment.
 
 Results are written back into the input CSV and saved as a JSON report per publication in the configured output directory.
 
@@ -20,8 +21,9 @@ Defined in `src/flow_reproassesslsm_st1/crews/reprochecker_crew/config/agents.ya
 | Agent | Role | LLM | Tools |
 |---|---|---|---|
 | `abstract_screener` | Fast triage from the abstract alone: INCLUDE/EXCLUDE with a reason | `llm_local` (local Ollama model) | — |
-| `paper_analyzer` | Extracts dataset and method reproducibility info from the full paper | `llm_large` (remote/larger model) | `PDFSearchTool` (RAG) or `PDFFullTextTool`, plus the `lsm_domain_instructions` skill |
+| `paper_analyzer` | Extracts dataset and novel-method reproducibility info from the full paper in one pass | `llm_large` (remote/larger model) | `PDFSearchTool` (RAG) or `PDFFullTextTool`, plus the `lsm_domain_instructions` skill |
 | `availability_web_scraper` | Visits the DOI page to confirm real-world data/code availability | `llm_large` | `PublicationAvailabilityTool` |
+| `dataset_availability_researcher` | Web-searches the real-world access status of datasets not yet in the reference cache | `llm_large` | `TavilySearchTool` |
 | `report_elaborator` | Synthesizes everything into one final structured report; never introduces new claims | `llm_large` | — |
 
 `llm_local`/`llm_large` are configured in `src/flow_reproassesslsm_st1/config.py`. Splitting cheap triage (local model) from the heavier extraction/synthesis work (larger model) keeps cost and rate limits down — all agents are additionally capped at `MAX_RPM = 5` requests/minute.
@@ -35,7 +37,7 @@ Defined in `src/flow_reproassesslsm_st1/crews/reprochecker_crew/config/agents.ya
 
 ## Multi-run consensus
 
-Extraction is inherently noisy — the same paper read twice can turn up slightly different dataset/method lists. To reduce this, `check_data_reproducibility` and `check_method_reproducibility` are each run `MULTI_RUN_COUNT = 3` times independently by default (`reprochecker_crew.py::_repeat_task`), producing 3 separate `DataReproOutput`/`MethodReproOutput` results — configurable per invocation via `--multi-run-count`.
+Extraction is inherently noisy — the same paper read twice can turn up slightly different dataset/method lists. To reduce this, `analyze_paper` can be run multiple independent times (`reprochecker_crew.py::_repeat_task`), producing one `PaperAnalysisOutput` per run — configurable per invocation via `--multi-run-count` (default `1`, i.e. a single pass with no consensus reconciliation).
 
 `utils.merge_entries` (`src/flow_reproassesslsm_st1/utils.py`) then reconciles the runs per check into one list:
 
@@ -43,11 +45,11 @@ Extraction is inherently noisy — the same paper read twice can turn up slightl
 2. **Majority vote** — a cluster only survives into the final result if it has entries from at least `min_votes` of the runs. `min_votes` defaults to `min(2, number of runs)`: still 2 whenever there are 2+ runs (a dataset/method only one run found is dropped as likely a hallucination or a one-off misread), but relaxes to 1 when `--multi-run-count 1` is used, since a single run can never produce 2 agreeing votes.
 3. **Pick a representative** — within a surviving cluster, the entry with a non-null `link` wins (preferring the run that actually found the retrieval link); ties are broken by whichever entry has the most non-null fields (`source`, `link`, `verbatim`).
 
-This consensus step runs entirely in Python between crew kickoffs — the Flow (`main.py::run_repro_check`) pulls the 3 raw task outputs from `self._crew._data_runs`/`_method_runs` and merges them before handing the result to `report_elaborator`.
+This consensus step runs entirely in Python between crew kickoffs — the Flow (`main.py::run_repro_check`) pulls the raw task outputs from `self._crew._analysis_runs` and merges their `datasets`/`methods` lists separately before handing the result to `report_elaborator`.
 
 ## Guardrails: verbatim fuzzy-matching
 
-Every `check_data_reproducibility`/`check_method_reproducibility` task run (`src/flow_reproassesslsm_st1/tools/guardrails.py`) is attached a CrewAI task **guardrail** via `make_verbatim_guardrail`, which runs after each individual run and can force a retry before the output is accepted:
+Every `analyze_paper` task run (`src/flow_reproassesslsm_st1/tools/guardrails.py`) is attached a CrewAI task **guardrail** via `make_verbatim_guardrail`, which runs after each individual run and can force a retry before the output is accepted:
 
 - Any entry with `status: MENTIONED` must include a `verbatim` excerpt; a `MENTIONED` entry with no excerpt fails the guardrail outright.
 - The excerpt is fuzzy-matched against the paper's actual extracted PDF text (`pdfplumber`, cached per PDF) using RapidFuzz `partial_ratio`. It must score `>=80` (`FUZZY_MATCH_THRESHOLD`) — a lower score means the agent likely paraphrased or fabricated the quote, and the guardrail fails with a message telling the agent to quote verbatim or mark the entry `NOT_MENTIONED`.
@@ -55,6 +57,16 @@ Every `check_data_reproducibility`/`check_method_reproducibility` task run (`src
 - Matching first normalizes typographic characters (smart quotes, en/em dashes) that PDFs use but LLM transcriptions usually don't reproduce exactly, and retries a "despaced" comparison (all whitespace stripped) to tolerate spacing artifacts from `pdfplumber`'s text extraction on multi-column layouts.
 
 This guardrail is what actually enforces grounding: it runs independently on each multi-run pass (not just once on the consolidated result), so a hallucinated dataset/method has to survive fuzzy verification on every pass before it can even reach the consensus step above.
+
+## Dataset availability reference
+
+A paper may name a dataset (e.g. `Sentinel-2 imagery`) without linking it, or cite a source that isn't a retrieval link. Rather than have `report_elaborator` guess whether such a dataset is realistically obtainable, the Flow maintains a small cache of researched availability facts, keyed by dataset name, at `crews/reprochecker_crew/skills/dataset_availability_reference/dataset_availability_reference.json` (path in `config.DATASET_AVAILABILITY_REFERENCE`). Each entry has a `summary`, an `availability` verdict (`PUBLIC_FREE`/`PUBLIC_REG`/`COMMERCIAL`/`RESTRICTED`/`VARIES`, with provider notes), and a `verified_via` source URL. It ships pre-populated with common remote-sensing datasets (Sentinel-1/2, SRTM, Landsat, ASTER GDEM, Copernicus DEM, etc.).
+
+For every paper, `main.py::_resolve_dataset_availability_reference`:
+
+1. Fuzzy-matches each consolidated dataset name against the reference's keys (`utils.missing_dataset_names`, same `NAME_CLUSTER_THRESHOLD` logic as [multi-run consensus](#multi-run-consensus)) to find which ones aren't covered yet.
+2. If any are missing, runs `dataset_research_crew` — the `dataset_availability_researcher` agent, backed by `TavilySearchTool` — once for the whole batch of missing names, and appends the results to the JSON file (`utils.append_dataset_reference_entries`) so future papers referencing the same dataset skip this step entirely.
+3. Builds a slim, availability-only context (`utils.dataset_reference_context`: just `name` → `availability` for whichever reference entries match this paper's datasets) and passes it to `compile_final_report_from_consolidated` as supporting context — it does not override what the paper itself says, but lets the report distinguish "not linked but PUBLIC_FREE elsewhere" from "not linked and effectively unobtainable."
 
 ## Prefilled availability
 
@@ -65,10 +77,11 @@ If a CSV row already has `Webpage_Access_Status == "ACCESSIBLE"` plus at least o
 - `src/flow_reproassesslsm_st1/` — the CrewAI flow, crew, agents, tasks, and Pydantic models
   - `main.py` — `ReproCheckFlow` (the flow graph) and the `kickoff`/`plot`/`run_with_trigger` CLI entry points
   - `crews/reprochecker_crew/config/` — `agents.yaml` and `tasks.yaml` defining agent roles and task prompts
-  - `crews/reprochecker_crew/skills/lsm_domain_instructions/` — domain-knowledge skill given to `paper_analyzer`
+  - `crews/reprochecker_crew/skills/lsm_domain_instructions/` — domain-knowledge skill (`SKILL.md`) given to `paper_analyzer`
+  - `crews/reprochecker_crew/skills/dataset_availability_reference/` — the JSON cache of researched dataset availability facts (see [Dataset availability reference](#dataset-availability-reference))
   - `tools/custom_tool.py` — `PublicationAvailabilityTool` (DOI-page scraper) and `PDFFullTextTool`
   - `tools/guardrails.py` — the verbatim fuzzy-match guardrail
-  - `utils.py` — multi-run consensus (`merge_entries`), CSV row helpers, prefilled-availability coercion
+  - `utils.py` — multi-run consensus (`merge_entries`), dataset availability reference helpers, CSV row helpers, prefilled-availability coercion
   - `models.py` — Pydantic schemas for every task output and the Flow's state
   - `config.py` — paths, LLM configs, embedding config
 - `publications/` — source PDFs (named `<EID>.pdf`) and the Scopus CSV export used as input
@@ -97,7 +110,7 @@ Requires Python >=3.10,<3.14 and [uv](https://docs.astral.sh/uv/).
 uv sync
 ```
 
-Add required API keys (e.g. `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`) to a `.env` file. A local [Ollama](https://ollama.com) instance is used for `abstract_screener` (`llm_local`), so make sure it's running if you use the default config.
+Add required API keys (e.g. `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `TAVILY_API_KEY` for `dataset_availability_researcher`'s web search) to a `.env` file. A local [Ollama](https://ollama.com) instance is used for `abstract_screener` (`llm_local`), so make sure it's running if you use the default config.
 
 ## Serving local LLMs with Ollama
 
@@ -141,7 +154,7 @@ uv run run_with_trigger '<json_payload>'   # run the flow once, from an explicit
 | `--use-full-text-tool` | off | Give `paper_analyzer` the full extracted PDF text (`PDFFullTextTool`) instead of the default `PDFSearchTool` RAG retrieval |
 | `--with-human-intervention` | off | Pause after **every** task for human review, via CrewAI's native `Task(human_input=True)`: the agent's answer is shown in the terminal and you can type feedback to send it back for another pass, or press Enter to accept and move on |
 | `--guardrail-max-retries N` | `3` | Max retries per task when the verbatim guardrail (see [Guardrails](#guardrails-verbatim-fuzzy-matching)) rejects an output, before giving up and accepting the last attempt |
-| `--multi-run-count N` | `3` | Independent runs per dataset/method check, reconciled by majority vote (see [Multi-run consensus](#multi-run-consensus)) |
+| `--multi-run-count N` | `1` | Independent runs of `analyze_paper`, reconciled by majority vote when `N >= 2` (see [Multi-run consensus](#multi-run-consensus)) |
 
 Examples:
 
@@ -159,8 +172,8 @@ uv run kickoff --max-papers 5
 # guardrail a couple more tries before giving up on a verbatim match
 uv run kickoff --with-human-intervention --guardrail-max-retries 5
 
-# Cheaper/faster spot check: 2 runs per dataset/method check instead of 3
-uv run kickoff --check-paper-only 2-s2.0-85130393221 --multi-run-count 2
+# Higher-confidence extraction: 3 independent analyze_paper runs, reconciled by consensus
+uv run kickoff --check-paper-only 2-s2.0-85130393221 --multi-run-count 3
 ```
 
 ### `uv run run_with_trigger`

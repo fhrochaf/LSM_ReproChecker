@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "In this study, an open source named Bijie landslide dataset has been used to automatically detect landslides by the DL method [16]... An image sample from the Bijie landslide dataset, which is available at http://study.rsgis.whu.edu.cn/pages/download/, has been presented in Fig. 2."
+    },
+    {
+      "name": "ImageNet database",
+      "source": "ImageNet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "VGG-16 [31] is a state-of-the-art DL model pre-trained with over 1 million images from the ImageNet database."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Ensemble learning method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method combines predictions from multiple pre-trained CNN models (Custom CNN, VGG-16, VGG-19, Inception-V3, Xception, DenseNet-121, MobileNet, and NASNet-mobile) using ensemble strategies such as majority vote, simple averaging, weighted averaging, and stacking to improve landslide classification and localization performance. It also utilizes Class-selective relevance mapping (CRM) to visualize and interpret the learned behaviors of individual models and their ensembles for ROI localization.",
+      "source": "Kemal Hacıefendiog˘lu et al.",
+      "link": "https://github.com/sivaramakrishnan-rajaraman/Detection-and-visualization-of-abnormality-in-chest-radiographs-using-modality-specific-CNNs",
+      "status": "MENTIONED",
+      "verbatim": "Code availability https://github.com/sivaramakrishnan-rajaraman/Detection-and-visualization-of-abnormality-in-chest-radiographs-using-modality-specific-CNNs."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset used in this study (hosted via WHU RSGIS)",
+        "source": "Wuhan University RSGIS",
+        "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "CNN-based detection and visualization of abnormality in chest radiographs",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Modality-specific CNN code for detecting and visualizing abnormalities in chest radiographs, shared via a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/sivaramakrishnan-rajaraman/Detection-and-visualization-of-abnormality-in-chest-radiographs-using-modality-specific-CNNs",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is linked and publicly available. The custom ensemble learning method is provided via a public GitHub repository link."
+}

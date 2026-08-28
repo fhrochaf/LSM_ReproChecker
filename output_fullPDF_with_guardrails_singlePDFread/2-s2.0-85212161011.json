@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "QTP dataset (Qinghai-Tibet Plateau landslides dataset)",
+      "source": "Authors (Zan Wang et al.)",
+      "link": "http://ieee-dataport.org/documents/qinghai-tibet-plateau-qtp-landslides-dataset",
+      "status": "MENTIONED",
+      "verbatim": "The QTP dataset [29] is available at http://ieee-dataport.org/documents/qinghai-tibet-plateau-qtp-landslides-dataset."
+    },
+    {
+      "name": "Optical remote sensing images from Google Earth Pro",
+      "source": "Google Earth Pro (CNES Airbus and Maxar Technologies)",
+      "link": "https://earth.google.com",
+      "status": "MENTIONED",
+      "verbatim": "A total of 516 optical remote sensing images with various pixel resolutions within the Qinghai-Tibet Plateau (QTP) region of China were acquired using Google Earth Pro [27]... Google. (2024). Google Earth. Accessed: Jan. 9, 2024. [Online]. Available: https://earth.google.com"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Mask R-CNN with integrated post-processing branch",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A Mask R-CNN instance segmentation model with a 50-layer residual net and feature pyramid network backbone, augmented with a custom post-processing branch to filter overlapping landslide mask predictions based on IoU and prediction scores.",
+      "source": "Zan Wang et al.",
+      "link": "https://github.com/zwang-iggcas/landslide-area-delimitation",
+      "status": "MENTIONED",
+      "verbatim": "The implementation code is available at https://github.com/zwang-iggcas/landslide-area-delimitation."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Qinghai-Tibet Plateau (QTP) Landslides Dataset",
+        "source": "IEEE DataPort",
+        "link": "https://doi.org/10.21227/g6nd-zt37",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via IEEE DataPort, and other input datasets are accessible through Google Earth. The custom Mask R-CNN implementation code is provided via a GitHub repository link."
+}

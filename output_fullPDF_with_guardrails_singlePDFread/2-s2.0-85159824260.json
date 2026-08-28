@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sichuan Province landslide dataset",
+      "source": "Zeng et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide samples used in this article are from major landslide disaster events in and around Sichuan Province since 2008, produced in [38]."
+    },
+    {
+      "name": "GF-2 satellite images",
+      "source": "China National Space Administration (implied by GF-2)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, we also carried out landslide detection for Zhaotong of Yunnan Province on GF-2 original images to prove the effectiveness and applicability of the algorithm."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DCI-PGCN (Dual-Channel Interaction Portable Graph Convolutional Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network combining a CNN encoder-decoder architecture with a novel DRP-GCN (Deep Residual Portable Graph Convolutional Network) module and a DBGIM (Dual-Branch Graph Interaction Module). It uses a global maximum node connection strategy to improve GCN portability and efficiency, and fuses information from different channels to refine landslide boundaries.",
+      "source": "Weiming Li, Yibin Fu, Shuaishuai Fan, Mingrui Xin, and Hongyang Bai",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the input imagery is mentioned without a link. The custom DCI-PGCN code is not provided or linked."
+}

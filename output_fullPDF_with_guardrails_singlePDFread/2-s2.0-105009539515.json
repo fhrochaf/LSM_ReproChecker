@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Research team at Wuhan University",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie landslide dataset11 has been developed and made publicly available by the research team at Wuhan University. ... Detailed information about the dataset and the download link can be accessed at: http://gpcv.whu.edu.cn/data/Bijie_pages.html."
+    },
+    {
+      "name": "GVLM dataset",
+      "source": "Research team at Wuhan University of Science and Technology",
+      "link": "https://github.com/zxk688/GVLM",
+      "status": "MENTIONED",
+      "verbatim": "The GVLM dataset24 was meticulously developed and released by the research team at Wuhan University of Science and Technology in 2023. ... Detailed information about the dataset and the download link can be accessed at: https://github.com/zxk688/GVLM."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Cross-Attention Landslide Detector (CALandDet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide segmentation model that uses a Multilayer Perceptron Head (MLP Head) to extract global landslide feature vectors and a cross-attention feature enhancement mechanism (CAB) to integrate these global features with local feature maps, improving discrimination between landslide and background features.",
+      "source": "Wenjie Hu et al.",
+      "link": "https://github.com/venjiehu/CALandDet",
+      "status": "MENTIONED",
+      "verbatim": "The code used in the paper and the experimental dataset can be obtained from https://github.com/venjiehu/CALandDet."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Experimental dataset",
+        "source": "GitHub (venjiehu)",
+        "link": "https://github.com/venjiehu/CALandDet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "CALandDet code used in the paper",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing the paper's method, shared alongside the experimental dataset in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/venjiehu/CALandDet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked to public repositories, and the custom code is available via a persistent GitHub repository link."
+}

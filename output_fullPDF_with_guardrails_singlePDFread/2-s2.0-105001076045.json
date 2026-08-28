@@ -1,0 +1,88 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 8 remote sensing imagery",
+      "source": "Geospatial Data Cloud",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we acquired Landsat 8 data gratis from the Geospatial Data Cloud, including remote sensing imagery from 2018 to 2020."
+    },
+    {
+      "name": "Copernicus DEM",
+      "source": "Copernicus Open Access Center",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "the Copernicus DEM mapped in 2015 and obtained from the Copernicus Open Access Center... DEMs https://scihub.copernicus.eu/"
+    },
+    {
+      "name": "NASA DEM (30 m resolution)",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the DEM data with 30 m resolution–NASA DEM, released by NASA on February 18, 2020"
+    },
+    {
+      "name": "Global Vegetation Remote Sensing Products",
+      "source": "various international organizations",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the vegetation index data products are offered by various international organizations Global Vegetation Remote Sensing Products."
+    },
+    {
+      "name": "Landslide VOC dataset (merged CAS landslides dataset and Landsat 8 images)",
+      "source": "Authors' curation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "a landslide VOC dataset was curated by merging the CAS landslides dataset with remote sensing images sourced from Landsat 8, subsequently utilized for training the Faster-RCNN model"
+    },
+    {
+      "name": "River data",
+      "source": "Geospatial Data Cloud",
+      "link": "https://www.gscloud.cn/",
+      "status": "MENTIONED",
+      "verbatim": "River https://www.gscloud.cn/"
+    },
+    {
+      "name": "NDVI data",
+      "source": "USGS EarthExplorer",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "NDVI https://earthexplorer.usgs.gov/"
+    },
+    {
+      "name": "Fault data",
+      "source": "China Earthquake Networks Center",
+      "link": "https://news.ceic.ac.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Fault https://news.ceic.ac.cn/"
+    },
+    {
+      "name": "Rainfall data",
+      "source": "SciDB",
+      "link": "https://www.scidb.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Rainfall https://www.scidb.cn/"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Faster-RCNN with ResNet-50 backbone",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors utilize a Faster-RCNN model with a ResNet-50 backbone for landslide detection. The model is enhanced by segmenting remote sensing images into smaller units (256x256) for batch processing and stitching the results to cover the large study area.",
+      "source": "Authors' implementation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, the experimental environment utilized the 12th generation Intel® CoreTM i7-12700H CPU, NVIDIA GeForce RTX 3060 Laptop GPU, the PyTorch framework, and the ResNet-50 backbone network... we enhance the Faster-RCNN model by incorporating image segmentation and fusion capabilities."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are practically accessible via public providers, but the landslide inventory used for training is not referenced or linked. The custom code for the improved Faster-RCNN model lacks a repository or persistent link."
+}

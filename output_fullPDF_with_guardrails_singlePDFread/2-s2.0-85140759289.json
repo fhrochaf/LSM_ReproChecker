@@ -1,0 +1,74 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense benchmark dataset",
+      "source": "Authors (IARAI)",
+      "link": "https://www.iarai.ac.at/landslide4sense",
+      "status": "MENTIONED",
+      "verbatim": "We make the multisource landslide benchmark data (Landslide4Sense) and the tested DL models publicly available at https://www.iarai.ac.at/landslide4sense"
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2A, launched on June 23, 2015, is a European multispectral imaging mission... Some free computing online platforms, such as Sentinel Hub (https://www.sentinel-hub.com) and Google Earth Engine (GEE) (https://earthengine.google.com), provide users with Sentinel-2 images."
+    },
+    {
+      "name": "ALOS PALSAR (DEM and slope layers)",
+      "source": "JAXA",
+      "link": "https://search.asf.alaska.edu",
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this study has generated the slope layer from the ALOS PALSAR (https://search.asf.alaska.edu)."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM)",
+      "source": "NASA/JPL",
+      "link": "https://www2.jpl.nasa.gov/srtm/",
+      "status": "MENTIONED",
+      "verbatim": "slope degree (generated mainly from Shuttle Radar Topography Mission (SRTM) https://www2.jpl.nasa.gov/srtm/)"
+    },
+    {
+      "name": "Landsat-based global forest loss map",
+      "source": "Hansen et al. (2013)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "forest loss (Landsat-based global map produced from 2000 to 2013 in [67])"
+    },
+    {
+      "name": "Geological Map of the World (GMW)",
+      "source": "CGMW",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "geology (Geological Map of the World (GMW) [68])"
+    },
+    {
+      "name": "OpenStreetMap (OSM) road networks",
+      "source": "OpenStreetMap",
+      "link": "https://www.openstreetmap.org/",
+      "status": "MENTIONED",
+      "verbatim": "road networks (OpenStreetMap (OSM) https://www.openstreetmap.org/)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide4Sense benchmark evaluation of 11 DL models",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors evaluate 11 state-of-the-art deep learning segmentation models (U-Net, ResU-Net, PSPNet, ContextNet, DeepLab-v2, DeepLab-v3+, FCN-8s, LinkNet, FRRN-A, FRRN-B, and SQNet) trained on the Landslide4Sense multisource dataset (Sentinel-2 optical + ALOS PALSAR topography) to establish a benchmark for landslide detection.",
+      "source": "IARAI",
+      "link": "https://www.iarai.ac.at/landslide4sense",
+      "status": "MENTIONED",
+      "verbatim": "We make the multisource landslide benchmark data (Landslide4Sense) and the tested DL models publicly available at https://www.iarai.ac.at/landslide4sense"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense benchmark dataset is linked and provided by the authors, and other input datasets are accessible via public repositories. The custom deep learning models are made available via a persistent link."
+}

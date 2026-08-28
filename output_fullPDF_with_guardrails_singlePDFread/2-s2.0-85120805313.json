@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "SAR image of northern Kyushu area",
+      "source": "Advanced Land Observing Satellite No. 2 (ALOS-2)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A SAR image used in this paper was taken by Advanced Land Observing Satellite No. 2 (ALOS-2)."
+    },
+    {
+      "name": "Landslide inventory (annotated landslide locations)",
+      "source": "Geospatial Information Authority of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The red areas in Figure 2 shows the locations of the landslide that were annotated based on the information provided by the Geospatial Information Authority of Japan [18]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Anomaly detection system combining Convolutional Adversarial Autoencoder (CAAE), Principal Component Analysis (PCA), and One-Class Support Vector Machine (OCSVM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a Convolutional Adversarial Autoencoder (CAAE) for unsupervised feature extraction from SAR image ROIs, followed by dimensionality reduction using Principal Component Analysis (PCA), and finally classification of normal vs. abnormal areas using a One-Class Support Vector Machine (OCSVM).",
+      "source": "Mabu et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose an anomaly detection system that detects abnormal images that deviate from normal images. The proposed method uses only normal images for the training without using abnormal (disaster) images. ... The proposed method consists of a feature extraction part and a detection part. The feature extraction is realized by Convolutional Adversarial Autoencoder (CAAE) [6,7] and Principal Component Analysis (PCA). ... The detection part is realized by One-Class Support Vector Machine (OCSVM) [9–11] that detects outliers that deviate from the normal region."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and SAR imagery are mentioned without links, and the custom code for the anomaly detection system is not available via any repository or persistent link."
+}

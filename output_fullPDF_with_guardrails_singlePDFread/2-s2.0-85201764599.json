@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "RTS inventory (fourth iteration)",
+      "source": "Nitze et al. [12] and Nitze [58]",
+      "link": "https://github.com/initze/ML_training_labels/",
+      "status": "MENTIONED",
+      "verbatim": "As the main data source for this study, we use the fourth iteration of the openly available RTS inventory from Nitze et al. [12] and Nitze [58]... It is available online at [58] and https://github.com/initze/ML_training_labels/."
+    },
+    {
+      "name": "Sentinel-2 Level 1C images",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Using the image footprints from the RTS inventory, we next download 83 matching Sentinel-2 Level 1C images sourced from Google Earth Engine."
+    }
+  ],
+  "methods": [
+    {
+      "name": "PixelDINO",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised semantic segmentation framework that adopts the DINO self-distillation concept to the pixel level. It trains a student model to align its pixelwise predictions with a teacher model's outputs (pseudoclasses) under strong data augmentations, while simultaneously training on labeled data using a supervised loss.",
+      "source": "Heidler et al.",
+      "link": "https://github.com/khdlr/PixelDINO",
+      "status": "MENTIONED",
+      "verbatim": "The code is available online at: https://github.com/khdlr/PixelDINO."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Ground-truth training labels dataset",
+        "source": "GitHub (initze)",
+        "link": "https://github.com/initze/ML_training_labels/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "PixelDINO project code and materials",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code and supporting materials for the PixelDINO method, shared via a dedicated project page.",
+        "source": null,
+        "link": "https://khdlr.github.io/PixelDINO/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via a GitHub repository, and the Sentinel-2 imagery is accessible through Google Earth Engine. The custom PixelDINO code is provided via a persistent GitHub repository link."
+}

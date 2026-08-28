@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "EuroSAT dataset",
+      "source": "Helber et al. (2019)",
+      "link": "https://github.com/phelber/EuroSAT",
+      "status": "MENTIONED",
+      "verbatim": "The EuroSAT open dataset [22], created for training and testing machine training models to effectively deal with the problem of classification of land use and vegetation cover systems on the basis of Sentinel-2 satellite images, was applied for primary testing of the proposed method. ... EuroSAT: Land Use and Land Cover Classification with Sentinel-2. Accessed: Aug. 1, 2020. [Online]. Available: https://github.com/phelber/EuroSAT"
+    },
+    {
+      "name": "MapBox satellite imagery fragments",
+      "source": "MapBox",
+      "link": "https://docs.mapbox.com/api/",
+      "status": "MENTIONED",
+      "verbatim": "Fragments of satellite images in the visual spectral range with the size of 32 × 32 px, algorithmically obtained through MapBox API in the 14th scale of tile representation 8. ... MapBox–API. Accessed: Aug. 1, 2020. [Online]. Available: https://docs.mapbox.com/api/"
+    },
+    {
+      "name": "Digital landscape map of Mordovia GIS",
+      "source": "Authors' own compilation (Mordovia GIS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Fragments of a digital landscape map of Mordovia GIS, corresponding to square areas with the side of 1 km and discretized to 32 × 32 px screens."
+    },
+    {
+      "name": "Normalized altitude map",
+      "source": "Google Elevation API",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Fragments of a normalized altitude map, plotted on the basis of Google Elevation API and having the shape of a 32 × 32 px square with the resolution of 10 meters per pixel."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GeoSystemNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model that performs classification by analyzing both local area data and associated host geosystem data (multi-scale satellite imagery and synthetic maps). It uses a hierarchical feature extraction unit (based on depthwise separable 2D convolutions) and a feature merging module to concatenate hierarchical features before classification via a multilayer perceptron.",
+      "source": "Stanislav A. Yamashkin et al.",
+      "link": "https://github.com/yamashkinsa/geosystemnet",
+      "status": "MENTIONED",
+      "verbatim": "A software code, implementing GeoSystemNet model and a possibility to conduct experiments and comparative analysis, was written in Python with involvement of TensorFlow framework and Keras library [31]. ... GeoSystemNet on GitHub. Accessed: Aug. 28, 2020. [Online]. Available: https://github.com/yamashkinsa/geosystemnet"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The EuroSAT dataset is linked and publicly available, but the landslide inventory and other regional datasets are not referenced or linked. The custom GeoSystemNet code is provided via a GitHub repository link."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4sense dataset",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The work proposed in the paper employs the benchmark multi-region and heterogeneous Landslide4sense dataset [1, 2], primarily consisting of satellite images and proposed as a part of a challenge."
+    },
+    {
+      "name": "Sentinel-2 satellite imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "DEM data, 12 multi-spectral band data (B1-B12) from the Sentinel-2 satellite and a slope layer taken from ALOS PALSAR data are among the 14 geo-spatial layers that constitute each image."
+    },
+    {
+      "name": "ALOS PALSAR data",
+      "source": "ALOS PALSAR",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "DEM data, 12 multi-spectral band data (B1-B12) from the Sentinel-2 satellite and a slope layer taken from ALOS PALSAR data are among the 14 geo-spatial layers that constitute each image."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MRF-LaD (Hybrid transformer-augmented multi-residual framework)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MRF-LaD is an encoder-decoder segmentation architecture that integrates multi-residual convolutional layers, Efficient Channel Attention (ECA-Net), a Parallel Cross-Stage Partial (P-CSP) network, and a single-stage transformer block in the bottleneck to extract multi-scale and multi-resolution features for landslide detection.",
+      "source": "Kannan and Singh",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "Hence, this paper presents a novel encoder-decoder architecture, MRF-LaD, employing multi-residual convolutional layers along the encoder, decoder and the bottleneck paths with skip connections for automated landslide detection in satellite images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present, without shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned but not linked, and the custom code for the MRF-LaD architecture is not provided or referenced."
+}

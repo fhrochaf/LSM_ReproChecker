@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "Currently, the Bijie Landslide Dataset [19] is open-source into research community, and now has been freely accessed and downloaded as following link (http://study.rsgis.whu.edu.cn/pages/download/)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LSI-YOLOv8",
+      "method_type": "CUSTOM_CODE",
+      "summary": "LSI-YOLOv8 is an improved single-stage landslide identification model based on YOLOv8. It incorporates a Dilation-wise Residual Segmentation (DWRSeg) module into the C2f structure to reduce parameters and enhance generalization, and replaces the CIoU loss function with Efficient Intersection over Union (EIoU) to improve convergence speed and positioning accuracy.",
+      "source": "Chen et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In response to the aforementioned issues, an identification model called LSI-YOLOv8 is introduced for the rapid identification of landslides using post disaster remote sensing images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie Landslide Dataset is referenced and linked as publicly available, but the custom LSI-YOLOv8 code is not provided via any repository or persistent link."
+}

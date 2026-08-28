@@ -1,0 +1,78 @@
+{
+  "datasets": [
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The optical image data utilized in this study were obtained from Google Earth and feature a spatial resolution of 1.06 m."
+    },
+    {
+      "name": "ALOS DEM data",
+      "source": "ALOS (Advanced Land Observation Satellite)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The DEM data employed for mapping the landslide extent vector data were sourced from ALOS (Advanced Land Observation Satellite), with a pixel resolution of 12.5 m × 12.5 m."
+    },
+    {
+      "name": "Coseismic landslide vector data (Wenchuan, Ludian, Jiuzhaigou)",
+      "source": "Publicly available coseismic landslide vector data",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This selection is based on publicly available coseismic landslide vector data from the aforementioned earthquakes [53–55]"
+    },
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the Bijie Landslide Dataset [34]"
+    },
+    {
+      "name": "Landslide4Sense Dataset",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the Landslide4Sense Dataset [94]"
+    }
+  ],
+  "methods": [
+    {
+      "name": "ResUNet–BFA",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model for landslide recognition that uses ResNet50 as an encoder and incorporates a lightweight boundary-focused attention (BFA) mechanism at the output of the final residual block. The BFA mechanism integrates Canny edge detection results with the original feature map to enhance boundary feature representation, while the decoder uses a U-Net architecture to restore spatial resolution.",
+      "source": "Zhao, Z.; Tan, S.; Yang, Y.; Zhang, Q.",
+      "link": "https://github.com/zhao952711/landslides_identification.git",
+      "status": "MENTIONED",
+      "verbatim": "The related code and data are available at https://github.com/zhao952711/landslides_identification.git (accessed on 1 March 2025)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide identification dataset",
+        "source": "GitHub",
+        "link": "https://github.com/zhao952711/landslides_identification.git",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Landslide identification code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code for landslide identification, shared alongside the associated data in a single GitHub repository.",
+        "source": null,
+        "link": "https://github.com/zhao952711/landslides_identification.git",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced or publicly accessible, and the custom code is provided via a persistent GitHub repository link."
+}

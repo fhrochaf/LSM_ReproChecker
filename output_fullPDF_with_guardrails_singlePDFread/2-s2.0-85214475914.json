@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2A satellite carries a multispectral imager... Sentinel-2A data are Level-1C (L1C) level data for atmospheric correction. In this article, Sen2cor, a plug-in is used for atmospheric correction of L1C data."
+    },
+    {
+      "name": "ALOS digital elevation model (DEM) data",
+      "source": "ALOS satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Advanced Land Observing Satellite (ALOS) digital elevation model (DEM) data are the elevation data collected by ALOS satellite."
+    },
+    {
+      "name": "Landslide Database",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the historical landslide data and field investigation verification, we obtain landslide boundaries by visual interpretation using high-resolution images from the Google Earth platform. After multiple checks and revisions, 732 landslides are obtained."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Heterogeneous ensemble learning landslide recognition model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A stacking-based ensemble learning framework that uses FCN, U-Net, and attention U-Net as base classifiers, with a CNN model acting as a metaclassifier to integrate the base models' predictions for pixel-level landslide segmentation.",
+      "source": "He et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We develop a heterogeneous ensemble learning landslide recognition model based on FCN, U-Net, and attention U-Net base classifiers, and comprehensively utilize multidimensional features of remote sensing images... In this article, based on the traditional stacking ensemble learning framework, we construct a new heterogeneous ensemble learning framework for landslide identification."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the heterogeneous ensemble learning model is not provided."
+}

@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye Analytic Ortho Tile multispectral satellite image",
+      "source": "RapidEye",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used a RapidEye Analytic Ortho Tile multispectral satellite image (5m resolution) dated 30 January 2014."
+    },
+    {
+      "name": "1:10,000 scale map of the drainage network",
+      "source": "Geographic and Cartographic Institute of the State of São Paulo (IGC-SP)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A 1:10,000 scale map of the drainage network from the Geographic and Cartographic Institute of the State of São Paulo (IGC-SP) was used in addition."
+    },
+    {
+      "name": "ALOS Digital Elevation Model (DEM) with 12.5m resolution",
+      "source": "Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Supplementary data for slope, curvature and flow accumulation were derived from the pre-event ALOS Digital Elevation Model (DEM) with 12.5m resolution, acquired from the Alaska Satellite Facility."
+    },
+    {
+      "name": "Shallow landslide and debris flow inventory",
+      "source": "Dias et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The accuracy of the results was assessed by comparison with a shallow landslide and debris flow inventory, created through expert interpretation (Dias et al., 2022)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-automated OBIA approach",
+      "method_type": "SOFTWARE",
+      "summary": "The method uses multiresolution segmentation to identify objects based on spectral and shape parameters. Classification of shallow landslides and debris flows is performed using a rule set based on NDVI, slope, and distance/border metrics to the drainage network.",
+      "source": "eCognition 10.0 (Trimble)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For semi-automated mapping and differentiation of landslide types, an object-based approach was applied using eCognition 10.0 (Trimble) software."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the method's code is not available."
+}

@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Luding landslide dataset",
+      "source": "Authors' own self-labeled dataset",
+      "link": "https://github.com/fuadou/project/tree/main/Luding_datasets",
+      "status": "MENTIONED",
+      "verbatim": "Additionally, we have labeled and published landslide samples that occurred in Luding, Sichuan Province, Southwest China, in September 2022, which is available at https://github.com/fuadou/project/tree/main/Luding_datasets."
+    },
+    {
+      "name": "GF-6 satellite images",
+      "source": "Not specified",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We construct a landslide dataset with 200 samples from GF-6 satellite images to address the scarcity of landslide data in domain generalization."
+    },
+    {
+      "name": "Sentinel-2B images",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We use the Level-1C products acquired by Sentinel-2B on October 3, 2022, at 3:35:49 A.M., which was obtained by Tile48RWT on relative orbit 061 and processed with the payload data ground station baseline 04.00."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CAL-Net (Conditional Attention Lightweight Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CAL-Net is an end-to-end lightweight semantic segmentation network designed for in-orbit landslide detection. It uses CSPDarknet-tiny as a backbone, incorporates a Dual-stream Conditional Attention Module (DCAM) for feature refinement, a Multifeature Fusion Module (MFM) for multi-scale feature aggregation, and an Asymmetric Upsampling Module (AUM) for efficient feature recovery.",
+      "source": "Yibin Fu et al.",
+      "link": "https://github.com/fuadou/project/tree/main/CAL-Net’code",
+      "status": "MENTIONED",
+      "verbatim": "To promote reproducibility and further research, the code has been made publicly available at https://github.com/fuadou/project/tree/main/CAL-Net’code."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Labeled landslide samples from Luding, Sichuan Province, China (September 2022)",
+        "source": "GitHub (fuadou)",
+        "link": "https://github.com/fuadou/project/tree/main/Luding_datasets",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Published landslide samples on repository indicated in the abstract."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is provided via a public GitHub repository, and other input datasets are accessible through standard public providers. The custom code for CAL-Net is available via a provided repository link."
+}

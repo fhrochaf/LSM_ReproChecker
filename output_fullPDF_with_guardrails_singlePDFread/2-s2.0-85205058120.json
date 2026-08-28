@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "GF-2 satellite remote sensing image",
+      "source": "GF-2 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing image was captured by the GF-2 satellite on 10 September 2022"
+    },
+    {
+      "name": "DEM data",
+      "source": "Japan’s Advanced Land Observing Satellite (ALOS)",
+      "link": "https://search.asf.alaska.edu",
+      "status": "MENTIONED",
+      "verbatim": "DEM data downloaded from NASA (https://search.asf.alaska.edu, accessed on 2 January 2024) were provided by Japan’s Advanced Land Observing Satellite (ALOS)."
+    },
+    {
+      "name": "Pixel-level landslide inventory",
+      "source": "Authors' own manual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The pixel-level landslide inventory utilized for training and testing was obtained through manual interpretation"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide recognition method based on multiple ML techniques and terrain feature fusion",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves extracting remote sensing features (spectral, texture, and thematic indices) and terrain features (DEM-derived) to construct a multidimensional feature set. It then trains five machine learning algorithms (XGBoost, AdaBoost, LightGBM, RF, and CNN) using different positive/negative sample ratios to identify landslides at the pixel level.",
+      "source": "Jincan Wang, Zhiheng Wang, Liyao Peng, and Chenzhihao Qian",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study... proposes a landslide recognition method based on multiple ML techniques and terrain feature fusion."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The authors have not obtained permission to publish the data. Therefore, the data can be obtained from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code lacks a repository or persistent link."
+}

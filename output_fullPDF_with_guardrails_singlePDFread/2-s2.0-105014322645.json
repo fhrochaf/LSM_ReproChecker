@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Wuhan University, China",
+      "link": "https://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The original data presented in the study are openly available in the Bijie landslide dataset at https://gpcv.whu.edu.cn/data/Bijie_pages.html, accessed on 3 January 2025."
+    }
+  ],
+  "methods": [
+    {
+      "name": "multi-scale target attention YOLO (MSTA-YOLO)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MSTA-YOLO is a deep learning model for landslide detection that reconstructs the YOLOv11 architecture. It incorporates a Receptive Field Attention (RFA) module to enhance multi-scale feature extraction and replaces the traditional boundary regression loss with Normalized Wasserstein Distance (NWD) loss to improve small target detection. Additionally, it streamlines the architecture by removing redundant C2PSA blocks.",
+      "source": "Bingkun Wang, Jiali Su, Jiangbo Xi, et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To address these challenges, we propose a multi-scale target attention YOLO model (MSTA-YOLO)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "https://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Luding Landslide Dataset",
+        "source": "China Resources Satellite Data and Application Center",
+        "link": "https://www.cresda.com/zgzywxyyzx/index.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Southwest Landslide Dataset",
+        "source": "GitHub (YhQIAO)",
+        "link": "https://github.com/YhQIAO/LandSlide_Detection_Faster-RCNN",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Faster R-CNN code for landslide detection",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing a Faster R-CNN based landslide detection model, hosted alongside the Southwest landslide dataset in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/YhQIAO/LandSlide_Detection_Faster-RCNN",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is referenced and linked as publicly available, but the custom MSTA-YOLO code is not provided with a repository or persistent link."
+}

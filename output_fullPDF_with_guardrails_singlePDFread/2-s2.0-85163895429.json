@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope satellite images (Experimental site 1)",
+      "source": "PlanetScope",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We download remote sensing images with a spatial resolution of 3 m from PlanetScope."
+    },
+    {
+      "name": "DEM data",
+      "source": "Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "to match the spatial resolution of the optical image to that of the DEM of the Alaska Satellite Facility (i.e. 12.5 m)"
+    },
+    {
+      "name": "Landslide inventory (Experimental site 1)",
+      "source": "Shahabi and Ghorbanzadeh (2022); Xu et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ground truth of the experimental site has been obtained by other researchers and utilized to complete some study works (Shahabi and Ghorbanzadeh 2022; Xu et al. 2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DSFA (Domain Style and Feature Adaptation)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "DSFA is an unsupervised domain adaptation method for landslide detection. It uses a domain style adaptation strategy to shift landslide styles at the dataset level, and integrates adversarial learning and domain distance minimization at the feature level to learn domain-invariant representations. It also uses an improved U-Net3+ architecture that replaces max-pooling with tokenized MLP modules to prevent information loss.",
+      "source": "Penglei Li, Yi Wang, Tongzhen Si, Kashif Ullah, Wei Han & Lizhe Wang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a novel Domain Style and Feature Adaptation (DSFA) method for cross-scene landslide detection from high spatial resolution images... The data that support the findings of this study are available from the corresponding author upon reasonable request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced with a persistent identifier, and the custom code for the DSFA method is not provided via a repository or persistent link."
+}

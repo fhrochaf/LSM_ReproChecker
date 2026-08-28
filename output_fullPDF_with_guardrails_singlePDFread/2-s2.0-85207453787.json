@@ -1,0 +1,106 @@
+{
+  "datasets": [
+    {
+      "name": "Globally Distributed Coseismic Landslide Dataset (GDCLD)",
+      "source": "Fang et al., 2024",
+      "link": "https://doi.org/10.5281/zenodo.13612636",
+      "status": "MENTIONED",
+      "verbatim": "The GDCLD data are freely available at https://doi.org/10.5281/zenodo.13612636 (Fang et al., 2024)."
+    },
+    {
+      "name": "PlanetScope imagery",
+      "source": "Planet Team",
+      "link": "https://www.planet.com/",
+      "status": "MENTIONED",
+      "verbatim": "You can get original imageries at https://www.planet.com/ (Planet Team, 2019)."
+    },
+    {
+      "name": "Gaofen-6 imagery",
+      "source": "China Centre for Resources Satellite Data and Application",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank ... the China Centre for Resources Satellite Data and Application for Gaofen-6 data."
+    },
+    {
+      "name": "Map World imagery",
+      "source": "National Platform for Common GeoSpatial Information Services",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank ... the National Platform for Common GeoSpatial Information Services for Map World data."
+    },
+    {
+      "name": "UAV data",
+      "source": "State Key Laboratory of Geohazard Prevention and Geoenvironment Protection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We would like to thank the State Key Laboratory of Geohazard Prevention and Geoenvironment Protection for providing UAV data"
+    }
+  ],
+  "methods": [
+    {
+      "name": "GDCLD-SegFormer",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model based on the SegFormer transformer architecture, which uses a hierarchical transformer encoder to capture multi-scale contextual information and a lightweight multi-layer perceptron decoder for landslide identification.",
+      "source": "Fang et al., 2024",
+      "link": "https://doi.org/10.5281/zenodo.13956757",
+      "status": "MENTIONED",
+      "verbatim": "The code used to produce data described in this paper as well as to create figures and tables can be accessed at https://doi.org/10.5281/zenodo.13956757 (Fang, 2024)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide train/validation/test image dataset (RGB TIFF images with binary labels)",
+        "source": "Zenodo",
+        "link": "https://doi.org/10.5281/zenodo.13612636",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "UAV imagery data",
+        "source": "Laboratory affiliated with the authors' team",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Map World imagery data",
+        "source": "Map World (licensed)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Gaofen-6 satellite imagery data",
+        "source": "Licensed imagery provider",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "PlanetScope satellite imagery",
+        "source": "Planet Labs (Planet Education and Research Program)",
+        "link": "https://www.planet.com/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Code for data production, figures, and tables",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code used to produce the datasets described in the paper as well as to generate the accompanying figures and tables.",
+        "source": "Fang, 2024",
+        "link": "https://doi.org/10.5281/zenodo.13956757",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory (GDCLD) is linked and publicly available via Zenodo, and other input datasets are accessible through their respective providers. The custom code for the GDCLD-SegFormer model is provided via a persistent Zenodo repository link."
+}

@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Quad-pol ALOS-2 SAR data",
+      "source": "ALOS-2 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ALOS-2 is an L-band radar system and collects in the Stripmap (SM) imaging mode, having HH, HV, VH and VV polarimetric channels."
+    },
+    {
+      "name": "Dual-pol Sentinel-1 SAR data",
+      "source": "Sentinel-1 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 is a satellite-borne C-band radar system and the single look complex (SLC) format data of the VH, VV polarization channels in the Interferometric Wide (IW) mode are used for this experiment."
+    },
+    {
+      "name": "3-D view of the Shenzhen landslide",
+      "source": "State Bureau of Surveying and Mapping, China",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "3-D view of the Shenzhen landslide on December 21, 2015, provided by the State Bureau of Surveying and Mapping, China."
+    },
+    {
+      "name": "Google Earth optical images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In Fig. 7, the red curve represents the landslide boundary identified using the proposed method based on quad-pol ALOS-2 data, while the blue curve represents the boundary determined through manual visualization of the corresponding Google Earth optical images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Deep learning method exploiting a morphological model (DLM)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide mapping framework that uses a single post-event polarimetric SAR image. It employs a Deep Forest (DF) algorithm for initial identification, a Majority Voting mechanism to refine the shape using polarimetric decomposition results, and a morphological optimization model based on aspect ratio and longitudinal shape to extract the final landslide boundary.",
+      "source": "Rubing Liang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a deep learning method which exploits a morphological model (DLM) to achieve accurate landslide identification using only a post-event single-temporal polarimetric SAR image."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or provided, and the custom DLM method code is not available via any repository or persistent link."
+}

@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "UAV images",
+      "source": "Sichuan Geographic Information Bureau",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The UAV image is a set of stitched and calibrated orthophotos of drone images provided by Sichuan Geographic Information Bureau."
+    },
+    {
+      "name": "GF-6 image",
+      "source": "Aerospace Information Research Institute, Chinese Academy of Sciences",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The GF-6 image with a resolution of 2 m was taken on 10 September 2022... Source: Aerospace Information Research Institute, Chinese Academy of Sciences"
+    },
+    {
+      "name": "Landsat 8 image",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the landsat 8s 15 m resolution image was taken on 11 september 2022 ... sourced, na"
+    },
+    {
+      "name": "Landslide inventory (434 ETLs)",
+      "source": "Institute of Mountain Hazards and Environment, Chinese Academy of Sciences",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "After the Luding earthquake, the Institute of Mountain Hazards and Environment, Chinese Academy of Sciences used the visual detection of UAV images to investigate the ETLs in the region, which was further verified by visual investigation, and acquired a total of 434 ETLs with a landslide area of 1.49 km2."
+    }
+  ],
+  "methods": [
+    {
+      "name": "fully convolutional neural network (FCN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A fully convolutional neural network (FCN) with four convolutional layers, trained using the Adam optimizer, designed to perform semantic segmentation of landslide areas from multisource remote sensing imagery.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, a total of four convolutional layers were set up and the parameters were updated using the Adam optimizer... All workflows are implemented in python."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned but not linked or made available, and the custom FCN code is not provided via any repository or persistent link."
+}

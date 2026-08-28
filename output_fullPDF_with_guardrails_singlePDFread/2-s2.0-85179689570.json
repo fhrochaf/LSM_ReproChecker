@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Luding County landslide dataset",
+      "source": "Authors' own creation",
+      "link": "https://pan.cdut.edu.cn:443/link/B007C24A04BAC995CC7D782DE0483C8F",
+      "status": "MENTIONED",
+      "verbatim": "Luding County landslide dataset download link: https:// pan. cdut. edu. cn: 443/ link/ B007C 24A04 BAC99 5CC7D 782DE 0483C 8F."
+    },
+    {
+      "name": "High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in Sichuan and surrounding areas",
+      "source": "Chao et al. (2021)",
+      "link": "https://cstr.cn/31253.11.sciencedb.j00001.00222",
+      "status": "MENTIONED",
+      "verbatim": "High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in Sichuan and surrounding areas: https:// cstr. cn/ 31253. 11. scien cedb. j00001. 00222."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, the self-created Luding County landslide dataset is based on Google Earth imagery data from 2020 to 2022"
+    }
+  ],
+  "methods": [
+    {
+      "name": "YOLO + U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multi-model fusion method that first uses an improved YOLOv4 model (with DenseNet121 backbone and Focal Loss) to detect landslide locations, then applies an innovative expansion formula to the detection boxes to retain context, and finally uses an improved U-Net model (with ResNet50 backbone, CBAM attention, and pyramid pooling) for fine semantic segmentation within those boxes.",
+      "source": "Wang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We propose a novel deep learning method for landslide identification, which combines YOLO + U-Net."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie landslide dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Luding County landslide dataset",
+        "source": null,
+        "link": "https://pan.cdut.edu.cn:443/link/B007C24A04BAC995CC7D782DE0483C8F",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in Sichuan and surrounding areas",
+        "source": "ScienceDB",
+        "link": "https://cstr.cn/31253.11.sciencedb.j00001.00222",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement has shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and linked, but the custom YOLO + U-Net method code is not available."
+}

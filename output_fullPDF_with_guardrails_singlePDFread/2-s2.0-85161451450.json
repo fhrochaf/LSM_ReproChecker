@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense",
+      "source": "Ghorbanzadeh et al. (2022)",
+      "link": "https://www.iarai.ac.at/",
+      "status": "MENTIONED",
+      "verbatim": "We applied it to Landslide4Sense Ghorbanzadeh et al. (2022), which is a public dataset for landslide detection from remote sensing. ... Publicly available datasets were analyzed in this study. This data can be found here: https://www.iarai.ac.at/."
+    },
+    {
+      "name": "HR-GLDD dataset",
+      "source": "Meena et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To further verify the effectiveness of our model, we also conducted experiments on the HR-GLDD dataset Meena et al. (2022)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Conv-Trans Dual Network (CTDNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "CTDNet is a U-shaped network based on Swin-Unet that incorporates a dual-stream module (CTDBlock) combining ConvNeXt and Swin Transformer blocks to capture both local spatial and global context information, and an additional gating module (AGM) to effectively fuse shallow and deep features.",
+      "source": "Chen et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Motivated by the powerful global modeling capability of the Swin transformer, we propose a new Conv-Trans Dual Network (CTDNet) based on Swin-Unet."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset(s) used in this study, hosted by IARAI",
+        "source": "IARAI (Institute of Advanced Research in Artificial Intelligence)",
+        "link": "https://www.iarai.ac.at/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"Publicly available datasets were analyzed in this study. This data can be found here: https://www.iarai.ac.at/.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets (Landslide4Sense and HR-GLDD) are referenced and publicly available, but the custom CTDNet model code is not provided or linked."
+}

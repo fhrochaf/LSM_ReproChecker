@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "Copernicus Sentinel-1 satellite constellation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "SAR amplitude data are obtained from the Copernicus Sentinel-1 satellite constellation."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) DEM",
+      "source": "Shuttle Radar Topography Mission",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For the last process digital elevation data from the Shuttle Radar Topography Mission has been used [20]."
+    },
+    {
+      "name": "GPM IMERG V06 dataset",
+      "source": "Goddard Earth Sciences Data and Information Services Center (GES DISC)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The following Figure 4a–f shows the rainfall intensity and spatial distribution in Greece, based on the GPM IMERG V06 dataset. ... Huffman, G.J.; Stocker, E.F.; Bolvin, D.T.; Nelkin, E.J.; Tan, J. GPM IMERG Final Precipitation L3 Half Hourly 0.1 Degree × 0.1 Degree; V06; Goddard Earth Sciences Data and Information Services Center (GES DISC): Greenbelt, MD, USA, 2019."
+    },
+    {
+      "name": "Geological Map of Greece, Scale 1:50,000—Zagora-Siki Sheet",
+      "source": "Institute of Geological and Mineral Exploration (I.G.M.E.)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "I.G.M.E. Geological Map of Greece, Scale 1:50,000—Zagora-Siki Sheet; Institute of Geological and Mineral Exploration: Athens, Greece, 2013."
+    },
+    {
+      "name": "Historical landslide inventory",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Ground truth field survey data",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Rapid Landslide Detection-WofE (RLD-WofE) model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An integrated approach that combines remote sensing indices (NDVI, NDMI, BSI, and SAR amplitude ratio) calculated in Google Earth Engine with a Weight of Evidence (WofE) landslide susceptibility model implemented in ArcGIS to identify potential landslide areas while minimizing false positives.",
+      "source": "Chrysafi, A.-A.; Tsangaratos, P.; Ilia, I.; Chen, W.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This resulted in the creation of the Rapid Landslide Detection-WofE (RLD-WofE) model."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the RLD-WofE model lacks a repository or persistent link."
+}

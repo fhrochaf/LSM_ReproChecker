@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV-derived orthomosaic imagery",
+      "source": "Authors' own UAV survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "using uav-based photogrammetric capture, the locations of sinkholes and landslides could be accurately determined ... iz university final pixel size was 5.0 cm/"
+    },
+    {
+      "name": "Dam slope layer",
+      "source": "Authors' own processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "During the data preparation phase, a dam slope layer was integrated into the images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Deep learning segmentation algorithms (DeepLab-v3+, Link-Net, MA-Net, PSP-Net, ResU-Net, and SQ-Net)",
+      "method_type": "SOFTWARE",
+      "summary": "The authors evaluated six deep learning segmentation architectures (DeepLab-v3+, Link-Net, MA-Net, PSP-Net, ResU-Net, and SQ-Net) using the ResNet50 backbone to perform pixel-level classification of landslides and sinkholes from UAV imagery and slope data.",
+      "source": "Segmentation models Pytorch library",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For this study, the leveraged DL models were derived from the \"Segmentation models Pytorch\" library (https://github.com/qubvel/segmentation_models.pytorch)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on reasonable request to corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not referenced or linked, the authors' UAV imagery is restricted. The code for the deep learning classifiers is not given."
+}

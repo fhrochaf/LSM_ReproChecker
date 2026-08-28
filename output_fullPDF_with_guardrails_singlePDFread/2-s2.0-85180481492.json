@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 multispectral data",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/dhus/#/home",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2 multispectral data (2022/03/15 and 2022/11/25 in Luding, 2017/07/29 and 2017/09/07 in Jiuzhaigou) were downloaded from https://scihub.copernicus.eu/dhus/#/home (accessed on 12 January 2023)"
+    },
+    {
+      "name": "NASADEM data",
+      "source": "NASA",
+      "link": "https://lpdaac.usgs.gov/products/nasadem_hgtv001/",
+      "status": "MENTIONED",
+      "verbatim": "NASADEM data were obtained from https://lpdaac.usgs.gov/products/nasadem_hgtv001/ (accessed on 15 January 2023)"
+    },
+    {
+      "name": "Landslide inventory of Luding and Jiuzhaigou",
+      "source": "Authors' own interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In total, an area of 51.12 km2 and 5.58 km2 of landslides were generated in the Luding and Jiuzhaigou areas, respectively. The landslide inventory vectors were interpreted and labeled by two experts and completed with several checks and revisions."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SCDUNet++",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model combining CNN and transformer architectures. It features a Global Local Feature Extraction (GLFE) block for hybrid feature extraction and a Detailed Spatial Spectral Aggregation (DSSA) block for multi-scale spectral and spatial feature fusion, utilizing a nested decoder with Dense Skip Connections.",
+      "source": "Lei Wu",
+      "link": "https://github.com/lewuu/SCDUNetPP",
+      "status": "MENTIONED",
+      "verbatim": "The implementation code will be available at https://github.com/lewuu/SCDUNetPP."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "Sentinel-2 and NASADEM data are publicly accessible. The custom code is available via a provided GitHub repository link, which routes to datasets."
+}

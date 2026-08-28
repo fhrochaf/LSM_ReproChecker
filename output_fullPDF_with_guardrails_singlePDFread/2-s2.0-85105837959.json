@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Pre- and postlandslide aerial photographs of Cloudy Hill, Hong Kong",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "CDMI-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A neural network for landslide mapping that combines a two-stream U-Net with shared weights for deep feature extraction (change detection) and a multiple-instance learning (MIL) framework with a gated attention-based pooling layer to identify landslide pixels from scene-level labels, followed by a fast level-set evolution algorithm for boundary refinement.",
+      "source": "Min Zhang, Wenzhong Shi, Shanxiong Chen, Zhao Zhan, and Zhicheng Shi",
+      "link": "https://github.com/MinZHANG-WHU/CDMI-Net",
+      "status": "MENTIONED",
+      "verbatim": "Its implementation code is freely available1. ... 1https://github.com/MinZHANG-WHU/CDMI-Net"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is not referenced or linked. The custom code for CDMI-Net is available via a provided GitHub repository link."
+}

@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "GSI inventory (landslide polygons)",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "They published an initial inventory delineating areas of landslide sediment accumulation on 12th September, which was then further updated on 19th September. In the following sections, this inventory will be referred to as ‘‘GSI inventory’’."
+    },
+    {
+      "name": "ALOS-2 PALSAR-2 (SAR) imagery",
+      "source": "ALOS User Interface Gateway",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We downloaded three PALSAR-2 Level 1.1 data products from ALOS User Interface Gateway 2."
+    },
+    {
+      "name": "PlanetScope (optical) imagery",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also thank the European Space Agency and Planet Labs for providing access to data used in this study via Project Id 58294."
+    },
+    {
+      "name": "RapidEye (optical) imagery",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "ALOS World 3D (AW3D30) DEM",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "TanDEM-X topographic data",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Active learning strategy",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An iterative supervised learning workflow that starts with a small, incomplete landslide inventory and progressively expands it by training a U-Net CNN on SAR and optical data, using manual updates to correct predictions between training cycles.",
+      "source": "Nikhil Prakash",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this work, we propose an active training strategy to generate a landslide map after an event using the first available synthetic-aperture radar (SAR) image and improve it once subsequent cloud-free optical images are acquired. ... The training strategies (Figs. 4 & 5) explored in this study are implemented in Python using GDAL (GDAL/OGR contributors, 2019) for GIS processing, Keras (Chollet et al., 2015) and TensorFlow (Abadi et al., 2016) for deep-learning."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"Data will be made available on request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the custom code used for the active learning strategy is not available via any repository or persistent link."
+}

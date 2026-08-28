@@ -1,0 +1,49 @@
+{
+  "datasets": [
+    {
+      "name": "CBERS-04A WPM imagery",
+      "source": "Brazilian National Institute of Spatial Research (INPE)",
+      "link": "http://www2.dgi.inpe.br/catalogo/explore",
+      "status": "MENTIONED",
+      "verbatim": "The satellite is operated by the Brazilian National Institute of Spatial Research (INPE), and the images are available for free download on their website (http://www2.dgi.inpe.br/catalogo/explore)."
+    },
+    {
+      "name": "Landslide inventory map (1967 event)",
+      "source": "Fúlfaro et al. (1976)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide mask was created by rasterizing a landslide vector composed of 384 landslides that were identified from Fúlfaro et al. (1976) inventory map and visual interpretation of current images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CNN framework for semi-automatic detection of relict landslides",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework for semantic segmentation using transfer learning. It includes a pre-training step using a k-means clustering dataset to initialize weights, followed by fine-tuning the training process of CNNs (U-Net, FPN, and Linknet) using augmented labelled landslide data.",
+      "source": "G. P. B. Garcia, L. P. Soares, M. Espadoto & C. H. Grohmann",
+      "link": "https://github.com/SPAMLab/data_sharing/tree/main/Relict_landslides_CNN_kmeans",
+      "status": "MENTIONED",
+      "verbatim": "The code used in this research is available at the following link: https://github.com/SPAMLab/data_sharing/tree/main/Relict_landslides_CNN_kmeans (accessed on 15 December 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "CNN and k-means based code for relict landslide detection",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code combining CNN and k-means approaches for detecting relict landslides, made available in a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/SPAMLab/data_sharing/tree/main/Relict_landslides_CNN_kmeans",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Code availability statement present, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The provided repository routes to a page with datasets and codes."
+}

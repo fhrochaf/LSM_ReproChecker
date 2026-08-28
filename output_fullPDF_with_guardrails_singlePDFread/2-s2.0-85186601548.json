@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense 2022 challenge dataset",
+      "source": "Institute of Advance Research in Artificial Intelligence (IARAI)",
+      "link": "https://www.iarai.ac.at/landslide4sense/challenge/",
+      "status": "MENTIONED",
+      "verbatim": "The data used in the research paper can be found at the following link: https://www.iarai.ac.at/landslide4sense/challenge/"
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also acknowledge European Space Agency (ESA) for free dissemination of Sentinel-2 imagery."
+    },
+    {
+      "name": "ALOS-PALSAR derived topographical data",
+      "source": "IARAI",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset is prepared using Sentinel-2 imageries resampled to 10 metres and ALOS-PALSAR derived topographical data."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DvD algorithm",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An empirical algorithm that identifies landslides by applying specific thresholds to a multiplicative combination of conditional NDVI, conditional BSI, and conditional slope layers, followed by an average filter.",
+      "source": "Meghanadh Devara, Vipin Kumar Maurya & Ramji Dwivedi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, the primary objective of the study is to propose a novel empirical algorithm, DvD, for rapid landslide identification..."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide4Sense dataset",
+        "source": "IARAI (Institute of Advanced Research in Artificial Intelligence)",
+        "link": "https://www.iarai.ac.at/landslide4sense/challenge/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and accessible, but the custom DvD algorithm code is not available via any repository or persistent link."
+}

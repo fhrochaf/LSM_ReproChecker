@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Enhanced Natural Terrain Landslide Inventory (ENTLI)",
+      "source": "Geotechnical Engineering Office (GEO) of the Civil Engineering and Development Department",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "On average, approximately 300 landslides occur every year [39] in Hong Kong, and the frequency distributions of these landslide flows are recorded on the basis of the Enhanced Natural Terrain Landslide Inventory (ENTLI), with 19 763 records up to 2013."
+    },
+    {
+      "name": "Aerial photographs (prelandslide and postlandslide)",
+      "source": "Geotechnical Engineering Office (GEO) of the Civil Engineering and Development Department",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For training and testing the CNN, the prelandslide and postlandslide aerial photographs, which were acquired in November 2007 and November 2008, with a landslide reference map by manual mapping according to the ENTLI are used. The aerial photographs with a 0.5-m spatial resolution were acquired using a Zeiss RMK TOP 15 aerial survey camera system."
+    },
+    {
+      "name": "Open Street Map (OSM) road and building layers",
+      "source": "OpenStreetMap",
+      "link": "https://www.openstreetmap.org/",
+      "status": "MENTIONED",
+      "verbatim": "To optimize our approach, the road layer and building layer from Open Street Map (OSM) are used for sample generation and postprocessing. The OSM data in Hong Kong are rich and include timestamps, which means that OSM provides historical snapshot data at any point in time. Metadata details can be retrieved at its website (https://www.openstreetmap.org/)."
+    },
+    {
+      "name": "Hong Kong DTM",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Geometric correction is applied to rectify photograph distortions and topographic relief based on a Hong Kong DTM."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CDCNN (Object-oriented change detection CNN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A dual-stream CNN architecture with shared weights that performs change detection on pre- and post-event imagery. It incorporates a fully connected conditional random field (CRF) for boundary refinement and uses post-processing mask operations and screening to filter landslide candidates.",
+      "source": "The authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a novel integrated approach combining a deep convolutional neural network (CNN) and change detection is proposed for landslide recognition from RS images... Second, the object-oriented change detection CNN (CDCNN) with a fully connected conditional random field (CRF) is implemented based on the trained CNN."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked. The custom CDCNN code is mentioned but lacks a repository or persistent link."
+}

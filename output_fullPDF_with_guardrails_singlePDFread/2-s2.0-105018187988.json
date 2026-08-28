@@ -1,0 +1,81 @@
+{
+  "datasets": [
+    {
+      "name": "LMHLD (Large-scale Multisource High-resolution Landslide Dataset)",
+      "source": "Authors",
+      "link": "https://doi.org/10.5281/zenodo.11424987",
+      "status": "MENTIONED",
+      "verbatim": "LMHLD is open access and can be accessed through the link: https://doi.org/10.5281/zenodo.11424987"
+    },
+    {
+      "name": "RapidEye imagery",
+      "source": "Commercial satellite sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For each study area, we compiled multiscene images sourced from the RapidEye, PlanetScope, IKONOS, Gaofen-2, and Sentinel-2 satellites."
+    },
+    {
+      "name": "PlanetScope imagery",
+      "source": "Commercial satellite sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For each study area, we compiled multiscene images sourced from the RapidEye, PlanetScope, IKONOS, Gaofen-2, and Sentinel-2 satellites."
+    },
+    {
+      "name": "IKONOS imagery",
+      "source": "Commercial satellite sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For each study area, we compiled multiscene images sourced from the RapidEye, PlanetScope, IKONOS, Gaofen-2, and Sentinel-2 satellites."
+    },
+    {
+      "name": "Gaofen-2 imagery",
+      "source": "Commercial satellite sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For each study area, we compiled multiscene images sourced from the RapidEye, PlanetScope, IKONOS, Gaofen-2, and Sentinel-2 satellites."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Commercial satellite sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For each study area, we compiled multiscene images sourced from the RapidEye, PlanetScope, IKONOS, Gaofen-2, and Sentinel-2 satellites."
+    },
+    {
+      "name": "HR-GLDD (High-resolution Global Landslide Detector Database)",
+      "source": "Meena et al. [12]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We use two additional datasets and a recent landslide event: the public landslide dataset HR-GLDD [12], CAS Landslide [22] and a landslide image triggered by an earthquake in Luding in 2022, collected from Planet data [60]."
+    },
+    {
+      "name": "CAS landslide dataset",
+      "source": "Xu et al. [22]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We use two additional datasets and a recent landslide event: the public landslide dataset HR-GLDD [12], CAS Landslide [22] and a landslide image triggered by an earthquake in Luding in 2022, collected from Planet data [60]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-adaptive patch size selection (SAPSS)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A method that selects optimal patch sizes for different study areas by analyzing the frequency histogram of landslide scale distribution, defining scale intervals via quantiles, and evaluating DL model performance.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, we propose a semiadaptive patch size selection (SAPSS) method, which adaptively selects optimal patch sizes for different study areas."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory LMHLD is linked and publicly available, while other input datasets are commercial or lack clear access paths. The custom SAPSS method code is not provided or linked."
+}

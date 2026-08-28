@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR VV and VH polarization datasets",
+      "source": "Copernicus Data Space Ecosystem",
+      "link": "https://documentation.dataspace.copernicus.eu/APIs/openEO/openeo-community-examples/python/RVI/RVI.html",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-1 Ground Range Detected (GRD) dataset offers accessible SAR data for calculating RVI and analyzing vegetation health over large areas. ... Copernicus Data Space Ecosystem, Calculate Radar Vegetation Index (RVI) Using Sentinel-1 GRD Collection. Available online: https://documentation.dataspace.copernicus.eu/APIs/openEO/openeo-community-examples/python/RVI/RVI.html (accessed on 6 December 2024)."
+    },
+    {
+      "name": "Sentinel-2/MSI NDVI data",
+      "source": "EO-Browser platform",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The NDVI data derived from Sentinel-2/MSI are available via the EO-Browser platform."
+    }
+  ],
+  "methods": [
+    {
+      "name": "EfficientNetV2 for landslide area detection using RVI",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses the Radar Vegetation Index (RVI) derived from Sentinel-1 SAR data as input for the EfficientNetV2 deep learning model to classify bare ground (landslide) versus vegetated areas. The workflow includes speckle noise reduction, geometric correction, RVI calculation, and patch-based classification using the EfficientNetV2 architecture implemented in PyTorch.",
+      "source": "Google (EfficientNetV2 architecture) and Facebook (PyTorch framework)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To classify these areas, the well-known classification method of EfficientNetV2 is used. ... Therefore, we decided to use a method that combines Pytorch and EfficientNetV2."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The original contributions presented in this study are included in the article. Further inquiries can be directed to the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for training or validation is not referenced or linked, and the custom code for the EfficientNetV2 method lacks a repository or persistent link."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR images",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used SAR and optical images derived from Sentinel-1 and -2, which captured landslides caused by the earthquake on 14 April 2016, as training data"
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Previously vegetated areas can be found by using Google maps, which were created with remote sensing satellite data or aerial photos previously."
+    }
+  ],
+  "methods": [
+    {
+      "name": "pix2pixHD+",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified pix2pixHD architecture that incorporates a spatial attention mechanism into the generator's loss function to preserve high-frequency components and enhance spatial resolution during SAR-to-optical image translation, followed by landslide classification using EfficientNetV2.",
+      "source": "Kohei Arai, Yushin Nakaoka, and Hiroshi Okumura",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This method is renamed as “pix2pixHD+” hereafter. ... The code for spatial attention is as follows Listing 1."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The original contributions presented in the study are included in the article, further inquiries can be directed to the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the pix2pixHD+ method is not provided via a repository or persistent link."
+}

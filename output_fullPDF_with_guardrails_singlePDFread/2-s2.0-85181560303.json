@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. [40]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the study, we utilized the Bijie dataset provided by Ji et al. [40] as the public dataset."
+    },
+    {
+      "name": "Luding Dataset (GF-2 satellite data)",
+      "source": "Authors' own collection/processing",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the study, we utilized GF-2 satellite data (orbit number 43 565) collected on September 10, 2022. ... Next, based on visual interpretation of the images, we identified and labeled 283 landslide areas within the study region."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Re-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "Re-Net is a symmetric encoder-decoder semantic segmentation network for landslide detection. It incorporates a novel five-branch feature extraction module (FFEM) in its encoder, which uses structural reparameterization to allow for multibranch feature integration during training and compression into a single convolutional layer during inference.",
+      "source": "Rui-xuan Zhang, Wu Zhu, Zhen-hong Li, Bo-chen Zhang, and Bo Chen",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom code for the Re-Net method is not available via any repository or persistent link."
+}

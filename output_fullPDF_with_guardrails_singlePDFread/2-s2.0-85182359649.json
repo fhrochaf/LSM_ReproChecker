@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset of Bijie",
+      "source": "Ji et al. [16]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Ji et al. [16] published the landslide dataset of Bijie that can be downloaded."
+    },
+    {
+      "name": "Sentinel-2 images of Taiwan",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We used Google Earth Engine to download Sentinel-2 images of Taiwan from January 2022 to January 2023."
+    },
+    {
+      "name": "Ground truth dataset of landslides in Taiwan",
+      "source": "Authors' own visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We produced 630 landslides across Taiwan (see Fig. 3) by the visual interpretation from the Sentinel-2 mosaic image. These landslides were taken as the ground truth to validate the transferability of the presented method."
+    }
+  ],
+  "methods": [
+    {
+      "name": "LA-YOLO-LLL (Lightweight Attention-Guided YOLO with Level Set Layer)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide detection model that replaces the YOLO backbone with MobileNetv3, incorporates a custom 'light pyramid features reuse fusion' (LPFRF) attention mechanism, and integrates a level set layer into the YOLO head to refine bounding boxes into accurate landslide boundaries.",
+      "source": "Yueheng Yang, Zelang Miao, Hua Zhang, Bing Wang, and Lixin Wu",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the Sentinel-2 imagery is accessible via Google Earth Engine. The custom code for the LA-YOLO-LLL method is not available."
+}

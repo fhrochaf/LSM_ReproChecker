@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Gaofen-2 (GF-2) satellite imagery",
+      "source": "China Centre for Resources Satellite Data and Application",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "High-resolution optical imagery was acquired from the Gaofen-2 (GF-2) satellite"
+    },
+    {
+      "name": "Sentinel-1A C-band synthetic aperture radar (SAR) data",
+      "source": "European Space Agency’s Copernicus Open Access Hub",
+      "link": "https://search.asf.alaska.edu/#/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1A C-band synthetic aperture radar (SAR) data were obtained from the European Space Agency’s Copernicus Open Access Hub (https://search.asf.alaska.edu/#/)."
+    },
+    {
+      "name": "Copernicus DEM GLO-30",
+      "source": "Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Copernicus DEM GLO-30, a high-precision global elevation model, is used for providing elevation and terrain information."
+    },
+    {
+      "name": "Reference occurred landslide inventory",
+      "source": "Authors' own compilation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The reference occurred landslide inventory was developed through visual interpretation of GF-2 imagery, augmented by historical landslide records and reports from local geological disaster monitoring authorities."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SwinUnet-based architecture with dual-branch encoding and contrastive learning",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model using a SwinUnet backbone with a dual-branch encoder for separate optical and SAR-DEM feature extraction, integrated via weight-sharing and two-step cross-attention fusion modules. The model is pretrained using unsupervised contrastive learning to improve performance with limited labeled data.",
+      "source": "Wenwen Wang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A novel deep learning network model integrating optical and SAR data was developed for landslide identification. The model employs SwinUnet as its backbone architecture. Unsupervised pretraining via contrastive learning was adopted to improve landslide identification accuracy under limited sample conditions."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code lacks a repository or persistent link."
+}

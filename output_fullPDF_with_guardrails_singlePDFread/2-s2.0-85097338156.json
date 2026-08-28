@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Ludian landslide event imagery (Google Earth)",
+      "source": "Google Earth (integration of satellite and aerial images)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "These images are from Google Earth and are not from a single data source, but are the integration of satellite images and aerial images."
+    },
+    {
+      "name": "Ludian landslide ground truth reference maps",
+      "source": "Authors' own visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Reference maps of the Ludian landslide produced by three experienced experts through visual interpretation were collected as the ground truth"
+    }
+  ],
+  "methods": [
+    {
+      "name": "unsupervised single-image-based landslide detection (USILD)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The USILD method uses visual salience (via a frequency-tuned model) and a landslide index (LI) derived from RGB reflective characteristics to produce a preliminary landslide risk map, which is then refined using morphological processing.",
+      "source": "Xi Zhai et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, in this paper, we propose a novel unsupervised single-image-based landslide detection (USILD) method to automatically and quickly locate landslides and evaluate landslide risks"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and imagery are not linked or publicly available, and the custom USILD method code is not provided."
+}

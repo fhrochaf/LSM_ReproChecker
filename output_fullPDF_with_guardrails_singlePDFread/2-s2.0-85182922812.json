@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide open source dataset",
+      "source": "Research groups in Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To guarantee a fair comparison, the involved dataset is Bijie Landslide open source dataset [13], which is an optical remote sensing landslide image dataset collected by research groups in Wuhan University."
+    },
+    {
+      "name": "Luding landslide image set",
+      "source": "Fu et al. [97]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Fu et al. [97] published a series of real landslide scenarios in Luding, which includes 200 optical remote sensing images on earthquake-included landslides captured by GF-6 satellite on September 5, 2022."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Interpretability improved three-branched evidential fusion",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A fusion framework that integrates evidence from multiple channelwise-fused images (H, S, V channels) using a new Belief Jensen-Renyi (BJR) divergence and a three-branched weighting mechanism (supporting degree, information volume, and improved information volume) to manage evidence conflict and improve classification accuracy.",
+      "source": "Jiaxu Zhang, Qi Cui, and Xiaojian Ma",
+      "link": "https://github.com/defzhangaa/deeplandslideDS",
+      "status": "MENTIONED",
+      "verbatim": "Code is available online at https://github.com/defzhangaa/deeplandslideDS."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are known to be publicy available. The custom code is available via a provided GitHub repository link."
+}

@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Quick Bird imagery",
+      "source": "Digital Globe",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "After the 2005 Kashmir earthquake, Digital Globe released the Quick Bird and IKONOS imagery free of cost."
+    },
+    {
+      "name": "IKONOS imagery",
+      "source": "Digital Globe",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "After the 2005 Kashmir earthquake, Digital Globe released the Quick Bird and IKONOS imagery free of cost."
+    },
+    {
+      "name": "SPOT-5 imagery",
+      "source": "SUPARCO (Space and Upper Atmosphere Research Commission), Pakistan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "SUPARCO (Space and Upper Atmosphere Research Commission), Pakistan, delivered SPOT-5 data."
+    },
+    {
+      "name": "ASTER imagery",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Topographic sheet (No. 43 F/7) contours",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-Based Image Analysis (OBIA)",
+      "method_type": "SOFTWARE",
+      "summary": "A multi-resolution segmentation and rule-based classification approach using spectral, geometric, and contextual parameters to identify landslides, implemented in e-Cognition Developer 9.",
+      "source": "e-Cognition Developer 9",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Using e-Coginition Developer 9, a trial-and-error approach was used to choose input parameters for identifying landslides in this study."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom method code lacks a repository or persistent link."
+}

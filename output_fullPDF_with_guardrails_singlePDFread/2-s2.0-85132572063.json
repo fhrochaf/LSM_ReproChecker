@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Iburi dataset",
+      "source": "Authors' own interpretation based on Planet 3 m resolution images and Geospatial Information Authority of Japan drone images",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Iburi dataset was interpreted by our team based on the pre-and post-earthquake Planet 3 m resolution images. To ensure the correct interpretation, we combined the high-resolution drone images provided by the Geospatial Information Authority of Japan, and finally obtained 9293 landslides."
+    },
+    {
+      "name": "ImageNet dataset",
+      "source": "ImageNet",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For both encoders, the pre-trained weights on the ImageNet dataset [49] were used to accelerate downstream model convergence."
+    },
+    {
+      "name": "Landslide4Sense",
+      "source": "Ghorbanzadeh et al. [41]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Ghorbanzadeh et al. [41] created a public landslide dataset for the landslide detection community, denoted as Landslide4Sense, which contains 3799 images fusing optical bands from Sentinel-2 with DEM and slope."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CTransUnet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network for landslide extraction that combines ResU-Net and a transformer. ResNet-50 is used in the encoder to extract feature maps, a transformer models the global context of the deepest feature map, and a Convolutional Block Attention Module (CBAM) is embedded into the decoder to refine feature maps.",
+      "source": "Zhiqiang Yang, Chong Xu, and Lei Li",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this work, we built a modified TransUnet referring to [58], called CTransUnet (C represents CBAM), that suited the purpose of landslide detection and embedded the attention module proposed in Section 3.2."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced in a way that allows access, and the custom code for the CTransUnet method is not provided via any repository or persistent link."
+}

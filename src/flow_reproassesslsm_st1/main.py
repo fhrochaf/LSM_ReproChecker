@@ -3,22 +3,51 @@ import pandas as pd
 import json
 import argparse
 
-from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew, MULTI_RUN_COUNT
+from flow_reproassesslsm_st1.crews.reprochecker_crew.reprochecker_crew import ReproCheckerCrew
 from flow_reproassesslsm_st1.models import (
+    DatasetEntry,
     ReproCheckState,
     ReproducibilityReport,
 )
-from flow_reproassesslsm_st1.config import INPUTS_PATH, OUTPUT_DIR
+from flow_reproassesslsm_st1.config import DATASET_AVAILABILITY_REFERENCE, INPUTS_PATH, OUTPUT_DIR, REPORT_TAIL_NAME
 from flow_reproassesslsm_st1.utils import (
     _ensure_str_columns,
     _get_row,
     _row_has_prefilled_availability,
     _availability_from_row,
+    append_dataset_reference_entries,
+    covered_dataset_names,
+    dataset_reference_context,
     feedback_provider,
     merge_entries,
+    missing_dataset_names,
 )
 
-REPORT_TAIL_NAME = "_report_gemini3_1_flash_lite"
+def _resolve_dataset_availability_reference(crew: ReproCheckerCrew, consolidated_datasets: list[DatasetEntry]) -> str:
+    """Return the slim, availability-only context report_elaborator should
+    see: for each paper dataset, only the reference entries whose name
+    contains or fuzzy-matches it, reduced to name + availability (see
+    utils.dataset_reference_context). Researches and appends entries for any
+    dataset not already catalogued in the reference before building it.
+
+    Runs dataset_research_crew (a Tavily-backed web search) only for the
+    datasets actually missing, so a repeat run with nothing new to look up
+    costs no extra LLM/search calls.
+    """
+    reference = json.loads(DATASET_AVAILABILITY_REFERENCE.read_text(encoding="utf-8"))
+    missing = missing_dataset_names(consolidated_datasets, reference)
+    if missing:
+        print(f"Dataset availability reference missing {len(missing)} dataset(s), researching: {missing}")
+        research_output = crew.dataset_research_crew().kickoff(
+            inputs={
+                "missing_datasets": json.dumps(missing),
+                "context": json.dumps(covered_dataset_names(reference), ensure_ascii=False),
+            }
+        ).pydantic
+        append_dataset_reference_entries(DATASET_AVAILABILITY_REFERENCE, research_output.entries)
+        reference = json.loads(DATASET_AVAILABILITY_REFERENCE.read_text(encoding="utf-8"))
+
+    return dataset_reference_context(consolidated_datasets, reference)
 
 
 class ReproCheckFlow(Flow[ReproCheckState]):
@@ -42,7 +71,7 @@ class ReproCheckFlow(Flow[ReproCheckState]):
                 "guardrail_max_retries", 3
             )
             self.state.multi_run_count = crewai_trigger_payload.get(
-                "multi_run_count", MULTI_RUN_COUNT
+                "multi_run_count", 1
             )
             print(f"Using trigger payload: {crewai_trigger_payload}")
 
@@ -130,16 +159,19 @@ class ReproCheckFlow(Flow[ReproCheckState]):
         inputs = {"doi_url": f"https://doi.org/{self.state.doi}"}
         self._crew.repro_crew_multi_check().kickoff(inputs=inputs)
 
-        data_runs = [t.output.pydantic.datasets for t in self._crew._data_runs]
-        method_runs = [t.output.pydantic.methods for t in self._crew._method_runs]
+        analysis_runs = [t.output.pydantic for t in self._crew._analysis_runs]
+        data_runs = [r.datasets for r in analysis_runs]
+        method_runs = [r.methods for r in analysis_runs]
         consolidated_datasets = merge_entries(data_runs)
         consolidated_methods = merge_entries(method_runs)
         avail_output = self._crew.check_artifact_availability().output.pydantic
+        dataset_availability_reference = _resolve_dataset_availability_reference(self._crew, consolidated_datasets)
 
         self._crew.consolidated_report_crew().kickoff(inputs={
             "consolidated_datasets": json.dumps([d.model_dump() for d in consolidated_datasets]),
             "consolidated_methods": json.dumps([m.model_dump() for m in consolidated_methods]),
             "availability_summary": avail_output.model_dump_json(indent=2),
+            "dataset_availability_reference": dataset_availability_reference,
         })
 
         assessment_output = self._crew.compile_final_report_from_consolidated().output.pydantic
@@ -197,15 +229,18 @@ class ReproCheckFlow(Flow[ReproCheckState]):
 
         self._crew.repro_crew_multi_check_from_csv().kickoff()
 
-        data_runs = [t.output.pydantic.datasets for t in self._crew._data_runs]
-        method_runs = [t.output.pydantic.methods for t in self._crew._method_runs]
+        analysis_runs = [t.output.pydantic for t in self._crew._analysis_runs]
+        data_runs = [r.datasets for r in analysis_runs]
+        method_runs = [r.methods for r in analysis_runs]
         consolidated_datasets = merge_entries(data_runs)
         consolidated_methods = merge_entries(method_runs)
+        dataset_availability_reference = _resolve_dataset_availability_reference(self._crew, consolidated_datasets)
 
         self._crew.consolidated_report_crew().kickoff(inputs={
             "consolidated_datasets": json.dumps([d.model_dump() for d in consolidated_datasets]),
             "consolidated_methods": json.dumps([m.model_dump() for m in consolidated_methods]),
             "availability_summary": avail_output.model_dump_json(indent=2),
+            "dataset_availability_reference": dataset_availability_reference,
         })
 
         assessment_output = self._crew.compile_final_report_from_consolidated().output.pydantic
@@ -262,7 +297,7 @@ def kickoff(max_papers=None, check_paper_only=None, wait_seconds=None, max_retri
     parser.add_argument("--max-papers", type=int, default=None, help="Max number of papers to process")
     parser.add_argument("--check-paper-only", type=str, default=None, help="Check only a specific paper (EID)")
     parser.add_argument("--guardrail-max-retries", type=int, default=3, help="Max retry attempts per EID on guardrails")
-    parser.add_argument("--multi-run-count", type=int, default=MULTI_RUN_COUNT, help="Independent runs per dataset/method check, reconciled by majority vote")
+    parser.add_argument("--multi-run-count", type=int, default=1, help="Independent runs per dataset/method check, reconciled by majority vote")
     parser.add_argument("--wait-seconds", type=int, default=60, help="Seconds to wait before retrying a failed EID")
     parser.add_argument("--max-retries", type=int, default=2, help="Max retry attempts per EID before giving up")
     parser.add_argument(

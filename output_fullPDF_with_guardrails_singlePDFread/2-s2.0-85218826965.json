@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of Mandi and Kullu Districts",
+      "source": "Authors' own mapping",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Approximately 6500 landslides were mapped that were triggered during the 2023 monsoon season across an area of approximately 3100 km2 in the Mandi and Kullu Districts."
+    },
+    {
+      "name": "Digital elevation model (10 m x 10 m)",
+      "source": "United States Geological Survey (USGS)",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "Figure 1c illustrates the Topographic Wetness Index (TWI) map of the study area derived from a digital elevation model with a resolution of 10 m × 10 m obtained from the United States Geological Survey (USGS) database. ... (Source: U.S. Geological Survey 2023, https://earthexplorer.usgs.gov/ (Accessed on: Aug 16, 2023)"
+    },
+    {
+      "name": "Daily rainfall data",
+      "source": "India-WRIS platform",
+      "link": "https://indiawris.gov.in/wris/#/",
+      "status": "MENTIONED",
+      "verbatim": "Figure 2a presents the daily rainfall data recorded in Mandi and Kullu districts from June 24 (the onset of the 2023 monsoon season) to August 31, 2023, obtained from the India-WRIS platform (WRIS 2023). ... (WRIS 2023). https://indiawris.gov.in/wris/#/. Accessed 16 Jul 2023"
+    },
+    {
+      "name": "Lithological map",
+      "source": "Geological Survey of India",
+      "link": "https://bhukosh.gsi.gov.in/Bhukosh/Public",
+      "status": "MENTIONED",
+      "verbatim": "(Source: a Geological Survey of India (2023), https://bhukosh.gsi.gov.in/Bhukosh/Public"
+    },
+    {
+      "name": "Land cover map",
+      "source": "ESA",
+      "link": "https://dataspace.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "(Source: ... c ESA, https://dataspace.copernicus.eu/"
+    },
+    {
+      "name": "Road network map",
+      "source": "Survey of India",
+      "link": "https://www.surveyofindia.gov.in/",
+      "status": "MENTIONED",
+      "verbatim": "(Source: ... d Survey of India (2024), https://www.surveyofindia.gov.in/)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Coupled hydro-mechanical finite element analysis",
+      "method_type": "SOFTWARE",
+      "summary": "A two-dimensional finite element-based numerical model developed using Plaxis 2D to simulate the progressive failure events of a representative landslide. The model uses the elastic-perfectly plastic Mohr–Coulomb constitutive model extending Bishop’s effective stress variables to evaluate pore water pressure distribution and slope deformation under transient rainfall infiltration.",
+      "source": "Plaxis 2D (Version 21.01.00)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Secondly, to further investigate the underlying failure mechanism of the most common failure type identified in our landslide mapping, the findings of a coupled flow deformation analysis and safety analysis for an exemplar landslide conducted using the finite element numerical analysis software, Plaxis 2D are presented. ... To this end, a two-dimensional finite element-based numerical model of slope (based on Fig. 8) was developed using Plaxis 2D (Version 21.01.00)"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data investigated in this study is available from the corresponding author upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or made available, and the custom numerical model code is not provided. While other input datasets are accessible via public portals, the lack of the primary landslide inventory and the analysis code prevents reproduction."
+}

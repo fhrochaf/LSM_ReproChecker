@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1A SAR data (Milin earthquake)",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 is a satellite mission launched by the European Space Agency (ESA)... The first event occurred on November 17, 2017... The coseismic landslide map was initially created by Hu et al. [39]"
+    },
+    {
+      "name": "Landslide Inventory of Milin",
+      "source": "Hu et al. [39]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The coseismic landslide map was initially created by Hu et al. [39] and describes a series of mountain landslides triggered by the Mw 6.4 earthquake."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SAR pixel-attention UNet (SPAUNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model based on the UNet architecture that incorporates a pixel-attention mechanism to process pre- and post-event SAR amplitude images. It uses convolutional and activation layers to calculate pixel-attention weights, which are applied to feature maps to enhance the representation of critical landslide regions.",
+      "source": "Xianjian Shi et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This research introduces a new method named synthetic aperture radar (SAR) pixel-attention UNet (SPAUNet) to address the challenges of noise and information redundancy when utilizing SAR amplitude data for landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the custom code for the SPAUNet method is not available via any repository or persistent link."
+}

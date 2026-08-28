@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the study area",
+      "source": "Authors' own manual delineation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, an inventory dataset of the polygons of the landslides for the study area was prepared from a manual delineation of landslides based on the PlanetScope imagery."
+    },
+    {
+      "name": "PlanetScope imagery",
+      "source": "Planet Labs, Inc.",
+      "link": "https://api.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "The satellite images are taken from the Planet Labs, Inc. PlanetScope... [Online]. Available: https://api.planet.com"
+    },
+    {
+      "name": "ALOS PALSAR DEM (12.5 m resolution)",
+      "source": "Japanese Aerospace Exploration Agency (JAXA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Topographical information was extracted from a DEM 12.5 m from the ALOS PALSAR sensor"
+    }
+  ],
+  "methods": [
+    {
+      "name": "CNN model combined by the Dempster–Shafer (D–S) model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses two CNN streams (CNNO trained on spectral data, and CNNOT trained on spectral plus topographic data) to produce landslide probability maps. These maps are then integrated using the Dempster–Shafer (D–S) model to optimize the final landslide detection result.",
+      "source": "Authors' own implementation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The applied CNN structure in this study is designed and trained in Trimble’s eCognition software based on the Google TensorFlow software library and the D–S model is done within the QGIS environment."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked, and the PlanetScope and ALOS PALSAR datasets are not accessible as they are commercial or lack clear access paths. The custom CNN and D-S model implementation code is not provided."
+}

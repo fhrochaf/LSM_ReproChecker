@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide incidents data",
+      "source": "Border Roads Organisation of the Government of India",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Border Roads Organisation of the Government of India provided data on 269 landslide incidents (Gariano et al. 2019)."
+    },
+    {
+      "name": "Digital soil mapping data",
+      "source": "United States Geological Survey and other databases (USDA-NRCS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The diversity in soil textures and hydraulic characteristics across the study region is evident from the digital soil mapping data provided by the United States Geological Survey and other databases (USDA-NRCS, 2005)."
+    },
+    {
+      "name": "Rainfall data",
+      "source": "National Center for Hydrology and Meteorology of the Royal Government of Bhutan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Also, we appreciate the National Center for Hydrology and Meteorology of the Royal Government of Bhutan (http://www.hydromet.gov.bt) for providing the data used in this work."
+    },
+    {
+      "name": "ALOS-PALSAR and PALSAR-2 datasets",
+      "source": "ALOS-PALSAR sensor",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landforms and surface physical features were extracted from ALOS-PALSAR data (Theobald et al. 2015)... SAR data from ALOS-PALSAR and PALSAR-2 (i.e. Advanced Land Observing Satellite-2), spanning from 2007 to 2015, were utilised for extracting SAR features (Parikh et al. 2020)."
+    },
+    {
+      "name": "Landsat-8 multispectral–spatial product",
+      "source": "Landsat-8",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset utilised comprised ALOS PALSAR with 25 m global resolution and Landsat 8 multispectral–spatial product with 30 m resolution."
+    },
+    {
+      "name": "Topographic map",
+      "source": "Department of Geology and Mines, Royal Government of Bhutan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For capturing this effect, the Department of Geology and Mines, Royal Government of Bhutan provided a topographic map with a scale of 1:30,000, from which the stream feature was derived."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Integrated framework of TRIGRS, Random Forest (RF), SHAP, and Harris’s Hawk Optimisation (HHO)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates a physically based model (TRIGRS) to generate Factor of Safety (FOS) maps with a machine learning model (Random Forest) trained on time-series remote sensing and topographical features. It employs SHAP for model interpretability and Harris’s Hawk Optimisation (HHO) for feature selection and parameter tuning.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Raw data were generated at University of Technology Sydney, Australia. Derived data supporting the findings of this study are available from the corresponding author [Biswajeet Pradhan] on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned without persistent links, and the custom code used for the integrated framework is not available."
+}

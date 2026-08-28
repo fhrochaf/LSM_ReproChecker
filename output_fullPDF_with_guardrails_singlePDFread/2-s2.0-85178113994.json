@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "ALOS PALSAR (DEM/12.5 m)",
+      "source": "Alaska satellite facility (ASF)",
+      "link": "https://search.asf.alaska.edu",
+      "status": "MENTIONED",
+      "verbatim": "ALOS PALSAR (DEM/12.5 m) Alaska satellite facility (ASF) https://search.asf.alaska.edu"
+    },
+    {
+      "name": "Land use/Land cover (10 m)",
+      "source": "ESRI",
+      "link": "https://livingatlas.arcgis.com/landcover",
+      "status": "MENTIONED",
+      "verbatim": "Land use/Land cover (10 m) https://livingatlas.arcgis.com/landcover"
+    },
+    {
+      "name": "Geological data (1:250,000)",
+      "source": "Yemen geological survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Geological data (1:250,000) Yemen geological survey"
+    },
+    {
+      "name": "Rainfall data (CRU)",
+      "source": "Climate Research Unit (CRU)",
+      "link": "http://www.cru.uea.",
+      "status": "MENTIONED",
+      "verbatim": "Rainfall http://www.cru.uea."
+    },
+    {
+      "name": "Landsat 8 (30 m)",
+      "source": "USGS",
+      "link": "https://earthexplorer.usgs.gov/",
+      "status": "MENTIONED",
+      "verbatim": "Landsat 8 (30 m) https://earthexplorer.usgs.gov/"
+    },
+    {
+      "name": "Landslide inventory map",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landslide Field survey with GPS 2007–2021 Inventory map"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Machine learning algorithms (RF, XGBoost, NB, ANN, and KNN) and bivariate statistics",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The study models landslide hazards by comparing five machine learning algorithms (Random Forest, XGBoost, Naïve Bayes, Artificial Neural Network, and K-Nearest Neighbor) and a bivariate frequency ratio approach. The models use eleven geo-environmental conditioning factors to produce landslide susceptibility maps, validated using ROC curves and AUC metrics.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are referenced and accessible via public providers, but the landslide inventory is not linked or made available. The custom code used for machine learning modeling is not mentioned or provided."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Tibetan Plateau landslide remote sensing image dataset",
+      "source": "Authors' own curation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "a Tibetan Plateau landslide remote sensing image dataset is curated, consisting of landslides, rainfall-induced debris, and freeze–thaw-induced debris."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Leveraging the unique characteristics of the three types of geological hazard, additional corresponding landslides on the Tibetan Plateau are searched for on Google Earth. Google Earth, renowned for its spatial resolution of 0.14 m, serves as a widely utilized data source (Cheng et al. 2021)."
+    },
+    {
+      "name": "Global landslide inventory (Froude and Petley 2018)",
+      "source": "Froude and Petley (2018)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To verify the accuracy of GLDM in identifying landslides, the data from Froude and Petley (2018) was used to test the model's performance."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GLDM (Global Landslide Detection Model)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "GLDM is a deep learning-based landslide detection model that improves the YOLOX architecture by incorporating ASFF (Adaptive Spatial Feature Fusion) to handle large-scale data diversity and enhance feature scale consistency. It uses a backbone based on CSPDarknet53 and a decoupled head for classification and localization, trained on a curated Tibetan Plateau landslide dataset.",
+      "source": "Defang Liu et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a novel global landslide detection model (GLDM) that improves the YOLOX architecture to better handle large-scale data diversity and enhance model generalization."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'No datasets were generated or analysed during the current study.\r\n'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced with a persistent identifier, and the custom code for the GLDM model is not provided or linked."
+}

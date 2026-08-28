@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "UAV imagery (post-earthquake)",
+      "source": "Authors' research team",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "On 12 August 2017, four days after the earthquake, our research team carried out a UAV flight (Huaao X-UAV) to obtain optical imagery and high-resolution DEM data after the earthquake in the Jiuzhaigou valley scenic and historic-interest area (Figure 2B)."
+    },
+    {
+      "name": "UAV-derived high-resolution DEM data (post-earthquake)",
+      "source": "Authors' research team",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "On 12 August 2017, four days after the earthquake, our research team carried out a UAV flight (Huaao X-UAV) to obtain optical imagery and high-resolution DEM data after the earthquake in the Jiuzhaigou valley scenic and historic-interest area (Figure 2B)."
+    },
+    {
+      "name": "Fault data",
+      "source": null,
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Several faults (i.e., Tazang Fault, Minjiang Fault, Dongmengou Fault, Huya Fault, and Yifu Fault [16,30–32]) are located near the study area."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Support vector machine classification method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A supervised machine learning method that uses spectral, tone, and texture features from UAV imagery to identify landslides. It incorporates pre-seismic imagery to mask out roads and villages, reducing misclassification errors, and uses a support vector machine to classify the remaining areas as landslides.",
+      "source": "Authors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This paper describes a methodology based on the use of 1 m high-resolution unmanned aerial vehicle (UAV) imagery acquired after the earthquake, and proposes a support vector machine (SVM) classification method combining the roads and villages mask from pre-seismic remote sensing imagery to accurately and automatically map the landslide inventory."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or publicly available, and the custom classification code is not provided."
+}

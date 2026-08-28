@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the 2015 Gorkha earthquake",
+      "source": "Roback et al. (2018)",
+      "link": "https://doi.org/10.5066/F7DZ06F9",
+      "status": "MENTIONED",
+      "verbatim": "the inventory of Roback et al. (2018) available at https://doi.org/10.5066/F7DZ06F9 (Roback et al., 2017)."
+    },
+    {
+      "name": "Sentinel-1 radar imagery",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 data are open-access and available to download from https://scihub.copernicus.eu/ (last access: November 2020; Copernicus, 2020)."
+    },
+    {
+      "name": "ALOS-2 PALSAR-2 radar imagery",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ALOS-2 data used in this study were obtained from JAXA but are not open-access."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) digital elevation model",
+      "source": "Farr et al. (2007)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For geometric coregistration, we used the 1-arcsecond Shuttle Radar Topography Mission (SRTM) digital elevation model (Farr et al., 2007)."
+    },
+    {
+      "name": "High-resolution land use and land cover 30 m resolution map of Japan",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "JAXA high-resolution land use and land cover map of Japan (JAXA, 2018)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Post-event coherence increase (PECI)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A method that measures the increase in coherence between a co-event interferogram and a post-event interferogram, using histogram matching to account for bulk temporal decorrelation, to identify landslide pixels.",
+      "source": "Burrows et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also present three new methods which incorporate a second post-event image... the post-event coherence increase (PECI)... Applying the same histogram-matching step as in the CECL method, we propose this co-event-to-post-event coherence increase as a new potential landslide detection method."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide inventory from Ferrario (2019)",
+        "source": "Ferrario, 2019",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landslide inventory from Zhang et al. (2019)",
+        "source": "Zhang et al., 2019",
+        "link": "https://doi.org/10.5281/zenodo.2577300",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landslide inventory from Roback et al. (2018)",
+        "source": "Roback et al., 2018",
+        "link": "https://doi.org/10.5066/F7DZ06F9",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement has shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and other input datasets are accessible, but the custom code for the PECI method is not provided or linked."
+}

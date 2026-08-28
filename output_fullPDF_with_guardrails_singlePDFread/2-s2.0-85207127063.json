@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Li et al. [9]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Bijie Landslide Dataset: The triple sat satellite took 2773 RSIs between May and August 2018 at a ground resolution of 0.8 m, forming the Bijie landslide dataset [9]."
+    },
+    {
+      "name": "Turkey Earthquake 23 Dataset",
+      "source": "HGM KURE program",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The HGM KURE program provides satellite and autonomous drone images of earthquake zones. The HGM KURE application’s screenshots were used to acquire the images of earthquake-damaged buildings within the area covered by the dataset."
+    },
+    {
+      "name": "MLRSNet Dataset",
+      "source": "Alem and Kumar [17]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "MLRSNet Dataset: The MLRSNet for semantic scenes consists of HR optical satellite or aerial images with multilabels [17], as shown in Fig. 2."
+    }
+  ],
+  "methods": [
+    {
+      "name": "FMANet (Super-Resolution Inverted Bottleneck-Fused Self-Attention Architecture)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "FMANet is a convolutional neural network architecture that integrates a custom deep super-resolution network for image quality enhancement, followed by a fused bottleneck self-attention architecture that learns features through residual and inverted networks. The model uses network-level fusion via depthwise concatenation and a self-attention layer, with hyperparameters optimized via Bayesian optimization, and classifies features using a shallow narrow neural network (SN3).",
+      "source": "Fatima Rauf et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available, and the custom FMANet code repository is not provided."
+}

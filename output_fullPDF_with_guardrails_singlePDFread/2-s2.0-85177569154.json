@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Borehole data",
+      "source": "Road Traffic Consulting Engineers",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on boreholes and existing geological maps, the region's soil and rock units include basalt and andesite rocks, weathered rocks, crystalline lithic tuff layer, and base volcanic rocks, from the top to down (Road Traffic Consulting Engineers 2005)."
+    },
+    {
+      "name": "Meteorological data",
+      "source": "Meteorological Organization",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the information from the Meteorological Organization, the average temperature in winter is -7 °C and about 15 °C in the summer."
+    },
+    {
+      "name": "Regional Water Company of Ardabil Province documents",
+      "source": "Regional Water Company of Ardabil Province",
+      "link": "http://www.arrw.ir/st/412",
+      "status": "MENTIONED",
+      "verbatim": "Also, based on the documents from the Regional Water Company of Ardabil Province (2016), the amount of precipitation in the studied area is about 412 mm per year... Joint bulletin of weather and regional water company of Ardabil province, Statistics & information, Regional Water Company of Ardabil Province (2016) http://www.arrw.ir/st/412."
+    },
+    {
+      "name": "Seismic data",
+      "source": "International Research Institute of Seismology and Earthquake Engineering",
+      "link": "http://www.iiees.ac.ir/fa/insn/1388-04-03-08-31-28/",
+      "status": "MENTIONED",
+      "verbatim": "Studying the earthquake of 2005 in the region (International Research Institute of Seismology and Earthquake Engineering 2013) shows that the closest earthquake before the occurrence of the Saein landslide was on May 14, 2005, at a distance of 200 km... Seismological bulletin and catalog of earthquakes in Iran, International Research Institute of Seismology and Earthquake Engineering (2013) http://www.iiees.ac.ir/fa/insn/1388-04-03-08-31-28/."
+    }
+  ],
+  "methods": [
+    {
+      "name": "UAV-based remote sensing and numerical modeling",
+      "method_type": "SOFTWARE",
+      "summary": "The method involves using UAVs to capture high-resolution images, which are processed using PIX4Dmapper and Agisoft Photoscan to generate 3D models, DSMs, and topographic profiles. These outputs are then used as inputs for Rocscience SLIDE software to perform numerical stability analysis using the limit equilibrium method.",
+      "source": "Rocscience, PIX4D, Agisoft",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "After physical and analytical modeling of slope failure, these data were interpreted using specialized software packages: (1) Rocscience SLIDE for numerical analysis by limit equilibrium method and (2) and (3) PIX4Dmapper and Agisoft Photoscan for 3D modeling."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data that support the findings of this study are available from the corresponding author upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the method's code is not available."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Multi-band high-resolution aerial image of the landslide area (Chongqing)",
+      "source": "DJI UAV",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The multi-band high-resolution aerial image of the landslide area is acquired by a UAV of DJI."
+    },
+    {
+      "name": "WorldView-3 satellite remote sensing data (Chongqing)",
+      "source": "WorldView-3",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The high-resolution satellite remote sensing data of WorldView-3, which was obtained before the landslide, is selected as the background image"
+    },
+    {
+      "name": "Remote sensing image of the Pusa village landslide",
+      "source": "Rescue team UAV",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We use the remote sensing image acquired by UAV of the rescue team and the pre-disaster remote sensing image of the landslide area in our method."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Landslide detection method based on back propagation neural networks with feature fusion",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a multi-layer BP neural network to extract spectral features, a SIFT-based algorithm to match spatial shape features (dustpan or leaf models), and a change detection probability model based on pre- and post-landslide imagery to refine the detection.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not referenced or linked, and the custom code used for the detection method is not available."
+}

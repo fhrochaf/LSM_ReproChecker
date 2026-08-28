@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Ji et al. from Wuhan University",
+      "link": "http://study.rsgis.whu.edu.cn/pages/download/",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset, meticulously curated by Ji et al. [25]. from Wuhan University, represents a vital resource for evaluating landslide detection algorithms. This dataset was downloaded from the URL http://study.rsgis.whu.edu.cn/pages/download/, accessed on 12 August 2024"
+    },
+	{
+      "name": "Landslide4Sens Dataset",
+      "source": "Ghorbanzadeh, O.; Xu, Y.; Zhao, H.; Wang, J.; Zhong, Y.; Zhao, D.; Zang, Q.; Wang, S.; Zhang, F.; Shi, Y.; et al.",
+      "link": "https://www.kaggle.com/datasets/tekbahadurkshetri/landslide4sense",
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense dataset, curated for the Landslide4Sense competition by the Institute of Advanced Research in Artificial Intelligence (IARAI), was downloaded from the URL https://www.kaggle.com/datasets/tekbahadurkshetri/landslide4sense"
+    },
+	{
+      "name": "CAS Landslide Dataset",
+      "source": "Ghorbanzadeh, O.; Xu, Y.; Zhao, H.; Wang, J.; Zhong, Y.; Zhao, D.; Zang, Q.; Wang, S.; Zhang, F.; Shi, Y.; et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The CAS Landslide Dataset represents a significant advancement in large-scale multisensor landslide detection [52]... [52] Xu, Y.; Ouyang, C.; Xu, Q.; Wang, D.; Zhao, B.; Luo, Y. CAS Landslide Dataset: A Large-Scale and Multisensor Dataset for Deep Learning-Based Landslide Detection. Sci. Data 2024, 11, 12."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DCT-Unet++ model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Unet++ architecture for landslide area extraction that incorporates Dilated Convolution for multi-scale feature extraction, integrates Channel and Spatial Attention Mechanisms (CBAM) and Transformer modules, and utilizes multi-task learning (segmentation and edge detection) with Conditional Random Fields (CRFs) for post-processing.",
+      "source": "Junxin Wang, Qintong Zhang, Hao Xie, Yingying Chen, and Rui Sun",
+      "link": "https://github.com/xinxin2021110/DCT-UNETplusplus",
+      "status": "MENTIONED",
+      "verbatim": "We have innovatively proposed a model named DCT-Unet++... The code related to the experiment is stored at https://github.com/xinxin2021110/DCT-UNETplusplus, accessed on 12 August 2024."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Data presented in this study",
+        "source": "GitHub (xinxin2021110)",
+        "link": "https://github.com/xinxin2021110/DCT-UNETplusplus",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "DCT-UNet++ code for landslide segmentation",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code implementing the DCT-UNet++ model, hosted alongside the study's data in the same GitHub repository.",
+        "source": null,
+        "link": "https://github.com/xinxin2021110/DCT-UNETplusplus",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Datasets are referenced and publicly available. The custom DCT-Unet++ model code is provided via a persistent GitHub repository link, which provides data."
+}

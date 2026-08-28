@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide (BJL) dataset",
+      "source": "Ji et al. [32]",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "These datasets include the Bijie Landslide (BJL) dataset [32]... The BJL dataset, L4S dataset, and GVLM dataset can be openly accessed at: http://gpcv.whu.edu.cn/data/Bijie_pages.html (accessed on 10 December 2023)"
+    },
+    {
+      "name": "Landslide4Sense (L4S) dataset",
+      "source": "Institute of Advanced Research in Artificial Intelligence (IARAI)",
+      "link": "https://github.com/iarai/Landslide4Sense-2022",
+      "status": "MENTIONED",
+      "verbatim": "the Landslide4Sense (L4S) dataset [59]... https://github.com/iarai/Landslide4Sense-2022 (accessed on 10 December 2023)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "SAM-CFFNet (SAM-based cross-feature fusion network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "SAM-CFFNet is an end-to-end semantic segmentation network that uses a frozen SAM image encoder (IEViT) to extract multi-level features, which are then processed by a custom cross-feature fusion decoder (CFFD). The CFFD integrates multi-scale features using a cross-feature fusion module (CFFM), a shallow feature extractor (SFE) for texture details, and a Bottle ASPP module for background context.",
+      "source": "Laidian Xi et al.",
+      "link": "https://github.com/JunchuanYu/SAM-CFFNet",
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose the SAM-based cross-feature fusion network (SAM-CFFNet)... The code for this experiment has been posted at: https://github.com/JunchuanYu/SAM-CFFNet (accessed on 20 May 2024)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide (BJL) dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landslide4Sense (L4S) dataset",
+        "source": "IARAI (Institute of Advanced Research in Artificial Intelligence)",
+        "link": "https://github.com/iarai/Landslide4Sense-2022",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Global Very-High-Resolution Landslide Mapping (GVLM) dataset",
+        "source": null,
+        "link": "https://github.com/zxk688/GVLM",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "SAM-CFFNet: SAM-based cross-feature fusion network for landslide identification",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom deep learning code implementing the proposed SAM-CFFNet model, which uses SAM's image encoder with a cross-feature fusion decoder for high-precision landslide segmentation.",
+        "source": null,
+        "link": "https://github.com/JunchuanYu/SAM-CFFNet",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets (BJL, L4S, and GVLM) are referenced and linked via public repositories. The custom code for the SAM-CFFNet model is available via a provided GitHub repository link."
+}

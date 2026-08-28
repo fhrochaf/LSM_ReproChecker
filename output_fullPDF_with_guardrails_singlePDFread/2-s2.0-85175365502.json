@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "Gaofen-1 satellite remote sensing image data",
+      "source": "China Centre for Resources Satellite Data and Application (CRESDA)",
+      "link": "https://www.cresda.com/",
+      "status": "MENTIONED",
+      "verbatim": "Panchromatic images 2 m 2022 https://www.cresda.com/ (accessed on 5 January 2023)...Multispectral images 8 m 2022 https://www.cresda.com/ (accessed on 5 January 2023)"
+    },
+    {
+      "name": "Normalized difference Vegetation index (NDVI)",
+      "source": "Resource and Environment Science and Data Center (RESDC)",
+      "link": "https://www.resdc.cn/DOI",
+      "status": "MENTIONED",
+      "verbatim": "Normalized difference Vegetation index 30 m 2022 https://www.resdc.cn/DOI (accessed on 7 January 2023)"
+    },
+    {
+      "name": "Digital elevation model (DEM)",
+      "source": "Resource and Environment Science and Data Center (RESDC)",
+      "link": "https://www.resdc.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Digital elevation model 12.5 m https://www.resdc.cn/ (accessed on 7 January 2023)"
+    },
+    {
+      "name": "Rainfall data",
+      "source": "NASA Precipitation Measurement Missions",
+      "link": "https://pmm.nasa.gov/precipitation-measurement-missions",
+      "status": "MENTIONED",
+      "verbatim": "Rainfall 1 km 2022 https://pmm.nasa.gov/precipitation-measurement-missions (accessed on 6 January 2023)"
+    },
+    {
+      "name": "Basin boundaries",
+      "source": "HydroSHEDS",
+      "link": "https://www.hydrosheds.org",
+      "status": "MENTIONED",
+      "verbatim": "Basin boundaries https://www.hydrosheds.org (accessed on 8 January 2023)"
+    },
+    {
+      "name": "Stratigraphic lithology",
+      "source": "National Geological Archives of China",
+      "link": "http://geodata.ngac.cn",
+      "status": "MENTIONED",
+      "verbatim": "Stratigraphic lithology 1:500,000 http://geodata.ngac.cn (accessed on 7 January 2023)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Mask R-CNN model incorporating physical mechanism–optical–morphological features",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An instance segmentation approach that uses Mask R-CNN with a ResNet-50 backbone and FPN, enhanced by stacking multi-source data (spectral, textural, morphological, and physical landslide-influencing factors) as input layers and applying a 90-degree rotation for data augmentation.",
+      "source": "Zhibo Wu et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "This paper aims to perform remote sensing interpretation through combining the masked R-CNN algorithm model with the constraints of spectral, structural, morphological and physical features of landslides in remote sensing imagery."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for training and validation is not referenced or linked. The custom Mask R-CNN code is not available via any repository or persistent link."
+}

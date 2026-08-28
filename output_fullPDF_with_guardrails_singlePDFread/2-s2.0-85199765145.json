@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "Nepal landslide detection database",
+      "source": "Zenodo",
+      "link": "https://zenodo.org/record/3675410#.ZBv3UZBxD8",
+      "status": "MENTIONED",
+      "verbatim": "The dataset is available at https://zenodo.org/record/3675410#.ZBv3UZBxD8 (accessed on 15 March 2024)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GELAN+attention (GELANc+CBAM, GELANc+ECA, GELANe+CBAM, GELANe+ECA)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An attention-driven generalized efficient layer aggregation network (GELAN) that integrates efficient channel attention (ECA) and convolutional block attention module (CBAM) modules into the YOLOv9 architecture to enhance landslide detection from satellite imagery.",
+      "source": "Naveen Chandra, Himadri Vaidya, Suraj Sawant, and Sansar Raj Meena",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Dataset from Zenodo record",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/record/3675410#.ZBv3UZBxD8",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via Zenodo, but the custom code for the GELAN+attention method is not available or linked."
+}

@@ -1,0 +1,99 @@
+{
+  "datasets": [
+    {
+      "name": "Italian Landslide Inventory (IFFI)",
+      "source": "ISPRA and the Regions and Autonomous Provinces",
+      "link": "https://idrogeo.isprambiente.it/app/iffi",
+      "status": "MENTIONED",
+      "verbatim": "Data can be viewed and downloaded from the IdroGEO web platform (https://idrogeo.isprambiente.it/app/iffi, Iadanza et al. 2021, see supplementary material Fig. S1)."
+    },
+    {
+      "name": "PlanetScope satellite imagery (April 2023 and May-June 2023)",
+      "source": "Planet Labs PBC",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The April 2023 basemap provided by Planet was used as pre-event imagery, while cloud-free images (PlanetScope level 3B) acquired between May 22, 2023, and mid-June 2023 were used as post-event images."
+    },
+    {
+      "name": "Ferrario event inventory",
+      "source": "Maria Francesca Ferrario",
+      "link": "https://zenodo.org/records/13234762",
+      "status": "MENTIONED",
+      "verbatim": "The dataset is publicly available at https://zenodo.org/records/13234762 (Ferrario 2024)."
+    },
+    {
+      "name": "TINItaly 10 m digital terrain model",
+      "source": "INGV",
+      "link": "https://tinitaly.pi.ingv.it/Download_Area1_1.html",
+      "status": "MENTIONED",
+      "verbatim": "digital terrain model TINItaly 10 m (Tarquini et al. 2023; accessed at https://tinitaly.pi.ingv.it/Download_Area1_1.html)"
+    },
+    {
+      "name": "Sentinel-2 (S2) MSI satellite imagery",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 MSI data used were available at no cost from ESA Sentinels Scientific Data Hub."
+    },
+    {
+      "name": "Italian national land consumption map 2022",
+      "source": "ISPRA",
+      "link": "https://groupware.sinanet.isprambiente.it/uso-copertura-e-consumo-di-suolo/library/consumo-di-suolo",
+      "status": "MENTIONED",
+      "verbatim": "Italian national land consumption map 2022 (Strollo et al. 2020; freely accessed at: https://groupware.sinanet.isprambiente.it/uso-copertura-e-consumo-di-suolo/library/consumo-di-suolo)"
+    },
+    {
+      "name": "OpenStreetMap road and railway networks",
+      "source": "OpenStreetMap",
+      "link": "https://www.openstreetmap.org",
+      "status": "MENTIONED",
+      "verbatim": "Spatial overlay of PL rapid mapping polygons with the road and railway networks, collected from OpenStreetMap (https://www.openstreetmap.org), was done"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Hybrid pixel-based and object-based image analysis approach for landslides rapid mapping",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A fully automated supervised procedure that uses change detection analysis (RdNDVI) on optical multispectral imagery to identify potential landslides. It incorporates an advanced spatial filtering approach to remove commission errors and calculates a confidence measure using object-oriented image analysis (OBIA) based on slope, area, elevation range, and RdNDVI weights.",
+      "source": "Federico Filipponi",
+      "link": "https://github.com/ffilipponi/LandslidesRapidMapping",
+      "status": "MENTIONED",
+      "verbatim": "The procedure for rapid mapping of PL, described in this processing phase section, was fully automated through a bash script and makes use of GDAL library, R programming languages and the related ‘sf’ (Pebesma 2018) and ‘terra’ (Pebesma and Bivand 2023) libraries. Script can be freely accessed at: https://github.com/ffilipponi/LandslidesRapidMapping."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Rapid mapping landslides inventory",
+        "source": "Zenodo (Filipponi et al., 2024)",
+        "link": "https://doi.org/10.5281/zenodo.14199336",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Ferrario event inventory (reference data)",
+        "source": "Zenodo (Ferrario, 2024)",
+        "link": "https://zenodo.org/records/13234762",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Landslides_rapid_mapping tool",
+        "method_type": "CUSTOM_CODE",
+        "summary": "A developed tool for rapid mapping of landslides, freely shared via a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/ffilipponi/LandslidesRapidMapping",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and all other input datasets are referenced and publicly accessible via provided links. The custom code is available through a public GitHub repository."
+}

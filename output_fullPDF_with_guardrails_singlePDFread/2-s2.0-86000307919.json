@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide disaster dataset (118 landslide disaster bodies)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A total of 118 landslide disaster datasets were produced, as shown in Fig. 4 for some of the data."
+    },
+    {
+      "name": "Aerial orthophoto data of landslide disasters in Sichuan Province",
+      "source": "DJI Innovations (M350 RTK drone)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "First, aerial orthophoto data of landslide disasters in Sichuan Province since 2008 were collected using drones. The UAV system employed the M350 RTK, designed and manufactured by DJI Innovations in Shenzhen"
+    },
+    {
+      "name": "Historical image database",
+      "source": "Not specified",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the occurrence time and location of these events, corresponding aerial imagery data were selected from the historical image database (see Table 2)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "LDNet (Landslide Detection Network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A lightweight semantic segmentation model based on DeepLabv3+ that replaces the Xception backbone with MobileNetv2 and incorporates a Convolutional Block Attention Module (CBAM) to improve landslide edge extraction and reduce computational parameters.",
+      "source": "Yong Li",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this paper proposes a lightweight landslide detection model, Landslide Detection Network (LDNet), based on DeepLabv3+ and a dual attention mechanism."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets generated and/or analyzed during this study are not publicly available due to confidentiality restrictions. Access to these datasets can be granted upon reasonable request from the corresponding author, subject to appropriate data use agreements."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or publicly available, and the custom LDNet code lacks a repository or persistent link."
+}

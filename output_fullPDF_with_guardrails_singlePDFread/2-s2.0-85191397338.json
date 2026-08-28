@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Optimal-view dataset (YA-OP)",
+      "source": "Authors' own construction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this area, we interpreted over 300 old loess landslide samples through manual interpretation in Google 3D Scene... In the end, an optimal-view dataset containing 176 correctly labeled samples was obtained."
+    },
+    {
+      "name": "Multi-view images",
+      "source": "Google Earth 3D Scenes",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Multi-view images were obtained by MAC, specifically by modifying the parameters of the Google location file. Images from different views were generated in Google 3D Scenes automatically."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Optimal-view and multi-view strategic hybrid deep learning (OMV-HDL)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The OMV-HDL method consists of a training step using an optimal-view dataset and a detection step using multi-view images. It employs a hybrid deep learning (HDL) model combining YOLOv5 (for local features) and DETR (for global features), with results fused by the Weighted Boxes Fusion (WBF) algorithm.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "In this paper, considering the above challenges and the properties of CNNs and transformers and inspired by the interpretation process of human experts from different views, a novel optimal-view and multi-view strategic hybrid deep learning (OMV-HDL) method was proposed to detect old loess landslides effectively."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is not referenced or linked, and the custom OMV-HDL method code is not provided or linked."
+}

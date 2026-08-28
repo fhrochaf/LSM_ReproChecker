@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "HR-GLDD dataset",
+      "source": "Meena et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The HR-GLDD dataset [23] is used to test the performance of the landslide detection methods."
+    }
+  ],
+  "methods": [
+    {
+      "name": "FedLD (Federated learning-based landslide detection)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "FedLD is a federated learning framework for landslide detection that uses horizontal federated learning (HFL) to train models across decentralized clients without sharing raw data. It incorporates a novel marginal contribution (MC) metric to measure client contributions and a weighted model aggregation algorithm (MCA) to aggregate local models into a global model based on data quality.",
+      "source": "Xiaochuan Tang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To bridge this gap, this letter proposes a privacy-preserving machine learning method named federated learning-based landslide detection (FedLD) for landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is mentioned but not linked, and the custom code for the FedLD method is not provided or linked."
+}

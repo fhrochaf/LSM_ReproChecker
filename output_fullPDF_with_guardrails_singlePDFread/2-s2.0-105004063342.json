@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Sichuan dataset",
+      "source": "Zeng et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Sichuan dataset includes earthquake and rainfall-induced landslides, and debris flow disasters. It comprises 59 landslide images and 48 debris flow images... [72] C. Zeng, Z. Cao, F. Su, Z. Zeng, and C. Yu, “High-precision aerial imagery and interpretation dataset of landslide and debris flow disaster in Sichuan and surrounding areas,” China Sci. Data, vol. 7, no. 2, pp. 195–205, 2022."
+    },
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie dataset covers Bijie in Southwest China with a focus on rainfall-induced landslides. In addition to optical images, it provides DEM data with a spatial resolution of 2 m to assist in LM... [73] S. Ji, D. Yu, C. Shen, W. Li, and Q. Xu, “Landslide detection from an open satellite imagery and digital elevation model dataset using attention boosted convolutional neural networks,” Landslides, vol. 17, no. 6, pp. 1337–1352, Jun. 2020."
+    },
+    {
+      "name": "Nepal dataset",
+      "source": "Bragagnolo et al. (2021)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Nepal dataset includes landslides that are distributed across Nepal, primarily triggered by the two large earthquakes that struck Gorkha on April 25 and Dolakha on May 12, 2015... [4] L. Bragagnolo, L. R. Rezende, R. V. da Silva, and J. M. V. Grzybowski, “Convolutional neural networks applied to semantic segmentation of landslide scars,” CATENA, vol. 201, Jun. 2021, Art. no. 105189."
+    },
+    {
+      "name": "Luding dataset",
+      "source": "Fu et al. (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Luding dataset is composed of landslides triggered by the earthquake that occurred on September 5, 2022, in Luding, Sichuan, China... [74] Y. Fu, W. Li, S. Fan, Y. Jiang, and H. Bai, “CAL-Net: Conditional attention lightweight network for in-orbit landslide detection,” IEEE Trans. Geosci. Remote Sens., vol. 61, 2023, Art. no. 4408515."
+    },
+    {
+      "name": "LRSTTC dataset",
+      "source": "Jiang et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The LRSTTC dataset includes landslides along the Sichuan–Tibet Railway from Sichuan to Tibet, triggered by various factors... [8] W. Jiang et al., “Deep learning for landslide detection and segmentation in high-resolution optical images along the sichuan-tibet transportation corridor,” Remote Sens., vol. 14, no. 21, p. 5490, Oct. 2022."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-LM",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised learning framework for landslide mapping that integrates multiperspective consistency learning (MCL) to align input, feature, and model perturbation predictions. It introduces a dual-branch anchor CutMix (DACM) to preserve landslide features and a feature perturbation assign (FPA) strategy to optimize the model in high-dimensional feature space.",
+      "source": "Shuhao Ran et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a reliable multiperspective consistency SSL framework called Semi-LM."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the Semi-LM method is not available."
+}

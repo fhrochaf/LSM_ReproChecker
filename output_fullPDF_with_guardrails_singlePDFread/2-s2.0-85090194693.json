@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bitemporal aerial remote sensing images of Lantau Island",
+      "source": "Civil Engineering and Development Department of Hong Kong",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The pre- and postevent images were acquired by using a Zeiss RMK TOP 15 Aerial Survey Camera at a flying height of approximately 2400 m on December 2007 and November 2014, respectively. The spatial resolution of the bitemporal aerial photos is 0.5 m/pixel. Then, the preprocessing, such as coregistration and radiometric corrections, was conducted by the Civil Engineering and Development Department of Hong Kong."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual-path full convolutional network (DP-FCN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The DP-FCN model consists of two cooperative modules: a deep feature extraction network (DFE-network) based on U-Net to extract high-level features from bitemporal images, and a joint feature learning network (JFL-network) that concatenates these features to directly detect landslide areas using a softmax classifier, avoiding the need for change magnitude map generation.",
+      "source": "ZhiYong Lv, TongFei Liu, XiangBing Kong, Cheng Shi, and Jón Atli Benediktsson",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, we design a dual-path full convolutional network (DP-FCN) model for rapid LIM with VHR remote sensing images to address the abovementioned problems."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or provided, and the custom DP-FCN code lacks a repository or persistent link."
+}

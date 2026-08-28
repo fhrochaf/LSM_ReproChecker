@@ -1,0 +1,103 @@
+{
+  "datasets": [
+    {
+      "name": "Remote sensing optical images",
+      "source": "National Platform for Common Geospatial Information Services",
+      "link": "https://www.tianditu.gov.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Remote sensing optical images are selected from National Platform for Common Geospatial Information Services and the link is https://www.tianditu.gov.cn/."
+    },
+    {
+      "name": "DEM data",
+      "source": "Shuttle Radar Topography Mission (SRTM)",
+      "link": "https://lpdaac.usgs.gov/products/srtmgl1v003/",
+      "status": "MENTIONED",
+      "verbatim": "The DEM data is obtained from Shuttle Radar Topography Mission (SRTM) data and the link is https://lpdaac.usgs.gov/products/srtmgl1v003/."
+    },
+    {
+      "name": "Landform distribution data",
+      "source": "Resource and Environment Science and Data Center",
+      "link": "https://www.resdc.cn/data.aspx?DATAID=124",
+      "status": "MENTIONED",
+      "verbatim": "Landform distribution data are collected from Resource and Environment Science and Data Center and the link is https://www.resdc.cn/data.aspx?DATAID=124."
+    },
+    {
+      "name": "Geological mapping data",
+      "source": "National Geological Archives Data Center",
+      "link": "http://dc.ngac.org.cn/museumDetails?id=10.35080%2Fn01.c.820021",
+      "status": "MENTIONED",
+      "verbatim": "Geological mapping data are collected from National Geological Archives Data Center and the link is http://dc.ngac.org.cn/museumDetails?id=10.35080%2Fn01.c.820021."
+    },
+    {
+      "name": "Active fault zone data",
+      "source": "Geocloud system of China Geological Survey",
+      "link": "https://geocloud.cgs.gov.cn/#/home",
+      "status": "MENTIONED",
+      "verbatim": "Active fault zone data are collected from “Geocloud” system of China Geological Survey, and the link is https://geocloud.cgs.gov.cn/#/home."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SA-MFNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "SA-MFNet is a semantic segmentation network for landslide detection that uses multisource data fusion. It employs an improved ResNet50-SA backbone with attention and grouping mechanisms for optical imagery, and a parallel ResNet34 branch for other topic data, fusing features through a multistage decision module.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Remote sensing optical images",
+        "source": "National Platform for Common Geospatial Information Services (Tianditu)",
+        "link": "https://www.tianditu.gov.cn/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "DEM (Digital Elevation Model) data from SRTM",
+        "source": "Shuttle Radar Topography Mission (SRTM), USGS",
+        "link": "https://lpdaac.usgs.gov/products/srtmgl1v003/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landform distribution data",
+        "source": "Resource and Environment Science and Data Center",
+        "link": "https://www.resdc.cn/data.aspx?DATAID=124",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Geological mapping data",
+        "source": "National Geological Archives Data Center",
+        "link": "http://dc.ngac.org.cn/museumDetails?id=10.35080%2Fn01.c.820021",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Hydrological distribution data",
+        "source": "National Catalogue Service For Geographic Information",
+        "link": "https://www.webmap.cn/commres.do?method=result25W",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Active fault zone data",
+        "source": "Geocloud, China Geological Survey",
+        "link": "https://geocloud.cgs.gov.cn/#/home",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The input datasets are referenced and linked, but the landslide inventory used for training or validation is not mentioned or linked. The custom code for the SA-MFNet method is not available."
+}

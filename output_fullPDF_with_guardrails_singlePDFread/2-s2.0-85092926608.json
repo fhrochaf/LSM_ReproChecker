@@ -1,0 +1,65 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope Analytic Product imagery",
+      "source": "Planet Labs Inc.",
+      "link": "https://www.planet.com/products/planet-imagery/",
+      "status": "MENTIONED",
+      "verbatim": "Planet Lab Inc. PLANET IMAGERY AND ARCHIVE. Available online: https://www.planet.com/products/planet-imagery/ (accessed on 6 June 2020)."
+    },
+    {
+      "name": "Forest data (for masking)",
+      "source": "Japanese Ministry of Land Infrastructure Transport and Tourism",
+      "link": "https://nlftp.mlit.go.jp/ksj/index.html",
+      "status": "MENTIONED",
+      "verbatim": "urban areas and agricultural fields were masked using forest data provided by the Japanese Ministry of Land Infrastructure Transport and Tourism [26]... Japanese Ministry of Land Infrastructure Transport and Tourism National Land Numerical Information Download Service. Available online: https://nlftp.mlit.go.jp/ksj/index.html (accessed on 24 September 2020)."
+    },
+    {
+      "name": "WorldView-2 imagery",
+      "source": "Maxar Technologies",
+      "link": "https://www.maxar.com/constellation",
+      "status": "MENTIONED",
+      "verbatim": "Maxar Technologies WORLDVIEW-2. Available online: https://www.maxar.com/constellation (accessed on 6 June 2020)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "NDVI filtering method, Spectral Angle Mapper (SAM) method, and Support Vector Machine (SVM) method",
+      "method_type": "SOFTWARE",
+      "summary": "The authors compare three conventional change detection methodologies: NDVI filtering (using ArcGIS 10.7), Spectral Angle Mapper (using QGIS 3.10 Semi-Automatic Classification Plugin), and Support Vector Machine (using Google Earth Engine). These methods use pre- and post-typhoon PlanetScope imagery to identify windthrow and landslide areas.",
+      "source": "ArcGIS 10.7, QGIS 3.10, Google Earth Engine",
+      "link": "https://code.earthengine.google.com/2a2476bec549e65a6ce17c611233bd66",
+      "status": "MENTIONED",
+      "verbatim": "The code for classification is provided in Google Earth Engine (Supplementary information S1 and S2)... Supplementary Materials: The following are available online at S1: https://code.earthengine.google.com/2a2476bec549e65a6ce17c611233bd66 and S2: https://code.earthengine.google.com/bb530ba42aaf9b0ef3b677b8dfed9318"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Classification code (Supplementary S1)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom Google Earth Engine classification code, provided as supplementary material S1.",
+        "source": null,
+        "link": "https://code.earthengine.google.com/2a2476bec549e65a6ce17c611233bd66",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Classification code (Supplementary S2)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom Google Earth Engine classification code, provided as supplementary material S2.",
+        "source": null,
+        "link": "https://code.earthengine.google.com/bb530ba42aaf9b0ef3b677b8dfed9318",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Shared scripts on supplementary material. Data potentially retrivable from GEE script."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The custom classification code and datasets are provided via persistent links to Google Earth Engine."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Open-source landslide dataset (Bijie)",
+      "source": "Ji et al. (2020)",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "In this study, the proposed adversarial nets were trained using the open-source dataset [21], which can be downloaded at http://gpcv.whu.edu.cn/data/Bijie_pages.html (accessed on 10 May 2022)."
+    },
+    {
+      "name": "UAV-photogrammetry-derived data (Meilong gully)",
+      "source": "Authors' own data acquisition",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "End-to-end, semi-supervised adversarial network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An adversarial network framework for landslide extraction consisting of a generator (based on pix2pix) to learn semantic features via semi-supervised operation and a discriminator (improved DeepLabv3+) with multilevel skip connections and a topographic CNN to fuse spectral and topographic features.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data are available upon request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, but the custom code for the adversarial network is not provided or linked. The UAV-photogrammetry-derived data is not mentioned or accessible."
+}

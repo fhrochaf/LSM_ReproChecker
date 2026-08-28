@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The bijie landslide dataset (Ji et al. 2020) includes 770 labeled samples extracted from the TripleSat satellite images, showcasing a diverse array of landslide types."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ETGC2-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An enhanced Transformer and graph convolution combined network that integrates an EFormer (Inverted Transformer + CBAM) for feature extraction, a SIEM for spatial information enhancement, and a superpixel-guided GCN (SGCN) to model spatial topology.",
+      "source": "Shuaishuai Fan, Yibin Fu, Weiming Li, Hongyang Bai, Yonghua Jiang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "With the aforementioned considerations, we propose an enhanced Transformer and graph convolution combined network, namely ETGC2-Net, which can efficiently compute on original satellite images and accurately identifies landslide areas."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": null,
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Global VHR Landslide Mapping Dataset",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with indication of datasets, no shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Bijie landslide dataset is mentioned but not linked, and the custom ETGC2-Net code is not available via any repository or persistent link."
+}

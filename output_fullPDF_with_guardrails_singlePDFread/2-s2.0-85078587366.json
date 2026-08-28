@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "ALOS-2 SAR image of northern Kyushu area, Japan",
+      "source": "Advanced Land Observing Satellite No. 2 (ALOS-2)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The data used for the experiments are an SAR image (Fig. 4) taken by Advanced Land Observing Satellite No. 2 (ALOS-2), which shows the northern Kyushu area in Japan on July 7, 2017."
+    },
+    {
+      "name": "Landslide area annotations",
+      "source": "Geospatial Information Authority of Japan",
+      "link": "http://www.gsi.go.jp/english/index.html",
+      "status": "MENTIONED",
+      "verbatim": "The dots in Fig. 4 show the location of landslide areas that were annotated by the Geospatial Information Authority of Japan.[30] ... [30] Geospatial Information Authority of Japan (GSI), Ministry of Land, Infrastructure,Transport and Tourism, http://www.gsi.go.jp/english/index.html"
+    },
+    {
+      "name": "Predisaster SAR image",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "DEM (Digital Elevation Model) image",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Segmentation network with multiattention",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An encoder-decoder network based on ResNet that incorporates global attention modules (combining position and channel attention) and attention refinement modules to extract and refine features for landslide segmentation in SAR images.",
+      "source": "Yong An, Jianwu Long, Shingo Mabu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We propose a new segmentation method with multiattention modules redesigning an encoder–decoder network, that consists of ResNet [2] and some attention modules."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and the ALOS-2 SAR imagery is practically accessible via JAXA, but the custom segmentation network code is not available."
+}

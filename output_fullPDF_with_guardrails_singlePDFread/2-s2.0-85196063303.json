@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "MMFlood dataset",
+      "source": "Montello, F., Arnaudo, E., and Rossi, C. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two publicly available datasets, Landslide4Sense [17], [18] and MMFlood [5], were used."
+    },
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "Ghorbanzadeh, O., Xu, Y., Ghamisi, P., Kopp, M., and Kreil, D. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two publicly available datasets, Landslide4Sense [17], [18] and MMFlood [5], were used."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MSSCSAF-Net (multi-source semantic segmentation with channel and spatial attention fusion)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A multi-source semantic segmentation network that incorporates a multi-source encoder (MSE) to extract features from diverse inputs, a multi-source channel spatial attention fusion module (MSCSAFM) to fuse extracted features, and a decoder channel spatial attention fusion module (DCSAFM) to improve the fusion of spatial and abstract features.",
+      "source": "Marwa Chendeb El Rai, Muna Darweesh, Aicha Beya Far, and Amjad Gawanmeh",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked, and the custom code for the MSSCSAF-Net method is not available via any repository or persistent link."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of Eastern Iburi, Hokkaido, Japan",
+      "source": "Zhang et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Our primary source of the landslide inventory is the map produced by Zhang et al. (2019) and applied in studies like (Ghorbanzadeh et al., 2021)."
+    },
+    {
+      "name": "Sentinel-2A imagery (pre- and post-landslide)",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The cloud-free available pre- (23.05.2016) and post- (06.08.2019) landslide event Sentinel-2 images are downloaded, and atmospheric corrections are made using the useful Sen2Cor plugin in the SNAP software developed by the European Space Agency (ESA)."
+    },
+    {
+      "name": "JAXA ALOS Digital Elevation Model (DEM)",
+      "source": "Japanese Aerospace Exploration Agency (JAXA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The training and testing datasets include optical satellite imagery from Sentinel-2 and the digital elevation model from the Japanese aerospace exploration agency sensor of JAXA ALOS."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Integrated ResU-Net and rule-based OBIA",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates a ResU-Net deep learning model for generating landslide probability maps with a rule-based Object-Based Image Analysis (OBIA) approach. The OBIA stage uses spectral, spatial, and contextual features (including land cover and image difference indices) to refine the ResU-Net probability outputs through predefined threshold-based rulesets to delineate landslide boundaries.",
+      "source": "Omid Ghorbanzadeh, Khalil Gholamnia & Pedram Ghamisi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study evaluates a rule-based object-based image analysis (OBIA) approach built on probabilities resulting from the ResU-Net model for landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, and the custom code for the ResU-Net and OBIA method is not provided or linked."
+}

@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Ya'an landslide hazard interpretation data (2021–2023)",
+      "source": "Ya'an Bureau of Natural Resources and Planning",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For this study, a detailed landslide hazard interpretation was completed in Ya’an based on field landslide site survey data for 2021–2023 from the Ya’an Bureau of Natural Resources and Planning"
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The historical optical satellite images were provided by Google Earth."
+    },
+    {
+      "name": "1:10,000 DEM of Ya’an City",
+      "source": "Ya'an City",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "DEM data were obtained from the 1:10,000 DEM of Ya’an City with an accuracy of 5 m"
+    },
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Ji, S.; Yu, D.; Shen, C.; Li, W.; Xu, Q. Landslide Detection from an Open Satellite Imagery and Digital Elevation Model Dataset Using Attention Boosted Convolutional Neural Networks. Landslides 2020, 17, 1337–1352.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we conducted a test on a publicly available landslide dataset [54] of Bijie City, Guizhou Province, China."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Swin Transformer-based model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model based on the Swin Transformer architecture, which fuses optical imagery and DEM data as input and incorporates a boundary loss function to address category imbalance and improve boundary recognition.",
+      "source": "Authors",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The original contributions presented in the study are included in the article, further inquiries can be directed to the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or publicly available, and the custom Swin Transformer-based model code is not provided."
+}

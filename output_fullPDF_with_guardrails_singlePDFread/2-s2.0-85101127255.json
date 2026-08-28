@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "PALSAR-2 quad-pol datasets",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In addition, the authors are grateful to the Japan Aerospace Exploration Agency (JAXA) for donating the free experimental data of ALOS-2 PALSAR."
+    },
+    {
+      "name": "Aerial image of Shenzhen landslide",
+      "source": "Gao et al., 2017",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Details of the Shenzhen landslide, as shown in an aerial image acquired on December 21, 2015 (Gao et al., 2017)."
+    },
+    {
+      "name": "Google Earth optical images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Fig. 3c and d show the corresponding optical images obtained using Google Earth"
+    }
+  ],
+  "methods": [
+    {
+      "name": "CD-AHP (Change Detection and Analytic Hierarchy Process)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A landslide detection method that combines change detection (CD) on dual-temporal quad-pol SAR datasets to identify modified regions, and an analytic hierarchy process (AHP) based on Yamaguchi decomposition (YD) to identify surface scattering mechanisms, fused by a logical 'AND' operation to remove false alarms.",
+      "source": "Nielsen, A. A. (for CD MATLAB codes)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, the authors express gratitude to the contribution of Nielsen, A. A. from the Technical University of Denmark (DTU) for sharing the MATLAB codes of the CD using polarimetric SAR datasets."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the CD-AHP method lacks a repository or persistent link."
+}

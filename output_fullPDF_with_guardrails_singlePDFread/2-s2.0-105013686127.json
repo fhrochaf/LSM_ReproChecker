@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Global Landslide Dataset for Change Detection (GLaD4CD)",
+      "source": "Authors' own creation",
+      "link": "https://zenodo.org/records/14226448",
+      "status": "MENTIONED",
+      "verbatim": "The final dataset, which includes 174 bi-temporal Sentinel-2 images, was then used for further analysis. It has been published and is freely available on Zenodo (https://zenodo.org/records/14226448)."
+    },
+    {
+      "name": "Sentinel-2 Level-1C (S2L1C) products",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The imagery retrieved consists of Sentinel-2 Level-1C (S2L1C) products, providing orthorectified Top-Of-Atmosphere reflectance across all 13 spectral bands."
+    },
+    {
+      "name": "SSL4EO-S12 dataset",
+      "source": "Wang et al. (2023)",
+      "link": "https://github.com/zhu-xlab/SSL4EO-S12",
+      "status": "MENTIONED",
+      "verbatim": "The SSL4EO project (Wang et al. 2023) introduced a large-scale, multi-modal dataset designed to pre-train geospatial foundation models... The dataset, models, and source code are publicly available on GitHub.12... 12. https://github.com/zhu-xlab/SSL4EO-S12"
+    }
+  ],
+  "methods": [
+    {
+      "name": "LandslideMetric-CD",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An unsupervised change detection model adapted from Metric-CD, which integrates the SSL4EO DINO geospatial foundation model as a feature extractor to process multi-temporal Sentinel-2 imagery and generate landslide probability maps.",
+      "source": "Authors' own development (based on Bandara and Patel 2023)",
+      "link": "https://github.com/wgcban/Metric-CD",
+      "status": "MENTIONED",
+      "verbatim": "The authors published the implementation of the model in a GitHub repository,11 which was used in our study to adapt the original implementation to our use case... 11. https://github.com/wgcban/Metric-CD"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "GLaD4CD dataset",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/10800338",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory (GLaD4CD) and other input datasets are linked and publicly available. The custom code for the LandslideMetric-CD method is given through a repository."
+}

@@ -1,0 +1,61 @@
+{
+  "datasets": [
+    {
+      "name": "LRSTTC (Optical remote sensing dataset for Landslide Recognition along the Sichuan-Tibet Transportation Corridor)",
+      "source": "Authors' own construction",
+      "link": "https://github.com/Jiang-CHD-YunNan/LRSTTC",
+      "status": "MENTIONED",
+      "verbatim": "The LRSTTC Dataset will be submitted at https://github.com/Jiang-CHD-YunNan/LRSTTC."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Through visual interpretation by Google Earth, Sentinel 2, Landsat 8 imagery, and a long period of field investigation, 924 landslides were obtained and shown in Figure 2."
+    },
+    {
+      "name": "Sentinel 2 imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Through visual interpretation by Google Earth, Sentinel 2, Landsat 8 imagery, and a long period of field investigation, 924 landslides were obtained and shown in Figure 2."
+    },
+    {
+      "name": "Landsat 8 imagery",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Through visual interpretation by Google Earth, Sentinel 2, Landsat 8 imagery, and a long period of field investigation, 924 landslides were obtained and shown in Figure 2."
+    }
+  ],
+  "methods": [
+    {
+      "name": "TL-Mask R-CNN (Transfer learning Mask R-CNN)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A transfer learning-based Mask R-CNN architecture that uses weights pre-trained on new landslide data to detect old landslides and ice avalanches. It freezes most parameters, trains only the functional network, and incorporates data augmentation to handle small sample sizes.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we proposed a transfer learning Mask R-CNN (TL-Mask R-CNN) to detect old landslides and ice avalanches with distinctive features in optical images based on the characteristics of the new landslides... we combined TL and Mask R-CNN for old landslide detection and proposed the transfer learning-Mask R-CNN (TL- Mask R-CNN)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "LRSTTC Dataset",
+        "source": "GitHub (Jiang-CHD-YunNan)",
+        "link": "https://github.com/Jiang-CHD-YunNan/LRSTTC",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Full data availability statement, with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via a GitHub repository, and the other input datasets are accessible through public providers. However, the custom TL-Mask R-CNN code is not provided or linked."
+}

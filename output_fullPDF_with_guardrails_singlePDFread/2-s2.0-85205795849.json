@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Multi Spectral Instrument (MSI) Level 1 data",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-2 Multi Spectral Instrument (MSI) Level 1 data has been used to implement the methodology here presented."
+    },
+    {
+      "name": "Aerial photos of electrical poles",
+      "source": "Geocart S.p.A",
+      "link": "https://www.geocartspa.it/english/",
+      "status": "MENTIONED",
+      "verbatim": "Electrical poles in displacement to be used as test-cases have been preventively identified and located using aerial photos (from 2015 to 2023) and relative additional information kindly provided by Geocart SPA (https://www.geocartspa.it/english/) (Figure 2)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Robust Satellite Technique (RST)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An automated change detection method implemented in Google Earth Engine that characterizes signals (NDVI) under normal conditions using historical satellite data and identifies anomalies using locally generated self-adaptive thresholds (ALICE index).",
+      "source": "Tramutoli (2007)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The RST approach (Tramutoli 2007) is based on a multi-temporal analysis of historical satellite observations... The methodology, implemented in Google Earth Engine (GEE) environment, exploits the Copernicus Sentinel-2 platform to identify anomalous land cover variation"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The datasets used and/or analyzed during the current study are available in the article/from the corresponding author on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for validation is not referenced or linked, and the custom code for the RST methodology is not provided via a repository or persistent link."
+}

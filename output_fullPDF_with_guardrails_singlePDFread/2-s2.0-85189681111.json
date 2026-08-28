@@ -1,0 +1,96 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery (L2A)",
+      "source": "Copernicus Dataspace Service",
+      "link": "https://dataspace.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "based on the difference between pre- and post-event Normalized Difference Vegetation Index (NDVI) obtained from satellite images, e.g., free Sentinel-2 dataset, available on the Copernicus Dataspace Service (https://dataspace.copernicus.eu/)"
+    },
+    {
+      "name": "10 m DTM TIN Italy",
+      "source": "null",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "5 m DTM Emilia-Romagna Region",
+      "source": "Emilia-Romagna Region",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "5 m DTM Emila-Region"
+    },
+    {
+      "name": "Hydrographic network shapefile",
+      "source": "Geoportale of Emilia-Romagna Region",
+      "link": "https://geoportale.regione.emilia-romagna.it/download",
+      "status": "MENTIONED",
+      "verbatim": "Available shapefile from Geoportale of Emilia-Romagna Region (https://geoportale.regione.emilia-romagna.it/download)"
+    },
+    {
+      "name": "Manual landslide (ML) inventory",
+      "source": "Ferrario, 2023",
+      "link": "https://zenodo.org/records/10706716",
+      "status": "MENTIONED",
+      "verbatim": "This manual mapping, available on the Zenodo data repository... Data are available at the link https://zenodo.org/records/10706716."
+    },
+    {
+      "name": "Very-high-resolution (0.2 m) post-event images",
+      "source": "Emilia-Romagna Region",
+      "link": "https://geoportale.regione.emilia-romagna.it/approfondimenti/emergenza-maggio-23/emergenza-rer-maggio-2023-servizi",
+      "status": "MENTIONED",
+      "verbatim": "Additional local validation was made using the very-high-resolution (0.2 m) post-event images acquired by CGR S.p.A and available on the Emilia-Romagna Region web portal... (https://geoportale.regione.emilia-romagna.it/approfondimenti/emergenza-maggio-23/emergenza-rer-maggio-2023-servizi)"
+    },
+    {
+      "name": "Rainfall gridded data (5 km)",
+      "source": "SIMC platform",
+      "link": "https://dati-simc.arpae.it/opendata/erg5v2/timeseries/mappa.html",
+      "status": "MENTIONED",
+      "verbatim": "Referring to the spatial gridded data (5 km of spatial resolution) of rainfall available on the SIMC platform (https://dati-simc.arpae.it/opendata/erg5v2/timeseries/mappa.html)"
+    },
+    {
+      "name": "Soil water index (SWI)",
+      "source": "Copernicus Global Land Service",
+      "link": "https://land.copernicus.eu/global/products/swi",
+      "status": "MENTIONED",
+      "verbatim": "according to the soil water index – SWI content available on Copernicus Global Land Service https://land.copernicus.eu/global/products/swi"
+    },
+    {
+      "name": "2020 Land cover database",
+      "source": "Emilia-Romagna Region",
+      "link": "https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/pianificazione-e-catasto/uso-del-suolo/layer-14",
+      "status": "MENTIONED",
+      "verbatim": "The land use (based on the 2020 Land cover database of Emilia-Romagna Region, 2023)... https://geoportale.regione.emilia-romagna.it/catalogo/dati-cartografici/pianificazione-e-catasto/uso-del-suolo/layer-14"
+    }
+  ],
+  "methods": [
+    {
+      "name": "PANDA (unsuPervised shAllow laNdslide rapiD mApping)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-phase GIS-based methodology for shallow landslide mapping. It uses NDVI variations from Sentinel-2 imagery combined with geomorphological filters (slope) and hydrographic network masking to identify potential landslides, with an improved post-emergency phase incorporating land-use change filters and higher-resolution DTMs.",
+      "source": "Notti et al.",
+      "link": "https://zenodo.org/records/10706716",
+      "status": "MENTIONED",
+      "verbatim": "In this work, we introduce the two-phase methodology “PANDA”, the unsuPervised shAllow laNdslide rapiD mApping... Data are available at the link https://zenodo.org/records/10706716."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Study dataset",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/10706716",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and publicly accessible via the provided links. However, the custom PANDA methodology code is not available in the provided repository or documentation."
+}

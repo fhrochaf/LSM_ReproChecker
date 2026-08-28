@@ -1,0 +1,61 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie landslide dataset",
+      "source": "GPCV, Wuhan University",
+      "link": "http://gpcv.whu.edu.cn/data/",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landsldie dataset is available at http://gpcv.whu.edu.cn/data/ (accessed on 22 June 2021)."
+    },
+    {
+      "name": "UC Merced land use dataset",
+      "source": "USGS National Map Urban Area Imagery collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The images were manually extracted from large images from the USGS National Map Urban Area Imagery collection for various urban areas around the country."
+    },
+    {
+      "name": "SIRI-WHU dataset",
+      "source": "RS_IDEA Group in Wuhan University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This dataset was acquired from Google Earth (Google Inc.) and mainly covers urban areas in China, and the scene image dataset was designed by the RS_IDEA Group in Wuhan University (SIRI-WHU)"
+    },
+    {
+      "name": "NWPU-RESISC45 dataset",
+      "source": "Northwestern Polytechnical University (NWPU)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The NWPU-RESISC45 dataset, consisting of 31,500 images, has 45 scene classes with 700 images in each class, created by Northwestern Polytechnical University (NWPU) for remote sensing image classification."
+    }
+  ],
+  "methods": [
+    {
+      "name": "AM-DDTL (Attention Mechanism-Distant Domain Transfer Learning)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A distant domain transfer learning framework that incorporates a convolutional autoencoder for feature extraction and an improved attention module (based on CBAM) to refine feature maps, trained using a combination of reconstruction, domain (MMD), and classification losses.",
+      "source": "Shengwu Qin et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, we introduced distant domain transfer learning (DDTL) methods for landslide detection and classification... in order to more effectively extract information from satellite images, we innovatively add an attention mechanism to DDTL (AM-DDTL)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide dataset",
+        "source": "Wuhan University (GPCV Lab)",
+        "link": "http://gpcv.whu.edu.cn/data/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Landslide inventory shared from previous reference"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are publicly accessible via referenced links or established repositories, but the custom AM-DDTL method code is not available."
+}

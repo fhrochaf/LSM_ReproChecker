@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie dataset",
+      "source": "Ji et al. (2020)",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijou dataset is available at http://gpcv.whu.edu.cn/data/Bijie_pages.html (accessed on 1 December 2024)"
+    },
+    {
+      "name": "GVLM dataset",
+      "source": "Zhang et al. (2023)",
+      "link": "https://pan.baidu.com/share/init?surl=GYlY16k1zIEf07puGl8l_w&pwd=wsss",
+      "status": "MENTIONED",
+      "verbatim": "The GVLM dataset is available at https://pan.baidu.com/share/init?surl=GYlY16k1zIEf07puGl8l_w&pwd=wsss (accessed on 6 January 2025)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multiscale Spatial Context-Guided Network (MSCG-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MSCG-Net is a dual-branch architecture for landslide detection that integrates a CNN-based branch for local spatial detail extraction and an omnidirectional multi-scale Mamba (OMM) branch for global contextual dependency modeling. It features an Adaptive Feature Enhancement Module (AFEM) to fuse these branches and an omnidirectional multiscale scanning (OMSS) mechanism to improve contextual modeling.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "Wuhan University (GPCV)",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "GVLM (Global Very-high-resolution Landslide Mapping) Dataset",
+        "source": "Baidu Pan",
+        "link": "https://pan.baidu.com/share/init?surl=GYlY16k1zIEf07puGl8l_w&pwd=wsss",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked, but the custom code for the MSCG-Net method is not available."
+}

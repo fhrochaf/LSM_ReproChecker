@@ -1,0 +1,162 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 5, 7, and 8 surface reflectance data",
+      "source": "U.S. Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Surface reflectance is acquired from Landsat 5, 7, and 8 images, courtesy of the U.S. Geological Survey."
+    },
+    {
+      "name": "NASADEM global elevation model",
+      "source": "NASADEM",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "DEM is provided by NASADEM (Crippen et al., 2016)."
+    },
+    {
+      "name": "Global Lithological Map (GLiM)",
+      "source": "Hartmann & Moosdorf",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Lithology is achieved from Global Lithological Map (Hartmann & Moosdorf, 2012)."
+    },
+    {
+      "name": "ShakeMap PGA and PGV",
+      "source": "Wald et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "PGA and PGV of the Wenchuan earthquake are obtained from ShakeMap (Wald et al., 2022)."
+    },
+    {
+      "name": "CHIRPS precipitation data",
+      "source": "Funk et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Precipitation is provided by CHIRPS (Funk et al., 2015)."
+    },
+    {
+      "name": "MODIS LST, ET, LAI, EVI, GPP, and NPP products",
+      "source": "NASA EOSDIS Land Processes Distributed Active Archive Center",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "LST, ET, LAI, EVI, GPP, and NPP are all obtained from MODIS products (Didan, 2021; Myneni et al., 2021; Running & Zhao, 2019; Running et al., 2015, 2017; Wan et al., 2021)."
+    },
+    {
+      "name": "Land cover data sets for training",
+      "source": "Gong et al., Zanaga et al., and X. Zhang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The land cover data sets which we considered for training sample collection in CCDC are provided by Gong et al. (2019), Zanaga et al. (2021), and X. Zhang et al. (2021)."
+    },
+    {
+      "name": "Time-series landslide detection achievements",
+      "source": "Wang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The time‐series landslide detection achievements are released in Wang et al. (2023)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Time-series landslide detection approach (modified CCDC)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A framework that utilizes time-series Landsat images and the Continuous Change Detection and Classification (CCDC) algorithm to identify landslides by detecting spectral deviations from model predictions and classifying land cover changes to vegetation.",
+      "source": "Zhu and Woodcock (2014)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The time‐series landslide detection approach is modified based on CCDC algorithm, which is provided by Zhu and Woodcock (2014)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Surface reflectance from Landsat 5, 7, and 8 images",
+        "source": "U.S. Geological Survey",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Digital Elevation Model (DEM) from NASADEM",
+        "source": "NASADEM (Crippen et al., 2016)",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Lithology data from the Global Lithological Map",
+        "source": "Hartmann & Moosdorf, 2012",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "PGA and PGV of the Wenchuan earthquake from ShakeMap",
+        "source": "Wald et al., 2022 (ShakeMap, USGS)",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Precipitation data from CHIRPS",
+        "source": "Funk et al., 2015 (CHIRPS)",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "LST, ET, LAI, EVI, GPP, and NPP from MODIS products",
+        "source": "MODIS (Didan 2021; Myneni et al. 2021; Running & Zhao 2019; Running et al. 2015, 2017; Wan et al. 2021)",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Land cover dataset used for CCDC training sample collection (Gong et al.)",
+        "source": "Gong et al., 2019",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Land cover dataset used for CCDC training sample collection (Zanaga et al.)",
+        "source": "Zanaga et al., 2021",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Land cover dataset used for CCDC training sample collection (X. Zhang et al.)",
+        "source": "X. Zhang et al., 2021",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Time-series landslide detection achievements/results dataset",
+        "source": "Wang et al., 2023",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Time-series landslide detection approach modified from the CCDC algorithm",
+        "method_type": "REUSED",
+        "summary": "A time-series landslide detection method built by modifying the existing Continuous Change Detection and Classification (CCDC) algorithm.",
+        "source": "Zhu and Woodcock, 2014",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "References to datasets and mapping algorithms described in Data Availability Statement"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced but not linked, and the custom code for the modified CCDC approach lacks a repository or persistent link."
+}

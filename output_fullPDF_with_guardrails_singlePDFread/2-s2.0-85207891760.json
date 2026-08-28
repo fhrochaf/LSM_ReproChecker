@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Aerial photographs of Japanese locations with landslide histories",
+      "source": "Geospatial Information Authority of Japan",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Due to the physical risks and challenges of accessing these areas, Japan's Geospatial Information Authority creates maps from aerial photos for damage assessment and recovery [4]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Ensemble U-Net model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An ensemble learning framework that integrates three U-Net models using a bagging (bootstrap aggregating) technique to predict landslide areas from aerial photographs.",
+      "source": "Jonpaul Nnamdi Opara, Ryo Moriwaki, and Pang-jo Chun",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An Ensemble U-Net model integrating three U-Nets has been proposed to predict landslide areas from aerial photographs."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom code for the Ensemble U-Net model is not available."
+}

@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "ASAR (Advanced SAR) images",
+      "source": "European Space Agency (ESA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In order to introduce the processing workflow and to demonstrate the feasibility of the proposed method, two C-band Envisat Advanced SAR (ASAR) images acquired before and after the typhoon Morakot over the Putanpunas river catchment were processed according to the workflow described above (Figure 2)."
+    },
+    {
+      "name": "Landslide inventory data",
+      "source": "Archived landslide inventory database",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The results were verified using the archived landslide inventory database to prove the reliability of this approach (see Table 1)."
+    },
+    {
+      "name": "SPOT-5 image",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-based image analysis (OBIA) approach for SAR intensity-image analysis",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses object-based image analysis (OBIA) on SAR intensity images in their native slant-range coordinate system. It involves preprocessing (orbital/radiometric correction), intensity change detection (Log-Ratio index), polarimetric decomposition, spatial autocorrelation, and texture analysis to segment and classify landslide features using a Random Forest classifier.",
+      "source": "Shih-Yuan Lin, Cheng-Wei Lin, and Stephan van Gasselt",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We present an object-based image analysis (OBIA) approach to identify temporal changes in radar-intensity images and to locate land-cover changes caused by mass-wasting processes at small to large scales, such as landslides."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned but not linked, and the custom OBIA method code is not provided or linked."
+}

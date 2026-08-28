@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "Copernicus Sentinel-1",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study used SAR amplitude data from the Copernicus Sentinel-1 satellite constellation."
+    },
+    {
+      "name": "SRTM V3 Digital Elevation Model",
+      "source": "NASA JPL",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The SRTM V3 product is provided by NASA JPL at a resolution of 1 arc-second, which is approximately a 30 m resolution."
+    },
+    {
+      "name": "Historical landslide inventory",
+      "source": "Geospatial Information Authority of Japan, previous researchers, and field survey reports",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The historical landslide data were collected mainly from scientific papers published by the Geospatial Information Authority of Japan, previous researchers, and partly from field survey reports."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Classification and Regression Tree (CART) with differential spectral indices and amplitude ratio change",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a Classification and Regression Tree (CART) on Google Earth Engine to detect landslides by combining multitemporal Sentinel-1 SAR amplitude ratio changes and Sentinel-2 differential spectral indices (rdNDVI, dBSI, dBI). It incorporates slope and curvature filtering to reduce false positives and classifies landslide types based on the magnitude of these indices.",
+      "source": "Sartsin Phakdimek",
+      "link": "https://drive.google.com/drive/folders/1MQLMHsOOTB_aQKAEWl4k1VpZgT_1f8FR?usp=share_link",
+      "status": "MENTIONED",
+      "verbatim": "The data that support the findings of this study are available from the corresponding author, Sartsin Phakdimek, upon reasonable request. https://drive.google.com/drive/folders/1MQLMHsOOTB_aQKAEWl4k1VpZgT_1f8FR?usp=share_link"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Sentinel-1 and SRTM datasets are publicly accessible via standard providers, but the historical landslide inventory is not linked or referenced with a persistent identifier. No code is provided with link, and data support the findings is provided via a Google Drive link, but upon request."
+}

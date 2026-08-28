@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Level-1C orthorectified, spatially registered, tiled top-of-atmosphere (TOA) reflectance image time series",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We use Sentinel-2 Level-1C orthorectified, spatially registered, tiled top-of-atmosphere (TOA) reflectance image time series from 2016 until 2021 (ESA, 2021)."
+    },
+    {
+      "name": "ESA Climate Change Initiative Land Cover product",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We employ the ESA Climate Change Initiative Land Cover product (ESA, 2016) to assess the influence of land cover on the detectability of GH events in our methodology."
+    },
+    {
+      "name": "Copernicus GLO30m digital elevation model",
+      "source": "Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Then, radiometric, spectral, spatial and topographic features are extracted on the input imagery and the Copernicus GLO30m digital elevation model (DEM)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-supervised multi-temporal methodology for GH event detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The methodology uses the peak of the cumulative difference to the mean for spectral indices derived from Sentinel-2 time series to identify impacted pixels and timing. These results are then used as training samples in an OBIA-ML based detection tool (ALADIM) to improve spatial detection accuracy.",
+      "source": "Axel A.J. Deijns",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We present a new semi-supervised methodology that allows for the detection of both location and timing of GH event occurrence with optical time series, while minimizing manual user interventions."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the methodology lacks a repository or persistent link."
+}

@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "SPOT-6 multi-spectral image",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "ALOS PALSAR Digital Elevation Model (DEM)",
+      "source": "Alaska Satellite Facility",
+      "link": "https://www.asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "The DEM was downloaded from Alaska Satellite Facility website (https://www.asf.alaska.edu/)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Proposed method for semi-automated landslide detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The proposed method uses multi-resolution segmentation (MRS) with scale parameters determined by the ESP-2 tool, followed by a rule-based classification using spectral (NDVI, NDWI, Mean Brightness), morphological, and topographical parameters to identify and refine landslide objects.",
+      "source": "Alam Sher Bacha",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, an alternate (proposed) method is developed for semi-automated landslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the SPOT-6 imagery is a commercial dataset without access. The proposed custom method code is not provided or linked."
+}

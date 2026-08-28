@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "SRSLM (Satellite Remote Sensing Landslide Mapping) dataset",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A satellite remote sensing landslide mapping (SRSLM) dataset comprising 25 study areas is provided to validate the effectiveness and robustness of CICRL-FLM."
+    },
+    {
+      "name": "Bijie benchmark landslide dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Through extensive experimental tests and reliable inference analyzes on both our SRSLM and the publicly available Bijie benchmark landslide dataset"
+    },
+    {
+      "name": "Global landslide susceptibility map",
+      "source": "Stanley and Kirschbaum (2017)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This map is produced using a heuristic fuzzy overlay modeling approach with the combination of data from five explanatory variables, which are slopes, faults, geology, forest loss, and road networks, to visualize the distribution of landslide-prone areas across the globe (Stanley and Kirschbaum 2017)."
+    },
+    {
+      "name": "Mesetas dataset",
+      "source": "Fang et al. (2024)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Mesetas dataset is composed of high-resolution PlanetScope images (3m) collected in the eastern foothills of the Colombian Eastern Cordillera on 5th January 2020 to 12th February 2020 (Fang et al. 2024)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "CICRL-FLM (counterfactual inference causal representation learning network for fine-grained landslide mapping)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning network for landslide mapping that integrates a U-shaped structure (CRT-SwinUNS) with attention blocks (SCMC-AB) and a counterfactual causal inference model (AM-CCR) to mitigate spurious correlations and improve robustness.",
+      "source": "Chengqiang Zhao, Shijie Chen, Jiashu Zhang & Mingzhe Liu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose the counterfactual inference causal representation learning network for fine-grained landslide mapping from satellite remote sensing images (CICRL-FLM)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or provided, and the custom code for the CICRL-FLM method lacks a repository or persistent link."
+}

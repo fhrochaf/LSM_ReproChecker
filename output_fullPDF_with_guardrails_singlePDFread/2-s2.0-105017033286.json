@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Lushan landslide dataset",
+      "source": "Xu, Xu, and Shyu (2015)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory for the Lushan dataset has been manually adapted by three experienced researchers through visual interpretation, based on inventories from the published work of Xu et al. (Xu, Xu, and Shyu 2015)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "style-aware spatial-frequency spiking convolution (SSFSC)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A dual-branch framework that integrates a style synchronization component (based on CycleGAN) to harmonize heterogeneous remote sensing data, and a global-local feature extraction component. The latter uses a spatial branch (ResNet-101) and a frequency branch (using DCT and separable spiking convolution) to capture multi-scale features, fused via a spatial-frequency fusion module and refined by Transformer decoders.",
+      "source": "Bo Yu et al.",
+      "link": "https://github.com/cc-cwl/Landslide-Mapping/tree/master",
+      "status": "MENTIONED",
+      "verbatim": "The code can be accessed at: https://github.com/cc-cwl/Landslide-Mapping/tree/master."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The Lushan landslide inventory is referenced to Xu et al. (2015) but not directly linked, and other input datasets are not explicitly linked. The custom SSFSC method code is available via a provided GitHub repository link."
+}

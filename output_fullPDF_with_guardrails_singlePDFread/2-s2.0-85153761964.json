@@ -1,0 +1,103 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Copernicus Sentinel-2 satellites",
+      "link": "https://apps.sentinel-hub.com/",
+      "status": "MENTIONED",
+      "verbatim": "Original Sentinel-2 imagery available and downloadable at https://apps.sentinel-hub.com/ or from the USGS at https://earthexplorer.usgs.gov/."
+    },
+    {
+      "name": "10 m resolution digital elevation model",
+      "source": "USGS National Geospatial Program",
+      "link": "https://viewer.nationalmap.gov/advanced-viewer/",
+      "status": "MENTIONED",
+      "verbatim": "extracted the elevation, slope and aspect of the features from a 10 m resolution digital elevation model of the area [68] for further analysis... [68] USGS. U.S. Geological Survey National Geospatial Program: The National Map. Data. Available online: https://viewer.nationalmap.gov/advanced-viewer/ (accessed on 10 July 2019)."
+    },
+    {
+      "name": "ShakeMap outputs",
+      "source": "USGS",
+      "link": "https://earthquake.usgs.gov/earthquakes/eventpage/ci38457511/shakemap/intensity",
+      "status": "MENTIONED",
+      "verbatim": "Earthquake event data and ShakeMap predictions can be accessed from sites listed in Table 2... Ridgecrest ShakeMap https://earthquake.usgs.gov/earthquakes/eventpage/ci38457511/shakemap/intensity (accessed on 18 December 2022)"
+    },
+    {
+      "name": "Waveforms and Moment Tensors",
+      "source": "California Integrated Seismic Network: Southern California Seismic Network",
+      "link": "http://www.scsn.org",
+      "status": "MENTIONED",
+      "verbatim": "Waveforms for both events California Integrated Seismic Network: Southern California Seismic Network. Caltech, USGS Pasadena, and Partners, http://www.scsn.org (accessed on 18 December 2022) doi:10.7909/C3WD3xH1"
+    },
+    {
+      "name": "Ridgecrest and Owens Lake directional offsets",
+      "source": "USGS Hazards Program",
+      "link": "https://earthquake.usgs.gov/monitoring/gps/LongValley/bepk",
+      "status": "MENTIONED",
+      "verbatim": "Ridgecrest directional offsets USGS Hazards Program, https://earthquake.usgs.gov/monitoring/gps/LongValley/bepk (accessed on 18 December 2022)... Owens Lake directional offsets USGS Hazards Program, https://earthquake.usgs.gov/monitoring/gps/LongValley/p465 (accessed on 18 December 2022)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Sentinel-2 satellite image differencing approach",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A mapping procedure that uses time-differenced Sentinel-2 satellite imagery to identify rockfall locations. The method involves calculating the difference between pre- and post-earthquake images using the raster calculator in ArcMap, identifying brightening pixels (indicating fresh rock exposure) that exceed a 99% confidence threshold, and manually filtering out false positives such as snow melt, shadowing, and water surface changes.",
+      "source": "ArcMap 10.8.1",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To rapidly map and evaluate the distribution of large rockfalls from these earthquakes with an areal extent > 1000 m2, we developed a mapping procedure utilizing easily and rapidly accessible time-differenced Sentinel-2 satellite data... Differencing was completed in ArcMap 10.8.1 [67] using the raster calculator function."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Waveforms for both earthquake events",
+        "source": "California Integrated Seismic Network (Southern California Seismic Network; Caltech, USGS Pasadena, and Partners)",
+        "link": "https://doi.org/10.7909/C3WD3xH1",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Moment tensors for both earthquake events",
+        "source": "California Integrated Seismic Network (Southern California Seismic Network; Caltech, USGS Pasadena, and Partners)",
+        "link": "https://doi.org/10.7909/C3WD3xH1",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Ridgecrest directional GPS offsets",
+        "source": "USGS Hazards Program",
+        "link": "https://earthquake.usgs.gov/monitoring/gps/LongValley/bepk",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Ridgecrest ShakeMap",
+        "source": "USGS",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/ci38457511/shakemap/intensity",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Owens Lake directional GPS offsets",
+        "source": "USGS Hazards Program",
+        "link": "https://earthquake.usgs.gov/monitoring/gps/LongValley/p465",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Owens Lake ShakeMap",
+        "source": "USGS",
+        "link": "https://earthquake.usgs.gov/earthquakes/eventpage/ci39493944/shakemap/intensity",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Input datasets are referenced and accessible, but the landslide inventory used for validation is not referenced or linked. The custom mapping procedure code is not available."
+}

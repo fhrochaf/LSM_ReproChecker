@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Gaofen-1 (GF-1) Satellite imagery data",
+      "source": "Gaofen-1 satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In response to the on-site landslide case, five wide-swath panchromatic remote sensing images were captured using the Gaofen-1 satellite, and landslide recognition experiments were conducted based on the image data."
+    },
+    {
+      "name": "Digital Elevation Model (DEM)",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Shallow landslide remote sensing identification method based on improved Otsu algorithm and multi-feature threshold",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method enhances remote sensing images using Retinex theory and guided filtering, extracts multi-feature scales and sliding window morphological features, and segments potential landslide areas using an improved Otsu algorithm optimized with a Monte Carlo iteration strategy.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The original contributions presented in the study are included in the article/supplementary material, further inquiries can be directed to the corresponding authors.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom method code is not available."
+}

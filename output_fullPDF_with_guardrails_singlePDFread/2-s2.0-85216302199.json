@@ -1,0 +1,47 @@
+{
+  "datasets": [
+    {
+      "name": "High-resolution (25 cm) aerial imagery",
+      "source": "Aerial Survey and Remote Sensing Branch of the Forestry and Nature Conservation Agency, Ministry of Agriculture",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The aerial images for this study were sourced from high-altitude flights at 35,000 ft by the Aerial Survey and Remote Sensing Branch of the Forestry and Nature Conservation Agency, under the Ministry of Agriculture."
+    },
+    {
+      "name": "Example tiles",
+      "source": "Authors",
+      "link": "https://github.com/marchgeo/Landslide-AI-Example-Datasets",
+      "status": "MENTIONED",
+      "verbatim": "Example tiles are available on GitHub: https://github.com/marchgeo/Landslide-AI-Example-Datasets"
+    }
+  ],
+  "methods": [
+    {
+      "name": "GANomaly",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semi-supervised anomaly detection framework based on Generative Adversarial Networks (GANs) that uses an encoder-decoder-encoder sub-network to learn normal patterns and identify deviations (anomalies) by comparing input images against reconstructions and latent space representations.",
+      "source": "Akcay et al. (2018)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, customed Python scripts were developed for image processing and DL analysis, utilizing the GANomaly model from GitHub repository (Akcay 2024). ... Akcay S. 2024. GANomaly GitHub [WWW Document]. [accessed 2024 Sept 29]. https://github.com/samet-akcay/ganomaly."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Example landslide AI tiles",
+        "source": "GitHub (marchgeo)",
+        "link": "https://github.com/marchgeo/Landslide-AI-Example-Datasets",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the GANomaly method lacks a repository link in the provided artifact information."
+}

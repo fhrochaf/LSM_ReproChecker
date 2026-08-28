@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV orthophoto images of Sunjiagou Coal Mine",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, the orthophoto of the region is obtained by UAV. The equipment is FEIMA D2000 UAV... The experimental area was captured through aerial photography following the predetermined flight path, and finally 10 digital orthophoto maps (DOM) of the study area were obtained."
+    },
+    {
+      "name": "Landslide sample data set",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this paper, aiming at the problem of landslide identification in mining area, the remote sensing image of mining area is obtained by unmanned aerial vehicle (UAV), and the landslide data set of mining area is constructed by data enhancement method."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved YOLOv8 algorithm",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved YOLOv8 target detection model that incorporates a Convolutional Block Attention Module (CBAM) to focus on landslide features in both channel and spatial dimensions, combined with a custom algorithm for converting landslide pixel coordinates into geodetic coordinates.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "An improved YOLOv8 algorithm is proposed. By adding a mixed attention mechanism in the channel and spatial dimensions, the detection accuracy of the model for mining landslide is improved... At the same time, an algorithm for locating the landslide position is proposed."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data supporting the conclusions of this article will be made available by the authors on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and UAV imagery are not linked or publicly available, and the custom YOLOv8 code lacks a repository or persistent link."
+}

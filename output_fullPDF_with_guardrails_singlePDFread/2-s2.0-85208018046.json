@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Dataset",
+      "source": "Ji et al. (2020)",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Dataset can be downloaded from (http:// gpcv. whu. edu. cn/ data/ Bijie_ pages. html)."
+    },
+    {
+      "name": "Zhejiang Dataset",
+      "source": "Zhejiang Institute of Geosciences, China",
+      "link": "https://pan.baidu.com/s/1cxGS0MCAJ8yKWv-QIgNY7Q?pwd=ynfk",
+      "status": "MENTIONED",
+      "verbatim": "The Zhejiang Dataset can be downloaded from (https:// pan. baidu. com/s/ 1cxGS 0MCAJ 8yKWv- QIgNY 7Q? pwd= ynfk)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SAMLS",
+      "method_type": "CUSTOM_CODE",
+      "summary": "SAMLS is a feature fusion model adapted from the Segment Anything Model (SAM). It uses a dual-encoder architecture (RGB branch and DEM branch) with a cross-branch attention mechanism to fuse optical and terrain features, and employs an anchor-based prompter for automatic landslide identification.",
+      "source": "Chuan Yang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a novel feature fusion model called SAMLS."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Zhejiang Dataset",
+        "source": "Baidu Pan (shared link)",
+        "link": "https://pan.baidu.com/s/1cxGS0MCAJ8yKWv-QIgNY7Q?pwd=ynfk",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with no links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and linked via public URLs. The custom code for the SAMLS method is not mentioned or linked."
+}

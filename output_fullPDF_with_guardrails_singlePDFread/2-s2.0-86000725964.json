@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of La Liboriana river basin",
+      "source": "Aristizábal-Giraldo and Ruiz-Vásquez (2023)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, the landslide inventory in the basin, documented in Aristizábal-Giraldo and Ruiz-Vásquez (2023) was used."
+    },
+    {
+      "name": "ALOS PALSAR Digital Terrain Model (DTM)",
+      "source": "Alaska Satellite Facility",
+      "link": "https://asf.alaska.edu/data-sets/sar-data-sets/alos-palsar",
+      "status": "MENTIONED",
+      "verbatim": "using a 12.5-m spatial resolution Digital Terrain Model (DTM) from ALOS PALSAR data provided by the Alaska Satellite Facility (https://asf.alaska.edu/data-sets/sar-data-sets/alos-palsar)"
+    },
+    {
+      "name": "Geology maps (1:100,000)",
+      "source": "Colombian Geological Service (SGC)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Also, derived lithological data for the study area by digitalization from 1:100,000 geology maps provided by the Colombian Geological Service (SGC) was used."
+    },
+    {
+      "name": "Sentinel-1A wide-swath SAR data",
+      "source": "European Copernicus program of the European Space Agency—ESA",
+      "link": "https://www.asf.alaska.edu",
+      "status": "MENTIONED",
+      "verbatim": "landslides over the study area were analysed using ascending and descending orbits of Sentinel-1A wide-swath SAR data provided by the European Copernicus program of the European Space Agency—ESA (https://www.esa.int)... The data were obtained from the Alaska Satellite Facility (ASF) platform (https://www.asf.alaska.edu)"
+    },
+    {
+      "name": "RapidEye-1 basic optical image",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "a high resolution (6.5-m pixel) RapidEye-1 basic optical image (07/24/2015) acquired from Planet Labs (Planet Labs 2018)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network based on a fully connected convolution network, featuring an encoder path for low-level representations and a decoder path for high-level representations and reconstruction. It uses 3x3 convolutional layers, ReLU activation, max-pooling in the encoder, and up-sampling in the decoder to produce per-pixel landslide probability maps.",
+      "source": "Ronneberger et al. (2015)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The U-Net model is an image semantic segmentation network based on a fully connected convolution network (Ronneberger et al. 2015)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on special request to the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom U-Net code is not provided or linked. While some input datasets are accessible via external providers, the lack of code and direct inventory access prevents reproducibility."
+}

@@ -1,0 +1,64 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye satellite imagery",
+      "source": "Planet Explorer",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This work used the RapidEye 3A product (orthorectified, radiometric, and geometric corrections) and was acquired from the Planet Explorer website [79]."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) 1 arc-second global (30 m) DEM",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The SRTM acquired interferometric radar data with dual antennas and provided data with 1 arc-second (30 m) spatial resolution... The SRTM product was the 1 arc-second global (30 m)."
+    },
+    {
+      "name": "Landslide inventory (Nova Friburgo, Teresópolis, Rolante)",
+      "source": "Authors' interpretation validated with Coelho-Netto et al. [10] and Uehara et al. [75]",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslides were interpreted from the RapidEye and Google Earth Pro version 7.3 imagery and validated with [10,75] to minimize interpretation errors."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A fully convolutional encoder-decoder architecture with convolutional layers, max-pooling, dropout, and up-sampling, trained using Binary Cross Entropy and the Adam optimizer to produce a binary landslide mask.",
+      "source": "Soares, L.P.; Dias, H.C.; Garcia, G.P.B.; Grohmann, C.H.",
+      "link": "https://github.com/SPAMLab/data_sharing/tree/main/Landslide_Segmentation_with_Deep_Learning_Evaluating_Model_Generalization_in_Rainfall-Induced_Landslides_in_Brazil",
+      "status": "MENTIONED",
+      "verbatim": "The code used in this research is available at the following link: https://github.com/SPAMLab/data_sharing/tree/main/Landslide_Segmentation_with_Deep_Learning_Evaluating_Model_Generalization_in_Rainfall-Induced_Landslides_in_Brazil"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide inventory GIS data used in SPAMLab projects (may include Brazil paper's inventories)",
+        "source": "SPAMLab, University of São Paulo (Codeberg)",
+        "link": "https://codeberg.org/SPAMLab_USP/data_sharing/src/branch/main/gis_data",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "U-Net deep learning code for landslide segmentation and model generalization evaluation (Brazil)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code accompanying the paper, implementing the U-Net-based landslide segmentation pipeline used to evaluate model generalization on rainfall-induced landslides across three test areas in Brazil.",
+        "source": "Soares, Dias, Garcia, Grohmann, 2022, Remote Sensing, DOI: 10.3390/rs14092237",
+        "link": "https://codeberg.org/SPAMLab_USP/data_sharing/src/branch/main/Landslide_Segmentation_with_DL",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via the SPAMLab repository, and input datasets are accessible through standard public providers (SRTM) or referenced sources (RapidEye). The custom U-Net code is available via a persistent GitHub and Codeberg repository link."
+}

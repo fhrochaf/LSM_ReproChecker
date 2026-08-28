@@ -1,0 +1,61 @@
+{
+  "datasets": [
+    {
+      "name": "CAS Landslide Dataset",
+      "source": "Xu et al. (2024)",
+      "link": "https://github.com/Aizu0/CAS-Landslide-Dataset-production-code",
+      "status": "MENTIONED",
+      "verbatim": "The data used in this study is sourced from the CAS Landslide Dataset proposed by Xu et al.39... The datasets generated and/or analysed during the current study are available in this repository https://github.com/Aizu0/CAS-Landslide-Dataset-production-code."
+    },
+    {
+      "name": "Iburi-Tobu region satellite imagery",
+      "source": "Geospatial Information Authority of Japan",
+      "link": "https://www.gsi.go.jp/BOUSAI/H30-hokkaidoiburi-east-earthquake-index.html",
+      "status": "MENTIONED",
+      "verbatim": "In this study, the satellite imagery of the Iburi-Tobu region was sourced from the Geospatial Information Authority of Japan37... Japan, G. Hokkaido iburi-tobu earthquake. http://www.gsi.go.jp/BOUSAI/H30-hokkaidoiburi-east-earthquake-index.html (2018)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ResM-FusionNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning-based landslide detection model that combines a ResNet-50 backbone for feature extraction with a Multi-Layer Perceptron (MLP) decoder for pixel-level classification and detail recovery, trained using a custom loss function called RLoss.",
+      "source": "Xuqing Ren et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The datasets generated and/or analysed during the current study are available in this repository https://github.com/Aizu0/CAS-Landslide-Dataset-production-code."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "CAS-Landslide dataset (generated/analysed data with production code)",
+        "source": "GitHub (Aizu0)",
+        "link": "https://github.com/Aizu0/CAS-Landslide-Dataset-production-code",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite imagery of Iburi-Tobu region",
+        "source": "Geospatial Information Authority of Japan",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Satellite imagery of Jiuzhaigou region",
+        "source": "Sichuan Surveying and Mapping Center",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via a public repository, and the satellite imagery is sourced from a public provider. The ResM-FusionNet code is not provided."
+}

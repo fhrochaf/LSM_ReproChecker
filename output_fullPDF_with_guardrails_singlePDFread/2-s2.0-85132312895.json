@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Planetscope (PS) Visual Basemaps",
+      "source": "Planet Labs Inc.",
+      "link": "https://www.planet.com/explorer",
+      "status": "MENTIONED",
+      "verbatim": "High-resolution Planetscope (PS) Visual Basemaps, obtained from Planet Labs Inc., are used in this study to prepare the landslide detection dataset (accessed from https:// www. planet. com/ explo rer)."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) DEM",
+      "source": "Farr et al. 2007",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "PS imageries are orthorectified using ground control points and Shuttle Radar Topography Mission (SRTM) DEM (30 to 90 m posting); the positional accuracy of the geometrically corrected PS imagery is less than 10 m root mean square error (RMSE) (Planet Team 2021)...(Farr et al. 2007)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Siamese Nested U-Net (SNUNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A Siamese encoder-decoder network that uses shared weights to extract features from bi-temporal images, concatenates them, and employs an Ensemble Channel Attention Module (ECAM) to fuse multi-level semantic information for landslide change detection.",
+      "source": "Fang et al. 2021b",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Recently, Fang et al. (2021b) proposed a deep Siamese neural network equipped with a novel Ensemble Channel Attention Module (ECAM) to address the problem of localization information loss in remote sensing change detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not mentioned or linked, and the custom code for the Siamese Nested U-Net (SNUNet) lacks a repository or persistent link. While input datasets are mentioned, the Planetscope imagery is commercial and the SRTM DEM is not linked."
+}

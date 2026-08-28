@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 Level-1C product",
+      "source": "Sentinels Scientific Data Hub",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We downloaded ten free-cloud images of Sentinel-2 Level-1C product free through the Sentinels Scientific Data Hub as database (Table 1)."
+    },
+    {
+      "name": "UAV orthoimages",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Combined with the field work and UAV images, the results from the Sentinel-2 images were subjected to rigorous testing."
+    },
+    {
+      "name": "Field data",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Field data 2017/08/21, 2017/09/21, 2017/10/21, 2017/11/21"
+    }
+  ],
+  "methods": [
+    {
+      "name": "NDVI time series change detection",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A workflow using multi-temporal Sentinel-2 NDVI to detect post-failure landslide changes. It involves calculating NDVI, classifying it using the natural break method, counting landslide scar pixels, and creating an RGB composite of NDVI time series to visualize landslide evolution stages.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Then, four procedures were developed to detect landslide changes using the NDVI: (i) the NDVI of every Sentinel-2 image was calculated and divided into five categories using the natural break method; (ii) the time series NDVI values were obtained after examining the boundary differences recovered from the UAV orthoimages for similar times; (iii) the post-failure landslide change intensity was determined by counting the number of landslide scars in every image; and (iv) an RGB composite image was produced to detect post-failure landslide changes"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the NDVI time series analysis lacks a repository or persistent link."
+}

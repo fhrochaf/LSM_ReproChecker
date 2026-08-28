@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Enhanced Natural Terrain Landslide Inventory",
+      "source": "Hong Kong government",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Historical landslide data are recorded through the Enhanced Natural Terrain Landslide Inventory, which provides a wealth of prior knowledge for landslide identification."
+    },
+    {
+      "name": "Aerial orthophotographs of Lantau Island and Sharp Peak, Hong Kong",
+      "source": "Geotechnical Engineering Office (GEO) of the Hong Kong Civil Engineering and Development Department",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "They would also like to thank the Geotechnical Engineering Office (GEO) of the Hong Kong Civil Engineering and Development Department for providing aerial orthophotographs."
+    },
+    {
+      "name": "Postevent DEM data",
+      "source": "Relevant departments in Hong Kong",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "At the same time, the postevent DEM data were also obtained from the relevant departments in Hong Kong."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multilevel feature enhancement network (MFENet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "MFENet is an end-to-end change detection network for landslide mapping. It consists of a Siamese feature extractor, a Postevent Feature Enhancement Module (PFEM) to enhance postevent features, a Bifeature Difference Enhancement Module (BFDEM) to highlight differential features, and a Flow Direction Calibration Module (FDCM) using the D8 method to calibrate landslide flow direction.",
+      "source": "Lukang Wang, Min Zhang, Xiaoqi Shen, and Wenzhong Shi",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a network based on multilevel feature enhancement is proposed for LM. ... We propose an end-to-end change detection network named multilevel feature enhancement network (MFENet) for LM."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but not linked, though the Enhanced Natural Terrain Landslide Inventory is publicly accessible via the Hong Kong GeoData Store. The custom MFENet code is mentioned but no repository or persistent link is provided."
+}

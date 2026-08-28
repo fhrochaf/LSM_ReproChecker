@@ -1,0 +1,78 @@
+{
+  "datasets": [
+    {
+      "name": "Landsat 4–8 satellite imagery",
+      "source": "USGS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We acknowledge the freely available Landsat datasets provided by the USGS and hosted in the Google Earth Engine data catalogue"
+    },
+    {
+      "name": "Randolph Glacier Inventory (RGI) version 6.0",
+      "source": "RGI Consortium",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landsat imagery is used in conjunction with the Randolph Glacier Inventory (RGI) version 6.0 (RGI Consortium, 2017)."
+    },
+    {
+      "name": "Supraglacial rock avalanche inventories (Bessette-Kirton and Coe, 2016; Deline et al., 2015; Uhlmann et al., 2013)",
+      "source": "Bessette-Kirton and Coe (2016), Deline et al. (2015), Uhlmann et al. (2013)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Validation was performed against the already-defined RA databases of Bessette-Kirton and Coe (2016), Deline et al. (2015), Uhlmann et al. (2013), and the Exotic Seismic Events Catalog (IRIS DMC, 2017)."
+    },
+    {
+      "name": "Exotic Seismic Events Catalog",
+      "source": "IRIS DMC",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Validation was performed against the already-defined RA databases of Bessette-Kirton and Coe (2016), Deline et al. (2015), Uhlmann et al. (2013), and the Exotic Seismic Events Catalog (IRIS DMC, 2017)."
+    },
+    {
+      "name": "IFSAR DTM",
+      "source": "Alaska Mapping Initiative",
+      "link": "https://doi.org/10.5066/P9C064CO",
+      "status": "MENTIONED",
+      "verbatim": "Hillshade IFSAR DTMs used for figure production were collected as part of the Alaska Mapping Initiative (https://doi.org/10.5066/P9C064CO) and are available through the USGS EarthExplorer data portal."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GERALDINE (Google Earth Engine supRaglAciaL Debris INput dEtector)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "GERALDINE is a tool built on Google Earth Engine that processes Landsat imagery to identify new supraglacial debris additions. It uses cloud masking, NDSI thresholding to distinguish debris from ice, and a pixel-based reducer to compare maximum debris extent between a user-defined time period and the preceding year.",
+      "source": "Smith et al. (2020)",
+      "link": "https://doi.org/10.5281/zenodo.3524414",
+      "status": "MENTIONED",
+      "verbatim": "GERALDINE code and the validation dataset are available at https://doi.org/10.5281/zenodo.3524414 (Smith et al., 2020)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Validation dataset for GERALDINE",
+        "source": "Zenodo (Smith et al., 2020)",
+        "link": "https://doi.org/10.5281/zenodo.3524414",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "GERALDINE code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "The GERALDINE code, along with a usage guide, made available via a specific Zenodo record for reproducing the study's results.",
+        "source": null,
+        "link": "https://doi.org/10.5281/zenodo.3524414",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and publicly accessible via USGS, RGI Consortium, and IRIS DMC. The custom GERALDINE code and validation dataset are provided via a persistent Zenodo link."
+}

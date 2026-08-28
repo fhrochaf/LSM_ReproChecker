@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "VHR UAV image dataset of Baihetan reservoir",
+      "source": "Authors' own data collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, a UAV image dataset obtained from the Baihetan reservoir in the lower reaches of the Jinsha river in China is employed as the data source for model training and validation. ... Therefore, to thoroughly investigate the distribution of landslides within the reservoir area, a VHR UAV image dataset was collected between February and September 2023."
+    }
+  ],
+  "methods": [
+    {
+      "name": "DeepLab for Landslide (DeepLab4LS)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation model based on DeepLabV3+ with a dual-encoder architecture (Encoder1 for optical features, Encoder2 for topographic features), a Mixer module for multimodal feature fusion, and a Decoder module. It incorporates a novel Positive Enhanced (PE) loss function to improve landslide recognition performance.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": "This study will reference the architecture of DeepLabV3+ to re-design and develop a new semantic segmentation model named DeepLab for Landslide (DeepLab4LS) for landslide recognition that integrates optical and topographic information"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author due to confidentiality requirements."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory dataset is not publicly available, as the authors state it is available only upon request. The custom code for the DeepLab4LS model is not mentioned or linked."
+}

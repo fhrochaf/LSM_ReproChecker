@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Loess Plateau dataset",
+      "source": "Institute of Remote Sensing and Digital Earth (RADI) under the Chinese Academy of Sciences (CAS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Old landslide samples were measured in 2018 by the Gaofen-1 satellite, and the dataset were made by the Institute of Remote Sensing and Digital Earth (RADI) under the Chinese Academy of Sciences (CAS)."
+    },
+    {
+      "name": "Bijie dataset",
+      "source": "Ji's team",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Ji’s team has made this dataset open for the benefits of fellow researchers, including both HRSIs with a resolution of 0.8 m/pixel and DEM data with a resolution of 2 m/pixel [26]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "FFS-Net (Feature-fusion based semantic segmentation network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semantic segmentation network that uses a Siamese network (without weight sharing) to independently extract features from HRSIs and DEM data, which are then fused in a higher feature layer. It incorporates a multiscale channel attention module in the encoder and an improved decoder using transposed convolution, dropout, and batch normalization.",
+      "source": "Xinran Liu et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a multiple heterogeneous data FFS-Net was proposed for landslide detection... In the proposed FFS-Net model, a Siamese network without weight sharing was designed to separately extract these two types of features from the HRSIs and DEM data before fusing them."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide datasets are mentioned but not linked, though they are practically accessible via external repositories. The custom FFS-Net code is not provided or linked."
+}

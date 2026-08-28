@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1A SAR data",
+      "source": "ESA/Copernicus",
+      "link": "https://scihub.copernicus.eu",
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-1 data presented in this study are openly available from the ESA/Copernicus at https://scihub.copernicus.eu (accessed on 23 September 2024)."
+    },
+    {
+      "name": "Copernicus DEM",
+      "source": "ESA",
+      "link": "https://opentopography.org/",
+      "status": "MENTIONED",
+      "verbatim": "The Copernicus DEM presented in this study is openly available from the ESA at https://opentopography.org/ (accessed on 23 September 2024)."
+    },
+    {
+      "name": "Global disaster data platform landslide inventory",
+      "source": "Global disaster data platform",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide data come from the global disaster data platform and a total of 10,639 landslides have been collected for Gansu Province."
+    },
+    {
+      "name": "Google Earth imagery",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To enhance the accuracy of annotation results, we have also collected historical landslide catalogs and Google Earth imagery for auxiliary marking."
+    }
+  ],
+  "methods": [
+    {
+      "name": "AttU-Net (Attention U-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified U-Net architecture that integrates the Convolutional Block Attention Module (CBAM) into the downsampling area to enhance feature extraction capabilities for landslide detection in phase-gradient stacked images.",
+      "source": "Qian Sun, Cong Li, Tao Xiong, Rong Gui, Bing Han, Yilun Tan, Aoqing Guo, Junfeng Li, and Jun Hu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Specifically, leveraging the advantages of the phase gradient stacking method, we have constructed a dedicated landslide dataset and developed the AttU-Net network model."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-1 SAR data",
+        "source": "ESA/Copernicus",
+        "link": "https://scihub.copernicus.eu",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Copernicus DEM",
+        "source": "ESA",
+        "link": "https://opentopography.org/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or referenced, and the custom AttU-Net code is not provided or linked."
+}

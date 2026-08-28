@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Considering that it provides orthorectified reflectance products of Bottom-of-Atmosphere (BOA), the imagery from the MultiSpectral Imager (MSI) sensor on board Sentinel-2 and product level 2A was used."
+    },
+    {
+      "name": "Digital Elevation Model (DEM) from SRTM",
+      "source": "Shuttle Radar Topography Mission (SRTM)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Its drainage area is 828 km², with altitudes varying from 19 to 997 m, according to data extracted from a Digital Elevation Model (DEM) provided by the Shuttle Radar Topography Mission (SRTM)."
+    },
+    {
+      "name": "Landslide inventory",
+      "source": "Quevedo et al. (2019a)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The choosing criteria for these areas considered that both contained a significant amount of ... landslide scars presented in the landslide inventory (QUEVEDO et al., 2019a)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Artificial Neural Network (ANN), Maximum Likelihood (ML), Random Forest (RF) and Support Vector Machine (SVM)",
+      "method_type": "SOFTWARE",
+      "summary": "The authors compare four supervised classification algorithms (ANN, ML, RF, SVM) to detect landslide scars using Sentinel-2 imagery and SRTM DEM data. The process involves feature extraction (vegetation indices and slope features), feature selection using Weka and RF GINI importance, and classification using the holdout method.",
+      "source": "Weka software, ENVI 4.7, SAGA toolbox in QGIS 3.4",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "All features were ranked in order of importance using Weka software... This step was performed using ENVI 4.7... The slope was extracted from the DEM. After that, in ENVI 4.7, a high pass filter was applied... The original 30m spatial resolution DEM, from SRTM, was resampled to 10m using the nearest neighbor method available at SAGA toolbox resampling function in QGIS 3.4."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced. Other input datasets are publicly available. The method's code is not available, as no repository or persistent link is provided."
+}

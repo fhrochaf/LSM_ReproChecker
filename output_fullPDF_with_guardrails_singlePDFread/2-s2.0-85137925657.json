@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide site images (Dataset-A, -B, -C)",
+      "source": "Aerial plane",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The proposed approach is applied to three pairs of landslide site images acquired with aerial plane... Dataset-A, -B, and, -C are obtained using an airplane with an aerial camera."
+    },
+    {
+      "name": "Land use change dataset (Dataset-D)",
+      "source": "Quick Bird Satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "one land use change dataset acquired by Quick Bird Satellite... Dataset-D is acquired by QuickBird satellite which has a 0.62 meter/pixel resolution."
+    },
+    {
+      "name": "Ground reference maps",
+      "source": "Authors' manual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "the ground reference maps were interpreted manually using ArcMap10.2 software."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Adaptive region shape similarity (ARSS)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A change detection approach that generates an adaptive region around each pixel, defines direction lines to describe the region's shape, and measures similarity between pairwise histogram curves using the discrete Fréchet distance (DFD) to generate a change magnitude image.",
+      "source": "Zhiyong Lv et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this article, a novel change detection approach based on adaptive region shape similarity (ARSS) is proposed for LIM with VHR remote sensing images to improve detection performance."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned without links or references to public repositories, and the custom ARSS method code is not provided or linked."
+}

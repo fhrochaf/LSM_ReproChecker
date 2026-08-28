@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Orthographic remote sensing images of Huangdao District",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory of Huangdao District",
+      "source": "Report on geological disaster investigation results of the national comprehensive risk survey of natural disasters in Huangdao District",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "According to the report on geological disaster investigation results of the national comprehensive risk survey of natural disasters in Huangdao District, Qingdao, Shandong Province, there are 31 natural slope failure and di in the region."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Improved Faster R-CNN",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved Faster R-CNN model that incorporates a multi-scale feature enhancement module. This module fuses high-resolution weak semantic features with low-resolution strong semantic features to improve the detection of slope failures and landslides of varying scales.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The data used to support the findings of this study are available from the corresponding authors upon request.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked or made available, and the custom code for the improved Faster R-CNN model lacks a repository or persistent link."
+}

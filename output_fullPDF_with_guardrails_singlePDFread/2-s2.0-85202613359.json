@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "High-precision aerial landslide imagery around Sichuan Province since 2008",
+      "source": "Zeng et al. 2022",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "High-precision aerial landslide imagery around Sichuan Province since 2008, a publicly available dataset totaling 59 sheets (Zeng et al. 2022)."
+    },
+    {
+      "name": "Google search engine high-definition landslide image data",
+      "source": "Google search engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "free high-definition landslide image data obtained through Google search engine, totaling 50 sheets"
+    }
+  ],
+  "methods": [
+    {
+      "name": "CBAM-U-net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net architecture modified by introducing a Convolutional Block Attention Module (CBAM) consisting of a Spatial Attention Module (SPM) and a Channel Attention Module (CAM) into each down-sampling process to improve feature representation and reduce semantic gap.",
+      "source": "Hanjie Lin et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this paper proposed the U-net with a progressive Convolutional Block Attention Module (CBAM-U-net) for landslide boundary identification and extraction from high-precision aerial imagery."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'No datasets were generated or analysed during the current study.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or provided, and the custom CBAM-U-net code is not available via any repository or persistent link."
+}

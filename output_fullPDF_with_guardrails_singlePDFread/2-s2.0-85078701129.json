@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "GaoFen (GF) series satellite imagery (GF-1 and GF-2)",
+      "source": "China National Commission for Disaster Reduction",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ground truth was obtained from the China National Commission for Disaster Reduction (http://www.jianzai.gov.cn/DRpublish), with visual interpretation in postevent images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Spatiotemporal context (STC) model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a spatiotemporal context (STC) model to detect landslides by analyzing feature series (NDVI and PanTex) from multitemporal imagery. It builds a cumulative updated model using a Bayesian framework to compute a confidence map, where a decline in confidence values below zero indicates a landslide.",
+      "source": "Huang et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this letter, we borrowed the concept of STC to build a cumulative updated model by using several multitemporal imageries. The confidence value helps to determine whether the landslide occurs or not."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced but not linked, and the custom STC model code is not provided or linked."
+}

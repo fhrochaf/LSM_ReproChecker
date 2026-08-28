@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Ji et al. (2020)",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset can be found here: [http://gpcv.whu.edu.cn/data/Bijie_pages.html]."
+    },
+    {
+      "name": "Shuicheng landslide inventory data",
+      "source": "Shuicheng County government",
+      "link": "http://www.shuicheng.gov.cn/",
+      "status": "MENTIONED",
+      "verbatim": "Shuicheng landslide inventory data from 2019 was obtained from the Shuicheng County government (http://www.shuicheng.gov.cn/ (accessed on 30 June 2020))."
+    },
+    {
+      "name": "Sentinel-2 images",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu/dhus/",
+      "status": "MENTIONED",
+      "verbatim": "As for the processing of remote sensing images, we obtained Sentinel-2 images from the European Space Agency (https://scihub.copernicus.eu/dhus/ (accessed on 4 August 2021))."
+    }
+  ],
+  "methods": [
+    {
+      "name": "FCN-FLK (Fully Convolutional Network with Focal Loss and K-fold cross-validation)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved fully convolutional network (FCN) that incorporates a symmetric connection structure to increase feature levels, uses a focal loss function to address sample imbalance by reducing the contribution of easy-to-classify background pixels, and is trained using 5-fold cross-validation to improve robustness and data utilization.",
+      "source": "Authors (Xuerong Chen et al.)",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Bijie Landslide Dataset",
+        "source": "GPCV, Wuhan University",
+        "link": "http://gpcv.whu.edu.cn/data/Bijie_pages.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Partial dataset mention in the Data Availability statement."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and accessible, but the custom FCN-FLK method code is not provided or linked."
+}

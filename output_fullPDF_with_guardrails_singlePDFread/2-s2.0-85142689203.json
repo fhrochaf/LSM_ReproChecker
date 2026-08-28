@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV-derived photographs (Proussos landslide)",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "At the Proussos case site, field investigations and UAV photogrammetric surveys were performed on 24 September 2020. In total, 114 photos were collected during the flight surveys with a commercial UAV platform (DJI Phantom 4 Pro)..."
+    },
+    {
+      "name": "Expert-based annotations (ground truth)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Expert-based annotations were prepared for the sites to be used as references for the comparisons."
+    }
+  ],
+  "methods": [
+    {
+      "name": "3D modification of a state-of-the-art image segmentation pipeline (using SLIC and normalized graph cut)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves generating supervoxels from 3D point clouds using a modified SLIC algorithm (based on VCCS), followed by unsupervised segmentation using a normalized graph cut approach to group supervoxels into meaningful landslide objects.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For the adaptation of the above process in the 3D space and the generation of supervoxels, the authors developed an extension of the algorithm for application on voxel grids based on the Voxel Cloud Connectivity Segmentation (VCCS) proposed by Papon et al. (2013)... The software for the raster operations was developed in Python 3.8 programming language making use of the Python Image Library (PIL) and Rasterio, while the point cloud and voxel grid manipulation is based on Open3D [37], networkx [38], and Numerical Python (NumPy) [39] modules."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data presented in this study are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are not linked or publicly available, and the custom code used for the segmentation pipeline lacks a repository or persistent link."
+}

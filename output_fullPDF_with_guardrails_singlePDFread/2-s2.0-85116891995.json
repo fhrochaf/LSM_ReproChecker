@@ -1,0 +1,184 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the 2015 Gorkha, Nepal, earthquake",
+      "source": "Roback et al. (2017)",
+      "link": "https://doi.org/10.5066/F7DZ06F9",
+      "status": "MENTIONED",
+      "verbatim": "the inventory of Roback et al. (2017) of 24 915 landslides triggered by the Mw 7.8 2015 Gorkha, Nepal, earthquake...the inventory of Roback et al. (2017) available at https://doi.org/10.5066/F7DZ06F9."
+    },
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "ESA",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 data are open access and available to download from https://scihub.copernicus.eu/ (last access: November 2020) (Copernicus, 2020)."
+    },
+    {
+      "name": "ALOS-2 PALSAR-2 SAR imagery",
+      "source": "JAXA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ALOS-2 data used in this study were obtained from JAXA but are not open access."
+    },
+    {
+      "name": "30 m Shuttle Radar Topography Mission (SRTM) digital elevation model (DEM)",
+      "source": "Farr et al. (2007)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "For input features derived from topography, we used the 30 m Shuttle Radar Topography Mission (SRTM) digital elevation model (DEM) (Farr et al., 2007)."
+    },
+    {
+      "name": "USGS ShakeMap product (PGV)",
+      "source": "USGS",
+      "link": "https://www.usgs.gov/natural-hazards/earthquake-hazards/data-tools",
+      "status": "MENTIONED",
+      "verbatim": "Gridded PGV estimates are available with pixel spacing 0.00083◦ as part of the USGS ShakeMap product...estimates of peak ground velocity were downloaded from https://www.usgs.gov/natural-hazards/earthquake-hazards/data-tools (last access: January 2021) (USGS, 2021)."
+    },
+    {
+      "name": "Global Lithological Map database (GLiM)",
+      "source": "Hartmann and Moosdorf (2012)",
+      "link": "https://www.geo.uni-hamburg.de/en/geologie/forschung/aquatische-geochemie/glim.html",
+      "status": "MENTIONED",
+      "verbatim": "We used the Global Lithological Map database (GLiM) (Hartmann and Moosdorf, 2012)...Lithology data from Hartmann and Moosdorf (2012) are available at https://www.geo.uni-hamburg.de/en/geologie/forschung/aquatische-geochemie/glim.html (last access: June 2020) (Universität Hamburg, 2020)."
+    },
+    {
+      "name": "ESA Climate Change Initiative land cover data",
+      "source": "ESA",
+      "link": "https://www.esa-landcover-cci.org/",
+      "status": "MENTIONED",
+      "verbatim": "Here we used land cover data downloaded from the European Space Agency (ESA) Climate Change Initiative...Land cover data used in this study are available at https://www.esa-landcover-cci.org/ (last access: June 2020) (ESA, 2020)."
+    },
+    {
+      "name": "USGS Ground Failure product",
+      "source": "Nowicki Jessee et al. (2018)",
+      "link": "https://www.usgs.gov/natural-hazards/earthquake-hazards/data-tools",
+      "status": "MENTIONED",
+      "verbatim": "For our global model, instead of the set of individual input feature maps described above, we use one single feature map that encapsulates the likely best results from a global model trained across a large number of events: the output USGS Ground Failure product of Nowicki Jessee et al. (2018)...Empirical models of landsliding based on Nowicki Jessee et al. (2018) and estimates of peak ground velocity were downloaded from https://www.usgs.gov/natural-hazards/earthquake-hazards/data-tools (last access: January 2021) (USGS, 2021)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Random forest regression for landslide areal density (LAD) prediction",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors use a random forest regression model to predict landslide areal density (LAD) by combining static topographic, lithological, and land cover features with dynamic ground shaking estimates and InSAR coherence-based landslide indicators. The model is trained either on a small subset of the affected area (same-event model) or on historical landslide inventories from other earthquakes (global model).",
+      "source": "scikit-learn (Pedregosa et al., 2011)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To implement the random forests method, we used the Python scikit-learn package (Pedregosa et al., 2011)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide inventory (Ferrario, 2019)",
+        "source": "Ferrario (2019)",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landslide inventory (Zhang et al., 2019)",
+        "source": "Zhang et al. (2019)",
+        "link": "https://doi.org/10.5281/zenodo.2577300",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Landslide inventory (Roback et al., 2017)",
+        "source": "Roback et al. (2017)",
+        "link": "https://doi.org/10.5066/F7DZ06F9",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Sentinel-1 data",
+        "source": "Copernicus",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "ALOS-2 data",
+        "source": "JAXA",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Peak ground velocity estimates",
+        "source": "USGS",
+        "link": "https://www.usgs.gov/natural-hazards/earthquake-hazards/data-tools",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Land cover data",
+        "source": "ESA (ESA-CCI Land Cover)",
+        "link": "https://www.esa-landcover-cci.org/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Lithology data (Global Lithological Map, GLiM)",
+        "source": "Hartmann and Moosdorf (2012), Universität Hamburg",
+        "link": "https://www.geo.uni-hamburg.de/en/geologie/forschung/aquatische-geochemie/glim.html",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "GAMMA SAR processing software",
+        "method_type": "SOFTWARE",
+        "summary": "Commercial GAMMA software package was used to process SAR data.",
+        "source": null,
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "LiCSAR software for SAR processing",
+        "method_type": "REUSED",
+        "summary": "SAR data were also processed using the LiCSAR software developed by Lazecký et al.",
+        "source": "Lazecký et al. (2020)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "GDAL for reprojecting and resampling datasets",
+        "method_type": "SOFTWARE",
+        "summary": "The open-source GDAL software was used to reproject and resample the various datasets used in the study.",
+        "source": null,
+        "link": "https://gdal.org/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Random forest classification via scikit-learn",
+        "method_type": "REUSED",
+        "summary": "The random forest method was implemented in Python using the scikit-learn package.",
+        "source": "Pedregosa et al. (2011)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Empirical model of coseismic landsliding (Nowicki Jessee et al.)",
+        "method_type": "REUSED",
+        "summary": "An empirical model of earthquake-induced landsliding based on the work of Nowicki Jessee et al. was used in the study.",
+        "source": "Nowicki Jessee et al. (2018)",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked, and other input datasets are publicly available or accessible via standard providers. The custom random forest model implementation is not provided."
+}

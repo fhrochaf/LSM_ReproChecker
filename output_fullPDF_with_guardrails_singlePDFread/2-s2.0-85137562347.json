@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Aerial photographs of slope failure regions",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": "https://maps.gsi.go.jp/",
+      "status": "MENTIONED",
+      "verbatim": "These images can be viewed and downloaded from a web map site called GSI Map provided by the Geographical Survey Institute (https://maps.gsi.go.jp/ (accessed on 26 July 2022))."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Mask R-CNN with CutMix-based augmentation",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The authors use Mask R-CNN, an instance segmentation method, to detect slope failure regions from post-disaster aerial photographs. They apply CutMix-based augmentation to the training data to improve detection accuracy, specifically comparing different augmentation patterns to maintain the shape of the slope failure regions.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code for the Mask R-CNN method is not available."
+}

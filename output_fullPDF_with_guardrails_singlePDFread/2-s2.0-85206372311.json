@@ -1,0 +1,71 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2A imagery",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2A and NASADEM data used in this study were obtained for free through the Google Earth Engine (GEE)."
+    },
+    {
+      "name": "NASADEM data",
+      "source": "Google Earth Engine",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Sentinel-2A and NASADEM data used in this study were obtained for free through the Google Earth Engine (GEE)."
+    },
+    {
+      "name": "Landslide inventory (Shuzheng Valley and Detuo town)",
+      "source": "Authors' own manual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We manually interpreted remote sensing images of landslides in the two study areas and used Shuzheng Valley and Detuo town as test areas and the remaining areas as training areas."
+    }
+  ],
+  "methods": [
+    {
+      "name": "MFLD-Net (Multiscale feature fusion landslide-detection network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An encoder-decoder fully convolutional network that uses ResNet101 as a backbone, incorporates a spatial-ASPP module for multiscale feature extraction, and utilizes transposed convolution layers in the decoder for pixel-level landslide segmentation.",
+      "source": "Yu Qu et al.",
+      "link": "https://github.com/qu-yu/Spectral_Landslide_detecetion",
+      "status": "MENTIONED",
+      "verbatim": "The code used during the current study is available from (qu-yu/Spectral_Landslide_detecetion (github.com))."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-2 imagery accessed via Google Earth Engine",
+        "source": "Google Earth Engine",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "NASADEM data accessed via Google Earth Engine",
+        "source": "Google Earth Engine",
+        "link": null,
+        "status": "NOT_MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Spectral landslide detection code",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom code for spectral landslide detection used in this study, made available on GitHub.",
+        "source": null,
+        "link": "https://github.com/qu-yu/Spectral_Landslide_detecetion",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_assessment": "The Sentinel-2A and NASADEM datasets are accessible via Google Earth Engine, but the authors' landslide inventory is not referenced or linked. The custom MFLD-Net code is available via a provided GitHub repository link."
+}

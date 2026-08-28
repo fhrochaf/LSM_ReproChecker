@@ -1,0 +1,67 @@
+{
+  "datasets": [
+    {
+      "name": "ALOS-2 PALSAR-2 imagery",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": "https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm",
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank JAXA for providing the ALOS-2 PALSAR-2 dataset through the 2nd Research Announcement on the Earth Observations (EO-RA2)... Japan Aerospace Exploration Agency (JAXA). ALOS-2 Project / PALSAR-2. Available online: https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm (accessed on 1 November 2019)."
+    },
+    {
+      "name": "AJG debris flow reference dataset",
+      "source": "Association of Japanese Geographers (AJG)",
+      "link": "http://ajg-disaster.blogspot.com/2018/07/3077.html",
+      "status": "MENTIONED",
+      "verbatim": "The Association of Japanese Geographers (AJG) visually identified debris flow segments using high-resolution aerial photogrammetry [34]... The Association of Japanese Geographers. The 2018 July Heavy rain in West Japan. Available online: http://ajg-disaster.blogspot.com/2018/07/3077.html (accessed on 1 November 2019)."
+    },
+    {
+      "name": "GSI coseismic landslide reference dataset",
+      "source": "Geospatial Information Authority of Japan (GSI)",
+      "link": "https://www.gsi.go.jp/BOUSAI/H30-hokkaidoiburi-east-earthquake-index.html",
+      "status": "MENTIONED",
+      "verbatim": "After the earthquake, GSI analyzed high-resolution aerial photographs and produced a detailed vector (polygon) map of the damage attributable to these landslides (the data are available at https://www.gsi.go.jp/BOUSAI/H30-hokkaidoiburi-east-earthquake-index.html)."
+    },
+    {
+      "name": "JAXA land cover maps",
+      "source": "Japan Aerospace Exploration Agency (JAXA)",
+      "link": "https://www.eorc.jaxa.jp/ALOS/en/lulc/lulc_index.htm",
+      "status": "MENTIONED",
+      "verbatim": "In this study, we use the land cover classification created by JAXA [40]... Japan Aerospace Exploration Agency (JAXA). High-Resolution Land Use and Land Cover Map Products. Available online: https://www.eorc.jaxa.jp/ALOS/en/lulc/lulc_index.htm (accessed on 1 November 2019)."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) digital elevation model",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we use freely available Shuttle Radar Topography Mission (SRTM) data [43], which provide a digital elevation model (DEM) of almost the whole globe."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "ESA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors would like to thank... the Sentinel missions for providing the Sentinel-2 imagery."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semiautomatic Pixel-Object Method",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An integrated framework that uses adaptive thresholding on multitemporal SAR intensity images to extract increasing and decreasing backscattering segments, followed by masking using land cover and DEM data, and object-based morphological operations to refine landslide detection.",
+      "source": "Bruno Adriano",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we propose a fusion of pixel- and object-based image analysis techniques to detect the damage attributable to mass movements... our method is fully implemented using a high-level and general-purpose programming language (Python 3.6)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are referenced and accessible via public links, and other input datasets are accessible. However, the custom code used for the Semiautomatic Pixel-Object Method is not provided or linked."
+}

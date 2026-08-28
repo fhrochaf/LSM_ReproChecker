@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset (2000 optical landslide images)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The final dataset includes 2000 optical landslide images, which were uploaded to the figshare universal database (Data link: 10.6084/m9.figshare.26043883)."
+    },
+    {
+      "name": "Open-source optical remote-sensing images",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on open-source optical remote-sensing images (obtained from Google Earth), landslides were identified through manual interpretation, resulting in high-quality landslide images."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Optimized YOLOv7 (with SE, ECA, and CBAM attention mechanisms)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses the YOLOv7 object detection framework, enhanced with three attention mechanisms (SE, ECA, and CBAM) and an adaptive learning rate algorithm to improve landslide recognition accuracy and convergence speed.",
+      "source": "Authors' own development",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via a figshare repository, but the custom YOLOv7-based method code is not provided or linked."
+}

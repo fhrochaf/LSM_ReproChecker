@@ -1,0 +1,82 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 multispectral imagery",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "We acknowledge European Space Agency (ESA) for Sentinel-1 SAR and Sentinel-2 optical data provision free of cost. ... The satellite data (Sentinel-1 and Sentinel-2) that supports the findings of this study are available in the Copernicus Open Access Hub at https://scihub.copernicus.eu/."
+    },
+    {
+      "name": "Sentinel-1 SAR backscatter data",
+      "source": "European Space Agency (ESA)",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "We acknowledge European Space Agency (ESA) for Sentinel-1 SAR and Sentinel-2 optical data provision free of cost. ... The satellite data (Sentinel-1 and Sentinel-2) that supports the findings of this study are available in the Copernicus Open Access Hub at https://scihub.copernicus.eu/."
+    },
+    {
+      "name": "Global Precipitation Measurement (GPM) Integrated Multi-satellitE Retrievals (IMERG) final run version 4 product",
+      "source": "NASA and JAXA",
+      "link": "https://pmm.nasa.gov/data-access/downloads/gpm",
+      "status": "MENTIONED",
+      "verbatim": "The Global Precipitation Measurement (GPM) Integrated Multi-satellitE Retrievals (IMERG) final run version 4 product was implemented in the present study for the analysis of precipitation. This research product in the IMERG suite can be downloaded from https://pmm.nasa.gov/data-access/downloads/gpm."
+    },
+    {
+      "name": "Shuttle Radar Topography Mission (SRTM) DEM",
+      "source": "NASA",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Elevation dataset was available from Shuttle Radar Topography Mission (SRTM) and derived from Google Earth Engine."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Sudden Landslide Identification Product (SLIP)",
+      "method_type": "REUSED",
+      "summary": "A pixel-based thresholding method that identifies new landslides by analyzing percentage red reflectance change, changes in mNMDI, slope derived from DEM, and a land-cover mask.",
+      "source": "Fayne et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Recently, Fayne et al. (2019) developed an automatic approach for landslide identification named Sudden Landslide Identification Product (SLIP) incorporating Landsat-8 OLI imagery."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Sentinel-1 satellite data",
+        "source": "Copernicus Open Access Hub / Google Earth Engine",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Sentinel-2 satellite data",
+        "source": "Copernicus Open Access Hub / Google Earth Engine",
+        "link": "https://scihub.copernicus.eu/",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "GPM IMERG (Integrated Multi-satellitE Retrievals) precipitation product, final run v4",
+        "source": "NASA",
+        "link": "https://pmm.nasa.gov/data-access/downloads/gpm",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "SRTM (Shuttle Radar Topography Mission) elevation dataset",
+        "source": "Google Earth Engine",
+        "link": null,
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links. Full availability of datasets mentioned as 'Available upon reasonable request'."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The input datasets are referenced and publicly accessible, but the landslide inventory used for validation is not linked or referenced. The custom method code is not available."
+}

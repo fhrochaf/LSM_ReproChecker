@@ -1,0 +1,63 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 satellite images",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu/dhus/#/home",
+      "status": "MENTIONED",
+      "verbatim": "cloud free (< 5% cloud) Sentinel-2 images (Level 1-C) are used, downloaded from Copernicus Open Access Hub (https:// scihub. coper nicus. eu/ dhus/#/ home, accessed on March 18, 2023)."
+    },
+    {
+      "name": "ALOS PALSAR DEM",
+      "source": "Alaska Satellite Facility",
+      "link": "https://asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "the Advanced Land Observing Satellite-1 Phased Array type L-band Synthetic Aperture Radar Digital Elevation Model (ALOS PALSAR DEM) is used (downloaded from https:// asf. alaska. edu/, accessed on April 09, 2023)."
+    },
+    {
+      "name": "Landslide inventory of Darjeeling Himalaya",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory of Malappuram district of Kerala",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net deep-learning model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A fully connected convolutional network (U-Net) with a down-sampling encoder and up-sampling decoder, trained on Sentinel-2 optical bands to perform pixel-based landslide detection. The model uses a slope-based Boolean elimination step to remove false positives.",
+      "source": "Authors' own implementation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, to ensure reproducibility, a Python executable code has been developed and shared. ... The Python code used in this study is provided in the supplementary file."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Python code developed for this study",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom Python code developed for this study, provided as supplementary material to facilitate future research.",
+        "source": null,
+        "link": "https://doi.org/10.1007/s12145-023-01141-1",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Data available upon request. Code shared on supplementary material."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "Sentinel-2 and ALOS PALSAR DEM data are accessible via public portals, but the authors' landslide inventories are not referenced or linked. The custom U-Net model code is available via a persistent DOI link in the supplementary material."
+}

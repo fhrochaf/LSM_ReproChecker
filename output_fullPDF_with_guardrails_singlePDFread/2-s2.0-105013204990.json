@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Pleiades-1A satellite imagery",
+      "source": "Indonesian Space Agency (LAPAN)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This study used two datasets: the high-resolution (0.5 meters) Pleiades-1A satellite imagery from the Indonesian Space Agency (LAPAN)... The Pleiades image used in this study was provided at no cost by LAPAN."
+    },
+    {
+      "name": "Bijie landslide dataset",
+      "source": "Researchers from the University of Wuhan",
+      "link": "http://gpcv.whu.edu.cn/data/Bijie_pages",
+      "status": "MENTIONED",
+      "verbatim": "The Bijie landslide dataset was used for model validation as a standard benchmark to test model performance... It was curated by researchers [29] from the University of Wuhan and made available online (http://gpcv.whu.edu.cn/data/Bijie_pages)."
+    },
+    {
+      "name": "ALOS Palsar DEM",
+      "source": "Public repository",
+      "link": "https://search.asf.alaska.edu/",
+      "status": "MENTIONED",
+      "verbatim": "Additionally, a DEM from the ALOS Palsar sensor was obtained from a public repository (https://search.asf.alaska.edu/)."
+    },
+    {
+      "name": "Point-based landslide inventory",
+      "source": "Disaster Management Agency of Pacitan Regency (BPBD)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A pre-existing point-based landslide inventory was available in this study... Special thanks also go to... the Disaster Management Agency of Pacitan Regency (BPBD) for the landslide inventory database."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Spatial Attention U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An interpretable U-Net architecture that incorporates spatial attention modules in both the encoder and decoder paths. It uses self-attention to calculate scores through dot-product attention between up-sampled decoder features and corresponding encoder features, allowing the model to focus on salient regions and preserve spatial details.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory used for validation is linked, and other input datasets are accessible via public repositories, but the point-based landslide inventory used for training is not linked. The custom Spatial Attention U-Net code is not mentioned or provided."
+}

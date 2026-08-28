@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Bijie Landslide Dataset consists of satellite optical images, shapefiles of landslides’ boundaries, and digital elevation models. The dataset is constructed based on the data collected in an area in Bijie City, Guizhou Province, China [58]"
+    },
+    {
+      "name": "WHU Building Dataset",
+      "source": "Ji et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The WHU Building Dataset consists of satellite and aerial images [59]."
+    },
+    {
+      "name": "Massachusetts Buildings Dataset",
+      "source": "Mnih",
+      "link": "https://www.cs.toronto.edu/~vmnih/data/",
+      "status": "MENTIONED",
+      "verbatim": "The Massachusetts Buildings Dataset consists of 151 aerial images collected in Boston, MA, USA; the size of each aerial image is 1500 × 1500 pixels and the related area is 2.25 km2 (https://www.cs.toronto.edu/∼vmnih/data/)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "TCNet",
+      "method_type": "CUSTOM_CODE",
+      "summary": "TCNet is a semantic segmentation network using a parallel-in-branch architecture that combines a ResNet-34 CNN branch for local spatial details and an eight-layer DeiT-Small Transformer branch for global context. It features a novel Interactive Self-attention (ISa) module for multilevel feature fusion and a Windowed Self-attention Gating (WSaG)-based progressive upsampling network (PUN) to bridge semantic gaps.",
+      "source": "Xuyang Xiang, Wenping Gong, Shuailong Li, Jun Chen, and Tianhe Ren",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are mentioned but lack direct links, though the Massachusetts Buildings Dataset is publicly accessible via the provided link. The custom code for the TCNet method is not mentioned or linked."
+}

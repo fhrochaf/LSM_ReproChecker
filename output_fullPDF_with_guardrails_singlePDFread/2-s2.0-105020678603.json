@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "HRSIDGLM (High-Resolution Remote Sensing Landslide Dataset for Domain Generalization)",
+      "source": "Authors' own creation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Finally, a dataset named as HRSIDGLM is constructed and designated to conduct studies on the domain generalization landslide mapping from high-resolution RSI."
+    },
+    {
+      "name": "Global landslide susceptibility map (2023)",
+      "source": "NASA",
+      "link": "https://maps.nccs.nasa.gov/mapping/rest/services/landslide_viewer/Landslide_Susceptibility_Update_2023/MapServer",
+      "status": "MENTIONED",
+      "verbatim": "The former is generated according to the evaluation and rankings of landslide susceptibility for a large portion of land surfaces worldwide and the information such as elevation, geology, faults, roads, and forest loss... https://maps.nccs.nasa.gov/mapping/rest/services/landslide_viewer/Landslide_Susceptibility_Update_2023/MapServer"
+    },
+    {
+      "name": "World topographic map (v2)",
+      "source": "Esri",
+      "link": "https://www.arcgis.com/home/item.html?id=7dc6cea0b1764a1f9af2e679f642f0f5",
+      "status": "MENTIONED",
+      "verbatim": "Conversely, the latter encompasses information pertaining to highways, urban landmarks, building outlines, and administrative boundaries... https://www.arcgis.com/home/item.html?id=7dc6cea0b1764a1f9af2e679f642f0f5"
+    },
+    {
+      "name": "ImageNet",
+      "source": "ImageNet project",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The priori knowledge is obtained via a pre-trained model trained on the ImageNet dataset."
+    }
+  ],
+  "methods": [
+    {
+      "name": "CRLMDG-LM (Causal representation learning-guided multi-target domain generalization network)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A network combining causal representation learning with Mamba for fine-grained landslide mapping. It features a multi-scale fusion feed-forward attention Mamba network (MFFAM-Net) with GSFA and MCSCIA modules, and a causal representation learning multi-target domain generalization (CRLMDG) strategy using FFT-based data augmentation and contrastive loss to learn domain-invariant features.",
+      "source": "Chengqiang Zhao et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose a causal representation learning-guided multi-target domain generalization network for fine-grained landslide mapping from high-resolution RSI (CRLMDG-LM)... Data will be made available on request."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data will be made available on request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory (HRSIDGLM) is not linked, and the custom code for CRLMDG-LM is not available, with the authors stating it will be provided only upon request."
+}

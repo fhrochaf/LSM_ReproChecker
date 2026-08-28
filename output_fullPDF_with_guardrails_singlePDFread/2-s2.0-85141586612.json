@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense (L4S) benchmark dataset",
+      "source": "Institute of Advanced Research in Artificial Intelligence (IARAI)",
+      "link": "https://www.iarai.ac.at/landslide4sense/challenge/",
+      "status": "MENTIONED",
+      "verbatim": "The data are accessible on Future Development Leaderboard for future evaluation at https://www.iarai.ac.at/landslide4sense/challenge/"
+    },
+    {
+      "name": "Sentinel-2 multispectral imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The global objective is to build DL-based models for understanding the differentiating characteristics of landslides based on the provided optical digital elevation model (DEM) and slope layers from freely available satellite imagery acquired by Sentinel-2 sensors and ALOS PALSAR."
+    },
+    {
+      "name": "ALOS PALSAR DEM and slope layers",
+      "source": "Alaska Satellite Facility",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Alaska Satellite Facility is one of the distributed active archive centers that provides high-resolution DEM from ALOS PALSAR at no cost to the user."
+    },
+    {
+      "name": "Google Earth images",
+      "source": "Google",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In the second step of our landslide annotation and image labeling procedure, a variety of further data sources were then used to visually correct landslide polygons, specifically Google Earth images"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Baseline U-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A U-Net semantic segmentation model implemented in PyTorch, consisting of an encoder-decoder architecture with 23 convolutional layers, used as a baseline for the competition.",
+      "source": "IARAI",
+      "link": "https://github.com/iarai/Landslide4Sense-2022",
+      "status": "MENTIONED",
+      "verbatim": "We provided a simple baseline in our public GitHub repository prior to the start of the L4S competition.1 ... 1https://github.com/iarai/Landslide4Sense-2022"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The Landslide4Sense benchmark dataset is linked, and other input datasets are accessible via public providers. The custom baseline U-Net code is available via a provided GitHub repository link."
+}

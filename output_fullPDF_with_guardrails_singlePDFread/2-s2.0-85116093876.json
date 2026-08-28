@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 data",
+      "source": "Copernicus Open Access Hub",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Sentinel-1 data from the Copernicus Open Access Hub were used, polarization VV-VH, in raw-level data."
+    },
+    {
+      "name": "TerraSAR-X data",
+      "source": "Airbus Defense and Space and UN-SPIDER",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Additionally, high-resolution TerraSAR-X data were acquired in ascending orbit (Table 1), from a collaboration agreement between Airbus Defense and Space and UN-SPIDER (United Nations Platform for Space-based Information for Disaster Management and Emergency Response) following the M 7.1 earthquake in June 23, 2017, in Oaxaca, Mexico."
+    },
+    {
+      "name": "SPOT-7 images",
+      "source": "Satellite Station Reception Mexico–New Generation (ERMEX)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We also acknowledge the Satellite Station Reception Mexico–New Generation (ERMEX), which provided the SPOT-7 data."
+    },
+    {
+      "name": "SRTM (shuttle radar topography mission) digital model",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory (based on SPOT-7 and field data)",
+      "source": "Authors and National Center of Disaster Prevention (CENAPRED)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslide inventory was constructed by comparing images before and after the earthquake in order to verify that the co-seismic landslides detected were caused only by the June 23 earthquake... Additionally, this inventory map was complemented with field data provided by the disaster management agency, the Mexican National Center of Disaster Prevention (CENAPRED)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Semi-automated methodology for rapid mapping of earthquake-triggered landslides",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses a change detection algorithm based on neural networks (Deep Belief Network and Back Propagation) to compare pre- and post-earthquake SAR images. It involves pre-processing (shadow masking, radiometric correction, Lee refined filtering), co-registration using SRTM, and a change detection process followed by principal component analysis and filtering to identify co-seismic landslides.",
+      "source": "Gong et al. (2012)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, we used a change detection algorithm based on neural networks developed by Gong et al. (2012); this algorithm greatly improves the quality of difference image (DI) obtained from before-after SAR data applying deep belief network (DBN) and back propagation (BP) algorithms."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not linked or made available, and the custom code used for the methodology lacks a repository or persistent link."
+}

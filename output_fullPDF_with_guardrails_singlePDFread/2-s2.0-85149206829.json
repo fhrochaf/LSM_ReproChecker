@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bijie Landslide Dataset",
+      "source": "Zhang et al. (2022)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To test the proposed approach for landslide and mudslide detection, we integrated our developed dataset into a state-of-the-art benchmark dataset called the Bijie Landslide Dataset [26]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Attention-enhanced region proposal network",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates attention layers into the Faster R-CNN architecture. It uses a VGGNet-based feature map generation layer, an attention-enhanced region proposal extraction layer (combining RPN and multi-head self-attention for foreground determination and regression), and an ROI pooling and identification layer.",
+      "source": "Chong Niu, Kebo Ma, Xiaoyong Shen, Xiaoming Wang, Xiao Xie, Lin Tan, and Yong Xue",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "this paper integrates attentions into the architecture of state-of-the-art CNNs—including Faster RCNN—to develop an attention-enhanced region proposal network for multi-scale landslide/mudslide detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the custom code for the attention-enhanced region proposal network lacks a repository or persistent link."
+}

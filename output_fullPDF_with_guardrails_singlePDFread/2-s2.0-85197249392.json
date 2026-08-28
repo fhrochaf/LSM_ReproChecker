@@ -1,0 +1,68 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide4Sense dataset",
+      "source": "IARAI (Institute of Advanced Research in Artificial Intelligence)",
+      "link": "https://github.com/iarai/Landslide4Sense-2022",
+      "status": "MENTIONED",
+      "verbatim": "The Landslide4Sense dataset is designed as a multi-source benchmark for training deep learning (DL) models in landslide detection [44,45]... The data is accessible on Future Development Leaderboard for future evaluation at https://github.com/iarai/Landslide4Sense-2022 (accessed on 30 December 2023) [45]."
+    },
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Sentinel-2 sensors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset also utilizes data from Sentinel-2 and ALOS PALSAR sensors."
+    },
+    {
+      "name": "ALOS PALSAR sensors",
+      "source": "ALOS PALSAR sensors",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The dataset also utilizes data from Sentinel-2 and ALOS PALSAR sensors."
+    },
+    {
+      "name": "Ground truth of Iburi study area",
+      "source": null,
+      "link": "https://zenodo.org/records/2577300#.YzKiSXZByUl",
+      "status": "MENTIONED",
+      "verbatim": "The ground truth of Iburi study area can be downloaded at the website of https://zenodo.org/records/2577300#.YzKiSXZByUl (accessed on 31 December 2023)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "SBConvU-Net",
+      "method_type": "CUSTOM_CODE",
+      "summary": "An improved U-Net architecture that integrates the Spatial and Band Refinement Convolution (SBConv) module into the DoubleConv units. The SBConv module, consisting of a Spatial Refined Unit (SRU) and a Band Refined Unit (BRU), is designed to reduce spatial and band redundancy in feature extraction.",
+      "source": "Song, Y.; Zou, Y.; Li, Y.; He, Y.; Wu, W.; Niu, R.; Xu, S.",
+      "link": "https://github.com/cheng-haha/ScConv/tree/main",
+      "status": "MENTIONED",
+      "verbatim": "The code of this article refers to https://github.com/cheng-haha/ScConv/tree/main (accessed on 31 December 2023) and https://github.com/iarai/Landslide4Sense-2022 (accessed on 31 December 2023)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Landslide4Sense multi-source landslide benchmark dataset",
+        "source": "GitHub (IARAI)",
+        "link": "https://github.com/iarai/Landslide4Sense-2022",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Ground truth data for Iburi study area",
+        "source": "Zenodo",
+        "link": "https://zenodo.org/records/2577300#.YzKiSXZByUl",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and Landslide4Sense benchmark dataset are linked and publicly accessible, and other input datasets are practically accessible via standard public repositories. The custom SBConvU-Net method provides repository links for the code."
+}

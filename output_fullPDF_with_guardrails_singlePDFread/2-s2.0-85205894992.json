@@ -1,0 +1,57 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 MSI imagery",
+      "source": "Sentinel-2B satellite",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "To carry out this research, multispectral images acquired by the MSI (MultiSpectral Instrument) sensor on board the Sentinel- 2B satellite were utilized."
+    },
+    {
+      "name": "Reference data for landslide events",
+      "source": "Disasters Charter project",
+      "link": "http://www.obt.inpe.br/OBT/assuntos/cooperacao-internacional/international-charter-space-and-major-disasters",
+      "status": "MENTIONED",
+      "verbatim": "To evaluate the outcomes, reference data provided by the Disasters Charter project (International Charter—Space and Major Disasters 2023) was employed. ... International Charter—Space and Major Disasters. 2023. Accessed October 1, 2023. http:// www. obt. inpe. br/ OBT/ assun tos/ coope racao - inter nacio nal/ inter natio nal- chart er- space - and- major - disas ters."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Floating References (FR) and Homogeneous Blocks Single-class Classification (HBSC)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The FR method uses floating references identified through clustering to model spatio-temporal changes based on behavioral deviations. The HBSC method identifies homogeneous blocks as 'no change' regions and uses a One-class Support Vector Machine to extrapolate and detect changes across the spatial domain.",
+      "source": "Negri and Frery (2019); Negri et al. (2021)",
+      "link": "https://rogerionegri.github.io",
+      "status": "MENTIONED",
+      "verbatim": "The datasets utilized in this study and the complete set of results are available at roger ioneg ri. github. io."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Datasets and complete results used in this study",
+        "source": "rogerionegri.github.io",
+        "link": "http://rogerionegri.github.io/",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "M.I.C.E (My Image Classification Environment, beta-2)",
+        "method_type": "SOFTWARE",
+        "summary": "A named image classification software tool (M.I.C.E, beta-2) used in the study, shared via a dedicated GitHub repository.",
+        "source": null,
+        "link": "https://github.com/rogerionegri/MICE",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via the Disasters Charter project, and Sentinel-2 imagery is publicly accessible. The custom code and study results are available via a persistent GitHub repository link."
+}

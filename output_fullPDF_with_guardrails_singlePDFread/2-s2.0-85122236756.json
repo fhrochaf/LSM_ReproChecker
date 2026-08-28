@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "150 loess landslide cases",
+      "source": "Authors' own collection",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Satellite images",
+      "source": "91 Weitu",
+      "link": "http://www.91weitu.com",
+      "status": "MENTIONED",
+      "verbatim": "we invited experts to use Google Earth to locate the loess landslides’ longitude and latitude and then used 91 Weitu (image elevation download software: http://www.91weitu.com) to acquire the satellite image with sufficient resolution."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Two-phase image-based data-driven framework",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-phase framework where the first phase uses a pre-trained Faster-RCNN to detect landslide regions and generate bounding boxes, and the second phase uses a modified U-Net with inception blocks and dilation to perform pixel-level segmentation within those bounding boxes.",
+      "source": "Huajin Li, Yusen He, Qiang Xu, Jiahao Deng, Weile Li, Yong Wei",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the two-phase framework is not provided via any repository or persistent link."
+}

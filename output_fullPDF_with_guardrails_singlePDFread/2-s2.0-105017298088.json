@@ -1,0 +1,85 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR imagery",
+      "source": "ESA Copernicus",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "SAR-LRA was applied over five Sentinel-1 acquisitions at 10 m resolution."
+    },
+    {
+      "name": "Globally Distributed Coseismic Landslide Dataset (GDCLD)",
+      "source": "Fang et al. (2024a)",
+      "link": "https://doi.org/10.5281/zenodo.11369484",
+      "status": "MENTIONED",
+      "verbatim": "The Globally Distributed Coseismic Landslide Dataset (GDCLD) is available at https://doi.org/10.5281/zenodo.11369484 (Fang et al., 2024a)."
+    },
+    {
+      "name": "Subset of 814 landslides manually mapped within the Taiwan study area",
+      "source": "Novellino et al. (2025)",
+      "link": "https://doi.org/10.5281/zenodo.15027165",
+      "status": "MENTIONED",
+      "verbatim": "the subset is available on https://doi.org/10.5281/zenodo.15027165, Novellino et al., 2025"
+    },
+    {
+      "name": "Google Earth Pro archive imagery (CNES and Airbus)",
+      "source": "Google Earth Pro",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Satellite images from the Google Earth Pro archive have been used for the pre-event stage, whose collection includes data from CNES and Airbus acquired up to September 2023."
+    },
+    {
+      "name": "PlanetScope imagery",
+      "source": "Planet Labs PBC",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "PlanetScope imagery provider: Planet Labs PBC (2024)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Synthetic Aperture Radar Landslide Rapid Assessment (SAR-LRA) tool",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A tool based on convolutional neural networks that uses pre- and post-event SAR imagery in a change-detection-like approach to identify surface changes due to co-seismic slope failures.",
+      "source": "Nava et al. (2025a)",
+      "link": "https://doi.org/10.5281/zenodo.14898556",
+      "status": "MENTIONED",
+      "verbatim": "The landslide maps have been generated using the Synthetic Aperture Radar Landslide Rapid Assessment (SAR-LRA) tool based on convolutional neural networks (Nava et al., 2024)... The tool is freely available at https://doi.org/10.5281/zenodo.14898556 (Nava et al., 2025a)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Generated landslide inventory and ViT fine-tuning subset",
+        "source": "Zenodo (Novellino et al., 2024b)",
+        "link": "https://doi.org/10.5281/zenodo.11519683",
+        "status": "MENTIONED",
+        "verbatim": null
+      },
+      {
+        "name": "Globally Distributed Coseismic Landslide Dataset (GDCLD)",
+        "source": "Zenodo (Fang et al., 2024b)",
+        "link": "https://doi.org/10.5281/zenodo.11369484",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "SAR-LRA tool (code and weights)",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Code and model weights for the SAR-LRA tool, developed and shared by the authors.",
+        "source": null,
+        "link": "https://doi.org/10.5281/zenodo.15159492",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced and linked via public repositories. The custom SAR-LRA tool code and model weights are provided via a persistent Zenodo link."
+}

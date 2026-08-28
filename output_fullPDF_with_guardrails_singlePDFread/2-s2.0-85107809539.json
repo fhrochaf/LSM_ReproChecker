@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Aerial surveys (1984, 1996, 2001, 2005, 2009, 2010, 2011, 2013 and 2016)",
+      "source": "National Geographic Institute of Spain (IGN), Andalusian Institute of Statistics and Cartography (IECA), National Plan of Aerial Orthophotography (PNOA)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Furthermore, a set of conventional aerial surveys from 1984 (National Geographic Institute of Spain, IGN); 1996 and 2001 (Andalusian Institute of Statistics and Cartography, IECA); and 2005, 2009, 2011, 2013 and 2016 (National Plan of Aerial Orthophotography, PNOA) was also processed... All data are available in different image formats (TIFF/JPG/ECW) from public spatial data infrastructures (SDIs) or data servers, such as the photo library of the IGN [42] and the photo library of Andalusia [43]."
+    },
+    {
+      "name": "LiDAR dataset (2010)",
+      "source": "Leica ALS50-II",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "First, an ad hoc combined flight, with a digital camera (Z/I DMC) and LiDAR sensor (Leica ALS50-II), was flown in 2010"
+    },
+    {
+      "name": "Geological map",
+      "source": "Roldán, F.J.; Lupiani, E.; Jerez, L.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "lithological units derived from the geological map [40]."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Combined photogrammetric and LiDAR aerial survey processing with differential models (DoDs)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method involves orienting aerial imagery and LiDAR data using direct orientation and iterative adjustments, generating DSMs and orthophotographs, calculating differential DSMs (DoDs) to identify surface changes, and applying filters (NDVI, GLI, urban/water masks, and height thresholds) followed by photointerpretation to create a multitemporal landslide inventory.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for processing is not available via any repository or persistent link."
+}

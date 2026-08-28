@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "GeoEye-1 image data (spatial resolution: 0.5 m) of Tuergen Township, Xinyuan County",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The remote sensing images of Tuergen Township used are GeoEye-1 image data (spatial resolution: 0.5 m) from Google Earth"
+    },
+    {
+      "name": "Landslide and other topographic images of Xinyuan County",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dual Graph Convolutional Network (DGCNet)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A deep learning model that uses dual graph convolution layers to capture both local and global structural information by modeling spatial relationships between pixels and interdependencies along channel dimensions.",
+      "source": "Zhang et al. (2019)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Dual Graph Convolutional Network (DGCNet) is characterized by its ability to operate on graph-structured data... Zhang et al. (2019) used the model for semantic segmentation and achieved good results."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "\"The original contributions presented in the study are included in the article/Supplementary Material, further inquiries can be directed to the corresponding author.\""
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the GeoEye-1 imagery is a commercial dataset without a provided link. The custom DGCNet code is mentioned but lacks a repository or persistent link."
+}

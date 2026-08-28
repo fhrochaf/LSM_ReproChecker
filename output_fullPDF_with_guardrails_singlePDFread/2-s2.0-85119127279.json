@@ -1,0 +1,60 @@
+{
+  "datasets": [
+    {
+      "name": "ASTER (level AST-L1T) images",
+      "source": "United States Geological Survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Two ASTER (level AST-L1T) images were used courtesy of the United States Geological Survey"
+    },
+    {
+      "name": "Digital Elevation Model (DEM)",
+      "source": "National Institute of Statistics and Geography of Mexico (INEGI)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "From the topographic maps, courtesy of the National Institute of Statistics and Geography of Mexico (INEGI), a digital elevation model (DEM) of 15 m spatial resolution was obtained"
+    },
+    {
+      "name": "Lithology map (L)",
+      "source": "Mexican Geological Service (SGM)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The lithology map (L) was obtained from geological-mining charts courtesy of the Mexican Geological Service (SGM)."
+    },
+    {
+      "name": "Google Earth image",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A Google Earth image from 12 August 2014 was obtained (the closest available to the meteorological events of September 2013)."
+    },
+    {
+      "name": "Ground truth (GT) samples",
+      "source": "Authors' own fieldwork and Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ground truth (GT) was integrated by sampling actual landslide and non-landslide zones and digitizing polygons on the image from 12 August 2014, on the Google Earth platform... An evaluation of the GT was carried out through field visits to some areas."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Supervised machine learning (ML) classification algorithms (KNN, SGD, SVM, AdaBoost)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates landslide inventory maps by applying supervised machine learning classification algorithms (KNN, SGD, SVM RBF, SVM linear, and AdaBoost) to continuous change maps (derived from linear regression and image differencing of ASTER imagery) and conditioning factors (slope, aspect, and lithology).",
+      "source": "Ramos-Bernal et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "This work aims to integrate landslide inventory maps by applying supervised machine learning (ML) classification algorithms to continuous change maps derived from change detection techniques and maps of conditioning factors that influence land instability."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or referenced with persistent identifiers, and the custom machine learning code is not provided or linked."
+}

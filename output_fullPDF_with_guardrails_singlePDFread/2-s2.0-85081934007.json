@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "UAV images of Wenchuan County and Baoxing County",
+      "source": "Authors' own data acquisition",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "ImageNet library",
+      "source": "Stanford University",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "At present, there are many labeled natural image libraries. For example, the typical ImageNet library labeled by Stanford University, which contains millions of labeled images, includes more than 15 million high-resolution images with labels."
+    }
+  ],
+  "methods": [
+    {
+      "name": "TLOEL (landslide extraction method based on the TL model and object-oriented image analysis)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The TLOEL method integrates transfer learning (TL) and object-oriented image analysis. It uses multi-resolution segmentation to obtain image objects, generates regular image blocks from these objects, and uses a pre-trained TL model (based on the Decaf model) to extract features for landslide classification.",
+      "source": "Heng Lu et al.",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory data is not referenced or linked, and the custom TLOEL method code is not available."
+}

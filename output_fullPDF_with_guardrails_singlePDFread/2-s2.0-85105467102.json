@@ -1,0 +1,85 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "European Space Agency",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also thank European Space Agency and Planet labs for providing access to data used in this study via Project Id 58294."
+    },
+    {
+      "name": "ALOS Global Digital Surface Model (AW3D30)",
+      "source": "ALOS",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The topographic information for all the study areas was derived using the ALOS Global Digital Surface Model (AW3D30), which is available at a resolution of 30 m."
+    },
+    {
+      "name": "Landslide inventory of Study Area A (Myanmar)",
+      "source": "Alvioli et al. (2017)",
+      "link": "https://doi.org/10.3390/rs9060554",
+      "status": "MENTIONED",
+      "verbatim": "Mondini, A. Measures of spatial autocorrelation changes in multitemporal SAR images for event landslides detection. Remote Sens. 9, 554. https://doi.org/10.3390/rs9060554 (2017)."
+    },
+    {
+      "name": "RapidEye imagery",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also thank European Space Agency and Planet labs for providing access to data used in this study via Project Id 58294."
+    },
+    {
+      "name": "Pleiades-1A imagery",
+      "source": "European Space Agency",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also thank European Space Agency and Planet labs for providing access to data used in this study via Project Id 58294."
+    },
+    {
+      "name": "PlanetScope satellite images",
+      "source": "Planet Labs",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The authors also thank European Space Agency and Planet labs for providing access to data used in this study via Project Id 58294."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Combined training strategy CNN-based semantic segmentation model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A modified U-Net architecture with residual blocks and deep supervision, trained on combined landslide inventories from multiple regions to generalize to unseen events.",
+      "source": "Nikhil Prakash",
+      "link": "https://github.com/nprksh/landslide-mapping-with-cnn",
+      "status": "MENTIONED",
+      "verbatim": "The weights and network architecture of CNN model trained using the combined learning approach is publicly available at https://github.com/nprksh/landslide-mapping-with-cnn."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Event-landslide inventories for study areas B, C, E, and F",
+        "source": "GitHub (nprksh)",
+        "link": "https://github.com/nprksh/landslide-mapping-with-cnn",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "CNN model trained using a combined learning approach for landslide mapping",
+        "method_type": "CUSTOM_CODE",
+        "summary": "A convolutional neural network was trained to map landslides using a combined learning approach, taking a DSM and pre-/post-event Sentinel-2 image pairs as inputs. Model weights, architecture, and a Jupyter Notebook demonstrating the workflow are publicly released.",
+        "source": null,
+        "link": "https://github.com/nprksh/landslide-mapping-with-cnn",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Model with weights and code referenced in Data Availability statement"
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory are mentioned to be available at the repository link, and other input datasets are practically accessible via public providers. The custom CNN model code and weights are provided via a persistent GitHub repository link."
+}

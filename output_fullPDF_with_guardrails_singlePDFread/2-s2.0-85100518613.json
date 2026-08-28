@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bi-temporal very-high-resolution (VHR) optical remote sensing images of Lantau Island, Hong Kong",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "methods": [
+    {
+      "name": "GAN-based Siamese framework (GSF)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A cascaded framework for landslide inventory mapping consisting of two modules: a domain adaptation module using a conditional GAN to translate pre-landslide images to the post-landslide domain, and a landslide detection module using a fully convolutional Siamese network to perform pixel-level comparison and detection.",
+      "source": "Bo Fang, Gang Chen, Li Pan, Rong Kou, and Lizhe Wang",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "we propose an end-to-end GAN-based Siamese framework (GSF) for LIM using bi-temporal optical remote sensing images."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input imagery are not referenced or linked, and the custom GAN-based Siamese framework code is not provided."
+}

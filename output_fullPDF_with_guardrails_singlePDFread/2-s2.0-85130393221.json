@@ -1,0 +1,78 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-1 SAR data",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/dhus/#/home",
+      "status": "MENTIONED",
+      "verbatim": "The main input data were satellite images from Sentinel-1 and -2 missions of the European Space Agency (ESA), acquired either by downloading from Copernicus Open Access Hub (COAH, https://scihub.copernicus.eu/dhus/#/home, accessed 10 August 2019) or used directly within the GEE code editor"
+    },
+    {
+      "name": "Sentinel-2 Level 2A product",
+      "source": "ESA Copernicus",
+      "link": "https://scihub.copernicus.eu/dhus/#/home",
+      "status": "MENTIONED",
+      "verbatim": "The main input data were satellite images from Sentinel-1 and -2 missions of the European Space Agency (ESA), acquired either by downloading from Copernicus Open Access Hub (COAH, https://scihub.copernicus.eu/dhus/#/home, accessed 10 August 2019) or used directly within the GEE code editor"
+    },
+    {
+      "name": "DTM, 10 m",
+      "source": "Høydedata",
+      "link": "https://hoydedata.no/LaserInnsyn/",
+      "status": "MENTIONED",
+      "verbatim": "DTM, 10 m ... raster: https://hoydedata.no/LaserInnsyn/"
+    },
+    {
+      "name": "Registered landslides ('Skredhendelser')",
+      "source": "NVE, RegObs",
+      "link": "https://nedlasting.nve.no/gis/",
+      "status": "MENTIONED",
+      "verbatim": "Registered landslides ... ‘Skredhendelser’, accessed 18 November 2019, point data with attributes: https://nedlasting.nve.no/gis/"
+    },
+    {
+      "name": "Roads ('Vbase')",
+      "source": "NMA",
+      "link": "https://kartkatalog.geonorge.no/",
+      "status": "MENTIONED",
+      "verbatim": "Roads ... ‘Vbase’, accessed 10 August 2019, polyline data: https://kartkatalog.geonorge.no/"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Multi-temporal image-composite change detection approach",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A method implemented in Google Earth Engine that creates multi-temporal change detection image composites by reducing across all available images within one month before and after landslide events. It uses the mean of backscatter intensity for Sentinel-1 SAR data and maximum NDVI for Sentinel-2 to reduce noise and improve landslide visibility.",
+      "source": "Authors",
+      "link": "https://github.com/erin-ntnu/Change-detection-images-GEE",
+      "status": "MENTIONED",
+      "verbatim": "The GEE scripts are available on the following GitHub page: https://github.com/erin-ntnu/Change-detection-images-GEE (accessed 1 May 2022)."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Satellite imagery used for change detection, retrievable via Google Earth Engine scripts",
+        "source": "Google Earth Engine",
+        "link": "https://github.com/erin-ntnu/Change-detection-images-GEE",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "MENTIONED",
+    "code_links": [
+      {
+        "name": "Google Earth Engine (GEE) scripts for change detection in images",
+        "method_type": "CUSTOM_CODE",
+        "summary": "Custom GEE scripts used to perform change detection on images, made available via a public GitHub repository.",
+        "source": null,
+        "link": "https://github.com/erin-ntnu/Change-detection-images-GEE",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "author_statement": "Full data and code availability statement, with shared links."
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and all other input datasets are referenced and publicly accessible via the provided links. The custom Google Earth Engine scripts are available in a public GitHub repository."
+}

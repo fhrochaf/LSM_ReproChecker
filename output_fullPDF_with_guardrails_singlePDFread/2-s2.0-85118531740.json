@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "PlanetScope L3B images",
+      "source": "Planet Laboratories",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "PlanetScope images are low cost and can be freely obtained from the Education and Research Program offered by Planet Laboratories."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Change detection-based region-based level set evolution (RLSE)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A semiautomated method that combines change detection (using ICA, PCA, or CVA) to generate initial zero-level curves (ZLCs) with a region-based level set evolution (RLSE) process to refine the landslide boundaries.",
+      "source": "Ping Lu, Wenyang Shi, and Zhongbin Li",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "In this study, through the improvement of change detection-based RLSE [28], we develop a novel landslide mapping approach, in which CDIs were generated from ICA and PCA instead of CVA."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the RLSE method lacks a repository or persistent link."
+}

@@ -21,13 +21,26 @@ filter_landslide_mapping_paper:
     The output should be around 50 words.
   agent: abstract_screener
 
-check_data_reproducibility:
+analyze_paper:
   description: >
+    Read the paper once and extract both (A) every dataset used and (B) the
+    authors' own novel landslide mapping/detection method.
+
+    PART A — Datasets
+
     Step 1 — Catalog: scan the full paper (methods, results, figures, tables,
-    captions) and list every distinct dataset used for landslide mapping,
-    including satellite imagery and landslide inventories. Use the actual
-    dataset name as given (e.g. 'Landslide Inventory of Region X',
-    'Sentinel-2 imagery'), never a generic category.
+    captions) and list every distinct dataset used for landslide mapping.
+    This includes the landslide inventory (the reference/ground-truth data
+    used to train or validate the mapping — either reused from another
+    publication or created by the authors) and every other input feeding the
+    mapping model: optical imagery (e.g. Sentinel-2, UAV, aerial, other
+    optical satellites), radar imagery (e.g. Sentinel-1, other SAR sensors),
+    elevation models (DEM, SRTM, LiDAR, and similar), physically-based
+    inputs (soil properties, geological properties, environmental variables,
+    or other variables explored in the publication), and any other input or
+    pre-processed product used. Use the actual dataset name as given (e.g.
+    'Landslide Inventory of Region X', 'Sentinel-2 imagery'), never a
+    generic category.
 
     Step 2 — Availability sweep: independently search the ENTIRE paper for
     retrieval links and access statements — including dedicated sections like
@@ -42,43 +55,25 @@ check_data_reproducibility:
 
     For each dataset found, fill in:
     - name: the dataset's name.
-    - source: the provider or organization named for it, or null if none is given.
+    - source: the provider or organization named for it, the author's name if it was created by them, or null if none is given.
     - link: the exact retrieval URL as printed in the paper, or null if none is given.
     - status: MENTIONED if a link is given, or if a source is named without a
       retrieval link; NOT_MENTIONED if neither a source nor a link is indicated.
     - verbatim: the exact sentence/clause containing the link (or, if no link,
       the source/reference). If multiple excerpts are found, and they are not sequential to each other, separate them with "...".
       If NOT_MENTIONED, return null.
-  expected_output: >
-    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields.
-    It must match this exact shape:
-      {"datasets": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED", "verbatim": "Sentinel-2 imagery was downloaded from the ESA Copernicus Open Access Hub (https://scihub.copernicus.eu/dhus/)."}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_MENTIONED", "verbatim": null}]}
-  agent: paper_analyzer
 
-check_method_reproducibility:
-  description: >
-    Step 1 — Anchor: read the abstract, introduction, and conclusion to
-    identify the specific landslide mapping/detection method the authors
-    present as their own contribution. This must appear as an entry
-    regardless of classification, and takes priority over comparison methods.
+    PART B — Method
 
-    Step 2 — Catalog: scan the rest of the paper (methods, references,
-    footnotes, figures, tables, appendices) for other methods USED TO MAP OR
-    DETECT LANDSLIDES specifically — not preprocessing, visualization, data
-    management, or accuracy-metric tools. Differentiate (a) the authors'
-    own method(s), (b) methods used for evaluation/baseline mapping, (c)
-    anything else merely mentioned. Report only (a) and (b); never drop (a)
-    even if described briefly.
-
-    Step 3 — Availability sweep: independently search the ENTIRE paper for
-    code links and access statements — including "Code Availability"
-    sections, footnotes, and supplementary material — regardless of whether
-    they sit near the method's name in Steps 1–2. Match each found
-    link/statement to the cataloged method it belongs to.
+    Step 4 — Anchor: read the abstract, introduction, and conclusion to
+    identify the ONE specific landslide mapping/detection method the authors
+    present as their own contribution — not a baseline/comparison method,
+    and not a preprocessing/visualization/accuracy-metric tool. This must
+    appear as an entry regardless of classification.
 
     Naming rules:
-    - Use the method's exact name as stated (or combination of methods),
-      never a generic category (e.g. 'deep learning').
+    - Use the method's exact name as stated, never a generic category (e.g.
+      'deep learning').
     - A software/tool name (e.g. ArcGIS, PyTorch) is only a valid `name` if
       the software itself performed the mapping and no distinct
       algorithm/workflow name is given. If a distinct method name exists,
@@ -86,36 +81,43 @@ check_method_reproducibility:
     - Do not invent references, names, or links the paper doesn't provide.
     - Always prioritize the retrieval link over a named source when both exist.
 
-    Classify how each method is developed:
-    1. CUSTOM_CODE — custom/algorithmic method; check for code.
+    Classify how the method is developed:
+    1. CUSTOM_CODE — custom algorithm developed by the authors; check for code.
     2. SOFTWARE — the mapping itself was carried out by a named tool (not an
-       auxiliary task like preprocessing/visualization); no entry otherwise.
+       auxiliary task like preprocessing/visualization).
     3. REUSED — same as a prior publication; give the citation instead of
        re-describing.
     4. MANUAL — human interpretation, no code expected.
 
-    For each method found, fill in:
+    Step 5 — Availability sweep: independently search the ENTIRE paper for
+    code links and access statements for this method — including "Code
+    Availability" sections, footnotes, and supplementary material —
+    regardless of whether they sit near the method's name in Step 4.
+
+    Fill in for the method:
       - name: the method's exact name as given in the paper (never a generic category).
       - method_type: one of CUSTOM_CODE, SOFTWARE, REUSED, MANUAL, per the
         classification rules above.
+      - summary: a concise summary of the method — its architecture and main
+        components/steps (a few sentences).
       - source: the origin named for it — the citation to the prior
         publication if REUSED, the software provider/vendor if SOFTWARE, the
-        provider of the code/algorithm if CUSTOM_CODE — or null if none is
+        author's name if CUSTOM_CODE — or null if none is
         given.
       - link: the exact retrieval URL for the method's implementation, or
         null if none is given. Prefer link over source whenever present.
       - status: MENTIONED if a link is given, or if a source is named without
         a retrieval link; NOT_MENTIONED if neither is indicated.
-      - verbatim: the exact sentence/clause containing the link (or source)
-        — taken from wherever it actually appears in the paper, not
-        necessarily near the method's first mention. If NOT_MENTIONED,
-        return null.
+      - verbatim: the exact sentence/clause containing the link (or, if no link, the source/reference).
+      If multiple excerpts are found, and they are not sequential to each other, separate them with "...".
+      If NOT_MENTIONED, return null.
   expected_output: >
-    Return a json object with the following structured fields, no explanatory prose beyond the required short text fields.
-    It must match this exact shape:
-      {"methods": [
-        {"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Our implementation of U-Net with a ResNet-34 encoder is available at https://github.com/example/repo."}
-      ]}
+    Return a json object with "datasets" and "methods" fields, no
+    explanatory prose beyond the required short text fields. `methods`
+    normally holds a single entry: the paper's own novel method. It must
+    match this exact shape:
+      {"datasets": [{"name": "Landslide Inventory of Region X", "source": "Regional Geological Survey", "link": null, "status": "MENTIONED", "verbatim": "The landslide inventory was compiled by the Regional Geological Survey."}, {"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "MENTIONED", "verbatim": "Sentinel-2 imagery was downloaded from the ESA Copernicus Open Access Hub (https://scihub.copernicus.eu/dhus/)."}, {"name": "Field survey photos", "source": "Authors' own fieldwork", "link": null, "status": "NOT_MENTIONED", "verbatim": null}],
+       "methods": [{"name": "U-Net with ResNet-34 encoder", "method_type": "CUSTOM_CODE", "summary": "A U-Net semantic segmentation network with a ResNet-34 encoder, taking stacked optical and DEM-derived bands as input and producing a per-pixel landslide probability map, trained end-to-end against the landslide inventory.", "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Our implementation of U-Net with a ResNet-34 encoder is available at https://github.com/example/repo."}]}
   agent: paper_analyzer
 
 check_artifact_availability:
@@ -146,26 +148,85 @@ check_artifact_availability:
       named, if any, or null), link (the exact retrieval URL, preferred over
       source whenever a URL is present, or null), status (MENTIONED, since
       it's listed), and verbatim (the excerpt where the link/statement was
-      found). Leave empty if none found.
+      found). Leave `summary` null on every entry here — the method's
+      architecture/components are already captured from the paper's own text
+      by a different check, not this one. Leave empty if none found.
     - Any direct author statement on availability or reproducibility
     It must match this exact shape:
-      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Code availability: the classification pipeline is available at https://github.com/example/repo."}], "author_statement": "Data and code are available upon reasonable request."}
+      {"access_status": "ACCESSIBLE", "data_status": "MENTIONED", "data_links": [{"name": "Sentinel-2 imagery", "source": "ESA Copernicus", "link": "https://scihub.copernicus.eu/dhus/", "status": "AVAILABLE"}], "code_status": "MENTIONED", "code_links": [{"name": "Landslide classification pipeline", "method_type": "CUSTOM_CODE", "summary": null, "source": null, "link": "https://github.com/example/repo", "status": "MENTIONED", "verbatim": "Code availability: the classification pipeline is available at https://github.com/example/repo."}], "author_statement": "Data and code are available upon reasonable request."}
   agent: availability_web_scraper
 
+
+research_dataset_availability:
+  description: >
+    The following datasets are not yet covered by the project's dataset
+    availability reference.
+
+    Datasets to research:
+    {missing_datasets}
+
+    For each one that is not a known dataset listed on the context below,
+    search the web to determine its real-world access status.
+    - summary: a one-sentence description of what the dataset is and who
+      produces/maintains it.
+    - availability: one of PUBLIC_FREE (free, no account needed), PUBLIC_REG
+      (free, account/data-agreement required), COMMERCIAL (purchase/
+      subscription required), RESTRICTED (limited to specific institutions or
+      by request), VARIES (depends on specific provider/country/tier).
+    - availability_notes: the specific provider(s)/portal(s) through which it
+      can be obtained.
+    - source_url: a URL supporting this judgment, or null if none found.
+    Use only what your search actually finds. If a dataset appears to be
+    specific to one study (e.g. a one-off landslide inventory) rather than a
+    reusable public dataset, and no distinct public catalog/provider can be
+    found for it, use VARIES and say so plainly in availability_notes rather
+    than guessing.
+
+    Dataset names already covered by the project's dataset availability
+    reference (do not re-research these, even under a slightly different
+    name):
+    {context}
+
+  expected_output: >
+    Return a json object with an "entries" field, one entry per dataset
+    above, no explanatory prose beyond the required short text fields. It
+    must match this exact shape:
+      {"entries": [{"name": "PlanetScope imagery", "summary": "High-resolution daily optical imagery from Planet Labs.", "availability": "COMMERCIAL", "availability_notes": "Sold via Planet Labs; free access only via Planet's Education & Research or Disaster Data programs (application required).", "source_url": "https://www.planet.com/pricing/"}]}
+  agent: dataset_availability_researcher
 
 compile_final_report_from_consolidated:
   description: >
     Using the CONSOLIDATED dataset and method findings below,
     together with the artifact availability information
-    below (already determined beforehand — do not re-check it), determine
-    objectively:
-    1. Whether the paper can be attempted to be reproduced overall.
-    2. Whether datasets are provided, referenced, or linked.
-    3. Whether any code used for the methods has a repository link,
-       persistent link, or reference.
+    below, classify reproducibility_status as one of:
+    - NOT_REPRODUCIBLE: the method's code is not available (no repository/
+      persistent link or code-availability statement, in either the
+      consolidated method or the artifact availability information).
+    - PARTIALLY_REPRODUCIBLE: the code is available, but the landslide
+      inventory (the reference/ground-truth data used to train or validate
+      the mapping — reused from another publication or created by the
+      authors) is not referenced or linked. Other input datasets (imagery,
+      DEM, etc.) being available does NOT count on their own.
+    - REPRODUCIBLE: the code is available, the landslide inventory is
+      referenced or linked (either credited to previous authors or made
+      available by the publication itself), and the other input datasets are
+      available and/or accessible.
+
+    Datasets or artifacts available upon request 
+    are considered not available, thus do not contribute to the
+    reproducibility status.
+
+    For any input dataset that the consolidated findings mark NOT_MENTIONED, or
+    MENTIONED with only a named source and no link, use the Dataset Availability
+    Reference below as supporting context: if the dataset matches an entry there
+    with availability PUBLIC_FREE or PUBLIC_REG, treat it as practically accessible
+    for the "other input datasets are available and/or accessible" criterion even
+    though the paper itself doesn't link it, and say so in the assessment. A
+    COMMERCIAL or RESTRICTED dataset counts as NOT accessible. A VARIES dataset
+    counts as NOT accessible if lacking a clear path to access or clear referencing.
+
     Base your judgment only on what is given below; do not introduce new
     findings.
-    If part of the datasets are referenced and linked but the inventory is not available, the datasets are not considered available.
 
     Consolidated datasets:
     {consolidated_datasets}
@@ -175,6 +236,9 @@ compile_final_report_from_consolidated:
 
     Artifact availability (pre-recorded from the publication webpage):
     {availability_summary}
+
+    Dataset Availability Reference (supporting context only, see usage rule above):
+    {dataset_availability_reference}
   expected_output: >
     Return only a json object with two fields, "reproducibility_status" and
     "reproducibility_assessment", no explanatory prose.
@@ -182,7 +246,7 @@ compile_final_report_from_consolidated:
       NOT_REPRODUCIBLE.
     - "reproducibility_assessment": a concise, objective one-or-two sentence
       statement (max ~50 words) covering, in order:
-        - Dataset status: provided, referenced, or linked — or not.
+        - Dataset status: provided, referenced, linked, publicly available, or not available.
         - Code status (only if custom code was used in a method): has a
           repository link, persistent link, or reference — or none.
       Do not repeat the verdict word here; state the supporting facts only.

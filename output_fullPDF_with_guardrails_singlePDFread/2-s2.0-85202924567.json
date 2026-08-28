@@ -1,0 +1,54 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide dataset from Bijie City",
+      "source": "Ji et al. (2020)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "While the data from Bijie City is available in the open-source database by Ji et al. (2020), which contains both satellite optical images from TripleSat satellite imagery and landslides boundary shapefiles."
+    },
+    {
+      "name": "Landslide images at Ludian County and Beichuan County",
+      "source": "Authors' own collection",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Wherein, we collected and labelled the landslide images at Ludian County and Beichuan County based on the remote sensing images from the Landsat 8."
+    },
+    {
+      "name": "Open-source dataset containing 950 landslide images",
+      "source": "Authors",
+      "link": "https://github.com/Abbott-max/dataset",
+      "status": "MENTIONED",
+      "verbatim": "The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found below: https://github.com/Abbott-max/dataset; doi:10.4121/20401740."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Dynahead-YOLO-Otsu",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A two-stage landslide semantic segmentation method. First, it uses the Dynahead-YOLO model to detect potential landslide regions (bounding boxes). Second, it applies the Otsu binarization algorithm to these regions for pixel-wise segmentation, followed by a mean shift algorithm for noise reduction.",
+      "source": "Zheng Han et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found below: https://github.com/Abbott-max/dataset"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "MENTIONED",
+    "data_links": [
+      {
+        "name": "Study dataset (deposited in online repositories)",
+        "source": "GitHub / 4TU.ResearchData (DOI repository)",
+        "link": "https://doi.org/10.4121/20401740",
+        "status": "MENTIONED",
+        "verbatim": null
+      }
+    ],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data availability statement present with shared links."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are referenced or linked via the provided GitHub repository and DOI. The custom code is not provided through a repository."
+}

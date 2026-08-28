@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Planet Satellite images",
+      "source": "Planet Company",
+      "link": "https://api.planet.com",
+      "status": "MENTIONED",
+      "verbatim": "This study uses the high-resolution (3 m) Planet Satellite images obtained five days after the earthquake [54]... Available online: https://api.planet.com (accessed on 10 January 2019)."
+    },
+    {
+      "name": "Iburi earthquake's landslide inventory map",
+      "source": "Authors' visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The Iburi earthquake's landslide inventory map (Figure 3B) was prepared by our visual interpretation to the Planet Satellite images."
+    },
+    {
+      "name": "Topographic background",
+      "source": "National Geophysical Data Center, NOAA",
+      "link": "https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/docs/ETOPO1.pdf",
+      "status": "MENTIONED",
+      "verbatim": "The topographic background is from National Geophysical Data Center, NOAA [53]... Available online: https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/docs/ETOPO1.pdf (accessed on 10 January 2019)."
+    }
+  ],
+  "methods": [
+    {
+      "name": "ENVINet5",
+      "method_type": "SOFTWARE",
+      "summary": "A U-Net based encoder-decoder architecture with 5 levels and 23 convolutional layers, implemented within the ENVI Deep Learning Module, used for pixel-based classification of remote sensing images to identify landslides.",
+      "source": "ENVI Deep Learning Module",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The ENVINet5 architecture used by the ENVI Deep Learning Module is based on the U-Net architecture developed by Ronneberger et al. [47]."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The Planet satellite imagery and ETOPO1 topographic data are publicly accessible, but the landslide inventory used for training is not linked or provided. The ENVINet5 method is implemented via a commercial software module without a provided repository or code link."
+}

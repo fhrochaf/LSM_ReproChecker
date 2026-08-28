@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "RapidEye satellite imagery",
+      "source": "Planet Labs Inc.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The landslides were visually interpreted as polygons from RapidEye imagery acquired on 04 November 2016 (Planet Labs Inc.) and field observations."
+    },
+    {
+      "name": "ALOS PALSAR digital elevation model",
+      "source": "Advanced Land Observing Satellite (ALOS)",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The elevation and slope data were acquired from a digital elevation model (DEM), resampled to 5-m spatial resolution, derived from Phased Array type L-band Synthetic Aperture Radar (PALSAR) of the Advanced Land Observing Satellite (ALOS)."
+    },
+    {
+      "name": "Manually interpreted landslide inventory",
+      "source": "Authors' own fieldwork and visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The results were then compared against the manually interpreted inventory compiled using fieldwork and visual interpretation of the RapidEye satellite image."
+    }
+  ],
+  "methods": [
+    {
+      "name": "U-Net",
+      "method_type": "REUSED",
+      "summary": "A fully convolutional neural network with an encoder-decoder architecture used for semantic segmentation of landslides, taking optical and topographical bands as input and producing a binary per-pixel landslide probability map.",
+      "source": "Ronneberger et al. 2015",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "U-Net (Ronneberger et al. 2015) is a state-of-art deep learning model used for semantic segmentation tasks."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and input datasets are mentioned but not linked or provided. The custom U-Net code is mentioned but lacks a repository or persistent link."
+}

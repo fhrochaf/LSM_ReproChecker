@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "SRTM DEM data",
+      "source": "SRTM",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The study utilized several basic data sources, including SRTM DEM data with a resolution of 30 m"
+    },
+    {
+      "name": "ZY-3 DOM data",
+      "source": "ZY-3",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "ZY-3 DOM data with a resolution of 2 m"
+    },
+    {
+      "name": "Landsat 8 OLI data",
+      "source": "Landsat",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Landsat 8 OLI data (path 131, row 39) acquired on 25 December 2017"
+    },
+    {
+      "name": "UAV images",
+      "source": "Authors' own fieldwork",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "small-scale UAV images acquired in August 2019."
+    }
+  ],
+  "methods": [
+    {
+      "name": "GTVI (GLCM and Terrain roughness and Vegetation index) model",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A comprehensive remote sensing identification model for ancient landslides that uses Object Based Image Analysis (OBIA) to integrate GLCM entropy, terrain roughness index (TRI), and vegetation index (NDVI) to distinguish ancient landslides from reactivated ones.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The original contributions presented in the study are included in the article/supplementary material, further inquiries can be directed to the corresponding authors."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or referenced, and the custom GTVI model code is not provided or linked."
+}

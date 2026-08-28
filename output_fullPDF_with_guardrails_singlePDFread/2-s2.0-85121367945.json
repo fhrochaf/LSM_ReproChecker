@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Beijing-2 satellite imagery",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Resources Satellite-3 stereoscopic images",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landsat 8 imagery (for NDVI)",
+      "source": "Not specified",
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Landslide inventory vector file (Jiuzhaigou)",
+      "source": "Key Laboratory of Active Tectonics and Volcano, Institute of Geology, China Earthquake Administration",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We are especially grateful to the Key Laboratory of Active Tectonics and Volcano, Institute of Geology, China Earthquake Administration for the inventory vector file of landslides triggered by the 8 August 2017 MW 6.5 Jiuzhaigou Earthquake, China."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Fully convolutional spectral–topographic fusion network (FSTF-Net)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "FSTF-Net is an end-to-end deep learning model for landslide extraction that uses two parallel branch networks: one for optical RGB imagery (using ResNet50 and ASPP) and another for multi-source data (slope, aspect, and NDVI, using VGG-16). The features from these branches are concatenated and processed through a decoder to produce pixel-level landslide classification.",
+      "source": "Wei Xia et al.",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Based on the idea of feature-driven classification, the landslide extraction model of a fully convolutional spectral–topographic fusion network (FSTF-Net) based on a deep convolutional neural network of multi-source data fusion is proposed"
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Stated as 'Not applicable.'"
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is mentioned but not linked, and the other input datasets are not linked or accessible. The custom code for the FSTF-Net model is not provided or linked."
+}

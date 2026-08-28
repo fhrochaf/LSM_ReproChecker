@@ -1,0 +1,39 @@
+{
+  "datasets": [
+    {
+      "name": "USGS landslide inventory",
+      "source": "U.S. Geological Survey",
+      "link": "https://doi.org/10.5066/P9E2A37P",
+      "status": "MENTIONED",
+      "verbatim": "For example, in the U.S., the U.S. Geological Survey (USGS) maintains a database of landslide reports with approximate locations and times, but no images (https://doi.org/10.5066/P9E2A37P)."
+    },
+    {
+      "name": "Google Earth satellite imagery",
+      "source": "Google Earth",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Google Earth was used as the data source for the present study, which provides historical archives for multiple high-resolution aerial and satellite imagery."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Task-Specific Model Updates (TSMU)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "A continual learning semantic segmentation framework that uses a shared encoder and ecoregion-specific decoders. It employs incremental freeze training and joint fine-tuning with knowledge distillation to learn new tasks without catastrophic forgetting of old tasks.",
+      "source": "Savinay Nagendra et al.",
+      "link": "https://github.com/deepLDB/landslide-detection",
+      "status": "MENTIONED",
+      "verbatim": "Our dataset and code will be made publicly accessible upon acceptance in our GitHub repository at https://github.com/deepLDB/landslide-detection."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is referenced and linked via a DOI, and the Google Earth imagery is accessible as a public resource. The custom code is provided via a persistent GitHub repository link."
+}

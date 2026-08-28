@@ -1,0 +1,53 @@
+{
+  "datasets": [
+    {
+      "name": "Sentinel-2 imagery",
+      "source": "Copernicus Open Access Hub",
+      "link": "https://scihub.copernicus.eu/",
+      "status": "MENTIONED",
+      "verbatim": "These images were downloaded from the Copernicus Open Access Hub (https:// scihub. coper nicus. eu/)."
+    },
+    {
+      "name": "12.5-m resolution DEM derived from ALOS PALSAR data",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    },
+    {
+      "name": "Historical landslide data and government records",
+      "source": "Local government",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "We obtained historical landslide data and used government records to map their locations."
+    },
+    {
+      "name": "Rainfall data from monitoring stations",
+      "source": "Monitoring stations",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Rainfall data from monitoring stations... We interpolated rainfall data collected by sparse monitoring stations via the inverse distance weighting (IDW) approach"
+    }
+  ],
+  "methods": [
+    {
+      "name": "Hybrid approach that integrates a random forest (RF) statistical model and a physically based model of transient rainfall infiltration and grid-based regional slope-stability (TRIGRS)",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method integrates a statistical random forest (RF) model, trained on historical landslide data, with a physically based TRIGRS model, which uses real-time rainfall and soil parameters to assess slope stability. The hybrid approach combines the outputs of both models to improve the accuracy of landslide susceptibility mapping.",
+      "source": null,
+      "link": null,
+      "status": "NOT_MENTIONED",
+      "verbatim": null
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "The data are available from the corresponding authors upon reasonable request."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or publicly available, and the custom hybrid model code is not provided."
+}

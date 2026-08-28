@@ -1,0 +1,32 @@
+{
+  "datasets": [
+    {
+      "name": "Bern data set",
+      "source": "Publicly available data",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "All data are derived from publicly available data used for dual-temporal SAR image change detection, and the ground reference images are manually labeled."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Unsupervised change detection method through clustering fusion and deep neural networks",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses hierarchical fuzzy c-means clustering (HFCM) on log-ratio and neighborhood-based ratio difference images to generate a pre-classification map (changed, unchanged, intermediate). A lightweight deep neural network, featuring decomposition convolution and auxiliary classification modules, is trained using real and virtual samples to reclassify the intermediate class pixels, with a regression layer replacing the standard classification layer for final output.",
+      "source": "Zhikang Lin, Wei Liu, Yulong Wang, Yan Xu, and Chaoyang Niu",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Therefore, this paper proposes a novel method for SAR image change detection based on clustering fusion and deep neural networks."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": null
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is not referenced or linked, and the custom code used for the method is not available."
+}

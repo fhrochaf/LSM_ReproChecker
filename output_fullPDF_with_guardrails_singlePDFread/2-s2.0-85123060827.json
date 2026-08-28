@@ -1,0 +1,46 @@
+{
+  "datasets": [
+    {
+      "name": "Landslide inventory of the study area",
+      "source": "Authors' own fieldwork and visual interpretation",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A landslide map of the study area is prepared using comprehensive fieldwork, inventory data, and visual interpretation of the ortho-mosaic prior to the proposed method."
+    },
+    {
+      "name": "UAV data (DTM and ortho-mosaic)",
+      "source": "Authors' own UAV flight survey",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "A UAV (unmanned aerial vehicle) flight survey is performed on November 20, 2018, to cover all landslides along NH-75... The DTM and ortho-mosaic images are developed from the UAV data and used for further analysis."
+    },
+    {
+      "name": "Rainfall data",
+      "source": "Nearest rainfall station",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "The rainfall data are obtained from the nearest rainfall station for the year 2018."
+    }
+  ],
+  "methods": [
+    {
+      "name": "Object-oriented approach using Wavelet Transform coupled with Machine Learning",
+      "method_type": "CUSTOM_CODE",
+      "summary": "The method uses UAV-derived DTM to calculate topographic features (slope, aspect, curvature) and texture (via Mexican hat wavelet transform). These features are segmented using Multiresolution Segmentation (MRS) in eCognition, and the resulting objects are classified into landslide/non-landslide classes using Random Forest (RF) and Support Vector Machine (SVM) algorithms implemented in Python.",
+      "source": "Himanshu Rana",
+      "link": null,
+      "status": "MENTIONED",
+      "verbatim": "Code is available on request from the corresponding author."
+    }
+  ],
+  "availability": {
+    "access_status": "ACCESSIBLE",
+    "data_status": "NOT_MENTIONED",
+    "data_links": [],
+    "code_status": "NOT_MENTIONED",
+    "code_links": [],
+    "author_statement": "Data and Codes are available on request from the corresponding author."
+  },
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory and other input datasets are not linked or made available. The custom code is not provided via a repository or persistent link, as it is only available upon request."
+}
