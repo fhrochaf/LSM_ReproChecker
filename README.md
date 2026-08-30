@@ -1,5 +1,9 @@
 # LSM ReproChecker
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+![alt text](cover.png)
+
 A [CrewAI](https://crewai.com) flow that automatically screens publications on landslide mapping (LSM) to check their detection methods and assess their reproducibility.
 
 ## What it does
