@@ -18,6 +18,8 @@ A [CrewAI](https://crewai.com) flow that automatically screens publications on l
 
 Results are written back into the input CSV and saved as a JSON report per publication in the configured output directory.
 
+![alt text](crew_schema.png)
+
 ## Agents
 
 Defined in `src/flow_reproassesslsm_st1/crews/reprochecker_crew/config/agents.yaml`, wired up in `reprochecker_crew.py`:
