@@ -184,7 +184,7 @@
         <h3>Data &amp; code availability on the publication's page</h3>
         <dl class="availability-grid">
           <div>
-            <dt>Access</dt>
+            <dt>Page Accessibility</dt>
             <dd>${escapeHtml(statusLabel(paper.availability?.access_status))}</dd>
           </div>
           <div>

@@ -16,6 +16,7 @@ file with no build step required to view it — open it directly in a browser.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -28,6 +29,7 @@ REPORTS_DIR = REPO_ROOT / "outputs_LSM_ReproChecker"
 METADATA_CSV = REPORTS_DIR / "analysis" / "scopus_query1_postPipeline_postHumanReview.csv"
 VIEWER_DIR = Path(__file__).resolve().parent
 TEMPLATES_DIR = VIEWER_DIR / "templates"
+STATIC_DIR = VIEWER_DIR / "static"
 OUTPUT_HTML = VIEWER_DIR / "index.html"
 
 TARGET_STATUSES = ("REPRODUCIBLE", "PARTIALLY_REPRODUCIBLE", "NOT_REPRODUCIBLE")
@@ -144,6 +146,13 @@ def total_assessed_count() -> int:
     return sum(1 for _ in REPORTS_DIR.glob("*.json"))
 
 
+def asset_version(path: Path) -> str:
+    """Short content hash, appended as ?v=... so browsers (and the GitHub
+    Pages CDN, which caches for 10 min) refetch CSS/JS whenever they change
+    instead of pairing a new index.html with a stale cached stylesheet."""
+    return hashlib.sha1(path.read_bytes()).hexdigest()[:10]
+
+
 def render(papers: list[dict]) -> str:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
@@ -163,6 +172,8 @@ def render(papers: list[dict]) -> str:
         reproducible_count=reproducible_count,
         partial_count=partial_count,
         total_count=total_assessed_count(),
+        css_version=asset_version(STATIC_DIR / "style.css"),
+        js_version=asset_version(STATIC_DIR / "script.js"),
     )
 
 
