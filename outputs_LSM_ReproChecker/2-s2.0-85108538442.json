@@ -21,7 +21,7 @@
       "method_type": "CUSTOM_CODE",
       "summary": "MILL is an end-to-end deep convolutional neural network that treats remote sensing images as bags of instances. It consists of a backbone network for feature extraction, a stack of convolutions for instance extraction and classification, and a novel MIL pooling function based on channel attention to map instance-level labels to bag-level labels.",
       "source": "Xiaochuan Tang et al.",
-      "link": "https://github.com/xiaochuan-tang/",
+      "link": "https://github.com/xiaochuan-tang/MILL",
       "status": "MENTIONED",
       "verbatim": "The proposed MILL method is implemented in PyTorch.1 ... 1https://github.com/xiaochuan-tang/."
     }

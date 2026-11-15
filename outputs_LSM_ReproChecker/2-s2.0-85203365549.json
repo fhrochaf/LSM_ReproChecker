@@ -41,6 +41,6 @@
     "code_links": [],
     "author_statement": "Availability statement has link for the proposed system, which maps landslides."
   },
-  "reproducibility_status": "REPRODUCIBLE",
-  "reproducibility_assessment": "The landslide inventory is linked via the Bhuvan portal, and input datasets (Sentinel-2, NASA DEM) are accessible via public repositories. The custom ML-CASCADE code is provided via a persistent Google Earth Engine link."
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is linked via the Bhuvan portal, and input datasets (Sentinel-2, NASA DEM) are accessible via public repositories. The custom ML-CASCADE code is provided via a persistent Google Earth Engine link, but it leads to a non-existent page."
 }

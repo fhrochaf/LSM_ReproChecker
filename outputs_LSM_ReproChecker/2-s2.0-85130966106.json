@@ -84,6 +84,6 @@
     "code_links": [],
     "author_statement": "Data availability statement present with indication of datasets, no shared links."
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
-  "reproducibility_assessment": "The landslide inventory is available through the Geospatial Information Authority of Japan, the input datasets are mentioned without direct links, though some are practically accessible via public providers. The custom code is available via a provided GitHub repository link."
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is available through the Geospatial Information Authority of Japan, the input datasets are mentioned without direct links, though some are practically accessible via public providers. Only the repository of tools used was provided"
 }

@@ -4,24 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LSM ReproChecker — Reproducibility of Automated Landslide Mapping Methods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <div class="site-header__box">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__text">
         <span class="site-header__eyebrow">LSM ReproChecker</span>
         <h1 class="site-header__title">Landslide mapping reproducibility assessments</h1>
         <p class="site-header__subtitle">
           Automated landslide mapping publications, from 2020 to 2025, retrieved from Scopus,
           assessed for whether the code and data needed to reproduce their results are
-          available: fully, partially, or not at all.
+          available. All publications with available code to replicate their mapping methods
+          are marked as reproducible or partially reproducible.
         </p>
       </div>
-      <div class="site-header__cover">
-        <img src="static/cover.png" alt="Encoder-decoder segmentation pipeline: a satellite image of a landslide processed into a predicted landslide mask">
-      </div>
-    </header>
+      <figure class="site-header__cover">
+        <div class="frame">
+          <img src="static/cover.png" alt="Encoder-decoder segmentation pipeline: a satellite image of a landslide processed into a predicted landslide mask">
+        </div>
+      </figure>
+    </div>
+    <div class="site-header__ramp" aria-hidden="true"></div>
+  </header>
+
+  <div class="page">
 
     <div class="controls">
       <input
@@ -35,12 +45,12 @@
     </div>
 
     <div id="status-filter" class="filter-row" aria-label="Filter by reproducibility status"></div>
-    <div id="class-filter" class="filter-row" aria-label="Filter by method class"></div>
+    <div id="approach-filter" class="filter-row" aria-label="Filter by method approach"></div>
 
     <main id="card-grid" class="card-grid"></main>
 
     <footer class="site-footer">
-      This project was developed using LSM_ReproChecker, available at <a
+      © 2026 Built by Flávio H. R. Fonseca. This project was developed using LSM_ReproChecker, available at <a
         href=https://github.com/fhrochaf/LSM_ReproChecker>github.com/fhrochaf/LSM_ReproChecker</a>.
     </footer>
   </div>

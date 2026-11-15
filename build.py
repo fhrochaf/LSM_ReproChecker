@@ -1,13 +1,14 @@
 """Build the static ReproChecker results viewer (index.html).
 
 Reads the per-paper assessment reports produced by the reproducibility crew
-and the Scopus export metadata, keeps papers assessed as REPRODUCIBLE,
+and the human-reviewed Scopus export metadata (including each paper's
+method approach and hybrid flag), keeps papers assessed as REPRODUCIBLE,
 PARTIALLY_REPRODUCIBLE, or NOT_REPRODUCIBLE, and renders them into a single
 static HTML page.
 
 Usage:
     uv sync --group viewer   # one-time, installs jinja2 for building only
-    uv run python reprochecker_viewer/build.py
+    uv run python build.py
 
 This is a development-time tool. Its output (index.html) is a plain static
 file with no build step required to view it — open it directly in a browser.
@@ -23,9 +24,8 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 
 REPO_ROOT = Path(__file__).resolve().parent
-print(REPO_ROOT)
-REPORTS_DIR = REPO_ROOT / "output_fullPDF_with_guardrails_singlePDFread"
-METADATA_CSV = REPORTS_DIR / "analysis" / "scopus_export_Jul_22_2026_query1.csv"
+REPORTS_DIR = REPO_ROOT / "outputs_LSM_ReproChecker"
+METADATA_CSV = REPORTS_DIR / "analysis" / "scopus_query1_postPipeline_postHumanReview.csv"
 VIEWER_DIR = Path(__file__).resolve().parent
 TEMPLATES_DIR = VIEWER_DIR / "templates"
 OUTPUT_HTML = VIEWER_DIR / "index.html"
@@ -55,13 +55,8 @@ def load_metadata() -> pd.DataFrame:
     return df.set_index("EID")
 
 
-def clean_links(entries: list[dict] | None, method_class: str | None = None) -> list[dict]:
-    """Drop the verbatim quote field; keep name/source/link/summary only.
-
-    `method_class` (from the Scopus export's method_class_name column) is a
-    per-paper classification, not per-method — it's attached to every method
-    entry of a paper so each one can be tagged/filtered/colored by class.
-    """
+def clean_links(entries: list[dict] | None) -> list[dict]:
+    """Drop the verbatim quote field; keep name/source/link/summary only."""
     out = []
     for entry in entries or []:
         out.append(
@@ -71,10 +66,16 @@ def clean_links(entries: list[dict] | None, method_class: str | None = None) -> 
                 "link": entry.get("link"),
                 "summary": entry.get("summary"),
                 "method_type": entry.get("method_type"),
-                "method_class": method_class,
             }
         )
     return out
+
+
+def clean_flag(value: object) -> str | None:
+    """Normalise a categorical CSV cell to an upper-case string, or None."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    return value.strip().upper()
 
 
 def build_paper_record(report_path: Path, meta_row: pd.Series) -> dict:
@@ -84,8 +85,10 @@ def build_paper_record(report_path: Path, meta_row: pd.Series) -> dict:
     eid = report_path.stem
     doi = meta_row.get("DOI")
     availability = report.get("availability") or {}
-    method_class = meta_row.get("method_class_name")
-    method_class = method_class if pd.notna(method_class) and str(method_class).strip() else None
+    # Per-paper method classification from the human-reviewed Scopus export.
+    # Method_temporal (single date / multi-temporal) is intentionally ignored.
+    approach = clean_flag(meta_row.get("Method_approach"))
+    hybrid = clean_flag(meta_row.get("Method_hybrid")) == "YES"
 
     return {
         "id": eid,
@@ -96,16 +99,18 @@ def build_paper_record(report_path: Path, meta_row: pd.Series) -> dict:
         "doi_url": f"https://doi.org/{doi}" if isinstance(doi, str) and doi else None,
         "abstract": meta_row.get("Abstract"),
         "status": report.get("reproducibility_status"),
+        "approach": approach,
+        "hybrid": hybrid,
         "reproducibility_assessment": report.get("reproducibility_assessment"),
         "datasets": clean_links(report.get("datasets")),
-        "methods": clean_links(report.get("methods"), method_class=method_class),
+        "methods": clean_links(report.get("methods")),
         "availability": {
             "access_status": availability.get("access_status"),
             "data_status": availability.get("data_status"),
             "code_status": availability.get("code_status"),
             "author_statement": availability.get("author_statement"),
             "data_links": clean_links(availability.get("data_links")),
-            "code_links": clean_links(availability.get("code_links"), method_class=method_class),
+            "code_links": clean_links(availability.get("code_links")),
         },
     }
 

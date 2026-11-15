@@ -48,6 +48,6 @@
     "code_links": [],
     "author_statement": null
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
-  "reproducibility_assessment": "The EuroSAT dataset is linked and publicly available, but the landslide inventory and other regional datasets are not referenced or linked. The custom GeoSystemNet code is provided via a GitHub repository link."
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The EuroSAT dataset is linked and publicly available, but the landslide inventory and other regional datasets are not referenced or linked. The custom GeoSystemNet code is provided via a GitHub repository link, which leads to a non-existent repository.."
 }

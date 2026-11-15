@@ -34,6 +34,6 @@
     "code_links": [],
     "author_statement": null
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
-  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available. The custom code for APSAM is provided via a repository link."
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory datasets are mentioned but not linked or made available. The custom code for APSAM is mentioned via a repository link, but not available in the repository."
 }

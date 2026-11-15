@@ -8,35 +8,49 @@
   const searchInput = document.getElementById("search-input");
   const resultCount = document.getElementById("result-count");
   const statusFilterRow = document.getElementById("status-filter");
-  const classFilterRow = document.getElementById("class-filter");
+  const approachFilterRow = document.getElementById("approach-filter");
   const backdrop = document.getElementById("modal-backdrop");
+  const modal = backdrop.querySelector(".modal");
   const modalBody = document.getElementById("modal-body");
   const modalClose = document.getElementById("modal-close");
 
-  const CLASS_COLOR_SLOTS = 8;
-  const activeClasses = new Set();
   const activeStatuses = new Set();
+  const activeApproaches = new Set();
+  let hybridOnly = false;
 
   // Order here drives both the filter-chip order and card sort tie-breaking
   // elsewhere; keep it aligned with build.py's STATUS_SORT_RANK.
   const STATUSES = [
-    { value: "REPRODUCIBLE", label: "Reproducible", badgeClass: "", color: "var(--color-blue-500)" },
+    { value: "REPRODUCIBLE", label: "Reproducible", badgeClass: "", color: "var(--status-repro)" },
     {
       value: "PARTIALLY_REPRODUCIBLE",
       label: "Partially reproducible",
       badgeClass: " card__badge--partial",
       modalBadgeClass: " modal__badge--partial",
-      color: "var(--color-yellow-500)",
+      color: "var(--status-partial)",
     },
     {
       value: "NOT_REPRODUCIBLE",
       label: "Not reproducible",
       badgeClass: " card__badge--not",
       modalBadgeClass: " modal__badge--not",
-      color: "var(--color-gray-500)",
+      color: "var(--status-not)",
     },
   ];
   const statusByValue = Object.fromEntries(STATUSES.map((s) => [s.value, s]));
+
+  // Method approach comes from the human-reviewed Scopus export's
+  // Method_approach column (one value per paper); Method_hybrid flags papers
+  // that combine approaches. Each approach has a fixed accent and note color
+  // (see --approach-* / --note-* in style.css). Method_temporal is ignored.
+  const APPROACHES = [
+    { value: "DEEP_LEARNING", label: "Deep learning", key: "dl" },
+    { value: "ML_STATISTICAL", label: "Machine learning / statistical", key: "ml" },
+    { value: "RULE_BASED", label: "Rule-based", key: "rb" },
+  ];
+  const approachByValue = Object.fromEntries(APPROACHES.map((a) => [a.value, a]));
+  const approachColorVar = (value) =>
+    approachByValue[value] ? `var(--approach-${approachByValue[value].key})` : null;
 
   function escapeHtml(value) {
     if (value === null || value === undefined) return "";
@@ -47,32 +61,13 @@
       .replace(/"/g, "&quot;");
   }
 
-  // Method classes come from the Scopus export's method_class_name column,
-  // one value per paper, attached to every method/code-link entry of that
-  // paper. Colors are assigned in order of first appearance so they stay
-  // stable across rebuilds as long as paper ordering doesn't change.
-  function collectMethodClasses() {
-    const seen = [];
-    papers.forEach((paper) => {
-      (paper.methods || []).forEach((method) => {
-        if (method.method_class && !seen.includes(method.method_class)) {
-          seen.push(method.method_class);
-        }
-      });
-    });
-    return seen;
-  }
-
-  const methodClasses = collectMethodClasses();
-  const classColorVar = (className) => {
-    const index = methodClasses.indexOf(className);
-    if (index === -1) return null;
-    return `var(--class-color-${(index % CLASS_COLOR_SLOTS) + 1})`;
-  };
-
-  function paperMethodClass(paper) {
-    const withClass = (paper.methods || []).find((m) => m.method_class);
-    return withClass ? withClass.method_class : null;
+  function approachTag(paper, extraClass) {
+    const meta = approachByValue[paper.approach];
+    if (!meta) return "";
+    const hybrid = paper.hybrid ? '<span class="approach-tag__hybrid">hybrid</span>' : "";
+    return `<div class="approach-tag ${extraClass || ""}" style="--approach-color:var(--approach-${meta.key})">
+      <span class="approach-tag__dot"></span>${escapeHtml(meta.label)}${hybrid}
+    </div>`;
   }
 
   function linkOrNone(link) {
@@ -83,25 +78,19 @@
     return `<a class="item__link" href="${safe}" target="_blank" rel="noopener noreferrer">${safe}</a>`;
   }
 
-  function renderItemList(items) {
+  function renderItemList(items, accent) {
     if (!items || items.length === 0) {
-      return `<p class="modal__assessment" style="background:transparent;padding:0;color:var(--color-text-faint);font-style:italic;">None reported.</p>`;
+      return '<p class="modal__none">None reported.</p>';
     }
+    const style = accent ? ` style="--item-accent:${accent}"` : "";
     return `<ul class="item-list">${items
       .map((item) => {
-        const colorVar = item.method_class ? classColorVar(item.method_class) : null;
-        const style = colorVar ? ` style="--item-accent:${colorVar}"` : "";
-        const classChip = item.method_class
-          ? `<div class="item__class">${escapeHtml(item.method_class)}</div>`
+        const typeTag = item.method_type
+          ? `<span class="tag">${escapeHtml(item.method_type.replace(/_/g, " "))}</span><br>`
           : "";
-        const typeTag =
-          item.method_type
-            ? `<span class="tag">${escapeHtml(item.method_type.replace(/_/g, " "))}</span><br>`
-            : "";
         const source = item.source ? `<div class="item__source">${escapeHtml(item.source)}</div>` : "";
         const summary = item.summary ? `<div class="item__summary">${escapeHtml(item.summary)}</div>` : "";
         return `<li class="item"${style}>
-          ${classChip}
           ${typeTag}
           <div class="item__name">${escapeHtml(item.name || "Untitled")}</div>
           ${source}
@@ -117,32 +106,38 @@
     return status.replace(/_/g, " ").toLowerCase().replace(/^\w/, (c) => c.toUpperCase());
   }
 
+  function noteModifier(paper) {
+    const meta = approachByValue[paper.approach];
+    return meta ? meta.key : "none";
+  }
+
   function renderCard(paper) {
     const el = document.createElement("button");
     el.type = "button";
-    el.className = "card";
+    el.className = `card card--${noteModifier(paper)}`;
     el.setAttribute("data-id", paper.id);
 
     const statusMeta = statusByValue[paper.status];
     const badgeClass = `card__badge${statusMeta?.badgeClass || ""}`;
     const badgeText = statusMeta?.label || "Unknown";
-    const methodClass = paperMethodClass(paper);
-    const classDot = methodClass
-      ? `<div class="card__classdots" title="${escapeHtml(methodClass)}">
-           <span class="card__classdot" style="background:${classColorVar(methodClass)}"></span>
-         </div>`
-      : "";
 
+    const nDatasets = paper.datasets?.length || 0;
+    const nMethods = paper.methods?.length || 0;
     el.innerHTML = `
-      <span class="${badgeClass}">${badgeText}</span>
+      <div class="card__head">
+        <span class="${badgeClass}">${badgeText}</span>
+        <span class="card__year">${paper.year ?? ""}</span>
+      </div>
       <h3 class="card__title">${escapeHtml(paper.title)}</h3>
-      <div class="card__meta">${escapeHtml(paper.authors)} &middot; ${paper.year ?? ""}</div>
-      ${classDot}
+      <div class="card__meta">${escapeHtml(paper.authors)}</div>
+      ${approachTag(paper, "card__approach")}
       <p class="card__abstract">${escapeHtml(paper.abstract)}</p>
       <div class="card__footer">
-        <span class="card__tagcount">${paper.datasets?.length || 0} datasets &middot; ${paper.methods?.length || 0
-      } methods</span>
-        <span class="card__open">View details &rarr;</span>
+        <span class="card__tagcount">
+          <span class="card__stat"><b>${nDatasets}</b> dataset${nDatasets === 1 ? "" : "s"}</span>
+          <span class="card__stat"><b>${nMethods}</b> method${nMethods === 1 ? "" : "s"}</span>
+        </span>
+        <span class="card__open">Details &rarr;</span>
       </div>
     `;
     el.addEventListener("click", () => openModal(paper));
@@ -153,7 +148,9 @@
     const statusMeta = statusByValue[paper.status];
     const badgeClass = `modal__badge${statusMeta?.modalBadgeClass || ""}`;
     const badgeText = statusMeta?.label || "Unknown";
+    const accent = approachColorVar(paper.approach);
 
+    modal.className = `modal modal--${noteModifier(paper)}`;
     modalBody.innerHTML = `
       <span class="${badgeClass}">${badgeText}</span>
       <h2 class="modal__title">${escapeHtml(paper.title)}</h2>
@@ -161,6 +158,7 @@
         ${escapeHtml(paper.authors)} &middot; ${paper.year ?? ""}
         ${paper.doi_url ? `<br><a href="${escapeHtml(paper.doi_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(paper.doi)}</a>` : ""}
       </div>
+      ${approachTag(paper, "modal__approach")}
 
       <div class="modal__section">
         <h3>Abstract</h3>
@@ -174,7 +172,7 @@
 
       <div class="modal__section">
         <h3>Methods (${paper.methods?.length || 0})</h3>
-        ${renderItemList(paper.methods)}
+        ${renderItemList(paper.methods, accent)}
       </div>
 
       <div class="modal__section">
@@ -203,7 +201,7 @@
         : ""
       }
         ${renderItemList(paper.availability?.data_links)}
-        ${renderItemList(paper.availability?.code_links)}
+        ${renderItemList(paper.availability?.code_links, accent)}
       </div>
     `;
     backdrop.classList.add("is-open");
@@ -226,7 +224,8 @@
   function searchHaystack(paper) {
     const datasetNames = (paper.datasets || []).map((d) => d.name).join(" ");
     const methodNames = (paper.methods || []).map((m) => m.name).join(" ");
-    return [paper.title, paper.authors, paper.abstract, datasetNames, methodNames]
+    const approach = approachByValue[paper.approach]?.label || "";
+    return [paper.title, paper.authors, paper.abstract, datasetNames, methodNames, approach]
       .join(" ")
       .toLowerCase();
   }
@@ -236,10 +235,8 @@
     const filtered = papers.filter((paper) => {
       if (query && !searchHaystack(paper).includes(query)) return false;
       if (activeStatuses.size > 0 && !activeStatuses.has(paper.status)) return false;
-      if (activeClasses.size > 0) {
-        const cls = paperMethodClass(paper);
-        if (!cls || !activeClasses.has(cls)) return false;
-      }
+      if (activeApproaches.size > 0 && !activeApproaches.has(paper.approach)) return false;
+      if (hybridOnly && !paper.hybrid) return false;
       return true;
     });
     renderGrid(filtered);
@@ -258,106 +255,109 @@
     resultCount.textContent = `${filtered.length} of ${papers.length} shown`;
   }
 
+  // A "Clear …" link appended to a filter row while any of its chips is on.
+  function syncClearButton(row, label, isAnyActive, onClear) {
+    const existing = row.querySelector(".chip__clear");
+    if (existing) existing.remove();
+    if (!isAnyActive()) return;
+    const clearBtn = document.createElement("button");
+    clearBtn.type = "button";
+    clearBtn.className = "chip__clear";
+    clearBtn.textContent = label;
+    clearBtn.addEventListener("click", () => {
+      onClear();
+      row.querySelectorAll(".chip.is-active").forEach((c) => c.classList.remove("is-active"));
+      clearBtn.remove();
+      applyFilters();
+    });
+    row.appendChild(clearBtn);
+  }
+
   function renderStatusFilter() {
     const counts = Object.fromEntries(STATUSES.map((s) => [s.value, 0]));
     papers.forEach((paper) => {
       if (paper.status in counts) counts[paper.status] += 1;
     });
 
-    statusFilterRow.innerHTML = STATUSES.map((s) => {
-      const safe = escapeHtml(s.label);
-      return `<button type="button" class="chip" data-status="${s.value}" style="--chip-color:${s.color}">
-        <span class="chip__dot"></span>${safe} (${counts[s.value] || 0})
-      </button>`;
-    }).join("");
+    statusFilterRow.innerHTML =
+      '<span class="filter-row__label">Status</span>' +
+      STATUSES.map(
+        (s) => `<button type="button" class="chip" data-status="${s.value}" style="--chip-color:${s.color}">
+          <span class="chip__dot"></span>${escapeHtml(s.label)} (${counts[s.value] || 0})
+        </button>`
+      ).join("");
+
+    const sync = () =>
+      syncClearButton(statusFilterRow, "Clear status filters", () => activeStatuses.size > 0, () =>
+        activeStatuses.clear()
+      );
 
     statusFilterRow.querySelectorAll(".chip").forEach((chip) => {
       chip.addEventListener("click", () => {
         const status = chip.getAttribute("data-status");
-        if (activeStatuses.has(status)) {
-          activeStatuses.delete(status);
-          chip.classList.remove("is-active");
-        } else {
-          activeStatuses.add(status);
-          chip.classList.add("is-active");
-        }
-        renderStatusClearButton();
+        if (activeStatuses.has(status)) activeStatuses.delete(status);
+        else activeStatuses.add(status);
+        chip.classList.toggle("is-active", activeStatuses.has(status));
+        sync();
         applyFilters();
       });
     });
-    renderStatusClearButton();
   }
 
-  function renderStatusClearButton() {
-    const existing = statusFilterRow.querySelector(".chip__clear");
-    if (existing) existing.remove();
-    if (activeStatuses.size === 0) return;
-    const clearBtn = document.createElement("button");
-    clearBtn.type = "button";
-    clearBtn.className = "chip__clear";
-    clearBtn.textContent = "Clear status filters";
-    clearBtn.addEventListener("click", () => {
-      activeStatuses.clear();
-      statusFilterRow.querySelectorAll(".chip.is-active").forEach((c) => c.classList.remove("is-active"));
-      renderStatusClearButton();
-      applyFilters();
+  function renderApproachFilter() {
+    const counts = Object.fromEntries(APPROACHES.map((a) => [a.value, 0]));
+    let hybridCount = 0;
+    papers.forEach((paper) => {
+      if (paper.approach in counts) counts[paper.approach] += 1;
+      if (paper.hybrid) hybridCount += 1;
     });
-    statusFilterRow.appendChild(clearBtn);
-  }
 
-  function renderClassFilter() {
-    if (methodClasses.length === 0) {
-      classFilterRow.style.display = "none";
-      return;
-    }
-    classFilterRow.innerHTML = methodClasses
-      .map((cls) => {
-        const safe = escapeHtml(cls);
-        return `<button type="button" class="chip" data-class="${safe}" style="--chip-color:${classColorVar(
-          cls
-        )}">
-          <span class="chip__dot"></span>${safe}
-        </button>`;
-      })
-      .join("");
+    approachFilterRow.innerHTML =
+      '<span class="filter-row__label">Method</span>' +
+      APPROACHES.map(
+        (a) => `<button type="button" class="chip" data-approach="${a.value}" style="--chip-color:var(--approach-${a.key})">
+          <span class="chip__dot"></span>${escapeHtml(a.label)} (${counts[a.value]})
+        </button>`
+      ).join("") +
+      `<span class="filter-row__sep" aria-hidden="true"></span>
+       <button type="button" class="chip chip--hybrid" style="--chip-color:var(--color-hybrid)">
+         <span class="chip__dot"></span>Hybrid only (${hybridCount})
+       </button>`;
 
-    classFilterRow.querySelectorAll(".chip").forEach((chip) => {
+    const sync = () =>
+      syncClearButton(
+        approachFilterRow,
+        "Clear method filters",
+        () => activeApproaches.size > 0 || hybridOnly,
+        () => {
+          activeApproaches.clear();
+          hybridOnly = false;
+        }
+      );
+
+    approachFilterRow.querySelectorAll(".chip[data-approach]").forEach((chip) => {
       chip.addEventListener("click", () => {
-        const cls = chip.getAttribute("data-class");
-        if (activeClasses.has(cls)) {
-          activeClasses.delete(cls);
-          chip.classList.remove("is-active");
-        } else {
-          activeClasses.add(cls);
-          chip.classList.add("is-active");
-        }
-        renderClearButton();
+        const value = chip.getAttribute("data-approach");
+        if (activeApproaches.has(value)) activeApproaches.delete(value);
+        else activeApproaches.add(value);
+        chip.classList.toggle("is-active", activeApproaches.has(value));
+        sync();
         applyFilters();
       });
     });
-    renderClearButton();
-  }
 
-  function renderClearButton() {
-    const existing = classFilterRow.querySelector(".chip__clear");
-    if (existing) existing.remove();
-    if (activeClasses.size === 0) return;
-    const clearBtn = document.createElement("button");
-    clearBtn.type = "button";
-    clearBtn.className = "chip__clear";
-    clearBtn.textContent = "Clear method filters";
-    clearBtn.addEventListener("click", () => {
-      activeClasses.clear();
-      classFilterRow.querySelectorAll(".chip.is-active").forEach((c) => c.classList.remove("is-active"));
-      renderClearButton();
+    const hybridChip = approachFilterRow.querySelector(".chip--hybrid");
+    hybridChip.addEventListener("click", () => {
+      hybridOnly = !hybridOnly;
+      hybridChip.classList.toggle("is-active", hybridOnly);
+      sync();
       applyFilters();
     });
-    classFilterRow.appendChild(clearBtn);
   }
 
   searchInput.addEventListener("input", applyFilters);
 
   renderStatusFilter();
-  renderClassFilter();
+  renderApproachFilter();
   renderGrid(papers);
 })();

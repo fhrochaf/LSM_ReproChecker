@@ -39,7 +39,7 @@
   "methods": [
     {
       "name": "U-Net++ with ResNet50 backbone",
-      "method_type": "CUSTOM_CODE",
+      "method_type": "REUSED",
       "summary": "A U-Net++ semantic segmentation network using ResNet50 as the feature extraction backbone, trained with transfer learning from ImageNet weights, and implemented using the PyTorch framework.",
       "source": "Authors (Yang and Xu)",
       "link": "https://github.com/qubvel/segmentation_models.pytorch",
@@ -73,6 +73,6 @@
     ],
     "author_statement": "Full data and code availability statement, with shared links."
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
-  "reproducibility_assessment": "The landslide inventory is partially  provided, and other input datasets are either commercial or lack clear access paths. The custom code is available via a referenced GitHub repository."
+  "reproducibility_status": "NOT_REPRODUCIBLE",
+  "reproducibility_assessment": "The landslide inventory is partially  provided, and other input datasets are either commercial or lack clear access paths. The provided GitHub repository refers to a base implementation of U-Net++, whereas the provided link on the Data Availability statement leads to a non-existent page."
 }

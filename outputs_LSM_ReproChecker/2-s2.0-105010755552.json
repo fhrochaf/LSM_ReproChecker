@@ -27,6 +27,6 @@
     "code_links": [],
     "author_statement": null
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_status": "NOT_REPRODUCIBLE",
   "reproducibility_assessment": "The Bijie landslide detection dataset is referenced and publicly available via a provided link. The custom YOLOv5-based method lacks a repository or persistent link for the specific implementation code."
 }

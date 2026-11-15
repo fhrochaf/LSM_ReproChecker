@@ -27,6 +27,6 @@
     "code_links": [],
     "author_statement": null
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_status": "NOT_REPRODUCIBLE",
   "reproducibility_assessment": "The landslide inventory dataset is linked and publicly available. The custom code for the attention-enhanced YOLOv5 network is not provided, as the paper only references the base YOLOv5 repository."
 }

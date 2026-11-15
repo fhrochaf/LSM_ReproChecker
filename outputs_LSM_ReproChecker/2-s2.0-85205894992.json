@@ -42,7 +42,7 @@
     "code_links": [
       {
         "name": "M.I.C.E (My Image Classification Environment, beta-2)",
-        "method_type": "SOFTWARE",
+        "method_type": "CUSTOM_CODE",
         "summary": "A named image classification software tool (M.I.C.E, beta-2) used in the study, shared via a dedicated GitHub repository.",
         "source": null,
         "link": "https://github.com/rogerionegri/MICE",

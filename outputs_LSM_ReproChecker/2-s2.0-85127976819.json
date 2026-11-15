@@ -34,6 +34,6 @@
     "code_links": [],
     "author_statement": "All data generated or analyzed during this study are included in this published article."
   },
-  "reproducibility_status": "PARTIALLY_REPRODUCIBLE",
+  "reproducibility_status": "NOT_REPRODUCIBLE",
   "reproducibility_assessment": "Sentinel-2A imagery is publicly accessible via the provided link, but the landslide inventory created by the authors is not referenced or linked. The Semi-automatic classification plugin is a well-known open-source tool, but no specific repository or link to the authors' custom implementation or workflow configuration is provided."
 }
